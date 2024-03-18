@@ -1,0 +1,94 @@
+\graphicspath{{lectures/9Fractals/asy/}}
+
+\section*{Fractals and contraction maps examples}
+
+View the animations using acrobat reader or they probably won't work!
+
+\subsection*{The Koch curve}
+
+Define four contraction mappings, each with scale factor $c=1/3$.
+\begin{gather*}
+S_1(x,y)=\left(\frac x3,0\right),\qquad S_2(x,y)=\left(\frac 12x-\frac{\sqrt 3}2y+\frac 13,\frac{\sqrt 3}2x+\frac 12y\right)\\
+S_3(x,y)=\left(\frac 12x-\frac{\sqrt 3}2y+\frac 12,\frac{\sqrt 3}2x-\frac 12y+\frac{\sqrt 3}6\right),\qquad S_4(x,y)=\left(\frac x3+\frac 23,0\right)
+\end{gather*}
+Thus $S_1$ just scales by $1/3$,\\
+$S_2$ scales by $1/3$ then rotates $60^\circ$ counter-clock-wise and shifts right,\\
+$S_3$ scales by $1/3$ then rotates $60^\circ$ clockwise and shifts right and up,\\
+$S_4$ sclaes by $1/3$ and shifts right.\\
+
+Now iterate the contraction map $S:=S_1\cup S_2\cup S_3\cup S_4$ starting with \emph{any interval} (indeed any compact subset of the plane) and we will get the Koch curve in the limit!\\
+At each step we apply each of the four maps $S_1,S_2,S_3,S_4$ to the entire picture and union the results together.
+
+\begin{center}
+Starting with the line segment $[0,1]$\\
+\animategraphics[width=0.7\textwidth,controls]{1}{_kochanim}{0}{6}\\[70pt]
+Starting with a parabola\\
+\animategraphics[width=0.7\textwidth,controls]{1}{_kochanim-parab}{0}{6}\newpage
+Starting with a circle!\\
+\animategraphics[width=0.7\textwidth,controls]{1}{_kochanim-circle}{0}{6}
+\end{center}
+
+For those of you curious how these were made, here's the code in \href{http://asymptote.sourceforge.net/}{Asymptote}: It was then embedded into pdf using the animate package for \LaTeX
+
+\begin{verbatim}
+import graph;
+import animate;
+
+size(220);
+
+transform S=scale(1/3);
+transform T=shift((1/3,0))*rotate(60)*S;
+transform U=shift((1/2,sqrt(3)/6))*rotate(-60)*S;
+transform V=shift((2/3,0))*S;
+
+//line
+path[] P={(0,0)--(1,0)};
+
+//parabola
+//real f(real x){return x*(1-x);}
+//path[] P={graph(f,0,1,20,operator --)};
+
+//circle
+//path[] P=shift((0.5,0))*scale(0.5)*unitcircle;
+
+int N=6;
+
+animation A;
+
+save();
+	draw(P[0]);
+	A.add();
+restore();
+
+for(int i=1; i<=N; ++i){
+	save();
+		P.push(S*P[i-1]--T*P[i-1]--U*P[i-1]--V*P[i-1]);
+		draw(P[i],linewidth(0.2));
+		A.add();
+	restore();
+	}
+
+label(A.pdf("controls",multipage=false),fontsize(5));
+\end{verbatim}
+
+
+\newpage
+\subsection*{The Sierpinski Carpet}
+
+This is produced similarly: at each stage we take the entire picture, scale it by a factor of $1/3$ and make eight copies. This is most obvious in the first animation, where the eight squares in the second step comprise the entire original square minus the middle ninth.
+
+\begin{center}
+\animategraphics[width=0.7\textwidth,controls]{1}{_sieranim}{0}{5}\newpage
+The same animation starting with a circle\\
+\animategraphics[width=0.55\textwidth]{1}{_sieranim-circle}{0}{5}\\[30pt]
+And starting from a triangle\\
+\animategraphics[width=0.55\textwidth]{1}{_sieranim-tri}{0}{5}
+\end{center}\newpage
+
+\subsubsection*{Different Scale Factors}
+
+Finally a fractal with two different scale factors. We make four copies of the original line: two which are scaled by $1/2$ and two which are are scaled by $1/3$ and rotated. Pause at the first iteration to see this clearly.
+
+\begin{center}
+\animategraphics[width=0.8\textwidth,controls]{1}{_fern}{0}{8}
+\end{center}

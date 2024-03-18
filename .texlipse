@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Mon Mar 18 09:52:36 PDT 2024
+bibrefDir=
+builderNum=2
+langSpell=en
+mainTexFile=math161-notes.tex
+makeIndSty=
+markDer=true
+markTmpDer=true
+outputDir=
+outputFile=math161-notes.pdf
+outputFormat=pdf
+srcDir=
+tempDir=

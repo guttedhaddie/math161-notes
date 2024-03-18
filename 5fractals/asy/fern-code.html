@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy, see www.w3.org">
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+		<title>Fractal Fern Code</title>
+	</head>
+    
+    
+      <body>
+    
+  <h2>Code for a Fractal Fern</h2> 
+  
+  Cut and paste the following into the <a href="http://asymptote.ualberta.ca/">Asymptote web application</a> and play!
+  <br>
+  <br>
+  
+  
+  <pre>
+import graph;
+
+size(0,220);
+
+//scale factor
+real r=0.3;
+
+//initial picture (stalk)
+path P=(0,0)--(0,1);
+
+//iteration
+picture step(picture p)
+{	
+	picture a=shift((0,0.75))*scale(r)*p;
+	add(a,shift((0,0.7))*rotate(70)*scale(r)*p);
+	add(a,shift((0,0.6))*rotate(-70)*scale(r)*p);
+	add(a,shift((0,0.5))*rotate(70)*scale(r)*p);
+	add(a,shift((0,0.4))*rotate(-70)*scale(r)*p);
+	add(a,shift((0,0.3))*rotate(70)*scale(r)*p);
+	add(a,shift((0,0.2))*rotate(-70)*scale(r)*p);
+	return a;
+}
+
+//Print fractal dimension
+write(-log(7)/log(r));
+
+//number of iterations (less than 5 if you want it to compile!)
+int n=5;
+
+picture calc;
+draw(calc,P,linewidth(0.2));
+
+picture[] pp={calc};
+
+for(int i=1; i<=n; ++i){
+	pp[i]=step(pp[i-1]);
+	//Uncomment to see the stalks
+	//draw(pp[i],P,linewidth(0.1));
+}
+
+add(pp[n]);
+   </pre>
+  	
+</body>
+</html>

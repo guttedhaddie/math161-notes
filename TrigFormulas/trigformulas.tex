@@ -1,0 +1,116 @@
+\section*{Trigonometric Formulas and the Congruence Theorems}
+
+\boldsubsection{Euclidean Geometry}
+
+Label triangle in the usual way: sides $a,b,c$, angles $\alpha,\beta,\gamma$.
+
+\begin{description}
+	\item[SAS] Given $a,\gamma,b$:
+	\begin{enumerate}
+	  \item Cosine rule $c^2=a^2+b^2-2ab\cos\gamma$ gives $c$.
+	  \item Sine rule $\sin\alpha=\frac ac\sin\gamma$ gives $\alpha$.
+	  \item $\Sigma_\triangle=\ang{180}$ gives $\beta$ (or sine rule again).
+	\end{enumerate}
+	
+	\item[SSS] Given $a,b,c$:
+	\begin{enumerate}
+	  \item Cosine rule $\cos\alpha=\frac{b^2+c^2-a^2}{2bc}$ gives $\alpha$.
+	  \item Cos rule or sine rule for $\beta$.
+	  \item $\Sigma_\triangle=\ang{180}$ gives $\gamma$.
+	\end{enumerate}
+	
+	\item[SAA] Given $b,\alpha,\beta$:
+	\begin{enumerate}
+	  \item $\Sigma_\triangle=\ang{180}$ gives $\gamma$.
+	  \item Sine rule $a=b\frac{\sin\alpha}{\sin\beta}$ and $c=b\frac{\sin\gamma}{\sin\beta}$.
+	\end{enumerate}
+	
+	\item[ASA] Given $\alpha,c,\beta$:
+	\begin{enumerate}
+	  \item $\Sigma_\triangle=\ang{180}$ gives $\gamma$.
+	  \item Sine rule $a=c\frac{\sin\alpha}{\sin\gamma}$ and $b=c\frac{\sin\beta}{\sin\gamma}$.
+	\end{enumerate}
+	  
+	\item[SSA] Two solutions (not a congruence theorem!)\lstsp Given $a,b,\alpha$:
+	\begin{enumerate}
+	  \item Cosine rule $a^2=c^2+b^2-2bc\cos\alpha\implies c=b\cos\alpha\pm\sqrt{a^2-b^2\sin^2\alpha}$ gives two values for $c$.
+	  \item OR, Sine rule $\sin\beta=\frac ba\sin\alpha$ gives two values for $\beta$ (one acute, one obtuse).
+	  \item Now in one of above situations.
+	\end{enumerate}
+\end{description}
+
+\clearpage
+
+\boldsubsection{Hyperbolic Geometry}
+
+Same notation where sides are \emph{hyperbolic} lengths. 
+
+\begin{description}
+	\item[Pythagoras/trig for right-triangles]
+	\[\cosh h=\cosh x\cosh y\qquad\sin\theta=\frac{\sinh y}{\sinh h}\qquad \cos\theta=\frac{\tanh x}{\tanh h}\qquad \tan\theta=\frac{\tanh y}{\sinh x}\]
+	
+	\item[Cos rule] $\cosh c=\cosh a\cosh b-\sinh a\sinh b\cos\gamma$
+	
+	\item[Sine rule] $\frac{\sin\alpha}{\sinh a} =\frac{\sin\beta}{\sinh b} =\frac{\sin\gamma}{\sinh c}$
+	
+	\item[SAS] Given $a,\gamma,b$:
+	\begin{enumerate}
+	  \item Cosine rule gives (cosh) $c$.
+	  \item Sine rule $\sin\alpha=\frac{\sinh a}{\sinh c}\sin\gamma$ gives $\alpha$.
+	  \item Sine rule again $\sin\beta=\frac{\sinh b}{\sinh c}\sin\gamma$ gives $\beta$ (can't use $\Sigma_\triangle$!).
+	\end{enumerate}
+	
+	\item[SSS] Given $a,b,c$:
+	\begin{enumerate}
+	  \item Cosine rule $\cos\alpha=\frac{\cosh b\cosh c-\cosh a}{\sinh a\sinh b}$ gives $\alpha$.
+	  \item Repeat twice more, or use sine rule for $\beta,\gamma$.
+	\end{enumerate}
+	
+	\item[SAA] Given $b,\alpha,\beta$:
+	\begin{enumerate}
+	  \item Sine rule $\sinh a=\frac{\sin\alpha}{\sin\beta}\sinh b$ gives $a$.
+	  \item Cosine formula by dropping perpendicular to compute
+	  \[c=\tanh^{-1}\bigl(\cos\alpha\tanh b\bigr) + \tanh^{-1}\bigl(\cos\beta\tanh a\bigr)\]
+	  \item Sine rule $\sin\gamma=\sin\alpha\frac{\sinh c}{\sinh a}$.
+	\end{enumerate}
+	
+	\item[ASA] (Hard!!!)\lstsp Given $\alpha,c,\beta$:
+	\begin{enumerate}
+	  \item Compute $a$. Cosine rule twice plus sine rule:
+	  \begin{align*}
+	  \cosh a&=\cosh b\cosh c-\sinh b\sinh c\cos\alpha\\
+	  &=\bigl(\cosh a\cosh c-\sinh a\sinh c\cos\beta\bigr)\cosh c-\sinh a\sinh c\frac{\cos\alpha\sin\beta}{\sin\alpha}\\
+	  &=\cosh a\cosh^2c-\sinh a\sinh c\bigl(\cos\beta\cosh c+\cot\alpha\sin\beta\bigr)
+	  \end{align*}
+	  Use $\cosh^2c=1+\sinh^2c$ to rearrange and divide through by $\sinh c$:
+	  \[\tanh a=\frac{\sinh c}{\cos\beta\cosh c+\cot\alpha\sin\beta}= \frac{\sin\alpha\sinh c}{\sin\alpha\cos\beta\cosh c+\cos\alpha\sin\beta}\]
+	  Compare with $a=c\frac{\sin\alpha}{\sin(\alpha+\beta)} =c\frac{\sin\alpha}{\sin\gamma}$ which is the sine rule in Euclidean geometry.
+	  \item Sine rule $\sinh b=\sinh a\frac{\sin\beta}{\sin\alpha}$ and $\sin\gamma=\sin\alpha\frac{\sinh c}{\sinh a}$.
+	\end{enumerate}
+	
+	\item[AAA] (Hard!)\lstsp Given angles $\alpha,\beta,\gamma$.
+	\begin{enumerate}
+	  \item Know ASA formula (part 1); now apply sine rule to numerator
+	  \[\frac{\sinh a}{\cosh a}=\frac{\sin\gamma\sinh a}{\sin\alpha\cos_\beta\cosh c+ \cos\alpha\sin\beta} \implies s_\gamma\cosh a=s_\alpha c_\beta\cosh c+c_\alpha s_\beta \tag{$\ast$}\]
+	  Square, use identities and sine rule:
+		\begin{align*}
+		s^2_\alpha c^2_\beta\cosh^2c+2s_\alpha s_\beta c_\alpha c_\beta\cosh c+c_\alpha^2s^2_\beta &=s^2_\gamma(1+\sinh^2a) =s_\gamma^2+s_\alpha^2\sinh^2c\\
+		&=s_\gamma^2+s_\alpha^2(\cosh^2c-1)
+		\end{align*}
+		Rearrange to obtain quadratic in $\cosh c$:
+		\begin{align*}
+		&s_\alpha^2(1-c_\beta^2)\cosh^2c-2s_\alpha s_\beta c_\alpha c_\beta\cosh c -c_\alpha^2(1-c^2_\beta)+s^2_\gamma-s^2_\alpha=0\\
+		\implies &s_\alpha^2s_\beta^2\cosh^2c-2s_\alpha s_\beta c_\alpha c_\beta\cosh c +c_\alpha^2c^2_\beta-c^2_\gamma=0\\
+		\implies &\bigl(s_\alpha s_\beta\cosh c-c_\alpha c_\beta\bigr)^2=\cos^2\gamma\\
+		\implies &\cosh c=\frac{\cos\alpha\cos\beta+\cos\gamma}{\sin\alpha\sin\beta}
+		\end{align*}
+		By considering $(\ast)$, it may be checked that only the positive square root is legitimate. Compare: in Euclidean limit, $\gamma=\pi-\alpha-\beta$, whence RHS becomes 1.
+		\item Same formula can be used three times to compute side length, or use previous methods.
+	\end{enumerate}
+	  
+	\item[SSA] Two solutions (not a congruence theorem!)\lstsp Given $a,b,\alpha$:
+	\begin{enumerate}
+	  \item Sine rule $\sin\beta=\frac{\sinh b}{\sinh a}\sin\alpha$ gives two values for $\beta$ (one acute, one obtuse). Can use cosine rule as in Euclidean geometry, but result ugly since not a quadratic for $c$\ldots
+	  \item Now in one of above situations.
+	\end{enumerate}
+\end{description}
