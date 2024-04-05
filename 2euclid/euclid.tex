@@ -6,33 +6,33 @@
 
 Euclid's \emph{Elements} (c.\,300\,\BC) formed a core part of European and Arabic curricula until the mid 20\th{} century. Several examples are shown below.
 \begin{center}
-\newlength{\heighttt}
-\setlength{\heighttt}{100pt}
-\begin{minipage}[b]{0.35\linewidth}
-\centering\includegraphics[height=\heighttt]{euclid1}\\
-Earliest Fragment c.\,\AD\,100
-\end{minipage}
-\begin{minipage}[b]{0.3\linewidth}
-\centering\includegraphics[height=\heighttt]{euclid2}\\
-Full copy, Vatican, $9^\text{th}$C
-\end{minipage}
-\begin{minipage}[b]{0.33\linewidth}
-\centering\includegraphics[height=\heighttt]{euclid3}\\
-Pop-up edition, 1500's
-\end{minipage}\\[5pt]
-\setlength{\heighttt}{135pt}
-\begin{minipage}[b]{0.44\linewidth}
-\centering\includegraphics[height=\heighttt]{geo-09-euclid}\\
-Latin translation, 1572
-\end{minipage}
-\begin{minipage}[b]{0.3\linewidth}
-\centering\includegraphics[height=\heighttt]{euclid5}\\
-Color edition, 1847
-\end{minipage}
-\begin{minipage}[b]{0.24\linewidth}
-\centering\includegraphics[height=\heighttt]{euclid4}\\
-Textbook, 1903
-\end{minipage}
+	\newlength{\heighttt}
+	\setlength{\heighttt}{100pt}
+	\begin{minipage}[b]{0.35\linewidth}
+		\centering\includegraphics[height=\heighttt]{euclid1}\\
+		Earliest Fragment c.\,\AD\,100
+	\end{minipage}
+	\begin{minipage}[b]{0.3\linewidth}
+		\centering\includegraphics[height=\heighttt]{euclid2}\\
+		Full copy, Vatican, 9\th\,C
+	\end{minipage}
+	\begin{minipage}[b]{0.33\linewidth}
+		\centering\includegraphics[height=\heighttt]{euclid3}\\
+		Pop-up edition, 1500s
+	\end{minipage}\\[5pt]
+	\setlength{\heighttt}{135pt}
+	\begin{minipage}[b]{0.44\linewidth}
+		\centering\includegraphics[height=\heighttt]{geo-09-euclid}\\
+		Latin translation, 1572
+	\end{minipage}
+	\begin{minipage}[b]{0.3\linewidth}
+		\centering\includegraphics[height=\heighttt]{euclid5}\\
+		Color edition, 1847
+	\end{minipage}
+	\begin{minipage}[b]{0.24\linewidth}
+		\centering\includegraphics[height=\heighttt]{euclid4}\\
+		Textbook, 1903
+	\end{minipage}
 \end{center}
 
 Many of Euclid's arguments can be found \href{http://math.furman.edu/~jpoole/euclidselements/euclid.htm}{online}, and you can read Byrne's 1847 edition \href{http://math.uci.edu/~ndonalds/Elements-I-VI.pdf}{here}: the cover is Euclid's proof of Pythagoras'. We present an overview of Book I.
@@ -42,17 +42,17 @@ Many of Euclid's arguments can be found \href{http://math.furman.edu/~jpoole/euc
 \begin{description}\itemsep0pt
 	\item[\normalfont\emph{Undefined Terms}] E.g., point, line, etc.\footnote{In fact Euclid attempted to define these: `A point is that which has no part,' and `A line has length but no breadth.'}
 	\item[\normalfont\emph{Axioms/Postulates}]\negthickspace\!\footnote{In Euclid, an axiom is considered somewhat more general than a postulate. Here the postulates contain the \emph{geometry.}}\lstsp A1\lstsp If two objects equal a third, then the objects are equal\hfill ($=$ is transitive)\vspace{-5pt}
-		\begin{itemize}
-		  	\item[A2] If equals are added to equals, the results are equal\hfill ($a=c$ \& $b=d\implies a+b=c+d$)
-		  	\item[A3] If equals are subtracted from equals, the results are equal
-		  	\item[A4] Things that coincide are equal (in magnitude)
-		  	\item[A5] The whole is greater than the part
-		  	\item[P1] A pair of points may be joined to create a line
-		  	\item[P2] A line may be extended
-		  	\item[P3] Given a center and a radius, a circle may be drawn
-		  	\item[P4] All right angles are equal
-		  	\item[P5] If a straight line crosses two others and the angles on one side sum to less than two right angles then the two lines (when extended) meet on that side.
-		\end{itemize}
+	\begin{itemize}
+		\item[A2] If equals are added to equals, the results are equal\hfill ($a=c$ \& $b=d\implies a+b=c+d$)
+		\item[A3] If equals are subtracted from equals, the results are equal
+		\item[A4] Things that coincide are equal (in magnitude)
+		\item[A5] The whole is greater than the part
+		\item[P1] A pair of points may be joined to create a line
+		\item[P2] A line may be extended
+		\item[P3] Given a center and a radius, a circle may be drawn
+		\item[P4] All right angles are equal
+		\item[P5] If a straight line crosses two others and the angles on one side sum to less than two right angles then the two lines (when extended) meet on that side.
+	\end{itemize}
 \end{description}
 
 \goodbreak
@@ -71,35 +71,38 @@ The first three postulates describe the intuitive \emph{ruler and compass constr
 Theorems were typically presented as a \emph{problem}; Euclid first provides a construction (P1--P3) before proving that his construction solves the problem.
 
 \begin{thm}{I.\,1}{}
-Problem: to construct an equilateral triangle on a given segment.
+	Problem: to construct an equilateral triangle on a given segment.
 \end{thm}
 
 The labelling I.\,1 indicates Book I, Theorem 1.
 
 \begin{tcolorbox}[proofstyle, lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.35\linewidth]
-\emph{Proof.}\ \ Given a line segment $\cl{AB}$:\smallbreak
-By P3, construct circles centered at $A$ and $B$ with radius $\cl{AB}$.\smallbreak
-Call one of the intersection points $C$; by P1, construct $\cl{AC}$ and $\cl{BC}$.\smallbreak
-We claim that $\triangle ABC$ is equilateral.\medbreak
-Observe that $\cl{AB}$ and $\cl{AC}$ are radii of the circle centered at $A$, while $\cl{AB}$ and $\cl{BC}$ are radii of the circle centered at $B$. By Axiom A1, the three sides of $\triangle ABC$ are congruent.
-\tcblower\flushright\includegraphics{euclid-I1}\hfil\qedsymbol
+	\emph{Proof.}\ \ Given a line segment $\cl{AB}$:\smallbreak
+	By P3, construct circles centered at $A$ and $B$ with radius $\cl{AB}$.\smallbreak
+	Call one of the intersection points $C$; by P1, construct $\cl{AC}$ and $\cl{BC}$.\smallbreak
+	We claim that $\triangle ABC$ is equilateral.\medbreak
+	Observe that $\cl{AB}$ and $\cl{AC}$ are radii of the circle centered at $A$, while $\cl{AB}$ and $\cl{BC}$ are radii of the circle centered at $B$. By Axiom A1, the three sides of $\triangle ABC$ are congruent.
+	\tcblower
+	\flushright\includegraphics{euclid-I1}\hfil\qedsymbol
 \end{tcolorbox}
 
 
 Euclid proceeds to develop several well-known constructions and properties of triangles.
 \begin{itemize}\itemsep0pt
   \item (I.\,4) Side-angle-side (SAS) congruence: if two triangles have two pairs of congruent sides with the angles between these being congruent also, then the remaining sides and angles are congruent in pairs.
-  \[\begin{cases}
-  \cl{AB}\cong\cl{DE}\\
-  \angle ABC\cong\angle DEF\\
-  \cl{BC}\cong\cl{EF}
-  \end{cases}
-  \quad\implies
-  \begin{cases}
-  \cl{AC}\cong\cl{DF}\\
-  \angle BCA\cong\angle EFD\\
-  \angle CAB\cong\angle FDE
-  \end{cases}\]
+  \[
+  	\begin{cases}
+		  \cl{AB}\cong\cl{DE}\\
+		  \angle ABC\cong\angle DEF\\
+		  \cl{BC}\cong\cl{EF}
+ 	 	\end{cases}
+  	\quad\implies
+  	\begin{cases}
+		  \cl{AC}\cong\cl{DF}\\
+		  \angle BCA\cong\angle EFD\\
+		  \angle CAB\cong\angle FDE
+  	\end{cases}
+  \]
   \item (I.\,5) An isosceles triangle has equal base angles.
   \item (I.\,9) To bisect an angle.
   \item (I.\,10) To find the midpoint of a line.
@@ -109,35 +112,39 @@ Have a look at some of the proofs online, or in Byrne's edition.
 
 \goodbreak
 
+
 \boldsubsubsection{Parallel lines: construction, uniqueness and the angles in a triangle}
 
 \begin{defn}{}{parallel}
-Lines are \emph{parallel} if they do not intersect. Segments are parallel if no extensions of them intersect.
+	Lines are \emph{parallel} if they do not intersect. Segments are parallel if no extensions of them intersect.
 \end{defn}
 
 In Euclid, a line is not parallel to itself. The next result is one of the most important in Euclidean geometry; it describes how to create a parallel line through a given point.
 
 
 \begin{thm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.37\linewidth]{I.\,16\ Exterior Angle Theorem}{extangle}
-If one side of a triangle is extended, then the exterior angle is larger than either of the opposite interior angles.\smallbreak
-In the picture, we have $\delta>\alpha$ and $\delta>\beta$.
-\tcblower
-\flushright\includegraphics{euclid-I16}
+	If one side of a triangle is extended, then the exterior angle is larger than either of the opposite interior angles.\smallbreak
+	In the picture, we have $\delta>\alpha$ and $\delta>\beta$.
+	\tcblower
+	\flushright\includegraphics{euclid-I16}
 \end{thm}
 
 Euclid did not quantify angles numerically: $\delta>\alpha$ means that $\alpha$ is congruent to some angle \emph{inside} $\delta$.
 
 \begin{proof}
-Construct the bisector $\cl{BM}$ of $\cl{AC}$ \ (I.\,10).\par
-\begin{minipage}[t]{0.62\linewidth}\vspace{-5pt}
-Extend $\cl{BM}$ the same distance beyond $M$ to $E$ \ (I.\,2).\smallbreak
-Connect $\cl{CE}$ \ (P1).\smallbreak
-The opposite angles at $M$ are congruent \ (I.\,15).\smallbreak
-SAS \ (I.\,4) applied to $\triangle AMB$ and $\triangle CME$ says that $\angle BAM\cong\angle EMC$, which is clearly smaller than the exterior angle at $C$.
-\end{minipage}\hfill\begin{minipage}[t]{0.37\linewidth}\vspace{-20pt}
-\flushright\includegraphics{euclid-I16p}
-\end{minipage}\smallbreak
-Bisect $\cl{BC}$ and repeat the argument to see that $\beta<\delta$.
+	Construct the bisector $\cl{BM}$ of $\cl{AC}$ \ (I.\,10).\par
+	\begin{minipage}[t]{0.62\linewidth}\vspace{-5pt}
+		Extend $\cl{BM}$ the same distance beyond $M$ to $E$ \ (I.\,2).\smallbreak
+		Connect $\cl{CE}$ \ (P1).\smallbreak
+		The opposite angles at $M$ are congruent \ (I.\,15).\smallbreak
+		SAS \ (I.\,4) applied to $\triangle AMB$ and $\triangle CME$ says that $\angle BAM\cong\angle EMC$, which is clearly smaller than the exterior angle at $C$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.37\linewidth}\vspace{-20pt}
+		\flushright\includegraphics{euclid-I16p}
+	\end{minipage}
+	\smallbreak
+	Bisect $\cl{BC}$ and repeat the argument to see that $\beta<\delta$.
 \end{proof}
 
 
@@ -152,16 +159,18 @@ If a line falls on two other lines in such a way that the alternate angles ($\al
 The \emph{alternate angles} in the exterior angle theorem are those at $A$ and $C$: the segment $\cl{CE}$ really is parallel to $\cl{AB}$.
 
 \begin{tcolorbox}[proofstyle,lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.37\linewidth]
-\emph{Proof.}\lstsp If the lines were not parallel, they would meet on one side. WLOG suppose they meet on the right side at $C$.\smallbreak
-The angle $\beta$ at $B$, being external to $\triangle ABC$ must be greater than the angle $\alpha$ at $A$ \ (I.\,16): contradiction.
-\tcblower\flushright\includegraphics[scale=1]{euclid-I27p}\\[-12pt]\hfill\qedsymbol
+	\emph{Proof.}\lstsp If the lines were not parallel, they would meet on one side. WLOG suppose they meet on the right side at $C$.\smallbreak
+	The angle $\beta$ at $B$, being external to $\triangle ABC$ must be greater than the angle $\alpha$ at $A$ \ (I.\,16): contradiction.
+	\tcblower
+	\flushright
+	\includegraphics[scale=1]{euclid-I27p}\\[-12pt]\hfill\qedsymbol
 \end{tcolorbox}
 
 
 \begin{thm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.37\linewidth]{I.\,28}{}
-If a line falling on two other lines makes congruent angles, then the two lines are parallel.
-\tcblower
-\flushright\includegraphics[scale=1]{euclid-I28}
+	If a line falling on two other lines makes congruent angles, then the two lines are parallel.
+	\tcblower
+	\flushright\includegraphics[scale=1]{euclid-I28}
 \end{thm}
 
 % \skip\footins=-1.5\bigskipamount
@@ -173,47 +182,56 @@ Thus far, Euclid uses only postulates P1--P4. In any model in which these are tr
 Euclid finally invokes the parallel postulate to prove the converse to I.\,27, thus showing that the alternate angle approach is the \emph{only} way to create parallel lines.
 
 \begin{thm}{I.\,29}{}
-If a line falls on two parallel lines, then the alternate angles are congruent.
+	If a line falls on two parallel lines, then the alternate angles are congruent.
 \end{thm}
 
 \begin{tcolorbox}[proofstyle,lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.37\linewidth]
-\emph{Proof.}\ \ Given the picture, we must prove that $\alpha\cong\beta$.\smallbreak
-Suppose not and WLOG that $\alpha>\beta$.\smallbreak
-But then $\beta+\gamma<\alpha+\gamma$, which is a straight edge.\smallbreak
-By the parallel postulate, the lines $\ell,m$ meet on the left side of the picture, whence $\ell$ and $m$ are not parallel.
-\tcblower
-\flushright\includegraphics{euclid-I29}\\[-10pt]\qedsymbol
+	\emph{Proof.}\ \ Given the picture, we must prove that $\alpha\cong\beta$.\smallbreak
+	Suppose not and WLOG that $\alpha>\beta$.\smallbreak
+	But then $\beta+\gamma<\alpha+\gamma$, which is a straight edge.\smallbreak
+	By the parallel postulate, the lines $\ell,m$ meet on the left side of the picture, whence $\ell$ and $m$ are not parallel.
+	\tcblower
+	\flushright
+	\includegraphics{euclid-I29}\\[-10pt]\qedsymbol
 \end{tcolorbox}
 
 Euclid can now prove the most well-known result about triangles; the interior angles sum to a straight edge. Euclid words this slightly differently.
 
 \begin{thm}{I.\,32}{}
-If one side of a triangle is protruded, the exterior angle equals the sum of the interior opposite angles.
+	If one side of a triangle is protruded, the exterior angle equals the sum of the interior opposite angles.
 \end{thm}
 
 \begin{minipage}[t]{0.62\linewidth}\vspace{-4pt}
-\emph{This is not a numerical sum,} though for familiarity we'll often write \ang{180} for a straight edge and \ang{90} for a right-angle.\par
-In the picture we've labelled angles as Greek letters for clarity. The result amounts to showing that $\widetilde\alpha+\widetilde\beta\cong\alpha+\beta$.
-\end{minipage}\hfill\begin{minipage}[t]{0.37\linewidth}\vspace{-9pt}
-\flushright\includegraphics{euclid-I32}
+	\emph{This is not a numerical sum,} though for familiarity we'll often write \ang{180} for a straight edge and \ang{90} for a right-angle.\par
+	In the picture we've labelled angles as Greek letters for clarity. The result amounts to showing that $\widetilde\alpha+\widetilde\beta\cong\alpha+\beta$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.37\linewidth}\vspace{-9pt}
+	\flushright
+	\includegraphics{euclid-I32}
 \end{minipage}
 
 \vspace{-20pt}
 
 \begin{proof}
-Construct $\cl{CE}$ parallel to $\cl{BA}$ as in I.\,16, so that $\widetilde\alpha\cong\alpha$.\smallbreak
-$\cl{BD}$ falls on parallel lines $\cl{AB}$ and $\cl{CE}$, whence $\widetilde\beta\cong\beta$ (Corollary of I.\,29).\smallbreak
-Axiom A2 shows that $\angle ACD=\widetilde\alpha+\widetilde\beta\cong\alpha+\beta$.
+	Construct $\cl{CE}$ parallel to $\cl{BA}$ as in I.\,16, so that $\widetilde\alpha\cong\alpha$.\smallbreak
+	$\cl{BD}$ falls on parallel lines $\cl{AB}$ and $\cl{CE}$, whence $\widetilde\beta\cong\beta$ (Corollary of I.\,29).\smallbreak
+	Axiom A2 shows that $\angle ACD=\widetilde\alpha+\widetilde\beta\cong\alpha+\beta$.
 \end{proof}
+
 
 \boldinline{Non-Euclidean Geometry}\phantomsection\label{pg:sphere}
 
 Euclid's proof that the angle sum in a triangle is \ang{180} relies on the parallel postulate. That he waited so long suggests he was trying to establish as much as he could about triangles and basic geometry in its absence. For centuries, many mathematicians assumed such a fundamental fact about triangles must be true independently of the parallel postulate.\smallbreak
 A \emph{non-Euclidean geometry} is, loosely speaking, any model in which the parallel postulate is false. With the development of \emph{hyperbolic geometry} in the 17--1800s, a model was found in which Euclid's first four postulates hold but for which the parallel postulate is false.\footnote{This shows that the parallel postulate is independent: in fact all Euclid's postulates are independent. They are also consistent (the `usual' points and lines in the plane are a model), but incomplete. A sample undecidable is in Exercise \ref{ex:euclidundecideable}.}\par
+
 \begin{minipage}[t]{0.76\linewidth}\vspace{-5pt}
-We shall eventually see that every triangle in hyperbolic geometry has angle sum less than \ang{180}, though this will require a lot of work. For a more easily visualized non-Euclidean geometry consider the round sphere. A rubber band stretched between three points on a sphere describes a \emph{spherical triangle}; it is east to visualise an example with angle sum \ang{270}. A similar game can be played on a saddle-shaped surface: as in hyperbolic geometry, `triangles' will have angle sum less than \ang{180}.
-\end{minipage}\hfill\begin{minipage}[t]{0.23\linewidth}\vspace{-10pt}
-\flushright\includegraphics[scale=0.95]{euclid-sphere}
+	We shall eventually see that every triangle in hyperbolic geometry has angle sum less than \ang{180}, though this will require a lot of work. For a more easily visualized non-Euclidean geometry consider the round sphere. A rubber band stretched between three points on a sphere describes a \emph{spherical triangle}; it is east to visualise an example with angle sum \ang{270}. A similar game can be played on a saddle-shaped surface: as in hyperbolic geometry, `triangles' will have angle sum less than \ang{180}.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.23\linewidth}\vspace{-10pt}
+	\flushright
+	\includegraphics[scale=0.95]{euclid-sphere}
 \end{minipage}
 
 \goodbreak
@@ -225,51 +243,55 @@ We shall eventually see that every triangle in hyperbolic geometry has angle sum
 Euclid's parallel postulate is stated in the negative (angles \emph{don't} sum to a straight edge, therefore lines are \emph{not} parallel). This formulation was possibly chosen to facilitate proofs by contradiction, but the effect is to obscure the meaning of the parallel postulate. Here is a more modern interpretation.
 
 \begin{axiom}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.37\linewidth]{Playfair's Postulate}{playfair}
-Given a line $\ell$ and a point $P$ not on $\ell$, there exists at most one parallel line $m$ through $P$.
-\tcblower
-\flushright\includegraphics{euclid-playfair-defn}
+	Given a line $\ell$ and a point $P$ not on $\ell$, there exists at most one parallel line $m$ through $P$.
+	\tcblower
+	\flushright
+	\includegraphics{euclid-playfair-defn}
 \end{axiom}
 
 
 \begin{minipage}[t]{0.62\linewidth}\vspace{0pt}
-It should be clear that the parallel postulate implies Playfair.
-\begin{itemize}\itemsep0pt
-  \item Let $A,B\in\ell$ and construct the triangle $\triangle ABP$.
-  \item The exterior angle theorem constructs $Q$ and thus a parallel $m$ to $\ell$ by I.\,27.
-  \item I.\,29 invokes the parallel postulate to prove that this is the \emph{only} such parallel.
-\end{itemize}
+	It should be clear that the parallel postulate implies Playfair.
+	\begin{itemize}\itemsep0pt
+	  \item Let $A,B\in\ell$ and construct the triangle $\triangle ABP$.
+	  \item The exterior angle theorem constructs $Q$ and thus a parallel $m$ to $\ell$ by I.\,27.
+	  \item I.\,29 invokes the parallel postulate to prove that this is the \emph{only} such parallel.
+	\end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.37\linewidth}\vspace{0pt}
-\flushright\includegraphics{euclid-playfair3}
+	\flushright
+	\includegraphics{euclid-playfair3}
 \end{minipage}\bigbreak
 
 In fact the postulates are equivalent.
 
 \begin{thm}{}{}
-In the presence of Euclid's first four postulates, Playfair's postulate and the parallel postulate are equivalent.
+	In the presence of Euclid's first four postulates, Playfair's postulate and the parallel postulate are equivalent.
 \end{thm}
 
 \begin{proof}
-We proved P5 $\implies$ Playfair above. The converse requires more work.\medbreak
-We prove the contrapositive. Start by assuming Euclid's postulates P1--P4 are true and that P5 is \emph{false.} We need to consider the \emph{negation} of the parallel postulate. Using quantifiers, and with reference to the picture in I.\,29, we restate the parallel postulate:
+	We proved P5 $\implies$ Playfair above. The converse requires more work.\medbreak
+	We prove the contrapositive. Start by assuming Euclid's postulates P1--P4 are true and that P5 is \emph{false.} We need to consider the \emph{negation} of the parallel postulate. Using quantifiers, and with reference to the picture in I.\,29, we restate the parallel postulate:
 	\begin{quote}
-  	$\forall$ pairs of lines $\ell,m$ and $\forall$ crossing lines $n$, \  $\beta+\gamma<\ang{180}\implies\ell,m$ \emph{not parallel.}
+	  $\forall$ pairs of lines $\ell,m$ and $\forall$ crossing lines $n$, \  $\beta+\gamma<\ang{180}\implies\ell,m$ \emph{not parallel.}
 	\end{quote}
 	\begin{minipage}[t]{0.62\linewidth}\vspace{-7pt}
-	Its negation is therefore:
-	\begin{quote}
-  	$\exists$ parallel lines $\ell,m$ and a crossing line $n$ for which $\beta+\gamma<\ang{180}$
-	\end{quote}
-	The assumption is without loss of generality: if $\beta+\gamma>\ang{180}$, consider the angles on the other side of $n$.\medbreak
-	Use the construction of the exterior angle theorem to build a parallel line $\hat\ell$ to $\ell$ through the intersection $P$ of $m$ and $n$: in the picture, $\hat\beta\cong\beta$. This only requires results prior to I.\,29 and so is legitimate in this context.
-\end{minipage}\hfill
-\begin{minipage}[t]{0.37\linewidth}\vspace{0pt}
-\flushright\includegraphics{euclid-playfair2}\\
-\flushright\includegraphics{euclid-playfair}
-\end{minipage}\medbreak
-Observe that $\hat\ell$ and $m$ are \emph{distinct} since $\hat\beta+\gamma<\ang{180}$.
-It follows that there exists a line $\ell$ and a point $P$ not on that line, though which pass (at least) \emph{two} parallels to $\ell$: we conclude that Playfair's postulate is \emph{false.}
+		Its negation is therefore:
+		\begin{quote}
+	  	$\exists$ parallel lines $\ell,m$ and a crossing line $n$ for which $\beta+\gamma<\ang{180}$
+		\end{quote}
+		The assumption is without loss of generality: if $\beta+\gamma>\ang{180}$, consider the angles on the other side of $n$.\medbreak
+		Use the construction of the exterior angle theorem to build a parallel line $\hat\ell$ to $\ell$ through the intersection $P$ of $m$ and $n$: in the picture, $\hat\beta\cong\beta$. This only requires results prior to I.\,29 and so is legitimate in this context.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.37\linewidth}\vspace{0pt}
+		\flushright
+		\includegraphics{euclid-playfair2}\\
+		\includegraphics{euclid-playfair}
+	\end{minipage}\medbreak
+	Observe that $\hat\ell$ and $m$ are \emph{distinct} since $\hat\beta+\gamma<\ang{180}$.
+	It follows that there exists a line $\ell$ and a point $P$ not on that line, though which pass (at least) \emph{two} parallels to $\ell$: we conclude that Playfair's postulate is \emph{false.}
 \end{proof}
 
 \goodbreak
@@ -281,37 +303,41 @@ Following his discussion of parallels, Euclid shows that parallelograms with the
 
 
 \begin{thm}{I.\,47 Pythagoras' Theorem}{}
-The square on the hypotenuse of a right triangle equals (has the same area as) the sum of the squares on the other sides.
+	The square on the hypotenuse of a right triangle equals (has the same area as) the sum of the squares on the other sides.
 \end{thm}
 
-\begin{tcolorbox}[proofstyle]
-\emph{Proof.}\ \ 
-The given triangle $\triangle ABC$ is assumed to have a right angle at $A$.\par\vspace{-5pt}
-\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}
-\begin{enumerate}\itemsep0pt
-  \item Construct squares on each side of $\triangle ABC$ \ (I.\,46) and a parallel $\cl{AL}$ to $\cl{BD}$ \ (I.\,16).
-  \item $\cl{AB}\cong\cl{FB}$ and $\cl{BD}\cong\cl{BC}$ since sides of squares are congruent. Moreover $\angle ABD\cong\angle FBC$ since both contain \textcolor{blue}{$\angle ABC$} and a \textcolor{red}{right angle}.
-  \item Side-angle-side (I.\,4) says that $\triangle ABD$ and $\triangle FBC$ are congruent (identical up to rotation by \ang{90}).
-	\item I.\,41 compares areas of parallelograms and triangles with the same base and height:\vspace{0pt}
-	\begin{align*}
-	\operatorname{Area}(\textcolor{red}{\square ABFG})&=2\operatorname{Area}(\triangle FBC)\\
-	&=2\operatorname{Area}(\triangle ABD)\\
-	&=\operatorname{Area}\left(\textcolor{red}{\fbox{\phantom{'}}BOLD}\right)\\[-25pt]
-	\end{align*}
-	\item Similarly $\operatorname{Area}(\textcolor{Green}{\square ACKH})=\operatorname{Area}\left(\textcolor{Green}{\fbox{\phantom{'}}OCEL}\right)$.
-\end{enumerate}
-\end{minipage}\hfill\begin{minipage}[t]{0.39\linewidth}\vspace{0pt}
-\flushright\includegraphics{euclid-I47}
-\end{minipage}
-\begin{enumerate}\setcounter{enumi}{5}
-	\item Sum the rectangles to obtain $\square BCED$ and complete the proof.\hfill\qedsymbol
-\end{enumerate}
-\end{tcolorbox}\goodbreak
+\begin{proof} 
+	The given triangle $\triangle ABC$ is assumed to have a right angle at $A$.\par
+	\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}
+	\begin{enumerate}\itemsep0pt
+	  \item Construct squares on each side of $\triangle ABC$ \ (I.\,46) and a parallel $\cl{AL}$ to $\cl{BD}$ \ (I.\,16).
+	  \item $\cl{AB}\cong\cl{FB}$ and $\cl{BD}\cong\cl{BC}$ since sides of squares are congruent. Moreover $\angle ABD\cong\angle FBC$ since both contain \textcolor{blue}{$\angle ABC$} and a \textcolor{red}{right angle}.
+	  \item Side-angle-side (I.\,4) says that $\triangle ABD$ and $\triangle FBC$ are congruent (identical up to rotation by \ang{90}).
+		\item I.\,41 compares areas of parallelograms and triangles with the same base and height:\vspace{0pt}
+		\begin{align*}
+			\operatorname{Area}(\textcolor{red}{\square ABFG})&=2\operatorname{Area}(\triangle FBC)\\
+			&=2\operatorname{Area}(\triangle ABD)\\
+			&=\operatorname{Area}\left(\textcolor{red}{\fbox{\phantom{'}}BOLD}\right)\\[-25pt]
+		\end{align*}
+		\item Similarly $\operatorname{Area}(\textcolor{Green}{\square ACKH}) =\operatorname{Area}\left(\textcolor{Green}{\fbox{\phantom{'}}OCEL}\right)$.
+	\end{enumerate}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.39\linewidth}\vspace{0pt}
+		\flushright
+		\includegraphics{euclid-I47}
+	\end{minipage}
+	\begin{enumerate}\setcounter{enumi}{5}
+		\item Sum the rectangles to obtain $\square BCED$ and complete the proof.\hfill\qedhere
+	\end{enumerate}
+\end{proof}
+
+
 
 Euclid finishes Book I with the converse.
 
 \begin{thm}{I.\,48}{}
-If the squares on two sides of a triangle equal the square on the third side, the  triangle has a right angle opposite the third side.
+	If the squares on two sides of a triangle equal the square on the third side, the  triangle has a right angle opposite the third side.
 \end{thm}
 
 The \emph{Elements} contains thirteen books in total. Much of this involves further geometric constructions, including in three dimensions. There is also a healthy dose of basic number theory including what is now known as the Euclidean algorithm. This is enough pure-Euclid for us however; we now turn to a more modern description of Euclidean geometry, courtesy of David Hilbert.
@@ -350,64 +376,63 @@ The \emph{Elements} contains thirteen books in total. Much of this involves furt
 
 
 \begin{exercises}
-\hangindent\doubleind
-1. \ (a) \ Prove the \emph{vertical angle theorem} (I.\,15): if two lines cut one another, opposite angles are congruent.\vspace{-8pt}
+	\hangindent\doubleind
+	1. \ (a) \ Prove the \emph{vertical angle theorem} (I.\,15): if two lines cut one another, opposite angles are congruent.\vspace{-8pt}
 
-\begin{enumerate}\setcounter{enumi}{1}
-  \item[]\begin{enumerate}\setcounter{enumii}{1}
-    \item[](\emph{Hint: This is one place where you will need to use postulate 4 regarding right angles})
-    \item Use part (a) to complete the proof of the exterior angle theorem: i.e.\ explain why $\beta<\delta$.
-  \end{enumerate}
-
-	\item\label{ex:pythagexs} To prove Pythagoras', Euclid needs to compare areas of triangles and parallelograms and to construct squares. Prove the following as best as you can: full rigor is quite tricky, but the pictures should help!
-	\begin{enumerate}
-	  \item (I.\,11) At a given point on a line, to construct a perpendicular.
-	  \item (I.\,46) To construct a square on a given segment.
-	  \item (I.\,35) Parallelograms on the same base and with the same height have equal area.
-	  \item (I.\,41) A parallelogram has twice the area of a triangle on the same base and with the same height.
+	\begin{enumerate}\setcounter{enumi}{1}
+	  \item[]\begin{enumerate}\setcounter{enumii}{1}
+	    \item[](\emph{Hint: This is one place where you will need to use postulate 4 regarding right angles})
+	    \item Use part (a) to complete the proof of the exterior angle theorem: i.e.\ explain why $\beta<\delta$.
+	  \end{enumerate}
+	
+		\item\label{ex:pythagexs} To prove Pythagoras', Euclid needs to compare areas of triangles and parallelograms and to construct squares. Prove the following as best as you can: full rigor is quite tricky, but the pictures should help!
+		\begin{enumerate}
+		  \item (I.\,11) At a given point on a line, to construct a perpendicular.
+		  \item (I.\,46) To construct a square on a given segment.
+		  \item (I.\,35) Parallelograms on the same base and with the same height have equal area.
+		  \item (I.\,41) A parallelogram has twice the area of a triangle on the same base and with the same height.
+		\end{enumerate}
+		
+		\begin{center}
+			\begin{tabular}{ccc}
+				\includegraphics{euclid-I11}
+				&
+				\includegraphics{euclid-I46}
+				&
+				\includegraphics{euclid-I35a}
+				\\[-2pt]
+				Theorem I.\,11
+				&
+				Theorem I.\,46
+				&
+				Theorem I.\,35
+			\end{tabular}
+		\end{center}
+		
+	  
+	  \item Consider the geometry of the round sphere (page \pageref{pg:sphere}), where \emph{lines} are paths of shortest distance (great circles).
+	 	\begin{enumerate}
+	 	  \item Which of Euclid's postulates P1--P5 are satisfied by this geometry?
+	  	\item (Hard)\lstsp Consider the construction from the exterior angle theorem for creating a parallel. Where does this argument fail in spherical geometry? 
+	 	\end{enumerate}
+	  
+	  
+	  \item\begin{enumerate}
+	    \item State the negation of Playfair's postulate.
+	    \item Prove that Playfair's postulate is equivalent to the following statement:
+	  \begin{quote}
+	  	Whenever a line is perpendicular to one of two parallel lines, it must be perpendicular to the other.
+	  \end{quote}
+	  \end{enumerate}
+	 
+	  
+	  \item\label{ex:euclidundecideable} The \emph{line-circle continuity} property states:
+	  \begin{quote}
+	  If point $P$ lies inside and $Q$ lies outside a circle $\alpha$, then the segment $\overline{PQ}$ intersects $\alpha$.
+	  \end{quote}
+	  By considering the set of rational points in the plane $\Q^2=\{(x,y):x,y\in\Q\}$, and making a sensible definition of line and circle, show that the line-circle continuity property is undecidable within Euclid's system.
 	\end{enumerate}
 	
-	\begin{center}
-	\begin{tabular}{ccc}
-	\includegraphics{euclid-I11}
-	&
-	\includegraphics{euclid-I46}
-	&
-	\includegraphics{euclid-I35a}
-	\\[-2pt]
-	Theorem I.\,11
-	&
-	Theorem I.\,46
-	&
-	Theorem I.\,35
-	\end{tabular}
-	\end{center}
-	
-	
-  
-  \item Consider the geometry of the round sphere (page \pageref{pg:sphere}), where \emph{lines} are paths of shortest distance (great circles).
- 	\begin{enumerate}
- 	  \item Which of Euclid's postulates P1--P5 are satisfied by this geometry?
-  	\item (Hard) \ Consider the construction from the exterior angle theorem for creating a parallel. Where does this argument fail in spherical geometry? 
- 	\end{enumerate}
-  
-  
-  \item\begin{enumerate}
-    \item State the negation of Playfair's postulate.
-    \item Prove that Playfair's postulate is equivalent to the following statement:
-  \begin{quote}
-  	Whenever a line is perpendicular to one of two parallel lines, it must be perpendicular to the other.
-  \end{quote}
-  \end{enumerate}
- 
-  
-    
-  \item\label{ex:euclidundecideable} The \emph{line-circle continuity} property states:
-  \begin{quote}
-  If point $P$ lies inside and $Q$ lies outside a circle $\alpha$, then the segment $\overline{PQ}$ intersects $\alpha$.
-  \end{quote}
-  By considering the set of rational points in the plane $\Q^2=\{(x,y):x,y\in\Q\}$, and making a sensible definition of line and circle, show that the line-circle continuity property is undecidable within Euclid's system.
-\end{enumerate}
 \end{exercises}
 
 \clearpage
@@ -426,55 +451,53 @@ Hilbert's axioms for plane geometry\footnote{Hilbert also treated 3D geometry; w
 Hilbert's undefined terms consist of two types of object (\emph{points} and \emph{lines}), and three relations (\emph{between $*$, on $\in$} and \emph{congruence $\cong$}). For brevity we'll often (ab)use set notation, essentially viewing a line as a set of points, though this is not necessary. At various places, definitions and notations are required.
 
 \begin{defn}{}{hilbertbasic}
-Throughout, $A,B,C$ denote points and $\ell,m$ lines.
-\begin{description}\itemsep 0pt plus 1pt
-  \item[\normalfont\emph{Line}:] $\smash[t]{\lin{AB}}$ denotes the line through distinct $A,B$. This exists and is unique by axioms I-1 and I-2.
-  \item[\normalfont\emph{Segment}:] $\cl{AB}=\{A,B\}\cup\{C:A*C*B\}$ consists of distinct \emph{endpoints} $A,B$ and all \emph{interior} points $C$ lying between them.
-  \item[\normalfont\emph{Ray}:] $\ray{AB}=\cl{AB}\cup\{C:A*B*C\}$ is a ray with \emph{vertex} $A$. In essence, we extend $\cl{AB}$ beyond $B$.
-  \item[\normalfont\emph{Triangle}:] $\triangle ABC=\cl{AB}\cup\cl{BC}\cup\cl{CA}$ where $A,B,C$ are non-collinear. Triangles are \emph{congruent} if their sides and angles are congruent in pairs.
-	\item[\normalfont\emph{Sidedness}:] Distinct $A,B$ (not on $\ell$) lie on the \emph{same side} of $\ell$ if $\cl{AB}\cap\ell=\emptyset$. Otherwise $A$ and $B$ lie on \emph{opposite sides} of $\ell$.
-	\item[\normalfont\emph{Angle}:] $\angle BAC=\ray{AB}\cup\ray{AC}$ has \emph{vertex} $A$ and \emph{sides} $\ray{AB}$ and $\ray{AC}$.
-	\item[\normalfont\emph{Parallelism}:] Lines $\ell$ and $m$ \emph{intersect} if there exists a point lying on both: $\exists A\in\ell\cap m$. Lines are \emph{parallel} if they do not intersect. Segments/rays are parallel if the corresponding lines are parallel.
-\end{description}
-The pictures represent these notions in the usual model of Cartesian geometry.
-\begin{center}
-\begin{tabular}{@{}c@{\qquad}c@{\qquad}c@{\qquad}c@{}}
-	\includegraphics{hilbert-def-line}
-	&
-	\includegraphics{hilbert-def-seg}
-	&
-	\includegraphics{hilbert-def-ray}
-	&
-	\includegraphics{hilbert-def-triangle}
-\\
-	Line $\lin{AB}$
-	&
-	Segment $\cl{AB}$
-	&
-	Ray $\ray{AB}$
-	&
-	Triangle $\triangle ABC$
-\\[12pt]
-	\includegraphics{hilbert-def-side}
-	&
-	\includegraphics{hilbert-def-side2}
-	&
-	\includegraphics{hilbert-def-angle}
-	&
-	\includegraphics{hilbert-def-intersect}
-\\
-	Same side
-	&
-	Opposite sides
-	&
-	Angle $\angle BAC$
-	&
-	Intersection $A\in\ell\cap m$
-\end{tabular}
-\end{center}
+	Throughout, $A,B,C$ denote points and $\ell,m$ lines.
+	\begin{description}\itemsep 0pt plus 1pt
+	  \item[\normalfont\emph{Line}:] $\smash[t]{\lin{AB}}$ denotes the line through distinct $A,B$. This exists and is unique by axioms I-1 and I-2.
+	  \item[\normalfont\emph{Segment}:] $\cl{AB}=\{A,B\}\cup\{C:A*C*B\}$ consists of distinct \emph{endpoints} $A,B$ and all \emph{interior} points $C$ lying between them.
+	  \item[\normalfont\emph{Ray}:] $\ray{AB}=\cl{AB}\cup\{C:A*B*C\}$ is a ray with \emph{vertex} $A$. In essence, we extend $\cl{AB}$ beyond $B$.
+	  \item[\normalfont\emph{Triangle}:] $\triangle ABC=\cl{AB}\cup\cl{BC}\cup\cl{CA}$ where $A,B,C$ are non-collinear. Triangles are \emph{congruent} if their sides and angles are congruent in pairs.
+		\item[\normalfont\emph{Sidedness}:] Distinct $A,B$ (not on $\ell$) lie on the \emph{same side} of $\ell$ if $\cl{AB}\cap\ell=\emptyset$. Otherwise $A$ and $B$ lie on \emph{opposite sides} of $\ell$.
+		\item[\normalfont\emph{Angle}:] $\angle BAC=\ray{AB}\cup\ray{AC}$ has \emph{vertex} $A$ and \emph{sides} $\ray{AB}$ and $\ray{AC}$.
+		\item[\normalfont\emph{Parallelism}:] Lines $\ell$ and $m$ \emph{intersect} if there exists a point lying on both: $\exists A\in\ell\cap m$. Lines are \emph{parallel} if they do not intersect. Segments/rays are parallel if the corresponding lines are parallel.
+	\end{description}
+	The pictures represent these notions in the usual model of Cartesian geometry.
+	\begin{center}
+		\begin{tabular}{@{}c@{\qquad}c@{\qquad}c@{\qquad}c@{}}
+			\includegraphics{hilbert-def-line}
+			&
+			\includegraphics{hilbert-def-seg}
+			&
+			\includegraphics{hilbert-def-ray}
+			&
+			\includegraphics{hilbert-def-triangle}
+			\\
+			Line $\lin{AB}$
+			&
+			Segment $\cl{AB}$
+			&
+			Ray $\ray{AB}$
+			&
+			Triangle $\triangle ABC$
+			\\[12pt]
+			\includegraphics{hilbert-def-side}
+			&
+			\includegraphics{hilbert-def-side2}
+			&
+			\includegraphics{hilbert-def-angle}
+			&
+			\includegraphics{hilbert-def-intersect}
+			\\
+			Same side
+			&
+			Opposite sides
+			&
+			Angle $\angle BAC$
+			&
+			Intersection $A\in\ell\cap m$
+		\end{tabular}
+	\end{center}
 \end{defn}
-
-
 
 
 \pagebreak
@@ -485,44 +508,51 @@ The pictures represent these notions in the usual model of Cartesian geometry.
 The axioms of incidence describe the relation \emph{on.} An \emph{incidence geometry} is any model satisfying the axioms I-1, I-2, I-3. Perhaps surprisingly, there exist geometries with \emph{finitely many points}!
 
 \begin{examples}{}{fano}
-By I-3, an incidence geometry requires \emph{at least three} points.\par
-\begin{minipage}[t]{0.62\linewidth}\vspace{-5pt}
-A 3-point geometry exists, and is unique up to relabelling:\smallbreak
-I-3 says the points $A,B,C$ must be non-collinear. By I-1 and I-2, each pair lies on a unique line, whence there are precisely three lines
-\[\ell=\{A,B\},\quad m=\{A,C\},\quad n=\{B,C\}\]
-Up to relabelling, there are two incidence geometries with four points: one is drawn; how many lines has the other?
-\end{minipage}\hfill\begin{minipage}[t]{0.37\linewidth}\vspace{-15pt}
-\flushright
-\begin{tabular}{cc@{}}
-\includegraphics{hilbert-incidence3}
-&
-\includegraphics{hilbert-incidence4}\\
-3 points, 3 lines
-&
-%\includegraphics{hilbert-incidence4-2}
-4 points, 6 lines%&4 points, 4 lines
-\end{tabular}
-\end{minipage}\smallbreak
-\begin{minipage}[t]{0.72\linewidth}\vspace{0pt}
-The final picture is a famous example known as the \emph{Fano plane,} an incidence geometry with seven points and seven lines which finds applications in many places, including combinatorics. Each point lies on precisely three lines; each dot is colored to indicate the lines to which it belongs. Don't be fooled by the black line looking curved and seeming to cross the blue line near the top; it really only contains three points!
-\end{minipage}\hfill\begin{minipage}[t]{0.27\linewidth}\vspace{-17pt}
-\flushright
-\includegraphics{hilbert-incidence7}
-\end{minipage}
+	By I-3, an incidence geometry requires \emph{at least three} points.\par
+	\begin{minipage}[t]{0.62\linewidth}\vspace{-5pt}
+		A 3-point geometry exists, and is unique up to relabelling:\smallbreak
+		I-3 says the points $A,B,C$ must be non-collinear. By I-1 and I-2, each pair lies on a unique line, whence there are precisely three lines
+		\[
+			\ell=\{A,B\},\quad m=\{A,C\},\quad n=\{B,C\}
+		\]
+		Up to relabelling, there are two incidence geometries with four points: one is drawn; how many lines has the other?
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.37\linewidth}\vspace{-15pt}
+		\flushright
+		\begin{tabular}{cc@{}}
+			\includegraphics{hilbert-incidence3}
+			&
+			\includegraphics{hilbert-incidence4}\\
+			3 points, 3 lines
+			&
+			%\includegraphics{hilbert-incidence4-2}
+			4 points, 6 lines%&4 points, 4 lines
+		\end{tabular}
+	\end{minipage}
+	\smallbreak
+	\begin{minipage}[t]{0.72\linewidth}\vspace{0pt}
+		The final picture is a famous example known as the \emph{Fano plane,} an incidence geometry with seven points and seven lines which finds applications in many places, including combinatorics. Each point lies on precisely three lines; each dot is colored to indicate the lines to which it belongs. Don't be fooled by the black line looking curved and seeming to cross the blue line near the top; it really only contains three points!
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.27\linewidth}\vspace{-17pt}
+		\flushright
+		\includegraphics{hilbert-incidence7}
+	\end{minipage}
 \end{examples}
 
 We can even prove some simple theorems in incidence geometry.
 
 \begin{lemm}{}{intersectunique}
-If distinct lines intersect, then they do so in exactly one point.
+	If distinct lines intersect, then they do so in exactly one point.
 \end{lemm}
 
 \begin{proof}
-Suppose $A,B$ are distinct points of intersection. By axiom I-2, there is exactly one line through $A$ and $B$. Contradiction.
+	Suppose $A,B$ are distinct points of intersection. By axiom I-2, there is exactly one line through $A$ and $B$. Contradiction.
 \end{proof}
 
 \begin{lemm}{}{incidenceeasy}
-Through any point there exists at least two lines.
+	Through any point there exists at least two lines.
 \end{lemm}
 
 The proof is an exercise. While incidence geometry is fun, our main goal is to understand Euclidean geometry, so we move on to the next set of axioms.
@@ -533,43 +563,38 @@ The proof is an exercise. While incidence geometry is fun, our main goal is to u
 The axioms of order describe the ternary relation \emph{between.} Their inclusion in Hilbert's axioms is due in no small part to the work of Moritz Pasch, after whom Pasch's axiom (O-4, c.\,1882) is named. Pasch's axiom is very powerful; in particular, it permits us to define the \emph{interiors} of several geometric objects, and to see that these are non-empty.
 
 \begin{lemm}{}{seginterior}
-Every segment contains an interior point.
+	Every segment contains an interior point.
 \end{lemm}
 
 We leave the proof to Exercise \ref{exs:seginterior}. By inducting on the Lemma, every segment contains \emph{infinitely many} points, whence the above finite geometries are not valid models once the order axioms are included.
 
 \goodbreak
 
-% \begin{minipage}[t]{0.7\linewidth}\vspace{0pt}
 To get much further, it is necessary to establish that a line has precisely two \emph{sides} (Definition \ref{defn:hilbertbasic}). This concept lies behind several of Euclid's arguments, without being properly defined in the \emph{Elements.}
-% \end{minipage}\begin{minipage}[t]{0.3\linewidth}\vspace{0pt}
-% \flushright\includegraphics{hilbert-pasch}
-% \end{minipage}
-
 
 
 \begin{thm}{Plane Separation}{planesep}
-A line $\ell$ separates all points not on $\ell$ into two half-planes; the two \emph{sides} of $\ell$. Explicitly: suppose none of the points $A,B,C$ lie on $\ell$, then:
-\begin{enumerate}\itemsep0pt
-  \item If $A,B$ lie on the same side of $\ell$ and $B,C$ lie on the same side, then $A,C$ lie on the same side.
-  \item If $A,B$ lie on opposite sides and $B,C$ lie on opposite sides, then $A,C$ lie on the same side.
-  \item If $A,B$ lie on opposite sides and $B,C$ lie on the same side, then $A,C$ lie on opposite sides.
-\end{enumerate}\vspace{-10pt}
-\begin{center}
-\begin{tabular}{c@{\qquad}c@{\qquad}c}
-\includegraphics{hilbert-planesep}
-&
-\includegraphics{hilbert-planesep2}
-&
-\includegraphics{hilbert-planesep3}
-\\
-Case 1
-&
-Case 2
-&
-Case 3
-\end{tabular}
-\end{center}
+	A line $\ell$ separates all points not on $\ell$ into two half-planes; the two \emph{sides} of $\ell$. Explicitly: suppose none of the points $A,B,C$ lie on $\ell$, then:
+	\begin{enumerate}\itemsep0pt
+	  \item If $A,B$ lie on the same side of $\ell$ and $B,C$ lie on the same side, then $A,C$ lie on the same side.
+	  \item If $A,B$ lie on opposite sides and $B,C$ lie on opposite sides, then $A,C$ lie on the same side.
+	  \item If $A,B$ lie on opposite sides and $B,C$ lie on the same side, then $A,C$ lie on opposite sides.
+	\end{enumerate}\vspace{-10pt}
+	\begin{center}
+		\begin{tabular}{c@{\qquad}c@{\qquad}c}
+			\includegraphics{hilbert-planesep}
+			&
+			\includegraphics{hilbert-planesep2}
+			&
+			\includegraphics{hilbert-planesep3}
+			\\
+			Case 1
+			&
+			Case 2
+			&
+			Case 3
+		\end{tabular}
+	\end{center}
 \end{thm}
 
 \begin{proof}
@@ -580,27 +605,31 @@ The other cases are exercises, and we omit the tedious collinear possibilities.
 Plane separation and its attendant half-planes allow us to properly define the interiors of angles and triangles. 
 
 \begin{defn}{}{interiorangle}
-A point $I$ is \emph{interior} to angle $\angle BAC$ if:\par
-\begin{minipage}[t]{0.7\linewidth}\vspace{-3pt}
-\begin{itemize}%\itemsep0pt
-  \item $I$ lies on the same side of $\lin{AB}$ as $C$, and,
-  \item $I$ lies on the same side of $\lin{AC}$ as $B$.
-\end{itemize}
-Otherwise said, $I$ lies in the intersection of two half-planes.
-\end{minipage}\begin{minipage}[t]{0.29\linewidth}\vspace{-12pt}
-\flushright\includegraphics{hilbert-interior}
-\end{minipage}\bigbreak
-A point $I$ is \emph{interior} to a triangle $\triangle ABC$ if it lies in the intersection of three of the half-planes defined by the edges of the triangle. Equivalently, it is interior to all three of the angles $\angle ABC$, $\angle BAC$ and $\angle ACB$.
+	A point $I$ is \emph{interior} to angle $\angle BAC$ if:\par
+	\begin{minipage}[t]{0.7\linewidth}\vspace{-3pt}
+	\begin{itemize}%\itemsep0pt
+	  \item $I$ lies on the same side of $\lin{AB}$ as $C$, and,
+	  \item $I$ lies on the same side of $\lin{AC}$ as $B$.
+	\end{itemize}
+	Otherwise said, $I$ lies in the intersection of two half-planes.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.29\linewidth}\vspace{-12pt}
+		\flushright
+		\includegraphics{hilbert-interior}
+	\end{minipage}
+	\bigbreak
+	A point $I$ is \emph{interior} to a triangle $\triangle ABC$ if it lies in the intersection of three of the half-planes defined by the edges of the triangle. Equivalently, it is interior to all three of the angles $\angle ABC$, $\angle BAC$ and $\angle ACB$.
 \end{defn}
 
 Interior points permit us to compare angles: if $I$ is interior to $\angle BAC$, then $\angle BAI<\angle BAC$ has obvious meaning, \emph{without resorting to numerical angle measure.}
 
 \begin{cor}{}{angleinteriorexist}
-Every angle has an interior point.
+	Every angle has an interior point.
 \end{cor}
 
 \begin{proof}
-Given $\angle BAC$, consider any interior point $I$ of the segment $\cl{BC}$. This plainly lies on the same side of $\lin{AB}$ as $C$ and on the same side of $\lin{AC}$ as $B$.
+	Given $\angle BAC$, consider any interior point $I$ of the segment $\cl{BC}$. This plainly lies on the same side of $\lin{AB}$ as $C$ and on the same side of $\lin{AC}$ as $B$.
 \end{proof}
 
 In Exercise \ref{exs:seginfinite}, we check that the interior of a triangle is non-empty.
@@ -610,107 +639,121 @@ In Exercise \ref{exs:seginfinite}, we check that the interior of a triangle is n
 Pasch's axiom could be paraphrased as follows: \emph{If a line enters a triangle, it must come out.} We haven't quite established this crucial fact however. What if the line passes through a vertex?
  
 \begin{thm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.3\linewidth]{Crossbar Theorem}{}
-Suppose $I$ is interior to $\angle BAC$. Then $\ray{AI}$ intersects $\cl{BC}$.\medbreak
+	Suppose $I$ is interior to $\angle BAC$. Then $\ray{AI}$ intersects $\cl{BC}$.\medbreak
 As a special case; if a line passes through a vertex and an interior point of a triangle, then it intersects the side opposite the vertex.
-\tcblower
-\flushright\includegraphics{hilbert-pasch2}
+	\tcblower
+	\flushright
+	\includegraphics{hilbert-pasch2}
 \end{thm}
 
 
 \begin{proof}
-Extend $\cl{AB}$ to a point $D$ such that $A$ lies between $B$ and $D$ (O-2). Since $C$ is not on $\lin{BD}=\lin{AB}$ we have a triangle $\triangle BCD$. Since $\lin{AI}$ intersects one edge of $\triangle BCD$ at $A$ and does not cross any vertices, Pasch says it intersects one of the other edges ($\cl{BC}$ or $\cl{CD}$) at a point $M$.
-\begin{itemize}
-  \item If $I=M\in\cl{BC}$, we're done. 
- 	\item If $I=M\in\cl{CD}$, a contradiction follows from Exercise \ref{exs:bernays} and plane separation.
-\end{itemize}
-Otherwise, if $I\neq M$, observe:
-%The point $A$ is therefore the unique intersection of three distinct lines: $\lin{AB}$, $\lin{AC}$ and $\lin{IM}$. Moreover:
-\begin{itemize}
-  \item Since $I$ is interior to $\angle BAC$, it lies on the same side of $\smash[t]{\lin{AB}=\lin{BD}}$ as $C$.
-  \item Since $M\in\cl{BC}\cup\cl{CD}$, it lies on the same side of $\smash[t]{\lin{AB}=\lin{BD}}$ as $C$.
-\end{itemize}
-By the plane separation theorem, $I$ and $M$ lie on the \emph{same side} of $\smash[t]{\lin{AB}}$. In particular,
-\[A\not\in\smash[t]{\cl{IM}}\implies M\in\smash[t]{\ray{AI}}\]
-The two generic cases are drawn below (these encompass arrangements where $I$ lies \emph{inside} $\triangle ABC$); it suffices to show that the second case is impossible.
-\begin{center}
-\begin{tabular}{cc}
-\includegraphics[scale=0.95]{hilbert-crossbar1}&\includegraphics[scale=0.95]{hilbert-crossbar2}%\\
-%correct arrangement&impossible case
-\end{tabular}
-\end{center}
-If $M\in\cl{CD}$, then $I$ and $M$ are on \emph{opposite sides} of $\lin{AC}$. But then $\cl{IM}$ intersects $\lin{AC}$, which it must do at $A$. This contradicts the fact that $A\not\in\cl{IM}$.
+	Extend $\cl{AB}$ to a point $D$ such that $A$ lies between $B$ and $D$ (O-2). Since $C$ is not on $\lin{BD}=\lin{AB}$ we have a triangle $\triangle BCD$. Since $\lin{AI}$ intersects one edge of $\triangle BCD$ at $A$ and does not cross any vertices, Pasch says it intersects one of the other edges ($\cl{BC}$ or $\cl{CD}$) at a point $M$.
+	\begin{itemize}
+	  \item If $I=M\in\cl{BC}$, we're done. 
+	 	\item If $I=M\in\cl{CD}$, a contradiction follows from Exercise \ref{exs:bernays} and plane separation.
+	\end{itemize}
+	Otherwise, if $I\neq M$, observe:
+	%The point $A$ is therefore the unique intersection of three distinct lines: $\lin{AB}$, $\lin{AC}$ and $\lin{IM}$. Moreover:
+	\begin{itemize}
+	  \item Since $I$ is interior to $\angle BAC$, it lies on the same side of $\smash[t]{\lin{AB}=\lin{BD}}$ as $C$.
+	  \item Since $M\in\cl{BC}\cup\cl{CD}$, it lies on the same side of $\smash[t]{\lin{AB}=\lin{BD}}$ as $C$.
+	\end{itemize}
+	By the plane separation theorem, $I$ and $M$ lie on the \emph{same side} of $\smash[t]{\lin{AB}}$. In particular,
+	\[
+		A\not\in\smash[t]{\cl{IM}}\implies M\in\smash[t]{\ray{AI}}
+	\]
+	The two generic cases are drawn below (these encompass arrangements where $I$ lies \emph{inside} $\triangle ABC$); it suffices to show that the second case is impossible.
+	\begin{center}
+		\begin{tabular}{cc}
+			\includegraphics[scale=0.95]{hilbert-crossbar1}&\includegraphics[scale=0.95]{hilbert-crossbar2}%\\
+			%correct arrangement&impossible case
+		\end{tabular}
+	\end{center}
+	If $M\in\cl{CD}$, then $I$ and $M$ are on \emph{opposite sides} of $\lin{AC}$. But then $\cl{IM}$ intersects $\lin{AC}$, which it must do at $A$. This contradicts the fact that $A\not\in\cl{IM}$.
 \end{proof}
 
 
 
 \begin{minipage}[t]{0.67\linewidth}\vspace{-3pt}
-Euclid repeatedly uses the crossbar theorem without justification, including in his construction of perpendiculars and of angle and segment bisectors (Theorems I.\,9+10); we sketch this here.\smallbreak
-Given $\angle BAC$, construct $E$ such that $\cl{AB}\cong\cl{AE}$. Construct $D$ using an equilateral triangle (I.\,1). SSS (I.\,8) shows that the angle is bisected, and SAS (I.\,4) that $\ray{AD}$ bisects $\cl{BE}$.\smallbreak
-Unfortunately Euclid gives no argument for why $D$ is interior to $\angle BAC$ or why $\ray{AD}$ should intersect $\cl{BE}$!
-\end{minipage}\hfill\begin{minipage}[t]{0.32\linewidth}\vspace{0pt}
-\flushright\includegraphics{hilbert-bisect}
-\end{minipage}\medbreak
+	Euclid repeatedly uses the crossbar theorem without justification, including in his construction of perpendiculars and of angle and segment bisectors (Theorems I.\,9+10); we sketch this here.\smallbreak
+	Given $\angle BAC$, construct $E$ such that $\cl{AB}\cong\cl{AE}$. Construct $D$ using an equilateral triangle (I.\,1). SSS (I.\,8) shows that the angle is bisected, and SAS (I.\,4) that $\ray{AD}$ bisects $\cl{BE}$.\smallbreak
+	Unfortunately Euclid gives no argument for why $D$ is interior to $\angle BAC$ or why $\ray{AD}$ should intersect $\cl{BE}$!
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\linewidth}\vspace{0pt}
+	\flushright
+	\includegraphics{hilbert-bisect}
+\end{minipage}
+\medbreak
 
 
 Even with Pasch's axiom and the crossbar theorem, it requires some effort to repair Euclid's proof. No matter, we'll provide an alternative construction of the bisector once we've considered congruence.
 
 \goodbreak
 
+
 \begin{exercises}
-\exstart Label the vertices in the Fano plane 1 through 7 (any way you like). As we did in Example \ref{ex:fano} for the 3-point geometry, describe each line in terms of its points.
-\begin{enumerate}\setcounter{enumi}{1}
-  \item Prove Lemma \ref{lemm:incidenceeasy}.
-  
-  
-  \item Give a model for each of the 5-point incidence geometries: how many are there?\par
-  (\emph{Hint: remember that order doesn't matter, so the only issue is how many points lie on each line})
-  
-    
-  \item Consider the proof of the crossbar theorem. Explain how we know that $\smash[t]{\ray{AI}}$ does not contain any of the vertices of $\triangle BCD$.
-  
-  
-  \item\label{exs:seginterior} You are given distinct points $A,B$. Using the axioms of incidence and order and Lemma \ref{lemm:intersectunique} (follows from I-2), show the existence of each of the points $C,D,E,F$ in the picture \emph{in alphabetical order.} Hence conclude the existence of a point $F$ lying \emph{between} $A$ and $B$ (Lemma \ref{lemm:seginterior}).\par
-  \begin{minipage}[t]{0.65\linewidth}\vspace{-5pt}
-  During your construction, address the following issues:
-  \begin{enumerate}\itemsep0pt
-    \item Explain why $D$ does not lie on $\overleftrightarrow{AB}$.
-		\item Explain why $E$ does not lie on $\triangle ABD$.
-		\item Explain why $E\neq C$ (whence $\overleftrightarrow{CE}$ exists).
-		\item Explain why $F$ lies on $\cl{AB}$ and \emph{not} on $\cl{BD}$.
-	\end{enumerate}
-  \end{minipage}\hfill\begin{minipage}[t]{0.34\linewidth}\vspace{-5pt}
-  \flushright\includegraphics[scale=0.9]{hilbert-between}
-  \end{minipage}
-  
-  
-  \item\label{exs:bernays} We complete the proof of the plane separation theorem (\ref{thm:planesep}).
-  \begin{enumerate}
-    \item Prove part 3 (it is almost a verbatim application of Pasch's axiom).\par
-    \begin{minipage}[t]{0.75\linewidth}\vspace{-5pt}
-    \item Suppose a line $\ell$ intersects all three sides of $\triangle ABC$ but no vertices. This results in a very strange picture: we've labelled the intersections $D,E,F$ and WLOG chosen $D*E*F$.\smallbreak
-    Apply Pasch's axiom to $\triangle DBF$ and $\lin{AC}$ to obtain a contradiction. Hence establish part 2 of the plane separation theorem.    
-    \end{minipage}\hfill\begin{minipage}[t]{0.24\linewidth}\vspace{-25pt}
-    	\flushright\includegraphics{hilbert-bernays}
-    \end{minipage}
-  \end{enumerate}
-  
-  
-  \item Suppose $A,B,C$ are distinct points on a line $\ell$.
-  \begin{enumerate}
-    \item Explain why there exists a line $m\neq \ell$ such that $B\in m$.
-    \item Prove that $A*B*C\iff A$ and $C$ lie on opposite sides of $m$.
-    \item Suppose $A*B*C$. Use part (b) to prove the following:
-    \begin{enumerate}
-			\item $B$ is the only point common to the rays $\ray{BA}$ and $\ray{BC}$.
-			\item If $D\in\ell$ is any point other than $B$, prove that $D$ lies in precisely one of $\ray{BA}$ or $\ray{BC}$.
+	\exstart Label the vertices in the Fano plane 1 through 7 (any way you like). As we did in Example \ref{ex:fano} for the 3-point geometry, describe each line in terms of its points.
+	\begin{enumerate}\setcounter{enumi}{1}
+	  \item Prove Lemma \ref{lemm:incidenceeasy}.
+	  
+	  
+	  \item Give a model for each of the 5-point incidence geometries: how many are there?\par
+	  (\emph{Hint: remember that order doesn't matter, so the only issue is how many points lie on each line})
+	  
+	    
+	  \item Consider the proof of the crossbar theorem. Explain how we know that $\smash[t]{\ray{AI}}$ does not contain any of the vertices of $\triangle BCD$.
+	  
+	  
+	  \item\label{exs:seginterior} You are given distinct points $A,B$. Using the axioms of incidence and order and Lemma \ref{lemm:intersectunique} (follows from I-2), show the existence of each of the points $C,D,E,F$ in the picture \emph{in alphabetical order.} Hence conclude the existence of a point $F$ lying \emph{between} $A$ and $B$ (Lemma \ref{lemm:seginterior}).\par
+	  \begin{minipage}[t]{0.65\linewidth}\vspace{-5pt}
+	  During your construction, address the following issues:
+	  \begin{enumerate}\itemsep0pt
+	    \item Explain why $D$ does not lie on $\overleftrightarrow{AB}$.
+			\item Explain why $E$ does not lie on $\triangle ABD$.
+			\item Explain why $E\neq C$ (whence $\overleftrightarrow{CE}$ exists).
+			\item Explain why $F$ lies on $\cl{AB}$ and \emph{not} on $\cl{BD}$.
 		\end{enumerate}
-  \end{enumerate}
-  
-  
-  \item\label{exs:seginfinite} Prove that the interior of a triangle is non-empty.\par
-  (\emph{Hint: use Exercise \ref{exs:seginterior} to construct a suitable $I$, then prove that it lies on the correct side of each edge})
-  
-\end{enumerate}
+	  \end{minipage}
+	  \hfill
+	  \begin{minipage}[t]{0.34\linewidth}\vspace{-5pt}
+	  	\flushright
+	  	\includegraphics[scale=0.9]{hilbert-between}
+	  \end{minipage}
+	  
+	  
+	  \item\label{exs:bernays} We complete the proof of the plane separation theorem (\ref{thm:planesep}).
+	  \begin{enumerate}
+	    \item Prove part 3 (it is almost a verbatim application of Pasch's axiom).\par
+	    \begin{minipage}[t]{0.75\linewidth}\vspace{-5pt}
+	    \item Suppose a line $\ell$ intersects all three sides of $\triangle ABC$ but no vertices. This results in a very strange picture: we've labelled the intersections $D,E,F$ and WLOG chosen $D*E*F$.\smallbreak
+	    Apply Pasch's axiom to $\triangle DBF$ and $\lin{AC}$ to obtain a contradiction. Hence establish part 2 of the plane separation theorem.    
+	    \end{minipage}
+	    \hfill
+	    \begin{minipage}[t]{0.24\linewidth}\vspace{-25pt}
+	    	\flushright
+	    	\includegraphics{hilbert-bernays}
+	    \end{minipage}
+	  \end{enumerate}
+	  
+	  
+	  \item Suppose $A,B,C$ are distinct points on a line $\ell$.
+	  \begin{enumerate}
+	    \item Explain why there exists a line $m\neq \ell$ such that $B\in m$.
+	    \item Prove that $A*B*C\iff A$ and $C$ lie on opposite sides of $m$.
+	    \item Suppose $A*B*C$. Use part (b) to prove the following:
+	    \begin{enumerate}
+				\item $B$ is the only point common to the rays $\ray{BA}$ and $\ray{BC}$.
+				\item If $D\in\ell$ is any point other than $B$, prove that $D$ lies in precisely one of $\ray{BA}$ or $\ray{BC}$.
+			\end{enumerate}
+	  \end{enumerate}
+	  
+	  
+	  \item\label{exs:seginfinite} Prove that the interior of a triangle is non-empty.\par
+	  (\emph{Hint: use Exercise \ref{exs:seginterior} to construct a suitable $I$, then prove that it lies on the correct side of each edge})
+	  
+	\end{enumerate}
 \end{exercises}
 
 
