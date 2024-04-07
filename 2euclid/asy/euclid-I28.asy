@@ -7,10 +7,10 @@ texpreamble("\usepackage{amsmath}
 ");
 import graph;
 
-size(160);
+size(140);
 
-draw((-5,1)--(5,1));
-draw((-5,-1)--(5,-1));
+draw((-5.5,1)--(5.5,1));
+draw((-5.5,-1)--(5.5,-1));
 
 pair A=(-0.5,1);
 pair B=-A;

@@ -20,7 +20,7 @@ pair B=-A;
 label("$\hat\ell$",(4,1));
 label("$\ell$",(4,-1));
 label("$m$",(4,0.4+9/7));
-dot("$P$",A,dir(60));
+dot("$C$",A,dir(60));
 
 draw("$\hat\beta$",arc(A,0.51,180*angle(A-B)/pi,180));
 draw(arc(A,0.46,180*angle(A-B)/pi,180));

@@ -17,7 +17,7 @@ pair B=-A;
 
 label("$m$",(4,1));
 label("$\ell$",(4,-1));
-dot("$P$",A,SW);
+dot("$C$",A,SW);
 
 
 

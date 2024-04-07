@@ -12,7 +12,7 @@ size(160);
 
 pair A=(-0.5,1);
 pair B=-A;
-pair C=(7,-1);
+pair C=(8,-1);
 
 real h=0.2;
 

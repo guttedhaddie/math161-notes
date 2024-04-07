@@ -50,8 +50,8 @@ Many of Euclid's arguments can be found \href{http://math.furman.edu/~jpoole/euc
 		\item[P1] A pair of points may be joined to create a line
 		\item[P2] A line may be extended
 		\item[P3] Given a center and a radius, a circle may be drawn
-		\item[P4] All right angles are equal
-		\item[P5] If a straight line crosses two others and the angles on one side sum to less than two right angles then the two lines (when extended) meet on that side.
+		\item[P4] All right-angles are equal
+		\item[P5] If a straight line crosses two others and the angles on one side sum to less than two right-angles then the two lines (when extended) meet on that side.
 	\end{itemize}
 \end{description}
 
@@ -114,7 +114,7 @@ Have a look at some of Euclid's arguments online. These are worth reading despit
 \goodbreak
 
 
-\boldsubsubsection{Parallel Lines: Construction, Uniqueness and the Angles in a Triangle}
+\boldsubsubsection{Parallel Lines: Construction \& Existence}
 
 \begin{defn}{}{parallel}
 	Lines are \emph{parallel} if they do not intersect. Segments are parallel if no extensions of them intersect.
@@ -134,53 +134,57 @@ Euclid did not quantify angles numerically: $\delta>\alpha$ means that $\alpha$ 
 
 \begin{proof}
 	Construct the bisector $\cl{BM}$ of $\cl{AC}$ \ (I.\,10).\par
-	\begin{minipage}[t]{0.62\linewidth}\vspace{-5pt}
-		Extend $\cl{BM}$ the same distance beyond $M$ to $E$ \ (I.\,2).\smallbreak
-		Connect $\cl{CE}$ \ (P1).\smallbreak
+	\begin{minipage}[t]{0.64\linewidth}\vspace{-5pt}
+		Extend $\cl{BM}$ to $E$ such that $\cl{BM}\cong\cl{ME}$ \  (I.\,2) and connect $\cl{CE}$ \  (P1).\smallbreak
 		The opposite angles at $M$ are congruent \ (I.\,15).\smallbreak
-		SAS \ (I.\,4) applied to $\triangle AMB$ and $\triangle CME$ says that $\angle BAM\cong\angle EMC$, which is clearly smaller than the exterior angle at $C$.
+		SAS (I.\,4) applied to $\triangle AMB$ and $\triangle CME$ says $\angle BAM\cong\angle EMC$, which is clearly smaller than the exterior angle at $C$.
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.37\linewidth}\vspace{-20pt}
+	\begin{minipage}[t]{0.35\linewidth}\vspace{-20pt}
 		\flushright\includegraphics{euclid-I16p}
 	\end{minipage}
 	\smallbreak
 	Bisect $\cl{BC}$ and repeat the argument to see that $\beta<\delta$.
 \end{proof}
 
+The proof in fact \emph{constructs} a parallel ($\cl{CE}$) to $\cl{AB}$ through $C$, as the next result shows.
 
-The exterior angle theorem essentially constructs a parallel line to $\cl{AB}$ through a given point $C$ not on the line. It remains to \emph{prove} that this line really is parallel.
-
-\begin{thm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.37\linewidth]{I.\,27}{}
-If a line falls on two other lines in such a way that the alternate angles ($\alpha,\beta$) are congruent, then the two lines are parallel.
-\tcblower
-\flushright\includegraphics{euclid-I27}
+\begin{thm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.32\linewidth]{I.\,27}{}
+	If a line falls on two other lines such that the alternate angles ($\alpha,\beta$) are congruent, then the two lines are parallel.
+	\tcblower
+	\flushright\includegraphics{euclid-I27}
 \end{thm}
 
-The \emph{alternate angles} in the exterior angle theorem are those at $A$ and $C$: the segment $\cl{CE}$ really is parallel to $\cl{AB}$.
+The \emph{alternate angles} in the exterior angle theorem are those at $A$ and $C$: $\cl{CE}$ really is parallel to $\cl{AB}$.
 
 \begin{tcolorbox}[proofstyle,lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.37\linewidth]
 	\emph{Proof.}\lstsp If the lines were not parallel, they would meet on one side. WLOG suppose they meet on the right side at $C$.\smallbreak
-	The angle $\beta$ at $B$, being external to $\triangle ABC$ must be greater than the angle $\alpha$ at $A$ \ (I.\,16): contradiction.
+	The angle $\beta$ at $B$, being exterior to $\triangle ABC$, must be greater than the angle $\alpha$ at $A$ \ (I.\,16): contradiction.
 	\tcblower
 	\flushright
-	\includegraphics[scale=1]{euclid-I27p}\\[-12pt]\hfill\qedsymbol
+	\includegraphics{euclid-I27p}\\[-12pt]\hfill\qedsymbol
 \end{tcolorbox}
 
+Euclid combines this with the vertical angles theorem (I.\,15) to finish the first half of Book I.
 
-\begin{thm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.37\linewidth]{I.\,28}{}
+\begin{cor}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.32\linewidth]{I.\,28}{}
 	If a line falling on two other lines makes congruent angles, then the two lines are parallel.
 	\tcblower
-	\flushright\includegraphics[scale=1]{euclid-I28}
-\end{thm}
+	\flushright\includegraphics{euclid-I28}
+\end{cor}
 
-% \skip\footins=-1.5\bigskipamount
-% \footnotetext{Euclid did not quantify angles numerically. This means that $\alpha$ is congruent to some angle \emph{inside} $\delta$.}
+
+Thus far, Euclid uses only postulates P1--P4. In any model in which these hold:
+\[
+	\tcbhighmath{\text{Given a line $\ell$ and a point $C$ not on $\ell$, \textbf{there exists} a parallel to $\ell$ through $C$}}
+\]
 \goodbreak
-% \skip\footins=\bigskipamount
 
-Thus far, Euclid uses only postulates P1--P4. In any model in which these are true, it is therefore possible to create parallel lines using the construction of the exterior angle theorem.\par
-Euclid finally invokes the parallel postulate to prove the converse to I.\,27, thus showing that the alternate angle approach is the \emph{only} way to create parallel lines.
+
+\boldsubsubsection{Parallel Lines: Uniqueness, Angle-sums \& Playfair's Postulate}
+
+
+Euclid finally invokes the parallel postulate to prove the converse of I.\,27, showing that the congruent alternate angle approach is the \emph{only} way to have parallel lines.
 
 \begin{thm}{I.\,29}{}
 	If a line falls on two parallel lines, then the alternate angles are congruent.
@@ -196,14 +200,14 @@ Euclid finally invokes the parallel postulate to prove the converse to I.\,27, t
 	\includegraphics{euclid-I29}\\[-10pt]\qedsymbol
 \end{tcolorbox}
 
-Euclid can now prove the most well-known result about triangles; the interior angles sum to a straight edge. Euclid words this slightly differently.
+The most well-known result about triangles is now in our grasp; the interior angles sum to a straight edge. Euclid words this slightly differently.
 
 \begin{thm}{I.\,32}{}
-	If one side of a triangle is protruded, the exterior angle equals the sum of the interior opposite angles.
+	If one side of a triangle is extended, the exterior angle is congruent to the sum of the opposite interior angles.
 \end{thm}
 
 \begin{minipage}[t]{0.62\linewidth}\vspace{-4pt}
-	\emph{This is not a numerical sum,} though for familiarity we'll often write \ang{180} for a straight edge and \ang{90} for a right-angle.\par
+	\emph{This is not a numerical sum,} though for familiarity's sake we'll often write \ang{180} for a straight edge and \ang{90} for a right-angle.\par
 	In the picture we've labelled angles as Greek letters for clarity. The result amounts to showing that $\widetilde\alpha+\widetilde\beta\cong\alpha+\beta$.
 \end{minipage}
 \hfill
@@ -221,30 +225,13 @@ Euclid can now prove the most well-known result about triangles; the interior an
 \end{proof}
 
 
-\boldinline{Non-Euclidean Geometry}\phantomsection\label{pg:sphere}
-
-Euclid's proof that the angle sum in a triangle is \ang{180} relies on the parallel postulate. That he waited so long suggests he was trying to establish as much as he could about triangles and basic geometry in its absence. For centuries, many mathematicians assumed such a fundamental fact about triangles must be true independently of the parallel postulate.\smallbreak
-A \emph{non-Euclidean geometry} is, loosely speaking, any model in which the parallel postulate is false. With the development of \emph{hyperbolic geometry} in the 17--1800s, a model was found in which Euclid's first four postulates hold but for which the parallel postulate is false.\footnote{This shows that the parallel postulate is independent: in fact all Euclid's postulates are independent. They are also consistent (the `usual' points and lines in the plane are a model), but incomplete. A sample undecidable is in Exercise \ref{ex:euclidundecideable}.}\par
-
-\begin{minipage}[t]{0.76\linewidth}\vspace{-5pt}
-	We shall eventually see that every triangle in hyperbolic geometry has angle sum less than \ang{180}, though this will require a lot of work. For a more easily visualized non-Euclidean geometry consider the round sphere. A rubber band stretched between three points on a sphere describes a \emph{spherical triangle}; it is east to visualise an example with angle sum \ang{270}. A similar game can be played on a saddle-shaped surface: as in hyperbolic geometry, `triangles' will have angle sum less than \ang{180}.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.23\linewidth}\vspace{-10pt}
-	\flushright
-	\includegraphics[scale=0.95]{euclid-sphere}
-\end{minipage}
-
-\goodbreak
+\medskip
 
 
-
-\boldsubsubsection{Playfair's Postulate}
-
-Euclid's parallel postulate is stated in the negative (angles \emph{don't} sum to a straight edge, therefore lines are \emph{not} parallel). This formulation was possibly chosen to facilitate proofs by contradiction, but the effect is to obscure the meaning of the parallel postulate. Here is a more modern interpretation.
+The parallel postulate is stated in the negative (angles \emph{don't} sum to a straight edge, therefore lines are \emph{not} parallel). Though we cannot be sure, Euclid possibly chose this formulation in order to facilitate proofs by contradiction. Unfortunately the effect is to obscure the meaning of the parallel postulate. Here is a more modern interpretation.
 
 \begin{axiom}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.37\linewidth]{Playfair's Postulate}{playfair}
-	Given a line $\ell$ and a point $P$ not on $\ell$, there exists at most one parallel line $m$ through $P$.
+	Given a line $\ell$ and a point $C$ not on $\ell$, \textbf{at most one} parallel line $m$ to $\ell$ passes through $C$.
 	\tcblower
 	\flushright
 	\includegraphics{euclid-playfair-defn}
@@ -252,10 +239,10 @@ Euclid's parallel postulate is stated in the negative (angles \emph{don't} sum t
 
 
 \begin{minipage}[t]{0.62\linewidth}\vspace{0pt}
-	It should be clear that the parallel postulate implies Playfair.
+	Our discussion up to now shows that the parallel postulate implies Playfair.
 	\begin{itemize}\itemsep0pt
-	  \item Let $A,B\in\ell$ and construct the triangle $\triangle ABP$.
-	  \item The exterior angle theorem constructs $Q$ and thus a parallel $m$ to $\ell$ by I.\,27.
+	  \item Let $A,B\in\ell$ and construct the triangle $\triangle ABC$.
+	  \item The exterior angle theorem constructs $E$ and thus a parallel $m$ to $\ell$ by I.\,27.
 	  \item I.\,29 invokes the parallel postulate to prove that this is the \emph{only} such parallel.
 	\end{itemize}
 \end{minipage}
@@ -268,32 +255,52 @@ Euclid's parallel postulate is stated in the negative (angles \emph{don't} sum t
 In fact the postulates are equivalent.
 
 \begin{thm}{}{}
-	In the presence of Euclid's first four postulates, Playfair's postulate and the parallel postulate are equivalent.
+	In the presence of Euclid's first four postulates, Playfair's postulate and the parallel postulate (P5) are equivalent.
 \end{thm}
 
 \begin{proof}
-	We proved P5 $\implies$ Playfair above. The converse requires more work.\medbreak
-	We prove the contrapositive. Start by assuming Euclid's postulates P1--P4 are true and that P5 is \emph{false.} We need to consider the \emph{negation} of the parallel postulate. Using quantifiers, and with reference to the picture in I.\,29, we restate the parallel postulate:
+	\begin{description}
+		\item[\normalfont (P5 $\Rightarrow$ Playfair)] We proved this above.
+		\item[\normalfont (Playfair $\Rightarrow$ P5)] We prove the contrapositive. Assume postulates P1--P4 are true and that P5 is \emph{false.} Using quantifiers, and with reference to the picture in I.\,29, we restate the parallel postulate:
 	\begin{quote}
-	  $\forall$ pairs of lines $\ell,m$ and $\forall$ crossing lines $n$, \  $\beta+\gamma<\ang{180}\implies\ell,m$ \emph{not parallel.}
+	  P5:\lstsp $\forall$ pairs of lines $\ell,m$ and $\forall$ crossing lines $n$, \  $\beta+\gamma<\ang{180}\implies\ell,m$ \emph{not parallel.}
 	\end{quote}
 	\begin{minipage}[t]{0.62\linewidth}\vspace{-7pt}
-		Its negation is therefore:
+		Its \emph{negation} (P5 false) is therefore:
 		\begin{quote}
 	  	$\exists$ parallel lines $\ell,m$ and a crossing line $n$ for which $\beta+\gamma<\ang{180}$
 		\end{quote}
-		The assumption is without loss of generality: if $\beta+\gamma>\ang{180}$, consider the angles on the other side of $n$.\medbreak
-		Use the construction of the exterior angle theorem to build a parallel line $\hat\ell$ to $\ell$ through the intersection $P$ of $m$ and $n$: in the picture, $\hat\beta\cong\beta$. This only requires results prior to I.\,29 and so is legitimate in this context.
+		This is without loss of generality: if $\beta+\gamma>\ang{180}$, consider the angles on the other side of $n$.\medbreak
+		By the the exterior angle theorem/I.\,28, we may build a parallel line $\hat\ell$ to $\ell$ through the intersection $C$ of $m$ and $n$: in the picture, $\hat\beta\cong\beta$. Crucially, this only requires postulates P1--P4!
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.37\linewidth}\vspace{0pt}
 		\flushright
 		\includegraphics{euclid-playfair2}\\
 		\includegraphics{euclid-playfair}
-	\end{minipage}\medbreak
-	Observe that $\hat\ell$ and $m$ are \emph{distinct} since $\hat\beta+\gamma<\ang{180}$.
-	It follows that there exists a line $\ell$ and a point $P$ not on that line, though which pass (at least) \emph{two} parallels to $\ell$: we conclude that Playfair's postulate is \emph{false.}
+	\end{minipage}\smallbreak
+	Observe that $\hat\ell$ and $m$ are \emph{distinct} since $\hat\beta+\gamma\cong\beta+\gamma<\ang{180}$.
+	We therefore have a line $\ell$ and a point $C$ not on $\ell$, though which pass (at least) \emph{two} parallels to $\ell$: Playfair's postulate is \emph{false.} \qedhere
+	\end{description}
 \end{proof}
+
+
+
+\boldsubsubsection{Non-Euclidean Geometry}\phantomsection\label{pg:sphere}
+
+That Euclid waited so long before invoking the uniqueness of parallels suggests he was trying to establish as much as he could about triangles and basic geometry in its absence. By contrast, everything from I.\,29 onwards relies on the parallel postulate, including the proof that the angle sum in a triangle is \ang{180}. For centuries, many mathematicians believed, though none could prove it, that such a fundamental fact about triangles must be true independent of the parallel postulate.\smallbreak
+Loosely speaking, a \emph{non-Euclidean geometry} is a model for which a parallel through an off-line point either doesn't exist or is non-unique. It wasn't until the 17--1800s and the development of \emph{hyperbolic geometry} (Chapter \ref{chap:hyper}) that a model was found in which Euclid's first four postulates hold but for which the parallel postulate is false.\footnote{This shows that the parallel postulate is independent: in fact all Euclid's postulates are independent. They are also consistent (the `usual' points and lines in the plane are a model), but incomplete: a sample undecidable is in Exercise \ref{ex:euclidundecideable}.}\par
+
+\begin{minipage}[t]{0.76\linewidth}\vspace{-5pt}
+	We shall eventually see that every triangle in hyperbolic geometry has angle sum less than \ang{180}, though this will require a lot of work! For a more easily visualized non-Euclidean geometry consider the sphere. A rubber band stretched between three points on its surface describes a \emph{spherical triangle}; an example with angle sum \ang{270} is drawn. A similar game can be played on a saddle-shaped surface: as in hyperbolic geometry, `triangles' will have angle sum less than \ang{180}.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.23\linewidth}\vspace{-10pt}
+	\flushright
+	\includegraphics[scale=0.95]{euclid-sphere}
+\end{minipage}
+
+\goodbreak
 
 \goodbreak
 
@@ -308,11 +315,11 @@ Following his discussion of parallels, Euclid shows that parallelograms with the
 \end{thm}
 
 \begin{proof} 
-	The given triangle $\triangle ABC$ is assumed to have a right angle at $A$.\par
+	The given triangle $\triangle ABC$ is assumed to have a right-angle at $A$.\par
 	\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}
 	\begin{enumerate}\itemsep0pt
 	  \item Construct squares on each side of $\triangle ABC$ \ (I.\,46) and a parallel $\cl{AL}$ to $\cl{BD}$ \ (I.\,16).
-	  \item $\cl{AB}\cong\cl{FB}$ and $\cl{BD}\cong\cl{BC}$ since sides of squares are congruent. Moreover $\angle ABD\cong\angle FBC$ since both contain \textcolor{blue}{$\angle ABC$} and a \textcolor{red}{right angle}.
+	  \item $\cl{AB}\cong\cl{FB}$ and $\cl{BD}\cong\cl{BC}$ since sides of squares are congruent. Moreover $\angle ABD\cong\angle FBC$ since both contain \textcolor{blue}{$\angle ABC$} and a \textcolor{red}{right-angle}.
 	  \item Side-angle-side (I.\,4) says that $\triangle ABD$ and $\triangle FBC$ are congruent (identical up to rotation by \ang{90}).
 		\item I.\,41 compares areas of parallelograms and triangles with the same base and height:\vspace{0pt}
 		\begin{align*}
@@ -335,13 +342,15 @@ Following his discussion of parallels, Euclid shows that parallelograms with the
 
 
 
-Euclid finishes Book I with the converse.
+Euclid finishes Book I with the converse, which we state without proof.
 
 \begin{thm}{I.\,48}{}
-	If the squares on two sides of a triangle equal the square on the third side, the  triangle has a right angle opposite the third side.
+	If the (areas of the) squares on two sides of a triangle equal the (area of the) square on the third side, then the  triangle has a right-angle opposite the third side.
 \end{thm}
 
-The \emph{Elements} contains thirteen books in total. Much of this involves further geometric constructions, including in three dimensions. There is also a healthy dose of basic number theory including what is now known as the Euclidean algorithm. This is enough pure-Euclid for us however; we now turn to a more modern description of Euclidean geometry, courtesy of David Hilbert.
+Euclid's argument is very sneaky, and absolutely worth looking up!\bigbreak
+
+The \emph{Elements} contains thirteen books. Much of the remaining twelve discuss further geometric constructions, including in three dimensions. There is also a healthy dose of basic number theory including what is now known as the Euclidean algorithm. This is enough pure Euclid for us however; we now turn to a more modern description, courtesy of David Hilbert.
 
 \clearpage
 
@@ -382,11 +391,11 @@ The \emph{Elements} contains thirteen books in total. Much of this involves furt
 
 	\begin{enumerate}\setcounter{enumi}{1}
 	  \item[]\begin{enumerate}\setcounter{enumii}{1}
-	    \item[](\emph{Hint: This is one place where you will need to use postulate 4 regarding right angles})
+	    \item[](\emph{Hint: This is one place where you will need to use postulate 4 regarding right-angles})
 	    \item Use part (a) to complete the proof of the exterior angle theorem: i.e.\ explain why $\beta<\delta$.
 	  \end{enumerate}
 	
-		\item\label{ex:pythagexs} To prove Pythagoras', Euclid needs to compare areas of triangles and parallelograms and to construct squares. Prove the following as best as you can: full rigor is quite tricky, but the pictures should help!
+		\item\label{ex:pythagexs} To help prove Pythagoras', Euclid makes use of the following results. Prove them as best as you can: full rigor is tricky, but the pictures should help!
 		\begin{enumerate}
 		  \item (I.\,11) At a given point on a line, to construct a perpendicular.
 		  \item (I.\,46) To construct a square on a given segment.
@@ -411,10 +420,10 @@ The \emph{Elements} contains thirteen books in total. Much of this involves furt
 		\end{center}
 		
 	  
-	  \item Consider the geometry of the round sphere (page \pageref{pg:sphere}), where \emph{lines} are paths of shortest distance (great circles).
+	  \item Consider spherical geometry (page \pageref{pg:sphere}), where \emph{lines} are paths of shortest distance (great circles).
 	 	\begin{enumerate}
 	 	  \item Which of Euclid's postulates P1--P5 are satisfied by this geometry?
-	  	\item (Hard)\lstsp Consider the construction from the exterior angle theorem for creating a parallel. Where does this argument fail in spherical geometry? 
+	  	\item (Hard)\lstsp Where does the proof of the exterior angle theorem \emph{fail} in spherical geometry? 
 	 	\end{enumerate}
 	  
 	  
@@ -432,6 +441,9 @@ The \emph{Elements} contains thirteen books in total. Much of this involves furt
 	  If point $P$ lies inside and $Q$ lies outside a circle $\alpha$, then the segment $\overline{PQ}$ intersects $\alpha$.
 	  \end{quote}
 	  By considering the set of rational points in the plane $\Q^2=\{(x,y):x,y\in\Q\}$, and making a sensible definition of line and circle, show that the line-circle continuity property is undecidable within Euclid's system.
+		
+		
+		\item The standard proof of the converse of Pythagoras' theorem (I.\,48) is, in fact, a \emph{corollary} of Pythagoras' Theorem! Look it up and explain it as best you can.
 	\end{enumerate}
 	
 \end{exercises}
@@ -867,9 +879,9 @@ The proof is very sneaky; Hilbert simply relabels the original triangle and appl
 Suppose $C$ does not lie on $\ell$. By axiom I-3, $\ell=\lin{AB}$ for some points $A,B$.\smallbreak
 Use axioms C-4 and C-1 to transfer \textcolor{Green}{$\angle BAC$} to the other side of the line at $A$, creating a new point $D$.\smallbreak
 Since $C$ and $D$ lie on opposite sides of $\lin{AB}$, it must intersect $\cl{CD}$ at some point $M$.\smallbreak
-SAS applied to $\triangle MAC$ and $\triangle MAD$ shows that $\angle AMC\cong\angle AMD$: since these sum to a straight edge, they must be right angles.
+SAS applied to $\triangle MAC$ and $\triangle MAD$ shows that $\angle AMC\cong\angle AMD$: since these sum to a straight edge, they must be right-angles.
 \begin{itemize}\itemsep0pt
-  \item The construction still works if \textcolor{Green}{$\angle BAC$} is greater than a right angle: $\angle MAC$ is now supplementary to $\angle BAC$ rather than equal.
+  \item The construction still works if \textcolor{Green}{$\angle BAC$} is greater than a right-angle: $\angle MAC$ is now supplementary to $\angle BAC$ rather than equal.
   \item In the extreme case $M=A$, we have no triangles and SAS cannot be applied. Instead follow the same argument starting with $\angle ABC$.
 \end{itemize}
 \end{minipage}\begin{minipage}[t]{0.3\linewidth}\vspace{0pt}
@@ -940,7 +952,7 @@ Except for questions \ref*{exs:aaassano} and \ref*{ex:pythagnocont}, all exercis
   \item\label{exs:isoconverse}\begin{enumerate}
     \item Use ASA to prove the converse to Theorem \ref{thm:euclidiso}: if the base angles are congruent then a triangle is isosceles.
     \item Find an alternative proof that relies on the exterior angle theorem.
-    \item Explain why the base angles of an isosceles triangle are \emph{acute} (less than a right angle).
+    \item Explain why the base angles of an isosceles triangle are \emph{acute} (less than a right-angle).
   \end{enumerate}
   
   
@@ -1332,7 +1344,7 @@ The transitivity of $\sim$ forces $\triangle ADE\sim\triangle ADG$: the similari
 We finish with several applications of similarity which give an idea of what can be done \emph{without} co-ordinates! None of these ideas were known to Euclid.
 
 \begin{defn}{}{}
-Given an acute angle $\angle ABC$ ($m\angle ABC<\ang{90}$), drop a perpendicular from $A$ to $\ray{BC}$ at $D$ so that $\angle ADB$ is a right angle. Define
+Given an acute angle $\angle ABC$ ($m\angle ABC<\ang{90}$), drop a perpendicular from $A$ to $\ray{BC}$ at $D$ so that $\angle ADB$ is a right-angle. Define
 \[\sin\angle ABC:=\frac{\nm{AD}}{\nm{AB}}\qquad \cos\angle ABC:=\frac{\nm{BD}}{\nm{AB}}\]
 \end{defn}
 
