@@ -404,12 +404,12 @@ The \emph{Elements} contains thirteen books. Much of the remaining twelve discus
 		\end{enumerate}
 		
 		\begin{center}
-			\begin{tabular}{ccc}
-				\includegraphics{euclid-I11}
+			\begin{tabular}{c@{\quad}c@{\quad}c}
+				\includegraphics[scale=0.95]{euclid-I11}
 				&
-				\includegraphics{euclid-I46}
+				\includegraphics[scale=0.95]{euclid-I46}
 				&
-				\includegraphics{euclid-I35a}
+				\includegraphics[scale=0.95]{euclid-I35a}
 				\\[-2pt]
 				Theorem I.\,11
 				&
@@ -443,7 +443,7 @@ The \emph{Elements} contains thirteen books. Much of the remaining twelve discus
 	  By considering the set of rational points in the plane $\Q^2=\{(x,y):x,y\in\Q\}$, and making a sensible definition of line and circle, show that the line-circle continuity property is undecidable within Euclid's system.
 		
 		
-		\item The standard proof of the converse of Pythagoras' theorem (I.\,48) is, in fact, a \emph{corollary} of Pythagoras' Theorem! Look it up and explain it as best you can.
+		\item The standard proof of the converse of Pythagoras' theorem (I.\,48) is, in fact, a \emph{corollary} of the original! Look it up and explain the argument as best you can.
 	\end{enumerate}
 	
 \end{exercises}
@@ -452,27 +452,22 @@ The \emph{Elements} contains thirteen books. Much of the remaining twelve discus
 
 
 
-\subsection{Hilbert's Axioms, part I: Incidence and Order}\label{sec:hilbert1}
+\subsection{Hilbert's Axioms I: Incidence and Order}\label{sec:hilbert1}
 
-The \emph{Elements} contains several errors and omissions. Over the centuries, mathematicians identified and attempted to correct these. The culmination of this work came with the publication of David Hilbert's \emph{Grundlagen der Geometrie (Foundations of Geometry)} in 1899.\smallbreak
+Euclid's \emph{Elements} contains multiple errors and omissions. The long process of identifying and correcting these culminated in the 1899 publication of David Hilbert's \emph{Grundlagen der Geometrie (Foundations of Geometry)}. In the next two sections we consider some of the details of Hilbert's approach, providing a modern and logically superior description of Euclidean geometry.\smallbreak
 
-%This was followed by George Birkhoff's axiomatization of Analytic Geometry (geometry with co-ordinates) in 1932.
-
-Hilbert's axioms for plane geometry\footnote{Hilbert also treated 3D geometry; we only give the axioms relevant to plane geometry. The axioms are almost perfect with regard to our desired properties. There is essentially only one model (standard Cartesian geometry); this is almost but not quite the same as completeness. In the absence of the continuity axiom, they are consistent; in line with Gödel, consistency cannot be proved once continuity is included. As stated, the axioms are not quite independent: O-3 does not require existence (follows from Pasch's axiom), C-1 does not require uniqueness (follows from uniqueness in C-4) and C-6 can be weakened. Hilbert's axioms were revised after publication; we've only stated one version.} are listed on the next page. We use his system to explore some of the problems in Euclid and how they may be addressed.\smallbreak
-
-
-Hilbert's undefined terms consist of two types of object (\emph{points} and \emph{lines}), and three relations (\emph{between $*$, on $\in$} and \emph{congruence $\cong$}). For brevity we'll often (ab)use set notation, essentially viewing a line as a set of points, though this is not necessary. At various places, definitions and notations are required.
+Hilbert's axioms for plane geometry\footnote{Like Euclid, Hilbert also covered 3D geometry; we only give the axioms for plane geometry. With regard to our desired properties (Definition \ref{defn:consistency}), his system is about as good as can be hoped. Essentially one only one model exists, which is almost the same thing as completeness. In the absence of the continuity axiom, the axioms are consistent; in line with Gödel's theorems (\ref{thm:godel}), consistency cannot be proved once continuity is included. As stated, the axioms are not quite independent, though this can be remedied: O-3 does not require existence (follows from Pasch's axiom), C-1 does not require uniqueness (follows from uniqueness in C-4) and C-6 can be weakened slightly.} are listed on the next page. The undefined terms consist of two types of object (\emph{points} and \emph{lines}), and three relations (\emph{between $*$, on $\in$} and \emph{congruence $\cong$}). For brevity we'll often use/abuse set notation, viewing a line as a set of points, though this is not necessary. At various places, definitions and notations are required.
 
 \begin{defn}{}{hilbertbasic}
 	Throughout, $A,B,C$ denote points and $\ell,m$ lines.
 	\begin{description}\itemsep 0pt plus 1pt
 	  \item[\normalfont\emph{Line}:] $\smash[t]{\lin{AB}}$ denotes the line through distinct $A,B$. This exists and is unique by axioms I-1 and I-2.
-	  \item[\normalfont\emph{Segment}:] $\cl{AB}=\{A,B\}\cup\{C:A*C*B\}$ consists of distinct \emph{endpoints} $A,B$ and all \emph{interior} points $C$ lying between them.
-	  \item[\normalfont\emph{Ray}:] $\ray{AB}=\cl{AB}\cup\{C:A*B*C\}$ is a ray with \emph{vertex} $A$. In essence, we extend $\cl{AB}$ beyond $B$.
-	  \item[\normalfont\emph{Triangle}:] $\triangle ABC=\cl{AB}\cup\cl{BC}\cup\cl{CA}$ where $A,B,C$ are non-collinear. Triangles are \emph{congruent} if their sides and angles are congruent in pairs.
-		\item[\normalfont\emph{Sidedness}:] Distinct $A,B$ (not on $\ell$) lie on the \emph{same side} of $\ell$ if $\cl{AB}\cap\ell=\emptyset$. Otherwise $A$ and $B$ lie on \emph{opposite sides} of $\ell$.
-		\item[\normalfont\emph{Angle}:] $\angle BAC=\ray{AB}\cup\ray{AC}$ has \emph{vertex} $A$ and \emph{sides} $\ray{AB}$ and $\ray{AC}$.
-		\item[\normalfont\emph{Parallelism}:] Lines $\ell$ and $m$ \emph{intersect} if there exists a point lying on both: $\exists A\in\ell\cap m$. Lines are \emph{parallel} if they do not intersect. Segments/rays are parallel if the corresponding lines are parallel.
+	  \item[\normalfont\emph{Segment}:] $\cl{AB}:=\{A,B\}\cup\{C:A*C*B\}$ consists of distinct \emph{endpoints} $A,B$ and all \emph{interior} points $C$ lying between them.
+	  \item[\normalfont\emph{Ray}:] $\ray{AB}:=\cl{AB}\cup\{C:A*B*C\}$ is a ray with \emph{vertex} $A$. In essence we extend $\cl{AB}$ beyond $B$.
+	  \item[\normalfont\emph{Triangle}:] $\triangle ABC:=\cl{AB}\cup\cl{BC}\cup\cl{CA}$ where $A,B,C$ are non-collinear. Triangles are \emph{congruent} if their sides and angles are congruent in pairs.
+		\item[\normalfont\emph{Sidedness}:] Distinct $A,B$, not on $\ell$, lie on the \emph{same side} of $\ell$ if $\cl{AB}\cap\ell=\emptyset$. Otherwise $A$ and $B$ lie on \emph{opposite sides} of $\ell$.
+		\item[\normalfont\emph{Angle}:] $\angle BAC:=\ray{AB}\cup\ray{AC}$ has \emph{vertex} $A$ and \emph{sides} $\ray{AB}$ and $\ray{AC}$.
+		\item[\normalfont\emph{Parallelism}:] Lines $\ell$ and $m$ \emph{intersect} if there exists a point lying on both: $\exists A\in\ell\cap m$. Lines are \emph{parallel} if they do not intersect. Segments/rays are parallel when the corresponding lines are parallel.
 	\end{description}
 	The pictures represent these notions in the usual model of Cartesian geometry.
 	\begin{center}
@@ -518,7 +513,7 @@ Hilbert's undefined terms consist of two types of object (\emph{points} and \emp
 
 \boldsubsubsection{Axioms of Incidence: Finite Geometries}
 
-The axioms of incidence describe the relation \emph{on.} An \emph{incidence geometry} is any model satisfying the axioms I-1, I-2, I-3. Perhaps surprisingly, there exist geometries with \emph{finitely many points}!
+The axioms of incidence describe the relation \emph{on.} An \emph{incidence geometry} is any model satisfying axioms I-1, I-2, I-3. Perhaps surprisingly, there exist incidence geometries with \emph{finitely many points}!
 
 \begin{examples}{}{fano}
 	By I-3, an incidence geometry requires \emph{at least three} points.\par
@@ -545,7 +540,7 @@ The axioms of incidence describe the relation \emph{on.} An \emph{incidence geom
 	\end{minipage}
 	\smallbreak
 	\begin{minipage}[t]{0.72\linewidth}\vspace{0pt}
-		The final picture is a famous example known as the \emph{Fano plane,} an incidence geometry with seven points and seven lines which finds applications in many places, including combinatorics. Each point lies on precisely three lines; each dot is colored to indicate the lines to which it belongs. Don't be fooled by the black line looking curved and seeming to cross the blue line near the top; it really only contains three points!
+		The final picture is a famous example called the \emph{Fano plane,} an incidence geometry with seven points and seven lines, which finds many applications particularly in combinatorics. Each point lies on precisely three lines and each line contains precisely three points; each dot is colored to indicate the lines to which it belongs. Don't be fooled by the black line looking `curved' and seeming to cross the blue line near the top; it really only contains three points!
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.27\linewidth}\vspace{-17pt}
@@ -565,15 +560,15 @@ We can even prove some simple theorems in incidence geometry.
 \end{proof}
 
 \begin{lemm}{}{incidenceeasy}
-	Through any point there exists at least two lines.
+	Given any point, there exist at least two lines on which it lies.
 \end{lemm}
 
 The proof is an exercise. While incidence geometry is fun, our main goal is to understand Euclidean geometry, so we move on to the next set of axioms.
 
 
-\boldsubsubsection{Axioms of Order: Sides of a Line and Pasch's Axiom}
+\boldsubsubsection{Axioms of Order: Sides of a Line, Pasch's Axiom \& the Crossbar Theorem}
 
-The axioms of order describe the ternary relation \emph{between.} Their inclusion in Hilbert's axioms is due in no small part to the work of Moritz Pasch, after whom Pasch's axiom (O-4, c.\,1882) is named. Pasch's axiom is very powerful; in particular, it permits us to define the \emph{interiors} of several geometric objects, and to see that these are non-empty.
+The axioms of order describe the ternary relation \emph{between.} Their inclusion in Hilbert's axioms is due in no small part to the work of Moritz Pasch, after whom Pasch's axiom (O-4, c.\,1882) is named. This axiom is very powerful; in particular, it permits us to define the \emph{interiors} of several geometric objects, and to see that these are non-empty.
 
 \begin{lemm}{}{seginterior}
 	Every segment contains an interior point.
@@ -611,28 +606,28 @@ To get much further, it is necessary to establish that a line has precisely two 
 \end{thm}
 
 \begin{proof}
-Suppose $A,B,C$ are non-collinear. If $\cl{AC}$ intersects $\ell$, then $\ell$ intersects one of the sides of $\triangle ABC$. By Pasch's axiom, it also intersects either $\cl{AB}$ or $\cl{BC}$. This is the contrapositive of case 1.\smallbreak
-The other cases are exercises, and we omit the tedious collinear possibilities.
+	We prove the contrapositive of case 1. Suppose $A,B,C$ are non-collinear. If $\cl{AC}$ intersects $\ell$, then $\ell$ intersects one side of $\triangle ABC$. By Pasch's axiom, it also intersects either $\cl{AB}$ or $\cl{BC}$.\smallbreak
+	The other cases are exercises, and we omit the tedious collinear possibilities.
 \end{proof}
 
-Plane separation and its attendant half-planes allow us to properly define the interiors of angles and triangles. 
+Plane separation/sidedness allows us to properly define interiors of angles and triangles. 
 
 \begin{defn}{}{interiorangle}
 	A point $I$ is \emph{interior} to angle $\angle BAC$ if:\par
-	\begin{minipage}[t]{0.7\linewidth}\vspace{-3pt}
-	\begin{itemize}%\itemsep0pt
-	  \item $I$ lies on the same side of $\lin{AB}$ as $C$, and,
-	  \item $I$ lies on the same side of $\lin{AC}$ as $B$.
-	\end{itemize}
-	Otherwise said, $I$ lies in the intersection of two half-planes.
+	\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}
+		\begin{itemize}\itemsep0pt
+	  	\item $I$ lies on the same side of $\lin{AB}$ as $C$, and,
+	  	\item $I$ lies on the same side of $\lin{AC}$ as $B$.
+		\end{itemize}
+		Otherwise said, $I$ lies in the intersection of two half-planes.
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.29\linewidth}\vspace{-12pt}
+	\begin{minipage}[t]{0.35\linewidth}\vspace{-20pt}
 		\flushright
-		\includegraphics{hilbert-interior}
-	\end{minipage}
-	\bigbreak
-	A point $I$ is \emph{interior} to a triangle $\triangle ABC$ if it lies in the intersection of three of the half-planes defined by the edges of the triangle. Equivalently, it is interior to all three of the angles $\angle ABC$, $\angle BAC$ and $\angle ACB$.
+		\includegraphics[scale=0.95]{hilbert-interior}
+	\end{minipage}\medbreak
+	
+	A point $I$ is \emph{interior} to triangle $\triangle ABC$ if it is interior to all three of its angles $\angle ABC$, $\angle BAC$ and $\angle ACB$. Otherwise said, $I$ lies in the triple intersection of three of the half-planes defined by the triangle's sides.
 \end{defn}
 
 Interior points permit us to compare angles: if $I$ is interior to $\angle BAC$, then $\angle BAI<\angle BAC$ has obvious meaning, \emph{without resorting to numerical angle measure.}
@@ -646,14 +641,18 @@ Interior points permit us to compare angles: if $I$ is interior to $\angle BAC$,
 \end{proof}
 
 In Exercise \ref{exs:seginfinite}, we check that the interior of a triangle is non-empty.
+\vfil
 
 \goodbreak
+%\medbreak
 
 Pasch's axiom could be paraphrased as follows: \emph{If a line enters a triangle, it must come out.} We haven't quite established this crucial fact however. What if the line passes through a vertex?
+
+\goodbreak
  
 \begin{thm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.3\linewidth]{Crossbar Theorem}{}
 	Suppose $I$ is interior to $\angle BAC$. Then $\ray{AI}$ intersects $\cl{BC}$.\medbreak
-As a special case; if a line passes through a vertex and an interior point of a triangle, then it intersects the side opposite the vertex.
+In particular, if a line passes through a vertex and an interior point of a triangle, then it intersects the side opposite the vertex.
 	\tcblower
 	\flushright
 	\includegraphics{hilbert-pasch2}
@@ -661,29 +660,28 @@ As a special case; if a line passes through a vertex and an interior point of a 
 
 
 \begin{proof}
-	Extend $\cl{AB}$ to a point $D$ such that $A$ lies between $B$ and $D$ (O-2). Since $C$ is not on $\lin{BD}=\lin{AB}$ we have a triangle $\triangle BCD$. Since $\lin{AI}$ intersects one edge of $\triangle BCD$ at $A$ and does not cross any vertices, Pasch says it intersects one of the other edges ($\cl{BC}$ or $\cl{CD}$) at a point $M$.
+	Extend $\cl{AB}$ to a point $D$ such that $A$ lies between $B$ and $D$ (O-2). Since $C$ is not on $\lin{BD}=\lin{AB}$ we have a triangle $\triangle BCD$. Since $\lin{AI}$ intersects one edge of $\triangle BCD$ at $A$ and does not cross any vertices (think about why\ldots), Pasch says it intersects one of the other edges ($\cl{BC}$ or $\cl{CD}$) at a point $M$.
 	\begin{itemize}
 	  \item If $I=M\in\cl{BC}$, we're done. 
-	 	\item If $I=M\in\cl{CD}$, a contradiction follows from Exercise \ref{exs:bernays} and plane separation.
+	 	\item If $I=M\in\cl{CD}$, then $I$ lies on the same side of $\cl{AC}$ as $D$ (opposite $B$): a contradiction.
 	\end{itemize}
-	Otherwise, if $I\neq M$, observe:
-	%The point $A$ is therefore the unique intersection of three distinct lines: $\lin{AB}$, $\lin{AC}$ and $\lin{IM}$. Moreover:
+	Otherwise, suppose $I\neq M$. Then: %The point $A$ is therefore the unique intersection of three distinct lines: $\lin{AB}$, $\lin{AC}$ and $\lin{IM}$. Moreover:
 	\begin{itemize}
 	  \item Since $I$ is interior to $\angle BAC$, it lies on the same side of $\smash[t]{\lin{AB}=\lin{BD}}$ as $C$.
 	  \item Since $M\in\cl{BC}\cup\cl{CD}$, it lies on the same side of $\smash[t]{\lin{AB}=\lin{BD}}$ as $C$.
 	\end{itemize}
-	By the plane separation theorem, $I$ and $M$ lie on the \emph{same side} of $\smash[t]{\lin{AB}}$. In particular,
+	By plane separation, $I$ and $M$ lie on the \emph{same side} of $\smash[t]{\lin{AB}}$. In particular, $A\not\in\smash[t]{\cl{IM}}$, whence
 	\[
-		A\not\in\smash[t]{\cl{IM}}\implies M\in\smash[t]{\ray{AI}}
+		M\in\smash[t]{\ray{AI}}
 	\]
-	The two generic cases are drawn below (these encompass arrangements where $I$ lies \emph{inside} $\triangle ABC$); it suffices to show that the second case is impossible.
+	The two generic cases are drawn below (these also encompass arrangements where $I$ lies \emph{inside} $\triangle ABC$); it suffices to show that the second case is impossible.
 	\begin{center}
 		\begin{tabular}{cc}
 			\includegraphics[scale=0.95]{hilbert-crossbar1}&\includegraphics[scale=0.95]{hilbert-crossbar2}%\\
 			%correct arrangement&impossible case
 		\end{tabular}
 	\end{center}
-	If $M\in\cl{CD}$, then $I$ and $M$ are on \emph{opposite sides} of $\lin{AC}$. But then $\cl{IM}$ intersects $\lin{AC}$, which it must do at $A$. This contradicts the fact that $A\not\in\cl{IM}$.
+	If $M\in\cl{CD}$, then $I$ and $M$ are on \emph{opposite sides} of $\lin{AC}$. But then $\cl{IM}$ intersects $\lin{AC}$, which it must do at $A$, contradicting the fact that $A\not\in\cl{IM}$.
 \end{proof}
 
 
@@ -744,7 +742,7 @@ Even with Pasch's axiom and the crossbar theorem, it requires some effort to rep
 	    Apply Pasch's axiom to $\triangle DBF$ and $\lin{AC}$ to obtain a contradiction. Hence establish part 2 of the plane separation theorem.    
 	    \end{minipage}
 	    \hfill
-	    \begin{minipage}[t]{0.24\linewidth}\vspace{-25pt}
+	    \begin{minipage}[t]{0.24\linewidth}\vspace{-35pt}
 	    	\flushright
 	    	\includegraphics{hilbert-bernays}
 	    \end{minipage}
@@ -774,7 +772,7 @@ Even with Pasch's axiom and the crossbar theorem, it requires some effort to rep
 
 
 
-\subsection{Hilbert's Axioms, part II: Congruence}\label{sec:hilbert2}
+\subsection{Hilbert's Axioms II: Congruence}\label{sec:hilbert2}
 
 The congruence axioms formalize Euclid's constructions and pictorial reasoning, and replace his confusing use of \emph{equal.} Segments/angles are now equal only when they are exactly the same; this is the \emph{reflexivity} part of the following, which depends only on axioms C-1, C-2, C-4 and C-5.
 

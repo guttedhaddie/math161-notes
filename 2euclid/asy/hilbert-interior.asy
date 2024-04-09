@@ -8,7 +8,7 @@ texpreamble("\usepackage{amsmath}
 import graph;
 import markers;
 
-size(110);
+size(120);
 
 pair A=(0,0);
 pair B=1.2dir(0);
