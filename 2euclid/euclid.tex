@@ -307,7 +307,7 @@ Loosely speaking, a \emph{non-Euclidean geometry} is a model for which a paralle
 
 \boldsubsubsection{Pythagoras' Theorem}
 
-Following his discussion of parallels, Euclid shows that parallelograms with the same base and height are equal (in area) (I.\,33--41), before providing explicit constructions of parallelograms and squares (I.\,42--46). Some of this is covered in Exercise \ref{ex:pythagexs}. Immediately afterwards comes the capstone of Book I.
+Following his discussion of parallels, Euclid shows that parallelograms with the same base and height are equal (in area) (I.\,33--41), before providing constructions of parallelograms and squares (I.\,42--46). Some of this is in Exercise \ref{ex:pythagexs}. Immediately afterwards comes the capstone of Book I.
 
 
 \begin{thm}{I.\,47 Pythagoras' Theorem}{}
@@ -342,15 +342,15 @@ Following his discussion of parallels, Euclid shows that parallelograms with the
 
 
 
-Euclid finishes Book I with the converse, which we state without proof.
+Euclid finishes Book I with the converse, which we state without proof. Euclid's argument is very sneaky: look it up!
 
 \begin{thm}{I.\,48}{}
 	If the (areas of the) squares on two sides of a triangle equal the (area of the) square on the third side, then the  triangle has a right-angle opposite the third side.
 \end{thm}
 
-Euclid's argument is very sneaky, and absolutely worth looking up!\bigbreak
+The \emph{Elements} contains thirteen books. Much of the remaining twelve discuss further geometric constructions, including in three dimensions. There is also a healthy dose of basic number theory including what is now known as the Euclidean algorithm.\medbreak
 
-The \emph{Elements} contains thirteen books. Much of the remaining twelve discuss further geometric constructions, including in three dimensions. There is also a healthy dose of basic number theory including what is now known as the Euclidean algorithm. This is enough pure Euclid for us however; we now turn to a more modern description, courtesy of David Hilbert.
+While undoubtedly a masterpiece of logical reasoning, Euclid's presentation has several flaws. Most problematic is his reliance on pictorial reasoning: for instance he `proves' the SAS and SSS congruence theorems (I.\,4 \& 8) by laying one triangle on top of another, a process not justified by his axioms. In a modern sense, Euclid's approach is part axiomatic system and part model: his reasoning requires a visual/physical representation of lines, circles, etc. Because of these issues, we now turn to a more modern description of Euclidean geometry, courtesy of David Hilbert.
 
 \clearpage
 
@@ -454,7 +454,7 @@ The \emph{Elements} contains thirteen books. Much of the remaining twelve discus
 
 \subsection{Hilbert's Axioms I: Incidence and Order}\label{sec:hilbert1}
 
-Euclid's \emph{Elements} contains multiple errors and omissions. The long process of identifying and correcting these culminated in the 1899 publication of David Hilbert's \emph{Grundlagen der Geometrie (Foundations of Geometry)}. In the next two sections we consider some of the details of Hilbert's approach, providing a modern and logically superior description of Euclidean geometry.\smallbreak
+The long process of identifying and correcting the errors and omissions in Euclid's \emph{Elements} culminated in the 1899 publication of David Hilbert's \emph{Grundlagen der Geometrie (Foundations of Geometry)}. In the next two sections we consider some of the details of Hilbert's approach, providing a modern and logically superior description of Euclidean geometry.\smallbreak
 
 Hilbert's axioms for plane geometry\footnote{Like Euclid, Hilbert also covered 3D geometry; we only give the axioms for plane geometry. With regard to our desired properties (Definition \ref{defn:consistency}), his system is about as good as can be hoped. Essentially one only one model exists, which is almost the same thing as completeness. In the absence of the continuity axiom, the axioms are consistent; in line with Gödel's theorems (\ref{thm:godel}), consistency cannot be proved once continuity is included. As stated, the axioms are not quite independent, though this can be remedied: O-3 does not require existence (follows from Pasch's axiom), C-1 does not require uniqueness (follows from uniqueness in C-4) and C-6 can be weakened slightly.} are listed on the next page. The undefined terms consist of two types of object (\emph{points} and \emph{lines}), and three relations (\emph{between $*$, on $\in$} and \emph{congruence $\cong$}). For brevity we'll often use/abuse set notation, viewing a line as a set of points, though this is not necessary. At various places, definitions and notations are required.
 
@@ -670,10 +670,7 @@ In particular, if a line passes through a vertex and an interior point of a tria
 	  \item Since $I$ is interior to $\angle BAC$, it lies on the same side of $\smash[t]{\lin{AB}=\lin{BD}}$ as $C$.
 	  \item Since $M\in\cl{BC}\cup\cl{CD}$, it lies on the same side of $\smash[t]{\lin{AB}=\lin{BD}}$ as $C$.
 	\end{itemize}
-	By plane separation, $I$ and $M$ lie on the \emph{same side} of $\smash[t]{\lin{AB}}$. In particular, $A\not\in\smash[t]{\cl{IM}}$, whence
-	\[
-		M\in\smash[t]{\ray{AI}}
-	\]
+	By plane separation, $I$ and $M$ lie on the \emph{same side} of $\smash[t]{\lin{AB}}$. In particular, $A\not\in\smash[t]{\cl{IM}}$, whence $M\in\smash[t]{\ray{AI}}$.\smallbreak
 	The two generic cases are drawn below (these also encompass arrangements where $I$ lies \emph{inside} $\triangle ABC$); it suffices to show that the second case is impossible.
 	\begin{center}
 		\begin{tabular}{cc}
@@ -687,9 +684,9 @@ In particular, if a line passes through a vertex and an interior point of a tria
 
 
 \begin{minipage}[t]{0.67\linewidth}\vspace{-3pt}
-	Euclid repeatedly uses the crossbar theorem without justification, including in his construction of perpendiculars and of angle and segment bisectors (Theorems I.\,9+10); we sketch this here.\smallbreak
+	Euclid repeatedly uses the crossbar theorem without justification, including in his construction of perpendiculars and of angle and segment bisectors (Theorems I.\,9+10). We sketch this here.\smallbreak
 	Given $\angle BAC$, construct $E$ such that $\cl{AB}\cong\cl{AE}$. Construct $D$ using an equilateral triangle (I.\,1). SSS (I.\,8) shows that the angle is bisected, and SAS (I.\,4) that $\ray{AD}$ bisects $\cl{BE}$.\smallbreak
-	Unfortunately Euclid gives no argument for why $D$ is interior to $\angle BAC$ or why $\ray{AD}$ should intersect $\cl{BE}$!
+	Quite apart from Euclid's arguments for SAS and SSS being suspect (we'll deal with these in the next section), he gives no argument for why $D$ is interior to $\angle BAC$ or why $\ray{AD}$ should intersect $\cl{BE}$!
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.32\linewidth}\vspace{0pt}
@@ -699,7 +696,7 @@ In particular, if a line passes through a vertex and an interior point of a tria
 \medbreak
 
 
-Even with Pasch's axiom and the crossbar theorem, it requires some effort to repair Euclid's proof. No matter, we'll provide an alternative construction of the bisector once we've considered congruence.
+Even with Pasch's axiom and the crossbar theorem, it requires some effort to repair Euclid's proof. No matter; we'll provide an alternative construction of the bisector once we've considered congruence.
 
 \goodbreak
 
