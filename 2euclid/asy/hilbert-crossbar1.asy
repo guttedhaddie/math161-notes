@@ -20,6 +20,7 @@ pair MM=0.4EE+0.6C;
 
 draw(A..MM..C+(0,0.3){E}..D{dir(25)},white);
 
+draw(A--C);
 draw(B--C--EE--cycle);
 draw(A--1.2D,blue,Arrow);
 

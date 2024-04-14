@@ -17,14 +17,15 @@ pair D=(C.x,-C.y);
 pair M=(C.x,0);
 
 draw(C--D);
-draw((-0.5,0)--(2,0));
-draw(C--A--D,StickIntervalMarker(2,1,blue,dotframe(red)));
+draw((-0.3,0)--(1.8,0));
+label("$\ell$",(1.9,0));
+draw(C--A--D,blue,StickIntervalMarker(2,1,blue,dotframe(red)));
 
 label("$A$",A,SW);
 dot(Label("$B$",black),B,S,red);
 dot(Label("$M$",black),M,SE,red);
-label("$C$",C,E);
-label("$D$",D,E);
-draw(arc(A,A+0.25dir(D-A),A+0.2dir(C-A)),StickIntervalMarker(2,2,heavygreen));
+label("$P$",C,E);
+label("$Q$",D,E);
+draw(arc(A,A+0.25dir(D-A),A+0.2dir(C-A)),heavygreen,StickIntervalMarker(2,2,heavygreen));
 
 draw(M+(0,0.1)--M+(-0.1,0.1)--M+(-0.1,-0.1)--M+(0,-0.1));

@@ -18,7 +18,7 @@ label("$A=A'$",A,E);
 label("$B=C'$",B,S);
 label("$C=B'$",C,S);
 draw(B--C);
-draw(B--A--C,StickIntervalMarker(2,2,blue,dotframe(red)));
+draw(B--A--C,blue,StickIntervalMarker(2,2,blue,dotframe(red)));
 
-draw(arc(B,B+0.2unit(A-B),B+0.2unit(C-B),CW),StickIntervalMarker(1,1,blue));
-draw(arc(C,C+0.2unit(B-C),C+0.2unit(A-C),CW),StickIntervalMarker(1,1,blue));
+draw(arc(B,B+0.2unit(A-B),B+0.2unit(C-B),CW),heavygreen,StickIntervalMarker(1,1,heavygreen));
+draw(arc(C,C+0.2unit(B-C),C+0.2unit(A-C),CW),heavygreen,StickIntervalMarker(1,1,heavygreen));

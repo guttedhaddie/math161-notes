@@ -71,7 +71,7 @@ Euclid's system doesn't quite fit the modern standard. Some axioms are vague (wh
 
 Theorems were typically presented as a \emph{problem}; Euclid first provides a construction (P1--P3) before proving that his construction solves the problem.
 
-\begin{thm}{I.\,1}{}
+\begin{thm}{I.\,1}{euclid1-1}
 	Problem: to construct an equilateral triangle on a given segment.
 \end{thm}
 
@@ -350,7 +350,7 @@ Euclid finishes Book I with the converse, which we state without proof. Euclid's
 
 The \emph{Elements} contains thirteen books. Much of the remaining twelve discuss further geometric constructions, including in three dimensions. There is also a healthy dose of basic number theory including what is now known as the Euclidean algorithm.\medbreak
 
-While undoubtedly a masterpiece of logical reasoning, Euclid's presentation has several flaws. Most problematic is his reliance on pictorial reasoning: for instance he `proves' the SAS and SSS congruence theorems (I.\,4 \& 8) by laying one triangle on top of another, a process not justified by his axioms. In a modern sense, Euclid's approach is part axiomatic system and part model: his reasoning requires a visual/physical representation of lines, circles, etc. Because of these issues, we now turn to a more modern description of Euclidean geometry, courtesy of David Hilbert.
+While undoubtedly a masterpiece of logical reasoning, Euclid's presentation has several flaws. Most problematic is his reliance on pictorial reasoning: for instance he `proves' the SAS and SSS congruence theorems (I.\,4 \& 8) by laying one triangle on top of another, a process not justified by his axioms (look it up \href{http://math.furman.edu/~jpoole/euclidselements/euclid.htm}{online} or \href{http://math.uci.edu/~ndonalds/Elements-I-VI.pdf}{Byrne}). In a modern sense, Euclid's approach is part axiomatic system and part model: his reasoning requires a visual/physical representation of lines, circles, etc. Because of these issues, we now turn to a more modern description of Euclidean geometry, courtesy of David Hilbert.
 
 \clearpage
 
@@ -660,32 +660,38 @@ In particular, if a line passes through a vertex and an interior point of a tria
 
 
 \begin{proof}
-	Extend $\cl{AB}$ to a point $D$ such that $A$ lies between $B$ and $D$ (O-2). Since $C$ is not on $\lin{BD}=\lin{AB}$ we have a triangle $\triangle BCD$. Since $\lin{AI}$ intersects one edge of $\triangle BCD$ at $A$ and does not cross any vertices (think about why\ldots), Pasch says it intersects one of the other edges ($\cl{BC}$ or $\cl{CD}$) at a point $M$.
-	\begin{itemize}
-	  \item If $I=M\in\cl{BC}$, we're done. 
-	 	\item If $I=M\in\cl{CD}$, then $I$ lies on the same side of $\cl{AC}$ as $D$ (opposite $B$): a contradiction.
-	\end{itemize}
-	Otherwise, suppose $I\neq M$. Then: %The point $A$ is therefore the unique intersection of three distinct lines: $\lin{AB}$, $\lin{AC}$ and $\lin{IM}$. Moreover:
-	\begin{itemize}
-	  \item Since $I$ is interior to $\angle BAC$, it lies on the same side of $\smash[t]{\lin{AB}=\lin{BD}}$ as $C$.
-	  \item Since $M\in\cl{BC}\cup\cl{CD}$, it lies on the same side of $\smash[t]{\lin{AB}=\lin{BD}}$ as $C$.
-	\end{itemize}
-	By plane separation, $I$ and $M$ lie on the \emph{same side} of $\smash[t]{\lin{AB}}$. In particular, $A\not\in\smash[t]{\cl{IM}}$, whence $M\in\smash[t]{\ray{AI}}$.\smallbreak
-	The two generic cases are drawn below (these also encompass arrangements where $I$ lies \emph{inside} $\triangle ABC$); it suffices to show that the second case is impossible.
+	Extend $\cl{AB}$ to a point $D$ such that $A$ lies between $B$ and $D$ (O-2). Since $C$ is not on $\lin{BD}=\lin{AB}$ we have a triangle $\triangle BCD$. Since $\lin{AI}$ intersects one edge of $\triangle BCD$ at $A$ and does not cross any vertices (think about why\ldots), Pasch says it intersects one of the other edges ($\cl{BC}$ or $\cl{CD}$) at some point $M$.\smallbreak
+	The result follows from applying plane separation to the lines $\lin{AB}=\lin{BD}$ and $\lin{AC}$. First observe:
+	\begin{quote}
+		Since $I,M$ lie on the same side of $\smash{\lin{AB}=\lin{BD}}$ as $C$, it follows that $\smash{\cl{IM}}$ does not intersect $\smash{\lin{AB}}$. Since $A,I,M$ are collinear and $A\in\lin{AB}$, it follows that \textcolor{red}{$A\notin\cl{IM}$}.
+	\end{quote}
+	If $M\in\cl{BC}$, we are done. Our goal is to show that $M\in\cl{CD}$ is a contradiction.\vspace{-5pt}
 	\begin{center}
 		\begin{tabular}{cc}
-			\includegraphics[scale=0.95]{hilbert-crossbar1}&\includegraphics[scale=0.95]{hilbert-crossbar2}%\\
-			%correct arrangement&impossible case
+			\includegraphics[scale=0.95]{hilbert-crossbar1}
+			&
+			\includegraphics[scale=0.95]{hilbert-crossbar2}
+			\\
+			correct arrangement\footnotemark{}
+			&
+			contradiction
 		\end{tabular}
 	\end{center}
-	If $M\in\cl{CD}$, then $I$ and $M$ are on \emph{opposite sides} of $\lin{AC}$. But then $\cl{IM}$ intersects $\lin{AC}$, which it must do at $A$, contradicting the fact that $A\not\in\cl{IM}$.
+	Suppose, for contradiction, that $M\in\cl{CD}$. Relative to $\lin{AC}$:
+	\begin{itemize}\itemsep0pt
+		  \item $I$ and $B$ lie on the same side since $I$ is interior to $\angle BAC$;
+		  \item $B$ and $D$ lie on opposite sides, since $B*A*D$ and $\lin{AC}\neq\lin{BD}=\cl{AB}$;
+		  \item $D$ and $M$ lie on the same side since $M\in\cl{CD}$ and $\lin{CD}\neq\lin{AC}$.		  
+	\end{itemize}
+	By plane separation, $I,M$ lie on opposite sides of $\lin{AC}$. The collinearity of $A,I,M$ then forces the contradiction \textcolor{red}{$A\in\cl{IM}$}.
 \end{proof}
 
+\footnotetext{The pictures could be modified: e.g., $I=M$ and $A*I*M$ are also correct arrangements ($M\in\cl{BC}$).}
 
 
-\begin{minipage}[t]{0.67\linewidth}\vspace{-3pt}
-	Euclid repeatedly uses the crossbar theorem without justification, including in his construction of perpendiculars and of angle and segment bisectors (Theorems I.\,9+10). We sketch this here.\smallbreak
-	Given $\angle BAC$, construct $E$ such that $\cl{AB}\cong\cl{AE}$. Construct $D$ using an equilateral triangle (I.\,1). SSS (I.\,8) shows that the angle is bisected, and SAS (I.\,4) that $\ray{AD}$ bisects $\cl{BE}$.\smallbreak
+\begin{minipage}[t]{0.67\linewidth}\vspace{-8pt}
+	Euclid repeatedly uses the crossbar theorem without justification, including in his construction of perpendiculars and angle/segment bisectors (Theorems I.\,9+10). We sketch the latter here.\smallbreak
+	Given $\angle BAC$, construct $E$ such that $\cl{AB}\cong\cl{AE}$. Construct $D$ using an equilateral triangle (I.\,1). SSS (I.\,8) shows that $\angle BAC$ is bisected, and SAS (I.\,4) that $\ray{AD}$ bisects $\cl{BE}$.\smallbreak
 	Quite apart from Euclid's arguments for SAS and SSS being suspect (we'll deal with these in the next section), he gives no argument for why $D$ is interior to $\angle BAC$ or why $\ray{AD}$ should intersect $\cl{BE}$!
 \end{minipage}
 \hfill
@@ -711,7 +717,7 @@ Even with Pasch's axiom and the crossbar theorem, it requires some effort to rep
 	  (\emph{Hint: remember that order doesn't matter, so the only issue is how many points lie on each line})
 	  
 	    
-	  \item Consider the proof of the crossbar theorem. Explain how we know that $\smash[t]{\ray{AI}}$ does not contain any of the vertices of $\triangle BCD$.
+	  \item Consider the proof of the crossbar theorem. Explain how we know that $\smash[t]{\lin{AI}}$ does not contain any of the vertices of $\triangle BCD$.
 	  
 	  
 	  \item\label{exs:seginterior} You are given distinct points $A,B$. Using the axioms of incidence and order and Lemma \ref{lemm:intersectunique} (follows from I-2), show the existence of each of the points $C,D,E,F$ in the picture \emph{in alphabetical order.} Hence conclude the existence of a point $F$ lying \emph{between} $A$ and $B$ (Lemma \ref{lemm:seginterior}).\par
@@ -771,253 +777,317 @@ Even with Pasch's axiom and the crossbar theorem, it requires some effort to rep
 
 \subsection{Hilbert's Axioms II: Congruence}\label{sec:hilbert2}
 
-The congruence axioms formalize Euclid's constructions and pictorial reasoning, and replace his confusing use of \emph{equal.} Segments/angles are now equal only when they are exactly the same; this is the \emph{reflexivity} part of the following, which depends only on axioms C-1, C-2, C-4 and C-5.
+Hilbert's congruence axioms address two primary issues in Euclid.
+\begin{enumerate}
+  \item Euclid's use of \emph{equal} is confusing. In Hilbert, segments/angles are now equal only when they are precisely the same (this amounts to the \emph{reflexivity} part of the next result).
+  \item Euclid's frequent and unjustified use of pictorial reasoning. We previously discussed Euclid's erroneous approach to the SAS and SSS triangle congruence theorems. It was eventually realized that one of the triangle congruences has to be an axiom: SAS is Hilbert's C-6.
+\end{enumerate}
+
+We start with a small piece of bookkeeping.
 
 \begin{lemm}{}{}
-Congruence of segments/angles is an equivalence relation.
+	Congruence of segments/angles is an equivalence relation.
 \end{lemm}
 
-% \begin{proof}
-% 	\begin{description}\itemsep0pt
-%   	\item[Reflexivity]\quad Let $\cl{AB}$ be given and apply C-1 to obtain a segment %\footnote{You could even take $A'=A$ and use the ray $r=\ray{AB}$!}
-%   	 $\cl{A'B'}$ such that $\cl{AB}\cong\cl{A'B'}$. We sneakily use this \emph{twice} and apply C-2:
-%   	\[\cl{AB}\cong\cl{A'B'}\text{ and } \cl{AB}\cong\cl{A'B'}\implies \cl{AB}\cong\cl{AB}\]
-%   	\item[Symmetry]\quad Assume $\cl{AB}\cong\cl{CD}$. By reflexivity, $\cl{CD}\cong\cl{CD}$. By C-2 we have $\cl{CD}\cong\cl{AB}$.
-%   	\item[Transitivity]\quad If $\cl{AB}\cong\cl{CD}$ and $\cl{CD}\cong\cl{EF}$, apply symmetry  and C-2 to conclude $\cl{AB}\cong\cl{EF}$.\\[-5pt]
-%   \end{description}
-%   Axioms C-4 and C-5 say essentially the same thing for angles.
-% \end{proof}
+\begin{proof}
+	\begin{description}\itemsep0pt
+  	\item[\normalfont(\emph{Reflexivity})] Let $\cl{AB}$ be given. Apply C-1 to obtain %\footnote{You could even take $A'=A$ and use the ray $r=\ray{AB}$!}
+  	$\cl{A'B'}$ such that $\cl{AB}\cong\cl{A'B'}$. We sneakily use this \emph{twice} and apply C-2 to obtain
+  	\[
+  		\cl{AB}\cong\cl{A'B'}\text{ and } \cl{AB}\cong\cl{A'B'}\implies \cl{AB}\cong\cl{AB}
+  	\]
+  	\item[\normalfont(\emph{Symmetry})] Assume $\cl{AB}\cong\cl{CD}$. By reflexivity, $\cl{CD}\cong\cl{CD}$. By C-2 we have $\cl{CD}\cong\cl{AB}$.
+  	\item[\normalfont(\emph{Transitivity})] Suppose $\cl{AB}\cong\cl{CD}$ and $\cl{CD}\cong\cl{EF}$. By symmetry, $\cl{EF}\cong\cl{CD}$. Axiom C-2 now shows that $\cl{AB}\cong\cl{EF}$.
+  \end{description}
+  \medskip
+  Axioms C-4 and C-5 say essentially the same thing for angles (see Exercise \ref{exs:angcongequivrel}).
+\end{proof}
 
-\boldinline{Segment/Angle Transfer and Comparison}
 
-Neither Hilbert nor Euclid require an \emph{absolute} notion of length, though both require a method for \emph{comparing} lengths. 
+\boldsubsubsection{Segment/Angle Transfer and Comparison}
+
+Hilbert's axioms of segment and angle transference are crucial for comparing non-collinear segments and angles with distinct vertices.
 
 
 \begin{defn}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.35\linewidth]{}{lengthcomp}
-Let segments $\cl{AB}$ and $\cl{CD}$ be given.\smallbreak
-Using axiom C-1, construct the unique point $E$ on $\ray{CD}$ such that $\cl{CE}\cong\cl{AB}$: we have now \emph{transferred} $\cl{AB}$ onto $\ray{CD}$.\smallbreak
-We write $\cl{AB}<\cl{CD}$ if $E$ lies between $C$ and $D$, etc.
-\tcblower
-\flushright\includegraphics[scale=0.95]{angles-compare}
+	Let segments $\cl{AB}$ and $\cl{CD}$ be given.\smallbreak
+	By axiom C-1, let $E$ be the unique point on $\ray{CD}$ such that $\cl{CE}\cong\cl{AB}$: we have now \emph{transferred} $\cl{AB}$ onto $\ray{CD}$.\smallbreak
+	We write $\cl{AB}<\cl{CD}$ if $E$ lies between $C$ and $D$, etc.
+	\tcblower
+	\flushright
+	\includegraphics[scale=0.95]{angles-compare}
 \end{defn}
 
-By O-3, any segments are comparable: given $\cl{AB}$, $\cl{CD}$, precisely one of the following holds,
-\[\cl{AB}<\cl{CD},\qquad \cl{CD}<\cl{AB},\qquad\cl{AB}\cong\cl{CD}\]
-C-3 says that congruence respects the addition of congruent segments. Unique angle transfer, comparison and addition follow similarly from axiom C-4 and Definition \ref{defn:interiorangle} (interior points).
+By O-3, any two segments are comparable: given $\cl{AB}$ \& $\cl{CD}$, precisely one of the following holds,
+\[
+	\cl{AB}<\cl{CD}, \qquad \cl{CD}<\cl{AB}, \qquad\cl{AB}\cong\cl{CD}
+\]
+C-3 says that congruence respects the `addition' of adjacent congruent segments. Unique angle transfer, comparison and addition follow similarly from axiom C-4 and Definition \ref{defn:interiorangle} (interior points).\smallbreak
 
+It is important to appreciate that neither Hilbert nor Euclid use or require an \emph{absolute} notion of length/angle-measure: $\cl{AB}<\cl{CD}$ does \emph{not} indicate a relationship between two numerical quantities (the \emph{lengths} of $\cl{AD}$ and $\cl{CD}$). Introducing length as a numerical quantity requires the inclusion of the real numbers (and thus far more axioms); for purity reasons, we postpone this until Section \ref{sec:similar}.
+ 
 
-\boldinline{Side-Angle Side (SAS)}
+\goodbreak
 
-Euclid `proves' SAS (I.\,4) by the unjustified procedure of laying one triangle on top of another. It was ultimately realized that at least one triangle congruence (SAS, ASA, SSS and SAA) had to be an axiom. Hilbert assumes\footnote{Hilbert in fact assumed a weaker version; see Exercise \ref{exs:hilbertsas}.}
-SAS and proceeds to prove the remainder. For example:
+\boldsubsubsection{The Triangle Congruence Theorems: SAS, ASA, SSS \& SAA}
+
+Hilbert assumes side-angle-side (SAS) and proceeds to prove the remainder. Here is the first of these; we'll cover SSS momentarily and SAA in Exercise \ref{exs:saaproof}.
 
 \begin{thm}{Angle-Side-Angle/ASA, Euclid I.\,26, case I}{asa}
-Suppose $\triangle ABC$ and $\triangle DEF$ satisfy
-\[\angle ABC\cong\angle DEF,\qquad \cl{AB}\cong\cl{DE},\qquad\angle BAC\cong\angle EDF\]
-Then the triangles are congruent \ ($\angle ACB\cong\angle DFE$, \ $\cl{AC}\cong\cl{DF}$ and $\cl{BC}\cong\cl{EF}$).
+	Suppose $\triangle ABC$ and $\triangle DEF$ satisfy
+	\[
+		\textcolor{Magenta}{\angle ABC}\cong\textcolor{Magenta}{\angle DEF},\qquad \textcolor{blue}{\cl{AB}}\cong\textcolor{blue}{\cl{DE}},\qquad \textcolor{red}{\angle BAC}\cong\textcolor{red}{\angle EDF}
+	\]
+	Then the triangles are congruent \ ($\angle ACB\cong\angle DFE$, \ $\cl{AC}\cong\cl{DF}$ and $\cl{BC}\cong\cl{EF}$).
 \end{thm}
 
-Remember that we don't yet have uniqueness of parallels, so we can't assume $\angle ACB\cong\angle DFE$!
+%We aren't (yet!) assuming uniqueness of parallels, so we cannot assert $\angle ACB\cong\angle DFE$.
+
+Hilbert's approach modifies Euclid's; instead of laying $\triangle ABC$ on top of $\triangle DEF$, he creates a new triangle $\triangle DEG\cong \triangle ABC$ and proves that $G=F$.
 
 \begin{proof}
-Segment transfer provides the unique point $G\in \ray{EF}$ such that \textcolor{orange}{$\cl{EG}\cong \cl{BC}$}.\par
-\begin{minipage}[t]{0.65\linewidth}\vspace{0pt}
-SAS says \textcolor{red}{$\angle EDG\cong\angle BAC\cong \angle EDF$} (the last by assumption).\medbreak
-Since $F$ and $G$ lie on the same side of $\lin{DE}$, angle transfer (C-4) says that they lie on the \emph{same ray} through $D$.\medbreak
-But then $F$ and $G$ both lie on two distinct lines ($\lin{EF}$ and $\lin{DF}$): we conclude that $F=G$.\medbreak
-By SAS we conclude that $\triangle ABC\cong\triangle DEF$.
-\end{minipage}
-\begin{minipage}[t]{0.34\linewidth}\vspace{-28pt}
-\flushright\includegraphics[scale=0.95]{angles-asa}
-\end{minipage}
+	Segment transfer provides the unique point $G\in \ray{EF}$ such that $\textcolor{Green}{\cl{EG}}\cong \textcolor{Green}{\cl{BC}}$.\par
+	\begin{minipage}[t]{0.65\linewidth}\vspace{0pt}
+		SAS applied to $\textcolor{blue}{\cl{AB}}\cong\textcolor{blue}{\cl{DE}}$, $\textcolor{Magenta}{\angle ABC}\cong\textcolor{Magenta}{\angle DEG}\, (=\textcolor{Magenta}{\angle DEF})$, $\textcolor{Green}{\cl{BC}}\cong \textcolor{Green}{\cl{EG}}$, says $\textcolor{red}{\angle BAC}\cong \textcolor{red}{\angle EDG}\, (\cong \textcolor{red}{\angle EDF}$) (this last is by assumption).\smallbreak
+		Since $F$ and $G$ lie on the same side of $\lin{DE}$, angle transfer (C-4) says they lie on the \emph{same ray} through $D$.\smallbreak
+		But then $F$ and $G$ both lie on two distinct lines ($\lin{EF}=\lin{EG}$ and $\lin{DF}=\lin{DG}$); we conclude that $F=G$.\smallbreak
+		By SAS we conclude that $\triangle ABC\cong\triangle DEF$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.34\linewidth}\vspace{-28pt}
+		\flushright
+		\includegraphics[scale=0.95]{angles-asa}
+	\end{minipage}
 \end{proof}
+
+
+
+
+\boldsubsubsection{Geometry Without Circles}
+
+Circles are at the heart of Euclid's constructions. Yet, for reason we'll address in Section \ref{sec:circ}, Hilbert essentially ignores them. We sketch a few of his alternative approaches to Euclid's basic results.
+
+\begin{thm}{Euclid I.\,5}{euclidiso}
+	An isosceles triangle has congruent base angles.
+\end{thm}
+
+Isosceles means \emph{equal legs}: two sides of the triangle are congruent. The remaining side is the \emph{base.} Euclid's argument relies on a famously complicated construction (look it up!). Hilbert does things more speedily and sneakily, by relabelling the original triangle and applying SAS.
+
+\begin{tcolorbox}[proofstyle]
+	\begin{minipage}[t]{0.7\linewidth}\vspace{0pt}
+		\emph{Proof.}\lstsp Suppose $\triangle ABC$ is isosceles where $\textcolor{blue}{\cl{AB}}\cong\textcolor{blue}{\cl{AC}}$. Consider a `new' triangle $\triangle A'B'C'=\triangle ACB$ where the base points are switched:
+		\[
+			A':=A,\qquad B':=C,\qquad C':=B
+		\]
+		Observe:
+		\begin{itemize}
+		  \item $\textcolor{Green}{\angle BAC}\cong\textcolor{Green}{\angle CAB}$ (axiom C-5) $\implies\textcolor{Green}{\angle BAC}\cong\textcolor{Green}{\angle B'A'C'}$.
+		  \item $\textcolor{blue}{\cl{AB}}\cong\textcolor{blue}{\cl{AC}}\implies \textcolor{blue}{\cl{AB}}\cong\textcolor{blue}{\cl{A'B'}}$ and $\textcolor{blue}{\cl{AC}}\cong\textcolor{blue}{\cl{A'C'}}$.
+		\end{itemize}
+		SAS says that $\angle ABC\cong\angle A'B'C'\cong\angle ACB$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.29\linewidth}\vspace{0pt}
+		\flushright
+		\includegraphics{angles-isos2}\\[-8pt]
+		\hfill\qedsymbol
+	\end{minipage}
+\end{tcolorbox}
 
 
 \goodbreak
 
 
-\boldsubsubsection{Geometry Without Circles}
-
-Circles are at the heart of Euclid's constructions---his very first result depends on them! Yet, for reasons we'll deal with shortly, Hilbert essentially ignores circles. We sketch a few of his alternative approaches to Euclid's basic results.
-
-\begin{thm}{Euclid I.\,5}{euclidiso}
-An isosceles triangle has congruent base angles.
-\end{thm}
-
-Isosceles means \emph{equal legs}: two sides of the triangle are congruent. The remaining side is the \emph{base.}\smallbreak
-Euclid's argument relies on a famously complicated construction (look it up!). Hilbert does things more speedily.
-
-\begin{tcolorbox}[proofstyle]
-\begin{minipage}[t]{0.7\linewidth}\vspace{0pt}
-\emph{Proof.}\lstsp Suppose that $\triangle ABC$ is isosceles where $\cl{AB}\cong\cl{AC}$. Consider a `new' triangle $\triangle A'B'C'=\triangle ACB$ where the base points are switched:
-\[A'=A,\qquad B'=C,\qquad C'=B\]
-We have:
-\begin{itemize}
-  \item $\angle BAC\cong\angle CAB$ (C-5) $\implies\angle BAC\cong\angle B'A'C'$.
-  \item $\cl{AB}\cong\cl{AC}\implies \cl{AB}\cong\cl{A'B'}$ and $\cl{AC}\cong\cl{A'C'}$.
-\end{itemize}
-SAS says that $\angle ABC\cong\angle A'B'C'\cong\angle ACB$.
-\end{minipage}\hfill\begin{minipage}[t]{0.29\linewidth}\vspace{0pt}
-\flushright\includegraphics{angles-isos2}\\[-8pt]
-\hfill\qedsymbol
-\end{minipage}
-\end{tcolorbox}
-
-
-The proof is very sneaky; Hilbert simply relabels the original triangle and applies SAS! The converse to this statement follows from the ASA congruence (Exercise \ref{exs:isoconverse}).\bigbreak
-
-
-
-\begin{minipage}[t]{0.7\linewidth}\vspace{0pt}
 \boldinline{Dropping a Perpendicular}
 
-Suppose $C$ does not lie on $\ell$. By axiom I-3, $\ell=\lin{AB}$ for some points $A,B$.\smallbreak
-Use axioms C-4 and C-1 to transfer \textcolor{Green}{$\angle BAC$} to the other side of the line at $A$, creating a new point $D$.\smallbreak
-Since $C$ and $D$ lie on opposite sides of $\lin{AB}$, it must intersect $\cl{CD}$ at some point $M$.\smallbreak
-SAS applied to $\triangle MAC$ and $\triangle MAD$ shows that $\angle AMC\cong\angle AMD$: since these sum to a straight edge, they must be right-angles.
-\begin{itemize}\itemsep0pt
-  \item The construction still works if \textcolor{Green}{$\angle BAC$} is greater than a right-angle: $\angle MAC$ is now supplementary to $\angle BAC$ rather than equal.
-  \item In the extreme case $M=A$, we have no triangles and SAS cannot be applied. Instead follow the same argument starting with $\angle ABC$.
-\end{itemize}
-\end{minipage}\begin{minipage}[t]{0.3\linewidth}\vspace{0pt}
-\flushright\includegraphics{angles-perp}
-\end{minipage}\bigbreak
+As with the majority of Book I, Euclid accomplishes this using circle intersections.\footnote{Consider the picture for Thm.\,I.\,11 in Exercise \ref*{sec:hilbert1}.\ref{ex:pythagexs}.} Hilbert instead uses segment/angle transference and the concept of sidedness.\par
+	
+\begin{minipage}[t]{0.69\linewidth}\vspace{0pt}
+	Suppose we are given a line $\ell$ and a point $P$ not on $\ell$. Our goal is to construct a point $M\in\ell$ such that $\cl{PM}$ intersects $\ell$ in a right-angle.\smallbreak
+	Let $A,B$ be distinct points on $\ell$ (axiom I-3) so that $\ell=\lin{AB}$.\smallbreak
+	By axioms C-4 and C-1, we may transfer \textcolor{blue}{$\cl{AP}$} to the other side of $\ell$ at $A$, creating a new point $Q$.\smallbreak
+	Since $P$ and $Q$ lie on opposite sides of $\ell$, the line intersects $\cl{PQ}$ at some point $M$. There are two cases to consider.
+	\begin{itemize}
+	  \item In the generic case $M\neq A$ (pictured), SAS applied to $\triangle MAP$ and $\triangle MAQ$ shows that $\angle AMP\cong\angle AMQ$. Since these angles sum to a straight edge ($\cl{PQ}$), they are both right-angles.
+	  \item	In the extreme case $M=A$, there are no triangles and SAS cannot be applied. Instead, observe that $B$ does not lie on $\cl{PQ}$ (which axioms/results make this clear?!) and apply the above argument with $B$ instead of $A$.
+	\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.29\linewidth}\vspace{0pt}
+	\flushright
+	\includegraphics[scale=1]{angles-perp}
+\end{minipage}
+\bigbreak
 
-A generalization of this construction facilitates a corrected argument for the SSS congruence: Euclid again resorted to his flawed `laying on top of' reasoning.
+A generalization of this construction facilitates a corrected argument for the SSS triangle congruence.
 
 \begin{thm}{Side-Side-Side/SSS, Euclid I.\,8}{}
-If triangles have sides congruent in pairs, then the triangles are congruent.
+	Suppose $\triangle ABC$ and $\triangle DEF$ have sides congruent in pairs:
+	\[
+		\textcolor{Magenta}{\cl{AB}}\cong\textcolor{Magenta}{\cl{DE}},\qquad \textcolor{violet}{\cl{BC}}\cong\textcolor{violet}{\cl{EF}},\qquad \textcolor{blue}{\cl{AC}}\cong\textcolor{blue}{\cl{DF}}
+	\]
+	Then the triangles are congruent ($\angle ABC\cong\angle DEF$, $\angle BCA\cong\angle EFD$, $\angle CAB \cong\angle FDE$).
 \end{thm}
+
+The strategy is similar to the proof of ASA. Hilbert creates a new triangle $\triangle DEG\cong\triangle ABC$, though this time with $G$ on the opposite side of $\lin{DE}$ to $F$.
 
 
 \begin{tcolorbox}[proofstyle, lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.4\linewidth]
-\emph{Proof.}\lstsp Suppose $\triangle ABC$ and $\triangle DEF$ have sides congruent in pairs as shown.\smallbreak
-Transfer \textcolor{orange}{$\angle EDF$} to $A$ on the other side of $\cl{AB}$ from $C$ to obtain $G$ (axioms C-4 and C-1).\smallbreak
-SAS shows that $\triangle BAG\cong\triangle EDF$ and so $\textcolor{orange}{\cl{BG}\cong\cl{EF}\cong\cl{BC}}$.\smallbreak
-Joining $\cl{CG}$ produces two isosceles triangles $\triangle ACG$ and $\triangle BCG$ with base $\cl{CG}$. Both have and congruent base angles at $C$ and $G$.\smallbreak
-Summing angles at $C$ and $G$ and applying SAS shows that $\triangle ACB\cong\triangle AGB\cong\triangle DFE$ as required.\medbreak
-As with the perpendicular argument previously, we should also carefully deal with the situations where the sum is a subtraction or the triangle is right-angled at $A$ or $B$.
-\tcblower
-\flushright\includegraphics{angles-sss}\\[-10pt]\hfill\qedsymbol
+	\emph{Proof.}\lstsp	Transfer \textcolor{orange}{$\angle BAC$} to $D$ on the other side of $\lin{DE}$ from $F$ to obtain $G$ (axioms C-4 and C-1).\smallbreak
+	SAS ($\textcolor{Magenta}{\cl{AB}}\cong\textcolor{Magenta}{\cl{DE}}$, $\textcolor{orange}{\angle BAC}\cong \textcolor{orange}{\angle EDG}$, $\textcolor{blue}{\cl{AC}}\cong\textcolor{blue}{\cl{DG}}$) shows that $\textcolor{violet}{\cl{EG}}\cong\textcolor{violet}{\cl{BC}} \cong \textcolor{violet}{\cl{EF}}$. Otherwise said, $\triangle DEG\cong\triangle ABC$.\smallbreak
+	Join $\cl{FG}$ to produce isosceles triangles $\triangle FDG$ and $\triangle FEG$ with base $\cl{FG}$, both with congruent angles at $F$ and $G$.\smallbreak
+	Sum angles at $F$ and $G$ and apply SAS ($\textcolor{blue}{\cl{DF}}\cong\textcolor{blue}{\cl{DG}}$, $\angle DFE\cong \angle DGE$, $\textcolor{violet}{\cl{EF}}\cong\textcolor{violet}{\cl{EG}}$) to see that $\triangle DEF\cong\triangle DEG$.\smallbreak
+	We conclude that $\triangle ABC\cong\triangle DEG\cong\triangle DEF$, as required.\medbreak
+	To be completely formal, we should also carefully deal with the situations where the sum is a subtraction or the triangle is right-angled at $A$ or $B$.
+	\tcblower
+	\flushright\includegraphics{angles-sss}\\[-10pt]\hfill\qedsymbol
 \end{tcolorbox}
 
-\boldinline{Exterior Angle Theorem (\ref{thm:extangle}) (Euclid I.\,16)}
+\goodbreak
 
-Euclid's approach requires a bisector which he obtains from circles. Hilbert does things a little differently.
+
+\boldinline{Exterior Angle Theorem (Thm.\,\ref{thm:extangle}, I.\,16)}
+
+Euclid's approach uses a bisector which he obtains from circles. Hilbert does things a little differently.
 
 \begin{proof}
-Given $\triangle ABC$, extend $\cl{AB}$ to $D$ such that \textcolor{blue}{$\cl{AC}\cong\cl{BD}$}.\smallbreak
-In the first picture below, assume\ \textcolor{Green}{$\delta\cong\gamma$}. Apply SAS to see that $\triangle ACB\cong\triangle DBC$: in particular \textcolor{blue}{$\epsilon\cong\beta$}.\smallbreak
-Clearly $A$ and $D$ lie on opposite sides of $\lin{BC}$: but then $\epsilon+\gamma\cong \beta+\delta$ is a straight edge and so $A,D$ are distinct points lying on \emph{two} lines! Contradiction.\smallbreak
-We conclude that $\delta\ncong\gamma$.
-\begin{center}
-\begin{tabular}{c@{\qquad}c}
-\includegraphics[scale=0.95]{angles-exterior1}&\includegraphics[scale=0.95]{angles-exterior2}\\
-Step 1: $\delta\cong\gamma$ is a contradiction&Step 2: $\delta<\gamma$ is a contradiction
-\end{tabular}
-\end{center}
-In the second picture, assume $\delta<\gamma$. Transfer the angle to $C$ as shown where $\eta\cong\delta$: by the crossbar theorem, we obtain an intersection point $E$. But now $\delta$ is an exterior angle of $\triangle EBC$ which is congruent to an interior angle $\eta$ of the same triangle: contradiction.\smallbreak
-The only non-contradictory possibility is that $\delta>\gamma$.\smallbreak
-By taking the vertical angle to $\delta$ at $B$ and repeating the argument, we also see that $\delta>\alpha$.
+	Given $\triangle ABC$, extend $\cl{AB}$ to $D$ such that \textcolor{blue}{$\cl{AC}\cong\cl{BD}$}. For clarity, we label angles with Greek letters as in the first picture below. We show that \textcolor{Green}{$\gamma<\delta$} by proving that the alternatives are impossible.	
+	\begin{enumerate}\itemsep0pt
+		\item $(\delta\ncong\gamma)$\lstsp Assume \textcolor{Green}{$\delta\cong\gamma$}. By SAS, $\triangle ACB\cong\triangle DBC$; in particular \textcolor{blue}{$\epsilon\cong\beta$}. Since $A$ and $D$ lie on opposite sides of $\lin{BC}$, we see that $\epsilon+\gamma\cong \beta+\delta$ is a straight edge. But then $A,D$ are distinct points lying on \emph{two} lines! Contradiction.
+		\item $(\delta\not<\gamma)$\lstsp Assume \textcolor{Green}{$\delta<\gamma$}. Transfer $\delta$ to $C$ as shown to obtain $\textcolor{Green}{\eta\cong\delta}$. By the crossbar theorem, we obtain an intersection point $E$. But now $\delta$ is an exterior angle of $\triangle EBC$ congruent to an interior angle $\eta$ of the same triangle, contradicting part 1.
+	\end{enumerate}
+	\begin{center}
+		\begin{tabular}{c@{\qquad}c}
+			\includegraphics[scale=0.9]{angles-exterior1}
+			&
+			\includegraphics[scale=0.9]{angles-exterior2}
+			\\
+			Step 1: $\delta\cong\gamma$ is a contradiction
+			&
+			Step 2: $\delta<\gamma$ is a contradiction
+		\end{tabular}
+	\end{center}
+	Take the vertical angle to $\delta$ at $B$ and repeat the argument to see that $\alpha<\delta$.
 \end{proof}
 
-The exterior angle theorem also proves that the sum of any two angles in a triangle is strictly less than a straight edge: $\alpha+\beta<\delta+\beta =\ang{180}$.
+The proof also shows that the sum of any two angles in a triangle is strictly less than a straight edge: $\alpha+\beta<\delta+\beta =\ang{180}$.
 
 \goodbreak
 
 \boldinline{Is Euclid now fixed?}
 
-Almost! In the exercises we show how the following may be achieved in Hilbert's system:
+Almost! In the exercises we show how the following may be achieved:
 \begin{itemize}
   \item Construction of an isosceles triangle on a segment $\cl{AB}$. With this one can construct segment and angle bisectors (Euclid I.\,9+10).
   \item SAA congruence (Euclid I.\,26, case II): the last remaining triangle congruence theorem.
 \end{itemize}
 
-At this point we've recovered almost all of Book I prior to the application of the parallel postulate. Including Playfair's axiom allows the remainder of Book I to be completed, including Pythagoras', all \emph{without circles!}
+We've now recovered almost all of Book I prior to the application of the parallel postulate. Including Playfair's axiom completes the remainder, including Pythagoras', all \emph{without circles!}
+
 
 \begin{exercises}
-Except for questions \ref*{exs:aaassano} and \ref*{ex:pythagnocont}, all exercises should be answered in \emph{neutral geometry,} with no reference to the continuity axiom, circles, or anything regarding uniqueness of parallels such as Playfair's axiom or the angle sum of a triangle being \ang{180}. All you need are Sections \ref*{sec:hilbert1} and \ref*{sec:hilbert2}!
-\begin{enumerate}\itemsep3pt
-  \item\label{exs:aaassano} Draw a picture to suggest why Angle-Angle-Angle (AAA) and Side-Side-Angle (SSA) are \emph{not} triangle congruence theorems in Euclidean geometry.
-  
-  
-  \item Use Hilbert's axioms C-4 and C-5 to prove that congruence of angles is an equivalence relation.
-  
-  
-  \item\label{exs:isoconverse}\begin{enumerate}
-    \item Use ASA to prove the converse to Theorem \ref{thm:euclidiso}: if the base angles are congruent then a triangle is isosceles.
-    \item Find an alternative proof that relies on the exterior angle theorem.
-    \item Explain why the base angles of an isosceles triangle are \emph{acute} (less than a right-angle).
-  \end{enumerate}
-  
-  
-  \begin{minipage}[t]{0.68\linewidth}\vspace{0pt}
-  \item Suppose $\cl{AB}$ is given. By axiom I-3, $\exists C\not\in\overleftrightarrow{AB}$.\smallbreak
-	If $\triangle ABC$ is not isosceles, then WLOG assume $\angle ABC<\angle BAC$.\smallbreak
-	Transfer $\angle ABC$ to $A$ to produce $D$ on the same side of $\overleftrightarrow{AB}$ as $C$ and for which
-	\[\angle ABC\cong\angle BAD,\qquad \cl{BC}\cong\cl{AD}\]
-	\end{minipage}\begin{minipage}[t]{0.32\linewidth}\vspace{0pt}
-		\flushright\includegraphics{angles-bisector1}
-	\end{minipage}\vspace{-20pt}
-	\begin{enumerate}
-	  \item Explain why rays $\ray{AD}$ and $\ray{BC}$ intersect at a point $M$.
-	  
-	  \item Why is $\triangle MAB$ isosceles?
-	  
-	  \item Explain how to produce the perpendicular bisector of $\cl{AB}$.
-	  
-	  \item Explain how to construct an angle bisector using the above discussion.
-	\end{enumerate}
-  
- 
-  
-  \begin{minipage}[t]{0.57\linewidth}\vspace{0pt}
-  \item\label{ex:euclidi19} We prove Theorems I.\,18, 19 and 20 on comparisons of angles and sides in a triangle. For clarity, suppose $\triangle ABC$ has sides and angles labelled as in the picture.
-  \end{minipage}\begin{minipage}[t]{0.42\linewidth}\vspace{0pt}
-  \flushright\includegraphics{angles-trianglecomp}
-  \end{minipage}
-  \vspace{-55pt}
-   \begin{enumerate}
-     \item (I.\,18)\quad Assume $a<c$. Prove that $\alpha<\gamma$.\\
-     (\emph{Hint: let $D$ on $\cl{AB}$ satisfy $\cl{BD}\cong a$})
-     \item (I.\,19)\quad Prove the converse: if $\alpha<\gamma$, then $a<c$.\\
-     (\emph{Hint: Show that $a\ge c$ is impossible})
-     \item (I.\,20)\quad Prove the \emph{triangle inequality.} For any triangle, $a+b>c$.\\
-     (\emph{Hint: Let $E$ lie on $\ray{BC}$ such that $\cl{CE}\cong b$ and apply the previous part})
-   \end{enumerate}
-   
-   \goodbreak
-  
-  \begin{minipage}[t]{0.62\linewidth}\vspace{0pt}
-  \item Prove the SAA congruence. If $\triangle ABC$ and $\triangle DEF$ satisfy
-  \[\cl{AB}\cong\cl{DE},\quad \angle ABC\cong\angle{DEF}\quad \text{and}\quad\angle BCA\cong\angle EFD\]
-  then the triangles are congruent $\triangle ABC\cong\triangle DEF$.\par
-  (\emph{Hint: Let $G$ on $\ray{BC}$ be such that $\cl{BG}\cong\cl{EF}$, then apply SAS and the exterior angle theorem})
-  \end{minipage}\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
-	\flushright\includegraphics{angles-sss-aas}
-	\end{minipage}
-  
-  \item\label{exs:hilbertsas} Hilbert's published SAS axiom is actually weaker than we stated.
-	\begin{quote}
-		Given triangles $\triangle ABC$ and $\triangle A'B'C'$, if $\cl{AB}\cong\cl{A'B'}$, $\cl{AC}\cong\cl{A'C'}$, and $\angle BAC\cong\angle B'A'C'$, then $\angle ABC\cong\angle A'B'C'$. 
-	\end{quote}
-	Use this to prove the full SAS congruence theorem (axiom C-6 as we've stated it).\par
-	(\emph{Hint: try a trick similar to that in the proof of ASA})
+	Except for question \ref*{ex:pythagnocont}, answer everything without reference to the continuity axiom, circles, or the uniqueness of parallels (e.g., Playfair's axiom, (tri)angle sum $=\ang{180}$).
 	
-	\begin{minipage}[t]{0.65\linewidth}\vspace{0pt}
-  \item\label{ex:pythagnocont} Consider the picture constructed as follows.
-  \begin{itemize}\itemsep0pt
-    \item $\cl{BF}$ is the perpendicular bisector of $\cl{AC}$
-    \item $\cl{BD}\cong\cl{AB}$
-    \item $\cl{BE}\cong\cl{AD}$
-    \item $\cl{BF}\cong\cl{AE}$
-  \end{itemize}
-  Use Pythagoras' Theorem to prove that $\triangle ACF$ is equilateral.
-  \end{minipage}\begin{minipage}[t]{0.35\linewidth}\vspace{-5pt}
-  \flushright\includegraphics{angles-equilateral}
-  \end{minipage}\smallbreak
-  (\emph{Since Pythagoras' requires Playfair's axiom, this construction is false in hyperbolic geometry})
-\end{enumerate}
+	
+	\begin{enumerate}\itemsep3pt
+	  \item\label{exs:aaassano} Draw pictures to suggest why you don't expect Angle-Angle-Angle (AAA) and Side-Side-Angle (SSA) to be triangle congruence theorems.
+	  
+	  
+	  \item\label{exs:angcongequivrel} Use Hilbert's axioms C-4 and C-5 to prove that congruence of angles is an equivalence relation.
+	  
+	  
+	  \item\label{exs:isoconverse}\begin{enumerate}
+	    \item Use ASA to prove the converse to Theorem \ref{thm:euclidiso}: if the base angles are congruent then a triangle is isosceles.
+	    \item Find an alternative argument for part (a) that relies on the exterior angle theorem.
+	    \item Explain why the base angles of an isosceles triangle are \emph{acute} (less than a right-angle).
+	  \end{enumerate}
+	  
+	  \goodbreak
+	  
+	  
+	  \begin{minipage}[t]{0.72\linewidth}\vspace{0pt}
+		  \item Given $\cl{AB}$, axiom I-3 says $\exists C\not\in\overleftrightarrow{AB}$.\smallbreak
+			If $\triangle ABC$ is not isosceles, then WLOG assume $\angle ABC<\angle BAC$.\smallbreak
+			Transfer $\angle ABC$ to $A$ to produce $D$ on the same side of $\smash{\lin{AB}}$ as $C$ with
+			\[
+				\angle ABC\cong\angle BAD,\qquad \cl{BC}\cong\cl{AD}
+			\]
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.27\linewidth}\vspace{0pt}
+			\flushright
+			\includegraphics[scale=0.95]{angles-bisector1}
+		\end{minipage}
+		\vspace{-34pt}
+		\begin{enumerate}
+		  \item Explain why rays $\ray{AD}$ and $\ray{BC}$ intersect (at some point $M$).
+		  
+		  \item Why is $\triangle MAB$ isosceles?
+		  
+		  \item Describe how to produce the perpendicular bisector of $\cl{AB}$.
+		  
+		  \item Explain how to construct an angle bisector using the above discussion.
+		\end{enumerate}
+	  
+	 
+	  
+	  \begin{minipage}[t]{0.57\linewidth}\vspace{0pt}
+		  \item\label{ex:euclidi19} We prove Theorems I.\,18, 19 and 20 on comparisons of angles and sides in a triangle. For clarity, suppose $\triangle ABC$ has sides and angles labelled as in the picture.
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.42\linewidth}\vspace{0pt}
+		  \flushright
+		  \includegraphics[scale=0.95]{angles-trianglecomp}
+	  \end{minipage}
+	  \vspace{-55pt}
+	  \begin{enumerate}
+	    \item (I.\,18)\quad Assume $a<c$. Prove that $\alpha<\gamma$.\par
+	    (\emph{Hint: let $D$ on $\cl{AB}$ satisfy $\cl{BD}\cong a$})
+	    \item (I.\,19: converse to I.\,18)\quad $\alpha<\gamma\implies a<c$.\par
+	    (\emph{Hint: Prove the contrapositive})
+	    \item (I.\,20: triangle inequality)\quad $a+b>c$.\par
+	    (\emph{Hint: Let $E$ lie on $\ray{BC}$ such that $\cl{CE}\cong b$ and apply I.\,19})
+	  \end{enumerate}
+	   
+	  
+	  \begin{minipage}[t]{0.68\linewidth}\vspace{0pt}
+		  \item\label{exs:saaproof} Prove the SAA congruence. If $\triangle ABC$ and $\triangle DEF$ satisfy
+		  \[
+		  	\cl{AB}\cong\cl{DE},\quad \angle ABC\cong\angle{DEF}\quad \text{and}\quad\angle BCA\cong\angle EFD
+		  \]
+		  then the triangles are congruent: $\triangle ABC\cong\triangle DEF$.\par
+		  (\emph{Hint: Let $G\in\ray{BC}$ be such that $\cl{BG}\cong\cl{EF}$; apply SAS and the exterior angle theorem})
+	  \end{minipage}
+	  \hfill
+	  \begin{minipage}[t]{0.3\linewidth}\vspace{0pt}
+			\flushright
+			\includegraphics[scale=0.95]{angles-sss-aas}
+		\end{minipage}
+	  
+	  
+	  \item\label{exs:hilbertsas} Hilbert's published SAS axiom is weaker than we've stated.
+		\begin{quote}
+			Given triangles $\triangle ABC$ and $\triangle A'B'C'$, if $\cl{AB}\cong\cl{A'B'}$, $\cl{AC}\cong\cl{A'C'}$, and $\angle BAC\cong\angle B'A'C'$, then $\angle ABC\cong\angle A'B'C'$. 
+		\end{quote}
+		Use this to prove the full SAS congruence theorem (axiom C-6 as we've stated it).\par
+		(\emph{Hint: try a trick similar to the proof of ASA})
+		
+		
+		\begin{minipage}[t]{0.7\linewidth}\vspace{0pt}
+		  \item\label{ex:pythagnocont} Construct the picture on the right, where $\cl{BF}$ is the perpendicular bisector of $\cl{AC}$, and
+		  \[
+		  	\cl{BD}\cong\cl{AB},\qquad \cl{BE}\cong\cl{AD},\qquad \cl{BF}\cong\cl{AE}
+		  \]
+		  Use Pythagoras' Theorem to prove that $\triangle ACF$ is equilateral.\smallbreak
+		  \emph{This construction requires Playfair's axiom and thus unique parallels. It does not require circle intersections (continuity) like Theorem \ref{thm:euclid1-1} (I.\,1).}
+	  \end{minipage}
+	  \hfill
+	  \begin{minipage}[t]{0.29\linewidth}\vspace{-5pt}
+	  	\flushright
+	  	\includegraphics{angles-equilateral}
+	  \end{minipage}
+	  \smallbreak
+	\end{enumerate}
 \end{exercises}
 
 

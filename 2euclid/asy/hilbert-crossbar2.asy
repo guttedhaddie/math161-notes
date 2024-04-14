@@ -16,7 +16,7 @@ pair C=1.5dir(60);
 pair D=2dir(25);
 pair EE=-1.5B;
 
-draw(A--B--C--EE--A);
+draw(C--A--B--C--EE--A);
 
 pair M=0.4EE+0.6C;
 
