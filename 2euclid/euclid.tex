@@ -1096,12 +1096,12 @@ We've now recovered almost all of Book I prior to the application of the paralle
 \subsection{Circles and Continuity}\label{sec:circ}
 
 \begin{defn}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.22\linewidth]{}{}
-Let $O$ and $R$ be distinct points. The \emph{circle} $\mathcal C$ with center $O$ and radius $\cl{OR}$ is the collection of points $A$ such that $\cl{OA}\cong\cl{OR}$.\smallbreak
-A point $P$ lies \emph{inside} the circle $\mathcal C$ if $P=O$ or $\cl{OP}<\cl{OR}$.\smallbreak
-A point $Q$ lies \emph{outside} if $\cl{OR}<\cl{OQ}$.\smallbreak
-Since all segments are comparable, any point lies \emph{inside, outside} or \emph{on} a given circle.
-\tcblower
-\flushright\includegraphics{circle-circle}
+	Let $O$ and $R$ be distinct points. The \emph{circle} $\mathcal C$ with center $O$ and radius $\cl{OR}$ is the collection of points $A$ such that $\cl{OA}\cong\cl{OR}$.\smallbreak
+	A point $P$ lies \emph{inside} the circle $\mathcal C$ if $P=O$ or $\cl{OP}<\cl{OR}$.\smallbreak
+	A point $Q$ lies \emph{outside} if $\cl{OR}<\cl{OQ}$.\smallbreak
+	Since all segments are comparable, any point lies \emph{inside, outside} or \emph{on} a given circle.
+	\tcblower
+	\flushright\includegraphics{circle-circle}
 \end{defn}
 
 A major weakness of Euclid is that many of his proofs rely on circle intersections, rather than lines. To use circles in this manner requires the \emph{Axiom of Continuity.} 
@@ -1109,38 +1109,46 @@ This much more technical than the other axioms. It is likely for this reason tha
 Here are the facts necessary before Euclid's approach can be followed.
 
 \begin{thm}{}{}
-Suppose $\mathcal C$ and $\mathcal D$ are circles.\vspace{-5pt}
-\begin{enumerate}\itemsep0pt
-  \item (Elementary Continuity Principle)\quad If $P$ lies inside and $Q$ outside $\mathcal C$, then $\cl{PQ}$ intersects $\mathcal C$ in exactly one point.
-  \item (Circular Continuity Principle)\quad If $\mathcal D$ contains a point inside and another outside $\mathcal C$, then they intersect in exactly two points; these lie on \emph{opposite sides} of the line joining the circle centers.
-\end{enumerate}
+	Suppose $\mathcal C$ and $\mathcal D$ are circles.\vspace{-5pt}
+	\begin{enumerate}\itemsep0pt
+	  \item (Elementary/line-circle Continuity Principle)\quad If $P$ lies inside and $Q$ outside $\mathcal C$, then $\cl{PQ}$ intersects $\mathcal C$ in exactly one point.
+	  \item (Circular Continuity Principle)\quad If $\mathcal D$ contains a point inside and another outside $\mathcal C$, then they intersect in exactly two points; these lie on \emph{opposite sides} of the line joining the circle centers.
+	\end{enumerate}
 \end{thm}
 
 
 \begin{minipage}[t]{0.7\linewidth}\vspace{0pt}
-The idea of the first principle is to partition $\cl{PQ}$ into two pieces:
-\begin{itemize}\itemsep0pt
-  \item[]\textcolor{blue}{$\Sigma_1$} consists of the points lying on or inside $\mathcal C$
-  \item[]\textcolor{Green}{$\Sigma_2$} consists of the points lying outside $\mathcal C$
-\end{itemize}
-One shows that $\Sigma_1$ and $\Sigma_2$ satisfy the assumptions of the axiom: the unique point $\mathcal O$ then exists and is shown to lie on $\mathcal C$ itself.
-\end{minipage}\hfill\begin{minipage}[t]{0.29\linewidth}\vspace{0pt}
-\flushright \includegraphics{circle-cont}
-\end{minipage}\smallbreak
+	The idea of the first principle is to partition $\cl{PQ}$ into two pieces:
+	\begin{itemize}\itemsep0pt
+	  \item[]\textcolor{blue}{$\Sigma_1$} consists of the points lying on or inside $\mathcal C$
+	  \item[]\textcolor{Green}{$\Sigma_2$} consists of the points lying outside $\mathcal C$
+	\end{itemize}
+	One shows that $\Sigma_1$ and $\Sigma_2$ satisfy the assumptions of the axiom: the unique point $\mathcal O$ then exists and is shown to lie on $\mathcal C$ itself.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.29\linewidth}\vspace{0pt}
+	\flushright
+	\includegraphics{circle-cont}
+\end{minipage}
+\smallbreak
 
 A full discussion of this (even a sketch of the second argument) requires a significant investment in analysis and therefore lies beyond the scope of this course. What is perhaps more interesting is to consider a geometry in which the axiom of continuity is false.
 
 \begin{example}{}{}
-The geometry $\Q^2=\{(x,y)\in\R^2:x,y\in\Q\}$ of points in the plane with \emph{rational} co-ordinates satisfies \emph{almost all} of Hilbert's axioms, however C-1 and continuity are false.\par
-\begin{minipage}[t]{0.7\linewidth}\vspace{-5pt}
-\begin{description}\itemsep0pt
-	\item[\normalfont\emph{Axiom C-1}] Given points $A=(0,0)$, $B=(1,0)$ and $C=(1,1)$, we see that $\mathcal O=(\frac 1{\sqrt 2},\frac 1{\sqrt 2})$ is the unique point (in $\R^2$) on the ray $r=\ray{AC}$ such that $\cl{AC}\cong\cl{AB}$. Clearly $\mathcal O$ is an irrational point and therefore not in the geometry.
-	\item[\normalfont\emph{Continuity}] The circle centered at $A=(0,0)$ with radius 1 does not intersect the segment $\cl{AC}$. More properly, the segment $\cl{AC}=\Sigma_1\cup\Sigma_2$ may be partitioned as shown and yet no point $\mathcal O$ in the geometry separates $\Sigma_1,\Sigma_2$.
-\end{description}
-\end{minipage}\hfill\begin{minipage}[t]{0.29\linewidth}\vspace{0pt}
-\flushright \includegraphics{circle-cont2}
-\end{minipage}
+	The geometry $\Q^2=\{(x,y)\in\R^2:x,y\in\Q\}$ of points in the plane with \emph{rational} co-ordinates satisfies \emph{almost all} of Hilbert's axioms, however C-1 and continuity are false.\par
+	\begin{minipage}[t]{0.7\linewidth}\vspace{-5pt}
+		\begin{description}\itemsep0pt
+			\item[\normalfont\emph{Axiom C-1}] Given points $A=(0,0)$, $B=(1,0)$ and $C=(1,1)$, we see that $\mathcal O=(\frac 1{\sqrt 2},\frac 1{\sqrt 2})$ is the unique point (in $\R^2$) on the ray $r=\ray{AC}$ such that $\cl{AC}\cong\cl{AB}$. Clearly $\mathcal O$ is an irrational point and therefore not in the geometry.
+			\item[\normalfont\emph{Continuity}] The circle centered at $A=(0,0)$ with radius 1 does not intersect the segment $\cl{AC}$. More properly, the segment $\cl{AC}=\Sigma_1\cup\Sigma_2$ may be partitioned as shown and yet no point $\mathcal O$ in the geometry separates $\Sigma_1,\Sigma_2$.
+		\end{description}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.29\linewidth}\vspace{0pt}
+		\flushright 
+		\includegraphics{circle-cont2}
+	\end{minipage}
 \end{example}
+
 
 \goodbreak
 
@@ -1148,24 +1156,27 @@ The geometry $\Q^2=\{(x,y)\in\R^2:x,y\in\Q\}$ of points in the plane with \emph{
 
 We can finally correct Euclid's proof of the first proposition of the \emph{Elements}!
 
-\begin{defn}{}{}
-A triangle $\triangle ABC$ is \emph{equilateral} if its three sides are congruent.
-\end{defn}
+% \begin{defn}{}{}
+% 	A triangle $\triangle ABC$ is \emph{equilateral} if its three sides are congruent.
+% \end{defn}
 
 \begin{thm}{Euclid I.1}{euclid-equil}
-An equilateral triangle many be constructed on a given segment $\cl{AB}$.
+	An equilateral triangle many be constructed on a given segment $\cl{AB}$.
 \end{thm}
 
 \begin{proof}
-Following Euclid, take the circles $\alpha$ and $\beta$ centered at $A$ and $B$, with radii $\cl{AB}$.\par
-\begin{minipage}[t]{0.58\linewidth}\vspace{-5pt}
-Axiom O-2: $\exists D$ such that $A*B*D$.\smallbreak
-Axiom C-1: let $C\in\ray{BD}$ be such that $\cl{BC}\cong\cl{AB}$.\smallbreak
-Circular continuity principle: $\beta$ contains $A$ (inside $\alpha$) and $C$ (outside $\alpha$) whence the circles intersect in precisely two points $P,Q$.\smallbreak
-Since $P$ lies on both circles (and is therefore distinct from $A$ and $B$), it follows that $\cl{AB}\cong\cl{AP}\cong\cl{BP}$ and that $\triangle ABC$ is equilateral.
-\end{minipage}\hfill\begin{minipage}[t]{0.41\linewidth}\vspace{-5pt}
-\flushright \includegraphics{circle-euclid1}
-\end{minipage}\\[-5pt]
+	Following Euclid, take the circles $\alpha$ and $\beta$ centered at $A$ and $B$, with radii $\cl{AB}$.\par
+	\begin{minipage}[t]{0.58\linewidth}\vspace{-5pt}
+		Axiom O-2: $\exists D$ such that $A*B*D$.\smallbreak
+		Axiom C-1: let $C\in\ray{BD}$ be such that $\cl{BC}\cong\cl{AB}$.\smallbreak
+		Circular continuity principle: $\beta$ contains $A$ (inside $\alpha$) and $C$ (outside $\alpha$) so the circles intersect in two points $P,Q$.\smallbreak
+		Since $P$ lies on both circles (and is therefore distinct from $A$ and $B$), we have $\cl{AB}\cong\cl{AP}\cong\cl{BP}$ whence $\triangle ABC$ is equilateral.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.41\linewidth}\vspace{-5pt}
+		\flushright
+		\includegraphics[scale=0.9]{circle-euclid1}
+	\end{minipage}\\[-5pt]
 \end{proof}
 
 If one allows Playfair's axiom on unique parallels, Euclid's result can be proved without using circles or the continuity axiom (see Exercise \ref*{sec:hilbert2}.\ref{ex:pythagnocont}). Nevertheless, we are finally able to say that every result in Book I of Euclid is correct, even if his original axioms and arguments are insufficient!
@@ -1177,80 +1188,111 @@ If one allows Playfair's axiom on unique parallels, Euclid's result can be prove
 We continue our survey of Euclidean geometry with a few results about circles, many of which are found in Book III of the \emph{Elements}. From this point onwards we assume all of Hilbert's axioms including Playfair and continuity: indeed what follows often relies on their consequences, namely angle-sums in triangles and the circular continuity principle.
 
 \begin{defn}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.35\linewidth]{}{circledef}
-With reference to the picture:
-\begin{itemize}
-  \item A \emph{chord} $\cl{AB}$ is a segment joining two points on a circle.
-  \item A \emph{diameter} $\cl{BC}$ is a chord passing through the center $O$.
-  \item An \emph{arc} $\arc{AB}$ is part of the circular edge between chord points (\textcolor{Green}{major} or \textcolor{blue}{minor} by length).
-  \item $\angle AOB$ is a \emph{central} angle and $\angle APB$ an \emph{inscribed} angle.
-  \item $\triangle ABP$ is \emph{inscribed} in its \emph{circumcircle.}
-\end{itemize}
-\tcblower
-\flushright\includegraphics{circle-circle1}
+	With reference to the picture:
+	\begin{itemize}\itemsep0pt
+	  \item A \emph{chord} $\cl{AB}$ is a segment joining two points on a circle.
+	  \item A \emph{diameter} $\cl{BC}$ is a chord passing through the center $O$.
+	  \item An \emph{arc} $\arc{AB}$ is part of the circular edge between chord points (\textcolor{Green}{major} or \textcolor{blue}{minor} by length).
+	  \item $\angle AOB$ is a \emph{central} angle and $\angle APB$ an \emph{inscribed} angle.
+	  \item $\triangle ABP$ is \emph{inscribed} in its \emph{circumcircle.}
+	\end{itemize}
+	\tcblower
+	\flushright
+	\includegraphics[scale=0.95]{circle-circle1}
 \end{defn}
 
-Since you should by now be quite comfortable with Euclidean geometry, most of the details are left as exercises.
+Since these ideas shouldn't be new, most of the details are left as exercises.
 
-\begin{thm}{III.\,20}{}
-The central angle is twice the inscribed angle: $\angle AOB=2\angle APB$.
+\begin{thm}{III.\,20}{central-inscribed}
+	The central angle is twice the inscribed angle: $\angle AOB=2\angle APB$.
 \end{thm}
 
-Simply join $O$ to $A,B,P$, breaking $\triangle ABP$ into three isosceles triangles and count angle sums\ldots
+For a sketch proof, join $\cl{OP}$, breaking $\triangle ABP$ into three isosceles triangles and count angle sums.
 
 \begin{cor}{}{thalescor}
-\exstart (III.\,21)\lstsp If inscribed triangles share a side, the opposite angles are congruent.
-\begin{enumerate}\setcounter{enumi}{1}
-	\item (Thales' Theorem III.\,31)\lstsp A triangle in a semi-circle is right-angled.
-	\item (III.\,22)\lstsp A quadrilateral inscribed in a circle has its opposite angles supplementary (summing to a straight edge).
-\end{enumerate}
+	\exstart (III.\,21)\lstsp If inscribed triangles share a side, the opposite angles are congruent.
+	\begin{enumerate}\setcounter{enumi}{1}
+		\item (III.\,22)\lstsp An inscribed quadrilateral has opposite angles supplementary (summing to \ang{180}).
+		\item (Thales' Theorem III.\,31)\lstsp A triangle in a semi-circle is right-angled.
+	\end{enumerate}
 \end{cor}
 
-\begin{minipage}[t]{0.62\linewidth}\vspace{0pt}
-\begin{thm}{}{circumcircle}
-Any triangle has a unique circumcircle.
-\end{thm}
+\goodbreak
 
-This is similar to III.\,1: just construct the perpendicular bisectors of two sides as in the picture. 
-\end{minipage}\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
-\flushright\includegraphics{circle-circle3}
+\begin{minipage}[t]{0.62\linewidth}\vspace{0pt}
+	\begin{thm}{}{circumcircle}
+		Any triangle has a unique circumcircle.
+	\end{thm}
+	
+	This is similar to III.\,1: construct the perpendicular bisectors of two sides as in the picture.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.37\linewidth}\vspace{-8pt}
+	\flushright
+	\includegraphics[scale=0.9]{circle-circle3}
 \end{minipage}
 
 
 \begin{defn}{}{}
-A line is \emph{tangent} to a circle if it intersects the circle exactly once.
+	A line is \emph{tangent} to a circle if it intersects the circle exactly once.
 \end{defn}
 
 \begin{thm}{III.\,18, 19 (part)}{tangentperp}
-A line is tangent to a circle if and only if it is perpendicular to the radius at the point of tangency.
-\end{thm}\goodbreak
+	A line is tangent to a circle if and only if it is perpendicular to the radius at an intersection point.
+\end{thm}
 
-\begin{tcolorbox}[proofstyle, lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.35\linewidth]
-\emph{Proof.}\ \ Suppose $\ell$ through $T$ is perpendicular to the radius $\cl{OT}$.\smallbreak
-Let $P$ be another point on $\ell$. But then (Exercise \ref*{sec:hilbert2}.\ref{ex:euclidi19}),
-\[\angle OPT<\angle OTP\implies \cl{OT}<\cl{OP}\]
-Thus $P$ lies \emph{outside} the circle, which $\ell$ intersects only at $T$: the line is therefore tangent.\medbreak
-The converse is an exercise.
-\tcblower
-\flushright\includegraphics{circle-circle2}\\[-8pt]\hfill\qedsymbol
+\begin{tcolorbox}[proofstyle, lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.33\linewidth]
+	\emph{Proof.}\lstsp ($\Leftarrow$)\lstsp Suppose $\ell$ through $T$ is perpendicular to the radius $\cl{OT}$.\smallbreak
+	Let $P$ be any another point on $\ell$. But then (Exercise \ref*{sec:hilbert2}.\ref{ex:euclidi19}),
+	\[
+		\angle OPT<\ang{90}=\angle OTP\implies \cl{OT}<\cl{OP}
+	\]
+	thus $P$ lies \emph{outside} the circle. Every point on $\ell$ except $T$ lies outside the circle, so $T$ is the unique intersection: $\ell$ is therefore tangent.\medbreak
+	The converse is an exercise.
+	\tcblower
+	\flushright
+	\includegraphics[scale=0.95]{circle-circle2}\\[-8pt]
+	\hfill\qedsymbol
 \end{tcolorbox}
 
 \begin{thm}{}{pointtangent}
-Through a point outside a circle, exactly two lines are tangent to the circle.
+	Through a point outside a circle, exactly two lines are tangent to the circle.
 \end{thm}
 
 \begin{exercises}
-\exstart Give formal proofs of all parts of Corollary \ref{cor:thalescor}.
-\begin{enumerate}\setcounter{enumi}{1} 
-  \item Prove Theorem \ref{thm:circumcircle}.
-  
-  \item Complete the proof of Theorem \ref{thm:tangentperp} by showing the converse.\par
-  (\emph{Hints: suppose $\ell$ isn't tangent and drop a perpendicular to $O$. Use the result of Exercise \ref*{sec:circ}.\ref{ex:linecircle2}})
-  
-  \item\label{ex:pointtangent} Given a circle centered at $O$ and a point $P$ outside the circle, draw the circle centered at the midpoint of $\cl{OP}$ passing through $O$ and $P$. Explain why the intersections of these circles are the points of tangency required in Theorem \ref{thm:pointtangent}, and hence complete its proof.
-  
-  \item\label{ex:linecircle2} (Hard)\lstsp If a line contains a point inside a circle, show that it intersects the circle in \emph{two} points.\par
-  (\emph{Hint: first show that some point on the line lies outside the circle})
-\end{enumerate}
+	\exstart Give formal proofs of all parts of Corollary \ref{cor:thalescor}.
+	\begin{enumerate}\setcounter{enumi}{1} 
+	  \item Prove Theorem \ref{thm:circumcircle}.
+	  
+	  \item Complete the proof of Theorem \ref{thm:tangentperp} by showing the ($\Rightarrow$) direction.\par
+	  (\emph{Hint: suppose $T$ is an intersection and that the angle isn't \ang{90}, and drop a perpendicular to $\ell$\ldots})
+	  
+	  \item\label{ex:pointtangent} Given a circle centered at $O$ and a point $P$ outside the circle, draw the circle centered at the midpoint of $\cl{OP}$ passing through $O$ and $P$. Explain why the intersections of these circles are the points of tangency required in Theorem \ref{thm:pointtangent}, and hence complete its proof.
+	  
+	  \item\begin{enumerate}
+	    \item Prove Theorem \ref{thm:central-inscribed} when $O$ is an \emph{interior} point to $\triangle ABP$.
+	    \item Prove Theorem \ref{thm:central-inscribed} when $O$ is an \emph{exterior} point to $\triangle ABP$.
+	  \end{enumerate}
+	  
+	  
+	  \begin{minipage}[t]{0.75\linewidth}\vspace{0pt}
+	  	\item Suppose $A*C*B$ and that $O\notin\lin{AB}$. Use Exercise \ref*{sec:hilbert2}.\ref{ex:euclidi19} to show that
+	  	\[
+	  		\cl{OC}< \max\bigl(\cl{OA},\cl{OB}\bigr)
+	  	\]
+	  	If $A,B$ are interior to a circle centered at $O$, conclude that $C$ is also.\par
+	 		(\emph{This is part of what is necessary to demonstrate the elementary/line-circle continuity property})
+	  \end{minipage}
+	  \hfill
+	  \begin{minipage}[t]{0.24\linewidth}\vspace{0pt}
+	  	\flushright
+	  	\includegraphics[scale=1]{circle-cont3}
+	  \end{minipage}
+	  
+	  
+	  \item\label{ex:linecircle2} If a line contains a point inside a circle, show that it intersects the circle in two points.\par
+	  (\emph{Hint: first construct two points on the line lying outside the circle})
+	\end{enumerate}
 \end{exercises}
 
 \clearpage
