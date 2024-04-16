@@ -1117,29 +1117,29 @@ Here are the facts necessary before Euclid's approach can be followed.
 \end{thm}
 
 
-\begin{minipage}[t]{0.7\linewidth}\vspace{0pt}
+\begin{minipage}[t]{0.73\linewidth}\vspace{0pt}
 	The idea of the first principle is to partition $\cl{PQ}$ into two pieces:
 	\begin{itemize}\itemsep0pt
 	  \item[]\textcolor{blue}{$\Sigma_1$} consists of the points lying on or inside $\mathcal C$
 	  \item[]\textcolor{Green}{$\Sigma_2$} consists of the points lying outside $\mathcal C$
 	\end{itemize}
-	One shows that $\Sigma_1$ and $\Sigma_2$ satisfy the assumptions of the axiom: the unique point $\mathcal O$ then exists and is shown to lie on $\mathcal C$ itself.
+	One shows that $\Sigma_1$ and $\Sigma_2$ satisfy the assumptions of the axiom: the unique point $\mathcal O$ then exists and is shown to lie on $\mathcal C$ itself. Part of the details of this are in Exercise \ref{exs:elemcont}. The circular continuity principle is harder.
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.29\linewidth}\vspace{0pt}
+\begin{minipage}[t]{0.25\linewidth}\vspace{0pt}
 	\flushright
 	\includegraphics{circle-cont}
 \end{minipage}
-\smallbreak
+\medbreak
 
-A full discussion of this (even a sketch of the second argument) requires a significant investment in analysis and therefore lies beyond the scope of this course. What is perhaps more interesting is to consider a geometry in which the axiom of continuity is false.
+What is perhaps more interesting is to consider a geometry in which the axiom of continuity is false.
 
 \begin{example}{}{}
 	The geometry $\Q^2=\{(x,y)\in\R^2:x,y\in\Q\}$ of points in the plane with \emph{rational} co-ordinates satisfies \emph{almost all} of Hilbert's axioms, however C-1 and continuity are false.\par
 	\begin{minipage}[t]{0.7\linewidth}\vspace{-5pt}
 		\begin{description}\itemsep0pt
 			\item[\normalfont\emph{Axiom C-1}] Given points $A=(0,0)$, $B=(1,0)$ and $C=(1,1)$, we see that $\mathcal O=(\frac 1{\sqrt 2},\frac 1{\sqrt 2})$ is the unique point (in $\R^2$) on the ray $r=\ray{AC}$ such that $\cl{AC}\cong\cl{AB}$. Clearly $\mathcal O$ is an irrational point and therefore not in the geometry.
-			\item[\normalfont\emph{Continuity}] The circle centered at $A=(0,0)$ with radius 1 does not intersect the segment $\cl{AC}$. More properly, the segment $\cl{AC}=\Sigma_1\cup\Sigma_2$ may be partitioned as shown and yet no point $\mathcal O$ in the geometry separates $\Sigma_1,\Sigma_2$.
+			\item[\normalfont\emph{Continuity}] The circle centered at $A=(0,0)$ with radius 1 does not intersect the segment $\cl{AC}$. More properly, $\cl{AC}=\Sigma_1\cup\Sigma_2$ may be partitioned as shown and yet no point $\mathcal O$ \emph{in the geometry} separates $\Sigma_1,\Sigma_2$.
 		\end{description}
 	\end{minipage}
 	\hfill
@@ -1275,16 +1275,16 @@ For a sketch proof, join $\cl{OP}$, breaking $\triangle ABP$ into three isoscele
 	  \end{enumerate}
 	  
 	  
-	  \begin{minipage}[t]{0.75\linewidth}\vspace{0pt}
-	  	\item Suppose $A*C*B$ and that $O\notin\lin{AB}$. Use Exercise \ref*{sec:hilbert2}.\ref{ex:euclidi19} to show that
+	  \begin{minipage}[t]{0.79\linewidth}\vspace{0pt}
+	  	\item\label{exs:elemcont} Suppose $A*C*B$ and that $O\notin\lin{AB}$. Use Exercise \ref*{sec:hilbert2}.\ref{ex:euclidi19} to show that
 	  	\[
 	  		\cl{OC}< \max\bigl(\cl{OA},\cl{OB}\bigr)
 	  	\]
 	  	If $A,B$ are interior to a circle centered at $O$, conclude that $C$ is also.\par
-	 		(\emph{This is part of what is necessary to demonstrate the elementary/line-circle continuity property})
+	 		(\emph{This is part of what's needed to demonstrate the elementary continuity principle: no point of $\Sigma_2$ lies between two points of $\Sigma_1$. Can you prove the other condition?})
 	  \end{minipage}
 	  \hfill
-	  \begin{minipage}[t]{0.24\linewidth}\vspace{0pt}
+	  \begin{minipage}[t]{0.2\linewidth}\vspace{0pt}
 	  	\flushright
 	  	\includegraphics[scale=1]{circle-cont3}
 	  \end{minipage}

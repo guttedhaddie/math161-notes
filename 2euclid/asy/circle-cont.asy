@@ -8,7 +8,7 @@ texpreamble("\usepackage{amsmath}
 import graph;
 import markers;
 
-size(100);
+size(110);
 
 draw(unitcircle);
 pair O=(0,0);
