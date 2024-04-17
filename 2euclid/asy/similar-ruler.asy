@@ -8,7 +8,7 @@ texpreamble("\usepackage{amsmath}
 import graph;
 import markers;
 
-size(0,95);
+size(0,80);
 
 pair O=(0,0);
 pair P=dir(30);
@@ -34,7 +34,7 @@ draw("$1$",P--O,blue+linewidth(1.2));
 dot("$O$",O,al,red);
 dot("$P$",P,al,red);
 
-pair Q=(4.5,-0.2);
+pair Q=(5,0.5);
 pair R=Q+3.6dir(-10);
 pair al2=I*dir(-10);
 
