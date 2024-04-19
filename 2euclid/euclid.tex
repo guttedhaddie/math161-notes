@@ -167,7 +167,7 @@ The \emph{alternate angles} in the exterior angle theorem are those at $A$ and $
 
 Euclid combines this with the vertical angles theorem (I.\,15) to finish the first half of Book I.
 
-\begin{cor}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.32\linewidth]{I.\,28}{}
+\begin{cor}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.32\linewidth]{I.\,28}{euclid28}
 	If a line falling on two other lines makes congruent angles, then the two lines are parallel.
 	\tcblower
 	\flushright\includegraphics{euclid-I28}
@@ -186,7 +186,7 @@ Thus far, Euclid uses only postulates P1--P4. In any model in which these hold:
 
 Euclid finally invokes the parallel postulate to prove the converse of I.\,27, showing that the congruent alternate angle approach is the \emph{only} way to have parallel lines.
 
-\begin{thm}{I.\,29}{}
+\begin{thm}{I.\,29}{euclid29}
 	If a line falls on two parallel lines, then the alternate angles are congruent.
 \end{thm}
 
@@ -1354,15 +1354,15 @@ If we also include Playfair's axiom, then the discussion at the end of Book I of
 
 Given a length measure, a square with side length 1 necessarily has area 1. Relative to a base segment, the \emph{height} of a triangle is the length of the perpendicular dropped from the vertex.\par
 
-\begin{minipage}[t]{0.8\linewidth}\vspace{0pt}
-	Since every rectangle is a parallelogram and a triangle half a parallelogram, Euclid's discussion (Thm.\,I.\,35) now amounts to the familiar area formulæ:
+\begin{minipage}[t]{0.8\linewidth}\vspace{-8pt}
+	Since every rectangle is a parallelogram and a triangle half a parallelogram, Euclid's discussion (Thm.\,I.\,35) amounts to the familiar area formulæ:
 	\[
 		\operatorname{area}(\text{parallelogram})=bh,\qquad \operatorname{area}(\text{triangle})=\frac 12bh
 	\]
-	While these expressions are nice to have, they are not necessary for what follows. The critical observation regards \emph{area ratios:} essentially the formula $\frac{\frac 12bh_1}{\frac 12bh_2}=\frac{h_1}{h_2}$.
+	While these expressions are nice to have, they are not necessary; everything that follows depends only on \emph{area ratios:} e.g., $\frac{\frac 12bh_1}{\frac 12bh_2}=\frac{h_1}{h_2}$.
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.19\linewidth}\vspace{0pt}
+\begin{minipage}[t]{0.19\linewidth}\vspace{-8pt}
 	\flushright
 	\includegraphics{similar-areaheight}
 \end{minipage}
@@ -1371,11 +1371,10 @@ Given a length measure, a square with side length 1 necessarily has area 1. Rela
 
 \begin{lemm}{}{triheightratio}
 	If triangles have congruent bases, then their areas are in the same ratio as their heights. The same holds with the roles of heights and bases reversed.
-%$\frac{\nm{BD}}{\nm{AD}}=\frac{\operatorname{area}(BDE)}{\operatorname{area}(ADE)}$
 \end{lemm} 
 
 
-\boldinline{AAA Similarity}
+\boldinline{Similarity and the AAA Theorem}
 
 Similar triangles are the concern of Book VI of the \emph{Elements.}
 
@@ -1389,85 +1388,105 @@ Similar triangles are the concern of Book VI of the \emph{Elements.}
 \end{defn}
 
 Euclid discusses these using non-numerical ratios of segments (e.g., $\cl{AB}:\cl{XY}=\cl{BC}:\cl{YZ}$). This is unnecessarily confusing for modern readers, indeed some of the most difficult parts of the \emph{Elements} are where he describes what this should mean, particularly for irrational ratios (Books V \& X).\medbreak
-Our primary result was telegraphed earlier (Exercise \ref*{sec:hilbert2}.\ref{exs:aaassano}).
+Our primary result comes in two versions, where the second (which we'll prove) is a special case of the first.
 
-\begin{thm}{Angle-Angle-Angle/AAA, Euclid VI.\,2--5}{}
-	\begin{enumerate}
+\begin{thm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.25\linewidth]{Angle-Angle-Angle/AAA, Euclid VI.\,2--5}{aaasim}
+	\begin{enumerate}\itemsep0pt
 	  \item Triangles are similar if and only if their angles come in mutually congruent pairs.
 	  \item Suppose a line intersects two sides of a triangle. The smaller triangle so created is similar to the original if and only if the line is parallel to the third side of the triangle.
 	\end{enumerate}
-\end{thm}
-
-A full proof (Exercise \ref{exs:aaaproof}) follows from a ticklish lemma which we discuss momentarily. While lengthy, the main idea is very simple; everything ultimately depends on comparing areas of triangles with related bases/heights (Lemma \ref{lemm:triheightratio}).\smallbreak
-
-Note the appearance of \emph{parallel lines} in the statement of AAA. The proof makes liberal use of Playfair's axiom, so we should not expect AAA similarity in non-Euclidean geometry. Indeed, we shall see later that AAA is a theorem for \emph{congruent} triangles in hyperbolic geometry (Chapter \ref{chap:hyper}).
-
-
-\goodbreak
-
-\begin{lemm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.43\linewidth]{}{aaalemm}
-	Suppose $\ell$ intersects sides $\cl{AB}$ and $\cl{AC}$ of $\triangle ABC$ at $D$ and $E$. The following are equivalent:
-	\begin{enumerate}
-	  \item $\ell\text{ is parallel to }\cl{BC}$
-	  \item $\displaystyle\frac{\nm{BD}}{\nm{AD}}=\frac{\nm{CE}}{\nm{AE}}$
-	  \item $\triangle ABC\sim\triangle ADE$
-	\end{enumerate}
 	\tcblower
 	\flushright
-	\includegraphics[scale=0.95]{similar-similarsides}
-\end{lemm}
+	\includegraphics[scale=0.95]{similar-aaa1}
+\end{thm}
 
-Four perpendicular distances $h,k,d_1,d_2$ are labelled in the picture to aid with the proof.
+The picture should convince you that $1\Rightarrow 2$ follows from the uniqueness of parallels (Playfair's axiom, Corollary \ref{cor:euclid28} \& Theorem \ref{thm:euclid29}). This reliance is crucial! We should not expect AAA similarity in non-Euclidean geometry, and indeed shall see later that it is \emph{false} in hyperbolic geometry (Chapter \ref{chap:hyper}), where AAA is a theorem for \emph{congruent} triangles! The converse $(2\Rightarrow 1)$ is left to Exercise \ref{exs:aaaproof}. %Instead we focus on proving the special second case explicitly, a ticklish business where everything ultimately depends on comparing areas of triangles with related bases/heights (Lemma \ref{lemm:triheightratio}).
+
+%\goodbreak
+
+% \begin{lemm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.43\linewidth]{}{aaalemm}
+% 	Suppose $\ell$ intersects sides $\cl{AB}$ and $\cl{AC}$ of $\triangle ABC$ at $D$ and $E$. The following are equivalent:
+% 	\begin{enumerate}
+% 	  \item $\ell\text{ is parallel to }\cl{BC}$
+% 	  \item $\displaystyle\frac{\nm{BD}}{\nm{AD}}=\frac{\nm{CE}}{\nm{AE}}$
+% 	  \item $\triangle ABC\sim\triangle ADE$
+% 	\end{enumerate}
+% 	\tcblower
+% 	\flushright
+% 	\includegraphics[scale=0.95]{similar-similarsides}
+% \end{lemm}
+
+% Four perpendicular distances $h,k,d_1,d_2$ are labelled in the picture to aid with the proof.
 
 
-\begin{proof}
+\begin{tcolorbox}[proofstyle]
+	\begin{minipage}[t]{0.63\linewidth}\vspace{0pt}
+		\emph{Proof\lstsp (AAA similarity, part 2).}\quad Suppose $\ell$ intersects $\triangle ABC$ at points $D,E$ as shown. Drop perpendiculars to create distances $h,k,d_1,d_2$ as indicated. We prove:
+		\begin{quote}
+			$\ell\text{ is parallel to }\cl{BC} \iff \triangle ABC\sim\triangle ADE$
+		\end{quote}
+		\begin{description}\itemsep0pt
+			\item[$(\Rightarrow)$] Suppose $\ell$ is parallel to $\cl{BC}$. Playfair\footnotemark{} tells us that $d_1=d_2$. By Lemma \ref{lemm:triheightratio}, triangles with the same height have areas proportional to their bases:
+		\end{description}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.36\linewidth}\vspace{0pt}
+		\flushright
+		\includegraphics[scale=0.94]{similar-similarsides}
+	\end{minipage}\par
+	\vspace{-15pt}
+
 	\begin{description}\itemsep0pt
-		\item[$(1\Leftrightarrow 2)$] Triangles with the same height have areas proportional to their bases:
+		\item[]
 		\begin{gather*}
-			\dfrac{\nm{BD}}{\nm{AD}}=\dfrac{\operatorname{area}(\textcolor{Green}{BDE})}{\operatorname{area}(\textcolor{blue}{ADE})} \tag*{($\textcolor{Green}{\triangle BDE}$, $\textcolor{blue}{\triangle ADE}$ have height $h$)}\\
-			\frac{\nm{CE}}{\nm{AE}}=\dfrac{\operatorname{area}(\textcolor{Green}{CDE})}{\operatorname{area}(\textcolor{blue}{ADE})} \tag*{($\textcolor{Green}{\triangle CDE}$, $\textcolor{blue}{\triangle ADE}$ have height $k$)}
+			\dfrac{\nm{BD}}{\nm{AD}}=\dfrac{\operatorname{area}(\textcolor{Green}{BDE})}{\operatorname{area}(\textcolor{blue}{ADE})} \tag*{($\textcolor{Green}{\triangle BDE}$, $\textcolor{blue}{\triangle ADE}$ have same height $h$)}\\
+			\frac{\nm{CE}}{\nm{AE}}=\dfrac{\operatorname{area}(\textcolor{Green}{CDE})}{\operatorname{area}(\textcolor{blue}{ADE})} \tag*{($\textcolor{Green}{\triangle CDE}$, $\textcolor{blue}{\triangle ADE}$ have same height $k$)}
 		\end{gather*}
-		Drop perpendiculars from $B$ and $C$ to $\ell$ and note that $\textcolor{Green}{\triangle BDE}$ and $\textcolor{Green}{\triangle CDE}$ share base $\cl{DE}$. Thus\footnotemark
-		\[
-			\ell\text{ is parallel to }\cl{BC}\iff d_1=d_2 \iff \operatorname{area}(\textcolor{Green}{BDE})=\operatorname{area}(\textcolor{Green}{CDE}) \iff \frac{\nm{BD}}{\nm{AD}}=\frac{\nm{CE}}{\nm{AE}}
-		\]
-		
-		\item[$(1\text{\&}2\Rightarrow 3)$] Add $1=\smash{\frac{\nm{AD}}{\nm{AD}}=\frac{\nm{AE}}{\nm{AE}}}$ to both sides of part 2 to obtain one part of the similarity ratio
+		Since $\textcolor{Green}{\triangle BDE}$ and $\textcolor{Green}{\triangle CDE}$ share base $\cl{DE}$, we see that
+		\begin{align*}
+			\ell\text{ is parallel to }\cl{BC}&\iff d_1=d_2 \iff \operatorname{area}(\textcolor{Green}{BDE})=\operatorname{area}(\textcolor{Green}{CDE})\\
+			&\iff \frac{\nm{BD}}{\nm{AD}}=\frac{\nm{CE}}{\nm{AE}} \tag{$\ast$}
+		\end{align*}
+		Add $1=\smash{\frac{\nm{AD}}{\nm{AD}}=\frac{\nm{AE}}{\nm{AE}}}$ to both sides to obtain one part of the similarity ratio
 		\[
 			\frac{\nm{AB}}{\nm{AD}}=\frac{\nm{AD}+\nm{BD}}{\nm{AD}} =\frac{\nm{AE}+\nm{CE}}{\nm{AE}}=\frac{\nm{AC}}{\nm{AE}}
 		\]
-		It remains to see that this ratio equals $\smash{\frac{\nm{BC}}{\nm{DE}}}$. Again using common heights of triangle, observe
+		It remains to see that this ratio equals $\smash{\frac{\nm{BC}}{\nm{DE}}}$. Again using common heights ($h,k$) of triangles,
 		\begin{align*}
 			&
-			\frac{\nm{AB}}{\nm{BD}}=\frac{\operatorname{area}(ABE)}{\operatorname{area}(\textcolor{Green}{BDE})}\qquad\frac{\nm{CE}}{\nm{AE}}=\frac{\operatorname{area}(BCE)}{\operatorname{area}(ABE)} \tag{$\ast$}\\
+			\frac{\nm{AB}}{\nm{BD}}=\frac{\operatorname{area}(ABE)}{\operatorname{area}(\textcolor{Green}{BDE})} \quad\qquad\frac{\nm{CE}}{\nm{AE}}=\frac{\operatorname{area}(BCE)}{\operatorname{area}(ABE)} \tag{$\dag$}\\
 			\implies
 			&
-			\frac{\nm{AB}}{\nm{AD}} \overset{\text{(pt 2)}}{=} \frac{\nm{AB}}{\nm{BD}}\frac{\nm{CE}}{\nm{AE}} \overset{\text{($\ast$)}}{=}\frac{\operatorname{area}(BCE)}{\operatorname{area}(\textcolor{Green}{BDE})}
+			\frac{\nm{AB}}{\nm{AD}} \overset{\text{($\ast$)}}{=} \frac{\nm{AB}}{\nm{BD}}\frac{\nm{CE}}{\nm{AE}} \overset{\text{($\dag$)}}{=}\frac{\operatorname{area}(BCE)}{\operatorname{area}(\textcolor{Green}{BDE})}
 			=\frac{\nm{BC}}{\nm{DE}}
 		\end{align*}
 		where the last equality follows since $\triangle BCE$ and $\textcolor{Green}{\triangle BDE}$ have common height $d_1=d_2$.\par
 		
-		\begin{minipage}[t]{0.6\linewidth}\vspace{-5pt}
-			\item[$(3\Rightarrow 1)$]\quad By Playfair, let $m$ be the unique parallel to $\cl{BC}$ through $D$. This intersects $\cl{AC}$ at a point $G$. Since $1\Rightarrow 3$,
+		\begin{minipage}[t]{0.61\linewidth}\vspace{-3pt}
+			\item[$(\Leftarrow)$] Suppose $\triangle ABC\sim\triangle ADE$. By Playfair, let $m$ be the unique parallel to $\cl{BC}$ through $D$. This intersects $\cl{AC}$ at a point $G$. We must prove that $G=E$ (consequently $m=\ell$).\smallbreak
+			By the ($\Rightarrow$) direction above,
 			\[
 				\triangle ABC\sim\triangle ADG
 			\]
-			The transitivity of $\sim$ forces $\triangle ADE\sim\triangle ADG$: the similarity ratio is $1=\frac{\nm{AD}}{\nm{AD}}$, whence $G=E$ and $m=\ell$.
 		\end{minipage}
 		\hfill
-		\begin{minipage}[t]{0.39\linewidth}\vspace{-8pt}
+		\begin{minipage}[t]{0.38\linewidth}\vspace{-8pt}
 			\flushright
-			\includegraphics[scale=0.95]{similar-similarsides2}
-		\end{minipage}\\
-		\hfill\qedhere
+			\includegraphics[scale=0.94]{similar-similarsides2}
+		\end{minipage}\smallbreak
+		However, $\sim$ is plainly transitive (it is an equivalence relation), whence $\triangle ADE\sim\triangle ADG$. The similarity ratio is $1=\frac{\nm{AD}}{\nm{AD}}$, whence
+		\[
+			\frac{\nm{AE}}{\nm{AG}}=1\implies \nm{AE}=\nm{AG} \implies E=G \tag*{\qedsymbol}
+		\]
+		%\hfill\qedsymbol
 	\end{description}
-\end{proof}
+\end{tcolorbox}
 
-%\skip\footins=-1.5\bigskipamount
+\skip\footins=-1.5\bigskipamount
 
-\footnotetext{$d_1=d_2\iff \ell$ parallel to $\cl{BC}$ is also Playfair: compare Exercise \ref*{sec:euclid}.\ref{ex:pythagexs} (Thm I.\,46).}
+\footnotetext{$d_1=d_2\iff \ell$ parallel to $\cl{BC}$ is Playfair! Compare Exercise \ref*{sec:euclid}.\ref{ex:pythagexs} (Thm I.\,46) on the construction of a square\ldots}
 
-%\skip\footins=\bigskipamount
+\skip\footins=\bigskipamount
 
 \goodbreak
 
@@ -1669,9 +1688,13 @@ This beautiful result dates to 1803-5 and has several proofs. We present an argu
 	    \item A \emph{median} of a triangle is a segment from a vertex to the midpoint of the opposite side. Use Ceva's Theorem to prove that the medians of a triangle meet at a point (the \emph{centroid}).
 	    \item (Hard)\lstsp Medians split a triangle into six sub-triangles. Prove that all have the same area.
 	    \item Prove that the centroid is exactly $2/3$ of the distance along each median.
-	  \end{enumerate} 
+	  \end{enumerate}
 	  
 	  
-	  \item\label{exs:aaaproof} (Hard)\lstsp Explain how to prove the full AAA Theorem using Lemma \ref{lemm:aaalemm}.
+	  \item Prove that similarity of triangles is an equivalence relation.\par
+	  (\emph{Don't use AAA, since its proof requires this fact}!)
+	  
+	  
+	  \item\label{exs:aaaproof} Explain how to prove $(2\Rightarrow 1)$ in the AAA Theorem (\ref{thm:aaasim}).
 	\end{enumerate}
 \end{exercises}

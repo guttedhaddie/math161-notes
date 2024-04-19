@@ -7,7 +7,7 @@ texpreamble("\usepackage{amsmath}
 ");
 import graph;
 
-size(210);
+size(180,0);
 
 pair B=(0,0);
 pair C=(2,0);
@@ -65,7 +65,7 @@ draw(Label("$\ell$",Relative(0.9),align=NE),p,blue);
 draw("$h$",EE--epp,S,dashed+red);
 draw("$k$",D--dpp,dashed+0.65orange+0.35black);
 
-dot(Label("$A$",black),A,1.5dir(110),red);
+dot(Label("$A$",black),A,1.5dir(170),red);
 dot(Label("$B$",black),B,S,red);
 dot(Label("$C$",black),C,S,red);
 dot(Label("$D$",black),D,dir(300),red);
