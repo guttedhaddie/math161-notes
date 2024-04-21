@@ -8,7 +8,7 @@ texpreamble("\usepackage{amsmath}
 import graph;
 import markers;
 
-size(0,130);
+size(0,135);
 
 xaxis("$x$",red);
 yaxis("$y$",red);
@@ -22,7 +22,7 @@ pair O=(0,0);
 draw(O--dir(ph),blue);
 draw(O--dir(ph+th),heavygreen);
 
-dot(Label("$rS_\phi$",black),dir(ph),dir(ph),red);
+dot(Label("$X=rS_\phi$",black),dir(ph),dir(ph+45),red);
 dot(Label("$g(X)=rS_{\theta+\phi}$",black),dir(ph+th),N,red);
 
 draw("$\phi$",arc(O,0.15,0,ph),ArcArrow);

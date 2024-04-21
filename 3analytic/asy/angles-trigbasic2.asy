@@ -7,7 +7,7 @@ texpreamble("\usepackage{amsmath}
 ");
 import graph;
 
-size(0,100);
+size(0,85);
 
 real th=45;
 

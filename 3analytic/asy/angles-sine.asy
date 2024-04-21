@@ -7,7 +7,7 @@ texpreamble("\usepackage{amsmath}
 ");
 import graph;
 
-size(100);
+size(90);
 
 pair P=(3,4);
 
@@ -17,6 +17,7 @@ draw(box((P.x-0.4,0),(P.x,0.4)));
 
 draw(scale(r)*unitcircle);
 
+draw((3,0)--(5,0));
 draw("$x$",(0,0)--(P.x,0),red);
 draw("$y$",(P.x,0)--P,blue);
 draw("$r$",P--(0,0),heavygreen);
@@ -26,4 +27,4 @@ draw("$\theta$",arc((0,0),1,0,degrees(P)),ArcArrow);
 dot(Label("$P$",black),P,dir(P),red);
 dot(Label("$O$",black),(0,0),S,red);
 
-
+dot(Label("$I$",black),(4,0),S,red);

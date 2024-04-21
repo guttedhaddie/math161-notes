@@ -26,6 +26,7 @@ draw(O--Q);
 draw(shift(gQ)*scale(abs(t-1))*unitcircle,dashed+heavygreen);
 
 draw("$|r|$",t*dir(120)--O,blue);
+draw("$|1-r|$",Q--Q+abs(t-1)*dir(110),heavygreen);
 draw("$|1-r|$",gQ--gQ+abs(t-1)*dir(150),heavygreen);
 
 dot(Label("$O$",black),O,SW,red);
