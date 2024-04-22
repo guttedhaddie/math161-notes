@@ -62,14 +62,14 @@ The first three postulates describe the intuitive \emph{ruler and compass constr
 
 Euclid's system doesn't quite fit the modern standard. Some axioms are vague (what are `things'?) and we'll consider several more-serious shortcomings later. For now we clarify two issues and introduce some notation.
 \begin{description}
-	\item[\normalfont\emph{Segments}] To Euclid, a line had \emph{finite} extent; we call such a \emph{(line) segment}: the segment joining points $A,B$ is denoted $\cl{AB}$. In modern geometry, a \emph{line} extends as far as is permitted.
+	\item[\normalfont\emph{Segments}] To Euclid, a line had \emph{finite} extent---we call such a \emph{(line) segment.} The segment joining points $A,B$ is denoted $\cl{AB}$. In modern geometry, a \emph{line} extends as far as is permitted.
 	\item[\normalfont\emph{Congruence}] Euclid uses \emph{equal} where modern mathematicians say \emph{congruent}. We'll express, say, congruent angles as $\angle ABC\cong\angle DEF$ rather than $\angle ABC=\angle DEF$.
 \end{description}
 
 
 \boldsubsubsection{Basic Theorems à la Euclid}
 
-Theorems were typically presented as a \emph{problem}; Euclid first provides a construction (P1--P3) before proving that his construction solves the problem.
+Theorems were typically presented as a \emph{problem}. Euclid first provides a construction (P1--P3) before proving that his construction solves the problem.
 
 \begin{thm}{I.\,1}{euclid1-1}
 	Problem: to construct an equilateral triangle on a given segment.
@@ -80,7 +80,7 @@ The labelling I.\,1 indicates Book I, Theorem 1.
 \begin{tcolorbox}[proofstyle, lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.35\linewidth]
 	\emph{Proof.}\ \ Given a line segment $\cl{AB}$:\smallbreak
 	By P3, construct circles centered at $A$ and $B$ with radius $\cl{AB}$.\smallbreak
-	Call one of the intersection points $C$; by P1, construct $\cl{AC}$ and $\cl{BC}$.\smallbreak
+	Call one of the intersection points $C$. By P1, construct $\cl{AC}$ and $\cl{BC}$.\smallbreak
 	We claim that $\triangle ABC$ is equilateral.\medbreak
 	Observe that $\cl{AB}$ and $\cl{AC}$ are radii of the circle centered at $A$, while $\cl{AB}$ and $\cl{BC}$ are radii of the circle centered at $B$. By Axiom A1, the three sides of $\triangle ABC$ are congruent.
 	\tcblower
@@ -120,7 +120,7 @@ Have a look at some of Euclid's arguments online. These are worth reading despit
 	Lines are \emph{parallel} if they do not intersect. Segments are parallel if no extensions of them intersect.
 \end{defn}
 
-In Euclid, a line is not parallel to itself. The next result is one of the most important in Euclidean geometry; it describes how to create a parallel line through a given point.
+In Euclid, a line is not parallel to itself. The next result is one of the most important in Euclidean geometry, in that it describes how to create a parallel line through a given point.
 
 
 \begin{thm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.37\linewidth]{I.\,16\ Exterior Angle Theorem}{extangle}
@@ -200,7 +200,7 @@ Euclid finally invokes the parallel postulate to prove the converse of I.\,27, s
 	\includegraphics{euclid-I29}\\[-10pt]\qedsymbol
 \end{tcolorbox}
 
-The most well-known result about triangles is now in our grasp; the interior angles sum to a straight edge. Euclid words this slightly differently.
+The most well-known result about triangles is now in our grasp, that the interior angles sum to a straight edge. Euclid words this slightly differently.
 
 \begin{thm}{I.\,32}{}
 	If one side of a triangle is extended, the exterior angle is congruent to the sum of the opposite interior angles.
@@ -271,7 +271,7 @@ In fact the postulates are equivalent.
 	  	$\exists$ parallel lines $\ell,m$ and a crossing line $n$ for which $\beta+\gamma<\ang{180}$
 		\end{quote}
 		This is without loss of generality: if $\beta+\gamma>\ang{180}$, consider the angles on the other side of $n$.\medbreak
-		By the the exterior angle theorem/I.\,28, we may build a parallel line $\hat\ell$ to $\ell$ through the intersection $C$ of $m$ and $n$: in the picture, $\hat\beta\cong\beta$. Crucially, this only requires postulates P1--P4!
+		By the the exterior angle theorem/I.\,28, we may build a parallel line $\hat\ell$ to $\ell$ through the intersection $C$ of $m$ and $n$ (in the picture, $\hat\beta\cong\beta$). Crucially, this only requires postulates P1--P4!
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.37\linewidth}\vspace{0pt}
@@ -289,10 +289,10 @@ In fact the postulates are equivalent.
 \boldsubsubsection{Non-Euclidean Geometry}\phantomsection\label{pg:sphere}
 
 That Euclid waited so long before invoking the uniqueness of parallels suggests he was trying to establish as much as he could about triangles and basic geometry in its absence. By contrast, everything from I.\,29 onwards relies on the parallel postulate, including the proof that the angle sum in a triangle is \ang{180}. For centuries, many mathematicians believed, though none could prove it, that such a fundamental fact about triangles must be true independent of the parallel postulate.\smallbreak
-Loosely speaking, a \emph{non-Euclidean geometry} is a model for which a parallel through an off-line point either doesn't exist or is non-unique. It wasn't until the 17--1800s and the development of \emph{hyperbolic geometry} (Chapter \ref{chap:hyper}) that a model was found in which Euclid's first four postulates hold but for which the parallel postulate is false.\footnote{This shows that the parallel postulate is independent: in fact all Euclid's postulates are independent. They are also consistent (the `usual' points and lines in the plane are a model), but incomplete: a sample undecidable is in Exercise \ref{ex:euclidundecideable}.}\par
+Loosely speaking, a \emph{non-Euclidean geometry} is a model for which a parallel through an off-line point either doesn't exist or is non-unique. It wasn't until the 17--1800s and the development of \emph{hyperbolic geometry} (Chapter \ref{chap:hyper}) that a model was found in which Euclid's first four postulates hold but for which the parallel postulate is false.\footnote{This shows that the parallel postulate is independent; in fact all Euclid's postulates are independent. They are also consistent (the `usual' points and lines in the plane are a model), but incomplete: a sample undecidable is in Exercise \ref{ex:euclidundecideable}.}\par
 
 \begin{minipage}[t]{0.76\linewidth}\vspace{-5pt}
-	We shall eventually see that every triangle in hyperbolic geometry has angle sum less than \ang{180}, though this will require a lot of work! For a more easily visualized non-Euclidean geometry consider the sphere. A rubber band stretched between three points on its surface describes a \emph{spherical triangle}; an example with angle sum \ang{270} is drawn. A similar game can be played on a saddle-shaped surface: as in hyperbolic geometry, `triangles' will have angle sum less than \ang{180}.
+	We shall eventually see that every triangle in hyperbolic geometry has angle sum less than \ang{180}, though this will require a lot of work! For a more easily visualized non-Euclidean geometry consider the sphere. A rubber band stretched between three points on its surface describes a \emph{spherical triangle}: an example with angle sum \ang{270} is drawn. A similar game can be played on a saddle-shaped surface: as in hyperbolic geometry, `triangles' will have angle sum less than \ang{180}.
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.23\linewidth}\vspace{-10pt}
@@ -342,7 +342,7 @@ Following his discussion of parallels, Euclid shows that parallelograms with the
 
 
 
-Euclid finishes Book I with the converse, which we state without proof. Euclid's argument is very sneaky: look it up!
+Euclid finishes Book I with the converse, which we state without proof. Euclid's argument is very sneaky---look it up!
 
 \begin{thm}{I.\,48}{}
 	If the (areas of the) squares on two sides of a triangle equal the (area of the) square on the third side, then the  triangle has a right-angle opposite the third side.
@@ -350,7 +350,7 @@ Euclid finishes Book I with the converse, which we state without proof. Euclid's
 
 The \emph{Elements} contains thirteen books. Much of the remaining twelve discuss further geometric constructions, including in three dimensions. There is also a healthy dose of basic number theory including what is now known as the Euclidean algorithm.\medbreak
 
-While undoubtedly a masterpiece of logical reasoning, Euclid's presentation has several flaws. Most problematic is his reliance on pictorial reasoning: for instance he `proves' the SAS and SSS congruence theorems (I.\,4 \& 8) by laying one triangle on top of another, a process not justified by his axioms (look it up \href{http://math.furman.edu/~jpoole/euclidselements/euclid.htm}{online} or \href{http://math.uci.edu/~ndonalds/Elements-I-VI.pdf}{Byrne}). In a modern sense, Euclid's approach is part axiomatic system and part model: his reasoning requires a visual/physical representation of lines, circles, etc. Because of these issues, we now turn to a more modern description of Euclidean geometry, courtesy of David Hilbert.
+While undoubtedly a masterpiece of logical reasoning, Euclid's presentation has several flaws. Most problematic is his reliance on pictorial reasoning: for instance, he `proves' the SAS and SSS congruence theorems (I.\,4 \& 8) by laying one triangle on top of another, a process not justified by his axioms (look it up \href{http://math.furman.edu/~jpoole/euclidselements/euclid.htm}{online} or \href{http://math.uci.edu/~ndonalds/Elements-I-VI.pdf}{Byrne}). In a modern sense, Euclid's approach is part axiomatic system and part model: his reasoning requires a visual/physical representation of lines, circles, etc. Because of these issues, we now turn to a more modern description of Euclidean geometry, courtesy of David Hilbert.
 
 \clearpage
 
@@ -392,10 +392,10 @@ While undoubtedly a masterpiece of logical reasoning, Euclid's presentation has 
 	\begin{enumerate}\setcounter{enumi}{1}
 	  \item[]\begin{enumerate}\setcounter{enumii}{1}
 	    \item[](\emph{Hint: This is one place where you will need to use postulate 4 regarding right-angles})
-	    \item Use part (a) to complete the proof of the exterior angle theorem: i.e.\ explain why $\beta<\delta$.
+	    \item Use part (a) to complete the proof of the exterior angle theorem: i.e.,\ explain why $\beta<\delta$.
 	  \end{enumerate}
 	
-		\item\label{ex:pythagexs} To help prove Pythagoras', Euclid makes use of the following results. Prove them as best as you can: full rigor is tricky, but the pictures should help!
+		\item\label{ex:pythagexs} To help prove Pythagoras', Euclid makes use of the following results. Prove them as best as you can. Full rigor is tricky, but the pictures should help!
 		\begin{enumerate}
 		  \item (I.\,11) At a given point on a line, to construct a perpendicular.
 		  \item (I.\,46) To construct a square on a given segment.
@@ -430,15 +430,15 @@ While undoubtedly a masterpiece of logical reasoning, Euclid's presentation has 
 	  \item\begin{enumerate}
 	    \item State the negation of Playfair's postulate.
 	    \item Prove that Playfair's postulate is equivalent to the following statement:
-	  \begin{quote}
-	  	Whenever a line is perpendicular to one of two parallel lines, it must be perpendicular to the other.
-	  \end{quote}
+	 	 	\begin{quote}
+	  		Whenever a line is perpendicular to one of two parallel lines, it must be perpendicular to the other.
+	  	\end{quote}
 	  \end{enumerate}
 	 
 	  
 	  \item\label{ex:euclidundecideable} The \emph{line-circle continuity} property states:
 	  \begin{quote}
-	  If point $P$ lies inside and $Q$ lies outside a circle $\alpha$, then the segment $\overline{PQ}$ intersects $\alpha$.
+	  	If point $P$ lies inside and $Q$ lies outside a circle $\alpha$, then the segment $\overline{PQ}$ intersects $\alpha$.
 	  \end{quote}
 	  By considering the set of rational points in the plane $\Q^2=\{(x,y):x,y\in\Q\}$, and making a sensible definition of line and circle, show that the line-circle continuity property is undecidable within Euclid's system.
 		
@@ -456,7 +456,7 @@ While undoubtedly a masterpiece of logical reasoning, Euclid's presentation has 
 
 The long process of identifying and correcting the errors and omissions in Euclid's \emph{Elements} culminated in the 1899 publication of David Hilbert's \emph{Grundlagen der Geometrie (Foundations of Geometry)}. In the next two sections we consider some of the details of Hilbert's approach, providing a modern and logically superior description of Euclidean geometry.\smallbreak
 
-Hilbert's axioms for plane geometry\footnote{Like Euclid, Hilbert also covered 3D geometry; we only give the axioms for plane geometry. With regard to our desired properties (Definition \ref{defn:consistency}), his system is about as good as can be hoped. Essentially one only one model exists, which is almost the same thing as completeness. In the absence of the continuity axiom, the axioms are consistent; in line with Gödel's theorems (\ref{thm:godel}), consistency cannot be proved once continuity is included. As stated, the axioms are not quite independent, though this can be remedied: O-3 does not require existence (follows from Pasch's axiom), C-1 does not require uniqueness (follows from uniqueness in C-4) and C-6 can be weakened slightly.} are listed on the next page. The undefined terms consist of two types of object (\emph{points} and \emph{lines}), and three relations (\emph{between $*$, on $\in$} and \emph{congruence $\cong$}). For brevity we'll often use/abuse set notation, viewing a line as a set of points, though this is not necessary. At various places, definitions and notations are required.
+Hilbert's axioms for plane geometry\footnote{Like Euclid, Hilbert also covered 3D geometry---we only give the axioms for plane geometry. With regard to our desired properties (Definition \ref{defn:consistency}), his system is about as good as can be hoped. Essentially one only one model exists, which is almost the same thing as completeness. In the absence of the continuity axiom, the axioms are consistent; in line with Gödel's theorems (\ref{thm:godel}), consistency cannot be proved once continuity is included. As stated, the axioms are not quite independent, though this can be remedied: O-3 does not require existence (follows from Pasch's axiom), C-1 does not require uniqueness (follows from uniqueness in C-4) and C-6 can be weakened slightly.} are listed on the next page. The undefined terms consist of two types of object (\emph{points} and \emph{lines}), and three relations (\emph{between $*$, on $\in$} and \emph{congruence $\cong$}). For brevity we'll often use/abuse set notation, viewing a line as a set of points, though this is not necessary. At various places, definitions and notations are required.
 
 \begin{defn}{}{hilbertbasic}
 	Throughout, $A,B,C$ denote points and $\ell,m$ lines.
@@ -540,7 +540,7 @@ The axioms of incidence describe the relation \emph{on.} An \emph{incidence geom
 	\end{minipage}
 	\smallbreak
 	\begin{minipage}[t]{0.72\linewidth}\vspace{0pt}
-		The final picture is a famous example called the \emph{Fano plane,} an incidence geometry with seven points and seven lines, which finds many applications particularly in combinatorics. Each point lies on precisely three lines and each line contains precisely three points; each dot is colored to indicate the lines to which it belongs. Don't be fooled by the black line looking `curved' and seeming to cross the blue line near the top; it really only contains three points!
+		The final picture is a seven-point incidence geometry called the \emph{Fano plane,} which finds many applications particularly in combinatorics. Each point lies on precisely three lines and each line contains precisely three points---each dot is colored to indicate the lines to which it belongs. Don't be fooled by the black line looking `curved' and seeming to cross the blue line near the top, for the line really only contains three points!
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.27\linewidth}\vspace{-17pt}
@@ -582,7 +582,7 @@ To get much further, it is necessary to establish that a line has precisely two 
 
 
 \begin{thm}{Plane Separation}{planesep}
-	A line $\ell$ separates all points not on $\ell$ into two half-planes; the two \emph{sides} of $\ell$. Explicitly: suppose none of the points $A,B,C$ lie on $\ell$, then:
+	A line $\ell$ separates all points not on $\ell$ into two half-planes: the two \emph{sides} of $\ell$. To be explicit, suppose none of the points $A,B,C$ lie on $\ell$, then:
 	\begin{enumerate}\itemsep0pt
 	  \item If $A,B$ lie on the same side of $\ell$ and $B,C$ lie on the same side, then $A,C$ lie on the same side.
 	  \item If $A,B$ lie on opposite sides and $B,C$ lie on opposite sides, then $A,C$ lie on the same side.
@@ -630,7 +630,7 @@ Plane separation/sidedness allows us to properly define interiors of angles and 
 	A point $I$ is \emph{interior} to triangle $\triangle ABC$ if it is interior to all three of its angles $\angle ABC$, $\angle BAC$ and $\angle ACB$. Otherwise said, $I$ lies in the triple intersection of three of the half-planes defined by the triangle's sides.
 \end{defn}
 
-Interior points permit us to compare angles: if $I$ is interior to $\angle BAC$, then $\angle BAI<\angle BAC$ has obvious meaning, \emph{without resorting to numerical angle measure.}
+Interior points permit us to compare angles: if $I$ is interior to $\angle BAC$, then $\angle BAI<\angle BAC$ has obvious meaning \emph{without resorting to numerical angle measure.}
 
 \begin{cor}{}{angleinteriorexist}
 	Every angle has an interior point.
@@ -644,9 +644,8 @@ In Exercise \ref{exs:seginfinite}, we check that the interior of a triangle is n
 \vfil
 
 \goodbreak
-%\medbreak
 
-Pasch's axiom could be paraphrased as follows: \emph{If a line enters a triangle, it must come out.} We haven't quite established this crucial fact however. What if the line passes through a vertex?
+Pasch's axiom could be paraphrased: \emph{If a line enters a triangle, it must come out.} We haven't quite established this crucial fact, however. What if the line passes through a vertex?
 
 \goodbreak
  
@@ -679,9 +678,9 @@ In particular, if a line passes through a vertex and an interior point of a tria
 	\end{center}
 	Suppose, for contradiction, that $M\in\cl{CD}$. Relative to $\lin{AC}$:
 	\begin{itemize}\itemsep0pt
-		  \item $I$ and $B$ lie on the same side since $I$ is interior to $\angle BAC$;
-		  \item $B$ and $D$ lie on opposite sides, since $B*A*D$ and $\lin{AC}\neq\lin{BD}=\cl{AB}$;
-		  \item $D$ and $M$ lie on the same side since $M\in\cl{CD}$ and $\lin{CD}\neq\lin{AC}$.		  
+		\item $I$ and $B$ lie on the same side since $I$ is interior to $\angle BAC$;
+		\item $B$ and $D$ lie on opposite sides, since $B*A*D$ and $\lin{AC}\neq\lin{BD}=\cl{AB}$;
+		\item $D$ and $M$ lie on the same side since $M\in\cl{CD}$ and $\lin{CD}\neq\lin{AC}$.		  
 	\end{itemize}
 	By plane separation, $I,M$ lie on opposite sides of $\lin{AC}$. The collinearity of $A,I,M$ then forces the contradiction \textcolor{red}{$A\in\cl{IM}$}.
 \end{proof}
@@ -702,7 +701,7 @@ In particular, if a line passes through a vertex and an interior point of a tria
 \medbreak
 
 
-Even with Pasch's axiom and the crossbar theorem, it requires some effort to repair Euclid's proof. No matter; we'll provide an alternative construction of the bisector once we've considered congruence.
+Even with Pasch's axiom and the crossbar theorem, it requires some effort to repair Euclid's proof. No matter, we'll provide an alternative construction of the bisector once we've considered congruence.
 
 \goodbreak
 
@@ -713,7 +712,7 @@ Even with Pasch's axiom and the crossbar theorem, it requires some effort to rep
 	  \item Prove Lemma \ref{lemm:incidenceeasy}.
 	  
 	  
-	  \item Give a model for each of the 5-point incidence geometries: how many are there?\par
+	  \item Give a model for each of the 5-point incidence geometries. How many are there?\par
 	  (\emph{Hint: remember that order doesn't matter, so the only issue is how many points lie on each line})
 	  
 	    
@@ -741,7 +740,7 @@ Even with Pasch's axiom and the crossbar theorem, it requires some effort to rep
 	  \begin{enumerate}
 	    \item Prove part 3 (it is almost a verbatim application of Pasch's axiom).\par
 	    \begin{minipage}[t]{0.75\linewidth}\vspace{-5pt}
-	    \item Suppose a line $\ell$ intersects all three sides of $\triangle ABC$ but no vertices. This results in a very strange picture: we've labelled the intersections $D,E,F$ and WLOG chosen $D*E*F$.\smallbreak
+	    \item Suppose a line $\ell$ intersects all three sides of $\triangle ABC$ but no vertices. This results in a very strange picture (we've labelled the intersections $D,E,F$ and WLOG chosen $D*E*F$).\smallbreak
 	    Apply Pasch's axiom to $\triangle DBF$ and $\lin{AC}$ to obtain a contradiction. Hence establish part 2 of the plane separation theorem.    
 	    \end{minipage}
 	    \hfill
@@ -811,7 +810,7 @@ Hilbert's axioms of segment and angle transference are crucial for comparing non
 
 \begin{defn}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.35\linewidth]{}{lengthcomp}
 	Let segments $\cl{AB}$ and $\cl{CD}$ be given.\smallbreak
-	By axiom C-1, let $E$ be the unique point on $\ray{CD}$ such that $\cl{CE}\cong\cl{AB}$: we have now \emph{transferred} $\cl{AB}$ onto $\ray{CD}$.\smallbreak
+	By axiom C-1, let $E$ be the unique point on $\ray{CD}$ such that $\cl{CE}\cong\cl{AB}$: we have \emph{transferred} $\cl{AB}$ onto $\ray{CD}$.\smallbreak
 	We write $\cl{AB}<\cl{CD}$ if $E$ lies between $C$ and $D$, etc.
 	\tcblower
 	\flushright
@@ -824,7 +823,7 @@ By O-3, any two segments are comparable: given $\cl{AB}$ \& $\cl{CD}$, precisely
 \]
 C-3 says that congruence respects the `addition' of adjacent congruent segments. Unique angle transfer, comparison and addition follow similarly from axiom C-4 and Definition \ref{defn:interiorangle} (interior points).\smallbreak
 
-It is important to appreciate that neither Hilbert nor Euclid use or require an \emph{absolute} notion of length/angle-measure: $\cl{AB}<\cl{CD}$ does \emph{not} indicate a relationship between two numerical quantities (the \emph{lengths} of $\cl{AD}$ and $\cl{CD}$). Introducing length as a numerical quantity requires the inclusion of the real numbers (and thus far more axioms); for purity reasons, we postpone this until Section \ref{sec:similar}.
+Neither Hilbert nor Euclid use or require an \emph{absolute} notion of length/angle-measure: the comparison $\cl{AB}<\cl{CD}$ does \emph{not} indicate a relationship between numerical quantities (lengths). Introducing numerical length requires the inclusion of the real numbers (and thus far more axioms)---for purity reasons, we postpone this until Section \ref{sec:similar}.
  
 
 \goodbreak
@@ -843,14 +842,14 @@ Hilbert assumes side-angle-side (SAS) and proceeds to prove the remainder. Here 
 
 %We aren't (yet!) assuming uniqueness of parallels, so we cannot assert $\angle ACB\cong\angle DFE$.
 
-Hilbert's approach modifies Euclid's; instead of laying $\triangle ABC$ on top of $\triangle DEF$, he creates a new triangle $\triangle DEG\cong \triangle ABC$ and proves that $G=F$.
+Hilbert's approach modifies Euclid's: instead of laying $\triangle ABC$ on top of $\triangle DEF$, he creates a new triangle $\triangle DEG\cong \triangle ABC$ and proves that $G=F$.
 
 \begin{proof}
 	Segment transfer provides the unique point $G\in \ray{EF}$ such that $\textcolor{Green}{\cl{EG}}\cong \textcolor{Green}{\cl{BC}}$.\par
 	\begin{minipage}[t]{0.65\linewidth}\vspace{0pt}
 		SAS applied to $\textcolor{blue}{\cl{AB}}\cong\textcolor{blue}{\cl{DE}}$, $\textcolor{Magenta}{\angle ABC}\cong\textcolor{Magenta}{\angle DEG}\, (=\textcolor{Magenta}{\angle DEF})$, $\textcolor{Green}{\cl{BC}}\cong \textcolor{Green}{\cl{EG}}$, says $\textcolor{red}{\angle BAC}\cong \textcolor{red}{\angle EDG}\, (\cong \textcolor{red}{\angle EDF}$) (this last is by assumption).\smallbreak
 		Since $F$ and $G$ lie on the same side of $\lin{DE}$, angle transfer (C-4) says they lie on the \emph{same ray} through $D$.\smallbreak
-		But then $F$ and $G$ both lie on two distinct lines ($\lin{EF}=\lin{EG}$ and $\lin{DF}=\lin{DG}$); we conclude that $F=G$.\smallbreak
+		But then $F$ and $G$ both lie on two distinct lines ($\lin{EF}=\lin{EG}$ and $\lin{DF}=\lin{DG}$). We conclude that $F=G$.\smallbreak
 		By SAS we conclude that $\triangle ABC\cong\triangle DEF$.
 	\end{minipage}
 	\hfill
@@ -979,7 +978,7 @@ The proof also shows that the sum of any two angles in a triangle is strictly le
 Almost! In the exercises we show how the following may be achieved:
 \begin{itemize}
   \item Construction of an isosceles triangle on a segment $\cl{AB}$. With this one can construct segment and angle bisectors (Euclid I.\,9+10).
-  \item SAA congruence (Euclid I.\,26, case II): the last remaining triangle congruence theorem.
+  \item SAA congruence (Euclid I.\,26, case II), the last remaining triangle congruence theorem.
 \end{itemize}
 
 We've now recovered almost all of Book I prior to the application of the parallel postulate. Including Playfair's axiom completes the remainder, including Pythagoras', all \emph{without circles!}
@@ -1056,7 +1055,7 @@ We've now recovered almost all of Book I prior to the application of the paralle
 		  	\cl{AB}\cong\cl{DE},\quad \angle ABC\cong\angle{DEF}\quad \text{and}\quad\angle BCA\cong\angle EFD
 		  \]
 		  then the triangles are congruent: $\triangle ABC\cong\triangle DEF$.\par
-		  (\emph{Hint: Let $G\in\ray{BC}$ be such that $\cl{BG}\cong\cl{EF}$; apply SAS and the exterior angle theorem})
+		  (\emph{Hint: Let $G\in\ray{BC}$ be such that $\cl{BG}\cong\cl{EF}$, apply SAS and the exterior angle theorem})
 	  \end{minipage}
 	  \hfill
 	  \begin{minipage}[t]{0.3\linewidth}\vspace{0pt}
@@ -1104,15 +1103,14 @@ We've now recovered almost all of Book I prior to the application of the paralle
 	\flushright\includegraphics{circle-circle}
 \end{defn}
 
-A major weakness of Euclid is that many of his proofs rely on circle intersections, rather than lines. To use circles in this manner requires the \emph{Axiom of Continuity.} 
-This much more technical than the other axioms. It is likely for this reason that Hilbert barely mentions circles: he wanted to build as much geometry as possible using only the simplest axioms.\smallbreak
+A major weakness of Euclid is that many of his proofs rely on circle intersections, rather than lines. To use circles in this manner requires the \emph{Axiom of Continuity.} This much more technical than the other axioms. It is likely for this reason that Hilbert barely mentions circles, instead wanting to build as much geometry as possible using only the simplest axioms.\smallbreak
 Here are the facts necessary before Euclid's approach can be followed.
 
 \begin{thm}{}{}
 	Suppose $\mathcal C$ and $\mathcal D$ are circles.\vspace{-5pt}
 	\begin{enumerate}\itemsep0pt
 	  \item (Elementary/line-circle Continuity Principle)\quad If $P$ lies inside and $Q$ outside $\mathcal C$, then $\cl{PQ}$ intersects $\mathcal C$ in exactly one point.
-	  \item (Circular Continuity Principle)\quad If $\mathcal D$ contains a point inside and another outside $\mathcal C$, then they intersect in exactly two points; these lie on \emph{opposite sides} of the line joining the circle centers.
+	  \item (Circular Continuity Principle)\quad If $\mathcal D$ contains a point inside and another outside $\mathcal C$, then they intersect in exactly two points. These lie on \emph{opposite sides} of the line joining the circle centers.
 	\end{enumerate}
 \end{thm}
 
@@ -1123,7 +1121,7 @@ Here are the facts necessary before Euclid's approach can be followed.
 	  \item[]\textcolor{blue}{$\Sigma_1$} consists of the points lying on or inside $\mathcal C$
 	  \item[]\textcolor{Green}{$\Sigma_2$} consists of the points lying outside $\mathcal C$
 	\end{itemize}
-	One shows that $\Sigma_1$ and $\Sigma_2$ satisfy the assumptions of the axiom: the unique point $\mathcal O$ then exists and is shown to lie on $\mathcal C$ itself. Part of the details of this are in Exercise \ref{exs:elemcont}. The circular continuity principle is harder.
+	One shows that $\Sigma_1$ and $\Sigma_2$ satisfy the assumptions of the axiom. The unique point $\mathcal O$ then exists and is shown to lie on $\mathcal C$ itself. Some of this are in Exercise \ref{exs:elemcont}. The circular continuity principle is harder.
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.25\linewidth}\vspace{0pt}
@@ -1185,7 +1183,7 @@ If one allows Playfair's axiom on unique parallels, Euclid's result can be prove
 
 \boldsubsubsection{Basic Circle Geometry}
 
-We continue our survey of Euclidean geometry with a few results about circles, many of which are found in Book III of the \emph{Elements}. From this point onwards we assume all of Hilbert's axioms including Playfair and continuity: indeed what follows often relies on their consequences, namely angle-sums in triangles and the circular continuity principle.
+We continue our survey of Euclidean geometry with a few results about circles, many of which are found in Book III of the \emph{Elements}. From this point on, we assume all Hilbert's axioms including Playfair and continuity. Indeed what follows often relies on their consequences, particularly angle-sums in triangles and the circular continuity principle.
 
 \begin{defn}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.35\linewidth]{}{circledef}
 	With reference to the picture:
@@ -1247,7 +1245,7 @@ For a sketch proof, join $\cl{OP}$, breaking $\triangle ABP$ into three isoscele
 	\[
 		\angle OPT<\ang{90}=\angle OTP\implies \cl{OT}<\cl{OP}
 	\]
-	thus $P$ lies \emph{outside} the circle. Every point on $\ell$ except $T$ lies outside the circle, so $T$ is the unique intersection: $\ell$ is therefore tangent.\medbreak
+	thus $P$ lies \emph{outside} the circle. Every point on $\ell$ except $T$ lies outside the circle, so $T$ is the unique intersection, and $\ell$ is therefore tangent.\medbreak
 	The converse is an exercise.
 	\tcblower
 	\flushright
@@ -1359,7 +1357,7 @@ Given a length measure, a square with side length 1 necessarily has area 1. Rela
 	\[
 		\operatorname{area}(\text{parallelogram})=bh,\qquad \operatorname{area}(\text{triangle})=\frac 12bh
 	\]
-	While these expressions are nice to have, they are not necessary; everything that follows depends only on \emph{area ratios:} e.g., $\frac{\frac 12bh_1}{\frac 12bh_2}=\frac{h_1}{h_2}$.
+	While these expressions are nice to have, they are not necessary. Indeed everything that follows depends only on \emph{area ratios:} e.g., $\frac{\frac 12bh_1}{\frac 12bh_2}=\frac{h_1}{h_2}$.
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.19\linewidth}\vspace{-8pt}
@@ -1529,7 +1527,7 @@ Early trigonometry dates to a few hundred years after Euclid, though the approac
 \end{proof}
 
 
-After Giovanni Ceva (1647--1734), a \emph{cevian} is a segment joining a vertex to the opposite side of a triangle. Here is a beautiful result from the height of Euclidean geometry; good luck trying to prove it using co-ordinates!
+After Giovanni Ceva (1647--1734), a \emph{cevian} is a segment joining a vertex to the opposite side of a triangle. Here is a beautiful result from the height of Euclidean geometry---good luck trying to prove it using co-ordinates!
 
 \begin{thm}{Ceva's Theorem}{}
 	Given $\triangle ABC$ and cevians $\cl{AX}$, $\cl{BY}$, $\cl{CZ}$,
@@ -1587,7 +1585,7 @@ This beautiful result dates to 1803-5 and has several proofs. We present an argu
 		  \item $z=\nm{PM}=\nm{MQ}$, $x=\nm{XM}$ and $y=\nm{YM}$.
 		  \item Drop perpendiculars from $X,Y$ to chords $\cl{AD},\cl{BC}$, and label the lengths $x_1,x_2,y_1,y_2$ as shown.
 		\end{itemize}
-		The four colored pairs of angles are congruent: vertical angles at $M$; inscribed angles at $A,B,C,D$.\smallbreak
+		The four colored pairs of angles are congruent: vertical angles at $M$, and inscribed angles at $A,B,C,D$.\smallbreak
 		We compare sides of several similar triangles:
 		\begin{itemize}
 		  \item $\dfrac{x}{x_1}=\dfrac{y}{y_1}$ and $\dfrac{x}{x_2}=\dfrac{y}{y_2} \implies \dfrac xy=\dfrac{x_1}{y_1}=\dfrac{x_2}{y_2}$
@@ -1599,7 +1597,7 @@ This beautiful result dates to 1803-5 and has several proofs. We present an argu
 		\flushright
 		\includegraphics[scale=0.9]{similar-butterfly2}
 	\end{minipage}\medbreak
-	The result follows by putting these observations together and applying Exercise 1  twice:\footnotemark
+	The result follows by putting these observations together and applying Exercise 1 twice:\footnotemark
 	\begin{align*}
 		&\frac{x^2}{y^2}=\frac{x_1x_2}{y_1y_2}=\frac{\nm{AX}\nm{XD}}{\nm{BY}\nm{YC}} =\frac{\nm{PX}\nm{XQ}}{\nm{PY}\nm{YQ}} =\frac{(z-x)(z+x)}{(z+y)(z-y)} =\frac{z^2-x^2}{z^2-y^2}\\[2pt]
 		\implies & x^2(z^2-y^2)=y^2(z^2-x^2)\\

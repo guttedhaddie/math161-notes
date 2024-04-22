@@ -69,7 +69,7 @@ Of course, Pythagoras is best known for the result that bears his name.
 Two important clarifications are needed for modern readers.
 \begin{enumerate}\itemsep0pt
   \item By \emph{square,} the Greeks meant an honest square! There is no algebra, no numerical lengths, and the equation $a^2+b^2=c^2$ won't be seen for another 2000 years.
-  \item The word \emph{equals} means \emph{equal area,} though without a numerical concept of such: the large square can be subdivided into pieces which may be rearranged to produce the two squares on the remaining sides.
+  \item The word \emph{equals} means \emph{equal area,} though without a numerical concept of such. The Greeks meant that the large square can be subdivided into pieces which may be rearranged to produce the two squares on the remaining sides.
 \end{enumerate}
 
 \goodbreak
@@ -87,7 +87,7 @@ The problem with this `proof' is that it relies on \emph{subtracting} the areas 
 \smallbreak
 
 
-Much has been written about Pythagoras' Theorem, including many, many proofs.\footnote{Including a \href{https://www.maa.org/press/periodicals/convergence/mathematical-treasure-james-a-garfields-proof-of-the-pythagorean-theorem}{proof} by former US President James Garfield: would that current presidents were so learned\ldots} It is often claimed that Pythagoras himself first proved the result, but this is generally considered incorrect: the `proof' most often attributed to the Pythagoreans is based on contradictory ideas about numbers which were debunked by the time of Aristotle. Moreover, other cultures, particularly ancient China,\footnote{In China, Pythagoras' Theorem is known as the \emph{gou gu,} which refers to the two non-hypotenuse sides of the triangle.} are known to have used the result, at least in example form, several hundred years before Pythagoras. Regardless, an argument over attribution is fruitless without first agreeing on what constitutes a proof. This means that we need to spend some time considering Axiomatic Systems\ldots 
+Much has been written about Pythagoras' Theorem, including many, many proofs.\footnote{Including a \href{https://www.maa.org/press/periodicals/convergence/mathematical-treasure-james-a-garfields-proof-of-the-pythagorean-theorem}{proof} by former US President James Garfield. Would that current presidents were so learned\ldots} It is often claimed that Pythagoras himself first proved the result, but this is generally considered incorrect---the `proof' most often attributed to the Pythagoreans is based on contradictory ideas about numbers which were debunked by the time of Aristotle. Moreover, other cultures, particularly ancient China,\footnote{In China, Pythagoras' Theorem is known as the \emph{gou gu,} which refers to the two non-hypotenuse sides of the triangle.} are known to have used the result, at least in example form, several hundred years before Pythagoras. Regardless, an argument over attribution is fruitless without first agreeing on what constitutes a proof. This means that we need to spend some time considering Axiomatic Systems\ldots 
 
 
 \begin{exercises}{}{}
@@ -181,14 +181,14 @@ Mathematical discoveries often hinge on the realization that seemingly separate 
 	\begin{description}
 		\item[\normalfont\emph{Consistency}] The system is free of contradictions.
 		\item[\normalfont\emph{Independence}] An axiom is independent if it is not a theorem of the others. An axiomatic system is independent if all its axioms are. 
-		\item[\normalfont\emph{Completeness}] Every valid proposition within the theory is \emph{decidable}; can be proved or disproved.
+		\item[\normalfont\emph{Completeness}] Every valid proposition within the theory is \emph{decidable}: can be proved or disproved.
 	\end{description}
 \end{defn}
 
-We unpack these ideas slightly. By necessity, our descriptions are vague; many notions need to be clarified (e.g.,\ what is meant by a \emph{valid proposition}) before these ideas can be made rigorous.
+We unpack these ideas slightly. By necessity, our descriptions are vague. Many notions need to be clarified (e.g.,\ what is meant by a \emph{valid proposition}) before these ideas can be made rigorous.
 \begin{description}\itemsep0pt
 	\item[\normalfont\emph{Consistency}] May be demonstrated by exhibiting a \emph{concrete model.} An \emph{abstract model} demonstrates \emph{relative consistency}, dependent on the consistency of the underlying system. An inconsistent system is essentially useless.
-	\item[\normalfont\emph{Independence}] To demonstrate the independence of an axiom, exhibit two models; one in which all axioms are true, the other in which only the considered axiom is false. 
+	\item[\normalfont\emph{Independence}] To demonstrate the independence of an axiom, exhibit two models: one in which all axioms are true, the other in which only the considered axiom is false. 
 	\item[\normalfont\emph{Completeness}] This is very unlikely to hold for most useful axiomatic systems in mathematics, though \href{https://en.wikipedia.org/wiki/Complete_theory}{examples} do exist. To show incompleteness, an \emph{undecidable}\footnote{A famous example of an undecidable statement from standard set theory is the \emph{Continuum Hypothesis,} which states that there is no uncountable set with cardinality strictly smaller than that of the real numbers.} statement is required, which can be viewed as a new independent axiom of an enlarged system. 
 	\end{description}
 
@@ -216,7 +216,7 @@ We unpack these ideas slightly. By necessity, our descriptions are vague; many n
 		\item[\normalfont\emph{Incomplete}] The proposition `\emph{A monoid contains at least two elements}' is undecidable \emph{just from the axioms.} For instance, $(\{0\},+)$ and $(\Z,+)$ are models with one/infinitely many elements.\smallbreak
 		  We could also ask if all elements have an inverse. That this is undecidable is the same as saying that a new axiom is independent of A1, A2, A3.\smallbreak
 		  \lstsp\lstsp\lstsp(A4)\lstsp Inverse:\quad $\forall g\in G,\ \exists g^{-1}\in G$ such that $g\ast g^{-1}=g^{-1}\ast g=e$.\smallbreak
-		The new system defined by the four axioms is also consistent and independent; this is the structure of a \emph{group.} Even this is incomplete however; consider a new axiom of commutativity\ldots
+		The new system defined by the four axioms is also consistent and independent---this is the structure of a \emph{group.} Even this new system is incomplete; for instance, consider a new axiom of commutativity\ldots
 	\end{description} 
 \end{example*}
 
@@ -269,10 +269,10 @@ We are only scratching the surface of axiomatics. If you really want to dive dow
 	\end{enumerate}
 \end{thm}
 
-Gödel's first theorem tells us that there is no \emph{ultimate} consistent complete axiomatic system. Perhaps this is reassuring; there will always be undecidable statements, so mathematics will never be finished! However, the undecidable statements cooked up by Gödel are analogues of the famous \emph{liar paradox} (`This sentence is false'), so the profundity of this is a matter of debate.
+Gödel's first theorem tells us that there is no \emph{ultimate} consistent complete axiomatic system. Perhaps this is reassuring---there will always be undecidable statements, so mathematics will never be finished! However, the undecidable statements cooked up by Gödel are analogues of the famous \emph{liar paradox} (`This sentence is false'), so the profundity of this is a matter of debate.
 \smallbreak
 
-Gödel's second theorem fleshes out the difficulty in proving the consistency of an axiomatic system. If a system is sufficiently complex to describe the natural numbers, its consistency can at best be proved relative to some other axiomatic system; while an inconsistent system might be essentially useless, good luck showing that what you have really is consistent!
+Gödel's second theorem fleshes out the difficulty in proving the consistency of an axiomatic system. If a system is sufficiently complex to describe the natural numbers, its consistency can at best be proved relative to some other axiomatic system. While an inconsistent system might be essentially useless, good luck showing that what you have really is consistent!
 
 
 \goodbreak
@@ -297,7 +297,7 @@ Gödel's second theorem fleshes out the difficulty in proving the consistency of
 	    \item Prove that for each flavor, there are exactly four children who like that flavor.
 		\end{enumerate}
 		
-	% 	\item Here is a very simple and informal list of axioms; terms such as \emph{class, students, pass, grade, etc.,} might be undefined, though this isn't critical for our purposes.
+	% 	\item Here is a very simple and informal list of axioms. Terms such as \emph{class, students, pass, grade, etc.,} might be undefined, though this isn't critical for our purposes.
 	% 	\begin{itemize}%\setlength\itemsep{0pt}
 	%   	\item[](B1) \ There are exactly 18 students in a class.
 	% 		\item[](B2) \ Sixteen students pass the class, and two students do not.
