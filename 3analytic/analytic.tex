@@ -541,7 +541,7 @@ Putting these together by writing $X=rS_\phi=(r\cos\phi,r\sin\phi)$ in polar co-
 
 \boldsubsubsection{Calculating with isometries}
 
-This benefits from column-vector notation and matrix multiplication. Writing $\vx=\stwovec xy =\stwovec{r\cos\theta}{r\sin\theta}$ for the position vector of $X=(x,y)$ and applying the multiple-angle formulæ, rotation becomes
+This benefits from column-vector notation and matrix multiplication. Writing $\vx=\smash{\stwovec xy =\stwovec{r\cos\phi}{r\sin\phi}}$ for the position vector of $X_r=(x,y)=rS_\phi$ and applying the multiple-angle formulæ, rotation becomes
 \begin{align*}
 	g(\vx)&= r\twovec{\cos(\theta+\phi)}{\sin(\theta+\phi)} =r\twovec{\cos\theta\cos\phi-\sin\theta\sin\phi}{\sin\theta\cos\phi+\cos\theta\sin\phi} =
 	\begin{pmatrix}
@@ -554,7 +554,7 @@ $\begin{smatrix}
 	\cos\theta&\sin\theta\\
 	\sin\theta&-\cos\theta
 \end{smatrix}$.
-Every isometry may therefore be written $f(\vx)=A\vx+\vc$ where $A$ is an \emph{orthogonal matrix.\footnote{An orthogonal matrix satisfies $A^TA=I$. All such have the form 
+Every isometry therefore has the form $f(\vx)=A\vx+\vc$ where $A$ is an \emph{orthogonal matrix.\footnote{An orthogonal matrix satisfies $A^TA=I$. All such have the form 
 $\begin{smatrix}
 	\cos\theta&\mp\sin\theta\\
 	\sin\theta&\pm\cos\theta
@@ -583,7 +583,7 @@ where $a^2+b^2=1$.}}
 	Let $f=A\vx+\vc$ be the isometry. Since $d\bigl((1,2),(1,3)\bigr)=1$ these points must be the images under $f$ of $(0,0)$ and $(1,0)$. There are \emph{four} distinct isometries:
 	\smallbreak
 	Cases 1,\,2:\lstsp If $f(0,0)=(1,2)$ and $f(1,0)=(1,3)$, then $\vc=f\stwovec 00=\stwovec 12$ and\par
-	\begin{minipage}[t]{0.75\linewidth}\vspace{-10pt}
+	\begin{minipage}[t]{0.76\linewidth}\vspace{-10pt}
 	  \begin{gather*}
 	  	%\vc=f\twovec 00=\twovec 12,\quad 
 	  	A\twovec 10+\vc=\twovec 13\implies A\twovec 10=\twovec 01   \implies A=
@@ -617,8 +617,8 @@ where $a^2+b^2=1$.}}
 	  All four possible triangles $\triangle_b$ are drawn in the picture.
 	  \end{minipage}
 	  \hfill
-	  \begin{minipage}[t]{0.24\linewidth}\vspace{-10pt}
-	  	\flushright\includegraphics[scale=0.9]{isom-ex}
+	  \begin{minipage}[t]{0.23\linewidth}\vspace{-10pt}
+	  	\flushright\includegraphics[scale=0.95]{isom-ex}
 	  \end{minipage}
 	\end{enumerate}
 \end{examples}
