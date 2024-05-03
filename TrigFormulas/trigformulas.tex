@@ -1,6 +1,6 @@
 \section*{Trigonometric Formulas and the Congruence Theorems}
 
-\boldsubsection{Euclidean Geometry}
+\boldinline{Euclidean Geometry}
 
 Label triangle in the usual way: sides $a,b,c$, angles $\alpha,\beta,\gamma$.
 
@@ -31,17 +31,17 @@ Label triangle in the usual way: sides $a,b,c$, angles $\alpha,\beta,\gamma$.
 	  \item Sine rule $a=c\frac{\sin\alpha}{\sin\gamma}$ and $b=c\frac{\sin\beta}{\sin\gamma}$.
 	\end{enumerate}
 	  
-	\item[SSA] Two solutions (not a congruence theorem!)\lstsp Given $a,b,\alpha$:
+	\item[SSA] One/two solutions (not a congruence theorem!)\lstsp Given $a,b,\alpha$:
 	\begin{enumerate}
-	  \item Cosine rule $a^2=c^2+b^2-2bc\cos\alpha\implies c=b\cos\alpha\pm\sqrt{a^2-b^2\sin^2\alpha}$ gives two values for $c$.
-	  \item OR, Sine rule $\sin\beta=\frac ba\sin\alpha$ gives two values for $\beta$ (one acute, one obtuse).
-	  \item Now in one of above situations.
+	  \item Sine rule $\sin\beta=\frac ba\sin\alpha$ gives two values for $\beta$ (one acute, one obtuse). If $\alpha\ge\ang{90}$, then only acute angle is valid.
+	  \item Could instead use cosine rule $a^2=c^2+b^2-2bc\cos\alpha\implies c=b\cos\alpha\pm\sqrt{a^2-b^2\sin^2\alpha}$ gives one/two values for $c$.
 	\end{enumerate}
 \end{description}
 
+
 \clearpage
 
-\boldsubsection{Hyperbolic Geometry}
+\boldinline{Hyperbolic Geometry}
 
 Same notation where sides are \emph{hyperbolic} lengths. 
 
@@ -52,6 +52,8 @@ Same notation where sides are \emph{hyperbolic} lengths.
 	\item[Cos rule] $\cosh c=\cosh a\cosh b-\sinh a\sinh b\cos\gamma$
 	
 	\item[Sine rule] $\frac{\sin\alpha}{\sinh a} =\frac{\sin\beta}{\sinh b} =\frac{\sin\gamma}{\sinh c}$
+	
+	\goodbreak
 	
 	\item[SAS] Given $a,\gamma,b$:
 	\begin{enumerate}
@@ -74,8 +76,9 @@ Same notation where sides are \emph{hyperbolic} lengths.
 	  \item Sine rule $\sin\gamma=\sin\alpha\frac{\sinh c}{\sinh a}$.
 	\end{enumerate}
 	
-	\item[ASA] (Hard!!!)\lstsp Given $\alpha,c,\beta$:
+	\item[ASA] (Two methods---hard!)\lstsp Given $\alpha,c,\beta$:
 	\begin{enumerate}
+	  \item Drop perp from angle at $\beta=\beta_1+\beta_2$ to get two right triangles: compute $\beta_1,\beta_2=\beta-\beta_1$, basic trig and Pythag (mess).
 	  \item Compute $a$. Cosine rule twice plus sine rule:
 	  \begin{align*}
 	  \cosh a&=\cosh b\cosh c-\sinh b\sinh c\cos\alpha\\
