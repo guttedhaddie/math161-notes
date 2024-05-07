@@ -1,162 +1,180 @@
 \graphicspath{{4hyper/asy/}}
 
-%Think back to Corollary \ref{cor:angleinteriorexist}. The method of proof cannot be reverse: not every interior point lies on a segment joining the two rays of an angle! 
 
 \section{Hyperbolic Geometry}\label{chap:hyper}
 
 \subsection{History: Saccheri, Lambert and Absolute Geometry}\label{sec:hyp1}
 
-For 2000 years after Euclid, many mathematicians believed that his parallel postulate could not be an independent axiom. Rigorous work on this problem was undertaken by Giovanni Saccheri (1667--1733) \& Johann Lambert (1728--1777); both attempted to force contradictions by assuming the negation of the parallel postulate. While this approach ultimately failed, their insights provided the foundation of a new non-Euclidean geometry. Before considering their work, we define some terms and recall our earlier discussion regarding parallels.
+For 2000 years after Euclid, many mathematicians believed that his parallel postulate could not be an independent axiom. Rigorous work on this problem was undertaken by Giovanni Saccheri (1667--1733) \& Johann Lambert (1728--1777); both attempted to force contradictions by assuming the negation of the parallel postulate. While this approach ultimately failed, their insights supplied the foundation of a new \emph{non-Euclidean} geometry. Before considering their work, we define some terms and recall our earlier discussion of parallels (pages \pageref{pg:parallelexist}--\pageref*{pg:pythagoras}).
 
 \begin{defn}{}{}
-\emph{Absolute} or \emph{neutral} geometry is the axiomatic system comprising all of Hilbert's axioms except Playfair's axiom. Euclidean geometry is a special case of neutral geometry.\smallbreak
-A \emph{non-Euclidean geometry} is typically a model satisfying most of Hilbert's axioms but for which parallels might not exist or are non-unique:
-\begin{quote}
-There exist a line $\ell$ and a point $P\not\in\ell$ through which there are \emph{no parallels} or \emph{at least two.}
-\end{quote}
+	\emph{Absolute} or \emph{neutral} geometry is the axiomatic system comprising all of Hilbert's axioms except Playfair. Euclidean geometry is therefore a special case of neutral geometry.\smallbreak
+	A \emph{non-Euclidean geometry} is (typically) a model satisfying most of Hilbert's axioms but for which parallels might not exist or are non-unique:
+	\begin{quote}
+		There exists a line $\ell$ and a point $P\not\in\ell$ through which there are \emph{no parallels} or \emph{at least two.}
+	\end{quote}
 \end{defn}
 
-For example, spherical geometry is non-Euclidean since there are no parallel lines (Hilbert's axioms I-2 and O-3 are also false, as is the exterior angle theorem).
+For instance, spherical geometry is non-Euclidean since there are no parallel lines---Hilbert's axioms I-2 and O-3 are false, as is the exterior angle theorem.
 
 
 \boldinline{Results in absolute geometry}
 
-Everything in the first 28 theorems of Euclid, including:
+The conclusions of Euclid's first 28 theorems are valid, including:
 
 \begin{minipage}[t]{0.6\linewidth}\vspace{-5pt}
-\begin{itemize}\itemsep0pt
-  \item Basic constructions: bisectors, perpendiculars, etc.
-  \item Exterior angle theorem.
-  \item Triangle congruence theorems: SAS, ASA, SAA, SSS.
-  \item Congruent/equal angles imply parallels:
-  \[\alpha\cong\beta\implies \ell\parallel m\]
-\end{itemize}
-\end{minipage}\begin{minipage}[t]{0.4\linewidth}\vspace{0pt}
-\flushright\includegraphics{history-playfair}
+	\begin{itemize}\itemsep2pt
+	  \item Basic constructions: bisectors, perpendiculars, etc.
+	  \item Exterior angle theorem.
+	  \item Triangle congruence theorems: SAS, ASA, SAA, SSS.
+	  \item Congruent/equal angles imply parallels:
+	  \[
+	  	\alpha\cong\beta\implies \ell\parallel m
+	  \]
+	\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.39\linewidth}\vspace{0pt}
+	\flushright\includegraphics{history-playfair}
 \end{minipage}
 
 \begin{itemize}
-  \item[]This is equivalent to the existence of a parallel $m$ to a given line $\ell$ through a point $P\not\in\ell$.
+  \item[]This implies the existence of a parallel $m$ to a given line $\ell$ through a point $P\not\in\ell$.
 \end{itemize}
 
-\boldinline{Arguments requiring unique parallels}\phantomsection\label{pg:absolute}
 
-The following results were proved using Playfair's axiom or the parallel postulate: the \emph{arguments} are therefore false in absolute geometry.
-\begin{itemize}
-  \item A line crossing parallel lines makes equal angles: in the picture,  $\ell\parallel m\implies \alpha\cong\beta$. This is the uniqueness claim in Playfair: the parallel $m$ to $\ell$ through $P$ is unique.
-  \item Angles in a triangle sum to a \ang{180}.
+\boldinline{Arguments making use of unique parallels}\phantomsection\label{pg:absolute}
+
+The following results were proved using Playfair's axiom or the parallel postulate, whence the \emph{arguments} are false in absolute geometry:
+\begin{itemize}\itemsep2pt
+  \item A line crossing parallel lines makes congruent angles: in the picture,  $\ell\parallel m\implies \alpha\cong\beta$. This is the uniqueness claim in Playfair: the parallel $m$ to $\ell$ through $P$ is unique.
+  \item Angles in a triangle sum to \ang{180}.
   \item Constructions of squares/rectangles.
   \item Pythagoras' Theorem.
 \end{itemize}
 
-While our \emph{arguments} for the above are false in absolute geometry, we cannot instantly claim that the \emph{results} are false; there might be alternative proofs! To show that the results require unique parallels, we must exhibit a \emph{model} in which they are false; such will be described in the next section. The existence of this model explains why Saccheri and Lambert failed in their endeavors: the parallel postulate (Playfair) is indeed independent of Euclid's (Hilbert's) other axioms.
+While our \emph{arguments} for the above are false in absolute geometry, we cannot instantly claim that the \emph{results} are false, for there might be alternative proofs! To show that these results truly require unique parallels, we must exhibit a \emph{model} in which they are false---such will be described in the next section. The existence of this model explains why Saccheri and Lambert failed in their endeavors; the parallel postulate (Playfair) is indeed independent of Euclid's (Hilbert's) other axioms.
+
 \goodbreak
 
 
 
 \begin{minipage}[t]{0.62\linewidth}\vspace{0pt}
-\boldsubsubsection{The Saccheri--Legendre Theorem}
-
-We work in absolute geometry, starting with an extension of the exterior angle theorem based on Euclid's proof.\smallbreak
-Suppose $\triangle ABC$ has angle sum $\Sigma_\triangle$ and construct $M$ and $E$ following Euclid to obtain congruent triangles as in the picture. Observe:
-\end{minipage}\hfill\begin{minipage}[t]{0.36\linewidth}\vspace{0pt}
-\flushright\includegraphics{history-saccheri}
+	\boldsubsubsection{The Saccheri--Legendre Theorem}
+	
+	We work in absolute geometry, starting with an extension of the exterior angle theorem based on Euclid's proof.\smallbreak
+	Suppose $\triangle ABC$ has angle sum $\Sigma_\triangle$ and construct $M$ and $E$ following Euclid to the arrangement pictured. Observe:
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.36\linewidth}\vspace{0pt}
+	\flushright\includegraphics[scale=0.95]{history-saccheri}
 \end{minipage}
 
-\begin{enumerate}\def\lgbullet#1{\raisebox{-3pt}{\textcolor{#1}{\LARGE\textbullet}}}
-  \item $\textcolor{magenta}{\measuredangle ACB}+\textcolor{orange}{\measuredangle CAB}=\textcolor{magenta}{\measuredangle ACB}+\textcolor{orange}{\measuredangle ACE}<\ang{180}$ is the exterior angle theorem. More generally, the exterior angle theorem says that the sum of \emph{any two} angles in a triangle is less than \ang{180}.
+\begin{enumerate}\itemsep0pt
+  \def\lgbullet#1{\raisebox{-3pt}{\textcolor{#1}{\LARGE\textbullet}}}
+  \item $\textcolor{magenta}{\measuredangle ACB}+\textcolor{orange}{\measuredangle CAB}=\textcolor{magenta}{\measuredangle ACB}+\textcolor{orange}{\measuredangle ACE}<\ang{180}$ is the exterior angle theorem. More generally, the exterior angle theorem says that the sum of \emph{any two} angles in a triangle is strictly less than \ang{180}.
   \item $\triangle ABC$ and $\triangle EBC$ have the \emph{same angle sum}
-  \[\Sigma_\triangle=\lgbullet{orange}+\lgbullet{Green} +\lgbullet{Cyan} +\lgbullet{magenta}\]
-  This follows from the picture; remember that we do not know whether $\Sigma_\triangle=\ang{180}$! %remember that \footnote{With the parallel postulate, we could use congruence of angles $\angle BAC\cong\angle ECA$ to conclude that $\cl{CE}\parallel\cl{BA}$, from which the sum of the angles in a triangle is \ang{180} and the observation is trivial. We cannot do this in absolute geometry!}
+  \[
+  	\Sigma_\triangle=\lgbullet{orange}+\lgbullet{Green} +\lgbullet{Cyan} +\lgbullet{magenta}
+  \]
+  Just look at the picture---remember that we do not know whether $\Sigma_\triangle=\ang{180}$!
   \item $\triangle EBC$ has at least one angle ($\textcolor{cyan}{\measuredangle EBC}$ or $\textcolor{Green}{\measuredangle BEC}$) measuring $\le\frac 12\measuredangle ABC$.
 \end{enumerate}
-Iterate this construction to produce a sequence $\triangle_0=\triangle ABC$, $\triangle_1=\triangle EBC$, $\triangle_2$, $\triangle_3,\ldots$ each of which has the same angle sum $\Sigma_\triangle$ \emph{and} such that at least one angle in $\triangle_n$ has measure
-\[\alpha_n\le\frac 1{2^n}\measuredangle ABC\]
-Now suppose $\Sigma_\triangle=\ang{180}+\epsilon$ is \emph{greater} than \ang{180}. Since $\frac 1{2^n}\to 0$, we may choose $n$ large enough that $\alpha_n<\epsilon$. But then the sum of the \emph{other two} angles in $\triangle_n$ would be \emph{greater than \ang{180}}, contradicting the exterior angle theorem! In conclusion:
+Iterate this construction: if $\textcolor{cyan}{\measuredangle EBC}\le\frac 12\measuredangle ABC$, start by bisecting $\cl{CE}$; otherwise bisect $\cl{BC}\ldots$ The result is an infinite sequence of triangles $\triangle_1=\triangle EBC$, $\triangle_2$, $\triangle_3,\ldots$ with two crucial properties:
+\begin{enumeratea}
+  \item All triangles have \emph{same angle sum} $\Sigma_\triangle=\Sigma_{\triangle_1}=\Sigma_{\triangle_2}=\cdots$.
+  \item $\triangle_n$ has at least one angle measuring $\alpha_n\le\frac 1{2^n}\measuredangle ABC$.
+\end{enumeratea} 
+Now suppose $\Sigma_\triangle=\ang{180}+\epsilon$ is strictly \emph{greater} than \ang{180}. Since $\lim\frac 1{2^n}=0$, we may choose $n$ large enough to guarantee $\alpha_n<\epsilon$. But then the sum of the \emph{other two} angles in $\triangle_n$ would be \emph{greater than} \ang{180}, contradicting the exterior angle theorem (observation 1)! We have proved a famous result.
 
 \begin{thm}{Saccheri--Legendre}{saccleg}
-In absolute geometry, triangles have angle sum $\Sigma_\triangle\le \ang{180}$.
+	In absolute geometry, triangles have angle sum $\Sigma_\triangle\le \ang{180}$.
 \end{thm}
 
-Saccheri's failed hope was to prove \emph{equality} without invoking the parallel postulate. That he got half way is still remarkable!
+Saccheri's failed hope was to prove \emph{equality} without invoking the parallel postulate. 
 
-\boldinline{Saccheri and Lambert Quadrilaterals}
 
-Saccheri and Lambert both considered \emph{quadrilaterals} in absolute geometry. Two families of such are named in their honor.
+\boldsubsubsection{Saccheri and Lambert Quadrilaterals}
+
+Two families of quadrilaterals in absolute geometry are named in honor of these pioneers.
 
 \begin{defn}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.34\linewidth]{}{}
-A \emph{Saccheri quadrilateral} $ABCD$ satisfies
-\[\cl{AD}\cong\cl{BC}\quad\text{and}\quad \measuredangle DAB=\measuredangle CBA=\ang{90}\]
-$\cl{AB}$ is the \emph{base} and $\cl{CD}$ the \emph{summit.}\smallbreak
-The interior angles at $C$ and $D$ are the \emph{summit angles.}\medbreak
-A \emph{Lambert quadrilateral} has three right-angles; for instance $AMND$  in the picture.
-\tcblower
-\flushright\includegraphics{history-quad3}
+	A \emph{Saccheri quadrilateral} $ABCD$ satisfies
+	\[
+		\cl{AD}\cong\cl{BC}\quad\text{and}\quad \measuredangle DAB=\measuredangle CBA=\ang{90}
+	\]
+	$\cl{AB}$ is the \emph{base} and $\cl{CD}$ the \emph{summit.}\smallbreak
+	The interior angles at $C$ and $D$ are the \emph{summit angles.}\medbreak
+	A \emph{Lambert quadrilateral} has three right-angles; for instance $AMND$  in the picture.
+	\tcblower
+	\flushright\includegraphics{history-quad3}
 \end{defn}
 
-We draw these with curved sides to indicate that the summit angles need not be right-angles, though we haven't yet exhibited a model which shows that they could be anything else. Regardless of how they are drawn, $\cl{AD}$, $\cl{BC}$ and $\cl{CD}$ are all \emph{segments}!
+We draw these with curved sides to indicate that the summit angles need not be right-angles, though we haven't yet exhibited a model which shows they could be anything else. Regardless of how they are drawn, $\cl{AD}$, $\cl{BC}$ and $\cl{CD}$ are all \emph{segments}!
 \goodbreak
 
-The seeming symmetry of a Saccheri quadrilateral is not an illusion.
+The apparent symmetry of a Saccheri quadrilateral is not an illusion.
 
 \begin{lemm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.34\linewidth]{}{saccheribasic}
-\exstart If the base and summit of a Saccheri quadrilateral are bisected, we obtain congruent Lambert quadrilaterals.
-\begin{enumerate}\setcounter{enumi}{1}
-  \item The summit angles of a Saccheri quadrilateral are congruent.
-	\item In Euclidean geometry, Saccheri and Lambert quadrilaterals are rectangles (four right-angles).
-\end{enumerate}
-\tcblower
-\flushright\includegraphics{history-quad4}
+	\exstart If the base and summit of a Saccheri quadrilateral are bisected, we obtain congruent Lambert quadrilaterals.\vspace{-4pt}
+	\begin{enumerate}\itemsep0pt\setcounter{enumi}{1}
+	  \item The summit angles of a Saccheri quadrilateral are congruent.
+		\item In Euclidean geometry, Saccheri and Lambert quadrilaterals are rectangles (four right-angles).
+	\end{enumerate}
+	\tcblower
+	\flushright\includegraphics{history-quad4}
 \end{lemm}
 
-We leave parts 1 and 2 as an exercise.
+Parts 1 and 2 are exercises.
 
 \begin{proof}[Proof of 3.]
-By part 1 we need only prove this for a Saccheri quadrilateral.
-Following the exterior angle theorem, $\overleftrightarrow{AB}$ is a crossing line making equal (right-) angles, whence $\cl{AD}\parallel\cl{BC}$.\\[4pt]
-However $\overleftrightarrow{CD}$ also crosses the same parallel lines; by the parallel postulate, the summit angles sum to a straight edge. Since these are congruent, they must both be right-angles. 
+	By part 1 we need only prove this for a Saccheri quadrilateral.
+	Following the exterior angle theorem, $\overleftrightarrow{AB}$ is a crossing line making congruent right-angles, whence $\cl{AD}\parallel\cl{BC}$.\smallbreak
+	However $\overleftrightarrow{CD}$ also crosses the same parallel lines. By the parallel postulate, the summit angles sum to a straight edge. Since these are congruent, they are both right-angles. 
 \end{proof}
 
-We can now prove another of the conclusions of Saccheri \& Lambert, which justifies our drawing of \emph{acute} summit angles.
+We now show that drawing \emph{acute} summit angles is justified by the Saccheri--Legendre Theorem.
 
 \begin{thm}{}{summit90}
-The summit angles of a Saccheri quadrilateral measure $\le \ang{90}$. 
+	The summit angles of a Saccheri quadrilateral measure $\le \ang{90}$. 
 \end{thm}
 
-\begin{tcolorbox}[proofstyle, lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.34\linewidth]
-\emph{Proof.} \ Extend $\cl{CB}$ to $E$ (on the opposite side of $\cl{AB}$ to $C$) such that $\cl{BE}\cong\cl{DA}$. Let $M$ be the midpoint of $\cl{AB}$.\smallbreak
-SAS implies $\angle AMD\cong \triangle BME$, whence $M$ lies on $\cl{DE}$.\smallbreak
-The (congruent) summit angles at $C$ and $D$ therefore sum to
-\begin{align*}
-\measuredangle ADC+\measuredangle BCD&=\measuredangle ADM+\measuredangle EDC+\measuredangle DCE\\
-&=\measuredangle CED+\measuredangle EDC+\measuredangle DCE \le \ang{180}
-\end{align*}
-by the Saccheri--Legendre Theorem.
-\tcblower
-\flushright\includegraphics[scale=0.9]{history-quad2}\\[10pt]
-\hfill\qedsymbol
-\end{tcolorbox}
-
-
-
+\begin{proof}
+	Suppose $ABCD$ is a Saccheri quadrilateral with base $\cl{AB}$.\par
+	\begin{minipage}[t]{0.65\linewidth}\vspace{-4pt}
+		Extend $\cl{CB}$ to $E$ (opposite side of $\cl{AB}$ to $C$) such that $\cl{BE}\cong\cl{DA}$. Let $M$ be the midpoint of $\cl{AB}$.\smallbreak
+	SAS implies $\angle DAM\cong \triangle EBM$; the \textcolor{Magenta}{vertical angles} at $M$ are congruent, whence $M$ lies on $\cl{DE}$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.34\linewidth}\vspace{-22pt}
+		\flushright\includegraphics[scale=0.9]{history-quad2}\vspace{-5pt}
+	\end{minipage}\par
+	By Saccheri--Legendre, the (congruent) \textcolor{orange}{summit angles} at $C$ and $D$ sum to
+	\[
+		\measuredangle ADC +\textcolor{orange}{\measuredangle DCB} =\textcolor{cyan}{\measuredangle ADM} +\textcolor{blue}{\measuredangle EDC} +\textcolor{orange}{\measuredangle DCE} =\textcolor{cyan}{\measuredangle CED} +\textcolor{blue}{\measuredangle EDC} +\textcolor{orange}{\measuredangle DCE} \le \ang{180} \tag*{\qedhere}
+	\]
+\end{proof}
 
 
 \begin{exercises}
-Complete these exercises in absolute geometry; you cannot use Playfair's Axiom or Euclid's parallel postulate!
-
-\begin{minipage}[t]{0.64\linewidth}\vspace{-5pt}
-\begin{enumerate}
-  \item Prove parts 1 and 2 of Lemma \ref{lemm:saccheribasic}.\par
-  (\emph{Hint: use the picture: all you need are the triangle congruence theorems!})
-	\item Use the same picture to give a quick alternative proof of Theorem \ref{thm:summit90}.
-
-	\item\label{exs:rectanglesplit} Suppose $\square ABCD$ has four right-angles. Show that $\cl{AC}$ splits $\square ABCD$ into two congruent triangles, and conclude that the opposite sides are congruent.\par
-	Why is this question \emph{much} easier in Euclidean geometry?
-\end{enumerate}
-\end{minipage}\begin{minipage}[t]{0.35\linewidth}\vspace{-15pt}
-\flushright\includegraphics[scale=1]{history-saccheri2}\\
-\includegraphics{basic-rect}
-\end{minipage}
+	Work in absolute geometry; you cannot use Playfair's Axiom or the parallel postulate!
+	
+	\begin{minipage}[t]{0.64\linewidth}\vspace{-2pt}
+		\begin{enumerate}
+		  \item Prove parts 1 and 2 of Lemma \ref{lemm:saccheribasic}.\par
+		  (\emph{Hint: use the picture and the triangle congruence theorems})
+		  
+			\item Use the same picture to give a quick alternative proof of Theorem \ref{thm:summit90}.
+		
+			\item\label{exs:rectanglesplit} Suppose $\square ABCD$ has four right-angles. Show that $\cl{AC}$ splits $\square ABCD$ into two congruent triangles, and conclude that the opposite sides are congruent.\par
+			Why is this question easier in Euclidean geometry?
+		\end{enumerate}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.35\linewidth}\vspace{-8pt}
+		\flushright\includegraphics{history-saccheri2}\\
+		\includegraphics{basic-rect}
+	\end{minipage}
 \end{exercises}
 
 \clearpage
