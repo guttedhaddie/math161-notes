@@ -20,27 +20,30 @@ For instance, spherical geometry is non-Euclidean since there are no parallel li
 
 \boldinline{Results in absolute geometry}
 
-The conclusions of Euclid's first 28 theorems are valid, including:
+The conclusions of Euclid's first 28 theorems are valid.
 
-\begin{minipage}[t]{0.6\linewidth}\vspace{-5pt}
+\begin{minipage}[t]{0.7\linewidth}\vspace{-2pt}
 	\begin{itemize}\itemsep2pt
 	  \item Basic constructions: bisectors, perpendiculars, etc.
-	  \item Exterior angle theorem.
 	  \item Triangle congruence theorems: SAS, ASA, SAA, SSS.
-	  \item Congruent/equal angles imply parallels:
+	  \item Exterior angle theorem and its consequences:
+ 	\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.29\linewidth}\vspace{-7pt}
+	\flushright\includegraphics[scale=0.95]{history-playfair}
+\end{minipage}\par
+\vspace{-6pt}
+\begin{itemize}\itemsep2pt
+	\item[]\begin{itemize}
+	  \item Side/angle comparison and triangle inequality (Exercise \ref*{sec:hilbert2}.\ref{ex:euclidi19}).
+	  \item \emph{Existence} of a parallel $m$ to a line $\ell$ through a point $P\not\in\ell$ via congruent angles
 	  \[
 	  	\alpha\cong\beta\implies \ell\parallel m
 	  \]
 	\end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.39\linewidth}\vspace{0pt}
-	\flushright\includegraphics{history-playfair}
-\end{minipage}
-
-\begin{itemize}
-  \item[]This implies the existence of a parallel $m$ to a given line $\ell$ through a point $P\not\in\ell$.
 \end{itemize}
+
 
 
 \boldinline{Arguments making use of unique parallels}\phantomsection\label{pg:absolute}
@@ -125,7 +128,7 @@ The apparent symmetry of a Saccheri quadrilateral is not an illusion.
 	\flushright\includegraphics{history-quad4}
 \end{lemm}
 
-Parts 1 and 2 are exercises.
+Parts 1 and 2 are exercises. We could interpret part 3 as saying that Saccheri and Lambert quadrilaterals are as close as we can get to rectangles in absolute geometry.
 
 \begin{proof}[Proof of 3.]
 	By part 1 we need only prove this for a Saccheri quadrilateral.
@@ -186,19 +189,23 @@ We now show that drawing \emph{acute} summit angles is justified by the Saccheri
 In the early 1800s, James Boylai, Carl Friedrich Gauss and Nikolai Lobashevsky independently took the next step. Rather than attempting to establish the parallel postulate as a theorem within Euclidean geometry, they defined a new geometry based on the first four of Euclid's postulates plus an alternative to the parallel postulate:
 
 \begin{axiom}{Boylai--Lobashevshky/Hyperbolic Postulate}{}
-Given a line $\ell$ and a point $P\not\in\ell$, there exist \emph{at least two} parallel lines to $\ell$ through $P$.
+	Given a line $\ell$ and a point $P\not\in\ell$, there exist \emph{at least two} parallel lines to $\ell$ through $P$.
 \end{axiom}
 
-The resulting axiomatic system\footnote{Formally, we assume all of Hilbert's axioms, replacing Playfair axiom with the hyperbolic postulate.} is called \emph{hyperbolic geometry.} Consistency was proved in the late 1800s by Beltrami, Klein and Poincaré, each of whom created models by defining point, line, etc., in novel ways. One of the simplest is named for Poincaré, though was first proposed by Beltrami.
+The resulting axiomatic system\footnote{We assume all of Hilbert's axioms, replacing Playfair axiom with the hyperbolic postulate.} is called \emph{hyperbolic geometry.} Consistency was proved in the late 1800s by Beltrami, Klein and Poincaré, each of whom created models by defining point, line, etc., in novel ways. One of the simplest is named for Poincaré, though was first proposed by Beltrami.
 
 \begin{defn}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.3\linewidth]{}{poincaredisk}
-The \emph{Poincaré disk} is the interior of the unit circle
-	\[\bigl\{(x,y):x^2+y^2<1\bigr\}\]
-A \emph{hyperbolic line} is a diameter or a circular arc meeting the unit circle at right-angles.\smallbreak
-In the picture we have a \textcolor{red}{hyperbolic line $\ell$} and a \textcolor{blue}{point $P$}: also drawn are several \textcolor{Green}{parallel hyperbolic lines} to $\ell$ passing through $P$.\smallbreak
-Points on the boundary circle are termed \emph{omega-points}: these are \emph{not} in the Poincaré disk and are essentially `points at infinity.' 
-\tcblower
-\flushright\includegraphics{models-parallels}
+	The \emph{Poincaré disk} is the interior of the unit circle
+	\[
+		\bigl\{(x,y)\in\R^2:x^2+y^2<1\bigr\}
+		\quad\text{or}\quad
+		\bigl\{z\in\C:\nm z<1\bigr\}
+	\]
+	A \emph{hyperbolic line} is a diameter or a circular arc meeting the unit circle at right-angles.\smallbreak
+	In the picture we have a \textcolor{red}{hyperbolic line $\ell$} and a \textcolor{blue}{point $P$}: also drawn are several \textcolor{Green}{parallel hyperbolic lines} to $\ell$ passing through $P$.\smallbreak
+	Points on the boundary circle are termed \emph{omega-points}: these are \emph{not} in the Poincaré disk and are essentially `points at infinity.' 
+	\tcblower
+	\flushright\includegraphics{models-parallels}
 \end{defn}
 
 Since it depends only on the incidence axioms, there exists a unique hyperbolic line joining any two points in the Poincaré disk.\par
@@ -206,93 +213,121 @@ Since it depends only on the incidence axioms, there exists a unique hyperbolic 
 Hyperbolic lines may straightforwardly be described using equations in analytic geometry.
 
 \begin{lemm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.35\linewidth]{}{hypline}
-Every hyperbolic line in the Poincaré disk model is one of the following:
-\begin{itemize}
-  \item A diameter passing through $(c,d)\neq (0,0)$ with Euclidean equation $dx=cy$.
-  \item The arc of a (Euclidean) circle with equation
-	\[x^2+y^2-2ax-2by+1=0\quad\text{where}\quad a^2+b^2>1\]
-	and (Euclidean) center and radius
-	\[C=(a,b)\quad\text{and}\quad r=\sqrt{a^2+b^2-1}\]
-\end{itemize}
-\tcblower
-\flushright\includegraphics[scale=0.9]{models-example}
-\end{lemm}\goodbreak
+	Every hyperbolic line in the Poincaré disk model is one of the following:
+	\begin{itemize}
+	  \item A diameter passing through $(c,d)\neq (0,0)$ with Euclidean equation $dx=cy$.
+	  \item The arc of a (Euclidean) circle with equation
+		\[
+			x^2+y^2-2ax-2by+1=0\quad\text{where}\quad a^2+b^2>1
+		\]
+		and (Euclidean) center and radius
+		\[
+			C=(a,b)\quad\text{and}\quad r=\sqrt{a^2+b^2-1}
+		\]
+	\end{itemize}
+	\tcblower
+	\flushright\includegraphics[scale=0.9]{models-example}
+\end{lemm}
+\goodbreak
+
 
 \begin{example}{}{}
-We compute the hyperbolic line through $P=(0,\frac 12)$ and $Q=(\frac 12,\frac 13)$ in the Poincaré disk: this is the picture shown in Lemma \ref{lemm:hypline}.\smallbreak
-Substitute into $x^2+y^2-2ax-2by+1=0$ to obtain a system of equations for $a,b$:
-\[\begin{cases}
-\frac 14-b+1=0\\
-\frac 14+\frac 19-a-\frac 23b+1=0
-\end{cases}\implies (a,b)=\left(\frac{19}{36},\frac 54\right)\]
-The required hyperbolic line $\lin{PQ}$ therefore has equation
-\[x^2+y^2-\frac{19}{18}x-\frac{5}{2}y+1=0\quad\text{or}\quad \left(x-\frac{19}{36}\right)^2+\left(y-\frac 54\right)^2=\frac{545}{648}\]
+	We compute the hyperbolic line through $P=(0,\frac 12)$ and $Q=(\frac 12,\frac 13)$ in the Poincaré disk: this is the picture shown in Lemma \ref{lemm:hypline}.\smallbreak
+	Substitute into $x^2+y^2-2ax-2by+1=0$ to obtain a system of equations for $a,b$:
+	\[
+		\begin{cases}
+			\frac 14-b+1=0\\
+			\frac 14+\frac 19-a-\frac 23b+1=0
+		\end{cases}
+		\implies (a,b)=\left(\frac{19}{36},\frac 54\right)
+	\]
+	The required hyperbolic line $\lin{PQ}$ therefore has equation
+	\[
+		x^2+y^2-\frac{19}{18}x-\frac{5}{2}y+1=0
+		\quad\text{or}\quad
+		\left(x-\frac{19}{36}\right)^2+\left(y-\frac 54\right)^2 =\frac{545}{648}
+	\]
 \end{example}
 
-\emph{On} and \emph{between} now make sense. To complete the model, we need to define congruence of hyperbolic segments and angles.
+The undefined terms \emph{point, line, on} and \emph{between} now make sense. To complete the model, we need to define \emph{congruence} of hyperbolic segments and angles.
 
 \begin{defn*}{\ref{defn:poincaredisk} continued}
-The \emph{hyperbolic distance} between points $P,Q$ in the Poincaré disk is
+	The \emph{hyperbolic distance} between points $P,Q$ in the Poincaré disk is\footnotemark{}
 
-\begin{minipage}[t]{0.7\linewidth}\vspace{-12pt}
-	\[d(P,Q):=\cosh^{-1}\left(1+\frac{2\nm{PQ}^2}{(1-\nm{P}^2)(1-\nm{Q}^2)}\right)\]
-	where $\nm{PQ}$ is the Euclidean distance and $\nm P,\nm Q$ are the Euclidean distances of $P,Q$ from the origin.\smallbreak
-	Hyperbolic line segments are \emph{congruent} if they have the same length.\smallbreak
-	The \emph{angle} between hyperbolic rays is that between their (Euclidean) tangent lines: angles are congruent if they have the same measure.
-	\end{minipage}\begin{minipage}[t]{0.3\linewidth}\vspace{-5pt}
-	\flushright\includegraphics{models-angle}
+	\begin{minipage}[t]{0.7\linewidth}\vspace{-12pt}
+		\[
+			d(P,Q):=\cosh^{-1}\left(1+\frac{2\nm{PQ}^2}{(1-\nm{P}^2)(1-\nm{Q}^2)}\right)
+		\]
+		where $\nm{PQ}$ is the Euclidean distance and $\nm P,\nm Q$ are the Euclidean distances of $P,Q$ from the origin.\smallbreak
+		Hyperbolic segments are \emph{congruent} if they have the same length.\smallbreak
+		The \emph{angle} between hyperbolic rays is that between their tangent lines: angles are congruent if they have the same measure.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.29\linewidth}\vspace{-5pt}
+		\flushright\includegraphics{models-angle}
 	\end{minipage}
 \end{defn*}
 
 \begin{lemm}{}{distformula}
-The hyperbolic distance\footnotemark{} of $P$ from the origin is
-\[d(O,P)=\cosh^{-1}\frac{1+\nm P^2}{1-\nm P^2}=\ln\frac{1+\nm P}{1-\nm P}\]
+	The hyperbolic distance of $P$ from the origin is
+	\[
+		d(O,P)=\cosh^{-1}\frac{1+\nm P^2}{1-\nm P^2}=\ln\frac{1+\nm P}{1-\nm P}
+	\]
 \end{lemm}
 
 \footnotetext{It seems reasonable for hyperbolic functions to play some role in hyperbolic geometry! As a primer:
-  \[\cosh x=\frac{e^x+e^{-x}}2,\quad \sinh x=\frac{e^x-e^{-x}}2,\quad\tanh x=\frac{\sinh x}{\cosh x}=\frac{e^x-e^{-x}}{e^x+e^{-x}}\quad\text{and}\quad\cosh^{-1}x=\ln(x+\sqrt{x^2-1})\]\vspace{-15pt}}
+  \[
+  	\cosh x=\frac{e^x+e^{-x}}2,\quad \sinh x=\frac{e^x-e^{-x}}2,\quad\tanh x=\frac{\sinh x}{\cosh x}=\frac{e^x-e^{-x}}{e^x+e^{-x}}\quad\text{and}\quad\cosh^{-1}x=\ln(x+\sqrt{x^2-1})
+  \]
+  \vspace{-15pt}
+}
 
 
 \begin{example}{}{hypisosceles}
-We calculate the sides and angles in the isosceles right-triangle\par
-\begin{minipage}[t]{0.69\linewidth}\vspace{-8pt}
-with vertices $O=(0,0)$, $P=(\frac 12,0)$ and $Q=(0,\frac 12)$.
-\begin{gather*}
-\nm P=\tfrac 12=\nm Q,\qquad \nm{PQ}^2=\tfrac 14+\tfrac 14=\tfrac 12\\
-d(O,P)=d(O,Q)=\ln\frac{1+\frac 12}{1-\frac 12}=\ln 3=\cosh^{-1}\frac 53\approx 1.099\\
-d(P,Q)=\cosh^{-1}\left(1+\frac{2\cdot \frac 12}{(1-\frac 14)^2}\right) =\cosh^{-1}\frac{25}9 \approx 1.681
-\end{gather*}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.3\linewidth}\vspace{-20pt}
-\flushright\includegraphics[scale=0.9]{models-dist4}
-\end{minipage}
-\goodbreak
-
-To find the interior angle $\theta$, implicitly differentiate the equation for the hyperbolic line $\lin{PQ}$:
-\[x^2+y^2-\frac 52x-\frac 52y+1=0 \implies \diffat[y]{x}{P}=\frac{4x-5}{5-4y}\bigg|_P=-\frac 35 \implies \theta=\tan^{-1}\frac 35\approx \ang{30.96}\]
-By symmetry, we have the same angle at $Q$. With a right-angle at $O$, we conclude that the angle sum is approximately $\Sigma_\triangle=\ang{151.93}$!\smallbreak
-As a sanity check, we compare data for $\triangle OPQ$ and the \emph{Euclidean} triangle with the same vertices
-\begin{center}
-\begin{tabular}{l||c|c}
-Property&Hyperbolic Triangle&Euclidean Triangle\\\hline\hline
-Edge lengths&$1.099:1.099:1.681$&$0.5:0.5:0.707$\\
-Relative edge ratios&$1:1:1.530$&$1:1:1.414$\\
-Angles&\ang{30.06}, \ang{30.96}, \ang{90}&\ang{45}, \ang{45}, \ang{90}%\\
-%Area&1.023&0.322
-\end{tabular}
-\end{center}
-The hyperbolic triangle has longer sides and a \emph{relatively} longer hypotenuse. Moreover, its side lengths do \emph{not} satisfy the Pythagorean relation $a^2+b^2=c^2$ (we'll revisit this in Theorem \ref{thm:hyptrig}).
+	We calculate the sides and angles in the isosceles right-triangle\par
+	\begin{minipage}[t]{0.69\linewidth}\vspace{-8pt}
+		with vertices $O=(0,0)$, $P=(\frac 12,0)$ and $Q=(0,\frac 12)$.
+		\begin{gather*}
+		\nm P=\tfrac 12=\nm Q,\qquad \nm{PQ}^2=\tfrac 14+\tfrac 14=\tfrac 12\\
+		d(O,P)=d(O,Q)=\ln\frac{1+\frac 12}{1-\frac 12}=\ln 3=\cosh^{-1}\frac 53\approx 1.099\\
+		d(P,Q)=\cosh^{-1}\left(1+\frac{2\cdot \frac 12}{(1-\frac 14)^2}\right) =\cosh^{-1}\frac{25}9 \approx 1.681
+		\end{gather*}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.3\linewidth}\vspace{-20pt}
+		\flushright\includegraphics[scale=0.9]{models-dist4}
+	\end{minipage}
+	\goodbreak
+	
+	To find the interior angle $\theta$, implicitly differentiate the equation for the hyperbolic line $\lin{PQ}$:
+	\[
+		x^2+y^2-\frac 52x-\frac 52y+1=0 \implies \diffat[y]{x}{P}=\frac{4x-5}{5-4y}\bigg|_P=-\frac 35 \implies \theta=\tan^{-1}\frac 35\approx \ang{30.96}
+	\]
+	By symmetry, we have the same angle at $Q$. With a right-angle at $O$, we conclude that the angle sum is approximately $\Sigma_\triangle=\ang{151.93}$!\smallbreak
+	As a sanity check, we compare data for $\triangle OPQ$ and the \emph{Euclidean} triangle with the same vertices
+	\begin{center}
+		\begin{tabular}{l||c|c}
+			Property&Hyperbolic Triangle&Euclidean Triangle\\\hline\hline
+			Edge lengths&$1.099:1.099:1.681$&$0.5:0.5:0.707$\\
+			Relative edge ratios&$1:1:1.530$&$1:1:1.414$\\
+			Angles&\ang{30.06}, \ang{30.96}, \ang{90}&\ang{45}, \ang{45}, \ang{90}%\\
+			%Area&1.023&0.322
+		\end{tabular}
+	\end{center}
+	The hyperbolic triangle has longer sides and a \emph{relatively} longer hypotenuse. Moreover, its side lengths do \emph{not} satisfy the Pythagorean relation $a^2+b^2=c^2$ (though $\cosh a\cosh b=\cosh c\ldots$).
 \end{example}
 
 \begin{minipage}[t]{0.65\linewidth}\vspace{-5pt}
-The next result is an exercise; it says that distance increases smoothly as one moves along a hyperbolic line.
-
-\begin{lemm}{}{hypdistwd}
-Fix $P$ and a hyperbolic line through $P$. Then the distance function $Q\mapsto d(P,Q)$ maps the set of points on one side of $P$ differentiably and bijectively onto the interval $(0,\infty)$.
-\end{lemm}
-
-The Lemma means that hyperbolic circles are well-defined and look like one expects: the circle of hyperbolic radius $\delta$ centered at $P$ is the set of points $Q$ such that $d(P,Q)=\delta$.
-\end{minipage}\hfill\begin{minipage}[t]{0.35\linewidth}\vspace{-5pt}
+	The next result is an exercise; it says that distance increases smoothly as one moves along a hyperbolic line.
+	
+	\begin{lemm}{}{hypdistwd}
+		Fix $P$ and a hyperbolic line through $P$. Then the distance function $Q\mapsto d(P,Q)$ maps the set of points on one side of $P$ differentiably and bijectively onto the interval $(0,\infty)$.
+	\end{lemm}
+	
+	The Lemma means that hyperbolic circles are well-defined and look like one expects: the circle of hyperbolic radius $\delta$ centered at $P$ is the set of points $Q$ such that $d(P,Q)=\delta$.
+\end{minipage}
+\hfill
+	\begin{minipage}[t]{0.34\linewidth}\vspace{-5pt}
 \flushright\includegraphics[scale=0.95]{hyper-circle}
 \end{minipage}\medbreak
 
@@ -302,18 +337,18 @@ In fact (Exercise \ref*{sec:hyp-models}.\ref{exs:circhypcirc}) hyperbolic circle
 
 
 \begin{thm}{}{}
-The Poincaré disk is a model of hyperbolic geometry.
+	The Poincaré disk is a model of hyperbolic geometry.
 \end{thm}
 
 \begin{proof}[Sketch Proof]
-A rigorous proof would require that we check the hyperbolic postulate and all Hilbert's axioms except Playfair. Instead we check Euclid's postulates 1--4 and the hyperbolic postulate 5.
-\begin{enumerate}\itemsep0pt
-  \item Lemma \ref{lemm:hypline} says we can join any given points in the Poincaré disk by a unique segment.
-  \item A hyperbolic segment joins two points \emph{inside} the (open) Poincaré disk. The distance formula increases (Lemma \ref{lemm:hypdistwd}) unboundedly as $P$ moves towards the boundary circle, so we can always make a hyperbolic line longer.
-  \item Hyperbolic circles are defined above.
-  \item All right-angles are equal since the notion of angle is unchanged from Euclidean geometry.
-  \item The first picture on page \pageref{sec:hyp-models} shows multiple parallels!\hfill{\qedhere}
-\end{enumerate}
+	A rigorous proof would require us to check the hyperbolic postulate and all Hilbert's axioms except Playfair. Instead we verify Euclid's postulates 1--4 and the hyperbolic postulate 5.
+	\begin{enumerate}\itemsep0pt
+	  \item Lemma \ref{lemm:hypline} says we can join any given points in the Poincaré disk by a unique segment.
+	  \item A hyperbolic segment joins two points \emph{inside} the (open) Poincaré disk. The distance formula increases (Lemma \ref{lemm:hypdistwd}) unboundedly as $P$ moves towards the boundary circle, so we can always make a hyperbolic line longer.
+	  \item Hyperbolic circles are defined above.
+	  \item All right-angles are equal since the notion of angle is unchanged from Euclidean geometry.
+	  \item The first picture on page \pageref{sec:hyp-models} shows multiple parallels!\hfill{\qedhere}
+	\end{enumerate}
 \end{proof}
 
 \goodbreak
@@ -325,27 +360,34 @@ A rigorous proof would require that we check the hyperbolic postulate and all Hi
 There are several other models of hyperbolic space. Here are three of the most common.%\vspace{-8pt}
 
 \boldinline{Klein Disk Model} This is similar to the Poincaré disk, though lines are chords of the unit circle (`Euclidean' straight lines!) and the distance function is different:
-\[d_K(P,Q)=\frac 12\nm{\ln\frac{\nm{P\Theta}\nm{Q\Omega}}{\nm{P\Omega}\nm{Q\Theta}}}\]
+\[
+	d_K(P,Q) =\frac 12\nm{\ln\frac{\nm{P\Theta}\nm{Q\Omega}}{\nm{P\Omega}\nm{Q\Theta}}}
+\]
 
 \begin{minipage}[t]{0.69\linewidth}\vspace{0pt}
-where $\Omega,\Theta$ are where the chord $\smash[t]{\lin{PQ}}$ meets the boundary circle.\smallbreak
-The cost is that the notion of \emph{angle} is different. The picture shows perpendicularity: Given a \textcolor{red}{hyperbolic line} find the \textcolor{Green}{tangents} to where it meets the boundary circle. Any \textcolor{blue}{chord} whose extension passes through the \textcolor{Green}{intersection} of these tangents is perpendicular to the \textcolor{red}{original line}. Measuring other angles is difficult!
+	where $\Omega,\Theta$ are where the chord $\smash[t]{\lin{PQ}}$ meets the boundary circle.\smallbreak
+	The cost is that the notion of \emph{angle} is different. The picture shows perpendicularity: Given a \textcolor{red}{hyperbolic line} find the \textcolor{Green}{tangents} to where it meets the boundary circle. Any \textcolor{blue}{chord} whose extension passes through the \textcolor{Green}{intersection} of these tangents is perpendicular to the \textcolor{red}{original line}. Measuring other angles is difficult!
 \end{minipage}
+\hfill
 \begin{minipage}[t]{0.3\linewidth}\vspace{-32pt}
-\flushright\includegraphics[scale=0.9]{models-klein}
+	\flushright\includegraphics[scale=0.9]{models-klein}
 \end{minipage}\medbreak
 
-Gauss' famous theorem egregium says that this problem is unavoidable; there is no model in which lines and angles both have the same meaning as in Euclidean geometry. 
+Gauss' famous \emph{theorem egregium} says that this problem is unavoidable; there is no model in which lines and angles both have the same meaning as in Euclidean geometry. 
 
 %  If $H$ is a model of hyperbolic geometry, then its intrinsic curvature says that it is impossible to find an embedding $f:H\to\R^2$ which preserves \emph{both} the concepts of straight line and angle. Poincaré's model has nice angles but `bendy' lines; Klein's lines are `Euclidean straight' but his angle are ugly. The best we can do is to have one concept or the other: we cannot have both.\footnote{The same problem arises when trying to make a map of part of the Earth (another curved geometry). One can have maps which preserve distance or angle, but not both.}
 
 \begin{minipage}[t]{0.69\linewidth}\vspace{0pt}
-\boldinline{Poincaré Half-plane Model}
-
-Widely used in complex analysis, the points comprise the upper half-plane $(y>0)$ in $\R^2$, while hyperbolic lines are verticals or semicircles centered on the $x$-axis
-\[x=\text{constant}\quad\text{or}\quad (x-a)^2+y^2=r^2\]
-and angles are the same as in Euclidean space. The expression for hyperbolic distance remains horrific! The picture shows several hyperbolic lines and a \textcolor{blue}{hyperbolic triangle.}
-\end{minipage}\hfill\begin{minipage}[t]{0.3\linewidth}\vspace{0pt}
+	\boldinline{Poincaré Half-plane Model}
+	
+	Widely used in complex analysis, the points comprise the upper half-plane $(y>0)$ in $\R^2$, while hyperbolic lines are verticals or semicircles centered on the $x$-axis
+	\[
+		x=\text{constant}\quad\text{or}\quad (x-a)^2+y^2=r^2
+	\]
+	and angles are the same as in Euclidean space. The expression for hyperbolic distance remains horrific! The picture shows several hyperbolic lines and a \textcolor{blue}{hyperbolic triangle.}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\linewidth}\vspace{0pt}
 	\flushright\includegraphics{models-halfplane}
 \end{minipage}
 
@@ -356,59 +398,67 @@ and angles are the same as in Euclidean space. The expression for hyperbolic dis
 Points comprise the upper sheet $(z\ge 1)$ of the hyperboloid $x^2+y^2=z^2-1$. A \textcolor{blue}{hyperbolic line} is the intersection of the hyperboloid with a plane through the origin. Isometries (congruence) can be described using matrix-multiplication and hyperbolic distance is relatively easy: given $P=(x,y,z)$ and $Q=(a,b,c)$, hyperbolic distance is
 
 \begin{minipage}[t]{0.6\linewidth}\vspace{-10pt}
-\begin{gather*}
-d(P,Q)=\cosh^{-1}(cz-ax-by)
-\end{gather*}
-Difficulties include working in three dimensions and the fact that angles are awkward.\smallbreak
-The relationship to the Poincaré disk is via projection. Place the disk in the $x,y$-plane centered at the origin and draw a \textcolor{Green}{line} through the disk and the point $(0,0,-1)$. The intersection of this line with the hyperboloid gives the correspondence.
-\end{minipage}\begin{minipage}[t]{0.4\linewidth}\vspace{0pt}
-\flushright\href{http://www.math.uci.edu/~ndonalds/math161/hyper-plane.html}{\includegraphics[scale=0.8]{hyper-plane}}
+	\[
+		d(P,Q)=\cosh^{-1}(cz-ax-by)
+	\]
+	Difficulties include working in three dimensions and the fact that angles are awkward.\smallbreak
+	The relationship to the Poincaré disk is via projection. Place the disk in the $x,y$-plane centered at the origin and draw a \textcolor{Green}{line} through the disk and the point $(0,0,-1)$. The intersection of this line with the hyperboloid gives the correspondence.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.39\linewidth}\vspace{0pt}
+	\flushright\href{http://www.math.uci.edu/~ndonalds/math161/hyper-plane.html}{\includegraphics[scale=0.8]{hyper-plane}}
 \end{minipage}
 
+
 \begin{exercises}
-All questions are  within the Poincaré disk model
-\begin{enumerate}
-  \item\begin{enumerate}
-    \item Find the equation of the hyperbolic line joining $P=(\frac 14,0)$ and $Q=(0,\frac 12)$.
-    \item Find the side lengths of the hyperbolic triangle $\triangle OPQ$ where $O=(0,0)$ is the origin.
-    \item The triangle in part (b) is right-angled at $O$. If $o,p,q$ represent the hyperbolic lengths of the sides opposite $O,P,Q$ respectively, check that the Pythagorean theorem $p^2+q^2=o^2$ is \emph{false.} Now compute $\cosh p\cosh q$: what do you observe?
-  \end{enumerate}
-  	
-  \item Let $P=\left(\frac 12,\sqrt{\frac 5{12}}\right)$ and $Q=\left(\frac 12,-\sqrt{\frac 5{12}}\right)$
-  \begin{enumerate}
-    \item Compute the hyperbolic distances $d(O,P)$, $d(O,Q)$ and $d(P,Q)$, where $O$ is the origin.
-    \item Compute the angle $\measuredangle POQ$.
-	  \item Show that the hyperbolic line $\ell=\lin{PQ}$ has equation
-		\[x^2-\frac{10}3x+y^2+1=0\]
-  	\item Calculate $\diff[y]{x}$ and hence show that a tangent vector to $\ell$ at $P$ is $\sqrt{15}\vi+7\vj$. Use this to compute $\measuredangle OPQ$.
-	\end{enumerate} 
-	
-  \item\label{exs:isorighthypextended} We extend Example \ref{ex:hypisosceles}. Let $c\in(0,1)$ and label $O=(0,0)$, $P=(c,0)$ and $Q=(0,c)$.
-  \begin{enumerate}
-    \item Compute the hyperbolic side lengths of $\triangle OPQ$.
-    \item Find the equation of the hyperbolic line joining $P=(c,0)$ and $Q=(0,c)$.
-    \item Use implicit differentiation to prove that the interior angles at $P$ and $Q$ measure $\tan^{-1}\frac{1-c^2}{1+c^2}$. What happens as $c\to 0^+$ and as $c\to 1^-$?
-  \end{enumerate}
-	
-	\item Let $0<r<1$ and find the hyperbolic side lengths and interior angles of the equilateral triangle with vertices $(r,0)$, $(-\frac r2,\frac{\sqrt 3r}2)$ and $(-\frac r2,-\frac{\sqrt 3r}2)$.What do you observe as $r\to 0^+$ and $r\to 1^-$?
-	
-	\item\label{exs:circhypcirc}\begin{enumerate}
-    \item Use the cosh distance formula to prove that the hyperbolic circle of hyperbolic radius $\rho=\ln 3$ and center $C=(\frac 12,0)$ in the Poincaré disk has \emph{Euclidean} equation
-    \[\left(x-\frac 25\right)^2+y^2=\frac 4{25}\]
-    \item Prove that every hyperbolic circle in the Poincaré disk is in fact a Euclidean circle.
-  \end{enumerate}
-	
-	\item We sketch a proof of Lemma \ref{lemm:hypdistwd}. 
+	Answer all questions within the Poincaré disk model.
 	\begin{enumerate}
-	  \item Prove that $f(x)=\cosh^{-1}x=\ln(x+\sqrt{x^2-1})$ is strictly increasing on the interval $(1,\infty)$.
-	  \item By part (a), it is enough to show that $\frac{\nm{PQ}^2}{1-\nm Q^2}$ increases as $Q$ moves away from $P$ along a hyperbolic line. Appealing to symmetry, let $P=(0,c)$ lie on the hyperbolic line with equation $x^2+y^2-2by+1=0$. Prove that
-	  \[\frac{\nm{PQ}^2}{1-\nm Q^2}=\frac{(b-c)y+bc-1}{1-by}\]
-	  and hence show that this is an increasing function of $y$ when $c<y<\frac 1b$.
-	\end{enumerate} 
-% For a difficult exercise, try to find the omega-points for the line $\overleftrightarrow{PQ}$ and see that you obtain the same expression for the distance.\footnote{Hint: $\Omega,\Theta$ have $x=\frac{4\pm\sqrt{34}}{10}$, $y=\frac{4\mp\sqrt{34}}{10}$\ldots}\goodbreak
+	  \item\begin{enumerate}
+	    \item Find the equation of the hyperbolic line joining $P=(\frac 14,0)$ and $Q=(0,\frac 12)$.
+	    \item Find the side lengths of the hyperbolic triangle $\triangle OPQ$ where $O=(0,0)$ is the origin.
+	    \item The triangle in part (b) is right-angled at $O$. If $o,p,q$ represent the hyperbolic lengths of the sides opposite $O,P,Q$ respectively, check that the Pythagorean theorem $p^2+q^2=o^2$ is \emph{false.} Now compute $\cosh p\cosh q$: what do you observe?
+	  \end{enumerate}
+	  	
+	  \item Let $P=\left(\frac 12,\sqrt{\frac 5{12}}\right)$ and $Q=\left(\frac 12,-\sqrt{\frac 5{12}}\right)$
+	  \begin{enumerate}
+	    \item Compute the hyperbolic distances $d(O,P)$, $d(O,Q)$ and $d(P,Q)$, where $O$ is the origin.
+	    \item Compute the angle $\measuredangle POQ$.
+		  \item Show that the hyperbolic line $\ell=\lin{PQ}$ has equation
+			\[
+				x^2-\frac{10}3x+y^2+1=0
+			\]
+	  	\item Calculate $\diff[y]{x}$ and hence show that a tangent vector to $\ell$ at $P$ is $\sqrt{15}\vi+7\vj$. Use this to compute $\measuredangle OPQ$.
+		\end{enumerate} 
+		
+	  \item\label{exs:isorighthypextended} We extend Example \ref{ex:hypisosceles}. Let $c\in(0,1)$ and label $O=(0,0)$, $P=(c,0)$ and $Q=(0,c)$.
+	  \begin{enumerate}
+	    \item Compute the hyperbolic side lengths of $\triangle OPQ$.
+	    \item Find the equation of the hyperbolic line joining $P=(c,0)$ and $Q=(0,c)$.
+	    \item Use implicit differentiation to prove that the interior angles at $P$ and $Q$ measure $\tan^{-1}\frac{1-c^2}{1+c^2}$. What happens as $c\to 0^+$ and as $c\to 1^-$?
+	  \end{enumerate}
+		
+		\item Let $0<r<1$ and find the hyperbolic side lengths and interior angles of the equilateral triangle with vertices $(r,0)$, $(-\frac r2,\frac{\sqrt 3r}2)$ and $(-\frac r2,-\frac{\sqrt 3r}2)$.What do you observe as $r\to 0^+$ and $r\to 1^-$?
+		
+		\item\label{exs:circhypcirc}\begin{enumerate}
+	    \item Use the cosh distance formula to prove that the hyperbolic circle of hyperbolic radius $\rho=\ln 3$ and center $C=(\frac 12,0)$ in the Poincaré disk has \emph{Euclidean} equation
+	    \[
+	    	\left(x-\frac 25\right)^2+y^2=\frac 4{25}
+	    \]
+	    \item Prove that every hyperbolic circle in the Poincaré disk is in fact a Euclidean circle.
+	  \end{enumerate}
+		
+		\item We sketch a proof of Lemma \ref{lemm:hypdistwd}. 
+		\begin{enumerate}
+		  \item Prove that $f(x)=\cosh^{-1}x=\ln(x+\sqrt{x^2-1})$ is strictly increasing on the interval $(1,\infty)$.
+		  \item By part (a), it is enough to show that $\frac{\nm{PQ}^2}{1-\nm Q^2}$ increases as $Q$ moves away from $P$ along a hyperbolic line. Appealing to symmetry, let $P=(0,c)$ lie on the hyperbolic line with equation $x^2+y^2-2by+1=0$. Prove that
+		  \[
+		  	\frac{\nm{PQ}^2}{1-\nm Q^2}=\frac{(b-c)y+bc-1}{1-by}
+		  \]
+		  and hence show that this is an increasing function of $y$ when $c<y<\frac 1b$.
+		\end{enumerate} 
+	% For a difficult exercise, try to find the omega-points for the line $\overleftrightarrow{PQ}$ and see that you obtain the same expression for the distance.\footnote{Hint: $\Omega,\Theta$ have $x=\frac{4\pm\sqrt{34}}{10}$, $y=\frac{4\mp\sqrt{34}}{10}$\ldots}\goodbreak
 
-
-\end{enumerate}
+	\end{enumerate}
 \end{exercises}
 
 \clearpage

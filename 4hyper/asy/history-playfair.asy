@@ -7,7 +7,7 @@ texpreamble("\usepackage{amsmath}
 ");
 import graph;
 
-size(180);
+size(135);
 
 pair P=(0,1);
 pair Q=(0.5,0);
