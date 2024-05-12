@@ -171,6 +171,8 @@ We now show that drawing \emph{acute} summit angles is justified by the Saccheri
 		
 			\item\label{exs:rectanglesplit} Suppose $\square ABCD$ has four right-angles. Show that $\cl{AC}$ splits $\square ABCD$ into two congruent triangles, and conclude that the opposite sides are congruent.\par
 			Why is this question easier in Euclidean geometry?
+	
+			\item\label{exs:saccherisplit} Suppose two Saccheri quadrilaterals have congruent bases ($\cl{AB}$) and perpendicular sides ($\cl{AD},\cl{BC}$). Prove that the quadrilaterals are congruent.
 		\end{enumerate}
 	\end{minipage}
 	\hfill
@@ -619,11 +621,10 @@ Note that AAA is a \emph{congruence} theorem in hyperbolic geometry, not a \emph
 
 
 \begin{proof}
-	Given a rectangle $\square ABCD$, let $P\in\cl{CD}$ and drop the perpendicular to $R\in\cl{AB}$.\smallbreak
-	$\square PRBC$ is a rectangle; if not, then one of $\square ARPD$ or $\square PRBC$ would have angle sum exceeding \ang{360}, thus contradicting Saccheri--Legendre.\smallbreak
-	By Exercise \ref*{sec:hyp1}.\ref{exs:rectanglesplit}, $\ray{BP}$ splits $\square PRBC$ so that the \textcolor{orange}{marked angles} in the picture are congruent. In particular, $\ray{BP}$ crosses $\cl{CD}$ at the \emph{same angle} as it leaves $B$.\smallbreak
-	Produce a sequence of equidistant points $P_1,P_2,P_3,\ldots$ along $\ray{BP}$, each time dropping the perpendicular back to $\cl{CD}$ to produce the sequence $Q_1,Q_2,Q_3,\ldots$\smallbreak
-	By SAA, $\triangle P_1PQ_1\cong\triangle PBR$, whence we obtain a second rectangle congruent to $\square PRBC$. Repeating the argument, we see that the sequence of points $P,Q_1,Q_2,Q_3,\ldots$ is also \emph{equidistant.} Since $\cl{CD}$ is \emph{finite,} this sequence must eventually\footnotemark{} pass $D$; we conclude that $\ray{BP}$ intersects $\lin{AD}$.
+	Given a rectangle $\square ABCD$, reflect across $\cl{CD}$ (Exercise \ref*{sec:hyp1}.\ref{exs:saccherisplit}) and repeat to obtain an infinite family of congruent rectangles. Let $P\in\cl{CD}$ and drop perpendiculars to $R\in\cl{AB}$ and $C_1$ as shown.\smallbreak
+	$\square PRBC$ is a rectangle: if not, then one of $\square ARPD$ or $\square PRBC$ would have angle sum exceeding \ang{360}, contradicting Saccheri--Legendre (Theorem \ref{thm:saccleg}). Similarly $\square DPC_1D_1$ is a rectangle.\smallbreak
+	By Exercise \ref*{sec:hyp1}.\ref{exs:rectanglesplit}, $\textcolor{Magenta}{\ray{BP}}$ splits $\square PRBC$ into a pair of congruent triangles. In particular, $\textcolor{Magenta}{\ray{BP}}$ crosses $\cl{CD}$ at the \textcolor{orange}{same angle} as it leaves $B$. We find ourselves in the original configuration: the ray $\textcolor{Magenta}{\ray{BP}}$ emanates from the upper-right vertex of $\square DPC_1D_1$ at the \textcolor{orange}{same angle} as it does for $\square ABCD$!\smallbreak
+	Iterate the process to obtain the picture, each time dropping the perpendicular from $P_k$ to $\cl{CD}$ to produce the \emph{equidistant} sequence $Q_1,Q_2,Q_3,\ldots$ Since $\cl{CD}$ is \emph{finite,} this eventually\footnotemark{} passes $D$: some $Q_n$ lies on the opposite side of $\lin{AD}$. It follows that $P_n\in\textcolor{Magenta}{\ray{BP}}$ does also, whence $\textcolor{Magenta}{\ray{BP}}$ intersects $\lin{AD}$.
 	\begin{center}
 		\includegraphics[scale=0.95]{basic-rect4}\vspace{-4pt}
 	\end{center}
