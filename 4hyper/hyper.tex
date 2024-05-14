@@ -720,35 +720,34 @@ Note that AAA is a \emph{congruence} theorem in hyperbolic geometry, not a \emph
 Amazingly, many of the standard results of absolute geometry also apply to omega-triangles! The first can be thought of as the AAA congruence theorem where one `angle' is zero.
 
 \begin{thm}{Angle-Angle Congruence for Omega-triangles}{}
-	Suppose $\triangle PQ\Omega$ and $\triangle RS\Theta$ are omega-triangles with a single omega-point. If the the angles are congruent in pairs
+	Suppose $\triangle AB\Omega$ and $\triangle PQ\Theta$ are omega-triangles, each with a single omega-point. If the angles are congruent in pairs
 	\[
-		\angle PQ\Omega \cong\angle RS\Theta \qquad \angle QP\Omega \cong\angle SR\Theta
+		\textcolor{Magenta}{\angle AB\Omega} \cong \textcolor{Magenta}{\angle PQ\Theta} \qquad \angle BA\Omega \cong\angle QP\Theta
 	\]
-	then the finite sides of each triangle are also congruent: $\cl{PQ}\cong\cl{RS}$.
+	then the finite sides of each triangle are also congruent: $\cl{AB}\cong\cl{PQ}$.
 \end{thm}
 
 It doesn't really make sense to speak of the `infinite' sides, or the `angles' at omega-points, being congruent. However, if one defines congruence in terms of isometries (Section \ref{sec:hyperiso}), then this idea is more reasonable.
 
 \begin{proof}
-	Transfer $\angle SR\Theta$ to $P$ and choose $T\in\ray{PQ}$ such that $\cl{PT}\cong\cl{RS}$. If $T=Q$ we are done.\par
+	Let $T\in\ray{AB}$ be such that $\cl{AT}\cong\cl{PQ}$. If $T=B$ we are done.\par
 	\begin{minipage}[t]{0.7\linewidth}\vspace{-5pt}
-		Otherwise, WLOG assume $\cl{PQ}<\cl{PT}$. The hypothesis states that the \textcolor{orange}{marked orange angles} at $Q$ and $T$ are congruent.\smallbreak
-		Let $M$ be the midpoint of $\cl{QT}$ and drop the perpendicular to $\lin{Q\Omega}$ at $N$.\smallbreak
-		Choose $L\in\lin{\Omega T}$ on the opposite side of $\overleftrightarrow{QT}$ to $N$ such that $\textcolor{Green}{\cl{TL}\cong\cl{NQ}}$.\smallbreak
-		The \textcolor{red}{red angles} at $Q,T$ are congruent, as are the pairs of green and blue lines: SAS says $\triangle MQN\cong\triangle MTL$, whence $M$ lies on $\cl{LN}$ and we have a right-angle(!) at $L$.\smallbreak
-		The angle of parallelism of $L$ relative to $\lin{QN}$ is now \ang{90}: contradiction.\medbreak
-		There are several other possible orientations:
+		Otherwise, WLOG and for contradiction, assume $\cl{AB}<\cl{AT}$. The hypothesis asserts that the \textcolor{Magenta}{angles} at $B$ and $T$ are congruent.\smallbreak
+		Let $M$ be the midpoint of $\textcolor{blue}{\cl{BT}}$ and drop the perpendicular to $N\in\lin{B\Omega}$.\smallbreak
+		Let $L\in\lin{\Omega T}$ be on the opposite side of $\overleftrightarrow{BT}$ to $N$ such that $\textcolor{Green}{\cl{TL}}\cong \textcolor{Green}{\cl{BN}}$.\smallbreak
+		We now have \textcolor{Green}{Side}-\textcolor{cyan}{Angle}-\textcolor{blue}{Side} data, whence $\triangle NBM\cong\triangle LTM$. The vertical angles at $M$ are congruent, whence $M$ lies on $\cl{LN}$ and we have a right-angle(!) at $L$.\smallbreak
+		The angle of parallelism of $L$ relative to $\lin{B\Omega}$ is now $\angle NL\Omega=\ang{90}$, which contradicts Theorem \ref{thm:hyperfund}.\medbreak
+		There are two other possible orientations:
 		\begin{itemize}\itemsep0pt
-		  \item $T$ could lie on the same side of $Q$ as $P$ but the resulting argument is the same after reversing the roles of $Q$ and $T$.
-		  \item $N$ could lie on the opposite side of $Q$ from $\Omega$. In this case SAS is applied to the same triangles but with respect to the congruent \emph{orange} angles.
+		  \item $N$ could lie on the opposite side of $B$ from $\Omega$. In this case SAS is applied to the same triangles but with respect to the congruent \textcolor{Magenta}{magenta angles}.
 		\end{itemize}\vspace{-12pt}
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.29\linewidth}\vspace{0pt}
+	\begin{minipage}[t]{0.29\linewidth}\vspace{-5pt}
 		\flushright\includegraphics{basic-ext3}
 	\end{minipage}\par
 	\begin{itemize}\parsep0pt
-	  \item In the special case that $N=Q$, the orange angles are right-angles and the same contradiction appears.\qedhere
+	  \item In the special case that $N=B$, the \textcolor{cyan}{cyan angles} are right-angles and the same contradiction appears: the angle of parallelism of $T$ with respect to $\lin{B\Omega}$ is \ang{90}.\qedhere
 	\end{itemize}
 \end{proof}
 
@@ -756,16 +755,17 @@ It doesn't really make sense to speak of the `infinite' sides, or the `angles' a
 
 
 \begin{thm}{Exterior Angle Theorem for Omega-Triangles}{exthyp}
-	Suppose $\triangle QT\Omega$ has a single omega-point. Extend $\cl{TQ}$ to $P$. Then $\angle PQ\Omega>\angle QT\Omega$.
+	Suppose $\triangle PQ\Omega$ has a single omega-point and let $P*Q*R$. Then $\textcolor{orange}{\angle RQ\Omega}>\textcolor{Magenta}{\angle QP\Omega}$.
 \end{thm}
 
 \begin{tcolorbox}[proofstyle, lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.27\linewidth]
-	\emph{Proof.}\quad We show that the other cases are impossible.\medbreak
-	To see that $\angle PQ\Omega$ and $\angle QT\Omega$ cannot be congruent, consider the picture in the proof of the AA congruence theorem. The orange angles cannot be congruent since the entire picture is a contradiction!\medbreak
-	If $\angle PQ\Omega<\angle QT\Omega$, then we have the picture on the right. The goal is to create a triangle contradicting the usual exterior angle theorem.\smallbreak
-	Transfer $\textcolor{Green}{\angle QT\Omega}$ to $Q$ to obtain $\ray{QX}$ \emph{interior} to $\angle TQ\Omega$.\smallbreak
-	Since $\lin{Q\Omega}$ is a limiting parallel to $\lin{T\Omega}$, the Fundamental Theorem (\ref{thm:hyperfund}) says that $\ray{QX}$ intersects $\cl{T\Omega}$ at a point $Y$.\smallbreak
-	But now $\triangle QTY$ contradicts the standard exterior angle theorem.
+	\emph{Proof.}\quad We show that the two other cases are impossible.
+	\begin{description}
+	  \item[\normalfont ($\textcolor{orange}{\angle RQ\Omega}\cong\textcolor{Magenta}{\angle QP\Omega}$)] This is the contradictory arrangement described in the previous proof: $P=T,Q=B,R=A$, and the \textcolor{Magenta}{magenta angles} cannot be congruent.
+		\item[\normalfont ($\textcolor{orange}{\angle RQ\Omega}<\textcolor{Magenta}{\angle QP\Omega}$)] Transfer the \textcolor{Magenta}{latter} to $Q$ to produce a ray $\ray{QX}$ \emph{interior} to $\angle PQ\Omega$ with $\textcolor{Green}{\angle RQX}\cong \textcolor{Magenta}{\angle QP\Omega}$.\par
+	Since $\lin{Q\Omega}$ is a limiting parallel to $\lin{P\Omega}$, the Fundamental Theorem says that $\ray{QX}$ intersects $\lin{P\Omega}$ at some point $Y$.\par
+	We now have $\triangle PQY$ contradicting the standard exterior angle theorem ($\textcolor{Green}{\angle RQY}\cong \textcolor{Magenta}{\angle QPY}$).
+	\end{description}
 	\tcblower
 	\flushright\includegraphics{basic-ext4}\\\hfil\qedsymbol
 \end{tcolorbox}
@@ -773,7 +773,7 @@ It doesn't really make sense to speak of the `infinite' sides, or the `angles' a
 The final congruence theorem is an exercise based on the previous picture.
 
 \begin{cor}{Side-Angle Congruence for Omega-triangles}{}
-	Suppose $\triangle QT\Omega$ and $\triangle RS\Theta$ have a single omega-point. If $\angle QT\Omega \cong\angle RS\Theta$ and $\cl{QT}\cong\cl{RS}$ then $\angle TQ\Omega \cong\angle SR\Theta$.
+	Suppose $\triangle PQ\Omega$ and $\triangle AB\Theta$ have a single omega-point. If $\textcolor{Magenta}{\angle QP\Omega} \cong\angle BA\Theta$ and $\textcolor{blue}{\cl{PQ}}\cong\cl{AB}$ then $\angle PQ\Omega \cong\angle AB\Theta$.
 \end{cor}
 
 A triangle with one omega-point only has three pieces of data: two finite angles and one finite edge. The AA and SA congruence theorems say that two of these determine the third.
@@ -786,12 +786,11 @@ A triangle with one omega-point only has three pieces of data: two finite angles
   \item (\emph{Omega Crossbar Thm})\lstsp If a line passes through an interior point and exactly one vertex (including $\Omega$) of an omega-triangle, then it passes through the opposite side. This is partly embedded in the proof of Theorem \ref{thm:exthyp}.
 \end{itemize}
 
-% \emph{`Angle' Congruence}:\quad One could argue that omega-triangles with two omega-points and a single congruent angle are congruent. This statement is essentially vacuous as there is nothing to check: all sides have infinite length and the only real angles are assumed to be congruent! As before, once we have the machinery of isometries it makes more sense to describe such `triangles' as congruent.\medbreak
 
 \emph{Perpendicular Distance and the Angle of Parallelism}:\quad Applied to right-angled omega-triangles, the AA and SA theorems prove that the angle of parallelism is a bijective function of the perpendicular distance. Moreover, by transferring the right-angle to the positive $x$-axis and the other vertex to the origin, we obtain the arrangement in Exercise \ref*{sec:hypparallel}.\ref{exs:angparallelism}, thus completing the proof of Corollary \ref{cor:parangleformula}.
 
 
-% \begin{thm}[Pasch's axiom for omega-triangles]
+% \begin{thm}[Crossbar for omega-triangles]
 % If $\triangle PQ\Omega$ is an omega-triangle and a line $\ell$ passes through one of the vertices (including $\Omega$) and an interior point of the triangle, then it also passes through the opposite side.
 % \end{thm}
 % 

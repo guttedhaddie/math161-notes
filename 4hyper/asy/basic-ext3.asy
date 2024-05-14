@@ -75,7 +75,7 @@ pair P=(2-sqrt(3),0);
 pair Q=(0,1/sqrt(3));
 pair om=dir(60);
 
-circ(P,Q,blue+linewidth(1));
+circ(P,Q,blue+linewidth(1.2));
 circ(Q,om);
 circ(om,P);
 
@@ -100,16 +100,13 @@ real radQX=sqrt(cQX.x^2+cQX.y^2-1);
 //dot(QX(343));
 
 pair X=Qom(290);
-//dot("$X$",X,N);
 
-//draw(Q..graph(QX,343,350));
-
-draw(arc(P,0.06,-90+anPPom,-91+anPPQ,CCW),orange);
-draw(arc(Q,0.045,anQPQ-90,-178+anPPom,CW),orange);
-//dot(Q+0.2dir(anQPQ-90));
+draw(arc(P,0.06,-90+anPPom,-91+anPPQ,CCW),magenta+linewidth(1));
+draw(arc(Q,0.045,anQPQ-90,-178+anPPom,CW),magenta+linewidth(1));
 
 pair T=PQ(190);
-dot("$P$",T,W);
+draw(arc(T,0.06,-90+12,-90+47,CCW),red+linewidth(1));
+dot("$A$",T,W);
 draw(graph(PQ,190,196.2));
 
 draw(arc((0,0),dir(50),dir(100)),dashed);
@@ -117,23 +114,23 @@ draw(arc((0,0),dir(50),dir(100)),dashed);
 pair M=PQ(204);
 dot("$M$",M,SW);
 pair N=Qom(277.5);
-draw(graph(Qom,270,277.5),heavygreen+linewidth(1));
-dot("$Q$",Q,W);
+draw(graph(Qom,270,277.5),heavygreen+linewidth(1.2));
+
 dot("$N$",N,N);
 circ(M,N);
 
 pair L=Pom(185);
-draw(graph(Pom,180,185),heavygreen+linewidth(1));
+draw(graph(Pom,180,185),heavygreen+linewidth(1.2));
 dot("$L$",L,E);
 dot("$T$",P,E);
-dot("$Q$",Q,W);
+dot("$B$",Q,W);
 circ(L,M);
 circ(om,T);
 
 
-draw(arc(P,0.04,-91+anPPQ,270,CCW),red);
-draw(arc(P,0.03,-91+anPPQ,270,CCW),red);
-draw(arc(Q,0.04,anQPQ+90,-178+anPPom,CCW),red);
-draw(arc(Q,0.05,anQPQ+90,-178+anPPom,CCW),red);
+draw(arc(P,0.04,-86+anPPQ,265,CCW),cyan+linewidth(1));
+draw(arc(P,0.03,-86+anPPQ,265,CCW),cyan+linewidth(1));
+draw(arc(Q,0.04,anQPQ+96,-184+anPPom,CCW),cyan+linewidth(1));
+draw(arc(Q,0.05,anQPQ+96,-184+anPPom,CCW),cyan+linewidth(1));
 
 draw(Qom(280)--Qom(280)+0.03dir(M-N)--N+0.029dir(M-N));
