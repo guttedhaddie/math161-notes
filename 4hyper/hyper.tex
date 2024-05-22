@@ -1316,9 +1316,9 @@ Applying trigonometric identities such as $\csc^2B=1+\cot^2B$, we eventually con
 	\flushright\includegraphics{isom-sine}
 \end{cor}
 
-Armed with these results, one can solve any hyperbolic triangle numerically given the information in one of the triangle congruence theorems. SAS and SSS are straightforward, but general ASA, SAA and AAA data are very messy without some extra work (see Exercise \ref{exs:hcosruleII}).
+Armed with these results, one can solve any hyperbolic triangle numerically given the information in one of the triangle congruence theorems. SAS and SSS are straightforward, though SAA is awkward, and general ASA and AAA data are very messy without some extra work (see Exercise \ref{exs:hcosruleII}).\footnote{Unlike in Euclidean geometry, knowing two angles doesn't automatically give you the third!}
 
-\begin{examples}{}{}
+\begin{examples}{}{hyptrig}
 	\exstart (SAS)\quad A triangle has angle $C=\frac{\pi}3$ between sides $a=b=\cosh^{-1}2$. Find the remaining data.
 	\begin{enumerate}\setcounter{enumi}{1}
 	 	\item[] We have $\sinh a=\sinh b=\sqrt{\cosh^2\!a-1}=\sqrt 3$. By the cosine rule,
@@ -1334,7 +1334,7 @@ Armed with these results, one can solve any hyperbolic triangle numerically give
 	 		\pi-\frac{\pi}3-2\sin^{-1}\sqrt{\frac 37}\approx 0.6669
 	 	\]
 	 	
-	 	\item (Right-angled AAA)\lstsp A triangle has angles $\frac\pi 6,\frac\pi 4$ and $\frac\pi 2$: find its sides.\smallbreak
+	 	\item\label{ex:rtangleaaa} (Right-angled AAA)\lstsp A triangle has angles $\frac\pi 6,\frac\pi 4$ and $\frac\pi 2$: find its sides.\smallbreak
 	  \begin{minipage}[t]{0.71\linewidth}\vspace{-10pt}
 	  	\item[] Using the tan-formula,
 		  \begin{gather*}
@@ -1423,12 +1423,8 @@ The first example above can be used to make a regular tiling of hyperbolic space
 	    \item A triangle has vertices $A=\frac 13$, $B=\frac 12$ and $C$, where $C$ lies in the upper half-plane (positive imaginary part) such that $\measuredangle{BAC}=\ang{45}$ and $b=d(A,C)=\cosh^{-1}3$\par
 	    Compute $a=d(B,C)$ using the hyperbolic cosine rule.
 	    
-	    \item The isometry
-	    \[
-	    	f(z)=\frac{\frac 13-z}{\frac 13z-1}=\frac{1-3z}{z-3}
-	    \]
-	    moves $A$ to the origin. What is $f(B)$ and therefore $f(C)$?%\\
-	    %(\emph{Hint: remember that $f$ is orientation preserving})
+	    \item The isometry $f(z)=\frac{\frac 13-z}{\frac 13z-1}=\frac{1-3z}{z-3}$ moves $A$ to the origin. What is $f(B)$ and therefore $f(C)$?\par
+	    (\emph{Hint: remember that $f$ is orientation preserving})
 	    
 	    \item Use the \emph{inverse} of the isometry $f$ to compute the co-ordinates of $C$. As a sanity-check, use the cosh distance formula to recover your answer to part (a).    
 	  \end{enumerate}
@@ -1451,11 +1447,17 @@ The first example above can be used to make a regular tiling of hyperbolic space
 		
 		\item\label{exs:hcosruleII} Hyperbolic geometry admits a second version of the cosine rule:
 		\[
-			\cos C=\sin A\sin B\cosh c-\cos A\cos B
+			\cos C=\sin A\sin B\cosh c-\cos A\cos B,
+			\quad\text{equivalently}\quad
+			\cosh c=\frac{\cos A\cos B+\cos C}{\sin A\sin B}
 		\]
-		Explain how this formula can be used to solve triangles given SAA, ASA or AAA data.
+		\begin{enumerate}
+		  \item Explain how this formula can be used to solve triangles given AAA or ASA data.
+		  \item Prove the special case when $C=\frac\pi 2$ (see the trick in Example \ref*{ex:hyptrig}.\ref{ex:rtangleaaa}).\par
+		  \item (Hard!)\lstsp Prove the full version by dropping a perpendicular from $B=B_1+B_2$ and observing that $\frac{\cos A}{\sin B_1}=\frac{\cos C}{\sin B_2}=\frac{\cos C}{\sin(B-B_1)}$\ldots
+		\end{enumerate}
 		
-		\item Find the interior angles and side-lengths for the regular quadrilateral and pentagonal tilings on page \pageref{pg:hyptiling}.
+		\item Find the interior angles and side-lengths for the quadrilateral and pentagonal tiles on page \pageref{pg:hyptiling}.
 	\end{enumerate}
 \end{exercises}
 

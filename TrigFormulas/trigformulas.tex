@@ -47,9 +47,11 @@ Same notation where sides are \emph{hyperbolic} lengths.
 
 \begin{description}
 	\item[Pythagoras/trig for right-triangles]
-	\[\cosh h=\cosh x\cosh y\qquad\sin\theta=\frac{\sinh y}{\sinh h}\qquad \cos\theta=\frac{\tanh x}{\tanh h}\qquad \tan\theta=\frac{\tanh y}{\sinh x}\]
+	\[
+		\cosh h=\cosh x\cosh y\qquad\sin\theta=\frac{\sinh y}{\sinh h}\qquad \cos\theta=\frac{\tanh x}{\tanh h}\qquad \tan\theta=\frac{\tanh y}{\sinh x}
+	\]
 	
-	\item[Cos rule] $\cosh c=\cosh a\cosh b-\sinh a\sinh b\cos\gamma$
+	\item[Cos rules] $\cosh c=\cosh a\cosh b-\sinh a\sinh b\cos\gamma$ \ and\footnote{In Euclidean limit, second version has $\gamma=\pi-\alpha-\beta$, which reduces to $\cosh c=1$ ($c=0$).} \ $\cos\gamma=-\cos\alpha\cos\beta+\sin\alpha\sin\beta\cosh c$
 	
 	\item[Sine rule] $\frac{\sin\alpha}{\sinh a} =\frac{\sin\beta}{\sinh b} =\frac{\sin\gamma}{\sinh c}$
 	
@@ -72,44 +74,21 @@ Same notation where sides are \emph{hyperbolic} lengths.
 	\begin{enumerate}
 	  \item Sine rule $\sinh a=\frac{\sin\alpha}{\sin\beta}\sinh b$ gives $a$.
 	  \item Cosine formula by dropping perpendicular to compute
-	  \[c=\tanh^{-1}\bigl(\cos\alpha\tanh b\bigr) + \tanh^{-1}\bigl(\cos\beta\tanh a\bigr)\]
+	  \[
+	  	c=\tanh^{-1}\bigl(\cos\alpha\tanh b\bigr) + \tanh^{-1}\bigl(\cos\beta\tanh a\bigr)
+	  \]
 	  \item Sine rule $\sin\gamma=\sin\alpha\frac{\sinh c}{\sinh a}$.
 	\end{enumerate}
 	
-	\item[ASA] (Two methods---hard!)\lstsp Given $\alpha,c,\beta$:
+	\item[ASA] (Two methods)\lstsp Given $\alpha,c,\beta$:
 	\begin{enumerate}
 	  \item Drop perp from angle at $\beta=\beta_1+\beta_2$ to get two right triangles: compute $\beta_1,\beta_2=\beta-\beta_1$, basic trig and Pythag (mess).
-	  \item Compute $a$. Cosine rule twice plus sine rule:
-	  \begin{align*}
-	  \cosh a&=\cosh b\cosh c-\sinh b\sinh c\cos\alpha\\
-	  &=\bigl(\cosh a\cosh c-\sinh a\sinh c\cos\beta\bigr)\cosh c-\sinh a\sinh c\frac{\cos\alpha\sin\beta}{\sin\alpha}\\
-	  &=\cosh a\cosh^2c-\sinh a\sinh c\bigl(\cos\beta\cosh c+\cot\alpha\sin\beta\bigr)
-	  \end{align*}
-	  Use $\cosh^2c=1+\sinh^2c$ to rearrange and divide through by $\sinh c$:
-	  \[\tanh a=\frac{\sinh c}{\cos\beta\cosh c+\cot\alpha\sin\beta}= \frac{\sin\alpha\sinh c}{\sin\alpha\cos\beta\cosh c+\cos\alpha\sin\beta}\]
-	  Compare with $a=c\frac{\sin\alpha}{\sin(\alpha+\beta)} =c\frac{\sin\alpha}{\sin\gamma}$ which is the sine rule in Euclidean geometry.
-	  \item Sine rule $\sinh b=\sinh a\frac{\sin\beta}{\sin\alpha}$ and $\sin\gamma=\sin\alpha\frac{\sinh c}{\sinh a}$.
+	  \item Use second cosine rule to compute $\gamma$, now have AAA data\ldots
 	\end{enumerate}
 	
-	\item[AAA] (Hard!)\lstsp Given angles $\alpha,\beta,\gamma$.
+	\item[AAA] \lstsp Given angles $\alpha,\beta,\gamma$.
 	\begin{enumerate}
-	  \item Know ASA formula (part 1); now apply sine rule to numerator
-	  \[\frac{\sinh a}{\cosh a}=\frac{\sin\gamma\sinh a}{\sin\alpha\cos_\beta\cosh c+ \cos\alpha\sin\beta} \implies s_\gamma\cosh a=s_\alpha c_\beta\cosh c+c_\alpha s_\beta \tag{$\ast$}\]
-	  Square, use identities and sine rule:
-		\begin{align*}
-			s^2_\alpha c^2_\beta\cosh^2c+2s_\alpha s_\beta c_\alpha c_\beta\cosh c+c_\alpha^2s^2_\beta &=s^2_\gamma(1+\sinh^2a) =s_\gamma^2+s_\alpha^2\sinh^2c\\
-			&=s_\gamma^2+s_\alpha^2(\cosh^2c-1)
-		\end{align*}
-		Rearrange to obtain quadratic in $\cosh c$:
-		\begin{align*}
-			&s_\alpha^2(1-c_\beta^2)\cosh^2c-2s_\alpha s_\beta c_\alpha c_\beta\cosh c -c_\alpha^2(1-c^2_\beta)+s^2_\gamma-s^2_\alpha=0\\
-			\implies &s_\alpha^2s_\beta^2\cosh^2c-2s_\alpha s_\beta c_\alpha c_\beta\cosh c +c_\alpha^2c^2_\beta-c^2_\gamma=0\\
-			\implies &\bigl(s_\alpha s_\beta\cosh c-c_\alpha c_\beta\bigr)^2=\cos^2\gamma\\
-			\implies &\cosh c=\frac{\cos\alpha\cos\beta+\cos\gamma}{\sin\alpha\sin\beta}
-		\end{align*}
-		By considering $(\ast)$, it may be checked that only the positive square root is legitimate. This is essentially an alternative version of the cosine rule that comes by evaluating on imaginary angles and sides.\par
-		Compare: in Euclidean limit, $\gamma=\pi-\alpha-\beta$, whence RHS becomes 1.
-		\item Same formula can be used three times to compute side length, or use previous methods.
+	  \item Use second cosine rule three times to find sides.
 	\end{enumerate}
 	  
 	\item[SSA] Two solutions (not a congruence theorem!)\lstsp Given $a,b,\alpha$:
