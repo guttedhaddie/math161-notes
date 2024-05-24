@@ -7,7 +7,7 @@ texpreamble("\usepackage{amsmath}
 ");
 import graph;
 
-size(120);
+size(130);
 
 path c=unitcircle;
 
@@ -44,26 +44,33 @@ void extcirc(pair p, pair q){
 
 //filldraw(c,grey+opacity(0.2),white);
 
-pair O=(0,0);
-real p=sqrt(5-2*sqrt(6));
-real q=sqrt(2-sqrt(3));
-pair P=p*dir(0);
-pair Q=q*dir(45);
-
-circ(Q,P,heavygreen);
 
 
+pair al=(0.1,0.6);
+pair cal=(0.1,-0.6);
 
-draw("$a$",(0,0)--P,blue);
-draw("$c$",Q--(0,0),red);
-draw(P-(0.02,0)--P+(-0.02,0.02)--P+(0,0.02),red);
-label("$b$",0.45(P+Q)+0.04E,heavygreen);
+pair f(pair z){return (al-z)/(cal*z-1);}
+
+pair B=f((0,0));
+real cod=3*sqrt(3);
+real p=sqrt((cod-1)/(cod+1));
+pair C=f(p*dir(-15));
+pair A=f(p*dir(15));
+
+circ(A,C,heavygreen);
+circ(B,C,blue);
+circ(A,B,red);
+
+label("$a$",0.5(B+C)+0.01NE,blue);
+label("$b$",0.5(A+C)+0.02NW,heavygreen);
+label("$c$",0.5(A+B)+0.12NE,red);
 
 
-draw(Label("$\frac\pi 4$"),arc(O,0.05,0,45),heavygreen);
-draw(Label("$\frac\pi 6$"),arc(Q,0.07,225,256),blue);
+draw("30\textdegree",arc(B,0.08,-18,11),heavygreen);
+draw(Label("30\textdegree",Relative(0.4)),arc(C,0.05,72,115),red);
+draw(Label("30\textdegree",Relative(0.6)),arc(A,0.05,139,178),blue);
 
 
-dot(P);
-dot(Q);
-dot((0,0));
+dot(A);
+dot(B);
+dot(C);

@@ -7,7 +7,7 @@ texpreamble("\usepackage{amsmath}
 ");
 import graph;
 
-size(155);
+size(120);
 
 pair cent(pair p, pair q){
 	real A[][]={{2p.x,2p.y},{2q.x,2q.y}};
@@ -29,35 +29,23 @@ void circ(pair p, pair q, pen pen=black){
 	}
 	}
 
-pair al=(0,-1/2);
-pair be=(0,-1);
+pair al=(1/2,0);
 pair be=(1,0);
 
 pair f(pair z){return be*(al-z)/(conj(al)*z-1);}
 
-pair A=(0,-1/2);
-pair B=(0,-1/5);
-pair C=(3/5,-1/5);
+pair P=(1/2,0);
+pair Q=(2/3,sqrt(2)/3);
 
-circ(A,B,red);
-circ(B,C,heavygreen);
-circ(C,A,blue);
+circ(P,Q,red);
+circ(f(P),f(Q),heavygreen);
 
 draw(unitcircle,dashed);
 
-circ(f(A),f(B),red);
-circ(f(B),f(C),heavygreen);
-circ(f(C),f(A),blue);
+dot("$P$",P,S);
+dot("$Q$",Q,SE);
 
-dot("$A$",A,SW);
-dot("$B$",B,W);
-dot("$C$",C,SE);
+dot("$O=f(P)$",f(P),SW);
+dot("$f(Q)$",f(Q),W);
 
-dot("$O=f(A)$",f(A),W);
-dot("$f(B)$",f(B),NW);
-dot("$f(C)$",f(C),N);
-
-write(conj(al));
-write(f(A));
-write(f(B));
-write(f(C));
+draw("$f$",(0.49,0.55*Q.y)..{W}(0.05,0.5/sqrt(2)),Arrow);

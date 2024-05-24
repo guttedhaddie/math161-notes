@@ -32,7 +32,7 @@ path rr=arc(T*(e,f),T*B[0],T*C[0],CCW);
 
 draw("$a$",reverse(pp));
 draw("$b$",reverse(qq));
-draw(rr);
+draw("$c$",reverse(rr));
 
 //draw(unitcircle);
 //draw(p);

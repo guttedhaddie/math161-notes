@@ -7,7 +7,7 @@ texpreamble("\usepackage{amsmath}
 ");
 import graph;
 
-size(120);
+size(140);
 
 path c=unitcircle;
 
@@ -42,28 +42,31 @@ void extcirc(pair p, pair q){
 	}
 	}
 
-//filldraw(c,grey+opacity(0.2),white);
 
-pair O=(0,0);
-real p=sqrt(5-2*sqrt(6));
-real q=sqrt(2-sqrt(3));
-pair P=p*dir(0);
-pair Q=q*dir(45);
+pair al=(0.2,0.3);
+pair cal=(0.2,-0.3);
 
-circ(Q,P,heavygreen);
+pair f(pair z){return (al-z)/(cal*z-1);}
 
-
-
-draw("$a$",(0,0)--P,blue);
-draw("$c$",Q--(0,0),red);
-draw(P-(0.02,0)--P+(-0.02,0.02)--P+(0,0.02),red);
-label("$b$",0.45(P+Q)+0.04E,heavygreen);
+pair A=f((0,0));
+real c=sqrt((5-1)/(5+1));
+real b=sqrt((3-1)/(3+1));
+pair C=f(c*dir(30));
+pair B=f(b*dir(0));
 
 
-draw(Label("$\frac\pi 4$"),arc(O,0.05,0,45),heavygreen);
-draw(Label("$\frac\pi 6$"),arc(Q,0.07,225,256),blue);
+circ(A,B,red);
+circ(B,C,blue);
+circ(C,A,heavygreen);
 
+label("$a$",0.5(B+C),blue);
+label("$b$",0.5(A+C)+0.1*dir(110),heavygreen);
+label("$\cosh^{-1}3$",0.5(A+B)+0.06*dir(220),red);
 
-dot(P);
-dot(Q);
-dot((0,0));
+draw("$\frac\pi 3$",arc(B,0.06,89,152),heavygreen);
+draw(Label("$C$",Relative(0.5)),arc(C,0.1,192,223),red);
+draw(Label("$\frac\pi 6$",Relative(0.45)),arc(A,0.13,-2,28),blue);
+
+dot(A);
+dot(B);
+dot(C);

@@ -23,11 +23,11 @@ real rad(pair p, pair q){
 	return sqrt(l-1);
 	}
 	
-void circ(pair p, pair q){
+void circ(pair p, pair q,pen pen=black){
 	real paral=p.x*q.y-p.y*q.x;
-	if(paral==0){draw(p--q);}
+	if(paral==0){draw(p--q,pen);}
 	else{
-	draw(arc(cent(p,q),rad(p,q),min(degrees(p-cent(p,q)),degrees(q-cent(p,q))),max(degrees(p-cent(p,q)),degrees(q-cent(p,q))),CCW));
+	draw(arc(cent(p,q),rad(p,q),min(degrees(p-cent(p,q)),degrees(q-cent(p,q))),max(degrees(p-cent(p,q)),degrees(q-cent(p,q))),CCW),pen);
 	}
 	}
 	
@@ -51,31 +51,30 @@ pair P=p*dir(0);
 pair Q=q*dir(90);
 fill(arc(O,dir(-12),dir(192))--cycle,0.2grey+0.8white);
 
-circ(Q,P);
-draw(Label("$a$",black),(0,0)--P,blue);
-draw(Label("$b$",black),Q--(0,0),heavygreen);
-draw((0.05,0)--(0.05,0.05)--(0,0.05));
-label("$c$",0.42(P+Q));
+circ(Q,P,red);
+draw("$a$",(0,0)--P,blue);
+draw("$b$",Q--(0,0),heavygreen);
+draw((0.05,0)--(0.05,0.05)--(0,0.05),red);
+label("$c$",0.45(P+Q),red);
 
-dot(Label("$p$",black),P,SE,red);
-dot(Label("$iq$",black),Q,W,red);
-dot(Label("$0$",black),O,S,red);
-
-draw(Label("$B$",black),arc(P,0.15,150,180),heavygreen);
-draw(Label("$A$",black),arc(Q,0.25,270,284),blue);
+draw("$B$",arc(P,0.15,150,180),heavygreen);
+draw(Label("$A$",Relative(0.6)),arc(Q,0.27,270,284),blue);
 
 pair R=-P;
 pair SS=(1/(p^2*q^2+1))*(-p*(1+q^2),q*(1-p^2));
 
-draw(Label("$b$",black),arc(cent(SS,R),SS,R,CW),heavygreen);
-draw(Label("$a$",black),R--O,blue);
-draw(Label("$c$",black),O--SS);
-dot(Label("$f(p)$",black),R,SW,red);
-dot(Label("$f(iq)$",black),SS,NE,red);
-dot(O,red);
-draw(R+(0.05,0)--R+(0.05,0.05)--R+(-0.001,0.05));
-draw(Label("$B$",black),arc(O,0.15,153,180),heavygreen);
-draw(Label("$A$",black),arc(SS,0.25,311,332),blue);
+draw("$b$",arc(cent(SS,R),SS,R,CW),heavygreen);
+draw("$a$",R--O,blue);
+draw("$c$",O--SS,red);
+draw(R+(0.05,0)--R+(0.05,0.05)--R+(-0.001,0.05),red);
+draw("$B$",arc(O,0.17,153,180),heavygreen);
+draw(Label("$A$",Relative(0.35)),arc(SS,0.21,313,332),blue);
+
+dot("$p$",P,SE);
+dot("$iq$",Q,W);
+dot("$0$",O,S);
+dot("$f(p)$",R,SW);
+dot("$f(iq)$",SS,NE);
 
 
 
