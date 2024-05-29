@@ -188,9 +188,9 @@ We now show that drawing \emph{acute} summit angles is justified by the Saccheri
 
 \subsection{Models of Hyperbolic Geometry}\label{sec:hyp-models}
 
-In the early 1800s, James Boylai, Carl Friedrich Gauss and Nikolai Lobashevsky independently took the next step. Rather than attempting to establish the parallel postulate as a theorem within Euclidean geometry, they defined a new geometry based on the first four of Euclid's postulates plus an alternative to the parallel postulate:
+In the 1820-30s, János Bolyai, Carl Friedrich Gauss and Nikolai Lobachevsky independently took the next step, each describing versions of non-Euclidean geometry.\footnote{Bolyai indeed is the source of the term `absolute geometry.'} Rather than attempting to establish the parallel postulate as a theorem within Euclidean geometry, a new geometry was \emph{defined} based on the first four of Euclid's postulates plus an alternative to the parallel postulate:
 
-\begin{axiom}{Boylai--Lobashevsky/Hyperbolic Postulate}{}
+\begin{axiom}{Bolyai--Lobachevsky/Hyperbolic Postulate}{}
 	Given a line $\ell$ and a point $P\not\in\ell$, there exist \emph{at least two} parallel lines to $\ell$ through $P$.
 \end{axiom}
 
@@ -617,7 +617,7 @@ We finish this section three important differences between hyperbolic and Euclid
 	\end{enumerate}
 \end{thm}
 
-Note that AAA is a \emph{congruence} theorem in hyperbolic geometry, not a \emph{similarity} theorem (compare with Theorem \ref{thm:aaasim}). Also revisit the observations on page \pageref{pg:absolute}. These results largely show that Euclid's arguments making use of the parallel postulate actually \emph{required} it! 
+Note that AAA is a \emph{congruence} theorem in hyperbolic geometry, not a \emph{similarity} theorem (compare with Theorem \ref{thm:aaasim}). Also revisit the observations on page \pageref{pg:absolute}. These results largely show that Euclid's arguments making use of the parallel postulate actually \emph{require} it! 
 
 
 \begin{proof}
@@ -1537,85 +1537,73 @@ Example \ref*{ex:hyptrig}.\ref{ex:rtangleaaa} can be used to make a regular tili
 
 
 
-\boldsubsubsection{The Poincaré Disk for Differential Geometers (non-examinable)}
+\boldsubsubsection{The Poincaré Disk for Differential Geometers (non-examinable)}\phantomsection\label{pg:hyp1stform}
 
-This last optional section should be accessible to anyone who's taken a vector-calculus course covering line-integrals and surface area. All we really need is the Poincaré disk model with its distance function $d(z,w)$ and description of the isometries (Theorems \ref{thm:mobius}, \ref{thm:hypisomclass}).\smallbreak
+Most of this last optional section should be accessible to anyone who's taken basic vector-calculus. All we really need is the Poincaré disk model with its distance function $d(z,w)$ and a description of the isometries (Theorems \ref{thm:mobius}, \ref{thm:hypisomclass}).\smallbreak
 
 \begin{minipage}[t]{0.69\linewidth}\vspace{0pt}
-	We first need a way to measure infinitesimal change. Consider the infinitesimally separated points $z$ and $z+\dz$. Use an isometry
+	Consider the infinitesimally separated points $z$ and $z+\dz$. Map $z$ to the origin via an isometry
 	\[
 		f:\xi\mapsto \frac{z-\xi}{\cl z\xi-1}
 	\]
-	to map $z$ to the origin. Then $z+\dz$ is mapped to
+	Then $z+\dz$ is mapped to
 	\[
 		P:=f(z+\dz)=\frac{-\dz}{\cl z(z+\dz)-1} =\frac{\dz}{1-\nm z^2}
 	\]
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.3\linewidth}\vspace{-15pt}
-	\flushright\includegraphics{isom-arclength}
-\end{minipage}\par
-where we deleted the $\cl z\,\dz$ term since it is infinitesimally small compared to $1-\nm z^2$.\smallbreak
-Since isometries must preserve length and angle, this construction has several consequences:
-\begin{description}
-	\item[Angle measure]\phantomsection\label{pg:hypareaext} If we repeat the exercise for a second infinitesimal \textcolor{Green}{segment} $z\to z+\dw$, we see that the \textcolor{orange}{angle} between the original segments is precisely that between the infinitesimal vectors $\dz$ and $\dw$. This is precisely the conformality observation in Theorem \ref{thm:mobius}, and moreover shows how the distance function determines the angle measure.
-	\item[Infinitesimal distance and arc-length] The hyperbolic distance from $z$ to $z+\dz$ is
-	\[
-		d(z,z+\dz)=d(O,P)=\ln\frac{1+\nm P}{1-\nm P} =\ln(1+\nm{P})-\ln(1-\nm{P})=2\nm{P}=\frac{2\nm{\dz}}{1-\nm{z(t)}^2}
-	\]
-	where the approximation $\ln(1\pm\nm P)=\pm\nm P$ is used since $\nm P$ is infinitesimal.\smallbreak
-	If $z(t)$ parametrizes a curve in the disk, then the infinitesimal distance formula allows us to compute the arc-length
-	\[
-		\int_{t_0}^{t_1}\frac{2\nm{z'(t)}}{1-\nm{z(t)}^2}\,\dt
-	\]
-	\item[Area] If $\dx$ and $i\dy$ are infinitesimal horizontal and vertical changes in $z=x+iy$, then the area of the infinitesimal rectangle spanned by $z\to z+\dx$ and $z\to z+i\dy$ is the area element
-	\[
-		\dA=\frac{2\,\dx}{1-\nm z^2}\frac{2\,\dy}{1-\nm z^2} =\frac{4\,\dx\dy}{(1-x^2-y^2)^2}
-	\]
-	The area of a region $R$ in the Poincaré disk is therefore given by the double integrals
-	\[
-		\iint_R\frac{4\,\dx\dy}{(1-x^2-y^2)^2}=\iint_R\frac{4r\,\dr\,\dth}{(1-r^2)^2} =\iint_R\sinh\delta\,\D\delta\,\dth
-	\]
-	where the last expression is written in polar co-ordinates using the hyperbolic distance $\delta$. In this way the measure of area also depends on the distance function.
-\end{description}
+\begin{minipage}[t]{0.3\linewidth}\vspace{0pt}
+	\flushright\includegraphics[scale=0.9]{isom-arclength}
+\end{minipage}
+\medbreak
+where we deleted $\cl z\,\dz$ since it is infinitesimal compared to $1-\nm z^2$.\smallbreak
+Since isometries preserve length and angle, this construction has several consequences.
 
-\begin{example}{Circles and `hyperbolic $\pi$'}{}
-	Suppose that a circle has hyperbolic radius $\delta$. By moving its center to the origin via an isometry, we can parametrize it in the usual manner:
+\boldsubsubsection{Infinitesimal distance, arc-length, and geodesics}
+
+The hyperbolic distance from $z$ to $z+\dz$ is
+\[
+	d(z,z+\dz)=d(O,P)=\ln\frac{1+\nm P}{1-\nm P} =\ln(1+\nm{P})-\ln(1-\nm{P})=2\nm{P}=\frac{2\nm{\dz}}{1-\nm{z(t)}^2} \tag{$\ast$}
+\]
+where the approximation $\ln(1\pm\nm P)=\pm\nm P$ is used since $\nm P$ is infinitesimal. If $z(t)$ parametrizes a curve in the disk, then the infinitesimal distance formula allows us to compute its arc-length
+\[
+	\int_{t_0}^{t_1}\frac{2\nm{z'(t)}}{1-\nm{z(t)}^2}\,\dt
+\]
+
+	
+\begin{example}{Circles and `hyperbolic $\pi$'}{hypcircleparam}
+	Suppose that a circle has hyperbolic radius $\delta$. By moving its center to the origin via an isometry, we may parametrize in the usual manner:
 	\[
 		z(t)=r\twovec{\cos\theta}{\sin\theta},\quad \theta\in[0,2\pi)
 		\quad\text{where}\quad 
-		\delta=\ln\frac{1+r}{1-r}\rightsquigarrow r=\frac{e^\delta-1}{e^\delta+1}
+		\delta=\ln\frac{1+r}{1-r}
+		\quad\text{equivalently}\quad
+		r=\frac{e^\delta-1}{e^\delta+1}
 	\]
 	Its circumference (hyperbolic arc-length) is then
 	\[
 		\int_0^{2\pi}\frac{2 r}{1-r^2}\,\dth =\frac{4\pi r}{1-r^2} =2\pi\sinh\delta =2\pi\left(\delta+\frac{1}{3!}\delta^3+\frac{1}{4!}\delta^5+\cdots\right)>2\pi\delta
 	\]
-	where we used the Maclaurin series to compare. Its area is
-	\[
-		\int_0^{2\pi}\int_0^\delta\sinh\delta\,\D\delta\,\dth =2\pi(\cosh\delta-1) =\pi\left(\delta^2+\frac{2}{4!}\delta^4+\frac{2}{6!}\delta^6+\cdots\right)>\pi\delta^2
-		\]
-	A hyperbolic circle therefore has larger ratios of circumference\,:\,radius and area\,:\,radius${}^2$ than for a Euclidean circle. Moreover, these ratios are \emph{not constant}: one might say that the hyperbolic version of $\pi$ is a function!
+	where we used the Maclaurin series to compare.\smallbreak
+	A hyperbolic circle has a \emph{larger} circumference\,:\,diameter ratio than for a Euclidean circle ($\pi$). Moreover, this ratio is \emph{not constant}: one might say that the hyperbolic version of $\pi$ is a function ($\frac{\pi\sinh\delta}\delta$)!
 \end{example}
 
-
-\boldinline{Hyperbolic Lines as Geodesics}
-
-Finally, we perform a calculus of variations argument to see that the distance function in fact \emph{defines} our notion of a hyperbolic line.
-
-% \begin{defn*}{}{}
-% 	A \emph{geodesic} is a path of shortest length between two points.
-% \end{defn*}
-
+\goodbreak
+	
+Our arc-length integral approach also allows us to show that hyperbolic lines are really what we want them to be: lines of shortest distance between points.
+	
 \begin{thm}{}{}
-	The geodesics---path of shortest length between two points---in the Poincaré disk are precisely the hyperbolic lines.
+	The geodesics---paths of minimal length between two points---in the Poincaré disk are precisely the hyperbolic lines.
 \end{thm}
 
+Following the comments on page \pageref{sec:hyperiso}, the distance function really does define the concept of hyperbolic line.
+
 \begin{proof}
-	First suppose that $b$ lies on the positive $x$-axis. Parametrize a curve from $0$ to $b$ via
+	First suppose $b$ lies on the positive $x$-axis. Parametrize a curve from $0$ to $b$ via
 	\[
-		z(t)=x(t)+iy(t)\quad\text{where}\quad 0\le t\le 1,\quad z(0)=0,\ z(1)=b
+		z(t)=x(t)+iy(t)\quad\text{where}\quad 0\le t\le 1,\quad z(0)=0,\quad z(1)=b
 	\]
-	Now compute its arc-length:
+	Its arc-length satisfies
 	\begin{align*}
 		\int_{0}^{1}\frac{2\nm{z'(t)}}{1-\nm{z(t)}^2}\,\dt
 		&=\int_{0}^{1}\frac{2\sqrt{x'^2+y'^2}}{1-x^2-y^2}\,\dt\ge \int_{0}^{1}\frac{2\nm{x'}}{1-x^2}\,\dt\ge \int_{0}^{1}\frac{2x'(t)}{1-x(t)^2}\,\dt =\int_0^b\frac{2\,\dx}{1-x^2}\\
@@ -1624,3 +1612,51 @@ Finally, we perform a calculus of variations argument to see that the distance f
 	where we have equality if and only if $y(t)\equiv 0$ and $x(t)$ is increasing. The length-minimizing path is therefore along the $x$-axis.\smallbreak
 	More generally, given points $A,B$, apply an isometry $f$ such that $f(A)=0$ and $f(B)=b$ lies on the positive $x$-axis. The geodesic from $A$ to $B$ is therefore the image of the segment $\cl{0b}$ under the inverse isometry $f^{-1}$. By the properties of Möbius transforms, this is an arc of a Euclidean circle through $A,B$ intersecting the unit circle at right-angles, our original definition of a hyperbolic line.
 \end{proof}
+
+\boldsubsubsection{Area Computation}
+
+If $\dx$ and $i\dy$ are infinitesimal horizontal and vertical changes in $z=x+iy$, then the area of the infinitesimal rectangle spanned by $z\to z+\dx$ and $z\to z+i\dy$ is the area element
+\[
+	\dA=\frac{2\,\dx}{1-\nm z^2}\frac{2\,\dy}{1-\nm z^2} =\frac{4\,\dx\,\dy}{(1-x^2-y^2)^2}
+\]
+The area of a region $R$ in the Poincaré disk is therefore given by the double integral
+\[
+	\iint_R\frac{4\,\dx\dy}{(1-x^2-y^2)^2}=\iint_R\frac{4r\,\dr\,\dth}{(1-r^2)^2} =\iint_R\sinh\delta\,\D\delta\,\dth
+\]
+where the last expression is written in polar co-ordinates using the hyperbolic distance $\delta$. In this way the measure of area also depends on the distance function.
+	
+\begin{example*}{\ref{ex:hypcircleparam}, cont}
+	The area of a hyperbolic circle with hyperbolic radius $\delta$ is
+	\[
+		\int_0^{2\pi}\int_0^\delta\sinh\delta\,\D\delta\,\dth =2\pi(\cosh\delta-1) =\pi\left(\delta^2+\frac{2}{4!}\delta^4+\frac{2}{6!}\delta^6+\cdots\right)>\pi\delta^2
+	\]
+	Again, this is larger than you'd expect in Euclidean geometry.
+\end{example*}
+
+\goodbreak
+
+\boldsubsubsection{Angle Measure and the First Fundamental Form}\phantomsection\label{pg:hypareaext}
+
+If we repeat the distance translation ($\ast$, page \pageref{pg:hyp1stform}) for a second infinitesimal \textcolor{Green}{segment} $z\to z+\dw$, it can be checked that the \textcolor{orange}{angle} between the original segments is precisely that between the infinitesimal vectors $\dz$ and $\dw$. This is precisely the conformality observation in Theorem \ref{thm:mobius} and moreover shows how the distance function determines the angle measure.\smallbreak
+
+If you've studied differential geometry, then a more formal way to think about this is to use the \emph{first fundamental form} or \emph{metric}: essentially the dot product of infinitesimal tangent vectors. For the Poincaré disk model, ($\ast$) says that this is
+\[
+	\I =\frac{4(\dx^2+\dy^2)}{(1-x^2-y^2)^2} =\frac{4(\dr^2+r^2\,\dth^2)}{(1-r^2)^2} 
+\]
+Since this is a scalar multiple of the standard Euclidean metric $\dx^2+\dy^2$, angle measures are identical.\footnote{%
+	Recall that the angle $\psi$ between vectors $\vu,\vv$ satisfies $\vu\cdot\vv=\nm{\vu}\nm{\vv}\cos\psi$. For infinitesimal vectors we use $\I=\lambda^2(\dx^2+\dy^2)$ instead of the dot product, where $\lambda=\frac 2{1-r^2}$. The resulting angle is the same as if we use the Euclidean metric $\dx^2+\dy^2$, since factors of $\lambda^2$ cancel on both sides.
+}
+It also gels with the fact that arc-length is the integral
+\[
+	\int\sqrt{\I\bigl(z'(t),z'(t)\bigr)}\,\dt
+\]
+Using this language, two of the major theorems of introductory differential geometry quickly put a couple of remaining issues to bed.
+\begin{description}
+	\item[Gauss' Theorem Egregium] The first fundamental form determines the \emph{Gaussian curvature} $K$. In this case $K=-1$ is constant and negative, as you should easily be able to verify if you've studied differential geometry.
+	\item[Gauss--Bonnet Theorem] The angle-sum $\Sigma_\triangle$ of a geodesic triangle in a space with Gaussian curvature $K$ satisfies
+	\[
+		\Sigma_\triangle-\pi=\iint_\triangle K
+	\]
+	This establishes our earlier assertion that $\operatorname{Area}\triangle =\pi-\Sigma_\triangle$ (Corollary \ref{cor:hypareaangle}).
+\end{description}
+
