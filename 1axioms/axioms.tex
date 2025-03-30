@@ -3,7 +3,7 @@
 
 \title{Math 161 - Notes}
 \author{Neil Donaldson}
-\date{Spring 2024}
+\date{Spring 2025}
 \maketitle
 
 
@@ -12,21 +12,21 @@
 \subsection{The Early Origins of Geometry: Thales and Pythagoras}\label{sec:thales}
 
 
-We begin with a condensed overview of geometric history. The word \emph{geometry} comes from the ancient Greek \emph{geo} (Earth), and \emph{metros} (measure). Measurement (of distance, area, height, angle) had obvious practical benefits with regard to construction, taxation, commerce and navigation. Astronomy provided a related cultural driver of ancient geometry.
+We start with a very brief overview of geometric history. The term \emph{geometry} is of ancient Greek origin: \emph{geo} (Earth) $+$ \emph{metros} (measure). Measurement (distance, area, height, angle) has obvious practical application: construction, taxation, commerce, navigation, etc. Astronomy/astrology provided a related religious/cultural imperative for the development of ancient geometry.
 
 \begin{description}
-	\item[Ancient times] (pre-500\,\BC) Egypt, Mesopotamia, China, India: basic rules for measuring lengths, areas and volumes of simple shapes. Applications: surveying, tax collection, construction, religious practice, astronomy, navigation. Typically worked examples without general formulæ/abstraction.
+	\item[Ancient Times] (pre-500\,\BC) Basic rules for measuring lengths, areas and volumes of simple shapes were developed in Egypt, Mesopotamia, China \& India. Applications: surveying, tax collection, construction, religious practice, astronomy, navigation. Problems were typically worked examples without general formulæ/abstraction.
 	
 	\item[Ancient Greece] (from c.\,600\,\BC) Philosophers such as Thales and Pythagoras began the process of \emph{abstraction.} General statements (theorems) formulated and proofs attempted. Concurrent development of early scientific reasoning.
 	
-	\item[Euclid of Alexandria] (c.\,300\,\BC) Collected and expanded earlier work, especially that of the Pytha\-goreans. His compendium the \emph{Elements} is one of the most important books in Western history and remained a standard school textbook in to the 1900's. The \emph{Elements} is an early exemplar of the axiomatic method at the heart of modern mathematics.
+	\item[Euclid of Alexandria] (c.\,300\,\BC) Collected and expanded earlier work, especially that of the Pytha\-goreans. His compendium the \emph{Elements} motivated mathematical development in Eurasia and North Africa, remaining a standard school textbook well into the 1900's. The \emph{Elements} is an early exemplar of the axiomatic method at the heart of modern mathematics.
 	
-	\item[Later Greek Geometry] Archimedes' (c.\,270--212\,\BC) work on area and volume included techniques similar to those of modern calculus. %Apollonius studies conics (ellipses, parabolæ and hyperbolæ).
-	Ptolemy (c.\,\AD\,100--170) writes the \emph{Almagest}, a treatise on astronomy which covers the foundations of trigonometry.
+	\item[Later Greek Geometry] Archimedes' (c.\,270--212\,\BC) work on area and volume included techniques similar to those of modern calculus. Apollonius studies conics (ellipses, parabolæ and hyperbolæ).
+	Ptolemy's (c.\,\AD\,100--170) \emph{Almagest} applies basic geometry to astronomy and includes the foundations of trigonometry.
 	
-	\item[Post-Greek Geometry] During the European Dark Ages, geometric understanding was developed and enhanced by Indian and Islamic mathematicians who particularly developed trigonometry and algebra.
+	\item[Post-Greek Geometry] The work of Euclid and Ptolemy was expanded and enhanced by Indian and Islamic mathematicians, who particularly developed trigonometry (as well as algebra and our modern system of decimal enumeration).
 	
-	\item[Analytic Geometry] In mid 1600's France, Descartes and Fermat melded algebra with geometry with the advent of co-ordinate systems (axes).
+	\item[Analytic Geometry] (early 1600's France) Descartes and Fermat begin using axes and co-ordinates, melding geometry and algebra.
  	
 	\item[Modern Development] Non-Euclidean geometries help provide the mathematical foundation for Einstein's relativity and the study of curvature. Following Klein (1872), modern geometry is highly dependent on group theory.
 \end{description}
@@ -35,44 +35,49 @@ We begin with a condensed overview of geometric history. The word \emph{geometry
 
 \boldinline{Thales of Miletus (c.\,624--546\,\BC)}
 
-Thales was an olive trader from Miletus, a city-state on the west coast of modern Turkey. Through trading and travelling, he absorbed mathematical ideas from nearby cultures including Egypt and Mesopotamia. Here are five results partly attributable to Thales.
-
-\begin{enumerate}\itemsep0pt
+Thales was an olive trader from Miletus, a city-state on the west coast of modern Turkey. He absorbed mathematical ideas from nearby cultures including Egypt and Mesopotamia. Here are five results partly attributable to Thales.
+\begin{enumerate}\itemsep2pt
   \item A circle is bisected by a diameter.
   \item The base angles of an isosceles triangle are equal.
   \item The pairs of angles formed by two intersecting lines are equal.
-  \item Two triangles are congruent if they have two angles and the included side equal.
-  \item An angle inscribed in a semicircle is a right angle.
+  \item Triangles are congruent if they have two angles and the included side equal (ASA congruence).
+  \item\label{thm:thales} An angle inscribed in a semicircle is a right angle.
 \end{enumerate}
-The last is still known as \emph{Thales' Theorem.} Thales' arguments were not rigorous by modern standards. His real innovation was to state \emph{abstract, general principles}: \emph{any} circle is bisected by \emph{any} of its diameters. The Greek word $\theta\varepsilon\omega\rho\varepsilon\omega$ (\emph{theoreo}), from which we get \emph{theorem,} has several meanings: `to look at,' `speculate,' or `consider.' Thales' results were supposed to be clear just by looking at a picture.
+This last is still known as \emph{Thales' Theorem.} Thales' innovation was to state \emph{universal, abstract principles}: e.g., \emph{any} circle is bisected by \emph{any} of its diameters. The Greek word $\theta\varepsilon\omega\rho\varepsilon\omega$ (\emph{theoreo}), from which we get \emph{theorem,} has several meanings: `to look at,' `speculate,' or `consider.' His arguments were not rigorous by modern standards, but were supposed to be clear just by looking at a picture.
 \begin{center}
-	\includegraphics[scale=0.9]{thales-1}
-	\qquad\qquad
-	\includegraphics[scale=0.9]{thales-2}
-	\qquad\qquad
-	\includegraphics[scale=0.9]{thales-5}\label{thm:thales}
+	\begin{tabular}{c@{\qquad\qquad}c@{\qquad\qquad}c}
+		\includegraphics[scale=0.9]{thales-1}
+		&
+		\includegraphics[scale=0.9]{thales-2}
+		&
+		\includegraphics[scale=0.9]{thales-5}
+		\\
+		Theorem 1
+		&
+		Theorem 2
+		&
+		Theorem 5
+	\end{tabular}
 \end{center}
-The pictures show Thales' Theorems 1, 2 and 5. Arguments for Theorems 1 and 2 could be as simple as `fold.' Theorem 5 follows from the observation that the \textcolor{Green}{radius} of the circle splits the large triangle into two isosceles triangles: Theorem 2 says that these have equal base angles (labelled), now check that $\alpha+\beta$ is half the angles in a triangle, namely a right-angle.
+Arguments for Theorems 1 and 2 might be as simple as `fold.' Theorem 5 follows from the observation that the \textcolor{Green}{radius} of the circle splits the large triangle into two isosceles triangles: Theorem 2 says that these have equal base angles ($\alpha,\alpha$ and $\beta,\beta$), whence $\alpha+\beta$ is half the angles in a triangle, namely a right-angle.
 
 
 \boldinline{Pythagoras of Samos (570–-495\,\BC)}
 
-Pythagoras grew up on Samos, an island in the Aegean Sea not far from Miletus. He also travelled widely, eventually settling in Croton, southern Italy, around 530\,\BC{} where he founded a philosophical school devoted to the study of number, music and geometry. It has been claimed that the Pythagoreans first classified the regular (Platonic) solids and developed the musical relationship between the length of a vibrating string and its pitch. While it is difficult to verify such assertions, the Pythagorean obsession with number and the `music of the universe' certainly inspired later mathematicians and philosophers---particularly Euclid, Plato and Aristotle---who believed they were refining and clarifying this earlier work.
+Hailing from Samos, an island in the Aegean Sea not far from Miletus, Pythagoras travelled widely, eventually settling in Croton, southern Italy, around 530\,\BC{}, where he founded a philosophical school devoted to the study of number, music and geometry. As a mysterious, cult-like group, the Pythagoreans' output is not fully understood, though they are typically credited with the classification of the regular (Platonic) solids and with the development of the relationship between the length of a vibrating string and its (musical) pitch. The Pythagorean obsession with number and the `music of the universe' inspired later Greek mathematicians who believed they were refining and clarifying this earlier work.
 \smallbreak
 
-Of course, Pythagoras is best known for the result that bears his name.
+Of course, Pythagoras is best known for the result that still bears his name.
 
 \begin{thm}{Pythagoras}{}
-	The square on the hypotenuse of a right triangle equals the sum of the squares on the remaining sides.
+	The square on the hypotenuse (longest side) of a right-triangle equals the sum of the squares on the remaining sides.
 \end{thm}
 
 Two important clarifications are needed for modern readers.
-\begin{enumerate}\itemsep0pt
-  \item By \emph{square,} the Greeks meant an honest square! There is no algebra, no numerical lengths, and the equation $a^2+b^2=c^2$ won't be seen for another 2000 years.
-  \item The word \emph{equals} means \emph{equal area,} though without a numerical concept of such. The Greeks meant that the large square can be subdivided into pieces which may be rearranged to produce the two squares on the remaining sides.
+\begin{enumerate}
+  \item By \emph{square,} the Greeks meant an honest square (shape)! To the Greeks, Pythagoras is not a statement about multiplication (`squaring'): there is no algebra, no numerical length, and the equation $a^2+b^2=c^2$ won't be seen for another 2000 years.
+  \item The word \emph{equals} means \emph{equal area,} though without any numerical concept of such. The Greeks meant that the square on the hypotenuse can be subdivided into pieces which may be rearranged to produce the two squares on the remaining sides.
 \end{enumerate}
-
-\goodbreak
 
 The result suddenly seems less easy! The pictures below provide a simple visualization.
 
@@ -83,24 +88,32 @@ The result suddenly seems less easy! The pictures below provide a simple visuali
 	\medbreak
 	A simple proof of Pythagoras' Theorem
 \end{center}
-The problem with this `proof' is that it relies on \emph{subtracting} the areas of the four congruent triangles from a very large square, whereas the Greeks idea of area was essentially \emph{additive.} Book I of Euclid's \emph{Elements} seems to have been structured precisely to correct this and provide a rigorous constructive proof. Indeed it is possible (though very ugly!) to apply the 47 results leading up to and including his proof of Pythagoras, in such as way as to explicitly subdivide the hypotenuse square and rearrange it into the two smaller squares as required.
+Book I of Euclid's \emph{Elements} seems to have been structured precisely to provide a rigorous constructive proof in line with the Greek \emph{additive} notion of area. By contrast, the above visualization relies on \emph{subtracting} the areas of four congruent triangles from a single large square. It is possible, though ugly, to apply the 47 results up to and including Euclid's proof so as to explicitly subdivide the hypotenuse square and rearrange the pieces into the two smaller squares.
 \smallbreak
 
 
-Much has been written about Pythagoras' Theorem, including many, many proofs.\footnote{Including a \href{https://www.maa.org/press/periodicals/convergence/mathematical-treasure-james-a-garfields-proof-of-the-pythagorean-theorem}{proof} by former US President James Garfield. Would that current presidents were so learned\ldots} It is often claimed that Pythagoras himself first proved the result, but this is generally considered incorrect---the `proof' most often attributed to the Pythagoreans is based on contradictory ideas about numbers which were debunked by the time of Aristotle. Moreover, other cultures, particularly ancient China,\footnote{In China, Pythagoras' Theorem is known as the \emph{gou gu,} which refers to the two non-hypotenuse sides of the triangle.} are known to have used the result, at least in example form, several hundred years before Pythagoras. Regardless, an argument over attribution is fruitless without first agreeing on what constitutes a proof. This means that we need to spend some time considering Axiomatic Systems\ldots 
+Much has been written about the Pythagorean Theorem, and many, many proofs have been given.\footnote{%
+	Including a \href{https://old.maa.org/press/periodicals/convergence/mathematical-treasure-james-a-garfields-proof-of-the-pythagorean-theorem}{proof} by former US President James Garfield. Would that current presidents were so learned\ldots%
+}
+While it is sometimes believed that Pythagoras himself first proved the result, this is generally considered incorrect: the `proof' most often attributed to the Pythagoreans is based on contradictory ideas number which were debunked by the time of Aristotle. Moreover, the result was in use in example form (e.g., in ancient China and Mesopotamia\footnote{%
+	In China, the Pythagorean Theorem is known as the \emph{gou gu,} in reference to the two non-hypotenuse sides of the triangle.%
+})
+several hundred years before Pythagoras. Regardless, any argument over attribution is pointless without an agreement on what constitutes a \emph{proof}. To discuss the modern meaning, we need to spend some time considering Axiomatic Systems\ldots 
 
 
 \begin{exercises}{}{}
-	\exstart Let the side-lengths of the above triangles be $a,b,c$. Can you rephrase the proof algebraically?
+	\exstart In the above pictorial argument, let the side-lengths of the triangles be $a$, $b$, $c$. Can you rephrase the proof algebraically?
 	\begin{enumerate}\setcounter{enumi}{1}
 		\item A theorem of Euclid states:
 		\begin{quote}
 			The square on the parts equals the sum of the squares on each part plus twice the rectangle on the parts
 		\end{quote}
-		By referencing the above picture, state Euclid's result using modern \emph{algebra.}\par
+		By referencing the above picture, state Euclid's result using modern algebra.\par
 		(\emph{Hint: let $a$ and $b$ be the `parts'\ldots})
 	\end{enumerate}
 \end{exercises}
+
+
 
 \clearpage
 
@@ -108,41 +121,37 @@ Much has been written about Pythagoras' Theorem, including many, many proofs.\fo
 
 \subsection{Axiomatic Systems}
 
-%A primary motivation for Euclid's writing of the first book of the \emph{Elements} was to rigorously prove Pythagoras' Theorem. In so doing, he essentially invented the modern axiomatic method. %Before considering Euclid's approach, we describe the revolutionary structure Euclid followed, that of a \emph{deductive} or \emph{axiomatic system.}
-
-Arguably the most revolutionary aspect of the Euclid's \emph{Elements} was its axiomatic presentation.
+Arguably the most revolutionary aspect of Euclid's \emph{Elements} was its axiomatic presentation.
 
 \begin{defn}{}{}
-	An \emph{axiomatic system} comprises four types of object.\vspace{-5pt}
+	An \emph{axiomatic system} comprises four types of object.\vspace{-4pt}
 	\begin{enumerate}\itemsep0pt
-	  \item \emph{Undefined terms}: Concepts accepted without definition/explanation. %In basic geometry these would include \emph{line} and \emph{point.}
+	  \item \emph{Undefined terms}: Concepts accepted without definition/explanation.
 	  \item \emph{Axioms}: Logical statements regarding the undefined terms which are accepted without proof.
 	  \item \emph{Defined terms}: Concepts defined in terms of 1 \& 2.
 	  \item \emph{Theorems}: Logical statements deduced from 1--3.
 	\end{enumerate}
+	A \emph{proof} is a logical argument demonstrating the truth of a theorem within an axiomatic system.
 \end{defn}
 
-
 \begin{examples}{}{models}
-	Here are two systems viewed informally in this framework. In each case we provide only \emph{examples} of each type of object, not a full description of an axiomatic system.\vspace{-5pt}
-	\begin{description}\itemsep0pt
+	Here are two systems. In each case we provide only \emph{examples} of each type of object.\vspace{-2pt}
+	\begin{description}
 		\item[\normalfont\emph{Basic Geometry}]\begin{enumerate}\itemsep2pt
 		  \item \emph{Line} and \emph{point.}
-		  \item There exists a line joining any two given points.
-		  \item A \emph{triangle} may be defined in using three non-collinear points. 
-		  \item Thales' and Pythagoras' Theorems.
+		  \item Given two points, there exists a line joining them.
+		  \item A \emph{triangle} consists of three non-collinear points and the segments between them. 
+		  \item The theorems of Thales and Pythagoras.
 	  \end{enumerate}
 		\item[\normalfont\emph{Chess}]\begin{enumerate}\itemsep2pt
 		  \item Pieces (as black/white objects) and the board.
 		  \item Rules for how each piece moves.
-		  \item Concepts such as \emph{check, stalemate} or \emph{en-passant.}
-		  \item For example, \emph{Given a particular position, Black can win in 5 moves.}
+		  \item Concepts such as \emph{check, stalemate, en-passant.}
+		  \item Given a particular position, Black can win in five moves.
 	  \end{enumerate}	
 	\end{description}
 \end{examples}
 
-
-A \emph{proof} is a logical argument demonstrating the truth of a theorem \emph{within an axiomatic system.} In practice, this is an ideal to which we aspire, and a proof is simply a convincing logical argument.
 
 
 
@@ -151,15 +160,17 @@ A \emph{proof} is a logical argument demonstrating the truth of a theorem \emph{
 \end{defn}
 
 Models are often \emph{abstract} in that they depend on another axiomatic system. In a \emph{concrete} model, the undefined terms are real-world objects (where contradictions are impossible(!)). The big idea is this:
-\begin{quote}
-	\emph{Any theorem proved within an axiomatic system is true in any model of that system.}
-\end{quote}
+\[
+	\tcbhighmath{
+		\text{Any theorem proved within an axiomatic system is true in any model of that system}
+	}
+\]
 Mathematical discoveries often hinge on the realization that seemingly separate discussions can be described in terms of models of a common axiomatic system.
 
 \begin{example}{}{monoid}
-	\emph{Monoid}:\lstsp If you've studied group theory, this should seem familiar.\vspace{-5pt}
+	Here is the axiomatic system for a \emph{monoid}, built using the language of standard set theory (itself an axiomatic system).\vspace{-2pt}
 	\begin{quote}
-		\begin{enumerate}
+		\begin{enumerate}\itemsep2pt
 		  \item A set $G$ and a binary operation $\ast$.
 		  \item (A1)\lstsp Closure:\quad $\forall a,b\in G$, $a\ast b\in G$\\
 	  	\lstsp(A2)\lstsp Associativity:\quad $\forall a,b,c\in G$, \ $a\ast(b\ast c)=(a\ast b)\ast c$\\
@@ -177,30 +188,32 @@ Mathematical discoveries often hinge on the realization that seemingly separate 
 
 
 \begin{defn}{}{consistency}
-	Certain properties are desirable in an axiomatic system.
-	\begin{description}
+	Certain properties are desirable in an axiomatic system.\vspace{-2pt}
+	\begin{description}\itemsep2pt
 		\item[\normalfont\emph{Consistency}] The system is free of contradictions.
 		\item[\normalfont\emph{Independence}] An axiom is independent if it is not a theorem of the others. An axiomatic system is independent if all its axioms are. 
 		\item[\normalfont\emph{Completeness}] Every valid proposition within the theory is \emph{decidable}: can be proved or disproved.
 	\end{description}
 \end{defn}
 
-We unpack these ideas slightly. By necessity, our descriptions are vague. Many notions need to be clarified (e.g.,\ what is meant by a \emph{valid proposition}) before these ideas can be made rigorous.
-\begin{description}\itemsep0pt
-	\item[\normalfont\emph{Consistency}] May be demonstrated by exhibiting a \emph{concrete model.} An \emph{abstract model} demonstrates \emph{relative consistency}, dependent on the consistency of the underlying system. An inconsistent system is essentially useless.
+We unpack these ideas slightly, though our descriptions are vague by necessity: some notions must be clarified (e.g., \emph{valid proposition}) before these ideas can be made rigorous.
+\begin{description}\itemsep2pt
+	\item[\normalfont\emph{Consistency}] May be demonstrated by exhibiting a \emph{concrete model.} An \emph{abstract model} demonstrates \emph{relative consistency}, where consistency depends on that of the underlying system. An inconsistent system is essentially useless to practicing mathematicians.
 	\item[\normalfont\emph{Independence}] To demonstrate the independence of an axiom, exhibit two models: one in which all axioms are true, the other in which only the considered axiom is false. 
-	\item[\normalfont\emph{Completeness}] This is very unlikely to hold for most useful axiomatic systems in mathematics, though \href{https://en.wikipedia.org/wiki/Complete_theory}{examples} do exist. To show incompleteness, an \emph{undecidable}\footnote{A famous example of an undecidable statement from standard set theory is the \emph{Continuum Hypothesis,} which states that there is no uncountable set with cardinality strictly smaller than that of the real numbers.} statement is required, which can be viewed as a new independent axiom of an enlarged system. 
-	\end{description}
+	\item[\normalfont\emph{Completeness}] This is very unlikely to hold for a useful axiomatic system in mathematics, though \href{https://en.wikipedia.org/wiki/Complete_theory}{examples} do exist. To show incompleteness, an \emph{undecidable}\footnote{%
+	A famous example of an undecidable statement from standard set theory is the \emph{Continuum Hypothesis,} which states that there is no uncountable set with cardinality strictly smaller than that of the real numbers.%
+} statement is required, which can be viewed as a new independent axiom in an enlarged axiomatic system. 
+\end{description}
 
 
 \begin{example*}{\ref{ex:monoid}, cont}{}
-	The axiomatic system for a monoid is:
-	\begin{description}\itemsep0pt
+	The axiomatic system for a monoid is:\vspace{-2pt}
+	\begin{description}\itemsep2pt
 		\item[\normalfont\emph{Consistent}] We have a (concrete) model.
 		\item[\normalfont\emph{Independent}] Consider three models:
 		\begin{itemize}\itemsep0pt
-		  \item $(\N,+)$ satisfies axioms A1 and A2 but not A3.
-		  \item $(\{e,a,b\},*)$ defined by the following table satisfies A1 and A3 but not A2
+		  \item $(\N,+)$ satisfies axioms A1 and A2, but not A3.
+		  \item $\bigl(\{e,a,b\},*\bigr)$ defined by the following table satisfies A1 and A3, but not A2
 		  \[
 		  	\begin{array}{c||ccc}
 		  		*&e&a&b\\\hline\hline
@@ -211,7 +224,7 @@ We unpack these ideas slightly. By necessity, our descriptions are vague. Many n
 		  	\qquad \text{e.g.}\quad 
 		  	a*(b*b)=a*a=e\neq a=a*b=(a*b)*b
 		  	\]
-		  \item $(\Z\setminus\{1\},+)$ satisfies axioms A2 and A3 but not A1.
+		  \item $\bigl(\Z\setminus\{1\},+\bigr)$ satisfies axioms A2 and A3, but not A1.
 		\end{itemize}
 		\item[\normalfont\emph{Incomplete}] The proposition `\emph{A monoid contains at least two elements}' is undecidable \emph{just from the axioms.} For instance, $(\{0\},+)$ and $(\Z,+)$ are models with one/infinitely many elements.\smallbreak
 		  We could also ask if all elements have an inverse. That this is undecidable is the same as saying that a new axiom is independent of A1, A2, A3.\smallbreak
@@ -225,8 +238,8 @@ We unpack these ideas slightly. By necessity, our descriptions are vague. Many n
 
 
 \begin{example}{Bus Routes}{}
-	Here is a loosely defined axiomatic system. Discuss the questions with your classmates.
-	\begin{description}\itemsep0pt
+	Here is a loosely defined axiomatic system.
+	\begin{description}
 		\item[\normalfont\emph{Undefined Terms}:] Route, Stop
 		\item[\normalfont\emph{Axioms}:]
 		\begin{description}
@@ -238,20 +251,21 @@ We unpack these ideas slightly. By necessity, our descriptions are vague. Many n
 		\end{description}
 	\end{description}
 	
+	Discuss the following questions:
 	\begin{enumerate}
-	  \item Construct a model of this system with three routes. What is the fewest number of stops you can use?
+	  \item Construct a model of the Bus Routes system with exactly three routes. What is the fewest number of stops you can use?
 	  \item Your answer to 1 shows that this system is: complete, consistent, inconsistent, independent?
-	  \item Is the following a model for the Bus Routes system? If not, determine which axioms are satisfied by the model and which are not?
+	  \item Does the following describe a model for the Bus Routes system? If not, determine which axioms are satisfied and which are not?
 	  \begin{quote}\def\arraystretch{1.2}
 		  \begin{tabular}{@{}ll}
-		    \emph{Stops}:&Downtown, \ Walmart, \ Albertsons, \ Main St., \ CVS, \ Trader Joe's, \ Zoo\\
+		    \emph{Stops}:&Downtown, \ Walmart, \ Albertsons, \ Main St., \ CVS, \ Trader Joes, \ Zoo\\
 		  	\emph{Route 1}:&Downtown, \ Walmart, \ Main St., \ CVS, \ Zoo, \ Downtown\\
 		  	\emph{Route 2}:&Main St., \ CVS, \ Zoo, \ Albertsons, \ Downtown, \ Main St.\\
 		  	\emph{Route 3}:&Walmart, \ Main St., \ Downtown, \ Albertsons, \ Main St., \ Walmart
 		  \end{tabular}
 	  \end{quote}
 		\item Show that A3 is independent of the other axioms.
-		\item Demonstrate that `\emph{There are exactly three routes}' is not a theorem in this system by finding a model in which it is not true.
+		\item Demonstrate that `\emph{There are exactly three routes}' is not a theorem in this system by finding a model in which it is false.
 	\end{enumerate}
 \end{example}
 
@@ -259,7 +273,7 @@ We unpack these ideas slightly. By necessity, our descriptions are vague. Many n
 \vfil
 
 
-We are only scratching the surface of axiomatics. If you really want to dive down the rabbit hole, consider taking a class in formal logic or model theory. As an example of the ideas involved, we finish with two results proved in 1931 by the German logician Kurt Gödel.
+We are only scratching the surface of axiomatics. If you really want to dive down this rabbit hole, consider taking a class in formal logic or model theory. As an example of the ideas involved, we finish with two results proved in 1931 by the German logician Kurt Gödel.
 
 
 \begin{thm}{Gödel's incompleteness theorems}{godel} 
@@ -269,25 +283,25 @@ We are only scratching the surface of axiomatics. If you really want to dive dow
 	\end{enumerate}
 \end{thm}
 
-Gödel's first theorem tells us that there is no \emph{ultimate} consistent complete axiomatic system. Perhaps this is reassuring---there will always be undecidable statements, so mathematics will never be finished! However, the undecidable statements cooked up by Gödel are analogues of the famous \emph{liar paradox} (`This sentence is false'), so the profundity of this is a matter of debate.
+Gödel's first theorem tells us that there is no \emph{ultimate} consistent complete axiomatic system. Perhaps this is reassuring: there will always be undecidable statements, so mathematics will never be finished! However, the undecidable statements cooked up by Gödel are analogues of the famous \emph{liar paradox} (`This sentence is false'), so the profundity of this is a matter of debate.
 \smallbreak
 
-Gödel's second theorem fleshes out the difficulty in proving the consistency of an axiomatic system. If a system is sufficiently complex to describe the natural numbers, its consistency can at best be proved relative to some other axiomatic system. While an inconsistent system might be essentially useless, good luck showing that what you have really is consistent!
+Gödel's second theorem fleshes out the difficulty in proving the consistency of an axiomatic system. If a system is sufficiently detailed so as to describe the natural numbers, its consistency can at best be proved relative to some other axiomatic system. In practice, demonstrating that a useful axiomatic system really is consistent is essentially impossible!
 
 
 \goodbreak
 
 
 \begin{exercises}{}{}
-	\exstart Between two players are placed several piles of coins. On each turn a player takes as many coins as they want from \emph{one} pile, as long as they take at least one coin. The player who takes the last coin wins.
-	
+	\exstart Between two players are placed several piles of coins. On each turn a player takes as many coins as they want from \emph{one pile}, though they must take at least one coin. The player who takes the last coin wins.
 	\begin{enumerate}\setcounter{enumi}{1}
 	  \item[]If there are two piles where one pile has more coins than the other, prove that the first player can always win the game.
-	  \item Consider a system where children in a classroom choose different flavors of ice cream. Suppose we have the following axioms:
+	  
+	  \item Consider an axiomatic system where children in a classroom choose different flavors of ice cream. Suppose we have the following axioms:
 	  \begin{quote}
-	  \begin{itemize}%[align=left]
+	  \begin{itemize}
 	  	\item[(A1)] There are exactly five flavors of ice cream: vanilla, chocolate, strawberry, cookie dough, and bubble gum.
-	  	\item[(A2)] Given any two distinct flavors, there is exactly one child who likes these.
+	  	\item[(A2)] Given any two distinct flavors, exactly one child likes both.
 	  	\item[(A3)] Every child likes exactly two flavors of ice cream.
 	  \end{itemize}
 	  \end{quote}
@@ -318,7 +332,7 @@ Gödel's second theorem fleshes out the difficulty in proving the consistency of
 	% \end{description}
 	
 	
-		\item Consider an axiomatic system that consists of elements in a set $S$ and a set $P$ of pairings of elements $(a,b)$ that satisfy the following axioms:
+		\item Suppose $S$ is a set and $P\subseteq S\times S$ is a set of ordered pairs of elements $(a,b)$ that satisfy the following axioms:
 	  \begin{quote}
 	  \begin{itemize}
 	  	\item[(A1)] If $(a,b)$ is in $P$, then $(b,a)$ is not in $P$.
@@ -327,15 +341,15 @@ Gödel's second theorem fleshes out the difficulty in proving the consistency of
 	  \end{quote}
 	  \begin{enumerate}
 	    \item Let $S=\{1,2,3,4\}$ and $P=\{(1,2),(2,3),(1,3)\}$. Is this a model for the axiomatic system? Why/why not?
-			\item Let $S$ be the set of real numbers and let $P$ consist of all pairs $(x,y)$ where $x<y$. Is this a model for the system? Explain.
-			\item Use the results of (a) and (b) to argue that the axiomatic system is incomplete. I.e., think of another independent axiom that could be added to the axioms A1 and A2 for which $S$ and $P$ in part (a) is a model, but for which $S$ and $P$ from part (b) is not a model.
+			\item Let $S$ be the set of real numbers and $P$ consist of all pairs $(x,y)$ where $x<y$. Is this a model for the system? Explain.
+			\item Use the results of (a) and (b) to argue that the axiomatic system is incomplete. Otherwise said, think of an independent axiom that could be added to the system for which part (a) is a model, but for which part (b) is not.
 		\end{enumerate}
 		
 		
 		\item The undefined terms of an axiomatic system are `brewery' and `beer'. Here are some axioms.
 	  \begin{quote}
 		\begin{itemize}
-	  	\item[(A1)] Every brewery is a non-empty collection of \emph{at least} two beers (every brewery brews at least two beers!).
+	  	\item[(A1)] Every brewery is a non-empty collection of \emph{at least} two beers (each brewery brews at least two beers).
 	  	\item[(A2)] Any two distinct breweries have at most one beer in common.
 	  	\item[(A3)] Every beer belongs to exactly three breweries.
 	  	\item[(A4)] There exist exactly six breweries.

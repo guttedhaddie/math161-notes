@@ -1,11 +1,13 @@
+\allowdisplaybreaks
+
 %lengths/commands
 \def\lstsp{\hspace{\labelsep}}
 \renewcommand{\qedsymbol}{\rule[-8pt]{0.5em}{0.5em}}
-\def\marks#1{\hfill{\scriptsize{(#1)}}\par}
-\def\dmarks#1{\tag*{\scriptsize{(#1)}}}
-\def\prelistskip{\vspace*{-6pt}}
-\def\preinitdisp{\setlength{\abovedisplayskip}{-15pt}}
-\def\postinitdisp{\setlength{\abovedisplayskip}{12pt plus 3pt minus 9pt}}
+%\def\marks#1{\hfill{\scriptsize{(#1)}}\par}
+%\def\dmarks#1{\tag*{\scriptsize{(#1)}}}
+%\def\prelistskip{\vspace*{-6pt}}
+%\def\preinitdisp{\setlength{\abovedisplayskip}{-15pt}}
+%\def\postinitdisp{\setlength{\abovedisplayskip}{12pt plus 3pt minus 9pt}}
 \def\ang#1{#1\text{°}}
 \def\st{\textsuperscript{st}}
 \def\nd{\textsuperscript{nd}}
@@ -106,6 +108,7 @@
 \def\lin#1{\overleftrightarrow{#1}}
 \def\ray#1{\overrightarrow{#1}}
 \def\rayv#1{\overrightarrow{\underline{#1}}}
+\def\arc#1{\overset{\raisebox{-3pt}[-5pt]{\smash{\rotatebox{90}{$)$}}}}{#1}}
 
 %caligraphic
 \def\cL{\mathcal{L}}
