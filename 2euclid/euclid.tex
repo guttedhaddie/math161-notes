@@ -631,7 +631,7 @@ Plane separation/sidedness allows us to properly define interiors of angles and 
 	A point $I$ is \emph{interior} to triangle $\triangle ABC$ if it is interior to all three of its angles $\angle ABC$, $\angle BAC$ and $\angle ACB$. Otherwise said, $I$ lies in the triple intersection of three of the half-planes defined by the triangle's sides.
 \end{defn}
 
-Interior points permit us to compare angles: if $I$ is interior to $\angle BAC$, then $\angle BAI<\angle BAC$ has obvious meaning \emph{without resorting to numerical angle measure.}
+Interior points permit us to compare angles which share a vertex: if $I$ is interior to $\angle BAC$, then $\angle BAI<\angle BAC$ has obvious meaning \emph{without resorting to numerical angle measure.}
 
 \begin{cor}{}{angleinteriorexist}
 	Every angle has an interior point.
@@ -713,11 +713,14 @@ Even with Pasch's axiom and the crossbar theorem, it requires some effort to rep
 	  \item Prove Lemma \ref{lemm:incidenceeasy}.
 	  
 	  
-	  \item Give a model for each of the 5-point incidence geometries. How many are there?\par
-	  (\emph{Hint: remember that order doesn't matter, so the only issue is how many points lie on each line})
+	  \item\begin{enumerate}
+	    \item Give a model for each of the 5-point incidence geometries. How many are there?\par
+	  	(\emph{Hint: remember that order doesn't matter, so the only issue is how many points lie on each line})
+	  	\item It is possible for there to be a 6-point incidence geometry so that each line contains precisely three points? Why/why not? 
+	  \end{enumerate} 
 	  
 	    
-	  \item Consider the proof of the crossbar theorem. Explain how we know that $\smash[t]{\lin{AI}}$ does not contain any of the vertices of $\triangle BCD$.
+	  \item Consider the proof of the crossbar theorem. How can we be certain that $\smash[t]{\lin{AI}}$ does not contain any of the vertices of $\triangle BCD$.
 	  
 	  
 	  \item\label{exs:seginterior} You are given distinct points $A,B$. Using the axioms of incidence and order and Lemma \ref{lemm:intersectunique} (follows from I-2), show the existence of each of the points $C,D,E,F$ in the picture \emph{in alphabetical order.} Hence conclude the existence of a point $F$ lying \emph{between} $A$ and $B$ (Lemma \ref{lemm:seginterior}).\par
