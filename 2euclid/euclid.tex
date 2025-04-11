@@ -541,7 +541,7 @@ The axioms of incidence describe the relation \emph{on.} An \emph{incidence geom
 	\end{minipage}
 	\smallbreak
 	\begin{minipage}[t]{0.72\linewidth}\vspace{0pt}
-		The final picture is a seven-point incidence geometry called the \emph{Fano plane,} which finds many applications particularly in combinatorics. Each point lies on precisely three lines and each line contains precisely three points---each dot is colored to indicate the lines to which it belongs. Don't be fooled by the black line looking `curved' and seeming to cross the blue line near the top, for the line really only contains three points!
+		The final picture is a seven-point incidence geometry called the \emph{Fano plane,} which finds many applications particularly in combinatorics. Each point lies on precisely three lines and each line contains precisely three points---each dot is colored to indicate the lines to which it belongs. Don't be fooled by the black line looking `curved' and seeming to cross the blue line near the top, for the line only contains three points!
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.27\linewidth}\vspace{-17pt}
@@ -550,7 +550,7 @@ The axioms of incidence describe the relation \emph{on.} An \emph{incidence geom
 	\end{minipage}
 \end{examples}
 
-We can even prove some simple theorems in incidence geometry.
+We can even prove some simple theorems in incidence geometry. The second is an exercise.
 
 \begin{lemm}{}{intersectunique}
 	If distinct lines intersect, then they do so in exactly one point.
@@ -564,18 +564,37 @@ We can even prove some simple theorems in incidence geometry.
 	Given any point, there exist at least two lines on which it lies.
 \end{lemm}
 
-The proof is an exercise. While incidence geometry is fun, our main goal is to understand Euclidean geometry, so we move on to the next set of axioms.
+%While incidence geometry is fun, our main goal is to understand Euclidean geometry, so we move on to the next set of axioms.
 
+
+
+
+
+\begin{minipage}[t]{0.79\linewidth}\vspace{0pt}
 
 \boldsubsubsection{Axioms of Order: Sides of a Line, Pasch's Axiom \& the Crossbar Theorem}
 
-The axioms of order describe the ternary relation \emph{between.} Their inclusion in Hilbert's axioms is due in no small part to the work of Moritz Pasch, after whom Pasch's axiom (O-4, c.\,1882) is named. This axiom is very powerful; in particular, it permits us to define the \emph{interiors} of several geometric objects, and to see that these are non-empty.
+The order axioms describe the ternary relation \emph{between.} The first three make explicit the idea that points on a line lie in a fixed order: travelling along a line, one encounters each point exactly once. In particular, these axioms prevent `circular' lines (the pictured contradiction), and guarantee that a line contains infinitely many points.\smallbreak
+Each of the above finite incidence examples fails to satisfy (some of) the order axioms.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.2\linewidth}\vspace{0pt}
+	\flushright
+	\begin{tabular}{@{}c@{}}
+		\includegraphics[scale=0.9]{hilbert-order}\\[-2pt]
+		$A*B*C$ \checkmark\\[10pt]
+		\includegraphics[scale=0.9]{hilbert-order2}\\
+		Contradiction
+	\end{tabular}
+\end{minipage}\smallbreak
 
-\begin{lemm}{}{seginterior}
+The rest of this section is devoted to the consequences of Pasch's axiom (O-4)---named to honor the work of Moritz Pasch (c.\,1882). Amongst other things, it permits us to define the \emph{interiors} of several geometric objects and to see that these are non-empty. For instance:
+
+\begin{lemm}{Exercise \ref{exs:seginterior}}{seginterior}
 	Every segment contains an interior point.
 \end{lemm}
 
-We leave the proof to Exercise \ref{exs:seginterior}. By inducting on the Lemma, every segment contains \emph{infinitely many} points, whence the above finite geometries are not valid models once the order axioms are included.
+% We leave the proof to Exercise \ref{exs:seginterior}. By inducting on the Lemma, every segment contains \emph{infinitely many} points, whence the above finite geometries are not valid models once the order axioms are included.
 
 \goodbreak
 
@@ -769,6 +788,9 @@ Even with Pasch's axiom and the crossbar theorem, it requires some effort to rep
 	  
 	  \item\label{exs:seginfinite} Prove that the interior of a triangle is non-empty.\par
 	  (\emph{Hint: use Exercise \ref{exs:seginterior} to construct a suitable $I$, then prove that it lies on the correct side of each edge})
+	  
+	  
+	  \item The existence of infinitely many points on a line follows easily from the fact that every segment has an interior point. Find an alternative proof that does not depend on Pasch's axiom.
 	  
 	\end{enumerate}
 \end{exercises}
