@@ -457,7 +457,9 @@ While undoubtedly a masterpiece of logical reasoning, Euclid's presentation has 
 
 The long process of identifying and correcting the errors and omissions in Euclid's \emph{Elements} culminated in the 1899 publication of David Hilbert's \emph{Grundlagen der Geometrie (Foundations of Geometry)}. In the next two sections we consider some of the details of Hilbert's approach, providing a modern and logically superior description of Euclidean geometry.\smallbreak
 
-Hilbert's axioms for plane geometry\footnote{Like Euclid, Hilbert also covered 3D geometry---we only give the axioms for plane geometry. With regard to our desired properties (Definition \ref{defn:consistency}), his system is about as good as can be hoped. Essentially one only one model exists, which is almost the same thing as completeness. In the absence of the continuity axiom, the axioms are consistent; in line with Gödel's theorems (\ref{thm:godel}), consistency cannot be proved once continuity is included. As stated, the axioms are not quite independent, though this can be remedied: O-3 does not require existence (follows from Pasch's axiom), C-1 does not require uniqueness (follows from uniqueness in C-4) and C-6 can be weakened slightly.} are listed on the next page. The undefined terms consist of two types of object (\emph{points} and \emph{lines}), and three relations (\emph{between $*$, on $\in$} and \emph{congruence $\cong$}). For brevity we'll often use/abuse set notation, viewing a line as a set of points, though this is not necessary. At various places, definitions and notations are required.
+Hilbert's axioms for plane geometry\footnote{%
+	Like Euclid, Hilbert also covered 3D geometry---we only give the axioms sufficient for plane geometry. With regard to our desired properties (Definition \ref{defn:consistency}), his system is about as good as can be hoped: essentially one only one model exists, which is almost the same thing as completeness. In the absence of the continuity axiom, the axioms are consistent; in line with Gödel's theorems (\ref{thm:godel}), consistency cannot be proved once continuity is included. As stated, the axioms are not quite independent, though this can be remedied: O-3 does not require existence (follows from Pasch's axiom), C-1 does not require uniqueness (follows from uniqueness in C-4) and C-6 can be weakened slightly.%
+} are listed on the next page. The undefined terms consist of two types of object (\emph{points} and \emph{lines}), and three relations (\emph{between $*$, on $\in$} and \emph{congruence $\cong$}). For brevity we'll often use/abuse set notation, viewing a line as a set of points, though this is not necessary. At various places, definitions and notations are required.
 
 \begin{defn}{}{hilbertbasic}
 	Throughout, $A,B,C$ denote points and $\ell,m$ lines.
@@ -979,7 +981,7 @@ Euclid's approach uses a bisector which he obtains from circles. Hilbert does th
 	Given $\triangle ABC$, extend $\cl{AB}$ to $D$ such that \textcolor{blue}{$\cl{AC}\cong\cl{BD}$}. For clarity, we label angles with Greek letters as in the first picture below. We show that \textcolor{Green}{$\gamma<\delta$} by proving that the alternatives are impossible.	
 	\begin{enumerate}\itemsep0pt
 		\item $(\delta\ncong\gamma)$\lstsp Assume \textcolor{Green}{$\delta\cong\gamma$}. By SAS, $\triangle ACB\cong\triangle DBC$; in particular \textcolor{blue}{$\epsilon\cong\beta$}. Since $A$ and $D$ lie on opposite sides of $\lin{BC}$, we see that $\epsilon+\gamma\cong \beta+\delta$ is a straight edge. But then $A,D$ are distinct points lying on \emph{two} lines! Contradiction.
-		\item $(\delta\not<\gamma)$\lstsp Assume \textcolor{Green}{$\delta<\gamma$}. Transfer $\delta$ to $C$ as shown to obtain $\textcolor{Green}{\eta\cong\delta}$. By the crossbar theorem, we obtain an intersection point $E$. But now $\delta$ is an exterior angle of $\triangle EBC$ congruent to an interior angle $\eta$ of the same triangle, contradicting part 1.
+		\item $(\delta\not<\gamma)$\lstsp Assume \textcolor{Green}{$\delta<\gamma$}. Transfer $\delta$ to $C$ as shown to obtain $\textcolor{Green}{\eta\cong\delta}$. By the crossbar theorem, we obtain an intersection point $E$. But now $\delta$ is an exterior angle of $\triangle EBC$ congruent to an opposite interior angle $\eta$ of the same triangle, contradicting part 1.
 	\end{enumerate}
 	\begin{center}
 		\begin{tabular}{c@{\qquad}c}
@@ -1118,6 +1120,7 @@ We've now recovered almost all of Book I prior to the application of the paralle
 
 
 \clearpage
+
 
 \subsection{Circles and Continuity}\label{sec:circ}
 
