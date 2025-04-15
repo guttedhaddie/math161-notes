@@ -1,81 +1,85 @@
-%\thispagestyle{empty}
 \begin{center}
-\bfseries\Large Hilbert's Axioms for Plane Geometry
+	\bfseries\Large Hilbert's Axioms for Plane Geometry
 \end{center}
 
-\begin{minipage}[t]{0.46\linewidth}
-\boldinline{Undefined terms}
-\begin{enumerate}\itemsep2pt
-  \item \emph{Points}: \ use capital letters, $A,B,C\ldots$
-  \item \emph{Lines}: \ use lower case letters, $\ell,m,n,\ldots$
-  \item \emph{On}: \ $A\in\ell$ is read `$A$ lies on $\ell$'
-  \item \emph{Between}: \ $A*B*C$ is read `$B$ lies between $A$ and $C$'
-  \item \emph{Congruence}: \ $\cong$ is a binary relation on segments or angles
-\end{enumerate}
-
-\boldinline{Axioms of Incidence}
-
-\begin{enumerate}
-	\item[I-1] For any distinct $A,B$ there exists a line $\ell$ on which lie $A,B$.
-	\item[I-2] There is at most one line through distinct $A,B$ \ ($A$ and $B$ both \emph{on} the line).
-\end{enumerate}\vspace{-2pt}
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+	\textbf{Undefined terms}
+	\begin{enumerate}\itemsep2pt
+	  \item \emph{Points}: \ use capital letters, $A,B,C\ldots$
+	  \item \emph{Lines}: \ use lower case letters, $\ell,m,n,\ldots$
+	  \item \emph{On}: \ $A\in\ell$ is read `$A$ lies on $\ell$'
+	  \item \emph{Between}: \ $A*B*C$ is read `$B$ lies between $A$ and $C$'
+	  \item \emph{Congruence}: \ $\cong$ is a binary relation on segments or angles
+	\end{enumerate}
 	
-Notation: \emph{line} $\overleftrightarrow{AB}$ through $A$ and $B$\vspace{-2pt}
-
-\begin{enumerate}\setcounter{enumi}{2}	
-	\item[I-3] On every line there exist at least two distinct points. There exist at least three points not all on the same line.
-\end{enumerate}
-
-
-\boldinline{Axioms of Order}
-
-\begin{enumerate}
-	\item[O-1] If $A*B*C$, then $A,B,C$ are distinct points on the same line and $C*B*A$.
-	\item[O-2] Given distinct $A,B$, there is at least one point $C$ such that $A*B*C$.
-	\item[O-3] If $A,B,C$ are distinct points on the same line, exactly one lies between the others.
-\end{enumerate}\vspace{-2pt}
 	
-Definitions: \emph{segment} $\cl{AB}$ and \emph{triangle} $\triangle ABC$\vspace{-2pt}
-
-\begin{enumerate}\setcounter{enumi}{3}	
-	\item[O-4] (Pasch's Axiom) Let $\triangle ABC$ be a triangle and $\ell$ a line not containing any of $A,B,C$. If $\ell$ contains a point of the segment $\cl{AB}$, then it also contains a point of either $\cl{AC}$ or $\cl{BC}$. 
-\end{enumerate}
-
-Definitions: \emph{sides} of line $\overleftrightarrow{AB}$ and \emph{ray} $\ray{AB}$
+	\boldinline{Axioms of Incidence}
+	
+	\begin{enumerate}
+		\item[I-1] For any distinct $A,B$ there exists a line $\ell$ on which lie $A,B$.
+		\item[I-2] There is at most one line through distinct $A,B$ \ ($A$ and $B$ both \emph{on} the line).
+	\end{enumerate}\vspace{-2pt}
+		
+	Notation: \emph{line} $\overleftrightarrow{AB}$ through $A$ and $B$\vspace{-2pt}
+	
+	\begin{enumerate}\setcounter{enumi}{2}	
+		\item[I-3] On every line there exist at least two distinct points. There exist at least three points not all on the same line.
+	\end{enumerate}
+	
+	
+	\boldinline{Axioms of Order}
+	
+	\begin{enumerate}
+		\item[O-1] If $A*B*C$, then $A,B,C$ are distinct points on the same line and $C*B*A$.
+		\item[O-2] Given distinct $A,B$, there is at least one point $C$ such that $A*B*C$.
+		\item[O-3] If $A,B,C$ are distinct points on the same line, exactly one lies between the others.
+	\end{enumerate}\vspace{-2pt}
+		
+	Definitions: \emph{segment} $\cl{AB}$ and \emph{triangle} $\triangle ABC$\vspace{-2pt}
+	
+	\begin{enumerate}\setcounter{enumi}{3}	
+		\item[O-4] (Pasch's Axiom) Let $\triangle ABC$ be a triangle and $\ell$ a line not containing any of $A,B,C$. If $\ell$ contains a point of the segment $\cl{AB}$, then it also contains a point of either $\cl{AC}$ or $\cl{BC}$. 
+	\end{enumerate}
+	
+	Definitions: \emph{sides} of line $\overleftrightarrow{AB}$ and \emph{ray} $\ray{AB}$
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.48\linewidth}
-\boldinline{Axioms of Congruence}
-
-\begin{enumerate}
-  \item[C-1] (Segment transference) \ Let $A,B$ be distinct and $r$ a ray based at $A'$. Then there exists a unique point $B'\in r$ for which $\cl{AB}\cong\cl{A'B'}$. Moreover $\cl{AB}\cong\cl{BA}$.
-  \item[C-2] If $\cl{AB}\cong\cl{EF}$ and $\cl{CD}\cong\cl{EF}$, then $\cl{AB}\cong\cl{CD}$.
-  \item[C-3] If $A*B*C$, \ $A'*B'*C'$, \ $\cl{AB}\cong\cl{A'B'}$ and $\cl{BC}\cong\cl{B'C'}$, then $\cl{AC}\cong\cl{A'C'}$.
-  \end{enumerate}
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+	\textbf{Axioms of Congruence}
+	\begin{enumerate}
+	  \item[C-1] (Segment transference) \ Let $A,B$ be distinct and $r$ a ray based at $A'$. Then there exists a unique point $B'\in r$ for which $\cl{AB}\cong\cl{A'B'}$. Moreover $\cl{AB}\cong\cl{BA}$.
+	  \item[C-2] If $\cl{AB}\cong\cl{EF}$ and $\cl{CD}\cong\cl{EF}$, then $\cl{AB}\cong\cl{CD}$.
+	  \item[C-3] If $A*B*C$, \ $A'*B'*C'$, \ $\cl{AB}\cong\cl{A'B'}$ and $\cl{BC}\cong\cl{B'C'}$, then $\cl{AC}\cong\cl{A'C'}$.
+	\end{enumerate}
+		
+	Definitions: \emph{angle} $\angle ABC$\vspace{-2pt}
 	
-Definitions: \emph{angle} $\angle ABC$\vspace{-2pt}
-
-\begin{enumerate}\setcounter{enumi}{3}
-  \item[C-4] (Angle transference) \ Given $\angle BAC$ and $\ray{A'B'}$, there exists a unique ray $\ray{A'C'}$ on a given side of $\overleftrightarrow{A'B'}$ for which $\angle BAC\cong\angle B'A'C'$.
-  \item[C-5] If $\angle ABC\cong\angle GHI$ and $\angle DEF\cong\angle GHI$, then $\angle ABC\cong\angle DEF$. Moreover, $\angle ABC\cong\angle CBA$.
-  \item[C-6] (Side-angle-side) Given triangles $\triangle ABC$ and $\triangle A'B'C'$, if $\cl{AB}\cong\cl{A'B'}$, $\cl{AC}\cong\cl{A'C'}$, and $\angle BAC\cong\angle B'A'C'$, then the triangles are congruent.\footnotemark{}
-\end{enumerate}
-
-\boldinline{Axiom of Continuity}\phantom{bob}\smallbreak
-
-Suppose a line/segment is partitioned into non-empty subsets $\Sigma_1,\Sigma_2$ such that no point of $\Sigma_1$ lies between two points of $\Sigma_2$ and vice versa.\par
-Then there exists a unique point $\mathcal O$ satisfying $P_1*\mathcal O*P_2$, if and only if $\mathcal O\neq P_1$, $\mathcal O\neq P_2$ and one of $P_1$ or $P_2$ lies in $\Sigma_1$ and the other in $\Sigma_2$.\medbreak
-
-
-
-\boldinline{Playfair's Axiom}\phantom{bob}\smallbreak
-
-Definition: \emph{parallel lines}\smallbreak
-
-Given a line $\ell$ and a point $P\notin\ell$, at most one line through $P$ is parallel to $\ell$.
+	\begin{enumerate}\setcounter{enumi}{3}
+	  \item[C-4] (Angle transference) \ Given $\angle BAC$ and $\ray{A'B'}$, there exists a unique ray $\ray{A'C'}$ on a given side of $\overleftrightarrow{A'B'}$ for which $\angle BAC\cong\angle B'A'C'$.
+	  \item[C-5] If $\angle ABC\cong\angle GHI$ and $\angle DEF\cong\angle GHI$, then $\angle ABC\cong\angle DEF$. Moreover, $\angle ABC\cong\angle CBA$.
+	  \item[C-6] (Side-angle-side) \ Given triangles $\triangle ABC$ and $\triangle A'B'C'$, if $\cl{AB}\cong\cl{A'B'}$, $\cl{AC}\cong\cl{A'C'}$, and $\angle BAC\cong\angle B'A'C'$, then the triangles are congruent.\footnotemark{}
+	\end{enumerate}
+	
+	
+	\boldinline{Axiom of Continuity}\phantom{bob}\smallbreak
+	
+	If a line/segment $\ell$ is partitioned into non-empty subsets $\Sigma_1,\Sigma_2$ such that no point of $\Sigma_1$ lies between two points of $\Sigma_2$ and vice versa, then there exists a unique point $\mathcal O$ separating $\Sigma_1,\Sigma_2$:
+	for all $A,B\in\ell$,
+	\begin{quote}
+		$A*\mathcal O*B$ if and only if $A,B$ lie in distinct subsets $\Sigma_1\setminus\mathcal O$, \ $\Sigma_2\setminus\mathcal O$%, and neither equals $\mathcal O$.
+	\end{quote}
+	
+	
+	\boldinline{Playfair's Axiom}\phantom{bob}\smallbreak
+	
+	Definition: \emph{parallel lines}\smallbreak
+	
+	Given a line $\ell$ and a point $P\notin\ell$, at most one line through $P$ is parallel to $\ell$.
 \end{minipage}
 
-\footnotetext{Its sides/angles are congruent in pairs. We extend congruence to other geometric objects similarly.}
+\footnotetext{%
+	Its sides/angles are congruent in pairs. We extend congruence to other geometric objects similarly.%
+}
 
 \clearpage
 
