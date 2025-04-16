@@ -8,7 +8,7 @@ texpreamble("\usepackage{amsmath}
 import graph;
 import markers;
 
-size(120);
+size(110,70,IgnoreAspect);
 
 real a=0.3;
 
@@ -26,7 +26,7 @@ real y(real x){return x^2/(4*a);}
 pair P=(xx,y(xx));
 pair Q=(xx,-a);
 
-draw(Label("$d$",Relative(1)),(-1,-a)--(1,-a));
+draw(Label("$\ell$",Relative(1)),(-1,-a)--(1,-a));
 
 draw(F--P--Q,dashed,StickIntervalMarker(2,1,heavygreen));
 

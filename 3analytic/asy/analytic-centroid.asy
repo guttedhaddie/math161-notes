@@ -7,7 +7,7 @@ texpreamble("\usepackage{amsmath}
 ");
 import graph;
 
-size(140);
+size(120);
 
 pair A=(0,0);
 pair C=1.7dir(65);
