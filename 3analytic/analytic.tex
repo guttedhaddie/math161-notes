@@ -202,7 +202,7 @@ Since arc-length scales with radius, the definition is independent of the radius
   	\[
 			\tcbhighmath{\text{Angles congruent $\Longleftrightarrow$ radian measures equal and $<\pi$}}
 		\]
-		As such, it is common to label angles in a triangle by their radian measure; standard convention is shown: e.g., ($A,a,\alpha$) for (point,length,angle).%\smallbreak
+		As such, it is common to label angles in a triangle by their radian measure; standard convention is shown: e.g., ($A$, $a$, $\alpha$) for (point, length, angle).%\smallbreak
 	%Trigonometric functions may now be defined for all angles simultaneously.
 	\end{minipage}
 	\hfill
@@ -232,7 +232,7 @@ Since arc-length scales with radius, the definition is independent of the radius
 		\quad\text{and}\quad
 		\sin\theta=\cos(\tfrac\pi 2-\theta)
 	\]
-	What well-known facts regarding sine and cosine do the following illustrate?
+	Which well-known facts regarding sine and cosine are illustrated by the following?
 	\begin{center}
 		\includegraphics[scale=0.95]{angles-trigbasic1}
 		\qquad
@@ -247,7 +247,7 @@ Since arc-length scales with radius, the definition is independent of the radius
 
 \boldinline{Solving Triangles}
 
-A triangle is described by six values: three side lengths and three angle measures. Euclid's triangle congruence theorems (SAS, ASA, SSS, SAA) say that three of these in suitable combination is enough to recover the rest. In analytic geometry, these calculations typically use the sine and cosine rules.
+A triangle is described by six values: three side lengths and three angle measures. Euclid's triangle congruence theorems (SAS, ASA, SSS, SAA) say that three of these in suitable combination are enough to recover the rest. In analytic geometry, these calculations typically use the sine and cosine rules.
 
 \begin{thm}{}{cosinerule}
 	Label the sides/angles of $\triangle ABC$ following the standard convention (page \pageref{sec:analyticangle}):
@@ -262,11 +262,11 @@ A triangle is described by six values: three side lengths and three angle measur
 	\begin{proof}
 		We prove the sine rule and leave the cosine rule as an exercise. Everything relies on Corollary \ref{cor:thalescor}. Draw the circumcircle of $\triangle ABC$. Construct $\triangle BCD$ with diameter $\cl{BD}$; this is right-angled at $C$ by Thales' Theorem. There are two cases:
 		\begin{enumerate}
-		  \item If $A$ lies on the same side of $\lin{BC}$ as $D$, then $A$ and $D$ share the same arc, whence $\measuredangle BDC=\alpha$ and
+		  \item If $A$ and $D$ lie on the same side of $\lin{BC}$, then they share the same arc. But then $\measuredangle BDC=\alpha$ and
 		  \[
 		  	a=d\sin\measuredangle BDC=d\sin\alpha
 		  \]
-		  \item If $A$ lies on the opposite side, then the quadrilateral $ABDC$ lies on a circle. Opposite angles at $A,D$ are supplementary, whence
+		  \item If $A$ and $D$ lie on opposite sides of $\lin{BC}$, then the quadrilateral $ABDC$ lies on a circle. Opposite angles at $A,D$ are supplementary, whence
 			\[
 				\sin\alpha=\sin(\pi-\alpha)=\sin\measuredangle BDC=\frac ad
 			\]
@@ -283,7 +283,7 @@ A triangle is described by six values: three side lengths and three angle measur
 
 
 \begin{examples}{}{trisolve}
-	\exstart The SSS congruence corresponds to solving a triangle using the cosine rule. For instance, the given triangle has angles
+	\exstart Given SSS data, we may compute the three angles using the cosine rule. For instance the given triangle has
 	\begin{enumerate}\setcounter{enumi}{1}
 		\begin{minipage}[t]{0.86\linewidth}\vspace{-13pt}
 		  \item[]
@@ -297,10 +297,16 @@ A triangle is described by six values: three side lengths and three angle measur
 			\flushright\includegraphics[scale=0.95]{angles-ssssolve}
 		\end{minipage}\smallbreak
 		\begin{minipage}[t]{0.75\linewidth}\vspace{0pt}
-			\item\label{ex:trisolve2} To solve a triangle with data corresponding to the ASA congruence, find the remaining angle $\textcolor{Green}{\gamma}=\pi-\textcolor{red}{\frac\pi 4}-\textcolor{blue}{\frac\pi 3} =\textcolor{Green}{\frac{5\pi}{12}}$ and apply the sine rule
+			\item\label{ex:trisolve2} To solve the given triangle with ASA data, first find the remaining angle $\textcolor{Green}{\gamma}=\pi-\textcolor{red}{\frac\pi 4}-\textcolor{blue}{\frac\pi 3} =\textcolor{Green}{\frac{5\pi}{12}}$ before applying the sine rule
 		  \begin{align*}
-		  	\textcolor{red}{\frac{\sin\frac\pi 4}a} =\textcolor{blue}{\frac{\sin\frac\pi 3}b} =\textcolor{Green}{\sin\frac{5\pi}{12}}=\textcolor{Green}{\cos\frac{\pi}{12}} \implies &\textcolor{red}{a}=\frac 1{\sqrt 2\cos\frac{\pi}{12}}\approx 0.732\\
-		  	&\textcolor{blue}{b}=\frac{\sqrt 3}{2\cos\frac{\pi}{12}}\approx 0.897
+		  	\textcolor{red}{\frac{\sin\frac\pi 4}a} 
+		  		=\textcolor{blue}{\frac{\sin\frac\pi 3}b} 
+		  		=\textcolor{Green}{\sin\frac{5\pi}{12}}%=\textcolor{Green}{\cos\frac{\pi}{12}}
+		  		\implies 
+		  	&\textcolor{red}{a}
+		  		=\frac 1{\sqrt 2\sin\frac{5\pi}{12}}\approx 0.732\\
+		  	&\textcolor{blue}{b}
+		  		=\frac{\sqrt 3}{2\sin\frac{5\pi}{12}}\approx 0.897
 		  \end{align*}
 		\end{minipage}\hfill\begin{minipage}[t]{0.24\linewidth}\vspace{0pt}
 			\flushright\includegraphics[scale=0.95]{angles-asasolve}
@@ -354,10 +360,9 @@ A triangle is described by six values: three side lengths and three angle measur
 	
 		\begin{minipage}[t]{0.72\linewidth}\vspace{-8pt}	
 			\item\begin{enumerate}
-			  \item By dropping a perpendicular from $B$ to $\lin{AC}$ at $D$, construct a proof of the cosine rule.\par
-		 		(\emph{Hint: apply Pythagoras' to the two right-triangles})
+			  \item By dropping a perpendicular from $B$ to $\lin{AC}$ at $D$ and applying the Pythagorean theorem, construct a proof of the cosine rule.
 		 		
-		 		\item Is your argument valid if $D$ is not interior to $\cl{AC}$?
+		 		\item Is your argument valid if $D$ is not interior to $\cl{AC}$? Explain.
 			\end{enumerate}
 		\end{minipage}
 		\hfill
@@ -691,7 +696,7 @@ In 1872, Felix Klein suggested that the geometry of a set is the study of its \e
 	    \item Verify that the following composition $f_{A,\vc}\circ f_{I,\vd}\circ f_{A,\vc}^{-1}$ is a translation.
 	  \end{enumerate}
 		\emph{Part (a) can be written using augmented matrices: $(A\,|\,\vc)(B\,|\,\vd):=(AB\,|\,\vc+A\vd)$.\\
-		If you know group theory, parts (a) and (b) are the closure and inverse properties of the group of Euclidean isometries $E$. Part (c) says the translations $T$ form a normal subgroup. We may therefore write $E$ as a semi-direct product of $T$ and the orthogonal group of origin-preserving isometries
+		If you know group theory, parts (a) and (b) are the closure and inverse properties for the group of Euclidean isometries $E$. Part (c) says that the translations $T$ form a normal subgroup; $E$ is therefore a semi-direct product of $T$ and the orthogonal group of origin-preserving isometries
 		\[
 			E=T\rtimes O_2(\R)
 		\]
@@ -1014,16 +1019,19 @@ One reason for the desire to keep the complex number description is that it may 
 
 \subsection{Birkhoff's Axiomatic System for Analytic Geometry (non-examinable)}
 
-Analytic geometry was originally conceived as an addition to Euclidean geometry. In 1932, courtesy of George David Birkhoff, it was axiomatized in its own right. %he is my great-great-grand-advisor!
+Recall that analytic geometry, as developed by Descartes and Fermat, was originally conceived as a bolt-on to Euclidean geometry. In 1932 George David Birkhoff %\footnote{%
+%	The instructor's great-great-grand-advisor!
+%} 
+provided an axiomatization of analytic geometry in its own right. %
 
 
 \boldinline{Background}
 
-Assume the usual properties/axioms of the real numbers as a complete ordered field. Birkhoff's system is typical of modern axiomatic systems in that it is built on top of pre-existing systems (set theory, complete ordered fields, etc.).
+Assume the usual properties/axioms of the real numbers as a complete ordered field. Birkhoff's approach is typical of modern axiomatic systems in that it is built on top of pre-existing systems (set theory, complete ordered fields, etc.).
 
 \boldinline{Undefined terms}
 
-Two objects: \emph{Point, line.} Two function: \emph{distance $d$, angle measure $\measuredangle$.} If the set of points is $\cS$, then,
+Two objects: \emph{Point, line.} Two functions: \emph{distance $d$, angle measure $\measuredangle$.} If the set of points is $\cS$, then,
 \[
 	d:\cS\times\cS\to\R^+_0,\qquad \measuredangle:\cS\times\cS\times\cS\to [0,2\pi)
 \]
@@ -1034,8 +1042,10 @@ Two objects: \emph{Point, line.} Two function: \emph{distance $d$, angle measure
 \emph{Euclidean}\lstsp Given two distinct points, there exists a unique line containing them.
 \begin{description}%\itemsep0pt
   \item[\normalfont\emph{Ruler}] Points on a line $\ell$ are in bijective correspondence with the real numbers in such a way that if $t_A,t_B$ correspond to $A,B\in\ell$, then $\nm{t_A-t_B}=d(A,B)$.
-  \item[\normalfont\emph{Protractor}] The rays emanating from a point $O$ are in bijective correspondence with the set $[0,2\pi)$ so that if $\alpha$, $\beta$ correspond to rays $\ray{OA},\ray{OB}$, then $\measuredangle AOB\equiv \beta-\alpha\pmod{2\pi}$. This correspondence is continuous in $A,B$.
-  \item[\normalfont\emph{SAS similarity}]\!\!\footnote{As with Hilbert, Birkhoff makes SAS an \emph{axiom}: Birkhoff's version is stronger, for it also applies to similar triangles}\, If triangles have a pair of angles with equal measure, and the sides adjacent to said angles are in the same ratio, then the remaining angles have equal measure and the final sides are in the same ratio.
+  \item[\normalfont\emph{Protractor}] The rays emanating from a point $O$ are in bijective correspondence with the set $[0,2\pi)$ so that if $\alpha$, $\beta$ correspond to rays $\ray{OA}$, $\ray{OB}$, then $\measuredangle AOB\equiv \beta-\alpha\pmod{2\pi}$. This correspondence is continuous in $A,B$.
+  \item[\normalfont\emph{SAS similarity}]\!\!\footnote{%
+		As with Hilbert, Birkhoff makes SAS an \emph{axiom}: Birkhoff's version is stronger in that it also applies to similar triangles.%
+	}\, If $\triangle ABC$ and $\triangle XYZ$ satisfy $\measuredangle ABC=\measuredangle XYZ$ and $\frac{d(A,B)}{d(X,Y)}=\frac{d(B,C)}{d(Y,Z)}$, then the remaining angles have equal measure and the final sides are in the same ratio (i.e., $\triangle ABC\sim\triangle XYZ$).
 \end{description}
 
 \boldinline{Definitions} As with Hilbert, some of these are required before later axioms make sense. In particular, the definition of \emph{ray} is required before the \emph{protractor} axiom.
@@ -1077,7 +1087,7 @@ Recall what this requires: we must provide a \emph{definition} of each of the un
 		\end{cases}
 		\tag{$\ast$}
 	\]
-	In essence, $J$ is `rotate counter-clockwise by $\frac\pi 2$.' Cosine may be defined using power series, so no pre-existing geometric meaning is required.
+	In essence $J$ is `rotate counter-clockwise by $\frac\pi 2$.' Cosine may be defined using power series, so no pre-existing geometric meaning is necessary.
 \end{description}
 
 \begin{proof}
@@ -1111,7 +1121,7 @@ Recall what this requires: we must provide a \emph{definition} of each of the un
 		\begin{enumerate}
 		  \item If $\hat B$ is any other point on the same ray $\ray{OB}$, explain why we get the same value $\beta$.\par
 		  (\emph{$\beta$ is thus a continuous function of $B$})
-		  \item If $B=(x,y)$, what is are values of $\cos\beta$ and $\sin\beta$?
+		  \item If $B=(x,y)$, what are values $\cos\beta$ and $\sin\beta$?
 		  \item	Suppose $A$ corresponds to $\alpha$ under this identification. Evaluate $\cos(\beta-\alpha)$ and therefore prove that the protractor axiom is satisfied.
 		\end{enumerate}
 		
