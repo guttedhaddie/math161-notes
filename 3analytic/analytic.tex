@@ -178,36 +178,36 @@ Angles are defined differently to Section \ref{sec:similar}, though the approach
 \begin{defn}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.32\linewidth]{}{}
 	Suppose $A,B,C$ are distinct points in the plane. Take any \textcolor{blue}{circular arc} centered at $A$ and define the \emph{radian measure}
 	\[
-		\measuredangle BAC:=\frac{\text{\textcolor{blue}{arc-length}}}{\text{radius}} \in[0,2\pi)
+		\measuredangle ABC:=\frac{\text{\textcolor{blue}{arc-length}}}{\text{radius}} \in[0,2\pi)
 	\]
-	where arc-length is measured \emph{counter-clockwise} from $\ray{AB}$ to $\ray{AC}$.
+	where arc-length is measured \emph{counter-clockwise} from $\ray{BA}$ to $\ray{BC}$.
 	\tcblower
 	\flushright
-	\includegraphics{angles-example}
+	\includegraphics[scale=0.95]{angles-example}
 \end{defn}
 
 Since arc-length scales with radius, the definition is independent of the radius of the circular arc. It is important to appreciate the difference between angle measures in our two geometries.\vspace{-5pt}
 
 \begin{description}\itemsep0pt
   \item[Euclidean geometry] All angles $<\ang{180}$. Reversed legs $\rightsquigarrow$ \emph{congruent} angles and \emph{same degree measure}:
+   \[
+   	\angle CBA\cong\angle ABC\quad\text{and}\quad  m\angle CBA=m\angle ABC
+   \]
+  \item[Analytic geometry] Reflex angles exist ($\ge\pi$). Reversed legs $\rightsquigarrow$ \emph{different radian measures}:
   \[
-  	\angle CAB\cong\angle BAC\iff m\angle CAB=m\angle BAC
+  	\textcolor{Green}{\measuredangle CBA=2\pi-\theta}\, \neq \, \textcolor{blue}{\theta=\measuredangle ABC} \tag{unless a straight edge}
   \]
-  \item[Analytic geometry] Reflex angles exist ($\ge\pi$). Reversed legs $\rightsquigarrow$ \emph{different radian measure}:
-  \[
-  	\measuredangle CAB=2\pi-\theta=2\pi-\measuredangle BAC \neq \measuredangle BAC \tag{unless a straight edge}
-  \]
-	\begin{minipage}[t]{0.79\linewidth}\vspace{-5pt}
-  	In the picture, $\textcolor{Green}{\measuredangle CAB}$ is \textcolor{red}{not} the radian measure ($	\textcolor{blue}{\theta}$) of $\angle CAB$! However,
-  	\[
-			\tcbhighmath{\text{Angles congruent $\Longleftrightarrow$ radian measures equal and $<\pi$}}
-		\]
-		As such, it is common to label angles in a triangle by their radian measure; standard convention is shown: e.g., ($A$, $a$, $\alpha$) for (point, length, angle).%\smallbreak
-	%Trigonometric functions may now be defined for all angles simultaneously.
+	\begin{minipage}[t]{0.77\linewidth}\vspace{-5pt}
+   	However, since one arrangement of legs produces a measure $\le\pi$,
+   	\[
+  		\tcbhighmath{\angle XYZ\cong \angle ABC \iff \measuredangle XYZ=\measuredangle ABC\ \text{ or }\ \measuredangle CBA \quad(\neq 0,\pi)}
+ 		\]
+
+		As such, we label angles in a triangle by their measures (degree or radian $<\pi$). Standard convention is shown: $(A,a,\alpha)\leftrightsquigarrow$ (point,\,length,\,angle).
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.2\linewidth}\vspace{-17pt}
-		\flushright\includegraphics{angle-notation}
+	\begin{minipage}[t]{0.2\linewidth}\vspace{-15pt}
+		\flushright\includegraphics[scale=0.95]{angle-notation}
 	\end{minipage}
 \end{description}
 
@@ -241,6 +241,7 @@ Since arc-length scales with radius, the definition is independent of the radius
 		\includegraphics[scale=0.95]{angles-trigbasic3}
 	\end{center}
 \end{example}
+
 
 \goodbreak
 
@@ -397,18 +398,19 @@ A triangle is described by six values: three side lengths and three angle measur
 
 \subsection{Isometries}\label{sec:klein}
 
-At the heart of elementary geometry is \emph{congruence}, the idea that geometric figures can be essentially the same without necessarily being equal. In analytic geometry, congruence may be described algebraically using \emph{functions}. This follows from the fact that two segments have the same length if and only if they are congruent.
+At the heart of elementary geometry is \emph{congruence}, the idea that geometric figures can be essentially the same without necessarily being equal. In analytic geometry, congruence is described algebraically using \emph{functions}. This is motivated by the fact that congruent segments have the same length.
 
 \begin{defn}{}{}
 	A function $f:\R^2\to\R^2$ is a \emph{(Euclidean) isometry} if it preserves lengths:\footnotemark
 	\[
 		\forall P,Q\in\R^2,\ d\bigl(f(P),f(Q)\bigr)=\nm{PQ}
 	\]
-	Two figures (segments, angles, triangles, etc.) are \emph{congruent} precisely when there is an isometry $f:\R^2\to\R^2$ mapping one to the other.
+	Two figures (segments, angles, triangles, etc.) are said to be \emph{isometric} (or \emph{congruent}) precisely when there is an isometry $f:\R^2\to\R^2$ mapping one to the other.
 \end{defn}
 
 \footnotetext{%
-	In ancient Greek, \emph{iso-metros} is literally \emph{same measure (length/distance)}.}
+	In ancient Greek, \emph{iso-metros} is literally \emph{same measure (length/distance)}.%
+}
 
 
 \begin{example}{}{isomsetup}
@@ -429,17 +431,10 @@ Isometric segments are certainly congruent. We should make sure the same holds f
 \end{lemm}
 
 \begin{proof}
-Since $f$ is an isometry, the sides of $\triangle PQR$ and $\triangle f(P)f(Q)f(R)$ are mutually congruent in pairs. The SSS triangle congruence theorem says that the angles are also mutually congruent.%\smallbreak
-% For part 2, let $t\in\R$ and consider the point $X_t=(1-t)P+tQ$.
-% \begin{itemize}
-%   \item Since $\nm{PX_t}=\nm{-t(P-Q)}=\nm{t}\nm{PQ}$, the point $f(X_t)$ must lie on the \emph{circle} with radius $\nm{t}\nm{PQ}$ centered at $f(P)$.
-%   \item Similarly $\nm{X_tQ}=\nm{1-t}\nm{PQ}\implies f(X_t)$ lies on the circle centered at $f(Q)$ with radius $\nm{1-t}\nm{PQ}$.
-% \end{itemize}
-%  Since $f$ preserves distances, these circles have a unique intersection point: that is,
-%  \[f(X_t)=(1-t)f(P)+tf(Q)\tag*{\qedhere}\]
+	Since $f$ is an isometry, the sides of $\triangle PQR$ and $\triangle f(P)f(Q)f(R)$ are mutually congruent in pairs. The SSS triangle congruence theorem says that the angles are also mutually congruent.
 \end{proof}
 
-
+This helps justify the term \emph{congruent} in the Definition. Examples \ref{ex:isomexs} and Exercise \ref{exs:isocong} expand this idea.
 
 \begin{example*}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.32\linewidth]{\ref{ex:isomsetup}, cont}{}
 	\textcolor{red}{Warning}: Isometries can \emph{reverse orientation}! In the picture,
@@ -472,7 +467,7 @@ It thus suffices to describe the origin-preserving isometries $g$. For these, we
 	    \item $g(X_r)$ is a distance $\textcolor{blue}{\nm r=\nm{OX_r}}$ from the origin $O=g(O)$.
 	    \item $g(X_r)$ is a distance $\textcolor{Green}{\nm{1-r}=\nm{QX_r}}$ from $g(Q)$.
 	  \end{itemize}
-	  $g(X_r)$ therefore lies on the intersection of two circles, which intersect at a single point: we conclude that
+	  $g(X_r)$ therefore lies on two circles, which necessarily intersect at a single point. We conclude that
 	  \[
 	  	g(rQ)=rg(Q)
 	  \]
@@ -489,11 +484,11 @@ It thus suffices to describe the origin-preserving isometries $g$. For these, we
 		\[
 			g(1,0)=S_\theta:=\bigl(\cos\theta,\sin\theta\bigr)
 		\]
-		for some $\theta\in[0,2\pi)$. By preservation of length and angle (Lemma \ref{lemm:isomlinepreserve}), any other point $S_\phi=(\cos\phi,\sin\phi)$ on the unit circle must therefore be mapped to one of two points
+		for some $\theta\in[0,2\pi)$. By preservation of length and angle (Lemma \ref{lemm:isomlinepreserve}), any other point $S_\phi=(\cos\phi,\sin\phi)$ on the unit circle must be mapped to one of two points
 		\[
 			g(\textcolor{blue}{S_\phi})=\textcolor{Green}{S_{\theta\pm\phi}} =\bigl(\cos(\theta\pm\phi),\sin(\theta\pm\phi)\bigr)
 		\]
-		The angle $\phi$ is transferred to one side of the ray $\ray{OS_\theta}$.
+		The angle $\phi$ is therefore transferred to one side of the ray $\ray{OS_\theta}$.
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.34\linewidth}\vspace{0pt}
@@ -501,7 +496,7 @@ It thus suffices to describe the origin-preserving isometries $g$. For these, we
 	\end{minipage}
 \end{enumerate}
 
-Putting these together by writing $X=rS_\phi=(r\cos\phi,r\sin\phi)$ in polar co-ordinates, we conclude that $g$ has one of two forms:
+By writing $X=rS_\phi=(r\cos\phi,r\sin\phi)$ in polar co-ordinates and combining the above observations, we conclude that $g$ has one of two forms:
 \begin{center}
 	\begin{tabular}{c@{\qquad}c}
 		\includegraphics[scale=0.95]{isom-rot}
@@ -512,7 +507,7 @@ Putting these together by writing $X=rS_\phi=(r\cos\phi,r\sin\phi)$ in polar co-
 		Reflection across the \textcolor{Magenta}{line} making
 		\\
 		&
-		angle $\frac\theta 2$ with positive $x$-axis
+		angle $\frac\theta 2$ with the positive $x$-axis
 	\end{tabular}
 \end{center}
 
@@ -521,7 +516,7 @@ Putting these together by writing $X=rS_\phi=(r\cos\phi,r\sin\phi)$ in polar co-
 	\[
 		f(X)=g(X)+C
 	\]
-	where $g$ is either a rotation about the origin, or a reflection across a line through the origin. 
+	where $g$ is a rotation about the origin or a reflection across a line through the origin. 
 \end{thm}
 
 \goodbreak
@@ -682,6 +677,8 @@ In 1872, Felix Klein suggested that the geometry of a set is the study of its \e
 		\end{enumerate}
 		
 		
+		\item\label{exs:isocong} Suppose $\triangle ABC\cong\triangle PQR$. Prove that there exists an isometry $f:\R^2\to\R^2$ mapping one triangle to the other. How many distinct such isometries could there be, and how does this number depend on the triangles?
+		
 		
 		\item Make an argument involving circle intersections (see page \pageref{affinity}) to prove that for any isometry $f$,
 		\[
@@ -696,10 +693,7 @@ In 1872, Felix Klein suggested that the geometry of a set is the study of its \e
 	    \item Verify that the following composition $f_{A,\vc}\circ f_{I,\vd}\circ f_{A,\vc}^{-1}$ is a translation.
 	  \end{enumerate}
 		\emph{Part (a) can be written using augmented matrices: $(A\,|\,\vc)(B\,|\,\vd):=(AB\,|\,\vc+A\vd)$.\\
-		If you know group theory, parts (a) and (b) are the closure and inverse properties for the group of Euclidean isometries $E$. Part (c) says that the translations $T$ form a normal subgroup; $E$ is therefore a semi-direct product of $T$ and the orthogonal group of origin-preserving isometries
-		\[
-			E=T\rtimes O_2(\R)
-		\]
+		If you know group theory, parts (a) and (b) are the closure and inverse properties for the group of Euclidean isometries $E$. Part (c) says that the translations $T$ form a normal subgroup; $E$ is therefore a semi-direct product of $T$ and the orthogonal group of origin-preserving isometries $E=T\rtimes O_2(\R)$.
 		}
 	
 	\end{enumerate}

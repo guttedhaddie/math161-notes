@@ -19,6 +19,6 @@ draw("$\theta$",arc(A,0.45*unit(B-A),0.3*unit(C-A),CCW),blue,ArcArrow);
 //draw("$-\theta$",arc(A,0.6*unit(C-A),0.6*unit(B-A),CW),N,orange,ArcArrow);
 draw("$2\pi-\theta$",arc(A,0.35*unit(C-A),0.35*unit(B-A),CCW),heavygreen,ArcArrow);
 
-dot(Label("$A$",black),A,S,red);
-dot(Label("$B$",black),B,S,red);
+dot(Label("$B$",black),A,S,red);
+dot(Label("$A$",black),B,S,red);
 dot(Label("$C$",black),C,S,red);
