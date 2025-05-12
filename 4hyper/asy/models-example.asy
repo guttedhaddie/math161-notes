@@ -12,11 +12,15 @@ size(170,0);
 path c=unitcircle;
 
 draw(unitcircle);
-pair P=(0,1/2);
-pair Q=(1/2,1/3);
+//pair P=(0,1/2);
+//pair Q=(1/2,1/3);
+pair P=(1/3,1/2);
+pair Q=(1/2,0);
 
-real a=19/36;
-real b=5/4;
+//real a=19/36;
+//real b=5/4;
+real a=5/4;
+real b=19/36;
 real r=sqrt(a^2+b^2-1);
 pair C=(a,b);
 pair O=(0,0);
@@ -26,21 +30,19 @@ filldraw(c,0.2grey+0.8white,white);
 
 pair[] SS=intersectionpoints(c,h);
 
-draw(arc(C,SS[1],SS[0]),blue);
-draw(arc(C,SS[0],SS[1]),blue+dashed);
+draw(arc(C,SS[0],SS[1]),blue);
+draw(arc(C,SS[1],SS[0]),blue+dashed);
 
 
-//draw(h,dotted+blue);
-
-draw("$1$",SS[1]--(0,0),dashed);
-draw("$r$",(a,b)--SS[1],dashed);
+draw("$1$",(0,0)--SS[1],dashed);
+draw("$r$",SS[1]--(a,b),dashed);
 draw((a,b)--(0,0),dashed);
 draw(SS[1]-0.1unit(SS[1])--SS[1]-0.1unit(SS[1])+0.1unit((a,b)-SS[1])--SS[1]+0.1unit((a,b)-SS[1]));
 
 dot(Label("$O$",black),(0,0),SW,red);
-dot(Label("$P$",black),P,N,red);
-dot(Label("$Q$",black),Q,N,red);
-dot(Label("$C=(a,b)$",black),(a,b),NE,red);
+dot(Label("$P$",black),P,W,red);
+dot(Label("$Q$",black),Q,dir(20),red);
+dot(Label("$C=(a,b)$",black),(a,b),dir(80),red);
 
 
 

@@ -188,13 +188,15 @@ We now show that drawing \emph{acute} summit angles is justified by the Saccheri
 
 \subsection{Models of Hyperbolic Geometry}\label{sec:hyp-models}
 
-In the 1820-30s, János Bolyai, Carl Friedrich Gauss and Nikolai Lobachevsky independently took the next step, each describing versions of non-Euclidean geometry.\footnote{Bolyai indeed is the source of the term `absolute geometry.'} Rather than attempting to establish the parallel postulate as a theorem within Euclidean geometry, a new geometry was \emph{defined} based on the first four of Euclid's postulates plus an alternative to the parallel postulate:
+In the 1820-30s, János Bolyai, Carl Friedrich Gauss and Nikolai Lobachevsky independently took the next step, each describing versions of non-Euclidean geometry.\footnote{Bolyai indeed is the source of the term `absolute geometry.'} Rather than attempting to establish the parallel postulate as a theorem within Euclidean geometry, a new geometry was defined based on an alternative to the parallel postulate.
 
 \begin{axiom}{Bolyai--Lobachevsky/Hyperbolic Postulate}{}
 	Given a line $\ell$ and a point $P\not\in\ell$, there exist \emph{at least two} parallel lines to $\ell$ through $P$.
 \end{axiom}
 
-The resulting axiomatic system\footnote{We assume all of Hilbert's axioms, replacing Playfair axiom with the hyperbolic postulate.} is called \emph{hyperbolic geometry.} Consistency was proved in the late 1800s by Beltrami, Klein and Poincaré, each of whom created models by defining point, line, etc., in novel ways. One of the simplest is named for Poincaré, though was first proposed by Beltrami.
+\emph{Hyperbolic Geometry} is the resulting axiomatic system: Hilbert with Playfair's axiom replaced by the hyperbolic postulate. Consistency was proved in the late 1800s by Beltrami, Klein and Poincaré, each of whom created models by defining point, line, etc., in novel ways. One of the simplest is named for Poincaré, though it was first proposed by Beltrami.\footnote{%
+	The key results of hyperbolic geometry---including almost everything in Sections \ref{sec:hypparallel}, \ref{sec:omegatri} \& \ref{sec:hyparea}---can be discussed synthetically without reference to a model. While efficient, such an approach would be both ahistorical and masochistic for a first exposure: an explicit model allows us to visualize theorems and to verify examples via calculation.
+}
 
 \begin{defn}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.3\linewidth]{}{poincaredisk}
 	The \emph{Poincaré disk} is the interior of the unit circle
@@ -210,15 +212,13 @@ The resulting axiomatic system\footnote{We assume all of Hilbert's axioms, repla
 	\flushright\includegraphics{models-parallels}
 \end{defn}
 
-Since it depends only on the incidence axioms, there exists a unique hyperbolic line joining any two points in the Poincaré disk.\par
+By the incidence axioms, there exists a unique hyperbolic line joining any two points in the Poincaré disk. Such may straightforwardly be described using equations in analytic geometry.
 
-Hyperbolic lines may straightforwardly be described using equations in analytic geometry.
-
-\begin{lemm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.35\linewidth]{}{hypline}
+\begin{lemm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.37\linewidth]{}{hypline}
 	Every hyperbolic line in the Poincaré disk model is one of the following:
 	\begin{itemize}
 	  \item A diameter passing through $(c,d)\neq (0,0)$ with Euclidean equation $dx=cy$.
-	  \item The arc of a (Euclidean) circle with equation
+	  \item The \textcolor{blue}{arc} of a (Euclidean) circle with equation
 		\[
 			x^2+y^2-2ax-2by+1=0\quad\text{where}\quad a^2+b^2>1
 		\]
@@ -228,26 +228,27 @@ Hyperbolic lines may straightforwardly be described using equations in analytic 
 		\]
 	\end{itemize}
 	\tcblower
-	\flushright\includegraphics[scale=0.9]{models-example}
+	\flushright\includegraphics[scale=0.95]{models-example}
 \end{lemm}
+
 \goodbreak
 
 
 \begin{example}{}{}
-	We compute the hyperbolic line through $P=(0,\frac 12)$ and $Q=(\frac 12,\frac 13)$ in the Poincaré disk: this is the picture shown in Lemma \ref{lemm:hypline}.\smallbreak
+	We compute the hyperbolic line through $P=(\frac 13,\frac 12)$ and $Q=(\frac 12,0)$ in the Poincaré disk: this is the picture shown in Lemma \ref{lemm:hypline}.\smallbreak
 	Substitute into $x^2+y^2-2ax-2by+1=0$ to obtain a system of equations for $a,b$:
 	\[
 		\begin{cases}
-			\frac 14-b+1=0\\
-			\frac 14+\frac 19-a-\frac 23b+1=0
+			\frac 19+\frac 14-\frac 23a-b+1=0\\
+			\frac 14-a+1=0
 		\end{cases}
-		\implies (a,b)=\left(\frac{19}{36},\frac 54\right)
+		\implies (a,b)=\left(\frac 54,\frac{19}{36}\right)
 	\]
 	The required hyperbolic line $\lin{PQ}$ therefore has equation
 	\[
-		x^2+y^2-\frac{19}{18}x-\frac{5}{2}y+1=0
+		x^2+y^2-\frac 52x-\frac{19}{18}y+1=0
 		\quad\text{or}\quad
-		\left(x-\frac{19}{36}\right)^2+\left(y-\frac 54\right)^2 =\frac{545}{648}
+		\left(x-\frac 54\right)^2+\left(y-\frac{19}{36}\right)^2 =\frac{545}{648}
 	\]
 \end{example}
 
@@ -702,7 +703,7 @@ Note that AAA is a \emph{congruence} theorem in hyperbolic geometry, not a \emph
 
 
 
-\subsection{Omega-triangles}
+\subsection{Omega-triangles}\label{sec:omegatri}
 
 \begin{minipage}[t]{0.7\linewidth}\vspace{-5pt}
 	Recall that limiting parallels (Definition \ref{defn:limparallel}) `meet' at an omega-point.
