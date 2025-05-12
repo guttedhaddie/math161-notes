@@ -645,6 +645,10 @@ Note that AAA is a \emph{congruence} theorem in hyperbolic geometry, not a \emph
 	    \item Two hyperbolic lines cannot have more than one common perpendicular.
 	    \item\label{exs:saccherisummitcong} Saccheri quadrilaterals with congruent summits and summit angles are congruent.
 	  \end{enumerate}
+	   
+	  
+	  \item Suppose $\ell$ intersects $m$ at a right-angle and that $m,n$ are parallel. In \emph{Euclidean} geometry, prove that $\ell$ intersects $n$ at a right-angle. What are the possible arrangements in \emph{hyperbolic} geometry?
+	  
 	  
 	  \item Let $\ell$ be the line $x^2+y^2-4x+2y+1=0$ and drop a perpendicular from $O$ to $Q\in\ell$.
 	  \begin{enumerate}
@@ -661,11 +665,12 @@ Note that AAA is a \emph{congruence} theorem in hyperbolic geometry, not a \emph
 	    \[
 	    	\pm 2ry=(1-r^2)x
 	    \]
-	    (\emph{Hint: what does symmetry tell you about the location of the Euclidean center of $\ell$?})
+	    %(\emph{Hint: what does symmetry tell you about the location of the Euclidean center of $\ell$?})
 	    \item Let $\mu$ be the angle of parallelism of $P$ relative to $\ell$ and $\delta=d(P,Q)$ the hyperbolic distance. Prove that $\cosh\delta=\csc\mu$.\par
 	    (\emph{Hint: $\csc^2\!\mu=1+\cot^2\!\mu=1+\frac 1{\tan^2\!\mu}=\ldots$})
 	    \item By differentiating, verify the claim that $\delta$ and $\mu$ are bijectively related.
 	  \end{enumerate}
+	   
 	  
 	  \item\label{exs:triless180} We work in \emph{absolute geometry}.
 	  \begin{enumerate}
@@ -673,26 +678,32 @@ Note that AAA is a \emph{congruence} theorem in hyperbolic geometry, not a \emph
 	    \item Suppose $A$, $B$ and $P$ are non-collinear and drop the perpendicular from $P$ to $Q\in\overleftrightarrow{AB}$.\par
 	    If $P$ lies between the perpendiculars $\ell,m$ to $\overleftrightarrow{AB}$ through $A$ and $B$, prove that $Q$ is interior to $\cl{AB}$.\par
 	    (\emph{Hint: show that the other cases are impossible})
-	    \item Suppose there exists a triangle with angle sum \ang{180}. Show that there exists a \emph{right-triangle} with angle sum \ang{180} and therefore a rectangle.
+	    %\item Suppose there exists a triangle with angle sum \ang{180}. Show that there exists a \emph{right-triangle} with angle sum \ang{180} and therefore a rectangle.
 	  	\end{minipage}\hfill
-	  	\begin{minipage}[t]{0.35\linewidth}\vspace{0pt}
-	  		\flushright\includegraphics{basic-tri2}
-	  	\end{minipage}\smallbreak
+	  	\begin{minipage}[t]{0.35\linewidth}\vspace{-20pt}
+	  		\flushright\includegraphics[scale=0.95]{basic-tri2}
+	  	\end{minipage}%\smallbreak
+	  	%(\emph{Since rectangles are impossible in hyperbolic geometry, this proves part 2 of Theorem \ref{thm:hyptriangle}})
+	  \end{enumerate}
+	  
+	  \item[]\begin{enumerate}\setcounter{enumii}{1}
+	    \item Suppose there exists a triangle with angle sum \ang{180}. Show that there exists a \emph{right-triangle} with angle sum \ang{180} and therefore a rectangle.\par
 	  	(\emph{Since rectangles are impossible in hyperbolic geometry, this proves part 2 of Theorem \ref{thm:hyptriangle}})
 	  \end{enumerate}
 	  
 	  
 	  \item\label{exs:aaacongproof} We prove the AAA congruence theorem (Theorem \ref{thm:hyptriangle}, part 3).\par
 	  Suppose $\triangle ABC$ and $\triangle DEF$ are \emph{non-congruent} but have angles congruent in pairs. WLOG assume $\cl{DE}<\cl{AB}$. By uniqueness of angle/segment transfer, there exist unique points $G\in\cl{AB}$ and $H\in\ray{AC}$ such that (SAS) $\triangle DEF\cong\triangle AGH$.\par
-	  \begin{minipage}[t]{0.6\linewidth}\vspace{-5pt}
-	  	The picture shows the three possible arrangements.
+	  \begin{minipage}[t]{0.6\linewidth}\vspace{-8pt}
+	  	The picture shows the three possible arrangements. In each case explain why we have a contradiction.
 	  	\begin{enumerate}\itemsep0pt
 	    	\item $H$ is interior to $\cl{AC}$.
 	    	\item $H=C$.
 	    	\item $C$ lies between $A$ and $H$.
 	  	\end{enumerate}
-	  	In each case, explain why we have a contradiction.
-	   \end{minipage}\hfill\begin{minipage}[t]{0.39\linewidth}\vspace{-25pt}
+	   \end{minipage}
+	   \hfill
+	   \begin{minipage}[t]{0.39\linewidth}\vspace{-25pt}
 	    \flushright\includegraphics[scale=0.95]{basic-aaa}
 	   \end{minipage}
 	\end{enumerate}
