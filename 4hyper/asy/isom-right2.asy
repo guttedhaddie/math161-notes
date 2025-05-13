@@ -7,7 +7,7 @@ texpreamble("\usepackage{amsmath}
 ");
 import graph;
 
-size(120);
+size(110);
 
 path c=unitcircle;
 

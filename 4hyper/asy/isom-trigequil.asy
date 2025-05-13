@@ -7,7 +7,7 @@ texpreamble("\usepackage{amsmath}
 ");
 import graph;
 
-size(130);
+size(115);
 
 path c=unitcircle;
 
@@ -67,7 +67,7 @@ label("$c$",0.5(A+B)+0.12NE,red);
 
 
 draw("30\textdegree",arc(B,0.08,-18,11),heavygreen);
-draw(Label("30\textdegree",Relative(0.4)),arc(C,0.05,72,115),red);
+draw(Label("30\textdegree",Relative(0.35)),arc(C,0.05,72,115),red);
 draw(Label("30\textdegree",Relative(0.6)),arc(A,0.05,139,178),blue);
 
 

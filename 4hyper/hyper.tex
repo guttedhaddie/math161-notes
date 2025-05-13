@@ -166,18 +166,18 @@ We now show that drawing \emph{acute} summit angles is justified by the Saccheri
 
 		  \item Use the first picture to give an alternative proof of Theorem \ref{thm:summit90}.
 		
-			\item\label{exs:rectanglesplit} Suppose $\square ABCD$ has four right-angles (second picture). Show that $\cl{AC}$ splits $\square ABCD$ into two congruent triangles, and conclude that the opposite sides are congruent.\par
+			\item\label{exs:rectanglesplit} Suppose $\square ABCD$ has four right-angles (second picture). Apply the Saccheri--Legendre Theorem to prove that $\cl{AC}$ splits $\square ABCD$ into two congruent triangles, and conclude that the opposite sides are congruent.\par
 			Why is this question easier in Euclidean geometry?
 	
-			\item\label{exs:saccherisplit} Suppose two Saccheri quadrilaterals have congruent bases ($\cl{AB}$) and perpendicular sides ($\cl{AD},\cl{BC}$). Prove that they are congruent.
-		    		
-			\item (Hard!)\lstsp Suppose Saccheri quadrilaterals have congruent summits and perpendicular sides. Prove that the quadrilaterals are congruent.
+			\item\label{exs:saccherisplit} A pair of Saccheri quadrilaterals have congruent bases (e.g., $\cl{AB}$) and perpendicular sides ($\cl{AD},\cl{BC}$). Prove that the quadrilaterals are congruent.
 		\end{minipage}
 		\hfill
-		\begin{minipage}[t]{0.33\linewidth}\vspace{-8pt}
+		\begin{minipage}[t]{0.32\linewidth}\vspace{-8pt}
 			\flushright\includegraphics[scale=0.9]{history-saccheri2}\\
 			\includegraphics[scale=0.9]{basic-rect}
 		\end{minipage}	
+		    		
+			\item (Hard!)\lstsp Suppose Saccheri quadrilaterals have congruent summits and perpendicular sides. Prove that the quadrilaterals are congruent.
 	\end{enumerate}
 
 \end{exercises}
@@ -278,9 +278,10 @@ The undefined terms \emph{point, line, on} and \emph{between} now make sense. To
 	\]
 \end{lemm}
 
-\footnotetext{It seems reasonable for hyperbolic functions to play some role in hyperbolic geometry! As a primer:
+\footnotetext{%
+	It seems reasonable for hyperbolic functions to play some role in hyperbolic geometry! For reference:
   \[
-  	\cosh x=\frac{e^x+e^{-x}}2,\quad \sinh x=\frac{e^x-e^{-x}}2,\quad\tanh x=\frac{\sinh x}{\cosh x}=\frac{e^x-e^{-x}}{e^x+e^{-x}}\quad\text{and}\quad\cosh^{-1}x=\ln(x+\sqrt{x^2-1})
+  	\cosh x=\frac{e^x+e^{-x}}2,\quad \sinh x=\frac{e^x-e^{-x}}2,\quad \cosh^2x-\sinh^2x=1,\quad\cosh^{-1}x=\ln(x+\sqrt{x^2-1})
   \]
   \vspace{-15pt}
 }
@@ -545,7 +546,7 @@ The proof depends crucially on ideas from analysis, particularly continuity \& s
 \goodbreak
 
 
-The picture suggests a bijective relationship between $\mu$ and the perpendicular distance. Here it is; we postpone a simplified argument to Exercise \ref*{sec:hypparallel}.\ref{exs:angparallelism}; the full result follows from a discussion of omega-triangles in the next section.
+The picture suggests a bijective relationship between $\mu$ and the perpendicular distance. Here it is; we postpone a simplified argument to Exercise \ref*{sec:hypparallel}.\ref{exs:angparallelism}, and the full result to the next section.%follows from a discussion of omega-triangles in
 
 \begin{cor}{}{parangleformula}
 	The perpendicular distance $\delta=d(P,Q)$ and the angle of parallelism are related via
@@ -555,7 +556,7 @@ The picture suggests a bijective relationship between $\mu$ and the perpendicula
 \end{cor}
 
 
-\begin{examples}{}{}
+\begin{examples}{}{hypperp}
 	\exstart Let $\textcolor{red}{\ell}$ be the hyperbolic line $x^2+y^2-4x+1=0$.
 	\begin{enumerate}\setcounter{enumi}{1}
 		\begin{minipage}[t]{0.7\linewidth}\vspace{-5pt}
@@ -566,7 +567,7 @@ The picture suggests a bijective relationship between $\mu$ and the perpendicula
 		\end{minipage}
 		\hfill
 		\begin{minipage}[t]{0.29\linewidth}\vspace{-25pt}
-		  \flushright\includegraphics{basic-parallels4}
+		  \flushright\includegraphics[scale=0.95]{basic-parallels4}
 		\end{minipage}\par\vspace{-15pt}
 		\[
 			\delta=d(P,Q)=\ln\frac{1+(2-\sqrt 3)}{1-(2-\sqrt 3)}=\ln\sqrt 3 \leftrightsquigarrow e^{-\delta}=\frac 1{\sqrt 3}=\tan\frac{\mu}2
@@ -585,7 +586,7 @@ The picture suggests a bijective relationship between $\mu$ and the perpendicula
 		\end{minipage}
 		\hfill
 		\begin{minipage}[t]{0.31\linewidth}\vspace{0pt}
-			\flushright\includegraphics{basic-parallels3}
+			\flushright\includegraphics[scale=0.95]{basic-parallels3}
 		\end{minipage}\smallbreak
 		For $\textcolor{blue}{\overleftrightarrow{P\Omega}}$, substitute into the usual expression $x^2+y^2-2ax-2by+1=0$ and implicitly differentiate:
 		\[
@@ -618,22 +619,26 @@ We finish this section three important differences between hyperbolic and Euclid
 	\end{enumerate}
 \end{thm}
 
-Note that AAA is a \emph{congruence} theorem in hyperbolic geometry, not a \emph{similarity} theorem (compare with Theorem \ref{thm:aaasim}). Also revisit the observations on page \pageref{pg:absolute}. These results largely show that Euclid's arguments making use of the parallel postulate actually \emph{require} it! 
+Note that AAA is a \emph{congruence} theorem in hyperbolic geometry, not a \emph{similarity} theorem (compare with Theorem \ref{thm:aaasim}). Also revisit the observations on page \pageref{pg:absolute}; the Theorem largely shows that Euclid's arguments making use of the parallel postulate genuinely \emph{require} it! 
 
 
 \begin{proof}
 	Given a rectangle $\square ABCD$, reflect across $\cl{CD}$ (Exercise \ref*{sec:hyp1}.\ref{exs:saccherisplit}) and repeat to obtain an infinite family of congruent rectangles. Let $P\in\cl{CD}$ and drop perpendiculars to $R\in\cl{AB}$ and $C_1$ as shown.\smallbreak
 	$\square PRBC$ is a rectangle: if not, then one of $\square ARPD$ or $\square PRBC$ would have angle sum exceeding \ang{360}, contradicting Saccheri--Legendre (Theorem \ref{thm:saccleg}). Similarly $\square DPC_1D_1$ is a rectangle.\smallbreak
-	By Exercise \ref*{sec:hyp1}.\ref{exs:rectanglesplit}, $\textcolor{Magenta}{\ray{BP}}$ splits $\square PRBC$ into a pair of congruent triangles. In particular, $\textcolor{Magenta}{\ray{BP}}$ crosses $\cl{CD}$ at the \textcolor{orange}{same angle} as it leaves $B$. We find ourselves in the original configuration: the ray $\textcolor{Magenta}{\ray{BP}}$ emanates from the upper-right vertex of $\square DPC_1D_1$ at the \textcolor{orange}{same angle} as it does for $\square ABCD$!\smallbreak
-	Iterate the process to obtain the picture, each time dropping the perpendicular from $P_k$ to $\cl{CD}$ to produce the \emph{equidistant} sequence $Q_1,Q_2,Q_3,\ldots$ Since $\cl{CD}$ is \emph{finite,} this eventually\footnotemark{} passes $D$: some $Q_n$ lies on the opposite side of $\lin{AD}$. It follows that $P_n\in\textcolor{Magenta}{\ray{BP}}$ does also, whence $\textcolor{Magenta}{\ray{BP}}$ intersects $\lin{AD}$.
+	By Exercise \ref*{sec:hyp1}.\ref{exs:rectanglesplit}, $\textcolor{Magenta}{\ray{BP}}$ splits $\square PRBC$ into a pair of congruent triangles. In particular, $\textcolor{Magenta}{\ray{BP}}$ crosses $\cl{CD}$ at the \textcolor{orange}{same angle} as it leaves $B$. By vertical angles at $P$, the ray $\textcolor{Magenta}{\ray{BP}}$ emanates from the upper-right vertex of $\square DPC_1D_1$ at the \textcolor{orange}{same angle} as it does for $\square ABCD$.\smallbreak
+	Iterate the process to obtain the picture, each time dropping the perpendicular from $P_k$ to $\cl{CD}$ to produce the \emph{equidistant} sequence $Q_1,Q_2,Q_3,\ldots$ (the fact that all the small rectangles are congruent is essentially Exercise \ref*{sec:hyp1}.\ref{exs:saccherisplit} again). Since $\cl{CD}$ is \emph{finite,} the sequence $(Q_k)$ eventually\footnotemark{} passes $D$: some $Q_n$ lies on the opposite side of $\lin{AD}$. It follows that $P_n\in\textcolor{Magenta}{\ray{BP}}$ does also, whence $\textcolor{Magenta}{\ray{BP}}$ intersects $\lin{AD}$.
 	\begin{center}
 		\includegraphics[scale=0.95]{basic-rect4}\vspace{-4pt}
 	\end{center}
-	Since $P\in\cl{CD}$ was generic, we see that any ray based at $B$ on the same side as $\cl{AD}$ intersects $\lin{AD}$. The angle of parallelism of $B$ with respect to $\lin{AD}$ is therefore \ang{90}, contradicting the hyperbolic postulate.\smallbreak
+	Since $P\in\cl{CD}$ was generic, it follows that \emph{any} ray based at $B$ on the same side as $\cl{AD}$ must intersect $\lin{AD}$. Otherwise said, $\lin{BC}$ is the \emph{only parallel} to $\lin{AD}$ through $B$, contradicting the hyperbolic postulate.\smallbreak
 	Parts 2 and 3 are addressed in Exercises \ref{exs:triless180} and \ref{exs:aaacongproof}.
 \end{proof}
 
-\footnotetext{This is the Archimedean property from analysis: $a>b\Longrightarrow \exists n\in\N$ such that $nb>a$.}
+\vspace{-8pt}
+
+\footnotetext{%
+	This is the Archimedean property from analysis: $a>b\Longrightarrow \exists n\in\N$ such that $nb>a$.%
+}
 
 \goodbreak
 
@@ -650,46 +655,56 @@ Note that AAA is a \emph{congruence} theorem in hyperbolic geometry, not a \emph
 	  \item Suppose $\ell$ intersects $m$ at a right-angle and that $m,n$ are parallel. In \emph{Euclidean} geometry, prove that $\ell$ intersects $n$ at a right-angle. What are the possible arrangements in \emph{hyperbolic} geometry?
 	  
 	  
+	  \item Verify $\cosh\delta=\csc\mu$ for the point $P=(0,0)$ and the hyperbolic line $(x-1)^2+(y-1)^2=1$.
+	  
+	  
 	  \item Let $\ell$ be the line $x^2+y^2-4x+2y+1=0$ and drop a perpendicular from $O$ to $Q\in\ell$.
 	  \begin{enumerate}
 	    \item Explain why $Q$ has co-ordinates $(\smash{\frac 2{\sqrt 5}t,-\frac 1{\sqrt 5}t})$ for some $t\in(0,1)$.
 	    \item Show that the hyperbolic distance $\delta=d(O,Q)$ of $\ell$ from the origin is $\ln\frac{1+\sqrt 5}2$.
-	    \item $\Omega=(0,-1)$ is an omega-point for $\ell$. Compute the angle of parallelism $\mu=\measuredangle QO\Omega$ explicitly and check that $\cosh\delta=\csc\mu$.
+	    \item Let $\Omega=(0,-1)$. Compute $\mu=\measuredangle QO\Omega$ explicitly and check that $\cosh\delta=\csc\mu$.
 		\end{enumerate}
 		
 	    
 		\item\label{exs:angparallelism} 
-		Suppose $P=(0,0)$ is the origin, let $0<r<1$ and $Q=(r,0)$. Also let $\ell$ be the hyperbolic line passing through $Q$ at right-angles to $\cl{PQ}$.
+		We generalize Example \ref{ex:hypperp}.1. Suppose $P=(0,0)$ is the origin, let $0<r<1$ and $Q=(r,0)$. Also let $\ell$ be the hyperbolic line passing through $Q$ at right-angles to $\cl{PQ}$.
 	  \begin{enumerate}
 	    \item Find the equation of $\ell$ and prove that its limiting parallels through $P$ have equations
 	    \[
 	    	\pm 2ry=(1-r^2)x
 	    \]
-	    %(\emph{Hint: what does symmetry tell you about the location of the Euclidean center of $\ell$?})
+	    (\emph{Hint: what does symmetry tell you about the location of the Euclidean center of $\ell$?})
 	    \item Let $\mu$ be the angle of parallelism of $P$ relative to $\ell$ and $\delta=d(P,Q)$ the hyperbolic distance. Prove that $\cosh\delta=\csc\mu$.\par
 	    (\emph{Hint: $\csc^2\!\mu=1+\cot^2\!\mu=1+\frac 1{\tan^2\!\mu}=\ldots$})
 	    \item By differentiating, verify the claim that $\delta$ and $\mu$ are bijectively related.
 	  \end{enumerate}
-	   
 	  
-	  \item\label{exs:triless180} We work in \emph{absolute geometry}.
+	  \item\label{exs:triless180} We work in neutral geometry. Suppose $\triangle ABC$ has longest side $\cl{AB}$ and drop the perpendicular from $C$ to $M\in\cl{AB}$.
 	  \begin{enumerate}
-	    \begin{minipage}[t]{0.64\linewidth}\vspace{0pt}
-	    \item Suppose $A$, $B$ and $P$ are non-collinear and drop the perpendicular from $P$ to $Q\in\overleftrightarrow{AB}$.\par
-	    If $P$ lies between the perpendiculars $\ell,m$ to $\overleftrightarrow{AB}$ through $A$ and $B$, prove that $Q$ is interior to $\cl{AB}$.\par
-	    (\emph{Hint: show that the other cases are impossible})
-	    %\item Suppose there exists a triangle with angle sum \ang{180}. Show that there exists a \emph{right-triangle} with angle sum \ang{180} and therefore a rectangle.
-	  	\end{minipage}\hfill
-	  	\begin{minipage}[t]{0.35\linewidth}\vspace{-20pt}
-	  		\flushright\includegraphics[scale=0.95]{basic-tri2}
-	  	\end{minipage}%\smallbreak
-	  	%(\emph{Since rectangles are impossible in hyperbolic geometry, this proves part 2 of Theorem \ref{thm:hyptriangle}})
-	  \end{enumerate}
-	  
-	  \item[]\begin{enumerate}\setcounter{enumii}{1}
+	    \item Prove that $M$ is interior to $\cl{AB}$.\par
+	    (\emph{Hint: Use Exercise \ref*{sec:hilbert2}.\ref{ex:euclidi19} to first show that $C$ lies strictly between the perpendiculars at $A,B$})
 	    \item Suppose there exists a triangle with angle sum \ang{180}. Show that there exists a \emph{right-triangle} with angle sum \ang{180} and therefore a rectangle.\par
 	  	(\emph{Since rectangles are impossible in hyperbolic geometry, this proves part 2 of Theorem \ref{thm:hyptriangle}})
-	  \end{enumerate}
+	 	\end{enumerate}
+	  
+% 	  \item\label{exs:triless180} We work in \emph{absolute geometry}.
+% 	  \begin{enumerate}
+% 	    \begin{minipage}[t]{0.64\linewidth}\vspace{0pt}
+% 	    \item Suppose $A$, $B$ and $P$ are non-collinear and drop the perpendicular from $P$ to $Q\in\overleftrightarrow{AB}$.\par
+% 	    If $P$ lies between the perpendiculars $\ell,m$ to $\overleftrightarrow{AB}$ through $A$ and $B$, prove that $Q$ is interior to $\cl{AB}$.\par
+% 	    (\emph{Hint: show that the other cases are impossible})
+% 	    %\item Suppose there exists a triangle with angle sum \ang{180}. Show that there exists a \emph{right-triangle} with angle sum \ang{180} and therefore a rectangle.
+% 	  	\end{minipage}\hfill
+% 	  	\begin{minipage}[t]{0.35\linewidth}\vspace{-20pt}
+% 	  		\flushright\includegraphics[scale=0.95]{basic-tri2}
+% 	  	\end{minipage}%\smallbreak
+% 	  	%(\emph{Since rectangles are impossible in hyperbolic geometry, this proves part 2 of Theorem \ref{thm:hyptriangle}})
+% 	  \end{enumerate}
+	  
+% 	  \item[]\begin{enumerate}\setcounter{enumii}{1}
+% 	    \item Suppose there exists a triangle with angle sum \ang{180}. Show that there exists a \emph{right-triangle} with angle sum \ang{180} and therefore a rectangle.\par
+% 	  	(\emph{Since rectangles are impossible in hyperbolic geometry, this proves part 2 of Theorem \ref{thm:hyptriangle}})
+% 	  \end{enumerate}
 	  
 	  
 	  \item\label{exs:aaacongproof} We prove the AAA congruence theorem (Theorem \ref{thm:hyptriangle}, part 3).\par
@@ -720,7 +735,7 @@ Note that AAA is a \emph{congruence} theorem in hyperbolic geometry, not a \emph
 	Recall that limiting parallels (Definition \ref{defn:limparallel}) `meet' at an omega-point.
 	
 	\begin{defn}{}{}
-		An \emph{omega-triangle} or \emph{ideal-triangle} is a `triangle' one or more of whose vertices is an omega-point. At least two of the sides of an omega-triangle form a pair of limiting parallels.
+		An \emph{omega-triangle} or \emph{ideal-triangle} is a `triangle' where at least two `sides' are limiting parallels. Alternatively (in the Poincaré disk model), one or more of the `vertices' is an omega-point.
 	\end{defn}
 	
 	The three types of omega-triangle depend on how many omega-points they have. In the picture, $\triangle PQ\Omega$ has one omega-point, $\triangle P\Omega\Theta$ has two and $\triangle \Omega\Theta\Xi$ three!
@@ -1267,7 +1282,7 @@ As in Euclidean geometry, isometries can be interpreted as rotations, reflection
 
 \boldsubsubsection{Hyperbolic Trigonometry}
 
-By employing isometries in the abstract, we can develop formulas\footnote{Treat the formulas of hyperbolic trigonometry as open-book---they are not worth memorizing!} allowing us to solve triangles without the explicit requirement to compute with isometries at all!
+By employing isometries in the abstract, we develop expressions that allow us to solve triangles directly in terms of the side-lengths and angle measures.
 
 
 \smallbreak
@@ -1308,18 +1323,43 @@ Applying trigonometric identities such as $\csc^2B=1+\cot^2B$, we eventually con
 	This last is Pythagoras' Theorem for hyperbolic right-triangles.
 \end{thm}
 
+Treat these expressions (and the upcoming Corollary) as open-book---they are not worth memorizing.
 
-\begin{example}{}{}
-	A right-triangle has non-hypotenuse sides $\textcolor{blue}{a=\cosh^{-1}3\approx 1.76}$, \ $\textcolor{Green}{b=\cosh^{-1}5\approx 2.29}$.
+\begin{examples}{}{hypbasictrig}
+	\exstart A right-triangle (as above) has $\textcolor{blue}{a=\cosh^{-1}3\approx 1.76}$, \ $\textcolor{Green}{b=\cosh^{-1}5\approx 2.29}$. Then,
 	\begin{gather*}
 		\cosh c=\cosh a\cosh b=15\implies \textcolor{red}{c=\cosh^{-1}15\approx 3.40}\\
 		\sin A=\frac{\sinh a}{\sinh c} =\sqrt{\frac{\cosh^2a-1}{\cosh^2 c-1}} =\sqrt{\frac{3^2-1}{15^2-1}} =\frac 1{2\sqrt 7} \implies \textcolor{blue}{A\approx \ang{10.9}}\\
 		\sin B=\frac{\sinh b}{\sinh c} =\sqrt{\frac{\cosh^2b-1}{\cosh^2 c-1}} =\sqrt{\frac{5^2-1}{15^2-1}}=\sqrt{\frac 3{28}} \implies \textcolor{Green}{B\approx \ang{19.1}}
 	\end{gather*}
-	You could use the other trig expressions to calculate: e.g., $\tan A=\smash{\frac{\tanh a}{\sinh b}=\frac{\sinh a}{\cosh a\sinh b}=\frac{\sqrt 8}{3\sqrt{24}} =\frac 1{3\sqrt 3} \ldots}$
-\end{example}
+	We could use the other trig expressions: e.g., $\tan A=\smash{\frac{\tanh a}{\sinh b}=\frac{\sinh a}{\cosh a\sinh b}=\frac{\sqrt 8}{3\sqrt{24}} =\frac 1{3\sqrt 3} \ldots}$
+	
+	
+	\goodbreak
+	
+	
+	\begin{enumerate}\setcounter{enumi}{1}
+	  \item\label{ex:hyperrogueparallel} Consider the pictured Lambert quadrilateral with side-lengths $a,b,v,h$ and diagonal $d$. By the sine and tangent formulæ,\par
+	  \begin{minipage}[t]{0.6\linewidth}\vspace{-17pt}
+	  	\begin{align*}
+			&\sin\beta=\frac{\sinh b}{\sinh d},\qquad
+			\cos\beta=\sin(\tfrac\pi 2-\beta)=\frac{\sinh h}{\sinh d}\\
+			&\implies \frac{\tanh b}{\sinh a}=\tan\beta=\frac{\sin\beta}{\cos\beta} =\frac{\sinh b}{\sinh h}\\
+			&\implies \sinh h=\sinh a\cosh b
+		\end{align*}
+	  \end{minipage}
+	  \hfill
+	  \begin{minipage}[t]{0.39\linewidth}\vspace{-12pt}
+	  	\flushright\includegraphics[scale=0.95]{isom-lambert}
+	  \end{minipage}\par
+		By doubling the quadrilateral, we obtain a Saccheri quadrilateral with base $2a$, congruent sides $b$, and summit $2h$.  Since $\cosh b>1$ and is strictly increasing, observe:
+		\begin{itemize}
+		  \item The summit of a Saccheri quadrilateral is longer than its base.
+		  \item If the base $2a$ is fixed, the summit is a \emph{strictly increasing} function of the side-length $b$.
+		\end{itemize}
+	\end{enumerate}
+\end{examples}
 
-\goodbreak
 
 The goal of trigonometry is to `solve' triangles: given minimal numerical data, to compute the remaining sides and angles. As in Euclidean geometry, you can attack general problems by dropping perpendiculars and using the results of Theorem \ref{thm:hyptrig}, though it is helpful to generalize this by developing the sine and cosine rules.
 
@@ -1335,14 +1375,14 @@ The goal of trigonometry is to `solve' triangles: given minimal numerical data, 
 		\end{minipage}
 		\hfill
 		\begin{minipage}[t]{0.25\linewidth}\vspace{-15pt}
-			\flushright\includegraphics[scale=0.9]{isom-sine}
+			\flushright\includegraphics[scale=0.95]{isom-sine}
 		\end{minipage}\par
 			
 		\item[Cosine Rule I] Repeat the argument of Theorem \ref{thm:hyptrig} for a triangle with vertices $0,p$ and $qe^{iC}$ to obtain
 		\[
 			\cosh c=\cosh a\cosh b-\sinh a\sinh b\cos C
 		\]
-		Expressing the right-hand side in terms of $p,q$ ($\cosh a=\frac{1+p^2}{1-p^2}$, \ etc.) and applying the Euclidean cosine rule ($\cos C=\cdots$) yields the original cosh-formula for distance (page \pageref{lemm:distformula}).
+		Expressing the right side in terms of $p,q$ ($\cosh a=\frac{1+p^2}{1-p^2}$, \ etc.) and applying the Euclidean cosine rule ($\cos C=\cdots$) yields the original cosh-formula for distance (page \pageref{lemm:distformula}).
 		\item[Cosine Rule II] Hyperbolic geometry admits a second version:
 		\[
 			\cos C=\sin A\sin B\cosh c-\cos A\cos B
@@ -1352,33 +1392,33 @@ The goal of trigonometry is to `solve' triangles: given minimal numerical data, 
 \end{cor}
 
 
-In hyperbolic geometry, the triangle congruence theorems (SAS, ASA, SSS, SAA \emph{and} AAA) provide suitable minimal data. The second version of the cosine rule has no analogue in Euclidean geometry---it is particularly helpful for solving triangles given ASA or AAA data.\footnote{Unlike in Euclidean geometry, knowing two angles doesn't automatically give you the third! For SAS and SSS start with the cosine rule. SAA data is best solved by dropping a perpendicular and using Theorem \ref{thm:hyptrig}.}
+In hyperbolic geometry, the triangle congruence theorems (SAS, ASA, SSS, SAA \emph{and} AAA) provide suitable minimal data. The second version of the cosine rule has no analogue in Euclidean geometry---it is particularly helpful for solving triangles given ASA or AAA data.\footnote{%
+	Unlike in Euclidean geometry, knowing two angles doesn't automatically give you the third! For SAS and SSS start with the cosine rule. SAA data is best solved by dropping a perpendicular and using Theorem \ref{thm:hyptrig}.%
+}
+
+
+\goodbreak
+
 
 \begin{examples}{}{hyptrig}
-	\exstart (SAS)\quad An isosceles triangle has angle $C=\frac{\pi}3$ and sides $a=b=\cosh^{-1}2\approx 1.32$.
+	\exstart (SAS)\quad An isosceles triangle has $C=\frac{\pi}3$ and $a=b=\cosh^{-1}2\approx 1.32$. We have $\textcolor{blue}{\sinh a}=\textcolor{Green}{\sinh b} = \textcolor{blue}{\sqrt{\cosh^2\!a-1}}=\sqrt 3$. By the sine and cosine rules,
 	\begin{enumerate}\setcounter{enumi}{1}
-	  \begin{minipage}[t]{0.69\linewidth}\vspace{-10pt}
-	  	\item[] We have $\textcolor{blue}{\sinh a}=\textcolor{Green}{\sinh b} = \textcolor{blue}{\sqrt{\cosh^2\!a-1}}=\sqrt 3$. By the cosine rule,
-		\[
-			\textcolor{red}{\cosh c} = \textcolor{blue}{2} \, \cdot \textcolor{Green}{2} -\textcolor{blue}{\sqrt 3} \, \textcolor{Green}{\sqrt 3}\cdot \textcolor{Green}{\frac 12} =\frac 52\implies \textcolor{red}{c=\cosh^{-1}\frac 52\approx 1.57}
-		\]
-		Apply the sine rule for the final angle:
-		\begin{gather*}
-			\textcolor{Green}{\sin B}=\textcolor{blue}{\sin A}=\frac{\textcolor{red}{\sin C} \, \textcolor{blue}{\sinh a}}{\textcolor{red}{\sinh c}} = \textcolor{red}{\frac{\sqrt 3}2}\cdot\frac{\textcolor{blue}{\sqrt 3}}{\textcolor{red}{\sqrt{21/4}}} =\frac 3{\sqrt{21}}=\sqrt{\frac 37}\\
-			\implies \textcolor{Green}{A}=\textcolor{blue}{B}\approx \ang{40.9}
-		\end{gather*}
-		The area of the triangle is therefore $\pi-\frac{\pi}3-2\sin^{-1}\sqrt{\frac 37}\approx 0.67$
+	  \begin{minipage}[t]{0.69\linewidth}\vspace{-12pt}
+	  	\item[] 
+			\begin{gather*}
+				\textcolor{red}{\cosh c} = \textcolor{blue}{2} \, \cdot \textcolor{Green}{2} -\textcolor{blue}{\sqrt 3} \, \textcolor{Green}{\sqrt 3}\cdot \textcolor{Green}{\frac 12} =\frac 52\implies \textcolor{red}{c=\cosh^{-1}\frac 52\approx 1.57}\\
+				\textcolor{Green}{\sin B}=\textcolor{blue}{\sin A}=\frac{\textcolor{red}{\sin C} \, \textcolor{blue}{\sinh a}}{\textcolor{red}{\sinh c}} = \textcolor{red}{\frac{\sqrt 3}2}\cdot\frac{\textcolor{blue}{\sqrt 3}}{\textcolor{red}{\sqrt{21/4}}} =\frac 3{\sqrt{21}}=\sqrt{\frac 37}\\
+				\implies \textcolor{Green}{A}=\textcolor{blue}{B}\approx \ang{40.9}
+			\end{gather*}
 	  \end{minipage}
 	  \hfill
-	  \begin{minipage}[t]{0.3\linewidth}\vspace{0pt}
-	  	\flushright\includegraphics{isom-trigsas}
+	  \begin{minipage}[t]{0.3\linewidth}\vspace{-27pt}
+	  	\flushright\includegraphics[scale=0.95]{isom-trigsas}
 	  \end{minipage}
 
-	 	
-	 	\goodbreak
-	 	
-	 	\item (Equilateral AAA)\lstsp An equilateral triangle has interior angles $\ang{30}$. We compute its side-length using the second version of the cosine rule:\par
-	 	\begin{minipage}[t]{0.65\linewidth}\vspace{-8pt}
+	 		 	
+	 	\item (Equilateral AAA)\lstsp An equilateral triangle has interior angles $\ang{30}$. The second cosine rule says\par
+	 	\begin{minipage}[t]{0.65\linewidth}\vspace{-15pt}
 	 	\begin{gather*}
 	 		\cosh c =\frac{\textcolor{blue}{\cos A}\,\textcolor{Green}{\cos B}+\textcolor{red}{\cos C}}{\textcolor{blue}{\sin A}\,\textcolor{Green}{\sin B}} =\frac{\frac{\sqrt 3}2\cdot\frac{\sqrt 3}2+\frac{\sqrt 3}2}{\frac 12\cdot\frac 12} =3\sqrt 3\\
 	 		\implies a=b=c=\cosh^{-1}(3\sqrt 3) \approx 2.33
@@ -1386,22 +1426,21 @@ In hyperbolic geometry, the triangle congruence theorems (SAS, ASA, SSS, SAA \em
 	  \end{minipage}
 	  \hfill
 	  \begin{minipage}[t]{0.34\linewidth}\vspace{-8pt}
-	  	\flushright\includegraphics{isom-trigequil}
+	  	\flushright\includegraphics[scale=0.95]{isom-trigequil}
 	  \end{minipage}
 	 	
-	 	\item\label{ex:rtangleaaa} (Right-angled AAA)\lstsp A triangle has angles $\frac\pi 6,\frac\pi 4$ and $\frac\pi 2$: find its sides.\smallbreak
-	  \begin{minipage}[t]{0.71\linewidth}\vspace{-10pt}
-	  	Rather than using the second version of the cosine rule, we instead indicate part of its proof by employing the tan-formula twice,
+	 	\item\label{ex:rtangleaaa} (Right-angled AAA)\lstsp A triangle has angles $\frac\pi 6,\frac\pi 4$ and $\frac\pi 2$. Rather than using the second version of the cosine rule, we indicate part of its proof by employing the tan-formula twice,\par
+	  \begin{minipage}[t]{0.71\linewidth}\vspace{-12pt}
 		  \begin{gather*}
 		  	\frac 1{\sqrt 3} =\textcolor{blue}{\tan\frac\pi 6} =\frac{\textcolor{blue}{\tanh a}}{\textcolor{Green}{\sinh b}}=\frac{\sinh a}{\cosh a\sinh b}\\
 		  	1=\textcolor{Green}{\tan\frac\pi 4}=\frac{\textcolor{Green}{\tanh b}}{\textcolor{blue}{\sinh a}}=\frac{\sinh b}{\sinh a\cosh b}
 		  \end{gather*}
-		  Multiply together and use hyperbolic Pythagoras,
+		  Multiply these together and apply hyperbolic Pythagoras,
 	  \end{minipage}
 	  \hfill
 	  \begin{minipage}[t]{0.28\linewidth}\vspace{-20pt}
-	  	\flushright\includegraphics{isom-right2}
-	  \end{minipage}\par
+	  	\flushright\includegraphics[scale=0.95]{isom-right2}
+	  \end{minipage}\par\vspace{-12pt}
 	  \[
 	  	\frac 1{\sqrt 3}=\frac 1{\textcolor{blue}{\cosh a}\,\textcolor{Green}{\cosh b}}=\frac 1{\textcolor{red}{\cosh c}}\implies \textcolor{red}{c=\cosh^{-1}\sqrt 3=\ln(\sqrt 3+\sqrt 2)\approx 1.15}
 	  \]
@@ -1418,86 +1457,86 @@ In hyperbolic geometry, the triangle congruence theorems (SAS, ASA, SSS, SAA \em
 	  		\textcolor{red}{\cos C}& =\textcolor{blue}{\sin A} \, \textcolor{Green}{\sin B} \, \textcolor{red}{\cosh c}-\textcolor{blue}{\cos A} \, \textcolor{Green}{\cos B}\\
 	  		&=\textcolor{blue}{\frac 12} \cdot \textcolor{Green}{\frac{\sqrt 3}2} \cdot \textcolor{red}{3} - \textcolor{blue}{\frac{\sqrt 3}2} \cdot \textcolor{Green}{\frac 12} =\frac{\sqrt 3}2 \implies\textcolor{red}{C=\frac\pi 6}
 	  	\end{align*}
-	  	The triangle is isosceles, whence $\textcolor{blue}{a=\cosh^{-1}3\approx 1.76}$ also.
 	  \end{minipage}
 	  \hfill
-	  \begin{minipage}[t]{0.34\linewidth}\vspace{-8pt}
-	  	\flushright\includegraphics{isom-trigasa}
+	  \begin{minipage}[t]{0.34\linewidth}\vspace{-12pt}
+	  	\flushright\includegraphics[scale=0.95]{isom-trigasa}
 	  \end{minipage}\par
-	  The remaining side can be found using multiple methods: here is the cosine rule
+	  The triangle is isosceles, whence $\textcolor{blue}{a=\cosh^{-1}3\approx 1.76}$ also. By the cosine rule,
 	  \begin{gather*}
 	  	\textcolor{Green}{\cosh b}=\textcolor{blue}{\cosh a} \, \textcolor{red}{\cosh c} - \textcolor{blue}{\sinh a} \, \textcolor{red}{\sinh c} \, \textcolor{Green}{\cos B} =9-\bigl(\sqrt{3^2-1}\bigr)^2\frac 12 =5\\
 	  	\implies \textcolor{Green}{b=\cosh^{-1}5=\ln(5+\sqrt{24})\approx 2.29}
 	  \end{gather*}
-	  
 	\end{enumerate}
 \end{examples}
 
 
-
+\goodbreak
 
 
 \boldsubsubsection{Hyperbolic Tilings (just for fun!)}\phantomsection\label{pg:hyptiling}
 
-Example \ref*{ex:hyptrig}.\ref{ex:rtangleaaa} can be used to make a regular tiling of hyperbolic space.\par
+Example \ref*{ex:hyptrig}.\ref{ex:rtangleaaa} can be used to make a regular tiling of hyperbolic space. Take eight congruent copies of the triangle and arrange them around the origin as in the first picture. Now reflect the quadrilateral over each of its edges and repeat the process in all directions ad infinitum. The result is a regular tiling of hyperbolic space comprising \emph{four-sided} figures with \emph{six} meeting at every vertex!
 
-\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-	Take eight congruent copies of the triangle and arrange them around the origin as in the picture. Now reflect the quadrilateral over each of its edges and repeat the process in all directions. We obtain a regular tiling of hyperbolic space comprising \emph{four-sided} figures with \emph{six} meeting at every vertex!\medbreak
-	
-	In hyperbolic space, many different regular tilings are possible. Suppose such is to be made using regular $m$-sided polygons, $n$ of which are to meet at each vertex: each polygon comprises $2m$ copies of the fundamental right-triangle, whose angles are therefore $\frac\pi 2, \frac\pi m$ and $\frac\pi n$.
-	Since the angles sum to less than $\pi$ radians, we see that there exists a regular tiling of hyperbolic space whenever $m,n$ satisfy
+\begin{center}
+	\begin{tabular}{@{}c@{\qquad}c@{\qquad}c@{}}
+		\includegraphics[height=140pt]{isom-tiling}
+		&\includegraphics[scale=0.95]{isom-right3}
+		&\includegraphics[height=140pt]{tiling}\\[5pt]
+		$(m,n)=(4,6)$
+		&The fundamental triangle
+		&$(m,n)=(5,4)$
+	\end{tabular}
+\end{center}
+
+In hyperbolic space, many different regular tilings are possible. Suppose such is to be made using regular $m$-sided polygons, $n$ of which are to meet at each vertex: each polygon comprises $2m$ copies of the pictured \emph{fundamental right-triangle}, whose angles must be $\frac\pi 2, \frac\pi m$ and $\frac\pi n$. Since the angles sum to less than $\pi$ radians, we see that there exists a regular tiling of hyperbolic space precisely when
 	\[
 		\frac\pi 2+\frac\pi m+\frac\pi n<\pi\iff (m-2)(n-2)>4
 	\]
-	The first example is $m=4$ and $n=6$, where the fundamental triangle is clear. In the second example four pentagons meet at each vertex and the interiors of the polygons have been colored. This was produced using the tools found
+	The first example is $m=4$ and $n=6$. In the other picture tiling, $n=4$ pentagons ($m=5$) meet at each vertex (the interior of each pentagon has been colored congruently for fun). This pentagonal tiling was produced using the tools found
 	\href{http://www.malinc.se/noneuclidean/en/poincaretiling.php}{here} and \href{http://www.malinc.se/m/ImageTiling.php}{here}: have a play!\medbreak
 	
 	The multitude of possible tilings in hyperbolic geometry is in contrast to Euclidean geometry, where a regular tiling requires \emph{equality}
 	\[
 		(m-2)(n-2)=4
 	\]
-	The three solutions $(m,n)=(3,6)$, $(4,4)$, $(6,3)$ correspond to the only tilings of Euclidean geometry by regular polygons (equilateral triangles, squares and hexagons). However, all can be scaled to arbitrary side-lengths. In hyperbolic geometry, there are infinitely many distinct tilings, but each has a unique side-length.\bigbreak
+	The three solutions $(m,n)=(3,6)$, $(4,4)$, $(6,3)$ correspond to the only tilings of Euclidean geometry by regular polygons (equilateral triangles, squares and regular hexagons); unlike in hyperbolic geometry, Euclidean tilings may have arbitrary side-lengths.\bigbreak
 	
 	For related fun, look up M.C.\,Escher's \emph{Circle Limit} artworks, some of which are based on hyperbolic tilings.
-	If you want an excuse to play video games while pretending to study geometry, have a look at \href{http://www.roguetemple.com/z/hyper/}{Hyper Rogue}, which relies on (sometimes irregular) tilings.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.44\linewidth}\vspace{-20pt}
-	\centering
-	\includegraphics{isom-right3}\\
-	The fundamental triangle\bigbreak
-	\includegraphics{isom-tiling}\\
-	$(m,n)=(4,6)$\bigbreak
-	\includegraphics[scale=0.112]{tiling}\\
-	$(m,n)=(5,4)$
-\end{minipage}
-\goodbreak
+	If you want an excuse to play video games while pretending to study geometry, have a look at \href{http://www.roguetemple.com/z/hyper/}{Hyper Rogue}, which relies on (sometimes irregular) tilings of hyperbolic space.
+
+
 
 
 
 \begin{exercises}
-	\hangindent\leftmargini
-	1. \ Use Definition \ref{defn:hypdist2} to prove that $d(z,0)=\ln\frac{1+\nm z}{1-\nm z}$.\vspace{-5pt}
+	\exstart Use Definition \ref{defn:hypdist2} to prove that $d(z,0)=\ln\frac{1+\nm z}{1-\nm z}$.\vspace{-5pt}
 	\begin{enumerate}\setcounter{enumi}{1}
-	  %\item[](\emph{Hint: what are the omega-points for the line through $0$ and $z$?})
-	  %
+	  \item[](\emph{Hint: what are the omega-points for the line through $0$ and $z$?})
+	  
+	  
 	  \item\begin{enumerate}
 	    \item Use an isometry to find angle $\measuredangle ABC$ when $A=0$, $B=\frac i2$, and $C=\frac{1+i}2$.
 	    \item Now compute $\measuredangle ACB$, and thus find the angle sum and area of the triangle.
 	  \end{enumerate} 
+	  
+ 		
+ 		\item Find the area of each triangle in Examples \ref{ex:hyptrig}.
 	
-	  \item Associate a Möbius transformation $f(z)=\frac{az+b}{cz+d}$ with the matrix
+	
+	  \item Identify a Möbius transformation $f(z)=\frac{az+b}{cz+d}$ with the matrix
 	  $\begin{smatrix}
 	  	a&b\\
 	  	c&d
 	  \end{smatrix}$
-	  in the obvious way. If $g$ is another Möbius transformation, prove that the composition $f\circ g$ is associated to the product of the matrices associated to $f,g$. Verify\footnotemark{} that $f^{-1}(z)=\frac{dz-b}{a-cz}$.
+	  If $g$ is another Möbius transformation, prove that the composition $f\circ g$ corresponds to the product of the matrices related to $f,g$. Verify that $f^{-1}(z)=\frac{dz-b}{a-cz}$ corresponds to the inverse matrix.\footnotemark{}
+	  
 	  
 	  \item\begin{enumerate}
 	    \item A triangle has vertices $A=\frac 13$, $B=\frac 12$ and $C$, where $C$ lies in the upper half-plane (positive imaginary part) such that $\measuredangle{BAC}=\ang{45}$ and $b=d(A,C)=\cosh^{-1}3$\par
 	    Compute $a=d(B,C)$ using the hyperbolic cosine rule.
 	    
-	    \item The isometry $f(z)=\frac{\frac 13-z}{\frac 13z-1}=\frac{1-3z}{z-3}$ moves $A$ to the origin. What is $f(B)$ and therefore $f(C)$?\par
+	    \item The isometry $f(z)=\frac{1-3z}{z-3}$ moves $A$ to the origin. What is $f(B)$ and therefore $f(C)$?\par
 	   	(\emph{Hint: remember that $f$ is orientation preserving})
 	    
 	    \item Use the \emph{inverse} of the isometry $f$ to compute the co-ordinates of $C$. As a sanity-check, use the cosh distance formula to recover your answer to part (a).    
@@ -1525,28 +1564,33 @@ Example \ref*{ex:hyptrig}.\ref{ex:rtangleaaa} can be used to make a regular tili
 		
 		\item Find the interior angles and side-lengths for the quadrilateral and pentagonal tiles on page \pageref{pg:hyptiling}.
 		
+		
+		\item A railway line comprises two rails (lines) which start perpendicular to a common sleeper (cross-beam). Why would it be difficult to build a railway in hyperbolic geometry?\par
+		(\emph{Hint: consider Example \ref*{ex:hypbasictrig}.\ref{ex:hyperrogueparallel}})
+		
 		 
 		\item Use the hyperbolic cosine rule to prove that the cosh distance formula is valid.
 	
 		
-		\item Suppose you are given isosceles ASA data: angles $A=B$ and side $c$ between them. Prove that $c\le\cosh^{-1}(2\csc^2A-1)$. What happens when this is equality?
+		\item You are given isosceles ASA data: angles $A=B$ and side $c$. Prove that $\cosh c\le 2\csc^2A-1$. What happens when this is equality?
 		
 				
  		\item\label{exs:hcosruleII}
  		\begin{enumerate}
 		  \item Prove the second cosine rule when $C=\frac\pi 2$ (see the trick in Example \ref*{ex:hyptrig}.\ref{ex:rtangleaaa}).
-		  \item (Hard!)\lstsp Prove the full version by dropping a perpendicular from $B=B_1+B_2$ and observing that $\frac{\cos A}{\sin B_1}=\frac{\cos C}{\sin B_2}=\frac{\cos C}{\sin(B-B_1)}$\ldots
+		  \item (Hard!)\lstsp Prove the full version by dropping a perpendicular from $B=B_1+B_2$ and observing that $\frac{\cos A}{\sin B_1}=\frac{\cos C}{\sin B_2}=\frac{\cos C}{\sin(B-B_1)}\cdots$
 		\end{enumerate}
 	\end{enumerate}
 \end{exercises}
 
-\footnotetext{Since multiplying $a,b,c,d$ by a non-zero scalar doesn't change $f$, we see that the group of Möbius transformations is isomorphic to the \emph{projective special linear group} $\mathrm{PSL}_2(\R)$. The isometries of hyperbolic space form a proper subgroup.}
+\vspace{-5pt}
+
+\footnotetext{%
+	Since multiplying $a,b,c,d$ by a non-zero scalar doesn't change $f$, the set of Möbius transformations is isomorphic to the \emph{projective special linear group} $\mathrm{PSL}_2(\R)$. The orientation-preserving isometries of hyperbolic space form a proper subgroup.%
+}
 
 
-\vfil\goodbreak
-
-
-
+\goodbreak
 
 
 \boldsubsubsection{The Poincaré Disk for Differential Geometers (non-examinable)}\phantomsection\label{pg:hyp1stform}
