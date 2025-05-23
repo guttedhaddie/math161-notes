@@ -1380,7 +1380,7 @@ As in Euclidean geometry, isometries can be interpreted as rotations, reflection
 By employing isometries in the abstract, we develop expressions that allow us to solve triangles directly in terms of the side-lengths and angle measures.
 
 
-\smallbreak
+%\smallbreak
 
 Given a right-triangle, we may suppose an isometry has already moved the right-angle to the origin and the other sides to the positive axes as in the picture. The non-hypotenuse side-lengths are\par
 \begin{minipage}[t]{0.675\linewidth}\vspace{-8pt}
@@ -1395,20 +1395,23 @@ Given a right-triangle, we may suppose an isometry has already moved the right-a
 \hfill
 \begin{minipage}[t]{0.3\linewidth}\vspace{0pt}
 	\flushright\includegraphics[scale=0.9]{isom-right}
-\end{minipage}\medbreak
-We therefore see that
+\end{minipage}\par
+%We therefore see that
 \[
-	\cosh c=\frac{1+\nm{f(iq)}^2}{1-\nm{f(iq)}^2}  =\frac{1+p^2q^2+p^2+q^2}{1+p^2q^2-p^2-q^2} =\frac{1+p^2}{1-p^2}\cdot\frac{1+q^2}{1-q^2} =\cosh a\cosh b
+	\implies \cosh c=\frac{1+\nm{f(iq)}^2}{1-\nm{f(iq)}^2}  
+	=\frac{1+p^2q^2+p^2+q^2}{1+p^2q^2-p^2-q^2} 
+	=\frac{1+p^2}{1-p^2}\cdot\frac{1+q^2}{1-q^2} 
+	=\cosh a\cosh b
 \]
-Moreover, applying the hyperbolic identity $\sinh^2b=\cosh^2b-1$, we obtain
+Applying the hyperbolic identity $\sinh^2b=\cosh^2b-1$, we obtain
 \[
 	\sinh b=\frac{2q}{1-q^2}\implies \tanh b=\frac{\sinh b}{\cosh b} =\frac{2q}{1+q^2}
 \]
-Writing $f(iq)$ in real and imaginary parts allows us to find the \textcolor{red}{slope}
+Writing $f(iq)$ in real and imaginary parts allows us to find the \textcolor{red}{slope} (that is, $\textcolor{Green}{\tan B}$):
 \[
 	f(iq)=\frac{p-iq}{ipq-1} =\frac{-p(1+q^2)+iq(1-p^2)}{p^2q^2+1}\implies \textcolor{Green}{\tan B}=\frac{q(1-p^2)}{p(1+q^2)} =\frac{\textcolor{Green}{\tanh b}}{\textcolor{blue}{\sinh a}}
 \]
-Applying trigonometric identities such as $\csc^2B=1+\cot^2B$, we eventually conclude:
+Trigonometric identities such as $\csc^2B=1+\cot^2B$ quickly yield the other functions:
 
 \begin{thm}{}{hyptrig}
 	In a hyperbolic right-triangle with adjacent $a$, opposite $b$, and hypotenuse $c$,
@@ -1418,7 +1421,7 @@ Applying trigonometric identities such as $\csc^2B=1+\cot^2B$, we eventually con
 	This last is Pythagoras' Theorem for hyperbolic right-triangles.
 \end{thm}
 
-Treat these expressions (and the upcoming Corollary) as open-book---they are not worth memorizing.
+Pythagoras is easy to remember, as are the $\frac{\text{opp}}{\text{hyp}},\frac{\text{adj}}{\text{hyp}},\frac{\text{opp}}{\text{adj}}$ patterns for the basic trig functions. Otherwise, these expressions (and the next Corollary) are open-book---they are not worth memorizing.
 
 \begin{examples}{}{hypbasictrig}
 	\exstart A right-triangle (as above) has $\textcolor{blue}{a=\cosh^{-1}3\approx 1.76}$, \ $\textcolor{Green}{b=\cosh^{-1}5\approx 2.29}$. Then,
@@ -1477,7 +1480,7 @@ The goal of trigonometry is to `solve' triangles: given minimal numerical data, 
 		\[
 			\cosh c=\cosh a\cosh b-\sinh a\sinh b\cos C
 		\]
-		Expressing the right side in terms of $p,q$ ($\cosh a=\frac{1+p^2}{1-p^2}$, \ etc.) and applying the Euclidean cosine rule ($\cos C=\cdots$) yields the original cosh-formula for distance (page \pageref{lemm:distformula}).
+		Expressing the right side in terms of $p,q$ ($\cosh a=\frac{1+p^2}{1-p^2}$, \ etc.) yields the original cosh-formula for distance (page \pageref{lemm:distformula}).
 		\item[Cosine Rule II] Hyperbolic geometry admits a second version:
 		\[
 			\cos C=\sin A\sin B\cosh c-\cos A\cos B
@@ -1539,10 +1542,10 @@ In hyperbolic geometry, the triangle congruence theorems (SAS, ASA, SSS, SAA \em
 	  \[
 	  	\frac 1{\sqrt 3}=\frac 1{\textcolor{blue}{\cosh a}\,\textcolor{Green}{\cosh b}}=\frac 1{\textcolor{red}{\cosh c}}\implies \textcolor{red}{c=\cosh^{-1}\sqrt 3=\ln(\sqrt 3+\sqrt 2)\approx 1.15}
 	  \]
-	  Since $\sinh c=\sqrt{\cosh^2c-1}=\sqrt 2$, the sine-rule yields the other sides:
+	  Since $\sinh c=\sqrt{\cosh^2c-1}=\sqrt 2$, the remaining sides are easy to compute:
 	  \begin{gather*}
-		  \textcolor{Green}{\sinh b} =\textcolor{Green}{\sin\frac\pi 4}\cdot\frac{\textcolor{red}{\sinh c}}{\textcolor{red}{\sin\pi}} =1 \implies \textcolor{Green}{b=\sinh^{-1} 1 =\cosh^{-1}\sqrt 2\approx 0.88}\\
-		  \implies \textcolor{blue}{\cosh a} =\frac{\textcolor{red}{\cosh c}}{\textcolor{Green}{\cosh b}}=\sqrt{\frac 32} \implies \textcolor{blue}{a=\cosh^{-1}\sqrt{\frac 32}\approx 0.66}
+		  \frac 1{\sqrt 2}=\textcolor{Green}{\sin\frac\pi 4}=\frac{\textcolor{Green}{\sinh b}}{\textcolor{red}{\sinh c}} \implies \textcolor{Green}{b=\sinh^{-1} 1 =\cosh^{-1}\sqrt 2\approx 0.88}\\
+		  \textcolor{blue}{\cosh a} =\frac{\textcolor{red}{\cosh c}}{\textcolor{Green}{\cosh b}}=\sqrt{\frac 32} \implies \textcolor{blue}{a=\cosh^{-1}\sqrt{\frac 32}=\sinh^{-1}\frac 1{\sqrt 2}\approx 0.66}
 	  \end{gather*}
 	  
 	  \item (ASA)\lstsp Solve a triangle with angles $\frac\pi 6$, $\frac\pi 3$ and a distance $\cosh^{-1}3$ between them.\par
@@ -1595,7 +1598,7 @@ In hyperbolic space, many different regular tilings are possible. Suppose such i
 	\[
 		(m-2)(n-2)=4
 	\]
-	The three solutions $(m,n)=(3,6)$, $(4,4)$, $(6,3)$ correspond to the only tilings of Euclidean geometry by regular polygons (equilateral triangles, squares and regular hexagons); unlike in hyperbolic geometry, Euclidean tilings may have arbitrary side-lengths.\bigbreak
+	The three solutions $(m,n)=(3,6)$, $(4,4)$, $(6,3)$ correspond to the only tilings of Euclidean geometry by regular polygons (equilateral triangles, squares and regular hexagons); unlike in hyperbolic geometry, Euclidean tilings may have arbitrary side-lengths.\medbreak
 	
 	For related fun, look up M.C.\,Escher's \emph{Circle Limit} artworks, some of which are based on hyperbolic tilings.
 	If you want an excuse to play video games while pretending to study geometry, have a look at \href{http://www.roguetemple.com/z/hyper/}{Hyper Rogue}, which relies on (sometimes irregular) tilings of hyperbolic space.
@@ -1605,9 +1608,10 @@ In hyperbolic space, many different regular tilings are possible. Suppose such i
 
 
 \begin{exercises}
-	\exstart Use Definition \ref{defn:hypdist2} to prove that $d(z,0)=\ln\frac{1+\nm z}{1-\nm z}$.\vspace{-5pt}
-	\begin{enumerate}\setcounter{enumi}{1}
-	  \item[](\emph{Hint: what are the omega-points for the line through $0$ and $z$?})
+	The questions marked $*$ require abstract calculations with complex algebra. Feel free to skip these if your previous experience with this is minimal.
+	\begin{enumerate}
+	  \item Use Definition \ref{defn:hypdist2} to prove that $d(z,0)=\ln\frac{1+\nm z}{1-\nm z}$.\par
+	  (\emph{Hint: what are the omega-points for the line through $0$ and $z$?})
 	  
 	  
 	  \item\begin{enumerate}
@@ -1618,18 +1622,18 @@ In hyperbolic space, many different regular tilings are possible. Suppose such i
  		
  		\item Find the area of each triangle in Examples \ref{ex:hyptrig}.
 	
+		
 	
-	  \item Identify a Möbius transformation $f(z)=\frac{az+b}{cz+d}$ with the matrix
+	  \item* Identify a Möbius transformation $f(z)=\frac{az+b}{cz+d}$ with the matrix
 	  $\begin{smatrix}
 	  	a&b\\
 	  	c&d
-	  \end{smatrix}$
+	  \end{smatrix}$.
 	  If $g$ is another Möbius transformation, prove that the composition $f\circ g$ corresponds to the product of the matrices related to $f,g$. Verify that $f^{-1}(z)=\frac{dz-b}{a-cz}$ corresponds to the inverse matrix.\footnotemark{}
 	  
 	  
 	  \item\begin{enumerate}
-	    \item A triangle has vertices $A=\frac 13$, $B=\frac 12$ and $C$, where $C$ lies in the upper half-plane (positive imaginary part) such that $\measuredangle{BAC}=\ang{45}$ and $b=d(A,C)=\cosh^{-1}3$\par
-	    Compute $a=d(B,C)$ using the hyperbolic cosine rule.
+	    \item A triangle has vertices $A=\frac 13$, $B=\frac 12$ and $C$, where $\measuredangle{BAC}=\ang{45}$ and $b=d(A,C)=\cosh^{-1}3$. Compute $a=d(B,C)$ using the hyperbolic cosine rule.
 	    
 	    \item The isometry $f(z)=\frac{1-3z}{z-3}$ moves $A$ to the origin. What is $f(B)$ and therefore $f(C)$?\par
 	   	(\emph{Hint: remember that $f$ is orientation preserving})
@@ -1638,11 +1642,14 @@ In hyperbolic space, many different regular tilings are possible. Suppose such i
 	  \end{enumerate}
 	  
 	  
-	  \item Suppose $f(z)=\frac{\alpha-z}{\cl\alpha z-1}$ for some constant $\alpha\in\C$ with $\nm{\alpha}\neq 1$. If $\nm z=1$, prove that $\nm{f(z)}=1$.\par
+	  \item* Suppose $f(z)=\frac{\alpha-z}{\cl\alpha z-1}$ for some constant $\alpha\in\C$ with $\nm{\alpha}\neq 1$. If $\nm z=1$, prove that $\nm{f(z)}=1$.\par
 	  Argue that the functions $f$ in Theorem \ref{thm:hypisomclass} really do map the interior of the unit disk to itself.
 	  
 	  
- 		\item Provided $\alpha\neq\beta$, show that the isometry $T_\beta\circ T_{-\alpha}$ which translates $\alpha$ to $\beta$ (page \pageref{pg:hypisomclass}) is the translation $T_{-\gamma}$ where $\gamma=\frac{\beta-\alpha}{\cl\alpha\beta-1}$ followed by a rotation around the origin.
+ 		\item\begin{enumerate}
+ 		  \item* Show that the isometry $T_\beta\circ T_{-\alpha}$ which translates $\alpha$ to $\beta$ (page \pageref{pg:hypisomclass}) is the translation $T_{-\gamma}$ where $\gamma=\frac{\beta-\alpha}{\cl\alpha\beta-1}$ followed by a rotation around the origin.
+ 		  \item* In what rare situations is the composition of two translations another (pure) translation?
+ 		\end{enumerate}
 	
 	  
 		\item Use the power series $\cosh x=1+\frac 12x^2+\frac 1{4!}x^4+\cdots$ to expand the hyperbolic Pythagorean theorem $\cosh c=\cosh a\cosh b$ to order 4 ($a^4$, $a^2b^2$, etc.). What do you observe?
@@ -1660,11 +1667,11 @@ In hyperbolic space, many different regular tilings are possible. Suppose such i
 		\item Find the interior angles and side-lengths for the quadrilateral and pentagonal tiles on page \pageref{pg:hyptiling}.
 		
 		
-		\item A railway line comprises two rails (lines) which start perpendicular to a common sleeper (cross-beam). Why would it be difficult to build a railway in hyperbolic geometry?\par
+		\item A railway comprises two rails (lines) which start perpendicular to a common sleeper (cross-beam). Why would it be difficult to build a railway in hyperbolic geometry?\par
 		(\emph{Hint: consider Example \ref*{ex:hypbasictrig}.\ref{ex:hyperrogueparallel}})
 		
 		 
-		\item Use the hyperbolic cosine rule to prove that the cosh distance formula is valid.
+		\item* As suggested in Corollary \ref{cor:hypcossinerule}, prove both the cosine rule and the cosh distance formula.
 	
 		
 		\item You are given isosceles ASA data: angles $A=B$ and side $c$. Prove that $\cosh c\le 2\csc^2A-1$. What happens when this is equality?
