@@ -130,7 +130,7 @@ Our goal is to describe a related notion of fractional dimension for \emph{self-
 	The Cantor set has many generalizations:
 	\begin{itemize}\itemsep0pt
 	  \item Removing different fractions of every interval at each stage produces sets with other fractal dimensions. For instance, removing the 2\nd{} and 4\th{} fifths results in $D=\frac{\log 3}{\log 5}\approx 0.683$.
-	  \item Higher-dimensional analogues include the \href{https://en.wikipedia.org/wiki/Sierpiński_triangle}{Sierpiński triangle} ($D=\smash{\frac{\log 3}{\log 2}}\approx 1.585$) and carpet (Examples \ref{ex:scarpet}, $D=\frac{\log 8}{\log 3}\approx 1.893$), and the Menger sponge ($D=\frac{\log 20}{\log 3}\approx 2.727$).
+	  \item Higher-dimensional analogues include the \href{https://en.wikipedia.org/wiki/Sierpiński_triangle}{Sierpiński triangle} ($D=\smash{\frac{\log 3}{\log 2}}\approx 1.585$) and carpet (Example \ref*{ex:scarpet}.\ref{ex:scarpet2}, $D=\frac{\log 8}{\log 3}\approx 1.893$), and the Menger sponge ($D=\frac{\log 20}{\log 3}\approx 2.727$).
 	\end{itemize}
 \end{example}
 \vspace{-5pt}
@@ -182,26 +182,26 @@ Our goal is to describe a related notion of fractional dimension for \emph{self-
 
 
 \begin{exercises}
-	\exstart By removing a constant middle fraction of each interval, construct a fractal analogous to the Cantor set but with dimension $\frac 12$.
-	
+	\exstart By removing a constant middle fraction of each interval, construct a fractal analogous to the Cantor set but with dimension $\frac 12$. More generally, if one removes a constant middle fraction $f$ from each interval, what is the resulting dimension?	
 	
 	\begin{enumerate}\setcounter{enumi}{1}\itemsep2pt
 		\item Prove that the area inside the $n\th$ iteration of the construction of the Koch snowflake is
 		\[
 			A_n=\frac{\sqrt 3}{4}\left(1+\frac 35\left[1-\left(\frac 49\right)^n\right]\right)
+			\xrightarrow[n\to\infty]{} \frac{2\sqrt 3}5
+			=\frac 85\operatorname{Area}(\triangle)
 		\]
-		\emph{The area inside the complete snowflake is therefore $\frac 85$ that of the original triangle.}
 		
 		
-		\item\label{exs:fractaldiffcurve} Suppose $\vr(t)$, $t\in [0,1]$ is a regular (smooth) curve in the plane.
+		\item\label{exs:fractaldiffcurve} Suppose $\vr(t)$, $t\in [0,1]$ describes a regular (smooth) curve in the plane.
 		\begin{enumerate}
-	  	\item Use the arc-length formula $L=\int_0^1\nm{\vr'(t)}\,\dt$ together with Riemann sums and the linear approximation $\vr(t+\epsilon)\approx\vr(t)+\epsilon\vr'(t)$ with $\epsilon=\frac 1N$ to argue that
+	  	\item Use the arc-length formula $L=\int_0^1\nm{\vr'(t)}\,\dt$ together with Riemann sums and the linear approximation $\vr(t+\frac 1N)\approx\vr(t)+\frac 1N\vr'(t)$ to argue that
 	  	\[
 	  		L\approx\sum_{k=0}^{N-1}\nm{\vr\left(\frac{k+1}N\right)-\vr\left(\frac{k}N\right)} \tag{$\ast$}
 	  	\]
 	  	
 	
-	  	\item Suppose the curve is parametrized such that each segment on the right side of $(\ast)$ has the same length $R$. Prove that $L\approx NR$.\par
+	  	\item Parametrizing $\vr$ such that each segment in $(\ast)$ has the same length $R$, prove that $L\approx NR$.\par
 	  	(\emph{Any regular curve thus has fractal dimension 1 in the sense stated by Mandelbrot (pg.\,\pageref{sec:fracdefn})})
 		\end{enumerate}
 		
@@ -212,42 +212,74 @@ Our goal is to describe a related notion of fractional dimension for \emph{self-
 \clearpage
 
 
-
-
 \subsection{Contraction Mappings \& Iterated Function Systems}
 
-Thus far we have dealt informally with fractals where the whole consists of multiple pieces scaled by the same factor. In general we can mix up scaling factors. To do this, and to be more rigorous, it is helpful to borrow some language from topology.
+Thus far we have dealt informally with fractals where the whole consists of multiple pieces scaled by the same factor. In general we can mix up scaling factors. To do this, and to be more rigorous, we need to borrow some ideas from topology and analysis.
 
 \begin{defn}{}{}
-	A \emph{contraction mapping} with scale factor $c\in[0,1)$ is a function $S:\R^n\to\R^n$ such that
+	A \emph{contraction mapping} with scale factor $c\in[0,1)$ is a function $S:\R^m\to\R^m$ such that
 	\[
-		\forall x,y\in\R^n,\ \ \nm{S(x)-S(y)}\le c\nm{x-y}
+		\forall x,y\in\R^m,\ \ \nm{S(x)-S(y)}\le c\nm{x-y}
 	\]
 \end{defn}
 
-A contraction mapping moves inputs closer together. It should be clear that every such is continuous ($\lim x_n=y\Longrightarrow \lim S(x_n)=S(y)$). The main goal of this section is to see that fractals may be generated via repeated application of contraction mappings to an initial shape. We have already seen this!
+A contraction mapping moves inputs closer together. It should be clear that every such is continuous ($\lim x_n=y\Longrightarrow \lim S(x_n)=S(y)$).
+
+\begin{example}{}{banacheasy}
+	The function $S(x)=\frac 13x+\frac 23$ is a contraction mapping (on $\R$) with scale factor $c=\frac 13$:
+	\[
+		\nm{S(x)-S(y)}=\frac 13\nm{x-y}
+	\]
+	To motivate the key theorem, consider using $S$ to inductively define a sequence: given any $x_0$, define
+	\[
+		x_{n+1}:=S(x_n)
+	\]
+	The first few terms are
+	\[
+		x_1=\frac{x_0}3+\frac 23,\qquad x_2=\frac{x_0}{3^2}+\frac 2{3^2}+\frac 23,\qquad x_3=\frac{x_0}{3^3}+\frac 2{3^3}+\frac 2{3^2}+\frac 23
+	\]
+	which suggests (geometric series)
+	\[
+		x_n=\frac{x_0}{3^n}+2\sum_{k=1}^{n}\frac 1{3^k} 
+		=\frac{x_0}{3^n}+\frac{2(3^{-1}-3^{-n-1})}{1-3^{-1}}
+		=1+\frac 1{3^n}(x_0-1)
+	\]
+	This can easily be verified by induction if you prefer. The striking thing about this sequence is that it converges to the same limit $\lim x_n=1$ \emph{regardless of the initial term $x_0$}!
+\end{example}
+
+The example illustrates one of the most powerful and useful theorems in mathematics.
+
+\begin{thm}{Banach Fixed Point Theorem}{banach}
+	Let $S:\R\to\R$ be a contraction mapping. Then:
+	\begin{enumerate}
+	  \item $S$ has a unique \textbf{fixed point}: some $L\in\R^m$ such that $S(L)=L$.
+	  \item If $x_0\in\R$ is \textbf{any} value, then the sequence defined iteratively by $x_{n+1}:=S(x_n)$ converges to $L$.
+	\end{enumerate}
+\end{thm}
+
+In fact, as will be crucial momentarily, Banach's result holds whenever $S:\mathcal H\to\mathcal H$ is a contraction mapping on any \emph{complete metric space}.\footnote{%
+	Very loosely, a metric space is a set on which a sensible notion of \emph{distance} can be defined: on $\R$, for instance, the distance between two points is $d(x,y)=\nm{x-y}$. If you've done analysis you'll be familiar with \emph{completeness}: every Cauchy sequence converges (in $\mathcal H$).%
+} The main goal of this section is to use Banach's result to generate certain fractals via repeated application of contraction mappings to an initial shape. Our motivating example already illustrates this\ldots
 
 
-\begin{example*}{\ref{ex:cantor}, mk.\,II}{}
-	Consider the functions $S_1,S_2:\R\to\R$ where
+\begin{example*}{\ref{ex:cantor}, Cantor Set mk.\,II}{}
+	The functions $S_1,S_2:\R\to\R$ where
 	\[
 		S_1(x)=\frac x3\qquad S_2(x)=\frac x3+\frac 23
 	\]
-	These are certainly contraction mappings (with scale factor $c=\frac 13$):
+	are contraction mappings with scale factor $c=\frac 13$. More importantly, these functions \emph{define} the Cantor set: at each stage of its construction, we defined
 	\[
-		\forall x,y\in\R,\ \ \nm{S_1(x)-S_1(y)}=\nm{S_2(x)-S_2(y)}=\frac 13\nm{x-y}
+		C_{n+1}:=S_1(C_n)\cup S_2(C_n) \tag{$\ast$}
 	\]
-	More importantly, these functions \emph{define} the Cantor set: at each stage of its construction, we defined
-	\[
-		C_{n+1}:=S_1(C_n)\cup S_2(C_n)
-	\]
-	As the limit of this process, the self-similarity of the Cantor set can be expressed in the same manner: $\mathcal C=S_1(\mathcal C)\cup S_2(\mathcal C)$.\medbreak
+	Indeed, the self-similarity of the Cantor set can be expressed in the same manner: $\mathcal C=S_1(\mathcal C)\cup S_2(\mathcal C)$.\smallbreak
 	
-	Surprisingly, it barely seems to matter what initial set $C_0$ was chosen. For example, we could start with the singleton set $C_0=\{0\}$, from which
+	Amazingly, it barely seems to matter what initial set $C_0$ is chosen. Originally we took $C_0=[0,1]$ to be the unit interval, but we could instead start with the singleton set $C_0=\{0\}$: iterating ($\ast$) produces
 	\[
-		C_1=\{0,\tfrac 23\},\qquad C_2=\{0,\tfrac 29,\tfrac 23,\tfrac 89\},\qquad C_3=\{0,\tfrac 2{27},\tfrac 29,\tfrac 8{27},\tfrac 23,\tfrac{20}{27},\tfrac 89,\tfrac{26}{27}\},\ \ldots
+		C_1=\bigl\{0,\tfrac 23\bigr\},\qquad 
+		C_2=\bigl\{0,\tfrac 29,\tfrac 23,\tfrac 89\bigr\},\qquad 
+		C_3=\bigl\{0,\tfrac 2{27},\tfrac 29,\tfrac 8{27},\tfrac 23,\tfrac{20}{27},\tfrac 89,\tfrac{26}{27}\bigr\},\ \ldots
 	\]
-	The first few iterations are drawn below. The second picture starts with a very different initial set $C_0=[0.2,0.5]\cup[0.6,0.7]$; iterating this also appears to produce the Cantor set!
+	The first few iterations are drawn in the first picture below; it appears as if, in the limit, $C_n$ is becoming the Cantor set. The second picture starts with a very different initial set $C_0=[0.2,0.5]\cup[0.6,0.7]$; iterating this also appears to produce the Cantor set!
 	\begin{center}
 		\includegraphics{cantor-similar3}
 		\qquad\qquad
@@ -255,23 +287,19 @@ A contraction mapping moves inputs closer together. It should be clear that ever
 	\end{center}
 \end{example*}
 
-\goodbreak
 
-
-\boldsubsubsection{Iterated Function Systems}
-
-It certainly appears as if the Cantor set is generated by the contraction maps $S_1,S_2$ independently of the initial data $C_0$. Our main result shows in what sense this is true. The proof relies on some heavy lifting from topology so we provide only a synopsis highlighting the key points; if you've studied analysis, then several of the concepts will be familiar.
+It certainly appears as if the Cantor set is generated by the contraction maps $S_1,S_2$ independently of the initial data $C_0$. Our main result shows in what sense this is true. Since this requires some heavy lifting from topology and analysis, we provide only a synopsis.
 
 \begin{itemize}
-  \item A subset of $\R^m$ is \emph{compact} if it is \emph{closed} (contains its boundary points) and \emph{bounded} (all points lie within some ball centered at the origin).
+  \item A subset $K\subset\R^m$ is \emph{compact} if it is \emph{closed} (contains its boundary points) and \emph{bounded} ($K$ lies within some ball centered at the origin). For instance, $K=[0,1]$ is a compact subset of $\R$.
   
-  \item The set of all compact subsets of $\R^m$ is a \emph{metric space} $\mathcal H$. This means that the \emph{distance} $d(X,Y)$ between two compact sets $X,Y\in\mathcal H$ may sensibly be defined, though it is a little tricky\ldots%
+  \item The set of non-empty compact subsets of $\R^m$ is a \emph{metric space} $\mathcal H$. This means that the \emph{distance} $d(X,Y)$ between $X,Y\in\mathcal H$ may sensibly be defined, though it is a little tricky\ldots%
   \footnote{%
   	The distance function is the \emph{Hausdorff metric.} Given $Y\in\mathcal H$, and $x\in \R^n$, define $d_Y(x)=\inf_{y\in Y}\Nm{x-y}$ to be the distance from $x$ to the `nearest' point of $Y$. Define $d_X(y)$ similarly. The Hausdorff distance between $X$ and $Y$ is then
   	\[
   		d(X,Y):=\max\left\{\sup_{x\in X}d_Y(x),\sup_{y\in Y}d_X(y)\right\}
   	\]
-  	Roughly speaking, find $x\in X$ which is as far away ($d_Y(x)$) as possible from $Y$ and find $y\in Y$ similarly; $d(X,Y)$ is the larger of these distances.
+  	Roughly speaking, find $x\in X$ which is as far away ($d_Y(x)$) as possible from anything in $Y$, and find $y\in Y$ similarly; $d(X,Y)$ is the larger of these distances. Crucially, $d(X,Y)=0\Longleftrightarrow X=Y$.
   }
   
   \item Since $\mathcal H$ is a metric space, we can discuss convergent sequences $(K_n)$ of compact sets
@@ -280,53 +308,58 @@ It certainly appears as if the Cantor set is generated by the contraction maps $
 	\]
 	It also makes sense to speak of Cauchy sequences in $\mathcal H$. It may be proved that $\mathcal H$ is \emph{complete}: every Cauchy sequence $(K_n)\subseteq\mathcal H$ converges to some $K\in\mathcal H$.
 	
-  \item The \emph{Banach Fixed Point Theorem} now applies.
-	\begin{quote}
-	  If $S:\mathcal H\to\mathcal H$ is a contraction mapping on a complete metric space, then $S$ has a \emph{unique fixed point}: some $F\in\mathcal H$ such that $S(F)=F$. Moreover, if $F_0\in\mathcal H$ is any initial value, then the sequence defined iteratively by $F_{k+1}:=S(F_k)$ converges to $F$.
-	\end{quote}
-  This powerful result has applications throughout mathematics.
+  \item The main result is a corollary of Banach's result (Theorem \ref{thm:banach}).
 \end{itemize}
 
 
-\begin{thm}{}{ifs}
+\begin{thm}{Iterated Function Systems}{ifs}
 	Let $S_1,\ldots,S_n$ be contraction mappings on $\R^m$ with scale factors $c_1,\ldots,c_n$. Define
 	\[
-		S:\mathcal H\to\mathcal H\quad\text{by}\quad S(D)=\bigcup_{i=1}^nS_i(D)
+		S:\mathcal H\to\mathcal H\quad\text{by}\quad S(K)=\bigcup_{i=1}^nS_i(K)
 	\]
 	\begin{enumerate}
 	  \item $S$ is a contraction mapping on $\mathcal H$ with contraction factor $c=\max(c_1,\ldots,c_n)$.
-	  \item $S$ has a unique fixed set $F\in\mathcal H$ given by $F=\lim\limits_{k\to\infty} S^k(E)$ for any non-empty $E\in\mathcal H$.
+	  \item $S$ has a unique fixed set $F\in\mathcal H$ given by $F=\lim\limits_{k\to\infty} S^k(K_0)$ for \textbf{any} non-empty $K_0\in\mathcal H$.
 	\end{enumerate}
 \end{thm}
 
-Part 1 is not difficult to prove if you're willing to work with the definition of the Hausdorff metric (try it if you're comfortable with analysis!). Part 2 is Banach's theorem.\smallbreak
+Part 1 is not super difficult to prove if you're willing to work with the definition of the Hausdorff metric (try it if you're comfortable with analysis!). Part 2 is Banach's theorem.\smallbreak
 
-The upshot is this: repeatedly applying contraction mappings to \emph{any} non-empty compact set $E$ produces a limit which is \emph{independent of $E$!} We call the limit set $F$ for \emph{fractal.} Such fractals are often called \emph{attractors}: being limit-sets, they `attract' data towards themselves.
-
-\goodbreak
+The upshot is this: repeatedly applying contraction mappings to \emph{any} non-empty compact set $E$ produces a compact limit set which is \emph{independent of $E$!} We call the limit $F$ for \emph{fractal.} Such fractals are sometimes called \emph{attractors}: being limit-sets, they `attract' data towards themselves.
 
 
 \begin{examples}{}{scarpet}
-	\exstart (Cantor set Example\,\ref{ex:cantor})\lstsp The contractions $S_1(x)=\frac 13x$ and $S_2(x)=\frac 13x+\frac 23$ (on $\R$) produce a contraction mapping $S:\mathcal H\to\mathcal H$:
-	\[
-		\forall K\subset\R\ \text{ compact },\ S(K)=\{S_1(x),S_2(x):x\in K\}
-	\]
-	By Theorem \ref{thm:ifs}, $\mathcal C=\lim S^n(E)$ for \emph{any} closed bounded subset $E\subset\R$.	
+	\exstart (Example\,\ref{ex:cantor}, mk.III)\lstsp We revisit the Cantor set one last time.
 	\begin{enumerate}\setcounter{enumi}{1}
-	  \item[]As a nice application, one can easily find all sorts of interesting points in the Cantor set. For instance, suppose $x,y\in\R$ satisfy $y=S_1(x)$ and $x=S_2(y)$: otherwise said
+	  \item[]The contractions $S_1(x)=\frac 13x$ and $S_2(x)=\frac 13x+\frac 23$ (on $\R$) produce a contraction $S:\mathcal H\to\mathcal H$:
 		\[
-			y=\frac 13 x\quad\text{and}\quad x=\frac 13(y+2)
+			S(K):=\bigl\{S_1(x),S_2(x):x\in K\bigr\}
 		\]
-		Since $E=\{x,y\}$ is a compact set satisfying $E\subseteq S(E)$, it follows that $E\subseteq\lim S^k(E)=\mathcal C$: both $x,y$ lie in the Cantor set! However, we easily see that $x=\frac 34$ and $y=\frac 14$, which seems paradoxical: $\frac 14$ does not lie at the end of any deleted interval (denominators of the form $3^n$) but yet the Cantor set contains no intervals. How does $\frac 14$ end up in there?!
-	
-		\begin{minipage}[t]{0.65\linewidth}\vspace{0pt}
-			\item (Koch curve, Example\,\ref{ex:koch})\lstsp Define functions $S_i:\R^2\to\R^2$, each with scale factor $c=\frac 13$.
+		By Theorem \ref{thm:ifs}, if $C_0\subset\R$ is non-empty closed and bounded, then  $\mathcal C=\lim S^n(C_0)$. Certainly all three of our previous choices for $C_0$ are such sets: $[0,1]$, $\{0\}$ and $[0.2,0.5]\cup[0.6,0.7]$.\smallbreak
+		A nice application of the Theorem allows us to find all sorts of interesting points in the Cantor set. For instance, consider the functions $T,U$, where
+		\[
+			T(x)=S_1\bigl(S_2(x)\bigr)=\frac x9+\frac 29
+			\quad\text{and}\quad
+			U(y)=S_2\bigl(S_1(y)\bigr)=\frac y9+\frac 23
+		\]
+		These are contractions on $\R$ ($c=\frac 19$) whose unique fixed points are $\textcolor{red}{t=\frac 14}$ and $\textcolor{blue}{u=\frac 34}$; moreover $S_1(u)=t$ and $S_2(t)=u$. Now consider the non-empty compact set $K=\{\textcolor{red}{t},\textcolor{blue}{u}\}\in\mathcal H$. Plainly\par
+		\begin{minipage}[t]{0.5\linewidth}\vspace{-14pt}
+			\begin{align*}
+				S(K)&=\bigl\{S_1(t),S_1(u),S_2(t),S_2(u)\bigr\}\\
+				&=\left\{\frac 1{12},\textcolor{red}{\frac 14},\textcolor{blue}{\frac 34},\frac{11}{12}\right\}
+				\supset K
+			\end{align*}
 		\end{minipage}
 		\hfill
-		\begin{minipage}[t]{0.34\linewidth}\vspace{0pt}
-			\flushright \href{http://www.math.uci.edu/~ndonalds/math161/koch-anim2.html}{\includegraphics[scale=0.95]{koch3}}
-		\end{minipage}\par
-		\vspace{-27pt}
+		\begin{minipage}[t]{0.45\linewidth}\vspace{-3pt}
+			\flushright\includegraphics{cantor-set2}
+		\end{minipage}\medbreak
+	
+ 		It follows (induction) that $K\subseteq\lim S^n(K)=\mathcal C$: both $\textcolor{red}{t=\frac 14}$ and $\textcolor{blue}{u=\frac 34}$ lie in the Cantor set! This seems paradoxical: $\frac 14$ does not lie at the end of any deleted interval (all such points have denominator $3^n$) but yet the Cantor set contains no intervals. How does $\frac 14$ end up in there?!
+ 	
+ 		\goodbreak
+	
+		\item\label{ex:kochrevisit} (Example\,\ref{ex:koch})\lstsp The Koch curve arises from four contraction mappings $S_i:\R^2\to\R^2$, each with scale factor $c=\frac 13$.
 		\[
 			\renewcommand\arraystretch{1.4}
 			\begin{array}{l|l}
@@ -348,29 +381,43 @@ The upshot is this: repeatedly applying contraction mappings to \emph{any} non-e
 				\text{Scale $\frac 13$, translate}
 			\end{array}
 		\]
-		Applied to an initial unit line segment $E$, the image of each map is colored. The picture links to a series of animated constructions starting with different initial sets $E$.
+		
+		\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}
+			The combined map
+			\[
+				S(K):=S_1(K)\cup S_2(K)\cup S_3(K)\cup S_4(K)
+			\]
+			is a contraction on $\mathcal H=\{\text{non-empty compact }K\subset\R^2\}$. 
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.39\linewidth}\vspace{0pt}
+			\flushright \href{http://www.math.uci.edu/~ndonalds/math161/koch-anim2.html}{\includegraphics[scale=0.95]{koch3}}
+		\end{minipage}\par
+		Regardless of the initial input $K_0\in\mathcal H$, the limit $\lim S^n(K_0)$ is the Koch curve:	applied to the entire curve (drawn), the image of each $S_i$ is colored. The picture moreover links to a series of animated constructions starting with different initial sets $K_0$.\smallbreak
+		We can also play a similar game to the previous example to find interesting points on the curve. For instance, the unique fixed point $(\frac{51}{146},\frac{3\sqrt 3}{146})$ of $U=S_2\circ S_1$ lies on the curve!
 		
 		\begin{minipage}[t]{0.72\linewidth}\vspace{0pt}
-			\item (Sierpiński carpet)\lstsp Eight contraction mappings produce this fractal, each reducing the whole by a (length-scale) factor of $\frac 13$.\smallbreak
-			As with the Koch curve, the image links to several alternative constructions using different initial starting sets.
+			\item\label{ex:scarpet2} The Sierpiński carpet may be constructed using eight contraction mappings, each of which scales the whole picture by a (length-scale) factor of $c=\frac 13$, for a dimension of $D=\frac{\log 8}{\log 3}\approx 1.893$.\smallbreak
+			As with the Koch curve, the image links to several alternative constructions using different initial sets $K_0$.
 		\end{minipage}
 		\hfill
 		\begin{minipage}[t]{0.27\linewidth}\vspace{0pt}
-			\flushright \href{http://www.math.uci.edu/~ndonalds/math161/sier-anim.html}{\includegraphics[scale=0.95]{sieranim2}}
-		\end{minipage}\par
+			\flushright \href{http://www.math.uci.edu/~ndonalds/math161/sier-anim.html}{\includegraphics[scale=1]{sieranim2}}
+		\end{minipage}\smallbreak
 		
 		
 		\begin{minipage}[t]{0.72\linewidth}\vspace{0pt}
-			\item (A Fractal Fern)\lstsp This is built from three contraction mappings:
+			\item This fractal fern is constructed using three contraction mappings:
 			\begin{itemize}
 				\item[$S_1$:] Scale by $\frac 34$, rotate \ang{5} clockwise, and translate by $(0,\frac 14)$
 				\item[$S_2$:] Scale by $\frac 14$, rotate \ang{60} counter-clockwise, and translate by $(0,\frac 14)$
 				\item[$S_3$:] Scale by $\frac 14$, rotate \ang{60} clockwise, and translate by $(0,\frac 14)$
 			\end{itemize}
+			The linked animation shows the first few steps of its contsruction starting from a single vertical line segment $K_0$.
 		\end{minipage}
 		\hfill
 		\begin{minipage}[t]{0.27\linewidth}\vspace{0pt}
-			\flushright \href{http://www.math.uci.edu/~ndonalds/math161/fern-anim.html}{\includegraphics[scale=0.95]{fern2}}
+			\flushright \href{http://www.math.uci.edu/~ndonalds/math161/fern-anim.html}{\includegraphics[scale=1]{fern2}}
 		\end{minipage}
 	\end{enumerate}
 \end{examples}
@@ -521,11 +568,20 @@ We finish with a formula satisfied by the dimension of an iterated function syst
 	
 	  
 	\begin{enumerate}\setcounter{enumi}{1}
-	  \item We illustrate Banach's theorem.
-	  \begin{enumerate}
-	    \item The contraction mapping $S(x)=\frac 13x+\frac 23$ (on $\R$) plainly has unique fixed point $x=1$ ($S(x)=x\Longleftrightarrow x=1$). If $x_0\in\R$ is given and $x_{n+1}:=S(x_n)$ for all $n\in\N_0$, prove that $x_n=1+(x_0-1)3^{-n}$ and thus conclude that $\lim x_n=1$.
+% 	  \item We illustrate Banach's theorem.
+% 	  \begin{enumerate}
+% 	    \item The contraction mapping $S(x)=\frac 13x+\frac 23$ (on $\R$) plainly has unique fixed point $x=1$ ($S(x)=x\Longleftrightarrow x=1$). If $x_0\in\R$ is given and $x_{n+1}:=S(x_n)$ for all $n\in\N_0$, prove that $x_n=1+(x_0-1)3^{-n}$ and thus conclude that $\lim x_n=1$.
+% 	    \item Repeat part (a) for any linear polynomial $S(x)=cx+d$ where $\nm c<1$. 
+% 	  \end{enumerate}
+	  
+	  
+	 	\item\begin{enumerate}
+	    \item As in Example \ref{ex:banacheasy}, illustrate Banach's theorem for the contraction $S(x)=\frac 12x+5$.
 	    \item Repeat part (a) for any linear polynomial $S(x)=cx+d$ where $\nm c<1$. 
 	  \end{enumerate}
+	  
+	  
+	  \item Verify the claim in Example \ref*{ex:scarpet}.\ref{ex:kochrevisit} that the point $(\frac{51}{146},\frac{3\sqrt 3}{146})$ lies on the Koch curve.
 	  
 	  
 	  \item The construction of a Cantor-type set starts by removing the open intervals $(0.1,0.2)$ and $(0.6,0.8)$ from the unit interval.
@@ -535,7 +591,7 @@ We finish with a formula satisfied by the dimension of an iterated function syst
 	    \item State an equation satisfied by the dimension $D$ of the set and use a computer algebra package to estimate its value.
 	  \end{enumerate}
 	  
-		\item A variation on the Koch curve is constructed using the following contraction mappings. Each is built by first scaling the whole picture by a factor $c$, rotating the picture through an angle counter-clockwise, and then translating the picture by adding a constant. The resulting fractal is drawn.\par  
+		\item A variation on the Koch curve is constructed using five contraction mappings. Each scales the whole picture by a factor $c$, then rotates counter-clockwise, before finally translating.\par  
 	  \begin{minipage}{0.52\linewidth}
 		  \qquad$\displaystyle\def\arraystretch{1.2}
 		  \begin{array}{c|c|c|c}
@@ -552,19 +608,20 @@ We finish with a formula satisfied by the dimension of an iterated function syst
 	  	\flushright\includegraphics{fractal}
 	  \end{minipage}\par
 	  \begin{enumerate}
-	    \item Suppose you start with the straight line segment from $(0,0)$ to $(1,0)$. Draw the first two iterations of the fractal's construction.
-	    \item The dimension of the fractal is the unique solution $D$ to the equation
-	    \[
-	    	\left(\frac 12\right)^D+\left(\frac 14\right)^D+\left(\frac 14\right)^D+\left(\frac 14\right)^D+\left(\frac 14\right)^D=1
-	    \]
-	    By observing that $\frac 14=\left(\frac 12\right)^2$, convert this to a quadratic equation in the variable $\alpha:=\left(\frac 12\right)^D$. Hence compute the dimension of the fractal.
-	    \item The dimension computed in part (b) is \emph{larger} than the dimension $\frac{\log 4}{\log 3}$ of the Koch curve. Explain what this means.
+	    \item Suppose your initial set $K_0$ is the straight line segment from $(0,0)$ to $(1,0)$. Draw the first two iterations of the fractal's construction.
+	    \item The dimension of the fractal is the solution $D$ to $(\frac 12)^D+(\frac 14)^D+(\frac 14)^D+(\frac 14)^D+(\frac 14)^D=1$. By observing that $\frac 14=\left(\frac 12\right)^2$, convert to a quadratic equation in the variable $\alpha=(\frac 12)^D$. Hence compute the dimension of the fractal.
+	    \item The dimension of the fractal is \emph{larger} than that of the Koch curve $\bigl(\frac{\log 4}{\log 3}\bigr)$. Explain (informally) what this means.
 	  \end{enumerate}
 	
 	
 		\item Verify the details of Example \ref{ex:intervalcover}, including the computation of the limit.
 	
-		\item Given constants $0\le c_1,\ldots,c_n<1$, use the intermediate value theorem from calculus to prove that the value $D$ in Theorem \ref{thm:ifsdimension} exists and is unique.
+		\item Given constants $0\le c_1,\ldots,c_n<1$, use calculus to prove that the function $f(x)=\sum c_i^x$ is strictly decreasing. Hence conclude that the value $D$ in Theorem \ref{thm:ifsdimension} exists and is unique.
 		
+		\item (If you've done analysis)\lstsp Let $S:\R\to\R$ be a contraction mapping with scale factor $c$, suppose $x_0\in\R$ is given, and define $x_{n+1}:=S(x_n)$ inductively. Prove:
+		\[
+			\forall k,n\ge 0,\ \nm{x_{n+k}-x_n}<\frac{c^n}{1-c}\nm{x_1-x_0}
+		\]
+		Conclude that the sequence $(x_n)$ is Cauchy. Hence prove Banach's Theorem (\ref{thm:banach}).
 	\end{enumerate}
 \end{exercises}

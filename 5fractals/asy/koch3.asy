@@ -7,7 +7,7 @@ texpreamble("\usepackage{amsmath}
 ");
 import graph;
 
-size(160);
+size(180);
 
 
 transform S=scale(1/3);
@@ -38,3 +38,5 @@ draw(S*P[5],red);
 draw(T*P[5],heavygreen);
 draw(U*P[5],blue);
 draw(V*P[5],purple);
+
+//dot((51/146,3*sqrt(3)/146));
