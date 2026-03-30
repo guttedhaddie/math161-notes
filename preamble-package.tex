@@ -1,0 +1,127 @@
+%\usepackage{ifluatex}
+
+\usepackage{amssymb,amsthm}
+\usepackage[fleqn]{amsmath}
+\usepackage[svgnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{
+	pdftitle={Math 161},
+	%pdfauthor={Neil Donaldson},
+} 
+\usepackage[breakable,theorems,skins]{tcolorbox}
+
+%lualatex
+%\ifluatex
+%\usepackage{fontspec}
+%
+\usepackage{microtype}
+
+%\usepackage[otfmath,theoremfont,trueslanted,largesc,scale=1.4]{newpx}
+\usepackage{unicode-math}
+\setmainfont[Scale=1.005]{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}[Scale=1.005]
+\setsansfont[Scale=1.005]{TeX Gyre Heros}
+\fontspec[Scale=1.005]{inconsolata}
+
+\setmathfont{TeX Gyre Pagella Math}[range="222B-"2233,Scale=1.08]
+\setmathfont{TeX Gyre Pagella Math}[range=\sum,Scale=1.005]
+\everydisplay{\Umathoperatorsize\displaystyle=4.5ex}
+
+%pdflatex
+% \else
+% % %\usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+% \usepackage[theoremfont,trueslanted,largesc,scale=1.005]{newpx}
+% \fi
+
+\graphicspath{{asy/}}
+\parindent0pt
+
+%lengths
+\unitlength 1cm
+\setlength{\textheight}{23cm}
+%Reset from 0pt plus 1pt
+\setlength{\parskip}{0pt plus 2pt minus 0.25pt}
+\textwidth 17.5cm
+\oddsidemargin -0.75cm
+\evensidemargin -0.75cm
+\topmargin -1.75cm
+\topskip 0cm
+\headheight 0.5cm
+\headsep 1cm
+\marginparwidth 1.2cm
+
+\newlength\doubleind
+\addtolength{\doubleind}{\leftmargini}
+\addtolength{\doubleind}{\leftmarginii}
+
+\newlength\doubleindentmini
+\addtolength\doubleindentmini{\textwidth}
+\addtolength\doubleindentmini{-\doubleind}
+
+
+%MathNumbering
+\makeatletter
+\@addtoreset{equation}{section}
+\renewcommand{\theequation}{\thesection.\@arabic\c@equation}
+\newcommand\Nopagebreak{\@nobreaktrue\nopagebreak}
+%\renewcommand{\theequation}{\@arabic\c@equation}
+\makeatother
+
+\def\exstart{\hangindent\leftmargini\textup{1.}\hspace{\labelsep}}
+
+\makeatletter
+\newenvironment{enumeratepic}{
+  \@mplistdepth=1
+	\begin{enumerate}
+}{
+	\end{enumerate}
+}
+\newenvironment{itemizepic}{
+	\makeatletter
+  \@mplistdepth=1
+  \makeatother
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+\makeatother
+             
+\newenvironment{enumeratea}{
+	\begin{enumerate}
+	  \renewcommand{\labelenumi}{(\alph{enumi})}}
+	{\end{enumerate}}
+
+
+%Tcolorbox Theorems
+\tcbset{
+	defstyle/.style={enhanced, top=3pt, bottom=3pt, colframe=black, coltitle=black, arc=5pt, boxrule=1.5pt, left*=0pt, right*=0pt, theorem style=plain, terminator sign={.\ \ \ }, fonttitle=\bfseries\upshape, fontupper=\upshape, colback=blue!7!white, grow sidewards by=8pt, drop fuzzy shadow},
+	exstyle/.style={enhanced, breakable, beforeafter skip balanced=10pt, coltitle=black, theorem style=plain, terminator sign={.\ \ \ }, fonttitle=\bfseries\upshape, fontupper=\upshape, blanker, borderline west={4pt}{-8pt}{orange!75!white}},
+	thmstyle/.style={enhanced, top=3pt, bottom=3pt, colframe=black, coltitle=black, arc=5pt, boxrule=1.5pt,left*=0pt, right*=0pt, theorem style=plain, terminator sign={.\ \ \ }, fonttitle=\bfseries\upshape, fontupper=\slshape, colback=green!12!white, grow sidewards by=8pt, drop fuzzy shadow},
+	exercisestyle/.style={enhanced, breakable, beforeafter skip balanced=10pt, coltitle=black, theorem style=plain, terminator sign={.\ \ \ }, fonttitle=\bfseries\upshape, fontupper=\upshape, blanker, borderline west={4pt}{-8pt}{purple!75!white}, title={Exercises\ \ \ }},
+	proofstyle/.style={enhanced, breakable, beforeafter skip balanced=10pt, blanker, borderline west={4pt}{-8pt}{green!50!white}},
+	asidestyle/.style={enhanced, breakable, beforeafter skip balanced=10pt, blanker, borderline west={4pt}{-8pt}{black!50!white}},
+	exercisestyle2/.style={enhanced, breakable, beforeafter skip balanced=10pt, coltitle=black, theorem style=plain, terminator sign={.\ \ \ }, fonttitle=\bfseries\upshape, fontupper=\upshape, blanker, borderline west={4pt}{-8pt}{purple!75!white}, title={Exercises\ \thesubsection.\ \ \ }},
+	exercisestyle4/.style={enhanced, breakable, beforeafter skip balanced=10pt, coltitle=black, theorem style=plain, terminator sign={.\ \ \ }, fonttitle=\bfseries\upshape, fontupper=\upshape, blanker, borderline west={4pt}{-8pt}{purple!75!white}, title={Exercises\ \thesection.\ \ \ }},
+	exercisestyle3/.style={enhanced, breakable, beforeafter skip balanced=10pt, coltitle=black, theorem style=plain, terminator sign={.\ \ \ }, fonttitle=\bfseries\upshape, fontupper=\upshape, blanker, borderline west={4pt}{-8pt}{purple!75!white}, title={Exercise\quad}},
+	conjstyle/.style={enhanced, top=3pt, bottom=3pt, colframe=black, coltitle=black, arc=5pt, boxrule=1.5pt,left*=0pt, right*=0pt, theorem style=plain, terminator sign={.\ \ \ }, fonttitle=\bfseries\upshape, fontupper=\slshape, colback=red!12!white, grow sidewards by=8pt, drop fuzzy shadow},
+	}
+
+\tcolorboxenvironment{proof}{breakable,proofstyle}
+
+\newtcbtheorem[number within=section]{defn}{Definition}{defstyle}{defn}
+\newtcbtheorem[use counter from=defn]{example}{Example}{exstyle}{ex}
+\newtcbtheorem[use counter from=defn]{examples}{Examples}{exstyle}{ex}
+\newtcbtheorem[use counter from=defn]{thm}{Theorem}{thmstyle}{thm}
+\newtcbtheorem[use counter from=defn]{lemm}{Lemma}{thmstyle}{lemm}
+\newtcbtheorem[use counter from=defn]{cor}{Corollary}{thmstyle}{cor}
+\newtcbtheorem[use counter from=defn]{axiom}{Axiom}{defstyle}{axiom}
+\newtcbtheorem[use counter from=defn]{axioms}{Axioms}{defstyle}{axioms}
+\newtcbtheorem[use counter from=defn]{conj}{Conjecture}{conjstyle}{conj}
+
+\newtcolorbox{aside}{asidestyle}
+\newtcolorbox{exercises*}{exercisestyle}
+\newtcolorbox{exercises}{exercisestyle2}
+\newtcolorbox{exercisessec}{exercisestyle4}
+\newtcolorbox{exercise}{exercisestyle3}

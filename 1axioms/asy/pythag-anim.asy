@@ -8,7 +8,7 @@ texpreamble("\usepackage{amsmath}
 import graph;
 import animate;
 
-size(100);
+size(180);
 
 pen triang=yellow;
 

@@ -1,14 +1,18 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
+%\usepackage[otfmath,theoremfont,trueslanted,largesc]{newpx}
+\setmainfont{TeX Gyre Pagella X}
+\setmathfont{TeX Gyre Pagella Math}
+%\everydisplay{\Umathoperatorsize\displaystyle=4.5ex}
 \usepackage[svgnames]{xcolor}
 ");
-import graph;
-import markers;
 
-size(100);
+import graph;
+
+size(0,140);
 
 real a=1;
 real b=2;
