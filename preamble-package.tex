@@ -1,5 +1,3 @@
-%\usepackage{ifluatex}
-
 \usepackage{amssymb,amsthm}
 \usepackage[fleqn]{amsmath}
 \usepackage[svgnames]{xcolor}
@@ -11,46 +9,28 @@
 } 
 \usepackage[breakable,theorems,skins]{tcolorbox}
 
-%lualatex
-%\ifluatex
-%\usepackage{fontspec}
-%
 \usepackage{microtype}
-
-%\usepackage[otfmath,theoremfont,trueslanted,largesc,scale=1.4]{newpx}
 \usepackage{unicode-math}
-\setmainfont[Scale=1.005]{TeX Gyre Pagella}
-\setmathfont{TeX Gyre Pagella Math}[Scale=1.005]
-\setsansfont[Scale=1.005]{TeX Gyre Heros}
-\fontspec[Scale=1.005]{inconsolata}
-
+\setmainfont{TeX Gyre Pagella}
+\setsansfont{TeX Gyre Heros}
+\fontspec{inconsolata}
+\setmathfont{TeX Gyre Pagella Math}
 \setmathfont{TeX Gyre Pagella Math}[range="222B-"2233,Scale=1.08]
-\setmathfont{TeX Gyre Pagella Math}[range=\sum,Scale=1.005]
+\setmathfont{TeX Gyre Pagella Math}[range=\sum,Scale=1]
 \everydisplay{\Umathoperatorsize\displaystyle=4.5ex}
-
-%pdflatex
-% \else
-% % %\usepackage[utf8]{inputenc}
-% \usepackage[T1]{fontenc}
-% \usepackage[theoremfont,trueslanted,largesc,scale=1.005]{newpx}
-% \fi
-
-\graphicspath{{asy/}}
-\parindent0pt
 
 %lengths
 \unitlength 1cm
-\setlength{\textheight}{23cm}
-%Reset from 0pt plus 1pt
-\setlength{\parskip}{0pt plus 2pt minus 0.25pt}
+\setlength{\textheight}{22.5cm}
 \textwidth 17.5cm
 \oddsidemargin -0.75cm
 \evensidemargin -0.75cm
-\topmargin -1.75cm
+\topmargin -1.5cm
 \topskip 0cm
 \headheight 0.5cm
 \headsep 1cm
 \marginparwidth 1.2cm
+\parindent0pt
 
 \newlength\doubleind
 \addtolength{\doubleind}{\leftmargini}
