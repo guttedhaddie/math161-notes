@@ -3,11 +3,10 @@
 \DocumentMetadata{
   lang        = en,
   pdfstandard = ua-2,
-  %pdfstandard = a-4f, %or a-4
-  tagging=on,
 	tagging-setup={%math/setup={mathml-SE,mathml-AF}, %optional: comment out to produce AF only by default
 	   	table/header-rows = 1
-	  }
+	  },
+  tagging=on,
 }
 
 \documentclass[12pt]{article}
@@ -16,10 +15,10 @@
 \input{preamble-math}
 
 \includeonly{
-1axioms/axioms,
-% 2euclid/euclid,
-% 3analytic/analytic,
-% 4hyper/hyper,
+%1axioms/axioms,
+2euclid/euclid,
+%3analytic/analytic,
+%4hyper/hyper,
 % 5fractals/fractals,
 %TrigFormulas/trigformulas,
 }
@@ -28,10 +27,11 @@
 
 \pagenumbering{arabic}
 \include{1axioms/axioms}
-% \include{2euclid/euclid}
-% \include{3analytic/analytic}
-% \include{4hyper/hyper}
+\include{2euclid/euclid}
+\include{3analytic/analytic}
+\include{4hyper/hyper}
 % \include{5fractals/fractals}
+%\hypersetup{pdftitle={Note for Math 161}}
 
 \pagenumbering{Roman}
 %\include{TrigFormulas/trigformulas}

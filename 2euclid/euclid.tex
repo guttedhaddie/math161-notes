@@ -1,54 +1,62 @@
+\hypersetup{pdftitle={Euclidean Geometry}}
+
 \graphicspath{{2euclid/asy/},{2euclid/pics/}}
 
 \section{Euclidean Geometry}\label{chap:euclid}
 
 \subsection{Euclid's Postulates and Book I of the Elements}\label{sec:euclid}
 
-Euclid's \emph{Elements} (c.\,300\,\BC) formed a core part of European and Islamic curricula until the mid 20\th{} century. Several examples are shown below.
+Euclid's \emph{Elements} (c.\,300\BC) was a central part of the European and Islamic mathematical curriculum until the mid 20\th{} century. Several examples are shown below.
 \begin{center}
 	\newlength{\heighttt}
 	\setlength{\heighttt}{100pt}
 	\begin{minipage}[b]{0.35\linewidth}
-		\centering\includegraphics[height=\heighttt]{euclid1}\\
-		Earliest Fragment c.\,\AD\,100
+		\centering\includegraphics[height=\heighttt,alt={Earliest fragment of the Elements}]{euclid1}\\
+		Earliest Fragment c.\,\AD100
 	\end{minipage}
 	\begin{minipage}[b]{0.3\linewidth}
-		\centering\includegraphics[height=\heighttt]{euclid2}\\
+		\centering\includegraphics[height=\heighttt,alt={Earliest known full copy}]{euclid2}\\
 		Full copy, Vatican, 9\th\,C
 	\end{minipage}
 	\begin{minipage}[b]{0.33\linewidth}
-		\centering\includegraphics[height=\heighttt]{euclid3}\\
-		Pop-up edition, 1500s
+		\centering\includegraphics[height=\heighttt,alt={A pop-up edition from the 1500s}]{euclid3}\\
+		Pop-up edition 1500s
 	\end{minipage}\\[5pt]
 	\setlength{\heighttt}{135pt}
 	\begin{minipage}[b]{0.44\linewidth}
-		\centering\includegraphics[height=\heighttt]{geo-09-euclid}\\
-		Latin translation, 1572
+		\centering\includegraphics[height=\heighttt,alt={A latin translation from 1572}]{geo-09-euclid}\\
+		Latin translation 1572
 	\end{minipage}
 	\begin{minipage}[b]{0.3\linewidth}
-		\centering\includegraphics[height=\heighttt]{euclid5}\\
-		Color edition, 1847
+		\centering\includegraphics[height=\heighttt,alt={A color edition from 1847}]{euclid5}\\
+		Color edition 1847
 	\end{minipage}
 	\begin{minipage}[b]{0.24\linewidth}
-		\centering\includegraphics[height=\heighttt]{euclid4}\\
-		Textbook, 1903
+		\centering\includegraphics[height=\heighttt,alt={A high-school textbook from 1903}]{euclid4}\\
+		Textbook 1903
 	\end{minipage}
 \end{center}
 
-Many of Euclid's arguments can be found \href{http://math.furman.edu/~jpoole/euclidselements/euclid.htm}{online}, and you can read Byrne's 1847 edition \href{http://math.uci.edu/~ndonalds/Elements-I-VI.pdf}{here}: the cover is Euclid's proof of the Pythagorean Theorem. We present an overview of Book I.
+Many of Euclid's arguments can be found \href{http://math.furman.edu/~jpoole/euclidselements/euclid.htm}{online}, and you can read Byrne's 1847 edition \href{http://math.uci.edu/~ndonalds/Elements-I-VI.pdf}{here}.\footnote{%
+	To address some of the shortcomings in Euclid's original approach, Byrne contains a more comprehensive list of definitions, has more axioms, and relabels propositions 4 and 5 as axioms (pages xviii--xxiii). 
+}\medbreak
 
-%to address some of the shortcomings in Euclid's original approach, it contains a more comprehensive list of definitions, has more axioms, and relabels propositions 4 and 5 as axioms (pages xviii--xxiii). 
+In this section we present an overview of Book I, which culminates in a proof of Pythagoras' Theorem (as seen on Byrne's cover). We begin by considering how Euclid's structure fits into the modern framework of an axiomatic system.
 
-\begin{description}\itemsep0pt
-	\item[\normalfont\emph{Undefined Terms}] E.g., point, line, etc.\footnote{In fact Euclid attempted to define these: `A point is that which has no part,' and `A line has length but no breadth.'}
-	\item[\normalfont\emph{Axioms/Postulates}]\negthickspace\!\footnote{%
-		In Euclid, an axiom is somewhat more general than a postulate. Here the postulates contain the \emph{geometry.}%
-	}\lstsp A1\lstsp If two objects equal a third, then the objects are equal\hfill ($=$ is transitive)\vspace{-5pt}
+
+\begin{description}
+	\item[\normalfont\emph{Undefined Terms}] E.g., point, line, etc. In fact Euclid attempted to define these: `A point is that which has no part,' and `A line has length but no breadth.'
+	
+	\item[\normalfont\emph{Axioms/Postulates}] In Euclid, an axiom is somewhat more general than a postulate.
 	\begin{itemize}
+	  \item[A1] If two objects equal a third, then the objects are equal\hfill ($=$ is transitive)
 		\item[A2] If equals are added to equals, the results are equal\hfill ($a=c$ \& $b=d\implies a+b=c+d$)
 		\item[A3] If equals are subtracted from equals, the results are equal
 		\item[A4] Things that coincide are equal (in magnitude)
 		\item[A5] The whole is greater than the part
+	\end{itemize}
+	Note the generality: the axioms seemingly refer to \emph{any} objects. By contrast, Euclid's postulates contain the \emph{geometry}: memorize these! 
+	\begin{itemize}
 		\item[P1] A pair of points may be joined to create a line
 		\item[P2] A line may be extended
 		\item[P3] Given a center and a radius, a circle may be drawn
@@ -57,42 +65,49 @@ Many of Euclid's arguments can be found \href{http://math.furman.edu/~jpoole/euc
 	\end{itemize}
 \end{description}
 
-\goodbreak
 
 The first three postulates describe \emph{ruler and compass constructions.} P4 allows Euclid to compare angles at different locations. P5 is usually called the \emph{parallel postulate.}
 \medbreak
 
-Euclid's system doesn't quite fit the modern standard. Some axioms are vague (what are `things'?) and we'll consider several more-serious shortcomings later. For now we clarify two issues and introduce some notation.
+Euclid's system doesn't quite fit the modern standard, but the rough structure is there. We'll consider several serious shortcomings in later sections. For now we clarify two issues and introduce some notation.
 \begin{description}
-	\item[\normalfont\emph{Segments}] To Euclid, a line had \emph{finite} extent---we call such a \emph{(line) segment.} The segment joining points $A,B$ is denoted $\cl{AB}$. In modern geometry, a \emph{line} extends as far as permitted, often infinitely.
-	\item[\normalfont\emph{Congruence}] Euclid uses \emph{equal} where modern mathematicians say \emph{congruent}. We'll express congruent segments and angles in the modern fashion, e.g., $\angle ABC\cong\angle DEF$. Equal angles/segments must be genuinely the same object (same location, etc.).
+	\item[\normalfont\emph{Segments}] To Euclid, a line had \emph{finite} extent---we call such a \emph{(line) segment.} The segment joining points $A,B$ (postulate P1) is denoted $\cl{AB}$. In modern parlance a \emph{line} extends as far as permitted, often infinitely.
+	\item[\normalfont\emph{Congruence}] Euclid uses \emph{equal} where modern mathematicians say \emph{congruent}. We'll express congruent segments and angles using modern notation: e.g., $\angle ABC\cong\angle DEF$. Equal angles/segments must be genuinely the same object (same location, etc.). otherwise said: equals implies congruence, but the converse is false.
 \end{description}
 
 
-\boldsubsubsection{Basic Theorems à la Euclid}
 
-Theorems were typically presented as a \emph{problem}. Euclid provides a constructive solution (P1--P3) before proving that his construction really does solve the problem.
+\subsubsection*{Basic Theorems à la Euclid}
+
+Theorems are typically presented as a \emph{problem}. Euclid provides a constructive solution (P1--P3), then proves that his construction really does solve the problem. Here is the first result of Book I.
 
 \begin{thm}{I.\,1}{euclid1-1}
 	Problem: to construct an equilateral triangle on a given segment.
 \end{thm}
 
-The labelling I.\,1 indicates Book I, Theorem 1. A triangle is equilateral if its three sides are congruent.
+Note that a triangle is equilateral if its three sides are congruent.
 
-\begin{tcolorbox}[proofstyle, lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.35\linewidth]
-	\emph{Proof.}\ \ Given a line segment $\cl{AB}$:\smallbreak
-	By P3, construct circles centered at $A$ and $B$ with radius $\cl{AB}$.\smallbreak
-	Call one of the intersection points $C$. By P1, construct $\cl{AC}$ and $\cl{BC}$.\smallbreak
-	We claim that $\triangle ABC$ is equilateral.\medbreak
-	Observe that $\cl{AB}$ and $\cl{AC}$ are radii of the circle centered at $A$, while $\cl{AB}$ and $\cl{BC}$ are radii of the circle centered at $B$. By Axiom A1, the three sides of $\triangle ABC$ are congruent.
-	\tcblower
-	\flushright\includegraphics{euclid-I1}\hfil\qedsymbol
-\end{tcolorbox}
 
+\begin{proof}
+	Given a line segment $\cl{AB}$:\par
+	\begin{minipage}[t]{0.68\linewidth}\vspace{-6pt}
+		By P3, construct circles centered at $A$ and $B$ with radius $\cl{AB}$.\smallbreak
+		Label one of the intersection points $C$. By P1, we may construct $\cl{AC}$ and $\cl{BC}$.\smallbreak
+		We claim that $\triangle ABC$ is equilateral.\medbreak
+		Since $\cl{AB}$ and $\cl{AC}$ are radii of the circle centered at $A$, they are congruent. Similarly, $\cl{AB}$ and $\cl{BC}$ are congruent radii of the circle centered at $B$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.3\linewidth}\vspace{-20pt}
+		\hfill\includegraphics[alt={theorem 1 of book 1 - constructing an equilateral triangle on a given segment}]{euclid-I1}
+	\end{minipage}\smallbreak
+	 By Axiom A1, the three sides of $\triangle ABC$ are congruent.
+\end{proof}
+
+\pagebreak[3]
 
 Euclid proceeds to develop several well-known constructions and properties of triangles.
-\begin{itemize}\itemsep0pt
-  \item (I.\,4)\lstsp Side-angle-side (SAS) congruence: if two triangles have two pairs of congruent sides and the angles between these are congruent, then the remaining sides and angles are also congruent in pairs.
+\begin{itemize}
+  \item[I.\,4:] Side-angle-side (SAS) congruence: if two triangles have two pairs of congruent sides and the angles between these are congruent, then the remaining sides and angles are also congruent in pairs.
   \[
   	\begin{cases}
 		  \cl{AB}\cong\cl{DE}\\
@@ -106,17 +121,16 @@ Euclid proceeds to develop several well-known constructions and properties of tr
 		  \angle CAB\cong\angle FDE
   	\end{cases}
   \]
-  \item (I.\,5)\lstsp An isosceles triangle has congruent base angles.
-  \item (I.\,9)\lstsp To bisect an angle.
-  \item (I.\,10)\lstsp To find the midpoint of a segment.
-  \item (I.\,15)\lstsp If two lines/segments cut one another, opposite angles are congruent.
+  \item[I.\,5:] An isosceles triangle has congruent base angles.
+  \item[I.\,9:] To bisect an angle.
+  \item[I.\,10:] To find the midpoint of a segment.
+  \item[I.\,15:] (Vertical angles) If two lines/segments intersect, opposite angles are congruent.
 \end{itemize}
-Have a look at some of Euclid's arguments, say in Byrne's edition. These are worth reading despite the logical issues in Euclid's presentation. We'll revisit these basic results in the Exercises and in the next two sections. 
-
-\goodbreak
+Despite certain logical issues in Euclid's presentation, his arguments are still worth reading (try Byrne's edition). We'll revisit these basic results in the Exercises and in the next two sections. 
 
 
-\boldsubsubsection{Parallel Lines: Construction \& Existence}\phantomsection\label{pg:parallelexist}
+
+\subsubsection*{Parallel Lines I: Construction \& Existence}\phantomsection\label{pg:parallelexist}
 
 \begin{defn}{}{parallel}
 	Lines are \emph{parallel} if they do not intersect. Segments are parallel if no extensions of them intersect.
@@ -125,123 +139,157 @@ Have a look at some of Euclid's arguments, say in Byrne's edition. These are wor
 In Euclid, a line is not parallel to itself. The next result is one of the most important in Euclidean geometry, for it describes how to create a parallel line through a given point.
 
 
-\begin{thm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.37\linewidth]{I.\,16\ Exterior Angle Theorem}{extangle}
-	If one side of a triangle is extended, then the exterior angle is larger than either of the opposite interior angles.\smallbreak
-	In the picture, we have $\delta>\alpha$ and $\delta>\beta$.
-	\tcblower
-	\flushright\includegraphics{euclid-I16}
+\begin{thm}{I.\,16.\ Exterior Angle Theorem}{extangle}
+	\phantom{bob}\par
+	\begin{minipage}[t]{0.6\linewidth}\vspace{-8pt}
+		If one side of a triangle is extended, then the exterior angle is larger than either of the opposite interior angles.\par
+	In the picture, $\delta>\alpha$ and $\delta>\beta$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.37\linewidth}\vspace{-20pt}
+		\hfill\includegraphics[alt={The exterior angle theorem}]{euclid-I16}
+	\end{minipage}
 \end{thm}
 
-Euclid did not quantify angles numerically: $\delta>\alpha$ means that $\alpha$ is congruent to some angle \emph{inside} $\delta$.
+
+Euclid did not quantify angles numerically: $\delta>\alpha$ means $\alpha$ is congruent to some angle \emph{inside} $\delta$.
 
 \begin{proof}
 	Construct the bisector $\cl{BM}$ of $\cl{AC}$ \ (I.\,10).\par
-	\begin{minipage}[t]{0.64\linewidth}\vspace{-5pt}
-		Extend $\cl{BM}$ to $E$ such that $\cl{BM}\cong\cl{ME}$ \  (I.\,2) and connect $\cl{CE}$ \  (P1).\smallbreak
+	\begin{minipage}[t]{0.66\linewidth}\vspace{-6pt}
+		Extend $\cl{BM}$ to $E$ such that $\cl{BM}\cong\cl{ME}$ (I.\,2).\smallbreak
+		Connect $\cl{CE}$ (P1).\smallbreak
 		The opposite angles at $M$ are congruent \ (I.\,15).\smallbreak
-		SAS (I.\,4) applied to $\triangle AMB$ and $\triangle CME$ says $\angle BAM\cong\angle EMC$, which is clearly smaller than the exterior angle at $C$.
+		SAS (I.\,4) applied to $\triangle AMB$ and $\triangle CME$ says $\angle BAM\cong\angle EMC$, which is smaller than the exterior angle at $C$.
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.35\linewidth}\vspace{-20pt}
-		\flushright\includegraphics{euclid-I16p}
+	\begin{minipage}[t]{0.33\linewidth}\vspace{-20pt}
+		\hfill\includegraphics[alt={proving the exterior angle theorem}]{euclid-I16p}
 	\end{minipage}
 	\smallbreak
-	Bisect $\cl{BC}$ and repeat the argument to see that $\beta<\delta$.
+	Bisect $\cl{BC}$ and repeat the argument to see that $\beta<\delta$: another invocation of the vertical angles theorem (I.\,15) is needed, this time at $C$.
 \end{proof}
 
 The proof in fact \emph{constructs} a parallel ($\cl{CE}$) to $\cl{AB}$ through $C$, as the next result shows.
 
-\begin{thm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.32\linewidth]{I.\,27}{}
-	If a line falls on two other lines such that the alternate angles ($\alpha,\beta$) are congruent, then the two lines are parallel.
-	\tcblower
-	\flushright\includegraphics{euclid-I27}
+\begin{thm}{I.\,27.\ Construction of a parallel}{}\phantom{bob}\par
+	\begin{minipage}[t]{0.66\linewidth}\vspace{-8pt}
+		If a line falls on two other lines such that the alternate angles ($\alpha,\beta$) are congruent, then the two lines are parallel.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.33\linewidth}\vspace{-20pt}
+		\hfill\includegraphics[alt={constructing a parallel using congruent angles}]{euclid-I27}
+	\end{minipage}
 \end{thm}
 
 The \emph{alternate angles} in the exterior angle theorem are those at $A$ and $C$: $\cl{CE}$ really is parallel to $\cl{AB}$.
 
-\begin{tcolorbox}[proofstyle,lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.37\linewidth]
-	\emph{Proof.}\lstsp If the lines were not parallel, they would meet on one side. WLOG suppose they meet on the right side at $C$.\smallbreak
-	The angle $\beta$ at $B$, being exterior to $\triangle ABC$, must be greater than the angle $\alpha$ at $A$ \ (I.\,16): contradiction.
-	\tcblower
-	\flushright
-	\includegraphics{euclid-I27p}\\[-12pt]\hfill\qedsymbol
-\end{tcolorbox}
+\begin{proof}
+	Assume, for contradiction, that the lines are not parallel.\par
+	\begin{minipage}[t]{0.66\linewidth}\vspace{-6pt}
+		WLOG suppose the lines meet on the right side at $C$.\smallbreak
+		By the Exterior Angle Theorem (I.\,16), the angle $\beta$ at $B$, being exterior to $\triangle ABC$, must be greater than the angle $\alpha$ at $A$: contradiction.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.33\linewidth}\vspace{-20pt}
+		\hfill\includegraphics[alt={proof of the parallel line construction}]{euclid-I27p}
+	\end{minipage}
+\end{proof}
 
-Euclid combines this with the vertical angles theorem (I.\,15) to finish the first half of Book I.
+Euclid finishes the first half\footnote{Between I.\,16 and 27 are several results regarding comparisons of sides and angles of triangles (the triangle inequality), and further triangle congruence theorems such as ASA. We'll consider these later.} of Book I by combining this construction with the vertical angles theorem (I.\,15).
 
-\begin{cor}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.32\linewidth]{I.\,28}{euclid28}
-	If a line falling on two other lines makes congruent angles, then the two lines are parallel.
-	\tcblower
-	\flushright\includegraphics{euclid-I28}
+\begin{cor}{I.\,28.\ Alternative construction of a parallel}{euclid28}\phantom{bob}\par
+	\begin{minipage}[t]{0.66\linewidth}\vspace{-8pt}
+		If a line falling on two other lines makes congruent angles, then the two lines are parallel.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.33\linewidth}\vspace{-20pt}
+		\hfill\includegraphics[alt={constructing a parallel using congruent angles}]{euclid-I28}
+	\end{minipage}
 \end{cor}
 
 
-Thus far, Euclid uses only postulates P1--P4. In any model in which these hold:
-\[
-	\tcbhighmath{\text{Given a line $\ell$ and a point $C$ not on $\ell$, \textbf{there exists} a parallel to $\ell$ through $C$}}
-\]
-\goodbreak
+Thus far Euclid has used only postulates P1--P4. In any model in which these hold:
+\begin{quote}
+	\texthigh{Given a line $\ell$ and a point $C$ not on $\ell$, \textbf{there exists} a parallel to $\ell$ through $C$}
+\end{quote}
 
 
-\boldsubsubsection{Parallel Lines: Uniqueness, Angle-sums \& Playfair's Postulate}
 
-Euclid finally invokes the parallel postulate to prove the converse of I.\,27, showing that the congruent alternate angle approach is the \emph{only} way to have parallel lines.
 
-\begin{thm}{I.\,29}{euclid29}
+\subsubsection*{Parallel Lines II: Uniqueness \& Angle-sums}
+
+Euclid finally invokes the parallel postulate (P5) to prove that the congruent alternate angle approach is the \emph{only} way to have parallel lines.
+
+\begin{thm}{I.\,29.\ Uniqueness of parallels---converse to I.\,27}{euclid29}\phantom{bob}\par
 	If a line falls on two parallel lines, then the alternate angles are congruent.
 \end{thm}
 
-\begin{tcolorbox}[proofstyle,lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.37\linewidth]
-	\emph{Proof.}\ \ Given the picture, we must prove that $\alpha\cong\beta$.\smallbreak
-	Suppose not and WLOG that $\alpha>\beta$.\smallbreak
-	But then $\beta+\gamma<\alpha+\gamma$, which is a straight edge.\smallbreak
-	By the parallel postulate, the lines $\ell,m$ meet on the left side of the picture, whence $\ell$ and $m$ are not parallel.
-	\tcblower
-	\flushright
-	\includegraphics{euclid-I29}\\[-10pt]\qedsymbol
-\end{tcolorbox}
+\begin{proof}
+	We are given lines $\ell,m$ and a crossing line $n$.\par
+	\begin{minipage}[t]{0.66\linewidth}\vspace{-6pt}
+		Label the alternate angles $\alpha,\beta$ as in the picture, and let $\gamma$ be the supplementary angle to $\alpha$. We must prove that if $\ell$ and $m$ are parallel, then $\alpha\cong\beta$.\smallbreak
+		Suppose to the contrary: WLOG we may assume $\alpha>\beta$.\smallbreak
+		But then $\beta+\gamma<\alpha+\gamma$, which is a straight-edge.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.33\linewidth}\vspace{-20pt}
+		\hfill\includegraphics[alt={proving the uniqueness of parallels}]{euclid-I29}
+	\end{minipage}\smallbreak
+	By the parallel postulate, $\ell$ and $m$ meet on the left side of the picture: they are not parallel.
+\end{proof}
 
-The most well-known result about triangles is now within our grasp: the interior angles sum to a straight-edge. Euclid words this slightly differently.
 
-\begin{thm}{I.\,32}{}
+\pagebreak[3]
+
+
+The most well-known result about triangles is now within our grasp: the interior angles sum to a straight-edge. Euclid phrases this slightly differently.
+
+\begin{thm}{I.\,32. Angle sum in a triangle equals a straight-edge}{}
 	If one side of a triangle is extended, the exterior angle is congruent to the sum of the opposite interior angles.
 \end{thm}
 
 \begin{minipage}[t]{0.64\linewidth}\vspace{-4pt}
-	\emph{This is not a numerical sum,} though for the sake of familiarity we'll often write \ang{180} for a straight-edge and \ang{90} for a right-angle.\par
-	In the picture we've labelled angles with Greek letters for clarity. The result amounts to showing that $\widetilde\alpha+\widetilde\beta\cong\alpha+\beta$.
+	\emph{This is not a numerical sum,} though for familiarity's sake we'll often write \ang{180} for a straight-edge and \ang{90} for a right-angle.\smallbreak
+	In the picture we've labelled the angles for clarity. The result amounts to showing that $\widetilde\alpha+\widetilde\beta\cong\alpha+\beta$.
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.34\linewidth}\vspace{-9pt}
-	\flushright
-	\includegraphics{euclid-I32}
+	\hfill\includegraphics[alt={angle sum equals 180 degrees}]{euclid-I32}
 \end{minipage}
 
-\vspace{-20pt}
 
 \begin{proof}
-	Construct $\cl{CE}$ parallel to $\cl{BA}$ as in I.\,16, so that $\widetilde\alpha\cong\alpha$.\smallbreak
-	$\cl{BD}$ falls on parallel lines $\cl{AB}$ and $\cl{CE}$, whence $\widetilde\beta\cong\beta$ (Corollary of I.\,29).\smallbreak
+	Construct $\cl{CE}$ as in I.\,16 so that $\widetilde\alpha\cong\alpha$. By I.\,17, $\cl{CE}$ is parallel to $\cl{AB}$.\smallbreak
+	$\cl{BD}$ falls on the parallels $\cl{AB}$ and $\cl{CE}$, whence $\widetilde\beta\cong\beta$ (Corollary of I.\,29).\smallbreak
 	Axiom A2 shows that $\angle ACD=\widetilde\alpha+\widetilde\beta\cong\alpha+\beta$.
 \end{proof}
 
+Since the three angles at $C$ sum to a straight-edge the angle sum in the triangle is plainly
+\[
+	\alpha+\beta+\gamma\cong \widetilde\alpha+\widetilde\beta+\gamma\cong\ang{180}
+\]
 
-\medskip
 
 
-The parallel postulate is stated in the negative (angles \emph{don't} sum to a straight-edge, therefore the lines are \emph{not} parallel). Euclid possibly chose this formulation to facilitate proofs by contradiction, though the unfortunate effect is to obscure the meaning of the parallel postulate. Here is a more modern interpretation.
+\subsubsection*{Playfair's Postulate}
 
-\begin{axiom}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.37\linewidth]{Playfair's Postulate}{playfair}
-	Given a line $\ell$ and a point $C$ not on $\ell$, \textbf{at most one} parallel $m$ to $\ell$ passes through $C$.
-	\tcblower
-	\flushright
-	\includegraphics{euclid-playfair-defn}
+The parallel postulate is stated negatively (angles \emph{don't} sum to a straight-edge, therefore lines are \emph{not} parallel). Euclid likely chose this formulation to facilitate contradiction arguments, though it also obscures the meaning of the parallel postulate. Here is a more modern interpretation.
+
+\begin{axiom}{Playfair's Postulate}{playfair}\phantom{bob}\par
+	\begin{minipage}[t]{0.64\linewidth}\vspace{-8pt}
+		Given a line $\ell$ and a point $C$ not on $\ell$, \textbf{at most one} parallel $m$ to $\ell$ passes through $C$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.34\linewidth}\vspace{-9pt}
+		\hfill\includegraphics[alt={playfair's postulate}]{euclid-playfair-defn}
+	\end{minipage}
 \end{axiom}
 
 
+Our discussion thus far shows that the parallel postulate implies Playfair.\par
 \begin{minipage}[t]{0.62\linewidth}\vspace{0pt}
-	Our discussion thus far shows that the parallel postulate implies Playfair.
-	\begin{itemize}\itemsep0pt
+	\begin{itemize}
 	  \item Let $A,B\in\ell$ and construct the triangle $\triangle ABC$.
 	  \item The exterior angle theorem constructs $E$ and thus a parallel $m$ to $\ell$ by I.\,27.
 	  \item I.\,29 invokes the parallel postulate to prove that this is the \emph{only} such parallel.
@@ -249,69 +297,70 @@ The parallel postulate is stated in the negative (angles \emph{don't} sum to a s
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.37\linewidth}\vspace{0pt}
-	\flushright
-	\includegraphics{euclid-playfair3}
+	\hfill\includegraphics[alt={showing that the parallel postulate implies playfair}]{euclid-playfair3}
 \end{minipage}\bigbreak
 
 In fact the postulates are equivalent.
 
-\begin{thm}{}{}
+\begin{thm}{}{p5playfairequiv}
 	In the presence of Euclid's first four postulates, Playfair's postulate and the parallel postulate (P5) are equivalent.
 \end{thm}
 
 \begin{proof}
-	\begin{description}
-		\item[\normalfont (P5 $\Rightarrow$ Playfair)] We proved this above.
-		\item[\normalfont (Playfair $\Rightarrow$ P5)] We prove the contrapositive. Assume postulates P1--P4 are true and that P5 is \emph{false.} Using quantifiers, and with reference to the picture in I.\,29, we restate the parallel postulate:
+	We proved that P5 implies Playfair above.\medbreak
+	For Playfair $\Rightarrow$ P5, we prove the contrapositive. Assume postulates P1--P4 are true and that P5 is \emph{false.} Using quantifiers, and with reference to the picture, we restate the parallel postulate:\footnotemark
 	\begin{quote}
-	  P5:\lstsp $\forall$ pairs of lines $\ell,m$ and $\forall$ crossing lines $n$, \  $\beta+\gamma<\ang{180}\implies\ell,m$ \emph{not parallel.}\footnote{Not quite: don't meet on same side. Exercise as to why this forces non-parallel\ldots Let complementary angles be $\beta',\gamma'$, then $\ang{180}<\beta'+\gamma'<\beta+\gamma<\ang{180}$ where middle inequality is because of EATh\ldots}
+	  P5:\lstsp $\forall$ lines $\ell,m,n$, \ $\beta+\gamma<\ang{180}\implies\ell,m$ meet on the left side.
 	\end{quote}
-	\begin{minipage}[t]{0.62\linewidth}\vspace{-7pt}
+	\begin{minipage}[t]{0.65\linewidth}\vspace{-8pt}
 		Its \emph{negation} (P5 false) is therefore:
 		\begin{quote}
-	  	$\exists$ parallel lines $\ell,m$ and a crossing line $n$ for which $\beta+\gamma<\ang{180}$
+	  	$\exists$ lines $\ell,m,n$ for which $\beta+\gamma<\ang{180}$ and $\ell,m$ \textbf{do not meet} on the left side.
 		\end{quote}
-		This is without loss of generality: if $\beta+\gamma>\ang{180}$, consider the angles on the other side of $n$.\medbreak
-		By the the exterior angle theorem/I.\,28, we may build a parallel line $\hat\ell$ to $\ell$ through the intersection $C$ of $m$ and $n$ (in the picture, $\hat\beta\cong\beta$). Crucially, this only requires postulates P1--P4!
+		That $\ell,m$ are parallel is Exercise \ref{exs:playfairlparallellemma}. By I.\,28, we may build a \emph{second} parallel line $\hat\ell$ to $\ell$ through the intersection $C$ of $m$ and $n$: as pictured,
+		\[
+			\hat\beta\cong\beta \implies \hat\beta+\gamma\cong\beta+\gamma<\ang{180}
+		\]
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.37\linewidth}\vspace{0pt}
-		\flushright
-		\includegraphics{euclid-playfair2}\\
-		\includegraphics{euclid-playfair}
+	\begin{minipage}[t]{0.33\linewidth}\vspace{-20pt}
+		\hfill\includegraphics[alt={the negation of the parallel postulate}]{euclid-playfair2}
+		\smallbreak
+		\hfill\includegraphics[alt={constructing a second parallel through a point not on a line}]{euclid-playfair}
 	\end{minipage}\smallbreak
-	Observe that $\hat\ell$ and $m$ are \emph{distinct} since $\hat\beta+\gamma\cong\beta+\gamma<\ang{180}$.
-	We therefore have a line $\ell$ and a point $C$ not on $\ell$, though which pass (at least) \emph{two} parallels to $\ell$: Playfair's postulate is \emph{false.} \qedhere
-	\end{description}
+	shows that $\hat\ell\neq m$. Crucially, these constructions only require postulates P1--P4.\par
+	We therefore have a point $C$ not on a line $\ell$, though which pass (at least) \emph{two} parallels to $\ell$: this is the negation of Playfair's postulate.
 \end{proof}
 
+\footnotetext{%
+	Throughout, $\ell$, $m$, $n$ are distinct lines, with $n$ intersecting both others. We strip this out for brevity.%
+}
 
 
-\boldsubsubsection{Non-Euclidean Geometry}\phantomsection\label{pg:sphere}
 
-That Euclid waited so long before invoking the uniqueness of parallels suggests he was trying to establish as much as he could about triangles and basic geometry in its absence. By contrast, everything from I.\,29 onwards relies on the parallel postulate, including the proof that the angle sum in a triangle is \ang{180}. For centuries, many mathematicians believed, though none could prove it, that such a fundamental fact about triangles must be true independent of the parallel postulate.\smallbreak
-Loosely speaking, a \emph{non-Euclidean geometry} is a model for which a parallel through an off-line point either doesn't exist or is non-unique. It wasn't until the 17--1800s and the development of \emph{hyperbolic geometry} (Chapter \ref{chap:hyper}) that a model was found in which Euclid's first four postulates hold but for which the parallel postulate is false.\footnote{This shows that the parallel postulate is independent; in fact all Euclid's postulates are independent. They are also consistent (the `usual' points and lines in the plane are a model), but incomplete: a sample undecidable is in Exercise \ref{ex:euclidundecideable}.}\par
+\subsubsection*{Non-Euclidean Geometry}\phantomsection\label{pg:sphere}
+
+That Euclid waited so long before invoking the parallel postulate suggests he wanted to establish as much as possible in its absence. By contrast, everything from I.\,29 onwards relies on the parallel postulate, including the proof that the angle sum in a triangle is \ang{180}. For centuries, many mathematicians believed, though none could prove, that such a fundamental fact must be true independent of the parallel postulate.\smallbreak
+Loosely speaking, a \emph{non-Euclidean geometry} is a model for which a parallel through an off-line point either doesn't exist or is non-unique. It wasn't until the 17--1800s and the development of \emph{hyperbolic geometry} (Chapter \ref{chap:hyper}) that a model was found which satisfies Euclid's first four postulates and the negation of the parallel postulate.\footnote{%
+	The parallel postulate is therefore independent; in fact all Euclid's postulates are independent. They are also consistent (the `usual' points and lines in the plane being a model), but incomplete: a sample undecidable is in Exercise \ref{ex:euclidundecideable}.%
+}\par
 
 \begin{minipage}[t]{0.76\linewidth}\vspace{-5pt}
 	We shall eventually see that every triangle in hyperbolic geometry has angle sum less than \ang{180}, though this will require a lot of work! For a more easily visualized non-Euclidean geometry consider the sphere. A rubber band stretched between three points on its surface describes a \emph{spherical triangle}: an example with angle sum \ang{270} is drawn. A similar game can be played on a saddle-shaped surface: as in hyperbolic geometry, `triangles' will have angle sum less than \ang{180}.
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.23\linewidth}\vspace{-10pt}
-	\flushright
-	\includegraphics[scale=0.95]{euclid-sphere}
+	\hfill
+	\includegraphics[alt={a spherical triangle}]{euclid-sphere}
 \end{minipage}
 
-\goodbreak
 
-\goodbreak
+\subsubsection*{Pythagoras' Theorem}\phantomsection\label{pg:pythagoras}
 
-
-\boldsubsubsection{Pythagoras' Theorem}\phantomsection\label{pg:pythagoras}
-
-Following his discussion of parallels, Euclid shows that parallelograms with the same base and height are equal (in area) (I.\,33--41), before providing constructions of parallelograms and squares (I.\,42--46). Some of this is in Exercise \ref{ex:pythagexs}. Immediately afterwards comes the capstone of Book I.
+Following his discussion of parallels, Euclid shows that parallelograms with the same base and height have equal area (I.\,33--41), before providing constructions of parallelograms and squares (I.\,42--46). Some of this is in Exercise \ref{ex:pythagexs}. Immediately afterwards comes the capstone of Book I.
 
 
-\begin{thm}{I.\,47 Pythagoras' Theorem}{}
+\begin{thm}{I.\,47. Pythagoras' Theorem}{}
 	The square on the hypotenuse of a right triangle equals (has the same area as) the sum of the squares on the other sides.
 \end{thm}
 
@@ -320,98 +369,70 @@ Following his discussion of parallels, Euclid shows that parallelograms with the
 	\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}
 	\begin{enumerate}\itemsep0pt
 	  \item Construct squares on each side of $\triangle ABC$ \ (I.\,46) and a parallel $\cl{AL}$ to $\cl{BD}$ \ (I.\,16).
-	  \item $\cl{AB}\cong\cl{FB}$ and $\cl{BD}\cong\cl{BC}$ since sides of squares are congruent. Moreover $\angle ABD\cong\angle FBC$ since both contain \textcolor{blue}{$\angle ABC$} and a \textcolor{red}{right-angle}.
+	  \item $\cl{AB}\cong\cl{FB}$ and $\cl{BD}\cong\cl{BC}$ since sides of squares are congruent. Moreover $\angle ABD\cong\angle FBC$ since both contain \textcolor{blue}{$\angle ABC$} and a \textcolor{dkred}{right-angle}.
 	  \item Side-angle-side (I.\,4) says that $\triangle ABD$ and $\triangle FBC$ are congruent (identical up to rotation by \ang{90}).
 		\item I.\,41 compares areas of parallelograms and triangles with the same base and height:\vspace{0pt}
 		\begin{align*}
-			\operatorname{Area}(\textcolor{red}{\square ABFG})&=2\operatorname{Area}(\triangle FBC)\\
+			\operatorname{Area}(\textcolor{dkred}{\square ABFG})&=2\operatorname{Area}(\triangle FBC)\\
 			&=2\operatorname{Area}(\triangle ABD)\\
-			&=\operatorname{Area}\left(\textcolor{red}{\fbox{\phantom{'}}BOLD}\right)\\[-25pt]
+			&=\operatorname{Area}\left(\textcolor{dkred}{\fbox{\phantom{'}}BOLD}\right)\\[-25pt]
 		\end{align*}
 		\item Similarly $\operatorname{Area}(\textcolor{Green}{\square ACKH}) =\operatorname{Area}\left(\textcolor{Green}{\fbox{\phantom{'}}OCEL}\right)$.
 	\end{enumerate}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.39\linewidth}\vspace{0pt}
-		\flushright
-		\includegraphics{euclid-I47}
+		\hfill
+		\includegraphics[alt={proving the pythagorean theorem}]{euclid-I47}
 	\end{minipage}
-	\begin{enumerate}\setcounter{enumi}{5}
+	\begin{enumerate}[resume]
 		\item Sum the rectangles to obtain $\square BCED$ and complete the proof.\hfill\qedhere
 	\end{enumerate}
 \end{proof}
 
 
 
-Euclid finishes Book I with the converse, which we state without proof. Euclid's argument is very sneaky---look it up!
+Euclid finishes Book I with the converse which we state without proof. The argument is sneaky, and typical of Euclidean geometry---look it up!
 
-\begin{thm}{I.\,48}{}
-	If the (areas of the) squares on two sides of a triangle equal the (area of the) square on the third side, then the  triangle has a right-angle opposite the third side.
-\end{thm}
+\begin{cor}{I.\,48. Converse of Pythagoras'}{}
+	If the squares on two sides of a triangle equal the square on the third, then the triangle has a right-angle opposite the third side.
+\end{cor}
 
-The \emph{Elements} contains thirteen books. Much of the remaining twelve discuss further geometric constructions, including in three dimensions. There is also a healthy dose of basic number theory including what is now known as the Euclidean algorithm.\medbreak
+The other twelve books of the \emph{Elements} discuss further geometric constructions, including in three dimensions, alongside basic number theory including the Euclidean algorithm (Book VII).\medbreak
 
-While undoubtedly a masterpiece of logical reasoning, Euclid's presentation has several flaws. Most problematic is his reliance on pictorial reasoning: for instance, he `proves' the SAS and SSS congruence theorems (I.\,4 \& 8) by laying one triangle on top of another, a process not justified by his axioms (look it up \href{http://math.furman.edu/~jpoole/euclidselements/euclid.htm}{online} or \href{http://math.uci.edu/~ndonalds/Elements-I-VI.pdf}{Byrne}). In a modern sense, Euclid's approach is part axiomatic system and part model: his reasoning requires a visual/physical representation of lines, circles, etc. Because of these issues, we now turn to a more modern description of Euclidean geometry, courtesy of David Hilbert.
+While undoubtedly a masterpiece of logical reasoning, Euclid's presentation has several flaws. Most problematic is his reliance on pictorial reasoning: for instance, he `proves' the SAS and SSS congruence theorems (I.\,4 \& 8) by laying one triangle on top of another, a process not justified by his axioms (see \href{http://math.furman.edu/~jpoole/euclidselements/euclid.htm}{here} or in \href{http://math.uci.edu/~ndonalds/Elements-I-VI.pdf}{Byrne}). In a modern sense, Euclid's approach is part axiomatic system and part model: his reasoning requires a visual/physical representation of lines, circles, etc. In part because of these issues, we now turn to a more modern description of Euclidean geometry courtesy of David Hilbert.
 
-\clearpage
 
-% 
-% \paragraph{Book II: Geometric algebra}
-% 
-% We tend to think of Pythagoras' Theorem as a statement in Geometric Algebra: i.e., $c^2=a^2+b^2$, but this is not how Euclid saw it. To Euclid, Geometric Algebra was about solving equations to find unknowns. Of course the concept of algebra hadn't been invented yet, so the very problems had to be stated geometrically. Such concerns comprise the bulk of Book II of the \emph{Elements,} and are mostly attributable to the Pythagoreans.Here is an example.
-% 
-% \begin{thm*}[II.\,11]
-% A straight line can be divided so that the rectangle contained by the whole and one of the segments is equal to the square on the remaining segment.
-% \end{thm*}
-% 
-% 
-%  In our modern language we would say: given $AB=a$, find $H$ on $AB$, so that $AH=x$, with $x^2=a(a-x)$. Here is Euclid's proof.
-% 
-% \begin{minipage}{0.3\textwidth}
-% \includegraphics{geo-17-bk2}
-% \end{minipage}\hfill
-% \begin{minipage}{0.6\textwidth}
-% \begin{enumerate}
-%   \item Construct square $ABDC$ on $AB$
-% 	\item Bisect $AC$; call midpoint $E$
-% 	\item Connect $EB$
-% 	\item Extend $AC$
-% 	\item Lay off $EF=EB$ on $AC$ extended
-% 	\item Construct square $FGHA$
-% \end{enumerate}
-% \end{minipage}
-% 
-%  In our modern language, with our understanding of Pythagoras', we see that Euclid has constructed $H$ so that $x=\frac{\sqrt 5-1}2a$. We can easily check that this solves the equation $x^2=a(a-x)$. Note that this is a construction of the golden ratio:
-% \[AH:HB=1:\frac{\sqrt 5-1}2=\frac{\sqrt 5+1}2:1.\]
-% For many centuries after Euclid, the meaning of `solve' was exactly this: construct a solution.
 
 
 \begin{exercises}
-	\hangindent\doubleind
-	1. \ (a) \ Prove the \emph{vertical angle theorem} (I.\,15): if two lines cut one another, opposite angles are congruent.\vspace{-8pt}
+	\hangindent\leftmargini\emph{Key concepts: \ Postulates P1--P5, \ Exterior angle theorem and \textbf{Existence} of parallels, \ Parallel postulate and \textbf{Uniqueness} of parallels, \ Playfair's postulate, \ Non-Euclidean geometry}
 
-	\begin{enumerate}\setcounter{enumi}{1}
-	  \item[]\begin{enumerate}\setcounter{enumii}{1}
-	    \item[](\emph{Hint: This is one place where you will need to use postulate 4 regarding right-angles})
-	    \item Use part (a) to complete the proof of the exterior angle theorem: i.e.,\ explain why $\beta<\delta$.
+
+	\begin{enumerate}
+	  \item\begin{enumerate}
+	    \item Prove the \emph{vertical angles theorem} (I.\,15): if two lines cross, opposite angles are congruent.\par
+	    (\emph{Hint: You will need postulate 4 regarding right-angles})
+	    \item Use part (a) to complete the proof of the exterior angle theorem: why is $\beta<\delta$?
 	  \end{enumerate}
 	
-		\item\label{ex:pythagexs} To help prove Pythagoras', Euclid makes use of the following results. Prove them as best as you can. Full rigor is tricky, but the pictures should help!
+	
+		\item\label{ex:pythagexs} To help prove Pythagoras', Euclid makes use of the following results. Prove them as best as you can. Full rigor is tricky, but the pictures should help.
 		\begin{enumerate}
 		  \item (I.\,11) At a given point on a line, to construct a perpendicular.
 		  \item (I.\,46) To construct a square on a given segment.
-		  \item (I.\,35) Parallelograms on the same base and with the same height have equal area.
-		  \item (I.\,41) A parallelogram has twice the area of a triangle on the same base and with the same height.
+		  \item (I.\,35) Parallelograms on the same base and with the same height are equal (in area).
+		  \item (I.\,41) A parallelogram is twice (the area of) a triangle with the same base and height.
 		\end{enumerate}
 		
 		\begin{center}
 			\begin{tabular}{c@{\quad}c@{\quad}c}
-				\includegraphics[scale=0.95]{euclid-I11}
+				\includegraphics[alt={proof of theorem I 11: constructing a perpendicular}]{euclid-I11}
 				&
-				\includegraphics[scale=0.95]{euclid-I46}
+				\includegraphics[alt={proof of theorem I 46: constructing a square}]{euclid-I46}
 				&
-				\includegraphics[scale=0.95]{euclid-I35a}
-				\\[-2pt]
+				\includegraphics[alt={proof of theorem I 35: areas of parallelograms}]{euclid-I35a}
+				\\
 				Theorem I.\,11
 				&
 				Theorem I.\,46
@@ -421,30 +442,31 @@ While undoubtedly a masterpiece of logical reasoning, Euclid's presentation has 
 		\end{center}
 		
 	  
-	  \item Consider spherical geometry (page \pageref{pg:sphere}), where \emph{lines} are paths of shortest distance (great circles).
+	  \item In spherical geometry (page \pageref{pg:sphere}), \emph{lines} are paths of shortest distance (great circles).
 	 	\begin{enumerate}
 	 	  \item Which of Euclid's postulates P1--P5 are satisfied by this geometry?
-	  	\item (Hard)\lstsp Where does the proof of the exterior angle theorem \emph{fail} in spherical geometry? 
+	  	\item The exterior angle theorem is \emph{false} in spherical geometry. Provide a counter-example, and explain where the proof fails. 
 	 	\end{enumerate}
 	  
 	  
-	  \item\begin{enumerate}
-	    \item State the negation of Playfair's postulate.
-	    \item Prove that Playfair's postulate is equivalent to the following statement:
-	 	 	\begin{quote}
-	  		Whenever a line is perpendicular to one of two parallel lines, it must be perpendicular to the other.
-	  	\end{quote}
-	  \end{enumerate}
+	  \item Prove that Playfair's postulate is equivalent to the following statement:
+	 	\begin{quote}
+	  	Whenever a line is perpendicular to one of two parallel lines, it must be perpendicular to the other.
+	  \end{quote}
+	  
+	  
+	  \item\label{exs:playfairlparallellemma} In the proof of Theorem \ref{thm:p5playfairequiv}, explain why $\ell,m$ must be parallel.\par
+	  (\emph{You can't use I.\,32 for this; why not?})
 	 
 	  
 	  \item\label{ex:euclidundecideable} The \emph{line-circle continuity} property states:
 	  \begin{quote}
-	  	If point $P$ lies inside and $Q$ lies outside a circle $\alpha$, then the segment $\overline{PQ}$ intersects $\alpha$.
+	  	If $P$ lies inside and $Q$ outside a circle $\alpha$, then the segment $\overline{PQ}$ intersects $\alpha$.
 	  \end{quote}
-	  By considering the set of rational points in the plane $\Q^2=\{(x,y):x,y\in\Q\}$, and making a sensible definition of line and circle, show that the line-circle continuity property is undecidable within Euclid's system.
+	  By considering the rational points in the plane $\Q^2=\big\{(x,y):x,y\in\Q\big\}$, show that the line-circle continuity property is undecidable within Euclid's system.
 		
 		
-		\item The standard proof of the converse of Pythagoras' theorem (I.\,48) is, in fact, a \emph{corollary} of the original! Look it up and explain the argument as best you can.
+		\item The standard proof of the converse of Pythagoras' Theorem (I.\,48) is a \emph{corollary} of the original! Look it up and explain the argument as best you can.
 	\end{enumerate}
 	
 \end{exercises}
@@ -452,6 +474,8 @@ While undoubtedly a masterpiece of logical reasoning, Euclid's presentation has 
 \clearpage
 
 
+
+\iffalse
 
 \subsection{Hilbert's Axioms I: Incidence and Order}\label{sec:hilbert1}
 
@@ -514,7 +538,7 @@ Hilbert's axioms for plane geometry\footnote{%
 \pagebreak
 \input{2euclid/hilbert}
 
-\boldsubsubsection{Axioms of Incidence: Finite Geometries}
+\subsubsection*{Axioms of Incidence: Finite Geometries}
 
 The axioms of incidence describe the relation \emph{on.} An \emph{incidence geometry} is any model satisfying axioms I-1, I-2, I-3. Perhaps surprisingly, there exist incidence geometries with \emph{finitely many points}!
 
@@ -574,7 +598,7 @@ We can even prove some simple theorems in incidence geometry. The second is an e
 
 \begin{minipage}[t]{0.79\linewidth}\vspace{0pt}
 
-\boldsubsubsection{Axioms of Order: Sides of a Line, Pasch's Axiom \& the Crossbar Theorem}
+\subsubsection*{Axioms of Order: Sides of a Line, Pasch's Axiom \& the Crossbar Theorem}
 
 The order axioms describe the ternary relation \emph{between.} The first three make explicit the idea that points on a line lie in a fixed order: travelling along a line, one encounters each point exactly once. In particular, these axioms prevent `circular' lines (the pictured contradiction), and guarantee that a line contains infinitely many points.\smallbreak
 Each of the above finite incidence examples fails to satisfy (some of) the order axioms.
@@ -831,7 +855,7 @@ We start with a small piece of bookkeeping.
 \end{proof}
 
 
-\boldsubsubsection{Segment/Angle Transfer and Comparison}
+\subsubsection*{Segment/Angle Transfer and Comparison}
 
 Hilbert's axioms of segment and angle transference are crucial for comparing non-collinear segments and angles with distinct vertices.
 
@@ -856,7 +880,7 @@ Neither Hilbert nor Euclid use or require an \emph{absolute} notion of length/an
 
 \goodbreak
 
-\boldsubsubsection{The Triangle Congruence Theorems: SAS, ASA, SSS \& SAA}
+\subsubsection*{The Triangle Congruence Theorems: SAS, ASA, SSS \& SAA}
 
 Hilbert assumes side-angle-side (SAS) and proceeds to prove the remainder. Here is the first of these; we'll cover SSS momentarily and SAA in Exercise \ref{exs:saaproof}.
 
@@ -890,7 +914,7 @@ Hilbert's approach modifies Euclid's: instead of laying $\triangle ABC$ on top o
 
 
 
-\boldsubsubsection{Geometry Without Circles}
+\subsubsection*{Geometry Without Circles}
 
 Circles are at the heart of Euclid's constructions. Yet, for reason we'll address in Section \ref{sec:circ}, Hilbert essentially ignores them. We sketch a few of his alternative approaches to Euclid's basic results.
 
@@ -935,7 +959,7 @@ As with the majority of Book I, Euclid accomplishes this using circle intersecti
 	By axioms C-4 and C-1, we may transfer \textcolor{blue}{$\cl{AP}$} to the other side of $\ell$ at $A$, creating a new point $Q$.\smallbreak
 	Since $P$ and $Q$ lie on opposite sides of $\ell$, the line intersects $\cl{PQ}$ at some point $M$. There are two cases to consider.
 	\begin{itemize}
-	  \item In the generic case $M\neq A$ (pictured), SAS applied to $\triangle MAP$ and $\triangle MAQ$ shows that $\angle AMP\cong\angle AMQ$. Since these angles sum to a straight edge ($\cl{PQ}$), they are both right-angles.
+	  \item In the generic case $M\neq A$ (pictured), SAS applied to $\triangle MAP$ and $\triangle MAQ$ shows that $\angle AMP\cong\angle AMQ$. Since these angles sum to a straight-edge ($\cl{PQ}$), they are both right-angles.
 	  \item	In the extreme case $M=A$, there are no triangles and SAS cannot be applied. Instead, observe that $B$ does not lie on $\cl{PQ}$ (which axioms/results make this clear?!) and apply the above argument with $B$ instead of $A$.
 	\end{itemize}
 \end{minipage}
@@ -980,7 +1004,7 @@ Euclid's approach uses a bisector which he obtains from circles. Hilbert does th
 \begin{proof}
 	Given $\triangle ABC$, extend $\cl{AB}$ to $D$ such that \textcolor{blue}{$\cl{AC}\cong\cl{BD}$}. For clarity, we label angles with Greek letters as in the first picture below. We show that \textcolor{Green}{$\gamma<\delta$} by proving that the alternatives are impossible.	
 	\begin{enumerate}\itemsep0pt
-		\item $(\delta\ncong\gamma)$\lstsp Assume \textcolor{Green}{$\delta\cong\gamma$}. By SAS, $\triangle ACB\cong\triangle DBC$; in particular \textcolor{blue}{$\epsilon\cong\beta$}. Since $A$ and $D$ lie on opposite sides of $\lin{BC}$, we see that $\epsilon+\gamma\cong \beta+\delta$ is a straight edge. But then $A,D$ are distinct points lying on \emph{two} lines! Contradiction.
+		\item $(\delta\ncong\gamma)$\lstsp Assume \textcolor{Green}{$\delta\cong\gamma$}. By SAS, $\triangle ACB\cong\triangle DBC$; in particular \textcolor{blue}{$\epsilon\cong\beta$}. Since $A$ and $D$ lie on opposite sides of $\lin{BC}$, we see that $\epsilon+\gamma\cong \beta+\delta$ is a straight-edge. But then $A,D$ are distinct points lying on \emph{two} lines! Contradiction.
 		\item $(\delta\not<\gamma)$\lstsp Assume \textcolor{Green}{$\delta<\gamma$}. Transfer $\delta$ to $C$ as shown to obtain $\textcolor{Green}{\eta\cong\delta}$. By the crossbar theorem, we obtain an intersection point $E$. But now $\delta$ is an exterior angle of $\triangle EBC$ congruent to an opposite interior angle $\eta$ of the same triangle, contradicting part 1.
 	\end{enumerate}
 	\begin{center}
@@ -997,7 +1021,7 @@ Euclid's approach uses a bisector which he obtains from circles. Hilbert does th
 	Take the vertical angle to $\delta$ at $B$ and repeat the argument to see that $\alpha<\delta$.
 \end{proof}
 
-The proof also shows that the sum of any two angles in a triangle is strictly less than a straight edge: $\alpha+\beta<\delta+\beta \cong\ang{180}$.
+The proof also shows that the sum of any two angles in a triangle is strictly less than a straight-edge: $\alpha+\beta<\delta+\beta \cong\ang{180}$.
 
 
 \goodbreak
@@ -1214,7 +1238,7 @@ As we saw in Exercise \ref*{sec:hilbert2}.\ref{ex:pythagnocont}, if we include P
 
 
 
-\boldsubsubsection{Basic Circle Geometry}
+\subsubsection*{Basic Circle Geometry}
 
 We continue our survey of Euclidean geometry with a few results about circles, many of which are found in Book III of the \emph{Elements}. From this point on, we assume all Hilbert's axioms including Playfair and continuity; what follows often relies on their consequences, particularly angle-sums in triangles and the circular continuity principle.
 
@@ -1334,7 +1358,7 @@ For a sketch proof, join $\cl{OP}$, breaking $\triangle ABP$ into three isoscele
 
 \subsection{Similar Triangles, Length and Trigonometry}\label{sec:similar}
 
-In the geometry of Euclid \& Hilbert, there are no numerical measures of length or angle. \emph{Relative} measure is built in (Definition \ref{defn:lengthcomp}), and we've denoted right-angles and straight edges by \ang{90} \& \ang{180} for convenience. To avoid continued frustration it is time we introduced explicit \emph{numerical} measure; unfortunately, to do so properly requires more axioms.
+In the geometry of Euclid \& Hilbert, there are no numerical measures of length or angle. \emph{Relative} measure is built in (Definition \ref{defn:lengthcomp}), and we've denoted right-angles and straight-edges by \ang{90} \& \ang{180} for convenience. To avoid continued frustration it is time we introduced explicit \emph{numerical} measure; unfortunately, to do so properly requires more axioms.
 
 \begin{axioms}{Length and Angle (Degree) Measure}{euclidmeasure}
 	\begin{itemize}\itemsep3pt
@@ -1352,7 +1376,7 @@ In the geometry of Euclid \& Hilbert, there are no numerical measures of length 
 
 In axioms L3 and A3, comparison of segments ($\cl{AB}<\cl{CD}$) and angles has the meaning arising from the congruence axioms (Definition \ref{defn:lengthcomp}, etc.). Don't memorize the above, just observe how they fit your intuition. Angle measure in Euclidean geometry has two notable differences from what you might expect:
 \begin{itemize}
-  \item (A1)\lstsp All angles measure strictly between \ang 0 and \ang{180}. In particular, a straight edge isn't an angle (though such is commonly denoted \ang{180}) and there are no \emph{reflex angles} ($>\ang{180}$). 
+  \item (A1)\lstsp All angles measure strictly between \ang 0 and \ang{180}. In particular, a straight-edge isn't an angle (though such is commonly denoted \ang{180}) and there are no \emph{reflex angles} ($>\ang{180}$). 
   \item (A2)\lstsp Angles are \emph{non-oriented,} measuring the same in reverse ($m\angle ABC=m\angle CBA$).
 \end{itemize}
 The axioms for length and angle follow the same pattern except that A5 explicitly fixes the scale of angle measure. To do the same for length requires some reference segment of length 1. The following is a consequence of the continuity axiom.
@@ -1544,7 +1568,7 @@ The picture should convince you that $1\Rightarrow 2$ (uniqueness of parallels: 
 
 
 
-\boldsubsubsection{Applications of Similarity: Trigonometric Functions, Cevians and the Butterfly Theorem}
+\subsubsection*{Applications of Similarity: Trigonometric Functions, Cevians and the Butterfly Theorem}
 
 We finish with several applications of similarity which hopefully give an idea of what can be done \emph{without} co-ordinates. None of these ideas were known to Euclid.
 
@@ -1760,3 +1784,5 @@ Several proofs are known. Ours relies on similar triangles and a simple lemma, w
 	  \item\label{exs:aaaproof} (Hard)\lstsp Explain how to prove $(2\Rightarrow 1)$ in the AAA Theorem (\ref{thm:aaasim}).
 	\end{enumerate}
 \end{exercises}
+
+\fi

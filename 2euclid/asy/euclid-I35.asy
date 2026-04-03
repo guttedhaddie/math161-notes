@@ -1,20 +1,18 @@
-if(!settings.multipleView) settings.batchView=false;
-settings.tex="pdflatex";
-if(settings.render < 0) settings.render=4;
-settings.outformat="";
-settings.inlineimage=true;
-settings.embed=true;
-settings.toolbar=false;
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+%\everydisplay{\Umathoperatorsize\displaystyle=4.5ex}
 \usepackage[svgnames]{xcolor}
 ");
-import graph;
-import markers;
 
-size(0,130);
+import graph;
+
+size(0,120);
 
 pair A=(0,0);
 pair B=(1,0);
@@ -35,7 +33,7 @@ path m=EE--EE+2*dir(180+al);
 
 pair G=intersectionpoint(l,m);
 pair H=G+(1,0);
-pair I=H+(1,0);
+pair I=H+D-EE;
 
 draw(EE--G--I--D,dashed);
 
@@ -46,5 +44,5 @@ dot("$D$",D,N);
 dot("$E$",EE,N);
 dot("$F$",F,N);
 dot("$G$",G,SW);
-dot("$H$",H,SE);
+dot("$H$",H,SW);
 dot("$I$",I,SE);

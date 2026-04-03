@@ -1,4 +1,14 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
+
+texpreamble("\usepackage{amsmath}
+\usepackage{amsthm,amssymb}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+%\everydisplay{\Umathoperatorsize\displaystyle=4.5ex}
+\usepackage[svgnames]{xcolor}
+");
 
 //OpenGL (default) - no opacity
 
@@ -13,12 +23,6 @@ settings.outformat="html";
 if(!settings.multipleView) settings.batchView=false;
 settings.render=4;settings.outformat="pdf";
 
-texpreamble("\usepackage{amsmath}
-\usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
-\def\D{\mathrm{d}}
-");
 include graph;
 
 import graph3;
