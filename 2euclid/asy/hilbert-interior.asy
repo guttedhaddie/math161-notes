@@ -1,18 +1,22 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
 \usepackage[svgnames]{xcolor}
 ");
+
 import graph;
 import markers;
 
-size(120);
+size(110,0);
 
 pair A=(0,0);
 pair B=1.2dir(0);
-pair C=0.8dir(60);
+pair C=0.8dir(55);
 pair I=0.7dir(25);
 
 draw(1.3*B--A--1.5*C,Arrows);

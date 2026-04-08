@@ -1,16 +1,20 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
 \usepackage[svgnames]{xcolor}
 ");
+
 import graph;
 import markers;
 
-size(0,100);
+size(140,0);
 
-real th=45;
+real th=40;
 
 pair A=(0,0);
 pair B=(1,0);

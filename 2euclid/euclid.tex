@@ -130,7 +130,7 @@ Despite certain logical issues in Euclid's presentation, his arguments are still
 
 
 
-\subsubsection*{Parallel Lines I: Construction \& Existence}\phantomsection\label{pg:parallelexist}
+\subsubsection*{Parallel Lines I: Construction \& Existence}\label{pg:parallelexist}
 
 \begin{defn}{}{parallel}
 	Lines are \emph{parallel} if they do not intersect. Segments are parallel if no extensions of them intersect.
@@ -426,6 +426,7 @@ While undoubtedly a masterpiece of logical reasoning, Euclid's presentation has 
 		\end{enumerate}
 		
 		\begin{center}
+			\tagpdfsetup{table/header-rows={2}}
 			\begin{tabular}{c@{\quad}c@{\quad}c}
 				\includegraphics[alt={proof of theorem I 11: constructing a perpendicular}]{euclid-I11}
 				&
@@ -475,37 +476,37 @@ While undoubtedly a masterpiece of logical reasoning, Euclid's presentation has 
 
 
 
-\iffalse
-
 \subsection{Hilbert's Axioms I: Incidence and Order}\label{sec:hilbert1}
 
-The long process of identifying and correcting the errors and omissions in Euclid's \emph{Elements} culminated in the 1899 publication of David Hilbert's \emph{Grundlagen der Geometrie (Foundations of Geometry)}. In the next two sections we consider some of the details of Hilbert's approach, providing a modern and logically superior description of Euclidean geometry.\smallbreak
+The long process of identifying and correcting the errors and omissions in Euclid's \emph{Elements} arguably culminated in David Hilbert's \emph{Grundlagen der Geometrie (Foundations of Geometry)} (1899). In the next two sections we consider some of the details of Hilbert's approach, thus providing a modern description of Euclidean geometry.\smallbreak
 
-Hilbert's axioms for plane geometry\footnote{%
-	Like Euclid, Hilbert also covered 3D geometry---we only give the axioms sufficient for plane geometry. With regard to our desired properties (Definition \ref{defn:consistency}), his system is about as good as can be hoped: essentially one only one model exists, which is almost the same thing as completeness. In the absence of the continuity axiom, the axioms are consistent; in line with Gödel's theorems (\ref{thm:godel}), consistency cannot be proved once continuity is included. As stated, the axioms are not quite independent, though this can be remedied: O-3 does not require existence (follows from Pasch's axiom), C-1 does not require uniqueness (follows from uniqueness in C-4) and C-6 can be weakened slightly.%
-} are listed on the next page. The undefined terms consist of two types of object (\emph{points} and \emph{lines}), and three relations (\emph{between $*$, on $\in$} and \emph{congruence $\cong$}). For brevity we'll often use/abuse set notation, viewing a line as a set of points, though this is not necessary. At various places, definitions and notations are required.
+A version of Hilbert's axioms for plane geometry are listed on the next page.\footnote{%
+	Like Euclid, Hilbert also covered 3D geometry, though we only give the axioms for plane geometry. With regard to Definition \ref{defn:consistency}, Hilbert's system is about as good as can be. Essentially one only one model exists (almost the same thing as completeness). The system is consistent in the absence of the continuity axiom though, in line with Gödel (Theorem \ref{thm:godel}), consistency cannot be proved once continuity is included. As stated, the axioms are not quite independent, though this can be remedied: O-3 does not require existence (follows from Pasch's axiom), C-1 does not require uniqueness (follows from uniqueness in C-4) and C-6 can be weakened slightly.%
+}
+The undefined terms consist of two types of object (\emph{points} and \emph{lines}), and three relations (\emph{between $*$, on $\in$} and \emph{congruence $\cong$}). For brevity we'll often (ab)use set notation, viewing a line as a set of points, though this is not necessary. At various places, definitions and notations are required.
 
 \begin{defn}{}{hilbertbasic}
-	Throughout, $A,B,C$ denote points and $\ell,m$ lines.
-	\begin{description}\itemsep 0pt plus 1pt
+	Throughout, $A,B,C$ denote distinct points and $\ell,m$ lines.\vspace{-5pt}
+	\begin{description}\itemsep 0pt %plus 1pt
 	  \item[\normalfont\emph{Line}:] $\smash[t]{\lin{AB}}$ denotes the line through distinct $A,B$. This exists and is unique by axioms I-1 and I-2.
-	  \item[\normalfont\emph{Segment}:] $\cl{AB}:=\{A,B\}\cup\{C:A*C*B\}$ consists of distinct \emph{endpoints} $A,B$ and all \emph{interior} points $C$ lying between them.
-	  \item[\normalfont\emph{Ray}:] $\ray{AB}:=\cl{AB}\cup\{C:A*B*C\}$ is a ray with \emph{vertex} $A$. In essence we extend $\cl{AB}$ beyond $B$.
+	  \item[\normalfont\emph{Segment}:] $\cl{AB}:=\{A,B\}\cup\{C:A*C*B\}$ has \emph{endpoints} $A,B$ and all \emph{interior} points $C$ between them.
+	  \item[\normalfont\emph{Ray}:] $\ray{AB}:=\cl{AB}\cup\{C:A*B*C\}$ has \emph{vertex} $A$. In essence we extend $\cl{AB}$ beyond $B$.
 	  \item[\normalfont\emph{Triangle}:] $\triangle ABC:=\cl{AB}\cup\cl{BC}\cup\cl{CA}$ where $A,B,C$ are non-collinear. Triangles are \emph{congruent} if their sides and angles are congruent in pairs.
-		\item[\normalfont\emph{Sidedness}:] Distinct $A,B$, not on $\ell$, lie on the \emph{same side} of $\ell$ if $\cl{AB}\cap\ell=\emptyset$. Otherwise $A$ and $B$ lie on \emph{opposite sides} of $\ell$.
+		\item[\normalfont\emph{Sides of a line}:] $A,B$ (not on $\ell$) lie on the \emph{same side} of $\ell$ if $\cl{AB}\cap\ell=\emptyset$. Otherwise $A$ and $B$ lie on \emph{opposite sides} of $\ell$.
 		\item[\normalfont\emph{Angle}:] $\angle BAC:=\ray{AB}\cup\ray{AC}$ has \emph{vertex} $A$ and \emph{sides} $\ray{AB}$ and $\ray{AC}$.
-		\item[\normalfont\emph{Parallelism}:] Lines $\ell$ and $m$ \emph{intersect} if there exists a point lying on both: $\exists A\in\ell\cap m$. Lines are \emph{parallel} if they do not intersect. Segments/rays are parallel when the corresponding lines are parallel.
+		\item[\normalfont\emph{Parallelism}:] $\ell$ and $m$ \emph{intersect} if some point lies on both: $\exists A\in\ell\cap m$. Lines are \emph{parallel} if they do not intersect. Segments/rays are parallel when the corresponding lines are parallel.
 	\end{description}
 	The pictures represent these notions in the usual model of Cartesian geometry.
 	\begin{center}
+		\tagpdfsetup{table/header-rows={2,4}}
 		\begin{tabular}{@{}c@{\qquad}c@{\qquad}c@{\qquad}c@{}}
-			\includegraphics{hilbert-def-line}
+			\includegraphics[alt={a line extends indefinitely}]{hilbert-def-line}
 			&
-			\includegraphics{hilbert-def-seg}
+			\includegraphics[alt={a segment has two endpoints}]{hilbert-def-seg}
 			&
-			\includegraphics{hilbert-def-ray}
+			\includegraphics[alt={a ray has one endpoint}]{hilbert-def-ray}
 			&
-			\includegraphics{hilbert-def-triangle}
+			\includegraphics[alt={a triangle is three segments}]{hilbert-def-triangle}
 			\\
 			Line $\lin{AB}$
 			&
@@ -514,14 +515,14 @@ Hilbert's axioms for plane geometry\footnote{%
 			Ray $\ray{AB}$
 			&
 			Triangle $\triangle ABC$
-			\\[12pt]
-			\includegraphics{hilbert-def-side}
+			\\[10pt]
+			\includegraphics[alt={points on the same side of a line}]{hilbert-def-side}
 			&
-			\includegraphics{hilbert-def-side2}
+			\includegraphics[alt={points on opposite sides of a line}]{hilbert-def-side2}
 			&
-			\includegraphics{hilbert-def-angle}
+			\includegraphics[alt={an angle as two rays based at the same point}]{hilbert-def-angle}
 			&
-			\includegraphics{hilbert-def-intersect}
+			\includegraphics[alt={intersecting lines}]{hilbert-def-intersect}
 			\\
 			Same side
 			&
@@ -535,18 +536,103 @@ Hilbert's axioms for plane geometry\footnote{%
 \end{defn}
 
 
-\pagebreak
-\input{2euclid/hilbert}
+\clearpage
+
+
+
+\subsubsection*{\centering \large Hilbert's Axioms for Plane Geometry}
+
+\columnsep 12pt
+\begin{multicols}{2}
+
+	\paragraph{Undefined terms}
+	\begin{enumerate}\itemsep2pt
+	  \item \emph{Points}: \ use capital letters, $A,B,C\ldots$
+	  \item \emph{Lines}: \ use lower case letters, $\ell,m,n,\ldots$
+	  \item \emph{On}: \ $A\in\ell$ is read `$A$ lies on $\ell$' or '$\ell$ contains $A$'
+	  \item \emph{Between}: \ $A*B*C$ is read `$B$ lies between $A$ and $C$'
+	  \item \emph{Congruence}: \ $\cong$ is a binary relation on segments or angles
+	\end{enumerate}
+	
+	
+	\paragraph{Axioms of Incidence}
+	
+	\begin{itemize}\itemsep2pt
+		\item[I-1] For any distinct $A,B$ \emph{there exists} a line $\ell$ on which lie $A,B$.
+		\item[I-2] Distinct $A,B$ lie on \emph{at most} one common line.
+	\end{itemize}\vspace{-2pt}
+		
+	Notation: \emph{line} $\overleftrightarrow{AB}$ through/containing $A$ and $B$\vspace{-2pt}
+	
+	\begin{itemize}
+		\item[I-3] On every line there exist at least two distinct points. There exist at least three non-collinear points.
+	\end{itemize}
+	
+	
+	\paragraph{Axioms of Order}
+	
+	\begin{itemize}\itemsep2pt
+		\item[O-1] If $A*B*C$, then $A,B,C$ are distinct points on the same line, and $C*B*A$.
+		\item[O-2] Given distinct $A,B$, there is at least one point $C$ such that $A*B*C$.
+		\item[O-3] If $A,B,C$ are distinct points on the same line, exactly one lies between the others.
+	\end{itemize}\vspace{-2pt}
+		
+	Definitions: \emph{segment} $\cl{AB}$ and \emph{triangle} $\triangle ABC$\vspace{-2pt}
+	
+	\begin{itemize}
+		\item[O-4] (Pasch's Axiom) \ Suppose none of $A,B,C$ lie on $\ell$. If some point of $\ell$ lies on the segment $\cl{AB}$, then $\ell$ also contains a point of $\cl{AC}$ or $\cl{BC}$. 
+	\end{itemize}\vspace{-2pt}
+	
+	Definitions: \emph{sides} of line $\overleftrightarrow{AB}$ and \emph{ray} $\ray{AB}$
+
+
+	\paragraph{Axioms of Congruence}
+	\begin{itemize}\itemsep2pt
+	  \item[C-1] (Segment transference) \ Let $A,B$ be distinct and $r$ a ray based at $A'$. Then there exists a unique point $B'\in r$ for which $\cl{AB}\cong\cl{A'B'}$. Moreover $\cl{AB}\cong\cl{BA}$.
+	  \item[C-2] If $\cl{AB}\cong\cl{EF}$ and $\cl{CD}\cong\cl{EF}$, then $\cl{AB}\cong\cl{CD}$.
+	  \item[C-3] If $A*B*C$, \ $A'*B'*C'$, \ $\cl{AB}\cong\cl{A'B'}$ and $\cl{BC}\cong\cl{B'C'}$, then $\cl{AC}\cong\cl{A'C'}$.
+	\end{itemize}\vspace{-2pt}
+		
+	Definition: \emph{angle} $\angle ABC$\vspace{-2pt}
+	
+	\begin{itemize}\itemsep2pt
+	  \item[C-4] (Angle transference) \ Given $\angle BAC$ and $\ray{A'B'}$, there exists a unique ray $\ray{A'C'}$ on a given side of $\overleftrightarrow{A'B'}$ for which $\angle BAC\cong\angle B'A'C'$.
+	  \item[C-5] If $\angle ABC\cong\angle GHI$ and $\angle DEF\cong\angle GHI$, then $\angle ABC\cong\angle DEF$. Moreover, $\angle ABC\cong\angle CBA$.
+	  \item[C-6] (Side-angle-side) \ Given triangles $\triangle ABC$ and $\triangle A'B'C'$, if $\cl{AB}\cong\cl{A'B'}$, $\cl{AC}\cong\cl{A'C'}$, and $\angle BAC\cong\angle B'A'C'$, then the triangles are congruent.\footnote{%
+	Its sides/angles are congruent in pairs. We extend congruence to other geometric objects similarly.%
+}
+	\end{itemize}
+	
+	
+	\paragraph{Axiom of Continuity}
+	
+	Suppose a line/ray/segment $\ell$ is partitioned into non-empty subsets $\Sigma_1,\Sigma_2$ such that no point of one lies between two of the other. Then there exists a unique point $\mathcal O$ separating $\Sigma_1,\Sigma_2$:
+	for all $A,B\in\ell$,
+	\begin{quote}
+		$A*\mathcal O*B$ if and only if $A,B$ lie in distinct subsets $\Sigma_1\setminus\mathcal O$, \ $\Sigma_2\setminus\mathcal O$
+	\end{quote}
+	
+	
+	\paragraph{Playfair's Axiom}
+	
+	Definition: \emph{parallel lines}\smallbreak
+	
+	Given a line $\ell$ and a point $P\notin\ell$, at most one line through $P$ is parallel to $\ell$.
+\end{multicols}
+
+
+\clearpage
+
 
 \subsubsection*{Axioms of Incidence: Finite Geometries}
 
-The axioms of incidence describe the relation \emph{on.} An \emph{incidence geometry} is any model satisfying axioms I-1, I-2, I-3. Perhaps surprisingly, there exist incidence geometries with \emph{finitely many points}!
+The axioms of incidence describe the relation \emph{on}: `A point lies \emph{on} a line/segment/ray.' An \emph{incidence geometry} is any model satisfying axioms I-1, I-2 \& I-3. Perhaps surprisingly, there exist incidence geometries with \emph{finitely many} points!
 
 \begin{examples}{}{fano}
 	By I-3, an incidence geometry requires \emph{at least three} points.\par
 	\begin{minipage}[t]{0.62\linewidth}\vspace{-5pt}
-		A 3-point geometry exists, and is unique up to relabelling:\smallbreak
-		I-3 says the points $A,B,C$ must be non-collinear. By I-1 and I-2, each pair lies on a unique line, whence there are precisely three lines
+		Up to relabelling, a unique 3-point geometry exists:\par
+		I-3 says $A,B,C$ are non-collinear; by I-1 and I-2, each pair lies on a unique line, whence there are precisely three lines
 		\[
 			\ell=\{A,B\},\quad m=\{A,C\},\quad n=\{B,C\}
 		\]
@@ -554,25 +640,26 @@ The axioms of incidence describe the relation \emph{on.} An \emph{incidence geom
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.37\linewidth}\vspace{-15pt}
-		\flushright
+		\hfill
+		\tagpdfsetup{table/header-rows={2}}
 		\begin{tabular}{cc@{}}
-			\includegraphics{hilbert-incidence3}
+			\includegraphics[alt={a three point incidence geometry with three lines}]{hilbert-incidence3}
 			&
-			\includegraphics{hilbert-incidence4}\\
+			\includegraphics[alt={a four point incidence geometry with six lines}]{hilbert-incidence4}\\
 			3 points, 3 lines
 			&
 			%\includegraphics{hilbert-incidence4-2}
 			4 points, 6 lines%&4 points, 4 lines
 		\end{tabular}
 	\end{minipage}
-	\smallbreak
+	\medbreak
+	
 	\begin{minipage}[t]{0.72\linewidth}\vspace{0pt}
 		The final picture is a seven-point incidence geometry called the \emph{Fano plane,} which finds many applications particularly in combinatorics. Each point lies on precisely three lines and each line contains precisely three points---each dot is colored to indicate the lines to which it belongs. Don't be fooled by the black line looking `curved' and seeming to cross the blue line near the top, for the line only contains three points!
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.27\linewidth}\vspace{-17pt}
-		\flushright
-		\includegraphics{hilbert-incidence7}
+	\begin{minipage}[t]{0.27\linewidth}\vspace{-5pt}
+		\hfill\includegraphics[alt={a seven point incidence geometry}]{hilbert-incidence7}
 	\end{minipage}
 \end{examples}
 
@@ -594,53 +681,57 @@ We can even prove some simple theorems in incidence geometry. The second is an e
 
 
 
-
-
-\begin{minipage}[t]{0.79\linewidth}\vspace{0pt}
-
 \subsubsection*{Axioms of Order: Sides of a Line, Pasch's Axiom \& the Crossbar Theorem}
 
-The order axioms describe the ternary relation \emph{between.} The first three make explicit the idea that points on a line lie in a fixed order: travelling along a line, one encounters each point exactly once. In particular, these axioms prevent `circular' lines (the pictured contradiction), and guarantee that a line contains infinitely many points.\smallbreak
-Each of the above finite incidence examples fails to satisfy (some of) the order axioms.
+\begin{minipage}[t]{0.79\linewidth}\vspace{-5pt}
+	The order axioms describe the ternary relation \emph{between.} The first three clarify the idea that points on a line lie in a fixed order: travelling along a line, one encounters each point exactly once. In particular, these axioms prevent `circular' lines (the pictured contradiction) and guarantee that a line contains infinitely many points.\smallbreak
+	Each of the above finite incidence examples fails to satisfy at least one order axioms: is it obvious which?\smallbreak
+	
+	The rest of this section is devoted to the consequences of Pasch's axiom (O-4)---named for Moritz Pasch (c.\,1882). Amongst other things, it helps demonstrate that the \emph{interior} of various objects are non-empty.
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.2\linewidth}\vspace{0pt}
-	\flushright
+\begin{minipage}[t]{0.2\linewidth}\vspace{-5pt}
+	\hfill
+	\tagpdfsetup{table/header-rows={2,4}}
 	\begin{tabular}{@{}c@{}}
-		\includegraphics[scale=0.9]{hilbert-order}\\[-2pt]
-		$A*B*C$ \checkmark\\[10pt]
-		\includegraphics[scale=0.9]{hilbert-order2}\\
+		\includegraphics[alt={three ordered points on a line}]{hilbert-order}\\
+		$A*B*C$ \checkmark\\[15pt]
+		\includegraphics[alt={a contradictory set-up without order}]{hilbert-order2}\\
 		Contradiction
 	\end{tabular}
-\end{minipage}\smallbreak
+\end{minipage}
+\smallbreak
 
-The rest of this section is devoted to the consequences of Pasch's axiom (O-4)---named to honor the work of Moritz Pasch (c.\,1882). Amongst other things, it permits us to define the \emph{interiors} of several geometric objects and to see that these are non-empty. For instance:
 
 \begin{lemm}{Exercise \ref{exs:seginterior}}{seginterior}
 	Every segment contains an interior point.
 \end{lemm}
 
-% We leave the proof to Exercise \ref{exs:seginterior}. By inducting on the Lemma, every segment contains \emph{infinitely many} points, whence the above finite geometries are not valid models once the order axioms are included.
+By inducting on the Lemma, every segment contains \emph{infinitely many} points.
 
-\goodbreak
 
-To get much further, it is necessary to establish that a line has precisely two \emph{sides} (Definition \ref{defn:hilbertbasic}). This concept lies behind several of Euclid's arguments, without being properly defined in the \emph{Elements.}
+\paragraph{Sidedness}
+
+We now establish that a line has precisely two \emph{sides} (Definition \ref{defn:hilbertbasic}). This concept lies behind several of Euclid's arguments without being properly defined in the \emph{Elements.}
+
+
 
 
 \begin{thm}{Plane Separation}{planesep}
-	A line $\ell$ separates all points not on $\ell$ into two half-planes: the two \emph{sides} of $\ell$. To be explicit, suppose none of the points $A,B,C$ lie on $\ell$, then:
-	\begin{enumerate}\itemsep0pt
-	  \item If $A,B$ lie on the same side of $\ell$ and $B,C$ lie on the same side, then $A,C$ lie on the same side.
-	  \item If $A,B$ lie on opposite sides and $B,C$ lie on opposite sides, then $A,C$ lie on the same side.
-	  \item If $A,B$ lie on opposite sides and $B,C$ lie on the same side, then $A,C$ lie on opposite sides.
-	\end{enumerate}\vspace{-10pt}
+	A line $\ell$ separates all points not on $\ell$ into two half-planes: the two \textbf{sides} of $\ell$. More explicitly, suppose $A,B,C$ are distinct points which do not lie on $\ell$. Then:
+	\begin{enumerate}\itemsep2pt
+	  \item If $A,B$ lie on the \textbf{same} side of $\ell$ and $B,C$ lie on the \textbf{same} side, then $A,C$ lie on the \textbf{same} side.
+	  \item If $A,B$ lie on \textbf{opposite} sides and $B,C$ lie on \textbf{opposite} sides, then $A,C$ lie on the \textbf{same} side.
+	  \item If $A,B$ lie on \textbf{opposite} sides and $B,C$ lie on the \textbf{same} side, then $A,C$ lie on \textbf{opposite} sides.
+	\end{enumerate}\vspace{-14pt}
 	\begin{center}
+		\tagpdfsetup{table/header-rows={2}}
 		\begin{tabular}{c@{\qquad}c@{\qquad}c}
-			\includegraphics{hilbert-planesep}
+			\includegraphics[alt={plane separation case 1}]{hilbert-planesep}
 			&
-			\includegraphics{hilbert-planesep2}
+			\includegraphics[alt={plane separation case 2}]{hilbert-planesep2}
 			&
-			\includegraphics{hilbert-planesep3}
+			\includegraphics[alt={plane separation case 3}]{hilbert-planesep3}
 			\\
 			Case 1
 			&
@@ -656,122 +747,131 @@ To get much further, it is necessary to establish that a line has precisely two 
 	The other cases are exercises, and we omit the tedious collinear possibilities.
 \end{proof}
 
-Plane separation/sidedness allows us to properly define interiors of angles and triangles. 
+
+Plane separation and sidedness allow us to properly define interiors of angles and triangles. 
 
 \begin{defn}{}{interiorangle}
-	A point $I$ is \emph{interior} to angle $\angle BAC$ if:\par
-	\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}
-		\begin{itemize}\itemsep0pt
-	  	\item $I$ lies on the same side of $\lin{AB}$ as $C$, and,
-	  	\item $I$ lies on the same side of $\lin{AC}$ as $B$.
-		\end{itemize}
-		Otherwise said, $I$ lies in the intersection of two half-planes.
+	A point $I$ is \emph{interior} to $\angle BAC$ if is lies on the same side of $\lin{AB}$ as $C$ and  same side of $\lin{AC}$ as $B$.\par
+	\begin{minipage}[t]{0.7\linewidth}\vspace{-5pt}
+		Otherwise said, $I$ lies in the intersection of two half-planes.\smallbreak
+		A point $I$ is \emph{interior} to $\triangle ABC$ if it is interior to all three angles $\angle ABC$, $\angle BAC$ and $\angle ACB$. Otherwise said, $I$ lies in the triple intersection of three half-planes defined by the triangle's sides.
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.35\linewidth}\vspace{-20pt}
-		\flushright
-		\includegraphics[scale=0.95]{hilbert-interior}
-	\end{minipage}\medbreak
-	
-	A point $I$ is \emph{interior} to triangle $\triangle ABC$ if it is interior to all three of its angles $\angle ABC$, $\angle BAC$ and $\angle ACB$. Otherwise said, $I$ lies in the triple intersection of three of the half-planes defined by the triangle's sides.
+	\begin{minipage}[t]{0.25\linewidth}\vspace{-20pt}
+		\hfill
+		\includegraphics[alt={an interior point to an angle}]{hilbert-interior}
+	\end{minipage}
 \end{defn}
 
-Interior points permit us to compare angles which share a vertex: if $I$ is interior to $\angle BAC$, then $\angle BAI<\angle BAC$ has obvious meaning \emph{without resorting to numerical angle measure.}
+Interior points permit comparison of angles sharing a vertex: if $I$ is interior to $\angle BAC$, then $\angle BAI<\angle BAC$ has obvious meaning \emph{without resorting to numerical angle measure.}
+
 
 \begin{cor}{}{angleinteriorexist}
-	Every angle has an interior point.
+	Every angle has an interior point. Every triangle has an interior point.
 \end{cor}
 
 \begin{proof}
-	Given $\angle BAC$, consider any interior point $I$ of the segment $\cl{BC}$. This plainly lies on the same side of $\lin{AB}$ as $C$ and on the same side of $\lin{AC}$ as $B$.
+	Given $\angle BAC$, consider any interior point $I$ of $\cl{BC}$. This plainly lies on the same side of $\lin{AB}$ as $C$ and on the same side of $\lin{AC}$ as $B$. Exercise \ref{exs:seginfinite} completes the argument for a triangle.
 \end{proof}
 
-In Exercise \ref{exs:seginfinite}, we check that the interior of a triangle is non-empty.
-\vfil
 
-\goodbreak
+\pagebreak[3]
 
-Pasch's axiom could be paraphrased: \emph{If a line enters a triangle, it must come out.} We haven't quite established this crucial fact, however. What if the line passes through a vertex?
 
-\goodbreak
+\paragraph{The Crossbar Theorem}
+
+To paraphrase Pasch's axiom: \emph{if a line enters a triangle, it must come out.} We haven't quite established this fact, however. What if the line passes through a vertex?
+
+
  
-\begin{thm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.3\linewidth]{Crossbar Theorem}{}
-	Suppose $I$ is interior to $\angle BAC$. Then $\ray{AI}$ intersects $\cl{BC}$.\medbreak
-In particular, if a line passes through a vertex and an interior point of a triangle, then it intersects the side opposite the vertex.
-	\tcblower
-	\flushright
-	\includegraphics{hilbert-pasch2}
+\begin{thm}{}{crossbar}
+	If $I$ is interior to $\angle BAC$, then $\ray{AI}$ intersects $\cl{BC}$ (the ``crossbar") at an interior point.\par
+	\begin{minipage}[t]{0.7\linewidth}\vspace{-5pt}
+		The result specializes to triangles. If a line contains a vertex and at least one interior point of a triangle, then it also contains an interior point of the side opposite the vertex.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.29\linewidth}\vspace{-10pt}
+		\hfill
+		\includegraphics[alt={if a line enters a triangle through a vertex, it must cross the opposite edge}]{hilbert-pasch2}
+	\end{minipage}
 \end{thm}
 
 
 \begin{proof}
-	Extend $\cl{AB}$ to a point $D$ such that $A$ lies between $B$ and $D$ (O-2). Since $C$ is not on $\lin{BD}=\lin{AB}$ we have a triangle $\triangle BCD$. Since $\lin{AI}$ intersects one edge of $\triangle BCD$ at $A$ and does not cross any vertices (think about why\ldots), Pasch says it intersects one of the other edges ($\cl{BC}$ or $\cl{CD}$) at some point $M$.\smallbreak
+	Extend $\cl{AB}$ to $D$ such that $B*A*D$ (O-2). Since $C$ is not on $\lin{BD}=\lin{AB}$, we have $\triangle BCD$. Since $\lin{AI}$ intersects one edge of $\triangle BCD$ at $A$ and does not cross any vertices (think about why\ldots), Pasch says $\lin{AI}$ intersects one another edge ($\cl{BC}$ or $\cl{CD}$) at some point $M$.
+	\smallbreak
 	The result follows from applying plane separation to the lines $\lin{AB}=\lin{BD}$ and $\lin{AC}$. First observe:
 	\begin{quote}
-		Since $I,M$ lie on the same side of $\smash{\lin{AB}=\lin{BD}}$ as $C$, it follows that $\smash{\cl{IM}}$ does not intersect $\smash{\lin{AB}}$. Since $A,I,M$ are collinear and $A\in\lin{AB}$, it follows that \textcolor{red}{$A\notin\cl{IM}$}.
+		Since $I,M$ lie on the same side of $\smash{\lin{AB}=\lin{BD}}$ as $C$, it follows that $\smash{\cl{IM}}$ does not intersect $\smash{\lin{AB}}$. Since $A,I,M$ are collinear and $A\in\lin{AB}$, we moreover have \textcolor{dkred}{$A\notin\cl{IM}$}.
 	\end{quote}
-	If $M\in\cl{BC}$, we are done. Our goal is to show that $M\in\cl{CD}$ is a contradiction.\vspace{-5pt}
 	\begin{center}
+		\tagpdfsetup{table/header-rows={2}}
 		\begin{tabular}{cc}
-			\includegraphics[scale=0.95]{hilbert-crossbar1}
+			\includegraphics[alt={the correct case of the crossbar theorem}]{hilbert-crossbar1}
 			&
-			\includegraphics[scale=0.95]{hilbert-crossbar2}
+			\includegraphics[alt={the contradictory case of the crossbar theorem}]{hilbert-crossbar2}
 			\\
 			correct arrangement\footnotemark{}
 			&
-			contradiction
+			contradictory arrangement
 		\end{tabular}
 	\end{center}
-	Suppose, for contradiction, that $M\in\cl{CD}$. Relative to $\lin{AC}$:
+	If $M\in\cl{BC}$, we are done. For contradiction, suppose $M\in\cl{CD}$. Relative to $\lin{AC}$:\vspace{-5pt}
 	\begin{itemize}\itemsep0pt
 		\item $I$ and $B$ lie on the same side since $I$ is interior to $\angle BAC$;
 		\item $B$ and $D$ lie on opposite sides, since $B*A*D$ and $\lin{AC}\neq\lin{BD}=\cl{AB}$;
 		\item $D$ and $M$ lie on the same side since $M\in\cl{CD}$ and $\lin{CD}\neq\lin{AC}$.		  
 	\end{itemize}
-	By plane separation, $I,M$ lie on opposite sides of $\lin{AC}$. The collinearity of $A,I,M$ then forces the contradiction \textcolor{red}{$A\in\cl{IM}$}.
+	By plane separation, $I,M$ lie on opposite sides of $\lin{AC}$. The collinearity of $A,I,M$ then forces the contradiction \textcolor{dkred}{$A\in\cl{IM}$}.
 \end{proof}
 
-\footnotetext{The pictures could be modified: e.g., $I=M$ and $A*I*M$ are also correct arrangements ($M\in\cl{BC}$).}
+\footnotetext{%
+	The pictures could be modified: e.g., $I=M$ and $A*I*M$ are also correct arrangements ($M\in\cl{BC}$).%
+}
+
+Euclid repeatedly uses the crossbar theorem without justification, including in his construction of perpendiculars and angle/segment bisectors (Theorems I.\,9 \& 10). We sketch the latter here.\smallbreak
 
 
-\begin{minipage}[t]{0.67\linewidth}\vspace{-8pt}
-	Euclid repeatedly uses the crossbar theorem without justification, including in his construction of perpendiculars and angle/segment bisectors (Theorems I.\,9+10). We sketch the latter here.\smallbreak
+\begin{minipage}[t]{0.69\linewidth}\vspace{-8pt}
 	Given $\angle BAC$, construct $E$ such that $\cl{AB}\cong\cl{AE}$. Construct $D$ using an equilateral triangle (I.\,1). SSS (I.\,8) shows that $\angle BAC$ is bisected, and SAS (I.\,4) that $\ray{AD}$ bisects $\cl{BE}$.\smallbreak
 	Quite apart from Euclid's arguments for SAS and SSS being suspect (we'll deal with these in the next section), he gives no argument for why $D$ is interior to $\angle BAC$ or why $\ray{AD}$ should intersect $\cl{BE}$!
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.32\linewidth}\vspace{0pt}
-	\flushright
-	\includegraphics{hilbert-bisect}
+\begin{minipage}[t]{0.3\linewidth}\vspace{0pt}
+	\hfill\includegraphics[alt={a sketch proof of the angle bisector theorem}]{hilbert-bisect}
 \end{minipage}
 \medbreak
 
 
-Even with Pasch's axiom and the crossbar theorem, it requires some effort to repair Euclid's proof. No matter, we'll provide an alternative construction of the bisector once we've considered congruence.
+Even with Pasch's axiom and the crossbar theorem, it requires some effort to repair Euclid's argument. This is ultimately of no consequence: once congruence has been introduced,  Hilbert provides an alternative construction of the bisector once congruence has been introduced.
 
-\goodbreak
 
 
 \begin{exercises}
-	\exstart Label the vertices in the Fano plane 1 through 7 (any way you like). As we did in Example \ref{ex:fano} for the 3-point geometry, describe each line in terms of its points.
-	\begin{enumerate}\setcounter{enumi}{1}
+	\hangindent\leftmargini\emph{Key concepts: \ Incidence axioms (meaning of \textbf{on}), \ Finite incidence geometries,\\
+	Order axioms (meaning of \textbf{between}), \ Pasch's Axiom, \ Sides of a line, \ Crossbar theorem}
+
+	\begin{enumerate}
+	  \item Label the vertices in the Fano plane 1 through 7 (any way you like). As we did in Example \ref{ex:fano} for the 3-point geometry, describe each line in terms of its points.
+	  
 	  \item Prove Lemma \ref{lemm:incidenceeasy}.
 	  
 	  
 	  \item\begin{enumerate}
 	    \item Give a model for each of the 5-point incidence geometries. How many are there?\par
-	  	(\emph{Hint: remember that order doesn't matter, so the only issue is how many points lie on each line})
+	  	(\emph{Hint: order doesn't matter, so the only issue is how many points lie on each line\ldots})
 	  	\item It is possible for there to be a 6-point incidence geometry so that each line contains precisely three points? Why/why not? 
 	  \end{enumerate} 
 	  
 	    
-	  \item Consider the proof of the crossbar theorem. How can we be certain that $\smash[t]{\lin{AI}}$ does not contain any of the vertices of $\triangle BCD$.
+	  \item Consider the proof of the crossbar theorem (\ref{thm:crossbar}). How can we be certain that $\smash[t]{\lin{AI}}$ does not contain any of the vertices of $\triangle BCD$.
 	  
 	  
-	  \item\label{exs:seginterior} You are given distinct points $A,B$. Using the axioms of incidence and order and Lemma \ref{lemm:intersectunique} (follows from I-2), show the existence of each of the points $C,D,E,F$ in the picture \emph{in alphabetical order.} Hence conclude the existence of a point $F$ lying \emph{between} $A$ and $B$ (Lemma \ref{lemm:seginterior}).\par
+	  \item\label{exs:seginterior} We prove Lemma \ref{lemm:intersectunique}, that every segment has an interior point.\par
+	  Let $A,B$ be distinct points. Using only the axioms of incidence and order (and Lemma \ref{lemm:intersectunique} which follows from I-2), demonstrate the existence of each of the pictured points $C,D,E,F$ \emph{in alphabetical order.} Point $F$ proves the Lemma.\par
+	  During your construction, make sure to address the following issues:\par
 	  \begin{minipage}[t]{0.65\linewidth}\vspace{-5pt}
-	  During your construction, address the following issues:
-	  \begin{enumerate}\itemsep0pt
+	  \begin{enumerate}
 	    \item Explain why $D$ does not lie on $\overleftrightarrow{AB}$.
 			\item Explain why $E$ does not lie on $\triangle ABD$.
 			\item Explain why $E\neq C$ (whence $\overleftrightarrow{CE}$ exists).
@@ -780,22 +880,21 @@ Even with Pasch's axiom and the crossbar theorem, it requires some effort to rep
 	  \end{minipage}
 	  \hfill
 	  \begin{minipage}[t]{0.34\linewidth}\vspace{-5pt}
-	  	\flushright
-	  	\includegraphics[scale=0.9]{hilbert-between}
+	  	\hfill\includegraphics[alt={establish the existence of interior points of segments}]{hilbert-between}
 	  \end{minipage}
 	  
 	  
 	  \item\label{exs:bernays} We complete the proof of the plane separation theorem (\ref{thm:planesep}).
 	  \begin{enumerate}
-	    \item Prove part 3 (it is almost a verbatim application of Pasch's axiom).\par
-	    \begin{minipage}[t]{0.75\linewidth}\vspace{-5pt}
-	    \item Suppose a line $\ell$ intersects all three sides of $\triangle ABC$ but no vertices. This results in a very strange picture (we've labelled the intersections $D,E,F$ and WLOG chosen $D*E*F$).\smallbreak
-	    Apply Pasch's axiom to $\triangle DBF$ and $\lin{AC}$ to obtain a contradiction. Hence establish part 2 of the plane separation theorem.    
+	    \item Prove part 3 (it is almost a verbatim application of Pasch's axiom).
+	    \item Suppose a line $\ell$ intersects all three sides of $\triangle ABC$ but no vertices.\par
+	    \begin{minipage}[t]{0.75\linewidth}\vspace{-13pt}
+	    	This results in a very strange picture (we've labelled the intersections $D,E,F$ and WLOG chosen $D*E*F$).\smallbreak
+	    	Apply Pasch's axiom to $\triangle DBF$ and $\lin{AC}$ to obtain a contradiction. Hence establish part 2 of the plane separation theorem.    
 	    \end{minipage}
 	    \hfill
 	    \begin{minipage}[t]{0.24\linewidth}\vspace{-35pt}
-	    	\flushright
-	    	\includegraphics{hilbert-bernays}
+	    	\hfill\includegraphics[alt={a contradictory line intersecting three sides of a triangle}]{hilbert-bernays}
 	    \end{minipage}
 	  \end{enumerate}
 	  
@@ -803,11 +902,11 @@ Even with Pasch's axiom and the crossbar theorem, it requires some effort to rep
 	  \item Suppose $A,B,C$ are distinct points on a line $\ell$.
 	  \begin{enumerate}
 	    \item Explain why there exists a line $m\neq \ell$ such that $B\in m$.
-	    \item Prove that $A*B*C\iff A$ and $C$ lie on opposite sides of $m$.
+	    \item Prove that $A*B*C$ if and only if $A$ and $C$ lie on opposite sides of $m$.
 	    \item Suppose $A*B*C$. Use part (b) to prove the following:
 	    \begin{enumerate}
 				\item $B$ is the only point common to the rays $\ray{BA}$ and $\ray{BC}$.
-				\item If $D\in\ell$ is any point other than $B$, prove that $D$ lies in precisely one of $\ray{BA}$ or $\ray{BC}$.
+				\item If $D\in\ell$ is any point other than $B$, then $D$ lies in precisely one of $\ray{BA}$ or $\ray{BC}$.
 			\end{enumerate}
 	  \end{enumerate}
 	  
@@ -816,7 +915,8 @@ Even with Pasch's axiom and the crossbar theorem, it requires some effort to rep
 	  (\emph{Hint: use Exercise \ref{exs:seginterior} to construct a suitable $I$, then prove that it lies on the correct side of each edge})
 	  
 	  
-	  \item The existence of infinitely many points on a line follows easily from the fact that every segment has an interior point. Find an alternative proof that does not depend on Pasch's axiom.
+	  \item The existence of infinitely many points on a line follows easily from the fact that every segment has an interior point. Find an alternative proof that does not depend on Pasch's axiom.\par
+	  (\emph{Hint: you will need the other order axioms!})
 	  
 	\end{enumerate}
 \end{exercises}
@@ -825,6 +925,8 @@ Even with Pasch's axiom and the crossbar theorem, it requires some effort to rep
 \clearpage
 
 
+
+\iffalse
 
 \subsection{Hilbert's Axioms II: Congruence}\label{sec:hilbert2}
 
