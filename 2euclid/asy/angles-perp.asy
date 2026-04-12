@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 import markers;
 
@@ -26,6 +33,6 @@ dot(Label("$B$",black),B,S,red);
 dot(Label("$M$",black),M,SE,red);
 label("$P$",C,E);
 label("$Q$",D,E);
-draw(arc(A,A+0.25dir(D-A),A+0.2dir(C-A)),heavygreen,StickIntervalMarker(2,2,heavygreen));
+draw(arc(A,A+0.25dir(D-A),A+0.2dir(C-A)),lGreen,StickIntervalMarker(2,2,lGreen));
 
 draw(M+(0,0.1)--M+(-0.1,0.1)--M+(-0.1,-0.1)--M+(0,-0.1));

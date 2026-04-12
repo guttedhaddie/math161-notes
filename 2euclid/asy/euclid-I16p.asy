@@ -6,9 +6,11 @@ texpreamble("\usepackage{amsmath}
 \usepackage{unicode-math}
 \setmainfont{TeX Gyre Pagella}
 \setmathfont{TeX Gyre Pagella Math}
-%\everydisplay{\Umathoperatorsize\displaystyle=4.5ex}
-\usepackage[svgnames]{xcolor}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
 
 import graph;
 import markers;
@@ -25,16 +27,16 @@ pair E=2M-B;
 draw(A--B--D);
 draw(C--E);
 
-draw(A--C,StickIntervalMarker(2,1,blue));
-draw(B--E,StickIntervalMarker(2,2,blue));
+draw(A--C,StickIntervalMarker(2,1,Blue));
+draw(B--E,StickIntervalMarker(2,2,Blue));
 
-draw(arc(A,0.15,180*angle(B-A)/pi,180*angle(C-A)/pi),StickIntervalMarker(2,1,blue));
-draw(arc(C,0.15,180*angle(E-C)/pi,180*angle(A-C)/pi),StickIntervalMarker(2,1,blue));
-draw(arc(M,0.15,180*angle(C-M)/pi,180*angle(E-M)/pi,CCW),StickIntervalMarker(1,1,blue));
-draw(arc(M,0.15,180*angle(A-M)/pi,180*angle(B-M)/pi,CCW),StickIntervalMarker(1,1,blue));
+draw(arc(A,0.15,180*angle(B-A)/pi,180*angle(C-A)/pi),StickIntervalMarker(2,1,Blue));
+draw(arc(C,0.15,180*angle(E-C)/pi,180*angle(A-C)/pi),StickIntervalMarker(2,1,Blue));
+draw(arc(M,0.15,180*angle(C-M)/pi,180*angle(E-M)/pi,CCW),StickIntervalMarker(1,1,Blue));
+draw(arc(M,0.15,180*angle(A-M)/pi,180*angle(B-M)/pi,CCW),StickIntervalMarker(1,1,Blue));
 
-dot(Label("$A$",black),A,N,red);
-dot(Label("$B$",black),B,S,red);
-dot(Label("$C$",black),C,S,red);
-dot(Label("$M$",black),M,dir(80),red);
-dot(Label("$E$",black),E,N,red);
+dot(Label("$A$",Black),A,N,Red);
+dot(Label("$B$",Black),B,S,Red);
+dot(Label("$C$",Black),C,S,Red);
+dot(Label("$M$",Black),M,dir(80),Red);
+dot(Label("$E$",Black),E,N,Red);

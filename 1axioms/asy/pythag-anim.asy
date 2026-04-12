@@ -3,14 +3,17 @@ settings.outformat="";
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
 \usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lgreen=rgb("00a000");
 import graph;
 import animate;
 
 size(180);
 
-pen triang=yellow;
+pen triang=Yellow;
 
 real a=1;
 real b=2;
@@ -20,7 +23,7 @@ path tri=(0,0)--(a,0)--(a,b)--cycle;
 animation A;
 
 save();
-filldraw(scale(a+b)*unitsquare,green);
+filldraw(scale(a+b)*unitsquare,Lime);
 filldraw(shift(b,0)*tri,triang);
 filldraw(shift(a,b+a)*rotate(180)*tri,triang);
 filldraw(shift(b+a,b)*rotate(90)*tri,triang);
@@ -29,7 +32,7 @@ A.add();
 restore();
 
 save();
-filldraw(scale(a+b)*unitsquare,green);
+filldraw(scale(a+b)*unitsquare,Lime);
 filldraw(shift(b,0)*tri,triang);
 filldraw(shift(a+b,b)*rotate(180)*tri,triang);
 filldraw(shift(b,b)*rotate(90)*tri,triang);
@@ -42,7 +45,7 @@ restore();
 int n=10;
 for(int i=1; i<=n; ++i){
 	save();
-	filldraw(scale(a+b)*unitsquare,green);
+	filldraw(scale(a+b)*unitsquare,Lime);
 	filldraw(shift(b,0)*tri,triang);
 	filldraw(shift(a+b,b)*rotate(180)*tri,triang);
 	filldraw(shift(b+a*i/n,b)*rotate(90)*tri,triang);
@@ -53,7 +56,7 @@ for(int i=1; i<=n; ++i){
 	
 for(int i=1; i<=n; ++i){
 	save();
-	filldraw(scale(a+b)*unitsquare,green);
+	filldraw(scale(a+b)*unitsquare,Lime);
 	filldraw(shift(b,0)*tri,triang);
 	filldraw(shift(a+b-b*i/n,b+a*i/n)*rotate(180)*tri,triang);
 	filldraw(shift(b+a,b)*rotate(90)*tri,triang);

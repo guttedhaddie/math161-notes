@@ -6,11 +6,14 @@ texpreamble("\usepackage{amsmath}
 \usepackage{unicode-math}
 \setmainfont{TeX Gyre Pagella}
 \setmathfont{TeX Gyre Pagella Math}
-%\everydisplay{\Umathoperatorsize\displaystyle=4.5ex}
-\usepackage[svgnames]{xcolor}
+\usepackage[svgnames,x11names]{xcolor}
 ");
 
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
+
 import markers;
 
 size(140);
@@ -21,7 +24,7 @@ pair C=(0,sqrt(3));
 draw(shift(A)*scale(2)*unitcircle);
 draw(shift(B)*scale(2)*unitcircle);
 
-draw(B--A--C--B,StickIntervalMarker(3,2,blue,dotframe(red)));
+draw(B--A--C--B,StickIntervalMarker(3,2,Blue,dotframe(Red)));
 
 
 label("$A$",A,SW);

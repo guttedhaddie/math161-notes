@@ -6,9 +6,11 @@ texpreamble("\usepackage{amsmath}
 \usepackage{unicode-math}
 \setmainfont{TeX Gyre Pagella}
 \setmathfont{TeX Gyre Pagella Math}
-%\everydisplay{\Umathoperatorsize\displaystyle=4.5ex}
-\usepackage[svgnames]{xcolor}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lgreen=rgb("00a000");
 
 import graph;
 import markers;
@@ -19,7 +21,7 @@ pair O=(0,0);
 pair A=dir(15);
 
 draw(-A--A);
-draw(arc(O,A,-A),StickIntervalMarker(1,2,blue,dotframe(red)));
-draw(arc(O,-A,A),StickIntervalMarker(1,2,blue,dotframe(red)));
+draw(arc(O,A,-A),StickIntervalMarker(1,2,Blue,dotframe(Red)));
+draw(arc(O,-A,A),StickIntervalMarker(1,2,Blue,dotframe(Red)));
 dot(O);
 

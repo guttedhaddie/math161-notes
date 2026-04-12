@@ -6,8 +6,11 @@ texpreamble("\usepackage{amsmath}
 \usepackage{unicode-math}
 \setmainfont{TeX Gyre Pagella}
 \setmathfont{TeX Gyre Pagella Math}
-\usepackage[svgnames]{xcolor}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
 
 import graph;
 import markers;
@@ -22,8 +25,8 @@ pair C=1.3dir(th);
 
 draw(-0.4dir(17)--1.9dir(th),Arrows);
 
-dot(Label("$A$",black),A,S,red);
-dot(Label("$B$",black),B,S,red);
-dot(Label("$C$",black),C,S,red);
-//dot(Label("$D$",black),D,S,red);
-//dot(Label("$E$",black),EE,S,red);
+dot(Label("$A$",Black),A,S,Red);
+dot(Label("$B$",Black),B,S,Red);
+dot(Label("$C$",Black),C,S,Red);
+//dot(Label("$D$",Black),D,S,Red);
+//dot(Label("$E$",Black),EE,S,Red);

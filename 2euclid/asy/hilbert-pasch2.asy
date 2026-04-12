@@ -6,8 +6,11 @@ texpreamble("\usepackage{amsmath}
 \usepackage{unicode-math}
 \setmainfont{TeX Gyre Pagella}
 \setmathfont{TeX Gyre Pagella Math}
-\usepackage[svgnames]{xcolor}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
 
 import graph;
 import markers;
@@ -22,14 +25,14 @@ draw(A--B--C--cycle);
 
 path ell=-0.1(B+C)--0.7*(B+C);
 
-draw(Label("$\ell$",Relative(1)),ell,blue);
+draw(Label("$\ell$",Relative(1)),ell,Blue);
 
 pair M=intersectionpoint(ell,B--C);
 
 pair I=0.25A+0.75M;
 
-dot(Label("$A$",black),A,NW,red);
-dot(Label("$B$",black),B,NE,red);
-dot(Label("$C$",black),C,NW,red);
-dot(M,red);
-dot(Label("$I$",black),I,SE,red);
+dot(Label("$A$",black),A,NW,Red);
+dot(Label("$B$",black),B,NE,Red);
+dot(Label("$C$",black),C,NW,Red);
+dot(M,Red);
+dot(Label("$I$",black),I,SE,Red);

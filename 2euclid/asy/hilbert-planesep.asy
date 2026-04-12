@@ -6,8 +6,11 @@ texpreamble("\usepackage{amsmath}
 \usepackage{unicode-math}
 \setmainfont{TeX Gyre Pagella}
 \setmathfont{TeX Gyre Pagella Math}
-\usepackage[svgnames]{xcolor}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
 
 import graph;
 
@@ -22,6 +25,6 @@ pair C=0.8dir(180);
 draw(Label("$\ell$",Relative(0.8)),ell);
 draw(A--B--C--cycle);
 
-dot(Label("$A$",black),A,E,red);
-dot(Label("$B$",black),B,E,red);
-dot(Label("$C$",black),C,W,red);
+dot(Label("$A$",black),A,E,Red);
+dot(Label("$B$",black),B,E,Red);
+dot(Label("$C$",black),C,W,Red);

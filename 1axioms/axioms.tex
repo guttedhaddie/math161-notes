@@ -33,7 +33,7 @@ We start with a very brief historical overview of geometry. The word itself is o
 
 
 
-\subsubsection*{Thales of Miletus (c.\,624--546\BC)}
+\subsubsection*{Thales of Miletus (c.\,624--546\BC)}\label{pg:thales}
 
 Thales was an olive trader from Miletus, a city-state on the west coast of modern Turkey. He absorbed mathematical ideas from nearby cultures including Egypt and Mesopotamia. Here are five results partly attributable to him.
 \begin{enumerate}
@@ -60,7 +60,7 @@ This last is still known as \emph{Thales' Theorem.} Thales' innovation was to st
 		Theorem 5
 	\end{tabular}
 \end{center}
-Arguments for Theorems 1 and 2 might be as simple as `fold.' Theorem 5 follows because the \textcolor{Green}{radius} of the circle splits the large triangle into two isosceles triangles; Theorem 2 says that these have equal base angles ($\alpha,\alpha$ and $\beta,\beta$), whence the apex $\alpha+\beta$ equals half the angle-sum in a triangle, namely a right-angle.
+Arguments for Theorems 1 and 2 might be as simple as `fold.' Theorem 5 follows because the \textcolor{mGreen}{radius} of the circle splits the large triangle into two isosceles triangles; Theorem 2 says that these have equal base angles ($\alpha,\alpha$ and $\beta,\beta$), whence the apex $\alpha+\beta$ equals half the angle-sum in a triangle, namely a right-angle.
 
 
 \subsubsection*{Pythagoras of Samos (570--495\BC)}
@@ -184,12 +184,16 @@ Mathematical discoveries often hinge on the realization that seemingly disparate
 	  \item Concepts such as \emph{square} $a^2=a\ast a$, or \emph{commutativity} $a\ast b=b\ast a$.
 	  \item For example, \emph{The identity is unique.}
  	\end{enumerate}
- 	The integers under addition $(G,*)=(\Z,+)$ provide an abstract model; in this case the identity is $e=0$.\par
+ 	The integers under addition $(G,*)=(\Z,+)$ provide an abstract model; in this case the identity is $e=0$.\smallbreak
  	If you really want a concrete model, consider a single dot $\bullet$ on the page, equipped with the operation $\bullet *\bullet =\bullet$!
 \end{example}
 
+
+
+\subsubsection*{Desirable properties of an axiomatic system}
+
 \begin{defn}{}{consistency}
-	Certain properties are desirable in an axiomatic system.
+	In an ideal situation, we'd like an axiomatic system to exhibit certain properties.
 	\begin{description}
 		\item[\normalfont\emph{Consistency}] The system is free of contradictions.
 		\item[\normalfont\emph{Independence}] An axiom is independent if it is not a theorem of the others. This applies to an axiomatic system provided \emph{all} its axioms are independent. 
@@ -197,81 +201,55 @@ Mathematical discoveries often hinge on the realization that seemingly disparate
 	\end{description}
 \end{defn}
 
-We unpack these ideas slightly, though our descriptions are necessarily vague: some notions must be clarified (e.g., \emph{valid proposition}) before these ideas can be made rigorous.
+We unpack these ideas slightly, though our descriptions are necessarily vague: some notions must be clarified (for instance, what is meant by a \emph{valid proposition}) before these concepts can be made rigorous.
 \begin{description}
 	\item[\normalfont\emph{Consistency}] May be demonstrated by exhibiting a \emph{concrete model.} An \emph{abstract model} demonstrates \emph{relative consistency} (consistency depends on that of the underlying system). An inconsistent system is essentially useless.
-	\item[\normalfont\emph{Independence}] To demonstrate the independence of an axiom, exhibit two models: one in which all axioms are true, the other in which only the considered axiom is false. To naively demonstrate the independence of a consistent system of $n$ axioms requires $n+1$ models: one where each axiom is false. 
-	\item[\normalfont\emph{Completeness}] This is very unlikely to hold for a useful axiomatic system, though \href{https://en.wikipedia.org/wiki/Complete_theory}{examples} exist. To standard way to demonstrate incompleteness is to exhibit an \emph{undecidable statement}: a valid proposition which can neither be proved nor disproved within the system. The undecidable statement (or its negations) can be viewed as a new independent axiom in an enlarged axiomatic system.\footnote{%
+	\item[\normalfont\emph{Independence}] To demonstrate the independence of an axiom within a consistent system, exhibit two models: one in which all axioms are true, the other in which only the considered axiom is false. To demonstrate the independence of a consistent system of $n$ axioms therefore requires $n+1$ models: one where all axioms are true, and one for each case where exactly one axiom is false. 
+	\item[\normalfont\emph{Completeness}] This is very unlikely to hold for a useful axiomatic system, though \href{https://en.wikipedia.org/wiki/Complete_theory}{examples} exist. To standard way to demonstrate incompleteness is to exhibit an \emph{undecidable statement}:\footnote{%
 	Perhaps the most famous undecidable statement in mathematics is the \emph{Continuum Hypothesis} in standard Set Theory: this states that there is no uncountable set whose cardinality is strictly smaller than that of the real numbers. The continuum hypothesis was proved to be independent of standard set theory in the 1960s.%
-} 
+}  a valid proposition which can neither be proved nor disproved within the system. The undecidable statement (or its negations) can be viewed as a new independent axiom in an enlarged axiomatic system.
 \end{description}
 
 
-\pagebreak[3]
 
 
 \begin{example*}{\ref{ex:monoid}, cont}{}
 	We revisit the axiomatic system for a monoid.
 	\begin{description}
 		\item[\normalfont\emph{Consistent}] We have a (concrete) model.
+		
  		\item[\normalfont\emph{Independent}] Consider three models.
  		\begin{itemize}
  		  \item $(\N,+)$ satisfies axioms A1 and A2, but not A3: the only suitable identity 0 is not a positive integer!
-		  \item The binary structure $\bigl(\{e,a,b\},*\bigr)$ defined by the following table satisfies A1 and A3, but not A2
-		  \[%array causes trouble for SE tagging?
+		  \item The binary structure $\big(\{e,a,b\},*\big)$ defined by the following table satisfies A1 and A3, but not A2
+		  \[
  		  	\begin{array}{c||ccc}
  		  		*&e&a&b\\\hline\hline
  		  		e&e&a&b\\
  		  		a&a&e&a\\
  		  		b&b&b&a
  		  	\end{array}
-		  	\qquad \text{e.g.}\quad
-		  	a*(b*b)=a*a=e\neq a=a*b=(a*b)*b
 		  \]
-		  \item $\bigl(\Z\setminus\{1\},+\bigr)$ satisfies axioms A2 and A3, but not A1.
+		  For instance, $a*(b*b)=a*a=e\neq a=a*b=(a*b)*b$.
+		  \item $\big(\Z\setminus\{1\},+\big)$ satisfies axioms A2 and A3, but not A1.
  		\end{itemize}
- 		\item[\normalfont\emph{Incomplete}] The proposition `\emph{A monoid contains at least two elements}' is undecidable \emph{just from the axioms.} For instance, $(\{0\},+)$ and $(\Z,+)$ are models with one/infinitely many elements.\smallbreak
- 		We could also ask if all elements have an inverse. That this is undecidable is the same as saying that a new axiom is independent of A1, A2, A3.\smallbreak
-	  \lstsp\lstsp\lstsp(A4)\lstsp Inverse:\quad $\forall g\in G,\ \exists g^{-1}\in G$ such that $g\ast g^{-1}=g^{-1}\ast g=e$.\smallbreak
-		The new axiomatic system defined by the four axioms is also consistent and independent---this is the structure of a \emph{group.} Even this new system is incomplete; for instance, consider a new axiom of commutativity\ldots
+ 		
+ 		\item[\normalfont\emph{Incomplete}] The proposition `\emph{A monoid contains at least two elements}' is undecidable \emph{just from the axioms.} For instance, $\big(\{0\},+\big)$ and $\big(\Z,+\big)$ are models with one/infinitely many elements.\smallbreak
+ 		We could also ask if all elements have an inverse. That this is undecidable is the same as saying that a new axiom is independent of A1, A2, A3.
+		\begin{quote}
+			(A4)\lstsp Inverse:\quad $\forall g\in G,\ \exists g^{-1}\in G$ such that $g\ast g^{-1}=g^{-1}\ast g=e$.
+		\end{quote}
+		The new axiomatic system defined by the four axioms A1--A4 is also consistent and independent: this is the structure of a \emph{group.}\smallbreak
+		Even this new system is incomplete; for instance, consider a new axiom of commutativity
+		\begin{quote}
+			(A5)\lstsp Commutativity:\quad $\forall g,h\in G,\ g\ast h=h\ast g$
+		\end{quote}
+		We could go on\ldots
 	\end{description} 
 \end{example*}
 
 
-
-\begin{example}{Bus Routes}{}
-	Here is a loosely defined axiomatic system.
-	\begin{description}
-		\item[\normalfont\emph{Undefined Terms}:] Route, Stop
-		\item[\normalfont\emph{Axioms}:]
-		\begin{description}
-			\item[\normalfont (A1)] Each route is a list of stops in some order. These are the stops visited by the route.
-			\item[\normalfont (A2)] Each route visits at least four distinct stops.
-			\item[\normalfont (A3)] No route visits the same stop twice, except the first stop which is also the last stop.
-			\item[\normalfont (A4)] There is a stop called downtown that is visited by each route.
-			\item[\normalfont (A5)] Every stop other than downtown is visited by at most two routes.
-		\end{description}
-	\end{description}
-	
-	Discuss the following questions:
-	\begin{enumerate}
-	  \item Construct a model of the Bus Routes system with exactly three routes. What is the fewest number of stops you can use?
-	  \item Your answer to 1 shows that this system is: complete, consistent, inconsistent, independent?
-	  \item Decide whether the following describes a model for the Bus Routes system? If not, determine which axioms are satisfied and which are not?
-	  \begin{quote}\def\arraystretch{1.2}
-	  	%\tagpdfsetup{table/tagging=presentation}
-		  \begin{tabular}{@{}ll@{}}
-		  	\emph{Stops}:&Downtown, \ Walmart, \ Ralph's, \ Main St., \ CVS, \ Trader Joe's, \ Zoo\\
-		  	\emph{Route 1}:&Downtown, \ Walmart, \ Main St., \ CVS, \ Zoo, \ Downtown\\
-		  	\emph{Route 2}:&Main St., \ CVS, \ Zoo, \ Ralph's, \ Downtown, \ Main St.\\
-		  	\emph{Route 3}:&Walmart, \ Main St., \ Downtown, \ Ralph's, \ Main St., \ Walmart
-		  \end{tabular}
-	  \end{quote}
-		\item Show that A3 is independent of the other axioms.
-		\item Demonstrate that `\emph{There are exactly three routes}' is not a theorem in this system by finding a model in which it is false.
-	\end{enumerate}
-\end{example}
-
+\pagebreak[3]
 
 
 \subsubsection*{The Limit of Axiomatics?}
@@ -292,7 +270,43 @@ Gödel's first theorem says that there is no \emph{ultimate} consistent complete
 
 Gödel's second theorem fleshes out the difficulty in proving the consistency of an axiomatic system. The consistency of a mathematical system sufficient to describe the natural numbers can at best be proved relative to some other axiomatic system. In essence, it is impossible to demonstrate the consistency of a useful axiomatic system!\bigbreak
 
-We are only scratching the surface of axiomatics. If you really want to dive down this rabbit hole, consider taking a class in formal logic or model theory. For the purposes of modern geometry, it is necessary only to have a good feel for the axiomatic approach.
+We are only scratching the surface of axiomatics. If you really want to dive down this rabbit hole, consider taking a class in formal logic or model theory. For the purposes of modern geometry, it is necessary only to have a good feel for the axiomatic approach. To aid in this, here is one more example of a loose axiomatic system suitable for discussion purposes.
+
+
+\begin{example}{Bus Routes}{}
+	\begin{description}
+		\item[\normalfont\emph{Undefined Terms}:] Route, Stop
+		\item[\normalfont\emph{Axioms}:]
+		\begin{description}
+			\item[\normalfont (A1)] Each route is a list of stops in some order. These are the stops visited by the route.
+			\item[\normalfont (A2)] Each route visits at least four distinct stops.
+			\item[\normalfont (A3)] No route visits the same stop twice, except the first stop which is also the last stop.
+			\item[\normalfont (A4)] There is a stop called downtown that is visited by each route.
+			\item[\normalfont (A5)] Every stop other than downtown is visited by at most two routes.
+		\end{description}
+	\end{description}
+		
+	Play around with and discuss the following questions:
+	\begin{enumerate}
+	  \item Construct a model of the Bus Routes system with exactly three routes. What is the fewest number of stops you can use?
+	  \item Your answer to 1 shows that this system is: complete, consistent, inconsistent, independent?
+	  \item Decide whether the following describes a model for the Bus Routes system? If not, determine which axioms are satisfied and which are not?
+	  \begin{quote}\def\arraystretch{1.2}
+	  	%\tagpdfsetup{table/tagging=presentation}
+		  \begin{tabular}{@{}ll@{}}
+		  	\emph{Stops}:&Downtown, \ Walmart, \ Ralph's, \ Main St., \ CVS, \ Trader Joe's, \ Zoo\\
+		  	\emph{Route 1}:&Downtown, \ Walmart, \ Main St., \ CVS, \ Zoo, \ Downtown\\
+		  	\emph{Route 2}:&Main St., \ CVS, \ Zoo, \ Ralph's, \ Downtown, \ Main St.\\
+		  	\emph{Route 3}:&Walmart, \ Main St., \ Downtown, \ Ralph's, \ Main St., \ Walmart
+		  \end{tabular}
+	  \end{quote}
+		\item Show that A3 is independent of the other axioms.
+		\item Demonstrate that `\emph{There are exactly three routes}' is not a theorem in this system by finding a model in which it is false.
+	\end{enumerate}
+\end{example}
+
+
+\vfil
 
 
 \begin{exercises}{}{}
@@ -357,7 +371,7 @@ We are only scratching the surface of axiomatics. If you really want to dive dow
 		\end{enumerate}
 		
 		
-		\item The undefined terms of an axiomatic system are `brewery' and `beer'. Here are some axioms.
+		\item The undefined terms of an axiomatic system are `brewery' and `beer'. Here are the axioms.
 	  \begin{quote}
 		\begin{itemize}
 	  	\item[(A1)] Every brewery is a non-empty collection of \emph{at least} two beers (each brewery brews at least two beers).
@@ -366,19 +380,20 @@ We are only scratching the surface of axiomatics. If you really want to dive dow
 	  	\item[(A4)] There exist exactly six breweries.
 		\end{itemize}
 	  \end{quote}
-	  \begin{enumerate}
-	    \item Prove the following theorems.
-	    \begin{enumerate}
-	      \item There are exactly four beers.
-	      
-	      \item There are exactly two beers in each brewery.
-	      
-	      \item For each brewery, there is exactly one other brewery which has no beers in common.
-	  	\end{enumerate}
-	  	
-	  	\item Prove that the axioms are independent.\par
-	  	(\emph{When negating A1, you should assume that a brewery is still a collection of beers, but that any such could contain none or one beer})
-	  \end{enumerate}
+	  
+		\begin{enumerate}
+		  \item Prove the following theorems.
+		  \begin{enumerate}
+		    \item There are exactly four beers.
+		      
+		    \item There are exactly two beers in each brewery.
+		      
+		    \item For each brewery, there is exactly one other brewery which has no beers in common.
+		 \end{enumerate}
+		  	
+		 \item Prove that the axioms are independent.\par
+		 (\emph{When negating A1, you should assume that a brewery is still a collection of beers, but that any such could contain none or one beer})
+		\end{enumerate}
 	  
 	\end{enumerate}
 \end{exercises}

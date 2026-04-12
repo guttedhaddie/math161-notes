@@ -6,9 +6,11 @@ texpreamble("\usepackage{amsmath}
 \usepackage{unicode-math}
 \setmainfont{TeX Gyre Pagella}
 \setmathfont{TeX Gyre Pagella Math}
-%\everydisplay{\Umathoperatorsize\displaystyle=4.5ex}
-\usepackage[svgnames]{xcolor}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
 
 import graph;
 
@@ -28,9 +30,9 @@ label("$A$",A,2dir(135-th));
 label("$B$",B,SW);
 label("$C$",C,SE);
 
-//filldraw(shift((0,-c))*scale(c)*unitsquare,red+opacity(0.5));
-filldraw(rotate(90-th)*scale(a)*unitsquare,red+opacity(0.5));
-filldraw(shift(A)*rotate(-th)*scale(b)*unitsquare,green+opacity(0.5));
+//filldraw(shift((0,-c))*scale(c)*unitsquare,Red+opacity(0.5));
+filldraw(rotate(90-th)*scale(a)*unitsquare,Red+opacity(0.5));
+filldraw(shift(A)*rotate(-th)*scale(b)*unitsquare,Lime+opacity(0.5));
 
 pair O=(A.x,0);
 label("$O$",O,SE);
@@ -48,10 +50,10 @@ label("$G$",F+a*dir(90-th),NW);
 label("$H$",A+b*dir(90-th),NW);
 label("$K$",C+b*dir(90-th),E);
 
-filldraw(B--O--L--D--cycle,red+opacity(0.5));
-filldraw(O--C--EE--L--cycle,green+opacity(0.5));
+filldraw(B--O--L--D--cycle,Red+opacity(0.5));
+filldraw(O--C--EE--L--cycle,Lime+opacity(0.5));
 
-filldraw(arc(B,0.25*unit(C-B),0.25*unit(A-B))--B--0.25*unit(C-B)--cycle,blue+opacity(0.5));
+filldraw(arc(B,0.25*unit(C-B),0.25*unit(A-B))--B--0.25*unit(C-B)--cycle,Blue+opacity(0.5));
 
 
 path rt=B-0.17*dir(90)--B+0.17*sqrt(2)*dir(-45)--B+0.17*dir(0);
