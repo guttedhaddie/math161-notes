@@ -947,7 +947,7 @@ Hilbert's congruence axioms address two primary issues in Euclid.
 
 We start with a small piece of bookkeeping.
 
-\begin{lemm}{}{}
+\begin{lemm}{}{congequiv}
 	Congruence of segments/angles is an equivalence relation.
 \end{lemm}
 
@@ -1155,7 +1155,7 @@ Hilbert ignores Euclid's bisector approach.
 	Given $\triangle ABC$, extend $\cl{AB}$ to $D$ such that $\mathcolor{Blue}{\cl{AC}\cong\cl{BD}}$. As pictured, we prove that the alternatives to $\mathcolor{mGreen}{\gamma<\delta}$ are impossible (angles are labeled with Greek letters for clarity).	
 	\begin{enumerate}
 		\item $(\delta\ncong\gamma)$\lstsp Assume $\mathcolor{mGreen}{\delta\cong\gamma}$. By SAS, $\triangle ACB\cong\triangle DBC$; in particular $\mathcolor{Blue}{\epsilon\cong\beta}$. Since $A$ and $D$ lie on opposite sides of $\lin{BC}$, we see that $\epsilon+\gamma\cong \beta+\delta$ is a straight-edge. But then $A,D$ are distinct points lying on \emph{two} lines! Contradiction.
-		\item $(\delta\not<\gamma)$\lstsp Assume $\mathcolor{mGreen}{\delta<\gamma}$. Transfer $\delta$ to $C$ as shown to obtain $\mathcolor{mGreen}{\eta\cong\delta}$. By the crossbar theorem, we obtain the intersection point $E$. But now $\delta$ is an exterior angle to $\triangle EBC$ congruent to an opposite interior angle $\eta$ of the same triangle, contradicting part 1.
+		\item $(\delta\not<\gamma)$\lstsp Assume $\mathcolor{mGreen}{\delta<\gamma}$. Transfer $\delta$ to $C$ as shown to obtain $\mathcolor{mGreen}{\eta\cong\delta}$ inside $\mathcolor{mGreen}{\gamma}$. By the crossbar theorem, we obtain the intersection point $E$. But now $\delta$ is an exterior angle to $\triangle EBC$ congruent to an opposite interior angle $\eta$ of the same triangle, contradicting part 1.
 	\end{enumerate}
 	\begin{center}
 		\tagpdfsetup{table/header-rows={2}}
@@ -1303,179 +1303,224 @@ Once we include Playfair's axiom, the remainder of the book may be proved---from
 
 
 
-
-\iffalse
-
 \subsection{Circles and Continuity}\label{sec:circ}
 
-\begin{defn}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.22\linewidth]{}{}
-	Let $O$ and $R$ be distinct points. The \emph{circle} $\mathcal C$ with center $O$ and radius $\cl{OR}$ is the collection of points $A$ such that $\cl{OA}\cong\cl{OR}$.\smallbreak
-	A point $P$ lies \emph{inside} the circle $\mathcal C$ if $P=O$ or $\cl{OP}<\cl{OR}$.\smallbreak
-	A point $Q$ lies \emph{outside} if $\cl{OR}<\cl{OQ}$.\smallbreak
-	Since all segments are comparable, any point lies \emph{inside, outside} or \emph{on} a given circle.
-	\tcblower
-	\flushright\includegraphics{circle-circle}
+Circles were entirely natural to ancient cultures and could be created using a very simple machine (a peg and cord). As such, their intersections are central to Euclid's presentation. They are also very easy to define formally: all that's required is segment congruence and, if we want to define the inside and outside, segment comparison.
+
+%  using only the axioms of incidence, order and congruence. If we draw pictures, it seems obvious that circles have an inside and an outside, and that to cross from one to the other we must at some point lie on the circle. It is unfortunately , and yet Hilbert largely avoids them. The fundamental reason for this is that circle intersections require some notion of \emph{continuity}, and for good reason.
+
+\begin{defn}{}{}
+	Let $O$ and $R$ be distinct points. The \emph{circle} $\mathcal C$ with center $O$ and radius $\cl{OR}$ is the collection of points $A$ such that $\cl{OA}\cong\cl{OR}$.\par
+	\begin{minipage}[t]{0.74\linewidth}\vspace{-6pt}
+		Since all segments are comparable (Definition \ref{defn:lengthcomp}), every point satisfies exactly one of three possibilities:
+		\begin{itemize}
+		  \item $A$ lies \emph{on} $\mathcal C$ (that is, $\cl{OA}\cong\cl{OR}$).
+		  \item $P$ lies \emph{inside} $\mathcal C$ if $P=O$ or $\cl{OP}<\cl{OR}$.
+		  \item	$Q$ lies \emph{outside} $\mathcal C$ if $\cl{OR}<\cl{OQ}$.
+		\end{itemize}
+		Otherwise said: a circle partitions the plane into three subsets.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.25\linewidth}\vspace{-6pt}
+		\hfill\includegraphics[alt={a circle, exterior and interior points}]{circle-circle}
+	\end{minipage}
 \end{defn}
 
-A major weakness of Euclid is that many of his proofs rely on circle intersections rather than lines. To use circles in this manner requires the \emph{Axiom of Continuity,} which is much more technical than the other axioms. As such, Hilbert barely mentions circles, instead building as much geometry as he can using only the simplest axioms.\smallbreak
+It seems obvious from the picture that if we want to travel from the inside of a circle to the outside, then at some point we must be \emph{on} the circle. Euclid relies on this ``obvious'' principle without justification. The modern \emph{Axiom of Continuity} provides exactly the necessary justification. This axiom is more technical than the others. As such, it is natural for Hilbert barely to mention circles; instead he builds as much geometry as he can using only the simpler axioms.\smallbreak
+
 Two facts must be established in order to correct Euclid's approach.
 
 \begin{thm}{}{}
-	Suppose $\mathcal C$ and $\mathcal D$ are circles.\vspace{-5pt}
-	\begin{enumerate}\itemsep0pt
-	  \item (Elementary/Line-Circle Continuity Principle)\quad If $P$ is inside and $Q$ outside $\mathcal C$, then $\cl{PQ}$ intersects $\mathcal C$ in exactly one point.
-	  \item (Circular Continuity Principle)\quad Suppose $\mathcal D$ contains two points: one inside $\mathcal C$ and the other outside $\mathcal C$. Then the circles intersect in precisely two points; these points moreover lie on \emph{opposite sides} of the line joining the circle centers.
+	Let $\mathcal C$ and $\mathcal D$ be circles.
+	\begin{enumerate}
+	  \item (Elementary/Line-Circle Continuity Principle)\lstsp If $P$ lies inside and $Q$ lie outside $\mathcal C$, then the segment $\cl{PQ}$ intersects $\mathcal C$ at exactly one point.
+	  \item (Circular Continuity Principle)\lstsp Suppose $\mathcal D$ contains two points, one inside and the other outside $\mathcal C$. Then the circles intersect in precisely two points. The intersection points moreover lie on \emph{opposite sides} of the line through the circle centers.
 	\end{enumerate}
 \end{thm}
 
 
-\begin{minipage}[t]{0.73\linewidth}\vspace{-3pt}
+\begin{minipage}[t]{0.7\linewidth}
 	The idea of the first principle is to partition $\cl{PQ}$ into two pieces:
-	\begin{itemize}\itemsep0pt
-	  \item[]\textcolor{blue}{$\Sigma_1$} consists of the points lying on or inside $\mathcal C$
-	  \item[]\textcolor{Green}{$\Sigma_2$} consists of the points lying outside $\mathcal C$
-	\end{itemize}
-	One shows that $\Sigma_1,\Sigma_2$ satisfy the assumptions of the continuity axiom, and that the resulting point $\mathcal O$ from the axiom lies on $\mathcal C$ itself. Some of the details are in Exercise \ref{exs:elemcont}. The circular continuity principle is harder.
+	\begin{quote}
+	  \textcolor{Blue}{$\Sigma_1$} consists of the points lying on or inside $\mathcal C$.\smallbreak
+	  \textcolor{mGreen}{$\Sigma_2$} consists of the points lying outside $\mathcal C$.
+	\end{quote}
+	One proves that $\Sigma_1$ and $\Sigma_2$ satisfy the hypotheses of the continuity axiom. The resulting point $\mathcal O$ is then shown to lie on $\mathcal C$ itself. Some of the details are in Exercise \ref{exs:elemcont}.\smallbreak
+	The circular continuity principle is harder.
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.25\linewidth}\vspace{0pt}
-	\flushright
-	\includegraphics{circle-cont}
+\begin{minipage}[t]{0.29\linewidth}\vspace{0pt}
+	\hfill
+	\includegraphics[alt={a segment intersecting a circle}]{circle-cont}
 \end{minipage}
-\medbreak
 
-%What is perhaps more interesting is to consider a geometry in which the axiom of continuity is false.
+
+\pagebreak[3]
+
+
 
 \begin{example}{}{}
-	To convince ourselves why the axiom is needed, it is helpful to consider a geometry in which the continuity axiom is false. For ease of understanding, we use the language of co-ordinates.\smallbreak
-	\emph{Rational geometry} $\Q^2=\{(x,y)\in\R^2:x,y\in\Q\}$ consists of those points in the Cartesian plane with rational co-ordinates. It satisfies \emph{almost all} of Hilbert's axioms, though C-1 and continuity are false.\par
-	\begin{minipage}[t]{0.7\linewidth}\vspace{-5pt}
-		\begin{description}\itemsep0pt
-			\item[\normalfont\emph{Axiom C-1}] Given points $A=(0,0)$, $B=(1,0)$ and $C=(1,1)$, we see that $\mathcal O=(\frac 1{\sqrt 2},\frac 1{\sqrt 2})$ is the unique point (in $\R^2$) on the ray $r=\ray{AC}$ such that $\cl{AC}\cong\cl{AB}$. Clearly $\mathcal O$ is an irrational point and therefore not in the geometry.
-			\item[\normalfont\emph{Continuity}] The circle centered at $A=(0,0)$ with radius 1 does not intersect the segment $\cl{AC}$. More properly, $\cl{AC}=\Sigma_1\cup\Sigma_2$ may be partitioned as shown and yet no point $\mathcal O$ \emph{in the geometry} separates $\Sigma_1,\Sigma_2$.
+	To convince ourselves why the continuity axiom is necessary, it is helpful to consider a model for which it is false. For ease of understanding, we use the language of co-ordinates.\smallbreak
+	\emph{Rational geometry} $\Q^2=\big\{(x,y)\in\R^2:x,y\in\Q\big\}$ consists of those points in the Cartesian plane with rational co-ordinates. It satisfies almost all of Hilbert's axioms: C-1 and continuity are false.\par
+	To see why, consider the picture, and the points with co-ordinates $A=(0,0)$, $B=(1,0)$, $C=(1,1)$ and $\mathcal O=\big(\frac 1{\sqrt 2},\frac 1{\sqrt 2}\big)$. It should be clear that $\mathcolor{Blue}{\cl{AB}}\cong\cl{A\mathcal O}$ (both segments have length 1).\par
+	\begin{minipage}[t]{0.7\linewidth}\vspace{0pt}
+		\begin{description}
+			\item[\normalfont\emph{Axiom C-1}] Within $\Q^2$, we cannot transfer $\mathcolor{Blue}{\cl{AB}}$ to the ray $\ray{AC}$, since $\mathcal O$, having irrational co-ordinates, is not a point in the geometry.
+			\item[\normalfont\emph{Continuity}] Consider the circle centered at $A$ with radius 1. Plainly $A$ lies inside this circle and $C$ outside. However the segment $\cl{AC}$ does not intersect the circle, thus contradicting the elementary continuity principle.\par
+			More properly, $\cl{AC}=\mathcolor{Blue}{\Sigma_1}\cup\mathcolor{mGreen}{\Sigma_2}$ may be partitioned as shown and yet no point $\mathcal O$ in the geometry separates $\Sigma_1,\Sigma_2$.
 		\end{description}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.29\linewidth}\vspace{0pt}
-		\flushright 
-		\includegraphics{circle-cont2}
+		\hfill
+		\includegraphics[alt={rational geometry fails the continuity axiom}]{circle-cont2}
 	\end{minipage}
 \end{example}
 
 
-\goodbreak
 
-\boldinline{Equilateral triangles}
 
-We can finally correct Euclid's proof of the first proposition of the \emph{Elements}!
+\subsubsection*{Equilateral triangles}
 
-% \begin{defn}{}{}
-% 	A triangle $\triangle ABC$ is \emph{equilateral} if its three sides are congruent.
-% \end{defn}
+Armed with circle intersections, we can finally correct Euclid's very first proof!
+
 
 \begin{thm}{Euclid I.1}{euclid-equil}
 	An equilateral triangle many be constructed on a given segment $\cl{AB}$.
 \end{thm}
 
 \begin{proof}
-	Following Euclid, consider the circles $\alpha$ and $\beta$ centered at $A$ and $B$, both with radius $\cl{AB}$.\par
-	\begin{minipage}[t]{0.58\linewidth}\vspace{-5pt}
-		Axiom O-2: $\exists D$ such that $A*B*D$.\smallbreak
-		Axiom C-1: let $C\in\ray{BD}$ be such that $\cl{BC}\cong\cl{AB}$.\smallbreak
-		Circular continuity principle: $\beta$ contains $A$ (inside $\alpha$) and $C$ (outside $\alpha$) so the circles intersect in two points $P,Q$.\smallbreak
-		Since $P$ lies on both circles (and is therefore distinct from $A$ and $B$), we have $\cl{AB}\cong\cl{AP}\cong\cl{BP}$ whence $\triangle ABC$ is equilateral.
+	Following Euclid, consider the circles $\alpha$ and $\beta$ centered respectively at $A$ and $B$, both having radius $\cl{AB}$. We apply two of Hilbert's axioms and then the circular continuity principle.\par
+	\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}
+		\begin{description}
+			\item[\normalfont\emph{Axiom O-2}:] $\exists D$ such that $A*B*D$.
+			\item[\normalfont\emph{Axiom C-1}:] Let $C\in\ray{BD}$ be the unique point for which $\cl{BC}\cong\cl{AB}$.
+			\item[\normalfont\emph{Circular Continuity principle}:] $\beta$ contains $A$ (inside $\alpha$) and $C$ (outside $\alpha$). The circles therefore intersect in two points $P$ and $Q$.
+		\end{description}
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.41\linewidth}\vspace{-5pt}
-		\flushright
-		\includegraphics[scale=0.9]{circle-euclid1}
-	\end{minipage}\\[-5pt]
+	\begin{minipage}[t]{0.38\linewidth}\vspace{-5pt}
+		\hfill
+		\includegraphics[alt={correcting euclid's first theorem}]{circle-euclid1}
+	\end{minipage}
+	\smallbreak
+	The rest of the argument is essentially Euclid's. Since $P$ lies on both circles (and is therefore distinct from $A$ and $B$), we have $\cl{AP}\cong\cl{AB}$ and $\cl{BP}\cong\cl{AB}$: the three sides are congruent and so $\triangle ABC$ is equilateral.\footnotemark{}
 \end{proof}
 
-As we saw in Exercise \ref*{sec:hilbert2}.\ref{ex:pythagnocont}, if we include Playfair's axiom regarding unique parallels, the above can be proved without circles or the continuity axiom. Regardless, we can finally say that every result in Book I of Euclid is correct, even if the original axioms and arguments are insufficient!
+\footnotetext{Strictly, this last step uses Lemma \ref{lemm:congequiv} and thus axioms C-1 and C-2, though it is not really possible to \emph{define} an equilateral triangle without it!}
+
+As we saw in Exercise \ref*{sec:hilbert2}.\ref{ex:pythagnocont}, if Playfair's axiom regarding unique parallels is included, the above can be proved without circles or the continuity axiom. Regardless, we can finally say that every result in Book I of Euclid is correct, even if his original axioms and arguments are insufficient!
 
 
 
 \subsubsection*{Basic Circle Geometry}
 
-We continue our survey of Euclidean geometry with a few results about circles, many of which are found in Book III of the \emph{Elements}. From this point on, we assume all Hilbert's axioms including Playfair and continuity; what follows often relies on their consequences, particularly angle-sums in triangles and the circular continuity principle.
+We continue our survey of Euclidean geometry with a few results about circles. Many of  these are found in Book III of the \emph{Elements}. From now on, we assume all of Hilbert's axioms including Playfair and Continuity; what follows often relies on their consequences, particularly angle-sums in triangles and the circular continuity principle.
 
-\begin{defn}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.35\linewidth]{}{circledef}
-	With reference to the picture:
-	\begin{itemize}\itemsep0pt
-	  \item A \emph{chord} $\cl{AB}$ is a segment joining two points on a circle.
-	  \item A \emph{diameter} $\cl{BC}$ is a chord passing through the center $O$.
-	  \item An \emph{arc} $\arc{AB}$ is part of the circular edge between chord points (\textcolor{Green}{major} or \textcolor{blue}{minor} by length).
-	  \item $\angle AOB$ is a \emph{central} angle and $\angle APB$ an \emph{inscribed} angle.
-	  \item $\triangle ABP$ is \emph{inscribed} in its \emph{circumcircle.}
-	\end{itemize}
-	\tcblower
-	\flushright
-	\includegraphics[scale=0.95]{circle-circle1}
+\begin{defn}{}{circledef}
+	With reference to the picture:\par
+	\begin{minipage}[t]{0.7\linewidth}\vspace{0pt}
+		\begin{itemize}
+		  \item A \emph{chord} $\cl{AB}$ is a segment joining two points on a circle.
+		  \item A \emph{diameter} $\cl{BC}$ is a chord passing through the center $O$.
+		  \item $\angle AOB$ is a \emph{central} angle and $\angle APB$ an \emph{inscribed} angle.
+		  \item $\triangle ABP$ is \emph{inscribed} in its \emph{circumcircle.}
+		  \item An \emph{arc} $\arc{AB}$ is part of the circular edge between chord points (\textcolor{mGreen}{major} or \textcolor{Blue}{minor} by length\footnotemark).
+		\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.27\linewidth}\vspace{0pt}
+		\hfill
+		\includegraphics[alt={chords circumscribed and inscribed angles}]{circle-circle1}
+	\end{minipage}
 \end{defn}
 
-These ideas should not be new, so most of the details are left as exercises.
+\footnotetext{%
+	A minor arc is strictly an arc corresponding to a (central) \emph{angle}: in pure Euclidean geometry, all angles are positive and less than or equal to a straight-edge.%
+}
+
+The following ideas should not be new, so most of the details are left as exercises.
 
 \begin{thm}{III.\,20}{central-inscribed}
 	The central angle is twice the inscribed angle: $\angle AOB=2\angle APB$.
 \end{thm}
 
-For a sketch proof, join $\cl{OP}$, breaking $\triangle ABP$ into three isosceles triangles and count angle sums\ldots
+For a sketch proof, join $\cl{OP}$, breaking $\triangle ABP$ into three isosceles triangles before counting angle sums. A little extra is required if the center $O$ lies outside the triangle.
+
 
 \begin{cor}{}{thalescor}
-	\exstart (III.\,21)\lstsp If inscribed triangles share a side, the opposite angles are congruent.
+	\exstart (III.\,21)\lstsp If inscribed triangles share a side, then the inscribed angles opposite that side  are congruent.
 	\begin{enumerate}\setcounter{enumi}{1}
 		\item (III.\,22)\lstsp An inscribed quadrilateral has opposite angles supplementary (summing to \ang{180}).
 		\item (III.\,31---Thales' Theorem)\lstsp A triangle in a semi-circle is right-angled.
 	\end{enumerate}
 \end{cor}
 
-\goodbreak
+\smallskip
 
-\begin{minipage}[t]{0.62\linewidth}\vspace{0pt}
-	\begin{thm}{}{circumcircle}
-		Any triangle has a unique circumcircle.
-	\end{thm}
+\begin{thm}{}{circumcircle}
+	Every triangle has a unique circumcircle.
+\end{thm}
 	
-	This is similar to III.\,1: construct the perpendicular bisectors of two sides as in the picture; necessarily these meet at the center of the required circle.
+\begin{minipage}[t]{0.62\linewidth}\vspace{0pt}
+	This is similar to III.\,1: construct the perpendicular bisectors of two sides as in the picture; necessarily these meet at the center of the required circle, though there is still something to prove\ldots
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.37\linewidth}\vspace{-8pt}
-	\flushright
-	\includegraphics[scale=0.9]{circle-circle3}
+	\hfill
+	\includegraphics[alt={finding the circumcircle}]{circle-circle3}
 \end{minipage}
 
+
+\pagebreak[3]
+
+
+Our final results consider the concept of \emph{tangency.} At first thought, you might suppose this to require some calculus, but it doesn't\ldots
 
 \begin{defn}{}{}
 	A line is \emph{tangent} to a circle if it intersects the circle exactly once.
 \end{defn}
 
-\begin{thm}{III.\,18, 19 (part)}{tangentperp}
+\begin{thm}{III.\,18, 19 (in part)}{tangentperp}
 	A line is tangent to a circle if and only if it is perpendicular to the radius at an intersection point.
 \end{thm}
 
-\begin{tcolorbox}[proofstyle, lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.33\linewidth]
-	\emph{Proof.}\lstsp ($\Leftarrow$)\lstsp Suppose $\ell$ through $T$ is perpendicular to the radius $\cl{OT}$.\smallbreak
-	Let $P$ be any another point on $\ell$. But then (Exercise \ref*{sec:hilbert2}.\ref{ex:euclidi19}),
-	\[
-		\angle OPT<\ang{90}\cong\angle OTP\implies \cl{OT}<\cl{OP}
-	\]
-	thus $P$ lies \emph{outside} the circle. Every point on $\ell$ except $T$ lies outside the circle, whence $T$ is the unique intersection and $\ell$ is tangent.\medbreak
-	The ($\Rightarrow$) direction is an exercise.
-	\tcblower
-	\flushright
-	\includegraphics[scale=0.95]{circle-circle2}\\[-8pt]
-	\hfill\qedsymbol
-\end{tcolorbox}
+\begin{proof}
+	We prove the ($\Leftarrow$) direction, leaving the other half as an exercise.\par
+	\begin{minipage}[t]{0.62\linewidth}\vspace{0pt}
+		Suppose $T$ lies on a circle $\mathcal C$ and that $\ell$ passes through $T$ perpendicular to the radius $\cl{OT}$.\smallbreak
+		Let $P$ be any another point on $\ell$. Since $\triangle OTP$ is right-angled, Exercise \ref*{sec:hilbert2}.\ref{ex:euclidi19} (angle-side comparisons) tells us that
+		\[
+			\angle OPT<\ang{90}\cong\angle OTP\implies \cl{OT}<\cl{OP}
+		\]
+		That is, $P$ lies \emph{outside} the circle.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.37\linewidth}\vspace{-8pt}
+		\hfill
+		\includegraphics[alt={tangency means being perpendicular to the radius}]{circle-circle2}
+	\end{minipage}\smallbreak
+	Otherwise said, $T$ is the unique intersection point $\ell\cap\mathcal C$, whence $\ell$ is tangent to the circle.
+\end{proof}
+
 
 \begin{thm}{}{pointtangent}
-	Through a point outside a circle, exactly two lines are tangent to the circle.
+	Any given point outside a circle lies on exactly two lines tangent to the circle.
 \end{thm}
 
+If you can give formal proofs of all these result, you should consider yourself in a very good place regarding basic Euclidean geometry.
+
+
+
 \begin{exercises}
-	\exstart Give formal proofs of all parts of Corollary \ref{cor:thalescor}.
-	\begin{enumerate}\setcounter{enumi}{1} 
+	\hangindent\leftmargini\emph{Key concepts: \ }
+
+	\begin{enumerate}
+	  \item Give formal proofs of all parts of Corollary \ref{cor:thalescor}.
+	  
+	  
 	  \item Prove Theorem \ref{thm:circumcircle}.
+	  
 	  
 	  \item\begin{enumerate}
 	  	\item Complete the proof of Theorem \ref{thm:tangentperp} by showing the ($\Rightarrow$) direction.\par
@@ -1484,7 +1529,9 @@ For a sketch proof, join $\cl{OP}$, breaking $\triangle ABP$ into three isoscele
 	  	%(\emph{Hint: first construct two points on the line lying outside the circle})
 	 	\end{enumerate}
 	  
+	  
 	  \item\label{ex:pointtangent} Given a circle centered at $O$ and a point $P$ outside the circle, draw the circle centered at the midpoint of $\cl{OP}$ passing through $O$ and $P$. Explain why the intersections of these circles are the points of tangency required in Theorem \ref{thm:pointtangent}. Hence complete its proof.
+	  
 	  
 	  \item\begin{enumerate}
 	    \item Prove Theorem \ref{thm:central-inscribed} when $O$ is \emph{interior} to $\triangle ABP$.
@@ -1492,8 +1539,8 @@ For a sketch proof, join $\cl{OP}$, breaking $\triangle ABP$ into three isoscele
 	  \end{enumerate}
 	  
 	  
+	  	\item\label{exs:elemcont} Suppose $A*C*B$ and that $O\notin\lin{AB}$. Use Exercise \ref*{sec:hilbert2}.\ref{ex:euclidi19} to show that\par
 	  \begin{minipage}[t]{0.79\linewidth}\vspace{0pt}
-	  	\item\label{exs:elemcont} Suppose $A*C*B$ and that $O\notin\lin{AB}$. Use Exercise \ref*{sec:hilbert2}.\ref{ex:euclidi19} to show that
 	  	\[
 	  		\cl{OC}< \max\bigl(\cl{OA},\cl{OB}\bigr)
 	  	\]
@@ -1502,9 +1549,12 @@ For a sketch proof, join $\cl{OP}$, breaking $\triangle ABP$ into three isoscele
 	  \end{minipage}
 	  \hfill
 	  \begin{minipage}[t]{0.2\linewidth}\vspace{0pt}
-	  	\flushright
-	  	\includegraphics[scale=1]{circle-cont3}
+	  	\hfill
+	  	\includegraphics[alt={minimum distance to a point}]{circle-cont3}
 	  \end{minipage}
+	  
+	  
+	  \item Exercise on how continuity axiom proves the archimedean property\ldots
 	  
 	\end{enumerate}
 \end{exercises}
@@ -1514,12 +1564,14 @@ For a sketch proof, join $\cl{OP}$, breaking $\triangle ABP$ into three isoscele
 \clearpage
 
 
+
+
 \subsection{Similar Triangles, Length and Trigonometry}\label{sec:similar}
 
 In the geometry of Euclid \& Hilbert, there are no numerical measures of length or angle. \emph{Relative} measure is built in (Definition \ref{defn:lengthcomp}), and we've denoted right-angles and straight-edges by \ang{90} \& \ang{180} for convenience. To avoid continued frustration it is time we introduced explicit \emph{numerical} measure; unfortunately, to do so properly requires more axioms.
 
 \begin{axioms}{Length and Angle (Degree) Measure}{euclidmeasure}
-	\begin{itemize}\itemsep3pt
+	\begin{itemize}
 		\item[L1] To each segment $\cl{AB}$ corresponds a unique \emph{length} $\nm{AB}$, a positive real number
 		\item[L2] $\nm{AB}=\nm{CD}\iff \cl{AB}\cong\cl{CD}$
 		\item[L3] $\nm{AB}<\nm{CD}\iff\cl{AB}<\cl{CD}$%\hfill (Definition \ref{defn:lengthcomp})
@@ -1547,19 +1599,18 @@ The axioms for length and angle follow the same pattern except that A5 explicitl
 \end{thm}
 
 \begin{minipage}[t]{0.49\linewidth}\vspace{0pt}
-	The segment $\cl{OP}$ in part 1 provides a length-scale for a \emph{ruler.} We measure the length of any segment by moving this ruler on top of the desired segment (segment-transferrence!)
+	The segment $\cl{OP}$ in part 1 provides a length-scale for a \emph{ruler.} We measure the length of any segment by moving this ruler on top of the desired segment (segment-transference!)
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.49\linewidth}\vspace{-5pt}
-	\flushright
-	\includegraphics{similar-ruler}
+	\hfill
+	\includegraphics[alt={ruler axioms}]{similar-ruler}
 \end{minipage}
 
 
-\goodbreak
 
 
-\boldinline{Area Measure}
+\subsubsection*{Area Measure}
 
 If we also include Playfair's axiom, then the discussion at the end of Book I of Euclid becomes valid and \emph{rectangles} can be defined (Exercise \ref*{sec:euclid}.\ref{ex:pythagexs}).
 
@@ -1578,8 +1629,8 @@ Given a length measure, a square with side length 1 necessarily has area 1. Rela
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.19\linewidth}\vspace{-8pt}
-	\flushright
-	\includegraphics{similar-areaheight}
+	\hfill
+	\includegraphics[alt={area equals base times height}]{similar-areaheight}
 \end{minipage}
 
 
@@ -1589,30 +1640,28 @@ Given a length measure, a square with side length 1 necessarily has area 1. Rela
 \end{lemm} 
 
 
-\boldinline{Similarity and the AAA Theorem}
+\subsubsection*{Similarity and the AAA Theorem}
 
 Similar triangles are the concern of Book VI of the \emph{Elements.}
 
-\begin{defn}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.32\linewidth]{}{}
+\begin{defn}{}{}
 	Triangles are \emph{similar,} written $\triangle ABC\sim\triangle XYZ$, if their sides are in the same length ratio
 	\[
 		\frac{\nm{AB}}{\nm{XY}}=\frac{\nm{BC}}{\nm{YZ}}=\frac{\nm{CA}}{\nm{ZX}}
 	\]
-	\tcblower
-	\flushright\includegraphics{similar-aaa}
+	\hfill\includegraphics[alt={similar triangles have sides in a common ratio}]{similar-aaa}
 \end{defn}
 
 Euclid discusses these using non-numerical ratios of segments ($\cl{AB}:\cl{XY}=\cl{BC}:\cl{YZ}$), an unnecessarily confusing approach for modern readers. Indeed some of the most difficult parts of the \emph{Elements} are where he describes what this should mean, particularly for irrational ratios (Books V \& X).\medbreak
 Our primary result comes in two versions: the second (which we'll prove momentarily) is a special case of the first, though the two versions are in fact equivalent.
 
-\begin{thm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.25\linewidth]{Angle-Angle-Angle/AAA, Euclid VI.\,2--5}{aaasim}
-	\begin{enumerate}\itemsep0pt
+\begin{thm}{Angle-Angle-Angle/AAA, Euclid VI.\,2--5}{aaasim}
+	\begin{enumerate}
 	  \item Triangles are similar if and only if their angles come in mutually congruent pairs.
 	  \item Suppose a line intersects two sides of a triangle. The smaller triangle so created is similar to the original if and only if the line is parallel to the third side of the triangle.
 	\end{enumerate}
-	\tcblower
-	\flushright
-	\includegraphics[scale=0.95]{similar-aaa1}
+	\hfill
+	\includegraphics[alt={A A A similarity theorem}]{similar-aaa1}
 \end{thm}
 
 The picture should convince you that $1\Rightarrow 2$ (uniqueness of parallels: Playfair's axiom, Corollary \ref{cor:euclid28}, Theorem \ref{thm:euclid29}, etc.). This reliance is crucial: we do not expect AAA similarity in non-Euclidean geometry.\footnote{%
@@ -1636,24 +1685,25 @@ The picture should convince you that $1\Rightarrow 2$ (uniqueness of parallels: 
 % Four perpendicular distances $h,k,d_1,d_2$ are labelled in the picture to aid with the proof.
 
 
-\begin{tcolorbox}[proofstyle]
+\begin{proof}
+\phantom{bob}\par
 	\begin{minipage}[t]{0.63\linewidth}\vspace{0pt}
-		\emph{Proof\lstsp (AAA similarity, part 2).}\quad Suppose $\ell$ intersects $\triangle ABC$ at points $D,E$ as shown. Drop perpendiculars to create distances $h,k,d_1,d_2$ as indicated. We prove:
+		\emph{(AAA similarity, part 2).}\quad Suppose $\ell$ intersects $\triangle ABC$ at points $D,E$ as shown. Drop perpendiculars to create distances $h,k,d_1,d_2$ as indicated. We prove:
 		\begin{quote}
 			$\ell\text{ is parallel to }\cl{BC} \iff \triangle ABC\sim\triangle ADE$
 		\end{quote}
-		\begin{description}\itemsep0pt
+		\begin{description}
 			\item[$(\Rightarrow)$] Suppose $\ell$ is parallel to $\cl{BC}$. Playfair\footnotemark{} tells us that $d_1=d_2$. By Lemma \ref{lemm:triheightratio}, triangles with the same height have areas proportional to their bases:
 		\end{description}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.36\linewidth}\vspace{0pt}
-		\flushright
-		\includegraphics[scale=0.94]{similar-similarsides}
+		\hfill
+		\includegraphics[alt={A A A similarity proof}]{similar-similarsides}
 	\end{minipage}\par
-	\vspace{-15pt}
 
-	\begin{description}\itemsep0pt
+
+	\begin{description}
 		\item[]
 		\begin{gather*}
 			\dfrac{\nm{BD}}{\nm{AD}}
@@ -1691,18 +1741,16 @@ The picture should convince you that $1\Rightarrow 2$ (uniqueness of parallels: 
 		\end{align*}
 		where the last equality follows since $\triangle BCE$ and $\textcolor{Green}{\triangle BDE}$ have common height $d_1=d_2$.\par
 		
-		\begin{minipage}[t]{0.61\linewidth}\vspace{-3pt}
+		
 			\item[$(\Leftarrow)$] Suppose $\triangle ABC\sim\triangle ADE$. By Playfair, let $m$ be the unique parallel to $\cl{BC}$ through $D$. This intersects $\cl{AC}$ at a point $G$. We must prove that $G=E$ (consequently $m=\ell$).\smallbreak
 			By the ($\Rightarrow$) direction above,
 			\[
 				\triangle ABC\sim\triangle ADG
 			\]
-		\end{minipage}
-		\hfill
-		\begin{minipage}[t]{0.38\linewidth}\vspace{-8pt}
-			\flushright
-			\includegraphics[scale=0.94]{similar-similarsides2}
-		\end{minipage}\smallbreak
+
+			\hfill
+			\includegraphics[alt={A A A similarity proof}]{similar-similarsides2}
+\smallbreak
 		However $\sim$ is transitive (it is an equivalence relation), whence $\triangle ADE\sim\triangle ADG$. The similarity ratio is $1=\frac{\nm{AD}}{\nm{AD}}$, whence
 		\[
 			\frac{\nm{AE}}{\nm{AG}}=1
@@ -1711,18 +1759,15 @@ The picture should convince you that $1\Rightarrow 2$ (uniqueness of parallels: 
 		\]
 		%\hfill\qedsymbol
 	\end{description}
-\end{tcolorbox}
+\end{proof}
 
-\skip\footins=-1.5\bigskipamount
+
 
 \footnotetext{%
 	$d_1=d_2\Leftrightarrow \ell$ parallel to $\cl{BC}$ is Playfair! Compare Exercise \ref*{sec:euclid}.\ref{ex:pythagexs} (Thm I.\,46) on the construction of a square\ldots%
 }
 
-\skip\footins=\bigskipamount
 
-
-\goodbreak
 
 
 
@@ -1759,8 +1804,8 @@ Early trigonometry dates to a few hundred years after Euclid, though the approac
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.43\linewidth}\vspace{-8pt}
-		\flushright
-		\includegraphics{similar-trig}
+		\hfill
+		\includegraphics[alt={well definition of trigonometric functions using similar triangles}]{similar-trig}
 	\end{minipage}\smallbreak
 	In particular, $\sin\angle ABC=\sin\angle A'B'C'$ and $\cos\angle ABC=\cos\angle A'B'C'$.\smallbreak
 	The converse is an exercise.
@@ -1776,8 +1821,8 @@ After Giovanni Ceva (1647--1734), a \emph{cevian} is a segment joining a vertex 
 	\] 
 \end{thm}
 
-\begin{tcolorbox}[proofstyle]
-	\emph{Proof.}\lstsp($\Leftarrow$)\quad This is simply a repeated application of Lemma \ref{lemm:triheightratio}.\par
+\begin{proof}
+($\Leftarrow$)\quad This is simply a repeated application of Lemma \ref{lemm:triheightratio}.\par
 	\begin{minipage}[t]{0.65\linewidth}\vspace{-15pt}
 		\begin{align*}
 			&
@@ -1792,19 +1837,19 @@ After Giovanni Ceva (1647--1734), a \emph{cevian} is a segment joining a vertex 
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.34\linewidth}\vspace{-15pt} 
-		\flushright
-		\includegraphics{similar-cevians}\\[-5pt]
+		\hfill
+		\includegraphics[alt={ceva's theorem}]{similar-cevians}\\[-5pt]
 		\hfill\qedsymbol
 	\end{minipage}
-\end{tcolorbox}
+\end{proof}
 
-\goodbreak
+
 
 
 We finish with a beautiful result from roughly 1803--5.
 
 
-\begin{thm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.3\linewidth]{Butterfly Theorem}{}
+\begin{thm}{Butterfly Theorem}{}
 	We are given the following data as in the picture:
 	\begin{itemize}
 	  \item $\cl{PQ}$ is a chord of a circle with midpoint $M$.
@@ -1812,9 +1857,8 @@ We finish with a beautiful result from roughly 1803--5.
 	  \item $X,Y$ are the chord-intersections shown.
 	\end{itemize}
 	Then $M$ is the midpoint of $\cl{XY}$.
-	\tcblower
-	\flushright
-	\includegraphics[scale=0.9]{similar-butterfly}
+	\hfill
+	\includegraphics[alt={the butterfly theorem}]{similar-butterfly}
 \end{thm}
 
 Several proofs are known. Ours relies on similar triangles and a simple lemma, whose proof is a exercise.
@@ -1826,9 +1870,8 @@ Several proofs are known. Ours relies on similar triangles and a simple lemma, w
 	\]
 \end{lemm}
 
-\begin{tcolorbox}[proofstyle]
-	\begin{minipage}[t]{0.58\linewidth}\vspace{0pt}
-		\emph{Proof of Theorem.}\lstsp
+\begin{proof}[Proof of Theorem]
+
 		For convenience we introduce several numerical lengths:
 		\begin{itemize}
 		  \item $z=\nm{PM}=\nm{MQ}$, $x=\nm{XM}$ and $y=\nm{YM}$.
@@ -1841,31 +1884,32 @@ Several proofs are known. Ours relies on similar triangles and a simple lemma, w
 		  \item $\dfrac{x}{x_1}=\dfrac{y}{y_1}$ and $\dfrac{x}{x_2}=\dfrac{y}{y_2} \implies \dfrac xy=\dfrac{x_1}{y_1}=\dfrac{x_2}{y_2}$
 		  \item $\dfrac{\nm{AX}}{\nm{BY}}=\dfrac{x_1}{y_2}$ and $\dfrac{\nm{XD}}{\nm{YC}}=\dfrac{x_2}{y_1}$
 		\end{itemize}
-	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.39\linewidth}\vspace{0pt}
-		\flushright
-		\includegraphics[scale=0.9]{similar-butterfly2}
-	\end{minipage}\medbreak
+
+		\includegraphics[alt={proving the butterfly theorem using similar triangles}]{similar-butterfly2}
+\medbreak
 	The result follows by combining these observations and applying the Lemma twice:\footnotemark
 	\begin{align*}
 		&\frac{x^2}{y^2}=\frac{x_1x_2}{y_1y_2}=\frac{\nm{AX}\nm{XD}}{\nm{BY}\nm{YC}} =\frac{\nm{PX}\nm{XQ}}{\nm{PY}\nm{YQ}} =\frac{(z-x)(z+x)}{(z+y)(z-y)} =\frac{z^2-x^2}{z^2-y^2}\\[2pt]
 		\implies & x^2(z^2-y^2)=y^2(z^2-x^2)\\
 		\implies &x^2=y^2\implies x=y\tag*{\qedsymbol}
 	\end{align*}
-\end{tcolorbox}
+\end{proof}
 
 \footnotetext{%
 	The denominators are equal by applying the Lemma to the chords $\cl{BC}$ and $\cl{PQ}$.%
 }
 
-\vfil
+
 
 \begin{exercises}
-	\exstart Use similar triangles to prove Lemma \ref{lemm:butterflylemm}.
+	\hangindent\leftmargini\emph{Key concepts: \ }
 
 
-	\begin{enumerate}\setcounter{enumi}{1}
+	\begin{enumerate}
+		\item Use similar triangles to prove Lemma \ref{lemm:butterflylemm}.
+		
+		
 	  \item Let $\triangle ABC$ have a right-angle at $C$. Drop a perpendicular from $C$ to $\lin{AB}$ at $D$.\par
 	  \begin{minipage}[t]{0.6\linewidth}\vspace{-8pt}
 		  \begin{enumerate}\itemsep0pt
@@ -1880,13 +1924,14 @@ Several proofs are known. Ours relies on similar triangles and a simple lemma, w
 		\end{minipage}
 		\hfill
 		\begin{minipage}[t]{0.39\linewidth}\vspace{0pt}
-			\flushright
-			\includegraphics{similar-pthag}
+			\hfill
+			\includegraphics[alt={pythagoras using similar triangles}]{similar-pthag}
 		\end{minipage}
 	
 
-	  \begin{minipage}[t]{0.65\linewidth}\vspace{0pt}
-	  	\item Prove a simplified version of the \emph{SAS similarity theorem}:
+
+	  	\item Prove a simplified version of the \emph{SAS similarity theorem}:\par
+	  		  \begin{minipage}[t]{0.65\linewidth}\vspace{0pt}
 	    \[
 	    	\frac{\nm{AB}}{\nm{AG}}=\frac{\nm{AC}}{\nm{AH}}\iff\triangle ABC\sim\triangle AGH
 	    \]
@@ -1894,8 +1939,8 @@ Several proofs are known. Ours relies on similar triangles and a simple lemma, w
 	  \end{minipage}
 	  \hfill
 	  \begin{minipage}[t]{0.34\linewidth}\vspace{-5pt}
-	  	\flushright
-	  	\includegraphics{similar-sas2}
+	  	\hfill
+	  	\includegraphics[alt={S A S similarity theorem}]{similar-sas2}
 	  \end{minipage}
 	
 	
@@ -1915,15 +1960,15 @@ Several proofs are known. Ours relies on similar triangles and a simple lemma, w
 		\item We complete the proof of Ceva's theorem.	
 		\begin{enumerate}
 		  \item If $p,q,r,s$ are non-zero real numbers, verify that $\smash[t]{\alpha=\frac pq=\frac rs\implies \alpha=\frac{p-r}{q-s}}$.\par
-			\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}
 				\item Assume $X,Y,Z$ satisfy Ceva's formula.\par
+			\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}
 				Define $P$ as the intersection of $\cl{BY}$ and $\cl{CZ}$ and let $\ray{AP}$ meet $\cl{BC}$ at $X'$.\smallbreak
 				Prove the ($\Rightarrow$) direction of Ceva's theorem by using the $(\Leftarrow)$ direction to show that $X'=X$.
 			\end{minipage}
 			\hfill
 			\begin{minipage}[t]{0.39\linewidth}\vspace{-5pt}
-				\flushright
-				\includegraphics{similar-cevians2}
+				\hfill
+				\includegraphics[alt={proving ceva's theorem}]{similar-cevians2}
 			\end{minipage}
 		\end{enumerate}
 		
@@ -1943,4 +1988,3 @@ Several proofs are known. Ours relies on similar triangles and a simple lemma, w
 	\end{enumerate}
 \end{exercises}
 
-\fi

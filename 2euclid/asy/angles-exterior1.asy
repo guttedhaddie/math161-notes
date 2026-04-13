@@ -22,8 +22,8 @@ pair B=(3,0);
 pair C=(0.4,3);
 pair D=B+(sqrt(C.x^2+C.y^2),0);
 
-draw(A--B,lGreen);
-draw(C--D,lGreen);
+draw(A--B);
+draw(C--D);
 draw(A--C,blue,StickIntervalMarker(1,1,blue,dotframe(red)));
 draw(B--D,blue,StickIntervalMarker(1,1,blue,dotframe(red)));
 draw(B--C,Brown,StickIntervalMarker(1,2,Brown,dotframe(red)));

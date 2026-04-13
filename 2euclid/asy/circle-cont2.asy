@@ -1,14 +1,21 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 import markers;
 
-size(120);
+size(130);
 
 pair A=(0,0);
 pair B=(1,0);
@@ -20,7 +27,7 @@ draw(arc(A,dir(46.5),dir(43.5),CCW),dashed);
 
 draw(A--B,dashed);
 draw("$\Sigma_1$",A--0.97*OO,blue+dashed);
-draw("$\Sigma_2$",1.03*OO--C,heavygreen+dashed);
+draw("$\Sigma_2$",1.03*OO--C,lGreen+dashed);
 
 dot(Label("$A$",black),A,SW,red);
 dot(Label("$B$",black),B,SE,red);
