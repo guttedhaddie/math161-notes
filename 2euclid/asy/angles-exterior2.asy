@@ -28,8 +28,8 @@ draw(A--EE);
 draw(C--F);
 draw(EE--B);
 draw(C--EE);
-draw(A--C,blue,StickIntervalMarker(1,3,blue,dotframe(red)));
-draw(B--F,blue,StickIntervalMarker(1,3,blue,dotframe(red)));
+draw(A--C,blue,StickIntervalMarker(1,1,blue,dotframe(red)));
+draw(B--F,blue,StickIntervalMarker(1,1,blue,dotframe(red)));
 draw(B--C,Brown,StickIntervalMarker(1,2,Brown,dotframe(red)));
 
 dot(Label("$A$",black),A,SW,red);

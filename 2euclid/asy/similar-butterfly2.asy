@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 import markers;
 
@@ -35,22 +42,22 @@ pair CM=intersectionpoint(A--C,Y--Y+2*I*(A-C));
 //draw(arc(B,B+0.15*unit(D-B),B+0.15*unit(C-B)));
 
 
-filldraw(D--arc(D,D+0.15*unit(B-D),D+0.15*unit(A-D))--cycle,orange);
-filldraw(C--arc(C,C+0.15*unit(B-C),C+0.15*unit(A-C))--cycle,orange);
-filldraw(A--arc(A,A+0.12*unit(D-A),A+0.12*unit(C-A))--cycle,magenta);
-filldraw(B--arc(B,B+0.12*unit(D-B),B+0.12*unit(C-B))--cycle,magenta);
+filldraw(D--arc(D,D+0.15*unit(B-D),D+0.15*unit(A-D))--cycle,Brown);
+filldraw(C--arc(C,C+0.15*unit(B-C),C+0.15*unit(A-C))--cycle,Brown);
+filldraw(A--arc(A,A+0.12*unit(D-A),A+0.12*unit(C-A))--cycle,Magenta);
+filldraw(B--arc(B,B+0.12*unit(D-B),B+0.12*unit(C-B))--cycle,Magenta);
 
 
-filldraw(M--arc(M,M+0.15*unit(X-M),M+0.15*unit(D-M))--cycle,brown);
-filldraw(M--arc(M,M+0.15*unit(Y-M),M+0.15*unit(B-M))--cycle,brown);
-filldraw(M--arc(M,M+0.11*unit(A-M),M+0.11*unit(X-M))--cycle,cyan);
-filldraw(M--arc(M,M+0.11*unit(C-M),M+0.11*unit(Y-M))--cycle,cyan);
+filldraw(M--arc(M,M+0.15*unit(X-M),M+0.15*unit(D-M))--cycle,Orange);
+filldraw(M--arc(M,M+0.15*unit(Y-M),M+0.15*unit(B-M))--cycle,Orange);
+filldraw(M--arc(M,M+0.11*unit(A-M),M+0.11*unit(X-M))--cycle,Cyan);
+filldraw(M--arc(M,M+0.11*unit(C-M),M+0.11*unit(Y-M))--cycle,Cyan);
 
 draw(c);
 draw(A--C--B--D--cycle);
 draw(P--X);
 draw(Label("$x$",Relative(0.45)),X--M,blue+linewidth(1));
-draw(Label("$y$",Relative(0.55),align=0.2*I*unit(Y-M)),Y--M,heavygreen+linewidth(1));
+draw(Label("$y$",Relative(0.55),align=0.2*I*unit(Y-M)),Y--M,lGreen+linewidth(1));
 draw(Y--Q);
 
 draw(Label("$x_1$",Relative(0.35)),AM--X,dashed);

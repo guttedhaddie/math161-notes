@@ -1,13 +1,20 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
-size(180,0);
+size(170,0);
 
 pair B=(0,0);
 pair C=(2,0);
@@ -55,7 +62,7 @@ fill(A--EE--D--cycle,blue+opacity(0.25));
 fill(B--EE--D--cycle,heavygreen+opacity(0.3));
 fill(C--EE--D--cycle,heavygreen+opacity(0.3));
 rtang(0.05,epp,90+degrees(I*(A-B)));
-rtang(0.05,dpp,degrees(I*(A-C)),0.65orange+0.35black);
+rtang(0.05,dpp,degrees(I*(A-C)),Brown);
 draw(A--EE--D--cycle);
 draw(B--EE--D--cycle);
 draw(C--EE--D--cycle);
@@ -63,7 +70,7 @@ draw(C--EE--D--cycle);
 draw(B--C);
 draw(Label("$\ell$",Relative(0.9),align=NE),p,blue);
 draw("$h$",EE--epp,S,dashed+red);
-draw("$k$",D--dpp,dashed+0.65orange+0.35black);
+draw("$k$",D--dpp,dashed+Brown);
 
 dot(Label("$A$",black),A,1.5dir(170),red);
 dot(Label("$B$",black),B,S,red);

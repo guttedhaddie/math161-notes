@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 import markers;
 
@@ -41,7 +48,7 @@ pair al2=I*dir(-10);
 axxis(Q,Q+dir(-10),0,5);
 
 draw(Q--Q+5dir(-10));
-draw("$|QR|=4.6$",R--Q,0.9heavygreen+0.1black+linewidth(1.2));
+draw("$|QR|=4.6$",R--Q,0.9lGreen+0.1black+linewidth(1.2));
 
 dot("$Q$",Q,al2,red);
 dot("$R$",R,al2,red);

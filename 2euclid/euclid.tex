@@ -1407,7 +1407,9 @@ Armed with circle intersections, we can finally correct Euclid's very first proo
 	The rest of the argument is essentially Euclid's. Since $P$ lies on both circles (and is therefore distinct from $A$ and $B$), we have $\cl{AP}\cong\cl{AB}$ and $\cl{BP}\cong\cl{AB}$: the three sides are congruent and so $\triangle ABC$ is equilateral.\footnotemark{}
 \end{proof}
 
-\footnotetext{Strictly, this last step uses Lemma \ref{lemm:congequiv} and thus axioms C-1 and C-2, though it is not really possible to \emph{define} an equilateral triangle without it!}
+\footnotetext{%
+	Strictly, this last step uses Lemma \ref{lemm:congequiv} and thus axioms C-1 and C-2, though it is not really possible to \emph{define} an equilateral triangle without it!%
+}
 
 As we saw in Exercise \ref*{sec:hilbert2}.\ref{ex:pythagnocont}, if Playfair's axiom regarding unique parallels is included, the above can be proved without circles or the continuity axiom. Regardless, we can finally say that every result in Book I of Euclid is correct, even if his original axioms and arguments are insufficient!
 
@@ -1415,7 +1417,7 @@ As we saw in Exercise \ref*{sec:hilbert2}.\ref{ex:pythagnocont}, if Playfair's a
 
 \subsubsection*{Basic Circle Geometry}
 
-We continue our survey of Euclidean geometry with a few results about circles. Many of  these are found in Book III of the \emph{Elements}. From now on, we assume all of Hilbert's axioms including Playfair and Continuity; what follows often relies on their consequences, particularly angle-sums in triangles and the circular continuity principle.
+We continue our survey of Euclidean geometry with a few results about circles. Many of  these are found in Book III of the \emph{Elements}. For the rest of this chapter, we assume all of Hilbert's axioms including Playfair and Continuity; what follows often relies on their consequences, particularly angle-sums in triangles and the circular continuity principle.
 
 \begin{defn}{}{circledef}
 	With reference to the picture:\par
@@ -1487,7 +1489,7 @@ Our final results consider the concept of \emph{tangency.} At first thought, you
 
 \begin{proof}
 	We prove the ($\Leftarrow$) direction, leaving the other half as an exercise.\par
-	\begin{minipage}[t]{0.62\linewidth}\vspace{0pt}
+	\begin{minipage}[t]{0.62\linewidth}\vspace{-4pt}
 		Suppose $T$ lies on a circle $\mathcal C$ and that $\ell$ passes through $T$ perpendicular to the radius $\cl{OT}$.\smallbreak
 		Let $P$ be any another point on $\ell$. Since $\triangle OTP$ is right-angled, Exercise \ref*{sec:hilbert2}.\ref{ex:euclidi19} (angle-side comparisons) tells us that
 		\[
@@ -1508,29 +1510,22 @@ Our final results consider the concept of \emph{tangency.} At first thought, you
 	Any given point outside a circle lies on exactly two lines tangent to the circle.
 \end{thm}
 
-If you can give formal proofs of all these result, you should consider yourself in a very good place regarding basic Euclidean geometry.
+If you can give formal proofs of all these results, you should consider yourself in a very good place regarding basic Euclidean geometry.
 
-
+\vfil
 
 \begin{exercises}
-	\hangindent\leftmargini\emph{Key concepts: \ }
+	\hangindent\leftmargini\emph{Key concepts: \ Continuity implies circle intersections, \ Inscribed \& Central angles,\ Circumcircle, \ Line-Circle Tangency}
 
 	\begin{enumerate}
-	  \item Give formal proofs of all parts of Corollary \ref{cor:thalescor}.
+	  \item Prove all parts of Corollary \ref{cor:thalescor}.
 	  
 	  
 	  \item Prove Theorem \ref{thm:circumcircle}.
 	  
 	  
-	  \item\begin{enumerate}
-	  	\item Complete the proof of Theorem \ref{thm:tangentperp} by showing the ($\Rightarrow$) direction.\par
-	 	 	(\emph{Hint: if $T$ is an intersection and the angle isn't \ang{90}, drop a perpendicular from $O$ to $\ell$})
-	  	\item If a line contains a point inside a circle, show that it intersects the circle in two points.%\par
-	  	%(\emph{Hint: first construct two points on the line lying outside the circle})
-	 	\end{enumerate}
-	  
-	  
-	  \item\label{ex:pointtangent} Given a circle centered at $O$ and a point $P$ outside the circle, draw the circle centered at the midpoint of $\cl{OP}$ passing through $O$ and $P$. Explain why the intersections of these circles are the points of tangency required in Theorem \ref{thm:pointtangent}. Hence complete its proof.
+	  \item\label{ex:pointtangent} Given a circle centered at $O$ and a point $P$ outside the circle, draw the circle centered at the midpoint of $\cl{OP}$ passing through both $O$ and $P$.\par
+	  Explain why the intersections of these circles are the points of tangency required in Theorem \ref{thm:pointtangent}. Hence complete its proof.
 	  
 	  
 	  \item\begin{enumerate}
@@ -1539,23 +1534,54 @@ If you can give formal proofs of all these result, you should consider yourself 
 	  \end{enumerate}
 	  
 	  
-	  	\item\label{exs:elemcont} Suppose $A*C*B$ and that $O\notin\lin{AB}$. Use Exercise \ref*{sec:hilbert2}.\ref{ex:euclidi19} to show that\par
-	  \begin{minipage}[t]{0.79\linewidth}\vspace{0pt}
+	  \item Given  $\triangle ABC$, prove that there exists exactly one circle (the \emph{incircle}) which is tangent to all three sides.\par
+	  (\emph{Hint: Bisect two of the angles\ldots})
+	  
+	  
+	  \pagebreak[3]
+	  
+	  
+	  \item\begin{enumerate}
+	    \item Complete the proof of Theorem \ref{thm:tangentperp} by showing the ($\Rightarrow$) direction. Does this result require the continuity axiom?\par
+	 		(\emph{Hint: if $T$ is an intersection and the angle isn't \ang{90}, drop a perpendicular from $O$ to $\ell$})
+	 		
+	 		\item Suppose a line contains a point inside a circle. Prove that it intersects the circle in exactly two points. What about this time: do you need continuity now? %\par
+	  	%(\emph{Hint: first construct two points on the line lying outside the circle})
+	  \end{enumerate}
+	  
+	  
+	  \item\label{exs:elemcont} Suppose $A*C*B$ and that $O\notin\lin{AB}$. Use Exercise \ref*{sec:hilbert2}.\ref{ex:euclidi19} to show that\par
+	  \begin{minipage}[t]{0.79\linewidth}\vspace{-14pt}
 	  	\[
 	  		\cl{OC}< \max\bigl(\cl{OA},\cl{OB}\bigr)
 	  	\]
-	  	If $A,B$ are interior to a circle centered at $O$, conclude that $C$ is also.\par
+	  	If $A,B$ are interior to a circle centered at $O$, conclude that $C$ is also.\smallbreak
 	 		(\emph{This is part of what's needed to demonstrate the elementary continuity principle: no point of $\Sigma_2$ lies between two points of $\Sigma_1$. Can you prove the other condition?})
 	  \end{minipage}
 	  \hfill
-	  \begin{minipage}[t]{0.2\linewidth}\vspace{0pt}
+	  \begin{minipage}[t]{0.2\linewidth}\vspace{-15pt}
 	  	\hfill
 	  	\includegraphics[alt={minimum distance to a point}]{circle-cont3}
 	  \end{minipage}
 	  
 	  
-	  \item Exercise on how continuity axiom proves the archimedean property\ldots
-	  
+	  \item (Hard)\lstsp Suppose $A_0,A_1,B\in\ell$ satisfy $A_0*A_1*B$. Transfer $\cl{A_0A_1}$ repeatedly to create a sequence of points $A_0,A_1,A_2,A_3,\ldots$ as shown.\par
+	  We use the continuity axiom to prove the \emph{Archimedean property}:\par
+	  \begin{minipage}[t]{0.5\linewidth}\vspace{-8pt}
+	  	\[
+	  		\exists N \text{ for which }A_0*B*A_N
+	  	\]
+	  \end{minipage}
+	  \hfill
+	  \begin{minipage}[t]{0.49\linewidth}\vspace{-2pt}
+	  	\hfill\includegraphics[alt={eventually the equally spaced segments reach B}]{circle-archimedes}
+	  \end{minipage}\smallbreak
+	  Define $\Sigma_1=\bigcup\limits_{n=1}^\infty \ray{A_nA_0}$. Our goal is to prove that $\Sigma_1=\ell$ (hence $B\in\Sigma_1$). For contradiction, suppose instead that $\Sigma_2:=\ell\setminus\Sigma_1$ is non-empty. Plainly $\ell=\Sigma_1\cup\Sigma_2$.
+	  \begin{enumerate}
+	    \item Prove that no point $Y\in\Sigma_2$ lies between two points $X_1,X_2\in\Sigma_1$.
+	    \item Prove that no point $X\in\Sigma_1$ lies between two points $Y_1,Y_2\in\Sigma_2$.
+	    \item By parts (a,b), $\ell=\Sigma_1\cup\Sigma_2$ satisfies the hypotheses of the continuity axiom. Let $\mathcal O$ be the unique point so defined. Obtain a contradiction by transferring $\cl{A_0A_1}$ to $\mathcal O$.
+	  \end{enumerate}   
 	\end{enumerate}
 \end{exercises}
 
@@ -1568,156 +1594,168 @@ If you can give formal proofs of all these result, you should consider yourself 
 
 \subsection{Similar Triangles, Length and Trigonometry}\label{sec:similar}
 
-In the geometry of Euclid \& Hilbert, there are no numerical measures of length or angle. \emph{Relative} measure is built in (Definition \ref{defn:lengthcomp}), and we've denoted right-angles and straight-edges by \ang{90} \& \ang{180} for convenience. To avoid continued frustration it is time we introduced explicit \emph{numerical} measure; unfortunately, to do so properly requires more axioms.
+In pure Euclidean geometry there are \emph{no numerical measures} of length or angle. Since segments and angles can be compared (Definition \ref{defn:lengthcomp}), we do have \emph{relative} measure. For convenience we've denoted right-angles and straight-edges by \ang{90} \& \ang{180} respectively. To avoid continued frustration, it is time we introduced explicit numerical measures, though to do so properly requires more axioms.
 
 \begin{axioms}{Length and Angle (Degree) Measure}{euclidmeasure}
 	\begin{itemize}
-		\item[L1] To each segment $\cl{AB}$ corresponds a unique \emph{length} $\nm{AB}$, a positive real number
-		\item[L2] $\nm{AB}=\nm{CD}\iff \cl{AB}\cong\cl{CD}$
-		\item[L3] $\nm{AB}<\nm{CD}\iff\cl{AB}<\cl{CD}$%\hfill (Definition \ref{defn:lengthcomp})
-		\item[L4] If $A*B*C$, then $\nm{AB}+\nm{BC}=\nm{AC}$
-		\item[A1] To each $\angle ABC$ corresponds a unique \emph{degree measure} $m\angle ABC$, a real number between 0 and 180
-		\item[A2] $m\angle ABC=m\angle DEF\iff \angle ABC\cong\angle DEF$
-		\item[A3] $m\angle ABC<m\angle DEF\iff \angle ABC<\angle DEF$ %\hfill (Definition \ref{defn:interiorangle})
-	  \item[A4] If $P$ is interior to $\angle ABC$, then $m\angle ABP+m\angle PBC=m\angle ABC$
-	  \item[A5] Right-angles measure \ang{90}
+		\item[L1] To each segment $\cl{AB}$ corresponds a unique positive real number $\nm{AB}$, its \emph{length}.
+		\item[L2] $\nm{AB}=\nm{CD}\Longleftrightarrow \cl{AB}\cong\cl{CD}$.
+		\item[L3] $\nm{AB}<\nm{CD}\Longleftrightarrow\cl{AB}<\cl{CD}$.
+		\item[L4] If $A*B*C$, then $\nm{AB}+\nm{BC}=\nm{AC}$.
+		\item[A1] To each angle $\angle ABC$ corresponds a unique real number $m\angle ABC$ between 0 and 180, its  \emph{degree measure}.
+		\item[A2] $m\angle ABC=m\angle DEF\Longleftrightarrow\angle ABC\cong\angle DEF$.
+		\item[A3] $m\angle ABC<m\angle DEF\Longleftrightarrow\angle ABC<\angle DEF$.
+	  \item[A4] If $P$ is interior to $\angle ABC$, then $m\angle ABP+m\angle PBC=m\angle ABC$.
+	  \item[A5] Right-angles measure \ang{90}.
 	\end{itemize}
 \end{axioms}
 
-In axioms L3 and A3, comparison of segments ($\cl{AB}<\cl{CD}$) and angles has the meaning arising from the congruence axioms (Definition \ref{defn:lengthcomp}, etc.). Don't memorize the above, just observe how they fit your intuition. Angle measure in Euclidean geometry has two notable differences from what you might expect:
+In axioms L3 and A3, comparison of segments and angles has the meaning arising from the congruence axioms (Definition \ref{defn:lengthcomp}, etc.). It is not worth memorizing these axioms, just observe how they fit your intuition. Angle measure in Euclidean geometry has two notable differences from what you might expect:
 \begin{itemize}
-  \item (A1)\lstsp All angles measure strictly between \ang 0 and \ang{180}. In particular, a straight-edge isn't an angle (though such is commonly denoted \ang{180}) and there are no \emph{reflex angles} ($>\ang{180}$). 
-  \item (A2)\lstsp Angles are \emph{non-oriented,} measuring the same in reverse ($m\angle ABC=m\angle CBA$).
+  \item (A1)\lstsp All angles measure strictly between \ang 0 and \ang{180}. In particular, a straight-edge isn't an angle (though such is denoted \ang{180}) and there are no \emph{reflex angles} ($>\ang{180}$). 
+  \item (A2)\lstsp Angles are \emph{non-oriented,} measuring the same with reversed legs ($m\angle ABC=m\angle CBA$).
 \end{itemize}
-The axioms for length and angle follow the same pattern except that A5 explicitly fixes the scale of angle measure. To do the same for length requires some reference segment of length 1. The following is a consequence of the continuity axiom.
+The axioms for length and angle follow the same pattern except that A5 explicitly fixes the scale of angle measure. To do the same for length requires a choice of some reference segment of length 1. The following is a consequence of the continuity axiom.
 
-\begin{thm}{Uniqueness of length measure}{}
+\begin{thm}{Uniqueness of measure}{}
 	\begin{enumerate}
 	  \item Given $\cl{OP}$, there is a unique way to assign a length to every segment such that $\nm{OP}=1$.
 	  \item There is a unique way to assign a degree measure to every angle.
 	\end{enumerate}
 \end{thm}
 
-\begin{minipage}[t]{0.49\linewidth}\vspace{0pt}
-	The segment $\cl{OP}$ in part 1 provides a length-scale for a \emph{ruler.} We measure the length of any segment by moving this ruler on top of the desired segment (segment-transference!)
+\begin{minipage}[t]{0.51\linewidth}\vspace{0pt}
+	The segment $\cl{OP}$ in part 1 essentially provides the length-scale for a \emph{ruler.} We measure the length of any segment by moving this ruler on top of the desired segment (segment-transference).
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.49\linewidth}\vspace{-5pt}
-	\hfill
-	\includegraphics[alt={ruler axioms}]{similar-ruler}
+\begin{minipage}[t]{0.47\linewidth}\vspace{-5pt}
+	\hfill\includegraphics[alt={ruler axioms}]{similar-ruler}
 \end{minipage}
-
 
 
 
 \subsubsection*{Area Measure}
 
-If we also include Playfair's axiom, then the discussion at the end of Book I of Euclid becomes valid and \emph{rectangles} can be defined (Exercise \ref*{sec:euclid}.\ref{ex:pythagexs}).
+Including Playfair's axiom allows us to define \emph{rectangles} (Exercise \ref*{sec:euclid}.\ref{ex:pythagexs}).
 
 \begin{defn}{}{}
 	The \emph{area (measure)} of a rectangle is the product of its base and height (measures).
 \end{defn}
 
-Given a length measure, a square with side length 1 necessarily has area 1. Relative to a base segment, the \emph{height} of a triangle is the length of the perpendicular dropped from the vertex.\par
 
-\begin{minipage}[t]{0.8\linewidth}\vspace{-8pt}
-	Since every rectangle is a parallelogram and a triangle half a parallelogram, Euclid's discussion (Thm.\,I.\,35) amounts to the familiar area formulæ:
+\begin{minipage}[t]{0.83\linewidth}\vspace{0pt}
+	Given a length measure, a square with side 1 necessarily has area 1.
+	\smallbreak
+	Relative to a base segment, the \emph{height} of a triangle is its \emph{altitude}: the length of the perpendicular dropped from the opposite vertex.
+	\smallbreak
+	Since every rectangle is a parallelogram, and every triangle half a parallelogram, Euclid's discussion (e.g., Thm.\,I.\,35) amounts to the familiar area formulæ:
 	\[
 		\operatorname{area}(\text{parallelogram})=bh,\qquad \operatorname{area}(\text{triangle})=\frac 12bh
 	\]
-	While these expressions are nice to have, they are not necessary. Indeed everything that follows depends only on \emph{area ratios:} e.g., $\frac{\frac 12bh_1}{\frac 12bh_2}=\frac{h_1}{h_2}$.
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.19\linewidth}\vspace{-8pt}
+\begin{minipage}[t]{0.15\linewidth}\vspace{6pt}
 	\hfill
 	\includegraphics[alt={area equals base times height}]{similar-areaheight}
 \end{minipage}
 
+
+While these expressions are nice to have, they are not necessary for what follows.
 
 
 \begin{lemm}{}{triheightratio}
 	If triangles have congruent bases, then their areas are in the same ratio as their heights. The same holds with the roles of heights and bases reversed.
 \end{lemm} 
 
+\begin{minipage}[t]{0.61\linewidth}\vspace{0pt}
+	Length and area were non-numerical quantities to the ancient Greeks, so Euclid worked with length and area \emph{ratios}, an unnecessarily confusing approach for modern readers.\footnotemark{} To us, the Lemma is simply division of real numbers.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.37\linewidth}\vspace{0pt}
+	\hfill\def\arraystretch{1.5}
+	\begin{tabular}{@{}c|c@{}}
+		Euclid&Modern\\\hline
+		$A_1:A_2=h_1:h_2$&$\frac{A_1}{A_2}=\frac{\frac 12bh_1}{\frac 12bh_2}=\frac{h_1}{h_2}$
+	\end{tabular}
+\end{minipage}
+
+
+\footnotetext{%
+	Arguably the most difficult parts of the \emph{Elements} are where Euclid grapples with what irrational ratios should mean (Books V \& X).
+}
+
 
 \subsubsection*{Similarity and the AAA Theorem}
 
-Similar triangles are the concern of Book VI of the \emph{Elements.}
+Similar triangles are the concern of Book VI of the \emph{Elements.} All of this requires unique parallels.
 
 \begin{defn}{}{}
-	Triangles are \emph{similar,} written $\triangle ABC\sim\triangle XYZ$, if their sides are in the same length ratio
-	\[
-		\frac{\nm{AB}}{\nm{XY}}=\frac{\nm{BC}}{\nm{YZ}}=\frac{\nm{CA}}{\nm{ZX}}
-	\]
-	\hfill\includegraphics[alt={similar triangles have sides in a common ratio}]{similar-aaa}
-\end{defn}
-
-Euclid discusses these using non-numerical ratios of segments ($\cl{AB}:\cl{XY}=\cl{BC}:\cl{YZ}$), an unnecessarily confusing approach for modern readers. Indeed some of the most difficult parts of the \emph{Elements} are where he describes what this should mean, particularly for irrational ratios (Books V \& X).\medbreak
-Our primary result comes in two versions: the second (which we'll prove momentarily) is a special case of the first, though the two versions are in fact equivalent.
-
-\begin{thm}{Angle-Angle-Angle/AAA, Euclid VI.\,2--5}{aaasim}
-	\begin{enumerate}
-	  \item Triangles are similar if and only if their angles come in mutually congruent pairs.
-	  \item Suppose a line intersects two sides of a triangle. The smaller triangle so created is similar to the original if and only if the line is parallel to the third side of the triangle.
-	\end{enumerate}
-	\hfill
-	\includegraphics[alt={A A A similarity theorem}]{similar-aaa1}
-\end{thm}
-
-The picture should convince you that $1\Rightarrow 2$ (uniqueness of parallels: Playfair's axiom, Corollary \ref{cor:euclid28}, Theorem \ref{thm:euclid29}, etc.). This reliance is crucial: we do not expect AAA similarity in non-Euclidean geometry.\footnote{%
-	Indeed we'll see in Chapter \ref{chap:hyper} that AAA is a \emph{congruence} theorem in hyperbolic geometry!%
-} The converse of the equivalence $(2\Rightarrow 1)$ is left to Exercise \ref{exs:aaaproof}. %Instead we focus on proving the special second case explicitly, a ticklish business where everything ultimately depends on comparing areas of triangles with related bases/heights (Lemma \ref{lemm:triheightratio}).
-
-%\goodbreak
-
-% \begin{lemm}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.43\linewidth]{}{aaalemm}
-% 	Suppose $\ell$ intersects sides $\cl{AB}$ and $\cl{AC}$ of $\triangle ABC$ at $D$ and $E$. The following are equivalent:
-% 	\begin{enumerate}
-% 	  \item $\ell\text{ is parallel to }\cl{BC}$
-% 	  \item $\displaystyle\frac{\nm{BD}}{\nm{AD}}=\frac{\nm{CE}}{\nm{AE}}$
-% 	  \item $\triangle ABC\sim\triangle ADE$
-% 	\end{enumerate}
-% 	\tcblower
-% 	\flushright
-% 	\includegraphics[scale=0.95]{similar-similarsides}
-% \end{lemm}
-
-% Four perpendicular distances $h,k,d_1,d_2$ are labelled in the picture to aid with the proof.
-
-
-\begin{proof}
-\phantom{bob}\par
-	\begin{minipage}[t]{0.63\linewidth}\vspace{0pt}
-		\emph{(AAA similarity, part 2).}\quad Suppose $\ell$ intersects $\triangle ABC$ at points $D,E$ as shown. Drop perpendiculars to create distances $h,k,d_1,d_2$ as indicated. We prove:
-		\begin{quote}
-			$\ell\text{ is parallel to }\cl{BC} \iff \triangle ABC\sim\triangle ADE$
-		\end{quote}
-		\begin{description}
-			\item[$(\Rightarrow)$] Suppose $\ell$ is parallel to $\cl{BC}$. Playfair\footnotemark{} tells us that $d_1=d_2$. By Lemma \ref{lemm:triheightratio}, triangles with the same height have areas proportional to their bases:
-		\end{description}
+	Triangles are \emph{similar,} written $\triangle ABC\sim\triangle XYZ$, if their sides are in the same length ratio\par
+	\begin{minipage}[t]{0.6\linewidth}\vspace{-10pt}
+		\[
+			\frac{\nm{AB}}{\nm{XY}}=\frac{\nm{BC}}{\nm{YZ}}=\frac{\nm{CA}}{\nm{ZX}}
+		\]
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.36\linewidth}\vspace{0pt}
+	\begin{minipage}[t]{0.3\linewidth}\vspace{-23pt}
+		\hfill\includegraphics[alt={similar triangles have sides in a common ratio}]{similar-aaa}
+	\end{minipage}
+\end{defn}
+
+
+Our primary result comes in two equivalent versions.
+
+\begin{thm}{Angle-Angle-Angle/AAA, Euclid VI.\,2--5}{aaasim} \phantom{bob}\par
+	\begin{minipage}[t]{0.75\linewidth}\vspace{0pt}
+		\begin{enumerate}
+		  \item Triangles are similar if and only if their angles form congruent pairs.
+		  \item Suppose a line $\ell$ intersects two sides $\cl{AB}$ and $\cl{AC}$ of a triangle at $D$ and $E$ respectively. Then
+		  \[
+		  	\triangle ADE\sim\triangle ABC\iff \ell\text{ is parallel to }\lin{BC}
+		  \]\vspace{-15pt}
+		\end{enumerate}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.2\linewidth}\vspace{-23pt}
+		\hfill
+		\includegraphics[alt={A A A similarity theorem}]{similar-aaa1}
+	\end{minipage}
+\end{thm}
+
+The above picture should convince you that $1\Rightarrow 2$ (uniqueness of parallels, Corollary \ref{cor:euclid28}, Theorem \ref{thm:euclid29}, etc.).\footnote{%
+	This reliance on unique parallels is crucial: we do not expect AAA similarity in non-Euclidean geometry. Indeed we'll see in Chapter \ref{chap:hyper} that AAA is a \emph{congruence} theorem in hyperbolic geometry!%
+} The converse of the equivalence $(2\Rightarrow 1)$ is left as an Exercise. We therefore restrict ourselves to proving part 2.
+
+\begin{proof}
+	$(\Leftarrow)$\lstsp Drop perpendiculars to create $h,k,d_1,d_2$ as pictured.\par
+	\hspace*{\leftmargini}
+	\begin{minipage}[t]{0.57\linewidth}\vspace{-6pt}
+		Exercise \ref{exs:playfairparalleldistance} says $\ell$ is parallel to $\cl{BC}$ if and only if $d_1=d_2$.\smallbreak
+		By Lemma \ref{lemm:triheightratio}, triangles with the same height have areas proportional to their bases:
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.36\linewidth}\vspace{-24pt}
 		\hfill
 		\includegraphics[alt={A A A similarity proof}]{similar-similarsides}
-	\end{minipage}\par
-
+	\end{minipage}
+	
+	\vspace{-23pt}
 
 	\begin{description}
 		\item[]
 		\begin{gather*}
-			\dfrac{\nm{BD}}{\nm{AD}}
-				=\dfrac{\operatorname{area}(\textcolor{Green}{BDE})}{\operatorname{area}(\textcolor{blue}{ADE})}
-				\tag*{($\textcolor{Green}{\triangle BDE}$, $\textcolor{blue}{\triangle ADE}$ have height $h$)}\\
+			\frac{\nm{BD}}{\nm{AD}}
+				=\frac{\operatorname{area}(\mathcolor{mGreen}{BDE})}{\operatorname{area}(\mathcolor{blue}{ADE})}
+				\tag*{($\mathcolor{mGreen}{\triangle BDE}$, $\mathcolor{blue}{\triangle ADE}$ share height $h$)}\\
 			\frac{\nm{CE}}{\nm{AE}} 
-				=\dfrac{\operatorname{area}(\textcolor{Green}{CDE})}{\operatorname{area}(\textcolor{blue}{ADE})} 
-				\tag*{($\textcolor{Green}{\triangle CDE}$, $\textcolor{blue}{\triangle ADE}$ have height $k$)}
+				=\frac{\operatorname{area}(\mathcolor{mGreen}{CDE})}{\operatorname{area}(\mathcolor{blue}{ADE})} 
+				\tag*{($\mathcolor{mGreen}{\triangle CDE}$, $\mathcolor{blue}{\triangle ADE}$ share height $k$)}
 		\end{gather*}
-		Since $\textcolor{Green}{\triangle BDE}$ and $\textcolor{Green}{\triangle CDE}$ share base $\cl{DE}$, we see that
+		Since $\mathcolor{mGreen}{\triangle BDE}$ and $\mathcolor{mGreen}{\triangle CDE}$ share base $\cl{DE}$, we see that
 		\begin{align*}
 			\ell\text{ is parallel to }\cl{BC}&\iff d_1=d_2 
-				\iff \operatorname{area}(\textcolor{Green}{BDE})
-				=\operatorname{area}(\textcolor{Green}{CDE})\\
+				\iff \operatorname{area}(\mathcolor{mGreen}{BDE})
+				=\operatorname{area}(\mathcolor{mGreen}{CDE})\\
 			&\iff \frac{\nm{BD}}{\nm{AD}} =\frac{\nm{CE}}{\nm{AE}} \tag{$\ast$}
 		\end{align*}
 		Add $1=\smash{\frac{\nm{AD}}{\nm{AD}}=\frac{\nm{AE}}{\nm{AE}}}$ to both sides to obtain one part of the required similarity ratio
@@ -1728,7 +1766,7 @@ The picture should convince you that $1\Rightarrow 2$ (uniqueness of parallels: 
 		It remains to see that this ratio equals $\smash{\frac{\nm{BC}}{\nm{DE}}}$. Again using common heights ($h,k$) of triangles,
 		\begin{align*}
 			&\frac{\nm{AB}}{\nm{BD}}
-				=\frac{\operatorname{area}(ABE)}{\operatorname{area}(\textcolor{Green}{BDE})} \quad\qquad
+				=\frac{\operatorname{area}(ABE)}{\operatorname{area}(\mathcolor{mGreen}{BDE})} \quad\qquad
 				\frac{\nm{CE}}{\nm{AE}} 
 				=\frac{\operatorname{area}(BCE)}{\operatorname{area}(ABE)} \tag{$\dag$}\\
 			\implies
@@ -1736,44 +1774,46 @@ The picture should convince you that $1\Rightarrow 2$ (uniqueness of parallels: 
 				\overset{\text{($\ast$)}}{=} 
 				\frac{\nm{AB}}{\nm{BD}}\frac{\nm{CE}}{\nm{AE}} 
 				\overset{\text{($\dag$)}}{=} 
-				\frac{\operatorname{area}(BCE)}{\operatorname{area}(\textcolor{Green}{BDE})}
+				\frac{\operatorname{area}(BCE)}{\operatorname{area}(\mathcolor{mGreen}{BDE})}
 			=\frac{\nm{BC}}{\nm{DE}}
 		\end{align*}
-		where the last equality follows since $\triangle BCE$ and $\textcolor{Green}{\triangle BDE}$ have common height $d_1=d_2$.\par
+		where the last equality follows since $\triangle BCE$ and $\mathcolor{mGreen}{\triangle BDE}$ have common height $d_1=d_2$.
+
+		\pagebreak[3]
 		
-		
-			\item[$(\Leftarrow)$] Suppose $\triangle ABC\sim\triangle ADE$. By Playfair, let $m$ be the unique parallel to $\cl{BC}$ through $D$. This intersects $\cl{AC}$ at a point $G$. We must prove that $G=E$ (consequently $m=\ell$).\smallbreak
-			By the ($\Rightarrow$) direction above,
+		\item[$(\Rightarrow)$] Suppose $\triangle ABC\sim\triangle ADE$.\par
+		\begin{minipage}[t]{0.6\linewidth}\vspace{-12pt}
+			Let $m$ be the unique parallel to $\cl{BC}$ through $D$. This intersects $\cl{AC}$ at a point $G$. We must prove that $G=E$ (consequently $m=\ell$).\smallbreak
+			By the ($\Leftarrow$) direction above,
 			\[
 				\triangle ABC\sim\triangle ADG
 			\]
-
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.37\linewidth}\vspace{-20pt}
 			\hfill
 			\includegraphics[alt={A A A similarity proof}]{similar-similarsides2}
-\smallbreak
-		However $\sim$ is transitive (it is an equivalence relation), whence $\triangle ADE\sim\triangle ADG$. The similarity ratio is $1=\frac{\nm{AD}}{\nm{AD}}$, whence
+		\end{minipage}\par
+		However $\sim$ is transitive (it is an equivalence relation), whence $\triangle ADE\sim\triangle ADG$. The similarity ratio is 1 ($\nm{AD}:\nm{AD}$), whence
 		\[
 			\frac{\nm{AE}}{\nm{AG}}=1
 			\implies \nm{AE}=\nm{AG} 
-			\implies E=G \tag*{\qedsymbol}
+			\implies E=G \tag*{\qedhere}
 		\]
-		%\hfill\qedsymbol
-	\end{description}
+	\end{description}\vspace{-30pt}
 \end{proof}
 
 
 
-\footnotetext{%
-	$d_1=d_2\Leftrightarrow \ell$ parallel to $\cl{BC}$ is Playfair! Compare Exercise \ref*{sec:euclid}.\ref{ex:pythagexs} (Thm I.\,46) on the construction of a square\ldots%
+\subsubsection*{Applications of Similarity}
+
+We finish with several advanced applications of similarity that were not known to Euclid.\vspace{-5pt}
+
+\paragraph{Trigonometry}
+
+Early trigonometry dates to a few centuries after Euclid, though the approach was different.\footnote{%
+	Ancient forerunners of sine and cosine were defined using chords of circles rather than triangles. The term \emph{trigonometry} (literally \emph{triangle measure}) wasn't coined until 1595.%
 }
-
-
-
-
-
-\subsubsection*{Applications of Similarity: Trigonometric Functions, Cevians and the Butterfly Theorem}
-
-We finish with several applications of similarity which hopefully give an idea of what can be done \emph{without} co-ordinates. None of these ideas were known to Euclid.
 
 \begin{defn}{}{}
 	Given an acute angle $\angle ABC$ ($m\angle ABC<\ang{90}$), drop a perpendicular from $A$ to $\ray{BC}$ at $D$ so that $\angle ADB$ is a right-angle. Define
@@ -1783,9 +1823,7 @@ We finish with several applications of similarity which hopefully give an idea o
 	\]
 \end{defn}
 
-Early trigonometry dates to a few hundred years after Euclid, though the approach was different.\footnote{%
-	Ancient forerunners of sine and cosine were defined using chords of circles rather than triangles. The term \emph{trigonometry} (literally \emph{triangle measure}) wasn't coined until 1595.%
-}
+
 
 
 \begin{thm}{}{sinewd}
@@ -1794,9 +1832,9 @@ Early trigonometry dates to a few hundred years after Euclid, though the approac
 
 
 \begin{proof}
-	Assume $\angle ABC\cong\angle A'B'C'$ as pictured and drop perpendiculars to $D,D'$.\par
-	\begin{minipage}[t]{0.56\linewidth}\vspace{-8pt}
-		Since $\triangle ABD$ and $\triangle A'B'D'$ have two pairs of mutually congruent angles, the third pair is congruent also. AAA applies: the triangles are similar and
+	Assume $\angle ABC\cong\angle A'B'C'$, as pictured, and drop perpendiculars to $D,D'$.\par
+	\begin{minipage}[t]{0.56\linewidth}\vspace{-7pt}
+		Since $\triangle ABD$ and $\triangle A'B'D'$ have two pairs of mutually congruent angles, the third pair is congruent also. AAA therefore applies: the triangles are similar and
 		\[
 			\frac{\nm{AD}}{\nm{AB}}=\frac{\nm{A'D'}}{\nm{A'B'}}\qquad 
 			\frac{\nm{BD}}{\nm{AB}}=\frac{\nm{B'D'}}{\nm{A'B'}}
@@ -1806,62 +1844,56 @@ Early trigonometry dates to a few hundred years after Euclid, though the approac
 	\begin{minipage}[t]{0.43\linewidth}\vspace{-8pt}
 		\hfill
 		\includegraphics[alt={well definition of trigonometric functions using similar triangles}]{similar-trig}
-	\end{minipage}\smallbreak
+	\end{minipage}
+	\smallbreak
 	In particular, $\sin\angle ABC=\sin\angle A'B'C'$ and $\cos\angle ABC=\cos\angle A'B'C'$.\smallbreak
 	The converse is an exercise.
 \end{proof}
 
 
-After Giovanni Ceva (1647--1734), a \emph{cevian} is a segment joining a vertex to the opposite side of a triangle. Here is a result from the height of Euclidean geometry---good luck trying to prove it using co-ordinates!
+\pagebreak[3]
+
+
+\paragraph{Cevians}
+
+After Giovanni Ceva (1647--1734), a \emph{cevian} is any segment joining a vertex to the opposite side of a triangle. Here is a result from the height of Euclidean geometry---good luck trying to prove it using co-ordinates!
 
 \begin{thm}{Ceva's Theorem}{}
 	Given $\triangle ABC$ and cevians $\cl{AX}$, $\cl{BY}$, $\cl{CZ}$,
 	\[
-		\frac{\nm{BX}}{\nm{XC}}\frac{\nm{CY}}{\nm{YA}}\frac{\nm{AZ}}{\nm{ZB}}=1\iff\text{the cevians meet at a common point $P$}
+		\frac{\nm{BX}}{\nm{XC}}\frac{\nm{CY}}{\nm{YA}}\frac{\nm{AZ}}{\nm{ZB}}=1\iff\text{the cevians meet at a common point}
 	\] 
 \end{thm}
 
 \begin{proof}
-($\Leftarrow$)\quad This is simply a repeated application of Lemma \ref{lemm:triheightratio}.\par
-	\begin{minipage}[t]{0.65\linewidth}\vspace{-15pt}
+	Suppose the cevians meet at $P$, and apply Lemma \ref{lemm:triheightratio} twice.\par
+	\begin{minipage}[t]{0.65\linewidth}\vspace{-12pt}
+		\[
+			\frac{\operatorname{area}(ABX)}{\operatorname{area}(AXC)}
+			=\frac{\nm{BX}}{\nm{XC}} 
+			=\frac{\operatorname{area}(PBX)}{\operatorname{area}(PXC)}
+		\]
+		A little algebra (exercise) shows that
 		\begin{align*}
-			&
-			\frac{\operatorname{area}(ABX)}{\operatorname{area}(AXC)}=\frac{\nm{BX}}{\nm{XC}} =\frac{\operatorname{area}(PBX)}{\operatorname{area}(PXC)}
-			\\
-			\implies
-			&
-			\frac{\nm{BX}}{\nm{XC}} \overset{\text{($\ast$)}}{=}\frac{\operatorname{area}(ABX)-\operatorname{area}(PBX)}{\operatorname{area}(AXC)-\operatorname{area}(PXC)} =\frac{\operatorname{area}(ABP)}{\operatorname{area}(APC)}
+			\frac{\nm{BX}}{\nm{XC}} 
+			&=
+			\frac{\operatorname{area}(ABX)-\operatorname{area}(PBX)}{\operatorname{area}(AXC)-\operatorname{area}(PXC)}\\
+			&=\frac{\operatorname{area}(ABP)}{\operatorname{area}(APC)}
 		\end{align*}
-		Repeat for the other ratios and multiply to get 1.\smallbreak
-		A simple justification of ($\ast$) and the converse are an exercise.
+		Repeat for the other ratios and multiply to get 1.
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.34\linewidth}\vspace{-15pt} 
+	\begin{minipage}[t]{0.34\linewidth}\vspace{0pt} 
 		\hfill
-		\includegraphics[alt={ceva's theorem}]{similar-cevians}\\[-5pt]
-		\hfill\qedsymbol
-	\end{minipage}
+		\includegraphics[alt={ceva's theorem}]{similar-cevians}
+	\end{minipage}\medbreak
+	The converse is also an exercise.
 \end{proof}
 
 
+\paragraph{The Butterfly Theorem}
 
-
-We finish with a beautiful result from roughly 1803--5.
-
-
-\begin{thm}{Butterfly Theorem}{}
-	We are given the following data as in the picture:
-	\begin{itemize}
-	  \item $\cl{PQ}$ is a chord of a circle with midpoint $M$.
-	  \item $\cl{AC}$ and $\cl{BD}$ are chords meeting at $M$.
-	  \item $X,Y$ are the chord-intersections shown.
-	\end{itemize}
-	Then $M$ is the midpoint of $\cl{XY}$.
-	\hfill
-	\includegraphics[alt={the butterfly theorem}]{similar-butterfly}
-\end{thm}
-
-Several proofs are known. Ours relies on similar triangles and a simple lemma, whose proof is a exercise.
+We finish with a beautiful result from roughly 1803--5. Several proofs are known; ours relies on similar triangles and a simple lemma whose proof is left as an exercise.
 
 \begin{lemm}{}{butterflylemm}
 	Let $\cl{AD}$ and $\cl{PQ}$ be chords of a circle which intersect at $X$. Then
@@ -1870,43 +1902,78 @@ Several proofs are known. Ours relies on similar triangles and a simple lemma, w
 	\]
 \end{lemm}
 
-\begin{proof}[Proof of Theorem]
 
-		For convenience we introduce several numerical lengths:
+\begin{thm}{Butterfly Theorem}{}
+	Given a circle, suppose:\par
+	\begin{minipage}[t]{0.65\linewidth}\vspace{0pt}
 		\begin{itemize}
-		  \item $z=\nm{PM}=\nm{MQ}$, $x=\nm{XM}$ and $y=\nm{YM}$.
-		  \item Drop perpendiculars from $X,Y$ to chords $\cl{AD},\cl{BC}$, and label the lengths $x_1,x_2,y_1,y_2$ as shown.
+		  \item $\cl{PQ}$ is a chord with midpoint $M$.
+		  \item $\cl{AC}$ and $\cl{BD}$ are chords meeting at $M$.
+		  \item $X=\cl{AD}\cap\cl{PQ}$ and $Y=\cl{BC}\cap\cl{PQ}$.
 		\end{itemize}
-		Our goal is to prove that $x=y$.\smallbreak
-		The four colored pairs of angles are congruent: \textcolor{cyan}{vertical} \textcolor{Brown}{angles} at $M$, and inscribed angles at $\textcolor{Magenta}{A,B},\textcolor{orange}{C,D}$.\smallbreak
-		We compare sides of several similar triangles:
-		\begin{itemize}
-		  \item $\dfrac{x}{x_1}=\dfrac{y}{y_1}$ and $\dfrac{x}{x_2}=\dfrac{y}{y_2} \implies \dfrac xy=\dfrac{x_1}{y_1}=\dfrac{x_2}{y_2}$
-		  \item $\dfrac{\nm{AX}}{\nm{BY}}=\dfrac{x_1}{y_2}$ and $\dfrac{\nm{XD}}{\nm{YC}}=\dfrac{x_2}{y_1}$
-		\end{itemize}
+		Then $M$ is the midpoint of $\cl{XY}$.
+	\end{minipage}
 	\hfill
+	\begin{minipage}[t]{0.34\linewidth}\vspace{-22pt} 
+		\hfill
+		\includegraphics[alt={the butterfly theorem}]{similar-butterfly}
+	\end{minipage}
+\end{thm}
 
+
+\clearpage
+
+\begin{proof}
+	For convenience we introduce several numerical lengths:\par
+	\begin{minipage}[t]{0.57\linewidth}\vspace{0pt}
+		\begin{itemize}
+			\item $z=\nm{PM}=\nm{MQ}$.
+			\item $x=\nm{XM}$ and $y=\nm{YM}$.
+			\item Drop perpendiculars from $X,Y$ to chords $\cl{AD},\cl{BC}$, to obtain $x_1,x_2,y_1,y_2$ as shown.
+		\end{itemize}
+		Our goal is to prove that $x=y$.\medbreak
+		First observe that we have two pairs of congruent (vertical) angles at $M$, and two pairs of congruent inscribed angles at $\textcolor{mMagenta}{A,B}$ and $\textcolor{Brown}{C,D}$.\smallbreak
+		By the AAA theorem, we now have several pairs of similar triangles, whose sides may be compared:
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.42\linewidth}\vspace{-15pt}
+		\hfill
 		\includegraphics[alt={proving the butterfly theorem using similar triangles}]{similar-butterfly2}
-\medbreak
-	The result follows by combining these observations and applying the Lemma twice:\footnotemark
-	\begin{align*}
-		&\frac{x^2}{y^2}=\frac{x_1x_2}{y_1y_2}=\frac{\nm{AX}\nm{XD}}{\nm{BY}\nm{YC}} =\frac{\nm{PX}\nm{XQ}}{\nm{PY}\nm{YQ}} =\frac{(z-x)(z+x)}{(z+y)(z-y)} =\frac{z^2-x^2}{z^2-y^2}\\[2pt]
-		\implies & x^2(z^2-y^2)=y^2(z^2-x^2)\\
-		\implies &x^2=y^2\implies x=y\tag*{\qedsymbol}
-	\end{align*}
+	\end{minipage}
+	\par
+	\begin{enumeratea}
+		\item $\dfrac{x}{x_1}=\dfrac{y}{y_1}$ and $\dfrac{x}{x_2}=\dfrac{y}{y_2}$, from which we see that $\dfrac xy=\dfrac{x_1}{y_1}=\dfrac{x_2}{y_2}$
+		\item $\dfrac{\nm{AX}}{\nm{BY}}=\dfrac{x_1}{y_2}$ and $\dfrac{\nm{XD}}{\nm{YC}}=\dfrac{x_2}{y_1}$
+	\end{enumeratea}
+	The result follows by combining these observations and applying the Lemma twice:
+	\begin{gather*}
+		\begin{aligned}
+			\frac{x^2}{y^2}
+			&\overset{\text{(a)}}{=}
+			\frac{x_1x_2}{y_1y_2}
+			\overset{\text{(b)}}{=}
+			\frac{\nm{AX}\nm{XD}}{\nm{BY}\nm{YC}}
+			\overset{\text{(\ref*{lemm:butterflylemm})}}{=}
+			\frac{\nm{PX}\nm{XQ}}{\nm{PY}\nm{YQ}}
+			=\frac{(z-x)(z+x)}{(z+y)(z-y)} =\frac{z^2-x^2}{z^2-y^2}
+		\end{aligned}\\[2pt]
+		\implies x^2(z^2-y^2)=y^2(z^2-x^2)\\
+		\implies x^2=y^2\implies x=y\tag*{\qedhere}
+	\end{gather*}\vspace{-20pt}
 \end{proof}
 
-\footnotetext{%
-	The denominators are equal by applying the Lemma to the chords $\cl{BC}$ and $\cl{PQ}$.%
-}
+
 
 
 
 \begin{exercises}
-	\hangindent\leftmargini\emph{Key concepts: \ }
+	\hangindent\leftmargini\emph{Key concepts: \ Length, angle and area measure, \ AAA similarity}
 
 
 	\begin{enumerate}
+	  \item Which axioms (Hilbert's and angle-measure) prove that $m\angle ABC=m\angle CBA$? Explain.
+	  
+	  
 		\item Use similar triangles to prove Lemma \ref{lemm:butterflylemm}.
 		
 		
@@ -1928,23 +1995,30 @@ Several proofs are known. Ours relies on similar triangles and a simple lemma, w
 			\includegraphics[alt={pythagoras using similar triangles}]{similar-pthag}
 		\end{minipage}
 	
+	  
+	  \item\label{exs:playfairparalleldistance} In the proof of AAA similarity (Theorem \ref{thm:aaasim}) explain why 
+	  \[
+	  	d_1=d_2\iff \ell\parallel\cl{BC}
+	  \]
+	  follows from Playfair's axiom.\par
+	  (\emph{Hint: compare Exercise \ref*{sec:euclid}.\ref{ex:pythagexs} (Thm I.\,46) on the construction of a square\ldots})
+	
 
-
-	  	\item Prove a simplified version of the \emph{SAS similarity theorem}:\par
-	  		  \begin{minipage}[t]{0.65\linewidth}\vspace{0pt}
+	 	\item Prove a simplified version of the \emph{SAS similarity theorem}:\par
+	  \begin{minipage}[t]{0.65\linewidth}\vspace{-10pt}
 	    \[
 	    	\frac{\nm{AB}}{\nm{AG}}=\frac{\nm{AC}}{\nm{AH}}\iff\triangle ABC\sim\triangle AGH
 	    \]
 	    (\emph{Hint: construct $\cl{BJ}$ parallel to $\cl{GH}$ and appeal to AAA})
 	  \end{minipage}
 	  \hfill
-	  \begin{minipage}[t]{0.34\linewidth}\vspace{-5pt}
+	  \begin{minipage}[t]{0.34\linewidth}\vspace{-12pt}
 	  	\hfill
 	  	\includegraphics[alt={S A S similarity theorem}]{similar-sas2}
 	  \end{minipage}
 	
 	
-		\item By excluding the other possibilities, prove the converse of length axiom L4:
+		\item By excluding the other possibilities, prove the converse of the length axiom L4:
 		\begin{quote}
 			If $A,B,C$ are distinct and $\nm{AB}+\nm{BC}=\nm{AC}$, then $B$ lies between $A$ and $C$.
 		\end{quote}
@@ -1961,12 +2035,12 @@ Several proofs are known. Ours relies on similar triangles and a simple lemma, w
 		\begin{enumerate}
 		  \item If $p,q,r,s$ are non-zero real numbers, verify that $\smash[t]{\alpha=\frac pq=\frac rs\implies \alpha=\frac{p-r}{q-s}}$.\par
 				\item Assume $X,Y,Z$ satisfy Ceva's formula.\par
-			\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}
+			\begin{minipage}[t]{0.6\linewidth}\vspace{-10pt}
 				Define $P$ as the intersection of $\cl{BY}$ and $\cl{CZ}$ and let $\ray{AP}$ meet $\cl{BC}$ at $X'$.\smallbreak
 				Prove the ($\Rightarrow$) direction of Ceva's theorem by using the $(\Leftarrow)$ direction to show that $X'=X$.
 			\end{minipage}
 			\hfill
-			\begin{minipage}[t]{0.39\linewidth}\vspace{-5pt}
+			\begin{minipage}[t]{0.39\linewidth}\vspace{-10pt}
 				\hfill
 				\includegraphics[alt={proving ceva's theorem}]{similar-cevians2}
 			\end{minipage}
