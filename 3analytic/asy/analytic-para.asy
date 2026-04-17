@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 import markers;
 
@@ -19,10 +26,10 @@ pair B=(-0.4,2);
 pair C=A+B;
 
 draw(O--C,dashed);
-draw(O--A,StickIntervalMarker(1,1,blue,dotframe(red)));
-draw(B--C,StickIntervalMarker(1,1,blue,dotframe(red)));
-draw(O--B,StickIntervalMarker(1,2,blue,dotframe(red)));
-draw(A--C,StickIntervalMarker(1,2,blue,dotframe(red)));
+draw(O--A,StickIntervalMarker(1,1,blue,dotframe(Red)));
+draw(B--C,StickIntervalMarker(1,1,blue,dotframe(Red)));
+draw(O--B,StickIntervalMarker(1,2,blue,dotframe(Red)));
+draw(A--C,StickIntervalMarker(1,2,blue,dotframe(Red)));
 
 draw(arc(O,r,degrees(A),degrees(C),CCW),StickIntervalMarker(1,1,blue));
 draw(arc(O,R,degrees(C),degrees(B),CCW),StickIntervalMarker(1,2,blue));

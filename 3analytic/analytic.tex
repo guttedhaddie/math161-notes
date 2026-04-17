@@ -2,62 +2,83 @@
 
 \section{Analytic Geometry}
 
-Geometry in the style of Euclid and Hilbert is \emph{synthetic}: axiomatic, without co-ordinates or explicit numerical measures of angle, length, area or volume. By contrast, the modern practice of geometry is typically \emph{analytic}: reliant on algebra and co-ordinates (including vectors). The critical development came in the early 1600s courtesy of René Descartes and Pierre de Fermat: the \emph{axis} as a fixed reference ruler against which objects can be measured using \emph{co-ordinates.}
+Geometry in the style of Euclid and Hilbert is termed \emph{synthetic}: axiomatic, without co-ordinates or explicit numerical measures of angle, length, area or volume. By contrast, the modern practice of geometry is typically \emph{analytic}: reliant on algebra and co-ordinates (including vectors).
+\smallbreak
 
-\iffalse
+Analytic geometry arose in the early 1600s, thanks to the work of René Descartes and Pierre de Fermat. Their critical development was the introduction of an \emph{axis}\footnote{%
+	Originally there was only one axis, though a second was implied. Very quickly it became standard to have a second axis at right-angles to the first.%	
+}
+as a fixed reference ruler against which objects can be measured using \emph{co-ordinates.}
+In honor of Descartes' work, the standard system within analytic geometry is called the Cartesian (literally \emph{of Descartes}) co-ordinate system. 
 
-\subsection{The Cartesian Co-ordinate System}
 
-Since Cartesian geometry (\emph{Descartes'} geometry) should be familiar, we merely sketch the core ideas.
+\subsection{Cartesian Co-ordinates}
 
-\begin{itemize}\itemsep2pt
-  \begin{minipage}[t]{0.72\linewidth}\vspace{-5pt}
-  	\item Perpendicular \emph{axes} meet at the \emph{origin} $O$.
-  	\item The \emph{co-ordinates} of a point are measured by projecting onto the axes; since these are real numbers we denote the set of these
+Since Cartesian geometry should be very familiar, we merely sketch the core ideas.
+
+\begin{minipage}[t]{0.74\linewidth}\vspace{-2pt}
+	\begin{itemize}
+  	\item Perpendicular \emph{axes} meet at the \emph{origin} $O$. The axes are labelled using the real numbers.
+  	\item The \emph{co-ordinates} of a point are measured by projecting orthogonally onto the axes. Since co-ordinates are pairs of real numbers, we denote the set of these
   	\[
-  		\R^2=\bigl\{(x,y):x,y\in\R\bigr\}
+  		\R^2=\big\{(x,y):x,y\in\R\big\}
   	\]
-  	In the picture, $P$ has co-ordinates $(1,2)$; we usually write $P=(1,2)$.
-  	\item Algebra is introduced via \emph{addition} and \emph{scalar multiplication}
-	\end{minipage}
+  	In the picture, $P$ has co-ordinates $(1,2)$; usually written $P=(1,2)$.
+  \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.25\linewidth}\vspace{-2pt}
 	\hfill
-	\begin{minipage}[t]{0.27\linewidth}\vspace{-5pt}
-		\flushright\includegraphics{analytic-axes}
-	\end{minipage}\par\vspace{-15pt}
+	\includegraphics[alt={axes, a point, and a circle in analytic geometry}]{analytic-axes}
+\end{minipage}\par
+	
+\begin{itemize}
+  \item Points may be manipulated algebraically via \emph{addition} and \emph{scalar multiplication}: if $P=(p_1,p_2)$ and $Q=(q_1,q_2)$, then
   \begin{gather*}
-  	P+Q =(p_1,p_2)+(q_1,q_2) =(p_1+q_1,p_2+q_2)\qquad
-  	\lambda P=(\lambda p_1,\lambda p_2)
+  	P+Q :=(p_1,p_2)+(q_1,q_2) =(p_1+q_1,p_2+q_2)\qquad
+  	\lambda P:=(\lambda p_1,\lambda p_2)
   \end{gather*}
-  \item The \emph{length} of a segment uses Pythagoras' Theorem%\footnotemark
+  \item The \emph{length} of a segment is computed using Pythagoras' Theorem
   \[
   	d(P,Q) =\nm{PQ} =\sqrt{(q_1-p_1)^2+(q_2-p_2)^2}
   \]
   In the picture, $\nm{OP}=\sqrt{1^2+2^2}=\sqrt 5$. As in Section \ref{sec:similar}, segments are congruent if and only if they have the same length.
 
-  \item \emph{Curves} are defined using \emph{equations.} E.g., $x^2+y^2=1$ describes a circle. 
+  \item \emph{Curves} are defined using \emph{equations.} For instance, $x^2+y^2=1$ describes the pictured circle; by the distance formula, this is the locus of all points a distance 1 from the origin. 
 \end{itemize}
 
-Analytic geometry was originally conceived as a computational toolkit built on top of Euclid. Mathematicians at first felt the need to justify analytic arguments synthetically lest no-one believe their work.\footnote{%
-	An attitude which persisted for some time: the presentation in Issac Newton's groundbreaking \emph{Principia} (1687) was largely synthetic, even though his private derivations made extensive use of co-ordinates and algebra.%
-} Synthetic geometry is not without its benefits, but its study has increasingly become a fringe activity; co-ordinates are just too useful to ignore. We may therefore assume anything from Euclid and mix strategies as appropriate. To see this at work, consider a simple result.
+Analytic geometry was originally conceived as a computational toolkit built on top of Euclid's geometry. At first, mathematicians felt the need to justify analytic arguments synthetically lest no-one believe their work.\footnote{%
+	This attitude persisted for some time. For example, the presentation in Issac Newton's groundbreaking \emph{Principia} (1687) was largely synthetic, even though his private derivations made extensive use of co-ordinates and algebra.%
+}
+Synthetic geometry is not without its benefits, but its study has become a fringe activity in modern times; co-ordinates are just too useful to ignore!\smallbreak
+It is important to get the history in the right order: in analytic arguments, we may assume anything from Euclid and mix strategies as appropriate. To see this at work, consider a simple result.
 
-\begin{minipage}[t]{0.74\linewidth}\vspace{0pt}
-	\begin{lemm}{}{cart-para}
-		Non-collinear points $O=(0,0)$, $A=(x,y)$, $B=(v,w)$ and $C:=(x+v,y+w)$, form a parallelogram $OACB$.
-	\end{lemm}
+
+\begin{lemm}{}{cart-para}
+	Suppose non-collinear points $O=(0,0)$, $A=(x,y)$ and $B=(v,w)$ are given and we define $C:=(x+v,y+w)$. Then $OACB$ is a parallelogram.
+\end{lemm}
 	
-	\begin{proof}
-		Opposite sides have the same length ($\nm{BC}=\sqrt{x^2+y^2}=\nm{OA}$, etc.) and are thus congruent. SAS shows $\triangle OAC\cong \triangle CBO$. Euclid's discussion of alternate angles (pages \pageref{defn:parallel}--\pageref*{axiom:playfair}) forces opposite sides to be parallel.
-	\end{proof}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.25\linewidth}\vspace{0pt}
-	\flushright\includegraphics[scale=0.9]{analytic-para}
-\end{minipage}\medbreak
+	
+\begin{proof}
+	The distance formula quickly shows that opposite sides have the same length:\par
+	\begin{minipage}[t]{0.7\linewidth}\vspace{-6pt}
+		\[
+			\nm{BC}=\sqrt{x^2+y^2}=\nm{OA},\qquad
+			\nm{AC}=\sqrt{v^2+w^2}=\nm{OB}
+		\]
+		Opposite sides are therefore congruent. SAS shows $\triangle OAC\cong \triangle CBO$. Euclid's discussion of alternate angles (pages \pageref{defn:parallel}--\pageref*{axiom:playfair}) forces opposite sides to be parallel.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.29\linewidth}\vspace{0pt}
+		\hfill
+		\includegraphics[alt={constructing a parallelogram using co-ordinates}]{analytic-para}
+	\end{minipage}
+
+\end{proof}
 
 Lemma \ref{lemm:cart-para} is essentially vector addition: feel free to use such notation/language if you prefer.
 
-\goodbreak
+
 
 
 \iffalse
@@ -96,7 +117,6 @@ Vector addition can be visualized by placing representative segments \emph{nose-
 \end{minipage}\medbreak
 The scalar multiple $\lambda\vv$ may be viewed as stretching or shrinking $\vv$, and reversing its direction when $\lambda<0$.
 
-\goodbreak
 
 \fi
 
@@ -129,7 +149,8 @@ The proof is an exercise. As an example of how easy it can be to work in analyti
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.29\linewidth}\vspace{-23pt}
-		\flushright\includegraphics[scale=0.95]{analytic-centroid}
+		\hfill
+		\includegraphics[scale=0.95]{analytic-centroid}
 	\end{minipage}\medbreak
 		By symmetry (check directly if you like!), $G$ is also $\frac 23$ of the way along the other two medians.
 \end{proof}
@@ -137,13 +158,16 @@ The proof is an exercise. As an example of how easy it can be to work in analyti
 Our proof relied on adding points as abstract objects, though we could instead have expressed $A,B,C,\ldots$ in co-ordinates. Exercise \ref{exs:centroidcoord} does exactly this in an approach that illustrates one of the biggest advantages of analytic geometry: the freedom to choose axes and co-ordinates so as to make calculations simple. This is essentially Euclid's superposition principle or Hilbert's \emph{congruence} in disguise: we'll make this correspondence rigorous in Section \ref{sec:klein} when we discuss \emph{isometries}.
 
 \begin{exercises}
-	\exstart By completing the square, identify the curve described by the equation
+	\hangindent\leftmargini\emph{Key concepts: \ }
+	
+	\begin{enumerate}
+	  \item By completing the square, identify the curve described by the equation
 	\[
 		x^2+y^2-4x+2y=10
 	\]
 	
-	\begin{enumerate}\setcounter{enumi}{1}
-	  \item\label{exs:centroidcoord}\begin{enumerate}
+	  \item\label{exs:centroidcoord}
+	  \begin{enumerate}
 	  	\item Perform a pure co-ordinate proof of Theorem \ref{thm:centroidanalytic}. For simplicity, arrange the triangle so that $A=(0,0)$ is the origin, and $B$ points along the positive $x$-axis.
 	  
 			\item Descartes and Fermat did not have a fixed perpendicular second axis! Their approach was equivalent to choosing a second axis oriented to make the problem as simple as possible.\par
@@ -155,22 +179,24 @@ Our proof relied on adding points as abstract objects, though we could instead h
 
 	
 		\item A \emph{parabola} is a curve whose points are equidistant from a fixed point $F$ (the \emph{focus}) and a fixed line $\ell$ (the \emph{directrix}).
-		\begin{enumerate}
 		  \begin{minipage}[t]{0.73\linewidth}\vspace{-2pt}
+		\begin{enumerate}
 			   \item Choose axes as shown in the picture so that $F=(0,a)$ and $\ell$ has equation $y=-a$. Find the equation of the parabola.
 			   \item Now let $e$ be a positive constant ($\neq 0,1$). What happens if $\ell$ has equation $y=-\frac ae$ and $\frac{\nm{PF}}{\nm{F\ell}}=e$? What happens in the limit $e\to 0^+$?
+		\end{enumerate} 
 			\end{minipage}
 			\hfill
 			\begin{minipage}[t]{0.25\linewidth}\vspace{-10pt}
-				\flushright\includegraphics[scale=0.95]{analytic-parabola}
+				\hfill\includegraphics[scale=0.95]{analytic-parabola}
 			\end{minipage}
-		\end{enumerate} 
 	
 	\end{enumerate}
 \end{exercises}
 
 
 \clearpage
+
+\iffalse
 
 
 \subsection{Angles and Trigonometry}\label{sec:analyticangle}
