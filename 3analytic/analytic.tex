@@ -5,7 +5,7 @@
 Geometry in the style of Euclid and Hilbert is termed \emph{synthetic}: axiomatic, without co-ordinates or explicit numerical measures of angle, length, area or volume. By contrast, the modern practice of geometry is typically \emph{analytic}: reliant on algebra and co-ordinates (including vectors).
 \smallbreak
 
-Analytic geometry arose in the early 1600s, thanks to the work of René Descartes and Pierre de Fermat. Their critical development was the introduction of an \emph{axis}\footnote{%
+Analytic geometry arose in the early 1600s thanks to the work of René Descartes and Pierre de Fermat. The critical development was the \emph{axis}\footnote{%
 	Originally there was only one axis, though a second was implied. Very quickly it became standard to have a second axis at right-angles to the first.%	
 }
 as a fixed reference ruler against which objects can be measured using \emph{co-ordinates.}
@@ -60,23 +60,24 @@ It is important to get the history in the right order: in analytic arguments, we
 	
 	
 \begin{proof}
-	The distance formula quickly shows that opposite sides have the same length:\par
-	\begin{minipage}[t]{0.7\linewidth}\vspace{-6pt}
+	The distance formula shows that opposite sides have the same length\par
+	\begin{minipage}[t]{0.7\linewidth}\vspace{-8pt}
 		\[
 			\nm{BC}=\sqrt{x^2+y^2}=\nm{OA},\qquad
 			\nm{AC}=\sqrt{v^2+w^2}=\nm{OB}
 		\]
-		Opposite sides are therefore congruent. SAS shows $\triangle OAC\cong \triangle CBO$. Euclid's discussion of alternate angles (pages \pageref{defn:parallel}--\pageref*{axiom:playfair}) forces opposite sides to be parallel.
+		and therefore congruent.\smallbreak
+		SSS shows that $\triangle OAC\cong \triangle CBO$.\smallbreak
+		Euclid's discussion of alternate angles (pages \pageref{defn:parallel}--\pageref*{axiom:playfair}) forces the opposite sides to be parallel.
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.29\linewidth}\vspace{0pt}
 		\hfill
 		\includegraphics[alt={constructing a parallelogram using co-ordinates}]{analytic-para}
 	\end{minipage}
-
 \end{proof}
 
-Lemma \ref{lemm:cart-para} is essentially vector addition: feel free to use such notation/language if you prefer.
+Lemma \ref{lemm:cart-para} is essentially vector addition: feel free to use such notation/language if you prefer.\smallbreak
 
 
 
@@ -121,6 +122,8 @@ The scalar multiple $\lambda\vv$ may be viewed as stretching or shrinking $\vv$,
 \fi
 
 
+The next result is very useful: it gives an explicit parametrization for all points on a line through two given points.
+
 \begin{lemm}{}{lineparam}
 	The points $X_t$ on the line $\lin{PQ}$ are in 1--1 correspondence with the real numbers via 
 	\[
@@ -129,7 +132,7 @@ The scalar multiple $\lambda\vv$ may be viewed as stretching or shrinking $\vv$,
 	Moreover, $d(P,X_t)=\nm t\nm{PQ}$ so that $t$ measures the (signed) distance along the line.
 \end{lemm}
 
-The proof is an exercise. As an example of how easy it can be to work in analytic geometry, we apply the Lemma to re-establish a famous result (compare Exercise \ref*{sec:similar}.\ref{exs:centroideuclid2} where we used Ceva's Theorem!).
+The proof is an exercise. As an example of how easy it can be to work in analytic geometry, we apply the Lemma to re-establish a famous result (compare Exercise \ref*{sec:similar}.\ref{exs:centroideuclid2} where we used Ceva's Theorem).
 
 \begin{thm}{}{centroidanalytic}
 	The medians of a triangle meet at a point $2/3$ of the way along each median.
@@ -148,17 +151,17 @@ The proof is an exercise. As an example of how easy it can be to work in analyti
 		\]
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.29\linewidth}\vspace{-23pt}
+	\begin{minipage}[t]{0.29\linewidth}\vspace{-12pt}
 		\hfill
-		\includegraphics[scale=0.95]{analytic-centroid}
-	\end{minipage}\medbreak
-		By symmetry (check directly if you like!), $G$ is also $\frac 23$ of the way along the other two medians.
+		\includegraphics[alt={the centroid lies two thirds of the way along all three medians}]{analytic-centroid}
+	\end{minipage}\smallbreak
+		By symmetry (check directly if you like), $G$ is also $\frac 23$ of the way along the other two medians.
 \end{proof}
 
-Our proof relied on adding points as abstract objects, though we could instead have expressed $A,B,C,\ldots$ in co-ordinates. Exercise \ref{exs:centroidcoord} does exactly this in an approach that illustrates one of the biggest advantages of analytic geometry: the freedom to choose axes and co-ordinates so as to make calculations simple. This is essentially Euclid's superposition principle or Hilbert's \emph{congruence} in disguise: we'll make this correspondence rigorous in Section \ref{sec:klein} when we discuss \emph{isometries}.
+The analytic proof relied on adding points as abstract objects, though we could instead have expressed $A,B,C,\ldots$ in co-ordinates. Exercise \ref{exs:centroidcoord} illustrates exactly this and, in an extension, of the biggest advantages of analytic geometry: the freedom to choose axes and co-ordinates so as to make calculations simple. This trick is essentially Euclid's superposition principle or Hilbert's congruence in disguise: we'll make this correspondence of concepts rigorous in shortly when we discuss \emph{isometries}.
 
 \begin{exercises}
-	\hangindent\leftmargini\emph{Key concepts: \ }
+	\hangindent\leftmargini\emph{Key concepts: \ Analytic geometry is Euclidean geometry plus co-ordinates/algebra}
 	
 	\begin{enumerate}
 	  \item By completing the square, identify the curve described by the equation
@@ -168,9 +171,9 @@ Our proof relied on adding points as abstract objects, though we could instead h
 	
 	  \item\label{exs:centroidcoord}
 	  \begin{enumerate}
-	  	\item Perform a pure co-ordinate proof of Theorem \ref{thm:centroidanalytic}. For simplicity, arrange the triangle so that $A=(0,0)$ is the origin, and $B$ points along the positive $x$-axis.
+	  	\item Perform a pure co-ordinate proof of Theorem \ref{thm:centroidanalytic}. For simplicity, arrange the triangle so that $A=(0,0)$ is the origin and $B$ points along the positive $x$-axis.
 	  
-			\item Descartes and Fermat did not have a fixed perpendicular second axis! Their approach was equivalent to choosing a second axis oriented to make the problem as simple as possible.\par
+			\item Descartes and Fermat did not have a fixed perpendicular second axis. Their approach was equivalent to choosing a second axis oriented to make the problem as simple as possible.\par
 			Given $\triangle ABC$, choose axes pointing along $\cl{AB}$ and $\cl{AC}$. Describe the co-ordinates of $B$ and $C$ with respect to such axes. Now give an even simpler proof of the centroid theorem (\ref{thm:centroidanalytic}).
 	  \end{enumerate}
 
@@ -178,16 +181,16 @@ Our proof relied on adding points as abstract objects, though we could instead h
 		\item Prove Lemma \ref{lemm:lineparam}.
 
 	
-		\item A \emph{parabola} is a curve whose points are equidistant from a fixed point $F$ (the \emph{focus}) and a fixed line $\ell$ (the \emph{directrix}).
-		  \begin{minipage}[t]{0.73\linewidth}\vspace{-2pt}
+		\item A \emph{parabola} is a curve whose points are equidistant from a fixed point $F$ (the \emph{focus}) and a fixed line $\ell$ (the \emph{directrix}).\par
+		  \begin{minipage}[t]{0.68\linewidth}\vspace{-4pt}
 		\begin{enumerate}
 			   \item Choose axes as shown in the picture so that $F=(0,a)$ and $\ell$ has equation $y=-a$. Find the equation of the parabola.
-			   \item Now let $e$ be a positive constant ($\neq 0,1$). What happens if $\ell$ has equation $y=-\frac ae$ and $\frac{\nm{PF}}{\nm{F\ell}}=e$? What happens in the limit $e\to 0^+$?
+			   \item Now let $e$ be a positive constant ($\neq 0,1$). What is the equation of the parabola if $\ell$ has equation $y=-\frac ae$ and $\frac{\nm{PF}}{\nm{F\ell}}=e$? What happens in the limit $e\to 0^+$?
 		\end{enumerate} 
 			\end{minipage}
 			\hfill
-			\begin{minipage}[t]{0.25\linewidth}\vspace{-10pt}
-				\hfill\includegraphics[scale=0.95]{analytic-parabola}
+			\begin{minipage}[t]{0.31\linewidth}\vspace{-10pt}
+				\hfill\includegraphics[alt={the geometric definition of a parabola}]{analytic-parabola}
 			\end{minipage}
 	
 	\end{enumerate}

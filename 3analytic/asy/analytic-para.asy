@@ -15,7 +15,7 @@ pen lGreen=rgb("00a000");
 import graph;
 import markers;
 
-size(120);
+size(100);
 
 real r=0.4;
 real R=0.35;
