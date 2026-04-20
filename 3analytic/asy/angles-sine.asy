@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
 size(90);
@@ -20,7 +27,7 @@ draw(scale(r)*unitcircle);
 draw((3,0)--(5,0));
 draw("$x$",(0,0)--(P.x,0),red);
 draw("$y$",(P.x,0)--P,blue);
-draw("$r$",P--(0,0),heavygreen);
+draw("$r$",P--(0,0),lGreen);
 
 draw("$\theta$",arc((0,0),1,0,degrees(P)),ArcArrow);
 

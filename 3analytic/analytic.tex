@@ -83,7 +83,7 @@ Lemma \ref{lemm:cart-para} is essentially vector addition: feel free to use such
 
 
 \iffalse
-\boldsubsubsection{Vector Geometry}
+\subsubsection*{Vector Geometry}
 
 Vectors come to us courtesy of several mathematicians, most prominently William Rowan Hamilton (1805--1865), Oliver Heaviside (1850--1925) and J.~Willard Gibbs (1839--1903). Hamilton had stumbled upon the algebra of \emph{quaternions} when attempting to extend to three dimensions the contemporary use of complex numbers (Section \ref{sec:complexplane}) to describe plane geometry.\footnote{Quaternions are objects of the form $a+bi+cj+dk$ where $a,b,c,d\in\R$, $i^2=j^2=k^2=-1$ and $i,j,k$ multiply as if using the cross-product ($ij=k=-ji$, etc.). Hamilton couldn't make the three-dimensional part ($a=0$) into a suitable algebra, but a fourth dimension fixed things. Hamilton eventually realized that if he dropped his requirement of having a well-defined multiplication, he could apply his vector approach to the study of geometry in any dimension. %Hamilton is also famous for reformulating classical mechanics into the \emph{Hamiltonian mechanics} beloved by modern Physicists.
 } Heaviside and Gibbs %(an Englishman and an American) 
@@ -104,7 +104,7 @@ In the picture, the standard representation of a vector $\vv$ is shown in blue. 
 \[\vv=\vec{\mathrm{v}}=\underline{\mathrm{v}}=\rayv{OA}=\twovec 21=\ip{2,1}=2\vi+\vj\]
 The usual convenient abuse of terminology is at work: strictly $\rayv{OA}\in\vv$ since $\vv$ is an equivalence class, but no-one writes this.
 \tcblower
-\flushright\includegraphics{analytic-defn}
+\hfill\includegraphics{analytic-defn}
 \end{example}
 
 Addition and scalar multiplication are defined algebraically in the familiar manner:\par
@@ -114,7 +114,7 @@ Vector addition can be visualized by placing representative segments \emph{nose-
 \[\rayv{OA}=\twovec xy\quad\text{and}\quad\rayv{OB}=\twovec vw\]
 \end{minipage}
 \begin{minipage}[t]{0.25\linewidth}\vspace{0pt}
-\flushright\includegraphics{analytic-para2}
+\hfill\includegraphics{analytic-para2}
 \end{minipage}\medbreak
 The scalar multiple $\lambda\vv$ may be viewed as stretching or shrinking $\vv$, and reversing its direction when $\lambda<0$.
 
@@ -181,16 +181,19 @@ The analytic proof relied on adding points as abstract objects, though we could 
 		\item Prove Lemma \ref{lemm:lineparam}.
 
 	
-		\item A \emph{parabola} is a curve whose points are equidistant from a fixed point $F$ (the \emph{focus}) and a fixed line $\ell$ (the \emph{directrix}).\par
-		  \begin{minipage}[t]{0.68\linewidth}\vspace{-4pt}
+		\item A \emph{parabola} is a curve whose points are equidistant from a fixed point $F$ (the \emph{focus}) and a fixed line $\ell$ (the \emph{directrix}). Otherwise said, if we drop the perpendicular from a point $P$ on the curve to $Q\in\ell$, then the parabola is the locus of all points for which $\nm{FP}=\nm{PQ}$.\par
+		  \begin{minipage}[t]{0.65\linewidth}\vspace{-4pt}
 		\begin{enumerate}
-			   \item Choose axes as shown in the picture so that $F=(0,a)$ and $\ell$ has equation $y=-a$. Find the equation of the parabola.
-			   \item Now let $e$ be a positive constant ($\neq 0,1$). What is the equation of the parabola if $\ell$ has equation $y=-\frac ae$ and $\frac{\nm{PF}}{\nm{F\ell}}=e$? What happens in the limit $e\to 0^+$?
+			   \item Choose axes so that $F=(0,a)$ and $\ell$ has equation $y=-a$. Find the equation of the parabola.
+			   \item Now let $e$ be any positive constant. Find the equation of the \textcolor{blue}{curve} if $\ell$ has equation $y=-\frac ae$ and we assume $\nm{PF}=e\nm{F\ell}$.\par
+			   How does the type of curve depend on $e$?\par
+			   What happens in the limit $e\to 0^+$?
 		\end{enumerate} 
 			\end{minipage}
 			\hfill
-			\begin{minipage}[t]{0.31\linewidth}\vspace{-10pt}
-				\hfill\includegraphics[alt={the geometric definition of a parabola}]{analytic-parabola}
+			\begin{minipage}[t]{0.32\linewidth}\vspace{0pt}
+				\hfill
+				\includegraphics[alt={the geometric definition of a parabola}]{analytic-parabola}
 			\end{minipage}
 	
 	\end{enumerate}
@@ -199,65 +202,74 @@ The analytic proof relied on adding points as abstract objects, though we could 
 
 \clearpage
 
-\iffalse
 
 
 \subsection{Angles and Trigonometry}\label{sec:analyticangle}
 
 Angles are defined differently to Section \ref{sec:similar}, though the approach should feel familiar. %We use radians, angles are \emph{oriented} and may be \emph{reflex} (larger than a straight edge). 
 
-\begin{defn}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.32\linewidth]{}{}
-	Suppose $A,B,C$ are distinct points in the plane. Take any \textcolor{blue}{circular arc} centered at $A$ and define the \emph{radian measure}
-	\[
-		\measuredangle ABC:=\frac{\text{\textcolor{blue}{arc-length}}}{\text{radius}} \in[0,2\pi)
-	\]
+\begin{defn}{}{}
+	Suppose $A,B,C$ are distinct points in the plane. Take any \textcolor{blue}{circular arc} centered at $A$ and define the \emph{radian measure}\par
+	\begin{minipage}[t]{0.7\linewidth}\vspace{-8pt}
+		\[
+			\measuredangle ABC:=\frac{\text{\textcolor{Blue}{arc-length}}}{\text{\textcolor{dRed}{radius}}} \in[0,2\pi)
+		\]
 	where arc-length is measured \emph{counter-clockwise} from $\ray{BA}$ to $\ray{BC}$.
-	\tcblower
-	\flushright
-	\includegraphics[scale=0.95]{angles-example}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.29\linewidth}\vspace{-17pt}
+		\hfill
+		\includegraphics[alt={definition of radian measure}]{angles-example}
+	\end{minipage}\smallbreak
+	Radian measure outside $[0,2\pi)$ are also acceptable, provided they are understood to be reduced modulo $2\pi$: negative angles can therefore be visualized as being measured clockwise.
 \end{defn}
 
-Since arc-length scales with radius, the definition is independent of the radius of the circular arc. It is important to appreciate the difference between angle measures in our two geometries.\vspace{-5pt}
+Since arc-length scales with radius, the definition is independent of the radius of the circular arc. It is important to appreciate the difference between angle measures in our two geometries.
 
-\begin{description}\itemsep0pt
-  \item[Euclidean geometry] All angles $<\ang{180}$. Reversed legs $\rightsquigarrow$ \emph{congruent} angles and \emph{same degree measure}:
+\begin{description}
+  \item[Euclidean geometry] Every angle has degree measure strictly between $\ang 0$ and $\ang{180}$. Reversed legs produce \emph{congruent} angles (pictorially these are the \emph{same} angle), which always have the \emph{same degree measure}:
    \[
    	\angle CBA\cong\angle ABC\quad\text{and}\quad  m\angle CBA=m\angle ABC
    \]
-  \item[Analytic geometry] Reflex angles exist ($\ge\pi$). Reversed legs $\rightsquigarrow$ \emph{different radian measures}:
+  \item[Analytic geometry] Reflex angles exist ($>\pi$). Reversed legs produce \emph{different radian measures}: with regard to the above picture,
   \[
-  	\textcolor{Green}{\measuredangle CBA=2\pi-\theta}\, \neq \, \textcolor{blue}{\theta=\measuredangle ABC} \tag{unless a straight edge}
+  	\mathcolor{mGreen}{\measuredangle CBA=2\pi-\theta}\, \neq \, \mathcolor{blue}{\theta=\measuredangle ABC} \tag{unless a straight edge}
   \]
 	\begin{minipage}[t]{0.77\linewidth}\vspace{-5pt}
-   	However, since one arrangement of legs produces a measure $\le\pi$,
+   	However, since one arrangement of legs always has measure $<\pi$,
    	\[
   		\tcbhighmath{\angle XYZ\cong \angle ABC \iff \measuredangle XYZ=\measuredangle ABC\ \text{ or }\ \measuredangle CBA \quad(\neq 0,\pi)}
  		\]
-
-		As such, we label angles in a triangle by their measures (degree or radian $<\pi$). Standard convention is shown: $(A,a,\alpha)\leftrightsquigarrow$ (point,\,length,\,angle).
+		As such, we tend to label angles in a triangle by their measures (degree or radian $<\pi$). Standard convention is shown: $(A,a,\alpha)\leftrightsquigarrow$ (point,\,length,\,angle).
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.2\linewidth}\vspace{-15pt}
-		\flushright\includegraphics[scale=0.95]{angle-notation}
+		\hfill\includegraphics[alt={standard notation for vertices, sides and angles of a triangle}]{angle-notation}
 	\end{minipage}
 \end{description}
 
 
 
 
-\begin{defn}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.23\linewidth]{Trigonometric Functions}{}
-	Let $O$ be the origin and $I=(1,0)$. Let $P=(x,y)$ lie on a circle of radius $r$ and $\theta=\measuredangle IOP$. We define:
-	\[
-		\cos\theta :=\frac xr\qquad \sin\theta:=\frac yr\qquad \tan\theta:=\frac yx\quad (x\neq 0)
-	\]
-	AAA similarity (Thm.\,\ref{thm:aaasim}) says these are well-defined, independent of $r$.
-	\tcblower
-	\flushright
-	\includegraphics[scale=0.95]{angles-sine}
+\begin{defn}{Trigonometric Functions}{}
+	Let $O$ be the origin and $I$ the point $(1,0)$.\par
+	\begin{minipage}[t]{0.79\linewidth}\vspace{-6pt}
+		Let $P=(x,y)$ lie on a circle of radius $r$ and $\theta=\measuredangle IOP$. We define:
+		\[
+			\cos\theta :=\frac xr\qquad \sin\theta:=\frac yr\qquad \tan\theta:=\frac yx\quad (x\neq 0)
+		\]
+		AAA similarity (Thm.\,\ref{thm:aaasim}) says these functions are well-defined and independent of $r$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.2\linewidth}\vspace{-10pt}
+		\hfill
+		\includegraphics[alt={definitions of sine and cosine}]{angles-sine}
+	\end{minipage}
 \end{defn}
 
+
 \begin{example}{}{}
-	Basic trig identities should be obvious from the picture: e.g.,
+	Basic identities should be clear from the picture, for instance:
 	\[
 		\cos^2\theta+\sin^2\theta=1 \text{ (Pythagoras!)}
 		\quad\text{and}\quad
@@ -265,34 +277,34 @@ Since arc-length scales with radius, the definition is independent of the radius
 	\]
 	Which well-known facts regarding sine and cosine are illustrated by the following?
 	\begin{center}
-		\includegraphics[scale=0.95]{angles-trigbasic1}
+		\includegraphics[alt={sine and cosine of supplementary angles}]{angles-trigbasic1}
 		\qquad
-		\includegraphics[scale=0.95]{angles-trigbasic2}
+		\includegraphics[alt={trig values from a half-square}]{angles-trigbasic2}
 		\qquad
-		\includegraphics[scale=0.95]{angles-trigbasic3}
+		\includegraphics[alt={trig values from an equilateral triangle}]{angles-trigbasic3}
 	\end{center}
 \end{example}
 
 
-\goodbreak
 
-
-\boldinline{Solving Triangles}
+\subsubsection*{Solving Triangles}
 
 A triangle is described by six values: three side lengths and three angle measures. Euclid's triangle congruence theorems (SAS, ASA, SSS, SAA) say that three of these in suitable combination are enough to recover the rest. In analytic geometry, these calculations typically use the sine and cosine rules.
 
 \begin{thm}{}{cosinerule}
-	Label the sides/angles of $\triangle ABC$ following the standard convention (page \pageref{sec:analyticangle}):
+	Label the sides/angles of $\triangle ABC$ using the standard convention (page \pageref{sec:analyticangle}).
 	\begin{description}
-		\item[\normalfont\emph{Sine Rule}] If $d$ is the diameter of the circumcircle (Defn.\ \ref{defn:circledef}), then \ \smash{$\displaystyle\frac{\sin\alpha}a=\frac{\sin\beta}b=\frac{\sin\gamma}c=\frac 1d$}
-		\item[\normalfont\emph{Cosine Rule}] $c^2=a^2+b^2-2ab\cos\gamma$
+		\item[\normalfont\emph{Sine Rule}:] If $d$ is the diameter of the circumcircle, then \ \smash{$\displaystyle\frac{\sin\alpha}a=\frac{\sin\beta}b=\frac{\sin\gamma}c=\frac 1d$}
+		\item[\normalfont\emph{Cosine Rule}:] $c^2=a^2+b^2-2ab\cos\gamma$
 	\end{description}
 \end{thm}
 
 
-\begin{minipage}[t]{0.72\linewidth}\vspace{0pt}
-	\begin{proof}
-		We prove the sine rule and leave the cosine rule as an exercise. Everything relies on Corollary \ref{cor:thalescor}. Draw the circumcircle of $\triangle ABC$. Construct $\triangle BCD$ with diameter $\cl{BD}$; this is right-angled at $C$ by Thales' Theorem. There are two cases:
+
+\begin{proof}
+	We prove the sine rule and leave the cosine rule as an exercise.\par
+	\begin{minipage}[t]{0.73\linewidth}\vspace{-6pt}
+		Everything relies on Corollary \ref{cor:thalescor}. Draw the circumcircle of $\triangle ABC$. Construct $\triangle BCD$ with diameter $\cl{BD}$; this is right-angled at $C$ by Thales' Theorem. There are two cases:
 		\begin{enumerate}
 		  \item If $A$ and $D$ lie on the same side of $\lin{BC}$, then they share the same arc. But then $\measuredangle BDC=\alpha$ and
 		  \[
@@ -302,80 +314,106 @@ A triangle is described by six values: three side lengths and three angle measur
 			\[
 				\sin\alpha=\sin(\pi-\alpha)=\sin\measuredangle BDC=\frac ad
 			\]
-		\end{enumerate}
-		The two other angle-side combinations follow by permutation.\phantom{\qedhere}
-	\end{proof}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.25\linewidth}\vspace{-5pt}
-	\flushright\includegraphics[scale=0.95]{angles-sinerule}\smallbreak
-	\includegraphics[scale=0.95]{angles-sinerule2}\\[-20pt]
-	\hfill\qedsymbol
-\end{minipage}
+	\end{enumerate}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.25\linewidth}\vspace{-20pt}
+		\hfill
+		\includegraphics[alt={proving the sine rule, case 1}]{angles-sinerule}
+		\bigbreak
+		\hfill
+		\includegraphics[alt={proving the sine rule, case 2}]{angles-sinerule2}
+	\end{minipage}
+	\par
+	The two other angle-side combinations follow by permutation.
+\end{proof}
+
+
+\pagebreak[3]
 
 
 \begin{examples}{}{trisolve}
-	\exstart Given SSS data, we may compute the three angles using the cosine rule. For instance the given triangle has
-	\begin{enumerate}\setcounter{enumi}{1}
+	We solve two triangles. It is completely acceptable (and equivalent\footnotemark{}) to so this \emph{without} using the sine or cosine rules: just drop a perpendicular from one vertex to obtain two right triangles.
+	\begin{enumerate}
+		\item The fastest way to solve a triangle given SSS data is to directly compute the three angles using the cosine rule. For instance the given triangle has\par
 		\begin{minipage}[t]{0.86\linewidth}\vspace{-13pt}
-		  \item[]
 		  \begin{gather*}
-				\alpha=\frac{6^2+7^2-3^2}{2\cdot 6\cdot 7}=\cos^{-1}\frac{19}{21}\approx\ang{25}\qquad
+				\alpha=\frac{6^2+7^2-3^2}{2\cdot 6\cdot 7}=\cos^{-1}\frac{19}{21}\approx\ang{25}\\[5pt]
 				\beta=\frac{3^2+7^2-6^2}{2\cdot 3\cdot 7}=\cos^{-1}\frac{11}{21}\approx\ang{58}\\[5pt]
 				\gamma=\frac{3^2+6^2-7^2}{2\cdot 3\cdot 6}=\cos^{-1}\frac{-1}{9}\approx\ang{96}
 			\end{gather*}
-			Once you have $\alpha$, you could alternatively switch to the sine rule to find $\beta$, before computing $\gamma=\pi-\alpha-\beta$.
-		\end{minipage}\hfill\begin{minipage}[t]{0.13\linewidth}\vspace{-24pt}
-			\flushright\includegraphics[scale=0.95]{angles-ssssolve}
-		\end{minipage}\smallbreak
-		\begin{minipage}[t]{0.75\linewidth}\vspace{0pt}
-			\item\label{ex:trisolve2} To solve the given triangle with ASA data, first find the remaining angle $\textcolor{Green}{\gamma}=\pi-\textcolor{red}{\frac\pi 4}-\textcolor{blue}{\frac\pi 3} =\textcolor{Green}{\frac{5\pi}{12}}$ before applying the sine rule
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.13\linewidth}\vspace{-15pt}
+			\hfill\includegraphics[alt={a triangle with sides 3, 6 and 7}]{angles-ssssolve}
+		\end{minipage}
+		\smallbreak
+		Once you have $\alpha$, you could alternatively switch to the sine rule to find $\beta$, before finally computing $\gamma=\pi-\alpha-\beta$.
+		
+		\item\label{ex:trisolve2} To solve the given triangle with ASA data, first find the remaining angle $\mathcolor{mGreen}{\gamma}=\pi-\mathcolor{mRed}{\frac\pi 4}-\mathcolor{Blue}{\frac\pi 3} =\mathcolor{mGreen}{\frac{5\pi}{12}}$ before applying the sine rule\par			
+		\begin{minipage}[t]{0.75\linewidth}\vspace{-12pt}
 		  \begin{align*}
-		  	\textcolor{red}{\frac{\sin\frac\pi 4}a} 
-		  		=\textcolor{blue}{\frac{\sin\frac\pi 3}b} 
-		  		=\textcolor{Green}{\sin\frac{5\pi}{12}}%=\textcolor{Green}{\cos\frac{\pi}{12}}
+		  	\mathcolor{mRed}{\frac{\sin\frac\pi 4}a} 
+		  		=\mathcolor{Blue}{\frac{\sin\frac\pi 3}b} 
+		  		=\mathcolor{mGreen}{\sin\frac{5\pi}{12}}%=\textcolor{Green}{\cos\frac{\pi}{12}}
 		  		\implies 
-		  	&\textcolor{red}{a}
+		  	&\mathcolor{mRed}{a}
 		  		=\frac 1{\sqrt 2\sin\frac{5\pi}{12}}\approx 0.732\\
-		  	&\textcolor{blue}{b}
+		  	&\mathcolor{Blue}{b}
 		  		=\frac{\sqrt 3}{2\sin\frac{5\pi}{12}}\approx 0.897
 		  \end{align*}
-		\end{minipage}\hfill\begin{minipage}[t]{0.24\linewidth}\vspace{0pt}
-			\flushright\includegraphics[scale=0.95]{angles-asasolve}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.24\linewidth}\vspace{-12pt}
+			\hfill\includegraphics[alt={solving a triangle with A S A data}]{angles-asasolve}
 		\end{minipage}
 	\end{enumerate}
 \end{examples}
 
 
-\goodbreak
+\footnotetext{%
+	The proof of the cosine rule and an alternative for the sine rule (Exercise \ref{exs:cosrule}) arise this way.%
+}
 
 
 
-\begin{minipage}[t]{0.63\linewidth}\vspace{-10pt}
-	\boldinline{Multiple-angle formulæ}\phantomsection\label{sec:multangle}
-	
-	The picture provides a very simple proof of the expressions
+\subsubsection*{Multiple-angle formulæ}\label{sec:multangle}
+
+The picture provides a simple proof of the expressions\par
+\begin{minipage}[t]{0.6\linewidth}\vspace{-12pt}
 	\begin{gather*}
-		\sin(\alpha+\beta)=\textcolor{Green}{\sin\alpha\cos\beta}+\textcolor{blue}{\cos\alpha\sin\beta}\\
+		\sin(\alpha+\beta)
+		=\mathcolor{mGreen}{\sin\alpha\cos\beta}
+		+\textcolor{Blue}{\cos\alpha\sin\beta}\\
 		\cos(\alpha+\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta
 	\end{gather*}
 	at least when $\alpha+\beta<\frac\pi 2$. A little algebraic manipulation produces the double-angle and difference formulæ, and verifies that these hold for all possible angle inputs.
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.36\linewidth}\vspace{0pt}
-	\flushright\includegraphics[scale=0.85]{angles-multipleangle}
+\begin{minipage}[t]{0.38\linewidth}\vspace{-30pt}
+	\hfill
+	\includegraphics[alt={stacking triangles to prove the multiple angle formulas}]{angles-multipleangle}
 \end{minipage}\par
 \begin{align*}
-	&\sin 2\alpha=2\sin\alpha\cos\alpha &&\sin(\alpha-\beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta\\
-	&\cos 2\alpha=\cos^2\alpha-\sin^2\alpha=2\cos^2\alpha-1&&\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta
+	&\sin 2\alpha=2\sin\alpha\cos\alpha 
+		&&\sin(\alpha-\beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta\\
+	&\cos 2\alpha=\cos^2\alpha-\sin^2\alpha=2\cos^2\alpha-1
+		&&\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta
 \end{align*}
 
-\smallskip
+
+\pagebreak[3]
+
 
 \begin{exercises}{}{}
-	\exstart A triangle has angle of $\frac{2\pi}3$ radians between sides of lengths 2 and $\sqrt 3-1$. Find the length of the remaining side, and the remaining angles.\vspace{-2pt}
-	\begin{enumerate}\setcounter{enumi}{1}	
-		\item Describe how to solve a triangle given data in line with the SAA congruence theorem.
+	\hangindent\leftmargini\emph{Key concepts: \ Radian measure, \ Congruent angles can have different radian measures, \ Trigonometric functions, \ Solving triangles: numerical versions of Euclid's congruence theorems}
+
+
+	\begin{enumerate}	
+	  \item A triangle has angle of $\frac{2\pi}3$ radians between sides of lengths 2 and $\sqrt 3-1$. Find the length of the remaining side, and the remaining angles.
+	  
+	  
+		\item Describe the how to solve a triangle given SAA data.
 		
 		
 		\item Two measurements for the height of a mountain are taken at sea level 5000\,ft apart in a line pointing away from the mountain. The angles of elevation to the mountain top from the horizontal are \ang{15} and \ang{13} respectively. What is the height of the mountain?
@@ -389,20 +427,25 @@ A triangle is described by six values: three side lengths and three angle measur
 		
 		\item You are given SSA data for a triangle: sides with lengths $a=1$ and $b=\sqrt 3$ and angle $\alpha=\frac\pi 6$. Show that there are \emph{two} triangles satisfying this data. Can you generalize to general SSA data?
 		 
-	
-		\begin{minipage}[t]{0.72\linewidth}\vspace{-8pt}	
-			\item\begin{enumerate}
-			  \item By dropping a perpendicular from $B$ to $\lin{AC}$ at $D$ and applying the Pythagorean theorem, construct a proof of the cosine rule.
-		 		
-		 		\item Is your argument valid if $D$ is not interior to $\cl{AC}$? Explain.
+
+		\item\label{exs:cosrule}
+		Given $\triangle ABC$, drop a perpendicular from $B$ to $D\in\lin{AC}$ as shown.\par
+		\begin{minipage}[t]{0.7\linewidth}\vspace{-4pt}
+			\begin{enumerate}\itemsep1pt
+				\item Use Pythagoras' to give an alternative proof of the sine rule (without the diameter conclusion).
+				  
+				\item Using the same approach, construct a proof of the cosine rule.
+			 		
+			 	\item Are your arguments valid if $D$ is not interior to $\cl{AC}$? Explain.
 			\end{enumerate}
 		\end{minipage}
 		\hfill
-		\begin{minipage}[t]{0.27\linewidth}\vspace{-12pt}
-			\flushright\includegraphics[scale=0.8]{angles-cosrule}
+		\begin{minipage}[t]{0.29\linewidth}\vspace{-15pt}
+			\hfill\includegraphics[alt={proving the cosine rule by dropping a perpendicular}]{angles-cosrule}
 		\end{minipage}
-	
-		\item The \emph{dot product} of $A=(a_1,a_2)$ and $B=(b_1,b_2)$ is $A\cdot B:=a_1b_1+a_2b_2$. Apply the cosine rule to $\triangle OAB$ to prove that
+
+
+		\item The \emph{dot product} of $A=(a_1,a_2)$ and $B=(b_1,b_2)$ is the scalar $A\cdot B:=a_1b_1+a_2b_2$. If $O=(0,0)$ is the origin, apply the cosine rule to $\triangle OAB$ to prove that
 		\[
 			A\cdot B=\nm{OA}\nm{OB}\cos\measuredangle AOB
 		\]
@@ -412,16 +455,17 @@ A triangle is described by six values: three side lengths and three angle measur
 		(\emph{Remember that $0\le \alpha,\beta, \alpha-\beta<2\pi$ so you can't simply switch the sign of $\beta$!})
 		
 		
-		\begin{minipage}[t]{0.7\linewidth}\vspace{0pt}
-			\item Given the arrangement pictured, find $x$, the radian-measure $\alpha$ and the exact value of $\cos\alpha$.\par
-			(\emph{Hint: first show that you have similar isosceles triangles})	
+		\item Given the arrangement pictured, find $x$, the radian-measure $\alpha$ and the exact value of $\cos\alpha$.\par
+		\begin{minipage}[t]{0.7\linewidth}\vspace{-6pt}
+			(\emph{Hint: first show that you have two similar isosceles triangles})	
 		\end{minipage}
 		\hfill
-		\begin{minipage}[t]{0.29\linewidth}\vspace{0pt}
-			\flushright\includegraphics[scale=0.9]{angles-sin36}
+		\begin{minipage}[t]{0.29\linewidth}\vspace{-8pt}
+			\hfill\includegraphics[alt={computing cosine of 36 degrees}]{angles-sin36}
 		\end{minipage}
 	\end{enumerate}
 \end{exercises}
+
 
 \clearpage
 
@@ -429,7 +473,7 @@ A triangle is described by six values: three side lengths and three angle measur
 
 \subsection{Isometries}\label{sec:klein}
 
-At the heart of elementary geometry is \emph{congruence}, the idea that geometric figures can be essentially the same without necessarily being equal. In analytic geometry, congruence is described algebraically using \emph{functions}. This is motivated by the fact that congruent segments have the same length.
+At the heart of elementary geometry is \emph{congruence}, the idea that geometric figures can be essentially the same by without necessarily being equal. In analytic geometry, congruence is described algebraically using \emph{functions}. This is motivated by the fact that congruent segments have the same length.
 
 \begin{defn}{}{}
 	A function $f:\R^2\to\R^2$ is a \emph{(Euclidean) isometry} if it preserves lengths:\footnotemark
@@ -467,15 +511,15 @@ Isometric segments are certainly congruent. We should make sure the same holds f
 
 This helps justify the term \emph{congruent} in the Definition. Examples \ref{ex:isomexs} and Exercise \ref{exs:isocong} expand this idea.
 
-\begin{example*}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.32\linewidth]{\ref{ex:isomsetup}, cont}{}
+\begin{example*}{\ref{ex:isomsetup}, cont}{}
 	\textcolor{red}{Warning}: Isometries can \emph{reverse orientation}! In the picture,
 	\[
 		\measuredangle ABC=\textcolor{Green}{\frac\pi 2}
 		\quad\text{but}\quad
 		\measuredangle f(A)f(B)f(C)=\textcolor{Green}{\frac{3\pi}2}=2\pi-\measuredangle ABC
 	\]
-	\tcblower
-	\flushright
+
+	\hfill
 	\includegraphics{isom-refl2}
 \end{example*}
 
@@ -488,12 +532,13 @@ which moreover \emph{fixes the origin}: $g(O)=O$. We conclude that every isometr
 	f(X)=g(X)+C
 \]
 
-\goodbreak
+
 
 It thus suffices to describe the origin-preserving isometries $g$. For these, we make two observations.
 \begin{enumerate}
+	\item\label{affinity} Suppose $\nm{OQ}=1$ and let $X_r=rQ$ for some $r\in\R$. Then\par
+	  
 	\begin{minipage}[t]{0.68\linewidth}\vspace{0pt}
-	  \item\label{affinity} Suppose $\nm{OQ}=1$ and let $X_r=rQ$ for some $r\in\R$. Then
 	  \begin{itemize}
 	    \item $g(X_r)$ is a distance $\textcolor{blue}{\nm r=\nm{OX_r}}$ from the origin $O=g(O)$.
 	    \item $g(X_r)$ is a distance $\textcolor{Green}{\nm{1-r}=\nm{QX_r}}$ from $g(Q)$.
@@ -507,11 +552,11 @@ It thus suffices to describe the origin-preserving isometries $g$. For these, we
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.31\linewidth}\vspace{0pt}
-		\flushright\includegraphics[scale=0.95]{isom-scale}
+		\hfill\includegraphics[scale=0.95]{isom-scale}
 	\end{minipage}
-	\bigbreak
+
+	\item $g(1,0)$ lies on the unit circle and therefore has the form\par
 	\begin{minipage}[t]{0.64\linewidth}\vspace{0pt}
-		\item $g(1,0)$ lies on the unit circle and therefore has the form
 		\[
 			g(1,0)=S_\theta:=\bigl(\cos\theta,\sin\theta\bigr)
 		\]
@@ -523,7 +568,7 @@ It thus suffices to describe the origin-preserving isometries $g$. For these, we
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.34\linewidth}\vspace{0pt}
-		\flushright\includegraphics[scale=0.95]{isom-rot2}
+		\hfill\includegraphics[scale=0.95]{isom-rot2}
 	\end{minipage}
 \end{enumerate}
 
@@ -550,10 +595,10 @@ By writing $X=rS_\phi=(r\cos\phi,r\sin\phi)$ in polar co-ordinates and combining
 	where $g$ is a rotation about the origin or a reflection across a line through the origin. 
 \end{thm}
 
-\goodbreak
 
 
-\boldsubsubsection{Calculating with isometries}
+
+\subsubsection*{Calculating with isometries}
 
 This benefits from column-vector notation and matrix multiplication. Writing $\vx=\smash{\stwovec xy =\stwovec{r\cos\phi}{r\sin\phi}}$ for the position vector of $X_r=(x,y)=rS_\phi$ and applying the multiple-angle formulæ, rotation becomes
 \begin{align*}
@@ -581,7 +626,9 @@ $\begin{smatrix}
 where $a^2+b^2=1$.}}
 
 \begin{examples}{}{isomexs}
-	\exstart We revisit Example \ref{ex:isomsetup} in matrix format:
+
+	\begin{enumerate}
+		\item\label{ex:isomexs2}	We revisit Example \ref{ex:isomsetup} in matrix format:
 	\[
 		f(\vx)=\frac 15\twovec{3x+4y}{4x-3y}+\twovec 31 =\frac 15
 		\begin{pmatrix}
@@ -590,10 +637,7 @@ where $a^2+b^2=1$.}}
 		\end{pmatrix}
 		\twovec xy+\twovec 31
 	\]
-	Since $\frac{\sin\theta}{\cos\theta}=\frac{4/5}{3/5}=\frac 43$, we see that its effect is to \emph{reflect} across the line through the origin making angle $\frac 12\tan^{-1}\frac 43\approx \ang{26.6}$ with the positive $x$-axis, before \emph{translating} by $(3,1)$.
-	
-	\begin{enumerate}\setcounter{enumi}{1}
-		\item\label{ex:isomexs2} $\triangle_a$ has vertices $(0,0),(1,0),(2,-1)$ and is congruent to $\triangle_b$, two of whose vertices are $(1,2)$ and $(1,3)$. Find all isometries transforming $\triangle_a$ to $\triangle_b$ and the location(s) of the third vertex of $\triangle_b$.\smallbreak
+	Since $\frac{\sin\theta}{\cos\theta}=\frac{4/5}{3/5}=\frac 43$, we see that its effect is to \emph{reflect} across the line through the origin making angle $\frac 12\tan^{-1}\frac 43\approx \ang{26.6}$ with the positive $x$-axis, before \emph{translating} by $(3,1)$. $\triangle_a$ has vertices $(0,0),(1,0),(2,-1)$ and is congruent to $\triangle_b$, two of whose vertices are $(1,2)$ and $(1,3)$. Find all isometries transforming $\triangle_a$ to $\triangle_b$ and the location(s) of the third vertex of $\triangle_b$.\smallbreak
 	Let $f=A\vx+\vc$ be the isometry. Since $d\bigl((1,2),(1,3)\bigr)=1$ these points must be the images under $f$ of $(0,0)$ and $(1,0)$. There are \emph{four} distinct isometries:
 	\smallbreak
 	Cases 1,\,2:\lstsp If $f(0,0)=(1,2)$ and $f(1,0)=(1,3)$, then $\vc=f\stwovec 00=\stwovec 12$ and\par
@@ -632,7 +676,7 @@ where $a^2+b^2=1$.}}
 	  \end{minipage}
 	  \hfill
 	  \begin{minipage}[t]{0.23\linewidth}\vspace{-10pt}
-	  	\flushright\includegraphics[scale=0.95]{isom-ex}
+	  	\hfill\includegraphics[scale=0.95]{isom-ex}
 	  \end{minipage}
 	\end{enumerate}
 \end{examples}
@@ -642,14 +686,16 @@ where $a^2+b^2=1$.}}
 In 1872, Felix Klein suggested that the geometry of a set is the study of its \emph{invariants}: properties preserved by its \emph{group} of structure-preserving transformations. In Euclidean geometry, this is the group of \emph{Euclidean isometries} (Exercise \ref{exs:kleingroup}). Klein's approach provided a method for analyzing and comparing the non-Euclidean geometries beginning to appear in the late 1800s. By the mid 1900s, the resulting theory of \emph{Lie groups} had largely classified classical geometries. Klein's algebraic approach remains dominant in modern mathematics and physics research.
 
 
-\goodbreak
 
 
 
 \begin{exercises}
-	\exstart Let $f:\R^2\to\R^2$ be the isometry, ``reflect across the line through the origin making angle $\frac\pi 3$ with the positive $x$-axis.'' Find a $2\times 2$ matrix $A$ such that $f(\vx)=A\vx$.
+
 	
-	\begin{enumerate}\setcounter{enumi}{1}  
+	\begin{enumerate}
+		\item Let $f:\R^2\to\R^2$ be the isometry, ``reflect across the line through the origin making angle $\frac\pi 3$ with the positive $x$-axis.'' Find a $2\times 2$ matrix $A$ such that $f(\vx)=A\vx$.
+		
+		
 	  \item Describe the geometric effect of the isometry $f(\vx)=\frac 12
 	  \begin{smatrix}
 	  	1&\sqrt 3\\
@@ -730,15 +776,160 @@ In 1872, Felix Klein suggested that the geometry of a set is the study of its \e
 	\end{enumerate}
 \end{exercises}
 
+
 \clearpage
 
 
+
+\subsection{Birkhoff's Axiomatic System for Analytic Geometry (non-examinable)}
+
+Recall that analytic geometry was originally conceived as a bolt-on to Euclidean geometry. In 1932, George David Birkhoff provided an axiomatization of analytic geometry in its own right. 
+
+%###
+\paragraph{Background}
+%###
+
+Assume the usual properties/axioms of the real numbers as a complete ordered field. Birkhoff's approach is typical of modern axiomatic systems in that it is built on top of pre-existing systems (set theory, complete ordered fields, etc.).
+
+%###
+\paragraph{Undefined terms}
+%###
+
+Two objects: \emph{Point} \& \emph{line}.\par
+Two functions: \emph{distance $d$} \& \emph{angle measure $\measuredangle$}. If the set of points is $\cS$, then,
+\[
+	d:\cS\times\cS\to\R^+_0,\qquad \measuredangle:\cS\times\cS\times\cS\to [0,2\pi)
+\]
+
+
+%###
+\paragraph{Axioms}
+%###
+
+Birkhoff has four axioms (in addition to those required for the real numbers, etc.).
+
+
+\begin{description}
+	\item[\normalfont\emph{Euclidean}] Given two distinct points, there exists a unique line containing them.]
+	
+  \item[\normalfont\emph{Ruler}] Points on a line $\ell$ are in bijective correspondence with the real numbers in such a way that if $t_A,t_B$ correspond to $A,B\in\ell$, then $\nm{t_A-t_B}=d(A,B)$.
+  
+  \item[\normalfont\emph{Protractor}] The rays emanating from a point $O$ are in bijective correspondence with the set $[0,2\pi)$, so that if $\alpha$ and $\beta$ correspond to rays $\ray{OA}$ and $\ray{OB}$, then
+  \[
+  	\measuredangle AOB\equiv \beta-\alpha\pmod{2\pi}
+  \]
+  This correspondence is continuous in $A$ and $B$.
+  
+  \item[\normalfont\emph{SAS similarity}]\!\!\footnote{%
+		As with Hilbert, Birkhoff makes SAS an \emph{axiom}: Birkhoff's version is stronger in that it also applies to similar triangles.%
+	}\, If $\triangle ABC$ and $\triangle XYZ$ satisfy
+	\[
+		\measuredangle ABC=\measuredangle XYZ,\quad\text{and}\quad
+		\frac{d(A,B)}{d(X,Y)}=\frac{d(B,C)}{d(Y,Z)}
+	\]
+	then the remaining angles have equal measure and the final sides are in the same ratio (i.e., $\triangle ABC\sim\triangle XYZ$).
+\end{description}
+
+%###
+\paragraph{Definitions}
+%###
+
+As with Hilbert, some of these are required before later axioms make sense. For instance, the definition of \emph{ray} comes before the \emph{protractor} axiom.
+\begin{description}
+	\item[\normalfont\emph{Betweenness}] $B$ lies between $A$ and $C$ if $d(A,B)+d(B,C)=d(A,C)$
+  \item[\normalfont\emph{Segment}] $\overline{AB}$ consists of the points $A,B$ and all those between
+  \item[\normalfont\emph{Ray}] $\ray{AB}$ consists of the segment $\cl{AB}$ and all points $C$ such that $B$ lies between $A$ and $C$.
+  \item[\normalfont\emph{Basic shapes}] Triangles, circles, etc.
+\end{description}
+
+
+
+\subsubsection*{Analytic Geometry as a Model}
+
+The axioms should feel familiar. Being shorter than Hilbert's list, and being built on familiar notions such as the real line, the axioms are somewhat easier to understand and to visualize. There is something to \emph{prove} however; indeed the major point of Birkhoff's system!
+
+\begin{thm}{}{}
+	Cartesian analytic geometry is a model of Birkhoff's axioms.
+\end{thm}
+
+Recall what this requires: we must provide a \emph{definition} of each of the undefined terms and prove that these satisfy each of Birkhoff's axioms. Here are suitable definitions for Cartesian analytic geometry:
+\begin{description}
+	\item[\normalfont\emph{Point}] An ordered pair $(x,y)$ of real numbers.
+	\item[\normalfont\emph{Distance}] $d(A,B)=\sqrt{(A_x-B_x)^2+(A_y-B_y)^2}$
+	\item[\normalfont\emph{Line}] All points satisfying a linear equation $ax+by+c=0$.
+	\item[\normalfont\emph{Angle}] Define column vectors as differences ($\vv=P-O$ and $\vw=Q-O$) and consider the matrix $J=
+	\begin{smatrix}
+		0&-1\\
+		1&0
+	\end{smatrix}$. 
+	Now define angle via
+	\[
+		\cos\measuredangle POQ=\frac{\vv\cdot\vw}{\nm{\vv}\nm{\vw}}
+		\quad\text{where}\quad
+		\measuredangle POQ\in
+		\begin{cases}
+			[0,\pi]&\iff\vw\cdot J\vv\ge 0\\
+			(\pi,2\pi)&\iff\vw\cdot J\vv< 0
+		\end{cases}
+		\tag{$\ast$}
+	\]
+	In essence $J$ is `rotate counter-clockwise by $\frac\pi 2$.' Cosine may be defined using power series, so no pre-existing geometric meaning is necessary.
+\end{description}
+
+\begin{proof}
+	(Euclidean axiom)\quad If $(x_1,y_1)$ and $(x_2,y_2)$ satisfy $ax+by+c=0$ then
+	\[
+		a(x_1-x_2)+b(y_1-y_2)=0
+	\]
+	whence $a=y_1-y_2$, $b=x_2-x_1$ up to scaling. It follows that the line has equation
+	\[
+		(y_1-y_2)x+(x_2-x_1)y+x_1y_2-x_2y_1=0
+	\]
+	unique up to multiplication of all three of $a,b,c$ by a non-zero constant.\smallbreak
+	The remaining axioms are exercises.
+\end{proof}
+
+
+\begin{exercises}
+
+	\begin{enumerate}
+		\item Prove that the ruler axiom is satisfied:
+	  \begin{enumerate}
+	    \item First show that if $P\neq Q$ lie on $\ell$, then any point $A$ on the line has the form
+			\[
+				A=P+\frac{t_A}{d(P,Q)}(Q-P)
+				\qquad\text{where }
+				t_A\in\R
+			\]
+			\item Use this formula to verify that $d(A,B)^2=(t_A-t_B)^2$.
+		\end{enumerate}
+		
+		
+		\item Let $\vi=\stwovec 10$. Given any non-zero point $B$, define $\vb=B-O$ and let $\beta=\cos^{-1}\frac{\vi\cdot\vb}{\nm{\vb}}$ in accordance with $(\ast)$. This is a continuous function of $\vb$.
+		\begin{enumerate}
+		  \item If $\hat B$ is any other point on the same ray $\ray{OB}$, explain why we get the same value $\beta$.\par
+		  (\emph{$\beta$ is thus a continuous function of $B$})
+		  \item If $B=(x,y)$, what are values $\cos\beta$ and $\sin\beta$?
+		  \item	Suppose $A$ corresponds to $\alpha$ under this identification. Evaluate $\cos(\beta-\alpha)$ and therefore prove that the protractor axiom is satisfied.
+		\end{enumerate}
+		
+		
+		\item Use the cosine rule (Theorem \ref{thm:cosinerule}) to prove that the SAS similarity axiom is satisfied.
+		
+		
+		%\item Think through the list of Birkhoff's axioms and recall our earlier discussions of Euclidean geometry. Where do you think the uniqueness of parallels.
+	\end{enumerate}
+\end{exercises}
+
+\clearpage
+
+\iffalse
 
 \subsection{The Complex Plane}\label{sec:complexplane}
 
 Complex numbers date to 16\th{} century Italy. Their application to geometry really begins with Leonhard Euler (1707--1783) who identified the set of complex numbers $\C$ with the plane (what is now known as the \emph{Argand diagram}).
 
-\begin{defn}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.32\linewidth]{}{complexnumbers}
+\begin{defn}{}{complexnumbers}
 	Let $i$ be an abstract symbol satisfying the property $i^2=-1$.\smallbreak
 	Given real numbers $x,y$, the \emph{complex number} $z=x+iy$ is simply the point $(x,y)$ in the standard Cartesian plane.\footnotemark\smallbreak
 	Given $z=x+iy$, its:\vspace{-5pt}
@@ -747,8 +938,8 @@ Complex numbers date to 16\th{} century Italy. Their application to geometry rea
 	  \item \emph{Modulus} $\nm{z}=\sqrt{z\cl z}=\sqrt{x^2+y^2}$ is its distance from the origin.
 	  \item \emph{Argument} $\arg(z)$ is the angle (measured counter-clockwise) between the positive real axis and the ray $\ray{0z}$. 
 	\end{itemize}
-	\tcblower
-	\flushright\includegraphics[scale=0.9]{complex-argand}
+
+	\hfill\includegraphics[scale=0.9]{complex-argand}
 \end{defn}
 
 \footnotetext{In the language of linear algebra, $\C$ is a vector space over $\R$ with basis $\{1,i\}$.}
@@ -784,18 +975,18 @@ This is the result of \emph{rotating} $z$ counter-clockwise $\frac\pi 2$ radians
 
 Evaluating at $\theta=\pi$ yields the famous \emph{Euler identity} $e^{i\pi}=-1$. Part 1 can be taken as a definition. To see that it is a reasonable definition requires either power series or elementary differential equations, topics best described elsewhere. Part 2 is an exercise.
 
-\goodbreak
 
 
-\begin{defn}[lower separated=false, sidebyside, sidebyside align=top seam, sidebyside gap=0pt, righthand width=0.34\linewidth]{}{}
+
+\begin{defn}{}{}
 	Let $z=x+iy$ be a non-zero complex number.\smallbreak
 	Writing $x=r\cos\theta$ and $y=r\sin\theta$, we obtain the \emph{polar form}
 	\[
 		z=re^{i\theta}=r(\cos\theta+i\sin\theta)
 	\]
 	where $r=\nm z$ is the modulus and $\theta=\arg(z)$ the argument of $z$.
-	\tcblower
-	\flushright\includegraphics{complex-polar}
+	
+	\hfill\includegraphics{complex-polar}
 \end{defn}
 
 Now consider the effect of multiplying a complex number $z=re^{i\phi}$ by $e^{i\theta}=\cos\theta+i\sin\theta$: according to the Lemma
@@ -821,7 +1012,7 @@ which has the same modulus ($r$) as $z$ but a new argument.
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.3\linewidth}\vspace{-15pt}
-		\flushright\includegraphics{complex-rotate}
+		\hfill\includegraphics{complex-rotate}
 	\end{minipage}\medbreak
 	You could try to keep things in polar form, though it doesn't result in a nice answer:
 	\[
@@ -834,7 +1025,7 @@ which has the same modulus ($r$) as $z$ but a new argument.
 
 \begin{minipage}[t]{0.73\linewidth}\vspace{0pt}
 	Reflections may be described by combining rotations with complex conjugation. To reflect across the line making angle $\theta$ with the positive real axis, we rotate the plane so that the reflection appears to be vertical:
-	\begin{enumerate}\itemsep0pt
+	\begin{enumerate}
 	  \item \textcolor{Green}{Rotate} the plane \emph{clockwise} by $\theta$, that is $z\mapsto e^{-i\theta}z$.
 	  \item \textcolor{orange}{Reflect} across the real axis by complex conjugation.
 	  \item \textcolor{blue}{Rotate} counter-clockwise by $\theta$.
@@ -843,7 +1034,7 @@ which has the same modulus ($r$) as $z$ but a new argument.
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.26\linewidth}\vspace{-5pt}
-		\flushright\includegraphics{complex-reflect}
+		\hfill\includegraphics{complex-reflect}
 \end{minipage}
 
 \begin{thm}{}{}
@@ -853,7 +1044,7 @@ which has the same modulus ($r$) as $z$ but a new argument.
 	\]
 \end{thm}
 
-\goodbreak
+
 
 \begin{example}{}{}
 	Reflect $z=-2+3i$ across the line through the origin and $w=\sqrt 3+i$.\smallbreak
@@ -956,14 +1147,15 @@ It is perhaps surprising to modern readers, but complex numbers came before vect
 One reason for the desire to keep the complex number description is that it may be used to describe further (non-isometric) transformations of the plane: for instance $z\mapsto\cl z^{-1}$ is \emph{reflection in a circle}! We'll discuss some of this at the end of Chapter \ref{chap:hyper}.
 
 \begin{exercises}
-	\exstart Use complex numbers to compute the result of the following transformations: you can answer in either standard or polar form.
-	\begin{enumerate}\setcounter{enumi}{1}
+
+	\begin{enumerate}
 	% 	\item[]\begin{enumerate}
 				%\item Express each of the following fractions as complex numbers by rationalizing the denominator (multiplying through by the complex conjugate\ldots)
 	    	%\[\frac 1{2i},\qquad \frac{1+i}{1-i},\qquad \frac 1{2+4i}\]
 	%     \item Prove that $\C$ is closed under multiplicative inverses: i.e., $\forall z\in\C\setminus\{0\}$, prove that $\frac 1z\in\C$.
 	%   \end{enumerate}
-	  \item[]\begin{enumerate}
+		\item Use complex numbers to compute the result of the following transformations: you can answer in either standard or polar form.
+	  \begin{enumerate}
 	    \item Rotate $3-5i$ counter-clockwise around the origin by $\frac{3\pi}4$ radians.
 	    \item Reflect $2-i$ across the line joining $1+i\sqrt 3$ and the origin.
 	    \item Reflect $1+i$ across the line through the origin making angle $\frac\pi 5$ radians with the positive real axis.
@@ -985,8 +1177,10 @@ One reason for the desire to keep the complex number description is that it may 
 	    
 	      
 	  \item By letting $n=3$ in Lemma \ref{lemm:euler}, prove that 
-	  	\[\cos 3\theta=4\cos^3\!\theta-3\cos\theta\]
-	  	Find a corresponding trigonometric identity for $\sin 3\theta$.
+	  \[
+	  	\cos 3\theta=4\cos^3\!\theta-3\cos\theta
+	  \]
+	  Find a corresponding trigonometric identity for $\sin 3\theta$.
 	  	
 	  	
 	  \item Prove part 2 of Lemma \ref{lemm:euler}.\par
@@ -1039,119 +1233,6 @@ One reason for the desire to keep the complex number description is that it may 
 % 	\end{enumerate}
 \end{exercises}
 
-\clearpage
 
-
-\subsection{Birkhoff's Axiomatic System for Analytic Geometry (non-examinable)}
-
-Recall that analytic geometry, as developed by Descartes and Fermat, was originally conceived as a bolt-on to Euclidean geometry. In 1932 George David Birkhoff %\footnote{%
-%	The instructor's great-great-grand-advisor!
-%} 
-provided an axiomatization of analytic geometry in its own right. %
-
-
-\boldinline{Background}
-
-Assume the usual properties/axioms of the real numbers as a complete ordered field. Birkhoff's approach is typical of modern axiomatic systems in that it is built on top of pre-existing systems (set theory, complete ordered fields, etc.).
-
-\boldinline{Undefined terms}
-
-Two objects: \emph{Point, line.} Two functions: \emph{distance $d$, angle measure $\measuredangle$.} If the set of points is $\cS$, then,
-\[
-	d:\cS\times\cS\to\R^+_0,\qquad \measuredangle:\cS\times\cS\times\cS\to [0,2\pi)
-\]
-
-
-\boldinline{Axioms}
-
-\emph{Euclidean}\lstsp Given two distinct points, there exists a unique line containing them.
-\begin{description}%\itemsep0pt
-  \item[\normalfont\emph{Ruler}] Points on a line $\ell$ are in bijective correspondence with the real numbers in such a way that if $t_A,t_B$ correspond to $A,B\in\ell$, then $\nm{t_A-t_B}=d(A,B)$.
-  \item[\normalfont\emph{Protractor}] The rays emanating from a point $O$ are in bijective correspondence with the set $[0,2\pi)$ so that if $\alpha$, $\beta$ correspond to rays $\ray{OA}$, $\ray{OB}$, then $\measuredangle AOB\equiv \beta-\alpha\pmod{2\pi}$. This correspondence is continuous in $A,B$.
-  \item[\normalfont\emph{SAS similarity}]\!\!\footnote{%
-		As with Hilbert, Birkhoff makes SAS an \emph{axiom}: Birkhoff's version is stronger in that it also applies to similar triangles.%
-	}\, If $\triangle ABC$ and $\triangle XYZ$ satisfy $\measuredangle ABC=\measuredangle XYZ$ and $\frac{d(A,B)}{d(X,Y)}=\frac{d(B,C)}{d(Y,Z)}$, then the remaining angles have equal measure and the final sides are in the same ratio (i.e., $\triangle ABC\sim\triangle XYZ$).
-\end{description}
-
-\boldinline{Definitions} As with Hilbert, some of these are required before later axioms make sense. In particular, the definition of \emph{ray} is required before the \emph{protractor} axiom.
-\begin{description}
-	\item[\normalfont\emph{Betweenness}] $B$ lies between $A$ and $C$ if $d(A,B)+d(B,C)=d(A,C)$
-  \item[\normalfont\emph{Segment}] $\overline{AB}$ consists of the points $A,B$ and all those between
-  \item[\normalfont\emph{Ray}] $\ray{AB}$ consists of the segment $\cl{AB}$ and all points $C$ such that $B$ lies between $A$ and $C$.
-  \item[\normalfont\emph{Basic shapes}] Triangles, circles, etc.
-\end{description}
-
-
-
-\boldsubsubsection{Analytic Geometry as a Model}
-
-The axioms should feel familiar. Being shorter than Hilbert's list, and being built on familiar notions such as the real line, it is somewhat easier for us to understand what the axioms are saying and to visualize them. There is something to \emph{prove} however; indeed the major point of Birkhoff's system!
-
-\begin{thm}{}{}
-	Cartesian analytic geometry is a model of Birkhoff's axioms.
-\end{thm}
-
-Recall what this requires: we must provide a \emph{definition} of each of the undefined terms and prove that these satisfy each of Birkhoff's axioms. Here are suitable definitions for Cartesian analytic geometry:
-\begin{description}
-	\item[\normalfont\emph{Point}] An ordered pair $(x,y)$ of real numbers.
-	\item[\normalfont\emph{Distance}] $d(A,B)=\sqrt{(A_x-B_x)^2+(A_y-B_y)^2}$
-	\item[\normalfont\emph{Line}] All points satisfying a linear equation $ax+by+c=0$.
-	\item[\normalfont\emph{Angle}] Define column vectors as differences ($\vv=P-O$ and $\vw=Q-O$) and consider the matrix $J=
-	\begin{smatrix}
-		0&-1\\
-		1&0
-	\end{smatrix}$. 
-	Now define angle via
-	\[
-		\cos\measuredangle POQ=\frac{\vv\cdot\vw}{\nm{\vv}\nm{\vw}}
-		\quad\text{where}\quad
-		\measuredangle POQ\in
-		\begin{cases}
-			[0,\pi]&\iff\vw\cdot J\vv\ge 0\\
-			(\pi,2\pi)&\iff\vw\cdot J\vv< 0
-		\end{cases}
-		\tag{$\ast$}
-	\]
-	In essence $J$ is `rotate counter-clockwise by $\frac\pi 2$.' Cosine may be defined using power series, so no pre-existing geometric meaning is necessary.
-\end{description}
-
-\begin{proof}
-	(Euclidean axiom)\quad If $(x_1,y_1)$ and $(x_2,y_2)$ satisfy $ax+by+c=0$ then
-	\[
-		a(x_1-x_2)+b(y_1-y_2)=0
-	\]
-	whence $a=y_1-y_2$, $b=x_2-x_1$ up to scaling. It follows that the line has equation
-	\[
-		(y_1-y_2)x+(x_2-x_1)y+x_1y_2-x_2y_1=0
-	\]
-	unique up to multiplication of all three of $a,b,c$ by a non-zero constant.\smallbreak
-	The remaining axioms are exercises.
-\end{proof}
-
-
-\begin{exercises}
-	\exstart Prove that the ruler axiom is satisfied:
-	\begin{enumerate}\setcounter{enumi}{1}
-	  \item[]\begin{enumerate}
-	    \item First show that if $P\neq Q$ lie on $\ell$, then any point $A$ on the line has the form
-			\[
-				A=P+\frac{t_A}{d(P,Q)}(Q-P)
-				\qquad\text{where }
-				t_A\in\R
-			\]
-			\item Use this formula to verify that $d(A,B)^2=(t_A-t_B)^2$.
-		\end{enumerate}
-		
-		\item Let $\vi=\stwovec 10$. Given any non-zero point $B$, define $\vb=B-O$ and let $\beta=\cos^{-1}\frac{\vi\cdot\vb}{\nm{\vb}}$ in accordance with $(\ast)$. This is a continuous function of $\vb$.
-		\begin{enumerate}
-		  \item If $\hat B$ is any other point on the same ray $\ray{OB}$, explain why we get the same value $\beta$.\par
-		  (\emph{$\beta$ is thus a continuous function of $B$})
-		  \item If $B=(x,y)$, what are values $\cos\beta$ and $\sin\beta$?
-		  \item	Suppose $A$ corresponds to $\alpha$ under this identification. Evaluate $\cos(\beta-\alpha)$ and therefore prove that the protractor axiom is satisfied.
-		\end{enumerate}
-		
-		\item Use the cosine rule (Theorem \ref{thm:cosinerule}) to prove that the SAS similarity axiom is satisfied.
-	\end{enumerate}
-\end{exercises}
 
 \fi

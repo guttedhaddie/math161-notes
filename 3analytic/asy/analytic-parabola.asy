@@ -15,7 +15,7 @@ pen lGreen=rgb("00a000");
 import graph;
 import markers;
 
-size(140);
+size(145);
 
 real a=0.3;
 
@@ -42,5 +42,6 @@ draw(graph(y,-1,1),blue);
 dot("$F$",F,SE);
 
 dot("$P$",P,dir(100));
+dot("$Q$",Q,S);
 
 draw(box(Q,Q+(-0.1,0.1)));
