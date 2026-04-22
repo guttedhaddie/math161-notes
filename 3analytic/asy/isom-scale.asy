@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 import markers;
 
@@ -21,13 +28,13 @@ pair gX=t*gQ;
 
 draw(gQ--O--Q);
 draw(scale(abs(t))*unitcircle,dashed+blue);
-draw(shift(Q)*scale(abs(t-1))*unitcircle,dashed+heavygreen);
+draw(shift(Q)*scale(abs(t-1))*unitcircle,dashed+lGreen);
 draw(O--Q);
-draw(shift(gQ)*scale(abs(t-1))*unitcircle,dashed+heavygreen);
+draw(shift(gQ)*scale(abs(t-1))*unitcircle,dashed+lGreen);
 
 draw("$|r|$",t*dir(120)--O,blue);
-draw("$|1-r|$",Q--Q+abs(t-1)*dir(110),heavygreen);
-draw("$|1-r|$",gQ--gQ+abs(t-1)*dir(150),heavygreen);
+draw("$|1-r|$",Q--Q+abs(t-1)*dir(110),lGreen);
+draw("$|1-r|$",gQ--gQ+abs(t-1)*dir(150),lGreen);
 
 dot(Label("$O$",black),O,SW,red);
 dot(Label("$Q$",black),Q,SE,red);

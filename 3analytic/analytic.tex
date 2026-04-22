@@ -206,7 +206,7 @@ The analytic proof relied on adding points as abstract objects, though we could 
 
 \subsection{Angles and Trigonometry}\label{sec:analyticangle}
 
-Angles are defined differently to Section \ref{sec:similar}, though the approach should feel familiar. %We use radians, angles are \emph{oriented} and may be \emph{reflex} (larger than a straight edge). 
+Angles are defined differently to Section \ref{sec:similar}, though the approach should feel familiar.
 
 \begin{defn}{}{}
 	Suppose $A,B,C$ are distinct points in the plane. Take any \textcolor{blue}{circular arc} centered at $A$ and define the \emph{radian measure}\par
@@ -421,26 +421,21 @@ The picture provides a simple proof of the expressions\par
 		
 		\item Use a multiple angle formula to find an exact value for $\cos\frac{\pi}{12}$ and thus exact values for the side lengths of the triangle in Example \ref*{ex:trisolve}.\ref{ex:trisolve2}.
 		
-		
-		\item The area of a triangle is $\frac 12$(base)$\cdot$(height). By using each side of the triangle alternately as the `base,' find an alternative proof of the sine rule without the relationship to the circumcircle. 
-		
-		
-		\item You are given SSA data for a triangle: sides with lengths $a=1$ and $b=\sqrt 3$ and angle $\alpha=\frac\pi 6$. Show that there are \emph{two} triangles satisfying this data. Can you generalize to general SSA data?
+
+		\item The area of a triangle is $\frac 12$(base)$\cdot$(height). Repeatedly apply this formula to find an alternative proof of the sine rule without the relationship to the circumcircle. 
 		 
 
 		\item\label{exs:cosrule}
 		Given $\triangle ABC$, drop a perpendicular from $B$ to $D\in\lin{AC}$ as shown.\par
 		\begin{minipage}[t]{0.7\linewidth}\vspace{-4pt}
 			\begin{enumerate}\itemsep1pt
-				\item Use Pythagoras' to give an alternative proof of the sine rule (without the diameter conclusion).
-				  
-				\item Using the same approach, construct a proof of the cosine rule.
+				\item Use Pythagoras' to construct a proof of the cosine rule.
 			 		
-			 	\item Are your arguments valid if $D$ is not interior to $\cl{AC}$? Explain.
+			 	\item Is your arguments valid if $D$ is not interior to $\cl{AC}$? Explain.
 			\end{enumerate}
 		\end{minipage}
 		\hfill
-		\begin{minipage}[t]{0.29\linewidth}\vspace{-15pt}
+		\begin{minipage}[t]{0.29\linewidth}\vspace{-25pt}
 			\hfill\includegraphics[alt={proving the cosine rule by dropping a perpendicular}]{angles-cosrule}
 		\end{minipage}
 
@@ -463,6 +458,12 @@ The picture provides a simple proof of the expressions\par
 		\begin{minipage}[t]{0.29\linewidth}\vspace{-8pt}
 			\hfill\includegraphics[alt={computing cosine of 36 degrees}]{angles-sin36}
 		\end{minipage}
+				
+		
+		\item\begin{enumerate}
+		  \item You are given SSA data for a triangle: sides with lengths $a=1$ and $b=\sqrt 3$ and angle $\alpha=\frac\pi 6$. Show that there are \emph{two} triangles satisfying this data.
+		  \item (Hard) \ Suppose you are given (positive) SSA data $a,b,\alpha$. Show that this data corresponds to at least one real triangle if and only if $0<\frac ba\sin\alpha\le 1$. By considering fixed values of $b,\alpha$ and increasing $a$ from zero, explain how the possible number of triangles depends on $a,b,\alpha$.
+		\end{enumerate}
 	\end{enumerate}
 \end{exercises}
 
@@ -473,7 +474,7 @@ The picture provides a simple proof of the expressions\par
 
 \subsection{Isometries}\label{sec:klein}
 
-At the heart of elementary geometry is \emph{congruence}, the idea that geometric figures can be essentially the same by without necessarily being equal. In analytic geometry, congruence is described algebraically using \emph{functions}. This is motivated by the fact that congruent segments have the same length.
+At the heart of elementary geometry is \emph{congruence}, the idea that geometric figures that 'line up' when laid on top of each other are essentially identical. In analytic geometry, congruence is described algebraically using \emph{functions}. Everything is motivated by the fact that congruent segments have the same length.
 
 \begin{defn}{}{}
 	A function $f:\R^2\to\R^2$ is a \emph{(Euclidean) isometry} if it preserves lengths:\footnotemark
@@ -509,41 +510,56 @@ Isometric segments are certainly congruent. We should make sure the same holds f
 	Since $f$ is an isometry, the sides of $\triangle PQR$ and $\triangle f(P)f(Q)f(R)$ are mutually congruent in pairs. The SSS triangle congruence theorem says that the angles are also mutually congruent.
 \end{proof}
 
-This helps justify the term \emph{congruent} in the Definition. Examples \ref{ex:isomexs} and Exercise \ref{exs:isocong} expand this idea.
+The Lemma makes clear that isometries are precisely the functions which describe congruence. Examples \ref{ex:isomexs} and Exercise \ref{exs:isocong} expand this idea.
 
 \begin{example*}{\ref{ex:isomsetup}, cont}{}
-	\textcolor{red}{Warning}: Isometries can \emph{reverse orientation}! In the picture,
-	\[
-		\measuredangle ABC=\textcolor{Green}{\frac\pi 2}
-		\quad\text{but}\quad
-		\measuredangle f(A)f(B)f(C)=\textcolor{Green}{\frac{3\pi}2}=2\pi-\measuredangle ABC
-	\]
-
+	\textcolor{mRed}{\textbf{Warning}}: Isometries can \emph{reverse orientation}! In the picture,\par
+	\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}
+		\begin{itemize}
+		  \item $\angle ABC\cong\angle f(A)f(B)f(C)$ are both right-angles.
+		  \item $\measuredangle ABC=\mathcolor{mGreen}{\frac\pi 2} \neq \measuredangle f(A)f(B)f(C)=\mathcolor{mMagenta}{\frac{3\pi}2}$
+		\end{itemize}
+		The radian measure changed because orientation-reversal flipped counter-clockwise to clockwise!
+	\end{minipage}
 	\hfill
-	\includegraphics{isom-refl2}
+	\begin{minipage}[t]{0.39\linewidth}\vspace{0pt}
+		\hfill
+		\includegraphics[alt={an isometry can change the measured angle}]{isom-refl2}
+	\end{minipage}
 \end{example*}
 
-Our next task is to confirm our intuition that isometries are rotations, reflections and translations. Given an isometry $f$, define $g(X)=f(X)-f(O)$, where $O$ is the origin. Then $g$ is an isometry
-\[
-	g(P)-g(Q)=f(P)-f(Q)\implies d\bigl(g(P),g(Q)\bigr)=d\bigl(f(P),f(Q)\bigr)=\nm{PQ}
-\]
-which moreover \emph{fixes the origin}: $g(O)=O$. We conclude that every isometry $f$ is the composition of an \emph{origin-preserving} isometry $g$ followed by a \emph{translation} ``$+C$:''
-\[
-	f(X)=g(X)+C
-\]
+
+\pagebreak[3]
 
 
+\subsubsection*{Classification of Isometries}
 
-It thus suffices to describe the origin-preserving isometries $g$. For these, we make two observations.
+Our next goal is to confirm our intuition that isometries are rotations, reflections and translations. We start by separating off the translations.
+
+\begin{lemm}{}{}
+	Suppose $f$ is an isometry. Then $g(X):=f(X)-f(O)$ is an \emph{origin-preserving} isometry. Otherwise said, every isometry $f$ may be written uniquely as a combination
+	\[
+		f(X)=g(X)+C
+	\]
+	where $g$ is an isometry which fixes the origin ($g(O)=O$) and $C=f(O)$ performs a \emph{translation}. 
+\end{lemm}
+
+\begin{proof}
+	Plainly $g(O)=O$. For the rest, just compute:
+	\[
+		g(P)-g(Q)=f(P)-f(Q)\implies d\bigl(g(P),g(Q)\bigr)=d\bigl(f(P),f(Q)\bigr)=\nm{PQ}\tag*{\qedhere}
+	\]\vspace{-10pt}
+\end{proof}
+
+It thus suffices to describe the origin-preserving isometries $g$. For these, we make two informal observations that essentially evaluate $g$ in polar co-ordinates..
 \begin{enumerate}
-	\item\label{affinity} Suppose $\nm{OQ}=1$ and let $X_r=rQ$ for some $r\in\R$. Then\par
-	  
+	\item\label{affinity} (Scalar Multiplication)\lstsp Suppose $\nm{OQ}=1$ and let $X_r=rQ$ for some $r\in\R$. Then,\par
 	\begin{minipage}[t]{0.68\linewidth}\vspace{0pt}
 	  \begin{itemize}
-	    \item $g(X_r)$ is a distance $\textcolor{blue}{\nm r=\nm{OX_r}}$ from the origin $O=g(O)$.
-	    \item $g(X_r)$ is a distance $\textcolor{Green}{\nm{1-r}=\nm{QX_r}}$ from $g(Q)$.
+	    \item $g(X_r)$ is a distance $\mathcolor{Blue}{\nm r=\nm{OX_r}}$ from the origin $O=g(O)$.
+	    \item $g(X_r)$ is a distance $\mathcolor{mGreen}{\nm{1-r}=\nm{QX_r}}$ from $g(Q)$.
 	  \end{itemize}
-	  $g(X_r)$ therefore lies on two circles, which necessarily intersect at a single point. We conclude that
+	  The point $g(X_r)$ therefore lies on two circles, which necessarily intersect at a single point. We conclude that
 	  \[
 	  	g(rQ)=rg(Q)
 	  \]
@@ -551,41 +567,44 @@ It thus suffices to describe the origin-preserving isometries $g$. For these, we
 	  $1=\nm r+\nm{1-r}$.
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.31\linewidth}\vspace{0pt}
-		\hfill\includegraphics[scale=0.95]{isom-scale}
+	\begin{minipage}[t]{0.31\linewidth}\vspace{-15pt}
+		\hfill\includegraphics[alt={showing that g preserves scalar multiplication}]{isom-scale}
 	\end{minipage}
 
-	\item $g(1,0)$ lies on the unit circle and therefore has the form\par
-	\begin{minipage}[t]{0.64\linewidth}\vspace{0pt}
+	\item The point $g(1,0)$ necessarily lies on the unit circle, and therefore has the form\par
+	\begin{minipage}[t]{0.68\linewidth}\vspace{-15pt}
 		\[
 			g(1,0)=S_\theta:=\bigl(\cos\theta,\sin\theta\bigr)
 		\]
-		for some $\theta\in[0,2\pi)$. By preservation of length and angle (Lemma \ref{lemm:isomlinepreserve}), any other point $S_\phi=(\cos\phi,\sin\phi)$ on the unit circle must be mapped to one of two points
+		for some $\theta\in[0,2\pi)$.\par
+		By preservation of length and angle (Lemma \ref{lemm:isomlinepreserve}), any other point $S_\phi=(\cos\phi,\sin\phi)$ on the unit circle must be mapped to the unit circle in such a way that $\measuredangle S_\theta Og(S_\phi)=\pm\phi$.\par
+		Precisely two points satisfy this condition:
 		\[
-			g(\textcolor{blue}{S_\phi})=\textcolor{Green}{S_{\theta\pm\phi}} =\bigl(\cos(\theta\pm\phi),\sin(\theta\pm\phi)\bigr)
+			g(\mathcolor{Blue}{S_\phi})=\mathcolor{mGreen}{S_{\theta\pm\phi}} =\bigl(\cos(\theta\pm\phi),\sin(\theta\pm\phi)\bigr)
 		\]
-		The angle $\phi$ is therefore transferred to one side of the ray $\ray{OS_\theta}$.
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.34\linewidth}\vspace{0pt}
-		\hfill\includegraphics[scale=0.95]{isom-rot2}
+	\begin{minipage}[t]{0.31\linewidth}\vspace{-10pt}
+		\hfill\includegraphics[alt={evaluating g on the unit circle}]{isom-rot2}
 	\end{minipage}
 \end{enumerate}
 
-By writing $X=rS_\phi=(r\cos\phi,r\sin\phi)$ in polar co-ordinates and combining the above observations, we conclude that $g$ has one of two forms:
+Now we put everything together. Express a general point $X=rS_\phi=(r\cos\phi,r\sin\phi)$ in polar co-ordinates and combine the above observations to see that $g$ has one of two forms:
 \begin{center}
+	\tagpdfsetup{table/header-rows={2}}
 	\begin{tabular}{c@{\qquad}c}
-		\includegraphics[scale=0.95]{isom-rot}
+		\includegraphics[alt={rotation around the origin}]{isom-rot}
 		&
-		\includegraphics[scale=0.95]{isom-refl}\\
+		\includegraphics[alt={reflection across a line through the origin}]{isom-refl}\\
 		Rotation counter-clockwise by $\theta$
 		&
-		Reflection across the \textcolor{Magenta}{line} making
+		Reflection across the \textcolor{mMagenta}{line} making
 		\\
 		&
 		angle $\frac\theta 2$ with the positive $x$-axis
 	\end{tabular}
 \end{center}
+Finally we combine with the Lemma to conclude:
 
 \begin{thm}{}{}
 	Every isometry of $\R^2$ has the form
@@ -600,7 +619,7 @@ By writing $X=rS_\phi=(r\cos\phi,r\sin\phi)$ in polar co-ordinates and combining
 
 \subsubsection*{Calculating with isometries}
 
-This benefits from column-vector notation and matrix multiplication. Writing $\vx=\smash{\stwovec xy =\stwovec{r\cos\phi}{r\sin\phi}}$ for the position vector of $X_r=(x,y)=rS_\phi$ and applying the multiple-angle formulæ, rotation becomes
+This benefits enormously from column-vector notation and matrix multiplication. Writing $\vx=\smash{\stwovec xy =\stwovec{r\cos\phi}{r\sin\phi}}$ for the position vector of $X_r=(x,y)=rS_\phi$ and applying the multiple-angle formulæ, rotation by $\theta$ becomes
 \begin{align*}
 	g(\vx)&= r\twovec{\cos(\theta+\phi)}{\sin(\theta+\phi)} =r\twovec{\cos\theta\cos\phi-\sin\theta\sin\phi}{\sin\theta\cos\phi+\cos\theta\sin\phi} =
 	\begin{pmatrix}
@@ -613,7 +632,7 @@ $\begin{smatrix}
 	\cos\theta&\sin\theta\\
 	\sin\theta&-\cos\theta
 \end{smatrix}$.
-Every isometry therefore has the form $f(\vx)=A\vx+\vc$ where $A$ is an \emph{orthogonal matrix.\footnote{An orthogonal matrix satisfies $A^TA=I$. All such have the form 
+In vector notation, every isometry therefore has the form $f(\vx)=A\vx+\vc$ where $A$ is an \emph{orthogonal matrix.\footnote{An orthogonal matrix satisfies $A^TA=I$. All such have the form 
 $\begin{smatrix}
 	\cos\theta&\mp\sin\theta\\
 	\sin\theta&\pm\cos\theta
@@ -625,10 +644,8 @@ $\begin{smatrix}
 \end{smatrix}$
 where $a^2+b^2=1$.}}
 
-\begin{examples}{}{isomexs}
-
-	\begin{enumerate}
-		\item\label{ex:isomexs2}	We revisit Example \ref{ex:isomsetup} in matrix format:
+\begin{example*}{\ref{ex:isomsetup}, mk.\,III}
+	We rewrite the isometry in vector/matrix format:
 	\[
 		f(\vx)=\frac 15\twovec{3x+4y}{4x-3y}+\twovec 31 =\frac 15
 		\begin{pmatrix}
@@ -637,64 +654,70 @@ where $a^2+b^2=1$.}}
 		\end{pmatrix}
 		\twovec xy+\twovec 31
 	\]
-	Since $\frac{\sin\theta}{\cos\theta}=\frac{4/5}{3/5}=\frac 43$, we see that its effect is to \emph{reflect} across the line through the origin making angle $\frac 12\tan^{-1}\frac 43\approx \ang{26.6}$ with the positive $x$-axis, before \emph{translating} by $(3,1)$. $\triangle_a$ has vertices $(0,0),(1,0),(2,-1)$ and is congruent to $\triangle_b$, two of whose vertices are $(1,2)$ and $(1,3)$. Find all isometries transforming $\triangle_a$ to $\triangle_b$ and the location(s) of the third vertex of $\triangle_b$.\smallbreak
-	Let $f=A\vx+\vc$ be the isometry. Since $d\bigl((1,2),(1,3)\bigr)=1$ these points must be the images under $f$ of $(0,0)$ and $(1,0)$. There are \emph{four} distinct isometries:
-	\smallbreak
-	Cases 1,\,2:\lstsp If $f(0,0)=(1,2)$ and $f(1,0)=(1,3)$, then $\vc=f\stwovec 00=\stwovec 12$ and\par
-	\begin{minipage}[t]{0.76\linewidth}\vspace{-10pt}
-	  \begin{gather*}
-	  	%\vc=f\twovec 00=\twovec 12,\quad 
-	  	A\twovec 10+\vc=\twovec 13\implies A\twovec 10=\twovec 01   \implies A=
-	  	\begin{pmatrix}
-	 		0&a_{12}\\
-	  	1&a_{22}
-	  	\end{pmatrix}
-	  \end{gather*}
-	  for some $a_{12},a_{22}$. Since $A$ is orthogonal, the options are $A=
-	  \begin{smatrix}
-	  	0&\mp 1\\
-	  	1&0
-	  \end{smatrix}$
-	  and we obtain two possible isometries:
-	  \begin{itemize}
-	    \item $\textcolor{blue}{f_1(\vx)=
-	    \begin{smatrix}
-	  		0&-1\\
-	  		1&0
-	    \end{smatrix}
-	    \vx+\stwovec 12}$ rotates by \ang{90}, then translates by $\stwovec 12$.
-	  	\item $\textcolor{Green}{f_2(\vx)=
-	  	\begin{smatrix}
-	  		0&1\\
-	  		1&0
-	  	\end{smatrix}
-	  	\vx+\stwovec 12}$ reflects across $y=x$, then translates by $\stwovec 12$.
+	Since $\frac{\sin\theta}{\cos\theta}=\frac{4/5}{3/5}=\frac 43$, we see that the effect of the isometry is first to \emph{reflect} across the line through the origin making angle $\smash{\frac 12\tan^{-1}\frac 43\approx \ang{26.6}}$ with the positive $x$-axis, before \emph{translating} by $(3,1)$. Compare this description with the original picture!
+\end{example*}
+
+\begin{example}{}{isomexs}
+	Suppose we have two congruent triangles:
+	\begin{itemize}
+	  \item $\triangle_a$ has vertices $(0,0)$, $(1,0)$ and $(2,-1)$.
+	  \item $\triangle_b$ has vertices $(1,2)$, $(1,3)$ and an unknown point $P$. 
+	\end{itemize}
+	We find all isometries transforming $\triangle_a$ to $\triangle_b$ and the location(s) of the third vertex of $\triangle_b$.\smallbreak
+	Let $f(\vx)=A\vx+\vc$ be the isometry. Since $d\bigl((1,2),(1,3)\bigr)=1$ these points must be the images under $f$ of $(0,0)$ and $(1,0)$. There are \emph{four} possibilities:\par
+	\begin{minipage}[t]{0.76\linewidth}\vspace{0pt}
+		\begin{itemize}
+	  	\item If $f(0,0)=(1,2)$ and $f(1,0)=(1,3)$, then $\vc=f\stwovec 00=\stwovec 12$ and
+			\begin{gather*}
+		  	A\twovec 10+\vc=\twovec 13\implies A\twovec 10=\twovec 01   \implies A=
+		  	\begin{pmatrix}
+		 			0&a_{12}\\
+		  		1&a_{22}
+		  	\end{pmatrix}
+		  \end{gather*}
+		  for some $a_{12},a_{22}$. Since $A$ is orthogonal, the options are $A=
+		  \begin{smatrix}
+		  	0&\mp 1\\
+		  	1&0
+		  \end{smatrix}$
+		  and we obtain two possible isometries:
+		  \begin{itemize}
+		    \item[] $\mathcolor{Blue}{f_1(\vx)=
+		    \begin{smatrix}
+		  		0&-1\\
+		  		1&0
+		    \end{smatrix}
+		    \vx+\stwovec 12}$ rotates by \ang{90}, then translates by $\stwovec 12$.
+		  	\item[] $\mathcolor{mGreen}{f_2(\vx)=
+		  	\begin{smatrix}
+		  		0&1\\
+		  		1&0
+		  	\end{smatrix}
+		  	\vx+\stwovec 12}$ reflects across $y=x$, then translates.
+		  \end{itemize}
+	  	The third point of $\triangle_b$ is either \textcolor{Blue}{$f_1(2,-1)=(2,4)$} or \textcolor{mGreen}{$f_2(2,-1)=(0,4)$}.
+	  	\item $f(0,0)=(1,3)$ and $f(1,0)=(1,2)$ results in two further isometries $\textcolor{Brown}{f_3}$ and $\textcolor{DarkOrchid}{f_4}$. The details are an exercise.
 	  \end{itemize}
-	  The third point of $\triangle_b$ is \textcolor{blue}{$f_1(2,-1)=(2,4)$} or \textcolor{Green}{$f_2(2,-1)=(0,4)$}.\medbreak
-	  Cases 3,\,4: $f(0,0)=(1,3)$ and $f(1,0)=(1,2)$ results in two further isometries $\textcolor{orange}{f_3}$ and $\textcolor{Purple}{f_4}$. The details are an exercise.\medbreak
-	  All four possible triangles $\triangle_b$ are drawn in the picture.
-	  \end{minipage}
-	  \hfill
-	  \begin{minipage}[t]{0.23\linewidth}\vspace{-10pt}
-	  	\hfill\includegraphics[scale=0.95]{isom-ex}
-	  \end{minipage}
-	\end{enumerate}
-\end{examples}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.23\linewidth}\vspace{-10pt}
+	  \hfill\includegraphics[alt={all possible isometries that map a segment to a given location}]{isom-ex}
+	\end{minipage}
+\end{example}
 
 
+\subsubsection*{Isometries and Group Theory}
 
-In 1872, Felix Klein suggested that the geometry of a set is the study of its \emph{invariants}: properties preserved by its \emph{group} of structure-preserving transformations. In Euclidean geometry, this is the group of \emph{Euclidean isometries} (Exercise \ref{exs:kleingroup}). Klein's approach provided a method for analyzing and comparing the non-Euclidean geometries beginning to appear in the late 1800s. By the mid 1900s, the resulting theory of \emph{Lie groups} had largely classified classical geometries. Klein's algebraic approach remains dominant in modern mathematics and physics research.
-
-
-
+In 1872, Felix Klein suggested that the geometry of a set is the study of its \emph{invariants}: properties preserved by its structure-preserving transformations. In Euclidean geometry, this is the group of \emph{Euclidean isometries} (Exercise \ref{exs:kleingroup}). Klein's approach provided a method for analyzing and comparing the non-Euclidean geometries beginning to appear in the late 1800s. By the mid 1900s, the resulting theory of \emph{Lie groups} had largely classified classical geometries. Klein's algebraic take on geometry remains dominant in modern mathematics.
 
 
 \begin{exercises}
-
+	\hangindent\leftmargini\emph{Key concepts: \ Isometries are congruence as functions, \ Rotations, Reflections \& Translations, \ Computation using orthogonal matrices}
 	
 	\begin{enumerate}
-		\item Let $f:\R^2\to\R^2$ be the isometry, ``reflect across the line through the origin making angle $\frac\pi 3$ with the positive $x$-axis.'' Find a $2\times 2$ matrix $A$ such that $f(\vx)=A\vx$.
+		\item We saw that every isometry (length-preserving map) also preserves angles. Is the opposite true? Does an angle-preserving map necessarily preserve lengths? Explain.
 		
+		\item Let $f:\R^2\to\R^2$ be the isometry, ``reflect across the line through the origin making angle $\frac\pi 3$ with the positive $x$-axis.'' Find a $2\times 2$ matrix $A$ such that $f(\vx)=A\vx$.
 		
 	  \item Describe the geometric effect of the isometry $f(\vx)=\frac 12
 	  \begin{smatrix}
@@ -703,34 +726,16 @@ In 1872, Felix Klein suggested that the geometry of a set is the study of its \e
 	  \end{smatrix}
 	  \vx+\stwovec 3{-2}$
 	  
-	  
-	% 	\item\label{exs:orthclosed} Following the notation in Theorem \ref{thm:orthmatrix}
-	% 		\begin{enumerate}
-	% 		  \item Verify that $A_\theta A_\phi=A_{\theta+\phi}$ so that the composition of two rotations is a rotation. Do the same thing for the other combinations: $A_\theta B_\phi$, $B_\theta A_\phi$ and $B_\theta B_\phi$.
-	% 		  \item Prove that every reflection has the form $A_\theta\begin{smatrix}
-	% 			1&0\\0&-1
-	% 		  \end{smatrix}A_{-\theta}=A_\theta B_0 A_\theta^{-1}$ for some $\theta$.
-	% 		\end{enumerate}
-	
-	
-		\item Find the remaining isometries $f_3,f_4$ and the third points of $\triangle_b$ in Exercise \ref*{ex:isomexs}.\ref{ex:isomexs2}.
-		
+		\item Find the remaining isometries $f_3$ and $f_4$ in Example \ref{ex:isomexs}.
 		
 		\item Find the reflection of the point $(4,1)$ across the line making angle $\frac 12\tan^{-1}\frac{12}5\approx \ang{33.7}$ with the positive $x$-axis.\par
 		(\emph{Hint: if $\tan\theta=\frac{12}5$, what are $\cos\theta$ and $\sin\theta$?})
 		
-	  
 	  \item An origin-preserving isometry $f(\vv)=A\vv$ moves the point $(7,4)$ to $(-1,8)$.
 	  \begin{enumerate}
 	    \item If $f$ is a rotation, find the matrix $A$. Through what angle does it rotate?
 	    \item If $f$ is a reflection, find the matrix $A$. Across which line does it reflect?
 	  \end{enumerate}
-	  
-	%  	\item Let $A=\begin{smatrix}
-	%  	p&r\\
-	%  	q&s
-	%  	\end{smatrix}$ be an orthogonal matrix. Prove that all four entries are \emph{non-zero rational} numbers if and only if there exist integers $a,b,c$ such that $p=\frac ac$ and $q=\frac bc$ where $(\nm a,\nm b,c)$ is a Pythagorean triple.
-	
 	  
 	  \item Let $ABCD$ be the rectangle with vertices $A=(0,0)$, $B=(4,0)$, $C=(4,3)$, $D=(0,3)$.
 		Suppose an isometry $f:\R^2\to\R^2$ maps $ABCD$ to a new rectangle $PQRS$ where
@@ -753,16 +758,13 @@ In 1872, Felix Klein suggested that the geometry of a set is the study of its \e
 			\end{enumerate}
 		\end{enumerate}
 		
+		\item\label{exs:isocong} (Hard) \ Suppose $\triangle ABC\cong\triangle PQR$. Prove that there exists an isometry $f:\R^2\to\R^2$ mapping one triangle to the other. How many distinct such isometries could there be, and how does this number depend on the triangles?
 		
-		\item\label{exs:isocong} Suppose $\triangle ABC\cong\triangle PQR$. Prove that there exists an isometry $f:\R^2\to\R^2$ mapping one triangle to the other. How many distinct such isometries could there be, and how does this number depend on the triangles?
-		
-		
-		\item Make an argument involving circle intersections (see page \pageref{affinity}) to prove that for any isometry $f$,
+		\item Make a circle-intersection argument (page \pageref{affinity}) to prove that for any isometry $f$,
 		\[
 			f\bigl((1-t)P+tQ\bigr)=(1-t)f(P)+tf(Q)
 		\]
 	
-	  
 	  \item\label{exs:kleingroup} Throughout this question, we use the notation $f_{A,\vc}:\vx\mapsto A\vx+\vc$.
 	  \begin{enumerate}
 	    \item Prove that isometries obey the composition law $f_{A,\vc}\circ f_{B,\vd}=f_{AB,\vc+A\vd}$.
@@ -772,7 +774,7 @@ In 1872, Felix Klein suggested that the geometry of a set is the study of its \e
 		\emph{Part (a) can be written using augmented matrices: $(A\,|\,\vc)(B\,|\,\vd):=(AB\,|\,\vc+A\vd)$.\\
 		If you know group theory, parts (a) and (b) are the closure and inverse properties for the group of Euclidean isometries $E$. Part (c) says that the translations $T$ form a normal subgroup; $E$ is therefore a semi-direct product of $T$ and the orthogonal group of origin-preserving isometries $E=T\rtimes O_2(\R)$.
 		}
-	
+
 	\end{enumerate}
 \end{exercises}
 
@@ -821,7 +823,7 @@ Birkhoff has four axioms (in addition to those required for the real numbers, et
   This correspondence is continuous in $A$ and $B$.
   
   \item[\normalfont\emph{SAS similarity}]\!\!\footnote{%
-		As with Hilbert, Birkhoff makes SAS an \emph{axiom}: Birkhoff's version is stronger in that it also applies to similar triangles.%
+		As with Hilbert, Birkhoff makes SAS an \emph{axiom}, though Birkhoff's version is stronger in that it also applies to similar triangles. SAS \emph{congruence} is the special case where the similarity ratio is 1.%
 	}\, If $\triangle ABC$ and $\triangle XYZ$ satisfy
 	\[
 		\measuredangle ABC=\measuredangle XYZ,\quad\text{and}\quad
@@ -873,7 +875,7 @@ Recall what this requires: we must provide a \emph{definition} of each of the un
 		\end{cases}
 		\tag{$\ast$}
 	\]
-	In essence $J$ is `rotate counter-clockwise by $\frac\pi 2$.' Cosine may be defined using power series, so no pre-existing geometric meaning is necessary.
+	In essence $J$ is rotate counter-clockwise by $\frac\pi 2$. Cosine may be defined using power series, so no pre-existing geometric meaning is necessary.
 \end{description}
 
 \begin{proof}
@@ -891,6 +893,7 @@ Recall what this requires: we must provide a \emph{definition} of each of the un
 
 
 \begin{exercises}
+\hangindent\leftmargini\emph{Key concepts: \ Analytic geometry as an axiomatic system}
 
 	\begin{enumerate}
 		\item Prove that the ruler axiom is satisfied:
@@ -917,7 +920,8 @@ Recall what this requires: we must provide a \emph{definition} of each of the un
 		\item Use the cosine rule (Theorem \ref{thm:cosinerule}) to prove that the SAS similarity axiom is satisfied.
 		
 		
-		%\item Think through the list of Birkhoff's axioms and recall our earlier discussions of Euclidean geometry. Where do you think the uniqueness of parallels.
+		\item (Hard) \ Can you see where uniqueness of parallels comes from in Birkhoff's system? Can you give a proof of this fact, or that the sum of the angles in a triangle is $\pi$ radians?
+		% protractor axiom says $\exists$ ray meeting point 1 to E or intersection making any angle. Now scale to off-line point. SAS sim says get triangle with arbitrary angle at said poin, so not parallel.
 	\end{enumerate}
 \end{exercises}
 

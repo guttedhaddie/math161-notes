@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 import markers;
 
@@ -22,10 +29,10 @@ transform TTTT=(1,3,0,-1,-1,0);
 path p=P--Q--R--cycle;
 
 draw(p,linewidth(1));
-draw(T*p,blue+linewidth(1));
-draw(TT*p,heavygreen+linewidth(1));
-draw(TTT*p,orange+linewidth(1));
-draw(TTTT*p,purple+linewidth(1));
+draw(T*p,Blue+linewidth(1));
+draw(TT*p,lGreen+linewidth(1));
+draw(TTT*p,Brown+linewidth(1));
+draw(TTTT*p,DarkOrchid+linewidth(1));
 draw((1,2)--(1,3),black+linewidth(1));
 
 xaxis(0,2.0,red,RightTicks(new real[]{1,2}));
