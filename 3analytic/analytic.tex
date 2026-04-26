@@ -925,123 +925,158 @@ Recall what this requires: we must provide a \emph{definition} of each of the un
 	\end{enumerate}
 \end{exercises}
 
+
 \clearpage
 
-\iffalse
+
 
 \subsection{The Complex Plane}\label{sec:complexplane}
 
-Complex numbers date to 16\th{} century Italy. Their application to geometry really begins with Leonhard Euler (1707--1783) who identified the set of complex numbers $\C$ with the plane (what is now known as the \emph{Argand diagram}).
+Complex numbers date back at least to 16\th{} century Italy, though their application to geometry really begins with Leonhard Euler (1707--83) who identified the set of complex numbers $\C$ with the Cartesian plane in what is now known as the \emph{Argand diagram}.
 
 \begin{defn}{}{complexnumbers}
-	Let $i$ be an abstract symbol satisfying the property $i^2=-1$.\smallbreak
-	Given real numbers $x,y$, the \emph{complex number} $z=x+iy$ is simply the point $(x,y)$ in the standard Cartesian plane.\footnotemark\smallbreak
-	Given $z=x+iy$, its:\vspace{-5pt}
-	\begin{itemize}\itemsep0pt
-	  \item \emph{Complex conjugate} $\cl z=x-iy$ is its \emph{reflection} across the real axis.
-	  \item \emph{Modulus} $\nm{z}=\sqrt{z\cl z}=\sqrt{x^2+y^2}$ is its distance from the origin.
-	  \item \emph{Argument} $\arg(z)$ is the angle (measured counter-clockwise) between the positive real axis and the ray $\ray{0z}$. 
-	\end{itemize}
-
-	\hfill\includegraphics[scale=0.9]{complex-argand}
+	Let $i$ be an abstract symbol satisfying the property $i^2=-1$.\par
+	\begin{minipage}[t]{0.7\linewidth}\vspace{-6pt}
+		Given real numbers $x,y$, the \emph{complex number} $z=x+iy$ is simply the point $(x,y)$ in the standard Cartesian plane.	In the language of linear algebra, $\C$ is a vector space over $\R$ with basis $\{1,i\}$.\smallbreak
+		Given a complex number $z=x+iy$, its:
+		\begin{itemize}
+		  \item \emph{Complex conjugate} $\cl z=x-iy$ is its \emph{reflection} across the real axis.
+		  \item \emph{Modulus} $\nm{z}=\sqrt{z\cl z}=\sqrt{x^2+y^2}$ is its distance from the origin.
+		  \item \emph{Argument} $\arg z$ is the radian measure (counter-clockwise) of the angle between the positive real axis and the ray $\ray{0z}$. 
+		\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.29\linewidth}\vspace{-6pt}
+		\hfill\includegraphics[alt={the complex plane}]{complex-argand}
+	\end{minipage}
 \end{defn}
 
-\footnotetext{In the language of linear algebra, $\C$ is a vector space over $\R$ with basis $\{1,i\}$.}
+The algebra of the complex numbers screams \emph{geometry}! Definition \ref{defn:complexnumbers} already describe length \& angle-measure and reflection in the real axis. Two other aspects of basic geometry are immediate:
+\begin{description}
+  \item[\normalfont\emph{Addition}] For any fixed $w\in\C$ the map $z\mapsto z+w$ \emph{translates} all points by $w$. If this feels too quick, write everything in real and imaginary parts. If $z=x+iy$ and $w=p+iq$ are given, then
+  \[
+  	x+iy\mapsto (x+p)+i(y+q)
+  	\qquad\text{corresponds to}\qquad
+  	(x,y)\mapsto (x+p,y+q)
+  \]
+  \item[\normalfont\emph{Scalar multiplication}] If $\lambda\in\R$, then the map $z\mapsto \lambda z$ \emph{scales} distances from the origin. This algebraically encodes \emph{similarity}.
+\end{description}
 
-\emph{Addition}, \emph{scalar multiplication} (by real numbers) and \emph{complex multiplication} follow the usual algebraic rules while using $i^2=-1$ to simplify.
+
+
+\subsubsection*{Complex Multiplication \& Rotation about the origin}
+
+\emph{Complex multiplication} follows the standard algebraic rules while using $i^2=-1$ to simplify.
 
 \begin{example}{}{}
 	A simple example of multiplication of complex numbers:
 	\begin{align*}
-		(2+3i)(4+5i)&=2\cdot 4+2\cdot 5i+3i\cdot 4+3i\cdot 5i\tag{multiply out}\\
+		(2+3i)(4+5i)&=2\cdot 4+2\cdot 5i+3i\cdot 4+3i\cdot 5i\tag{distributivity}\\
 		&=8+10i+12i-15 \tag{use $i^2=-1$ to simplify}\\
 		&=-7+22i
 	\end{align*}
 \end{example}
 
-The algebra screams \emph{geometry}! Definition \ref{defn:complexnumbers} already length, angle and reflection in the real axis. Two other aspects of basic geometry are immediate:
-\begin{itemize}%\itemsep0pt
-  \item Addition by $z$ \emph{translates} all points by $z$.
-  \item Scalar multiplication \emph{scales} distances from the origin (similarity).
-\end{itemize}
-The algebraic property distinguishing the complex numbers from the standard Cartesian plane is \emph{complex multiplication.} To start visualizing this, consider multiplication by $i$,
+What we really care about is the geometric interpretation of multiplication. To start visualizing this, consider multiplication by $i$,
 \[
 	iz=i(x+iy)=-y+ix
+	\qquad\text{corresponds to}\qquad
+  	(x,y)\mapsto (-y,x)
 \]
-This is the result of \emph{rotating} $z$ counter-clockwise $\frac\pi 2$ radians about the origin. To obtain all rotations and reflections, we need an alternative description of a complex number.
+This is the result of \emph{rotating} $z$ counter-clockwise $\frac\pi 2=\ang{90}$ radians about the origin.
+
+\pagebreak[3]
+
+
+To obtain all rotations and reflections, we need an alternative description of a complex number.
 
 \begin{lemm}{}{euler}
-	\exstart (Euler's Formula)\lstsp For any $\theta\in\R$, $e^{i\theta}=\cos\theta+i\sin\theta$. 
-	\begin{enumerate}\setcounter{enumi}{1}
-	  \item (Exponential laws)\lstsp$e^{i\theta}e^{i\phi}=e^{i(\theta+\phi)}$ and $(e^{i\theta})^n=e^{in\theta}$ for any $n\in\Z$.
+	Suppose $\theta,\phi\in\R$ and $n\in \Z$.
+	\begin{enumerate}
+		\item (Euler's Formula)\lstsp For any $\theta\in\R$, $e^{i\theta}=\cos\theta+i\sin\theta$. 
+	  \item (Exponential laws)\lstsp $e^{i\theta}e^{i\phi}=e^{i(\theta+\phi)}$ and $(e^{i\theta})^n=e^{in\theta}$ for any $n\in\Z$.
 	\end{enumerate}
 \end{lemm}
 
-Evaluating at $\theta=\pi$ yields the famous \emph{Euler identity} $e^{i\pi}=-1$. Part 1 can be taken as a definition. To see that it is a reasonable definition requires either power series or elementary differential equations, topics best described elsewhere. Part 2 is an exercise.
+Arguments for both parts are an exercise. Part 1 can be treated a a definition. Evaluating at $\theta=\pi$ yields the famous \emph{Euler identity} $e^{i\pi}=-1$.
 
 
 
 
-\begin{defn}{}{}
-	Let $z=x+iy$ be a non-zero complex number.\smallbreak
-	Writing $x=r\cos\theta$ and $y=r\sin\theta$, we obtain the \emph{polar form}
-	\[
-		z=re^{i\theta}=r(\cos\theta+i\sin\theta)
-	\]
-	where $r=\nm z$ is the modulus and $\theta=\arg(z)$ the argument of $z$.
-	
-	\hfill\includegraphics{complex-polar}
+\begin{defn}{Polar form of a complex number}{} \phantom{bob}\par
+	\begin{minipage}[t]{0.7\linewidth}\vspace{-6pt}
+		Let $z=x+iy$ be a non-zero complex number with modulus $r=\nm z$ and argument $\theta=\arg z$. Using polar co-ordinates $x=r\cos\theta$ and $y=r\sin\theta$ and Euler's formula, we obtain the \emph{polar form}
+		\[
+			z=re^{i\theta}=r(\cos\theta+i\sin\theta)
+		\]
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.29\linewidth}\vspace{-15pt}
+		\hfill\includegraphics[alt={the polar form of a complex number}]{complex-polar}
+	\end{minipage}	
 \end{defn}
 
-Now consider the effect of multiplying a complex number $z=re^{i\phi}$ by $e^{i\theta}=\cos\theta+i\sin\theta$: according to the Lemma
+Now consider the effect of multiplying a complex number $z=re^{i\phi}$ by $e^{i\theta}=\cos\theta+i\sin\theta$. By the Lemma
 \[
 	e^{i\theta}z=re^{i\theta}e^{i\phi}=re^{i(\theta+\phi)}
 \]
-which has the same modulus ($r$) as $z$ but a new argument.
+has the same modulus ($r$) as $z$ but a new argument\ldots
 
 \begin{thm}{}{}
-	The complex number $e^{i\theta}z$ is the result of rotating $z$ counter-clockwise about the origin through an angle $\theta$.
+	For any $\theta\in\R$ and $z\in\C$, the complex number $e^{i\theta}z$ is obtained by rotating $z$ counter-clockwise about the origin through an angle $\theta$.
 \end{thm}
 
 \begin{example}{}{}
-	To rotate $z=1+2i$ counter-clockwise by $\frac{3\pi}4$ radians, we multiply by\par
-	\begin{minipage}[t]{0.69\linewidth}\vspace{-5pt}
-	\[
-		e^{\frac{3\pi i}4}=\cos\frac{3\pi}4+i\sin\frac{3\pi}4=\frac 1{\sqrt 2}(-1+i)
-	\]
-	to obtain
-	\[
-		e^{\frac{3\pi i}4}z =\frac 1{\sqrt 2}(-1+i)(1+2i)=-\frac 1{\sqrt 2}(3+i)
-	\]
+	To rotate $z=1+2i$ counter-clockwise by $\frac{3\pi}4$ radians, we must multiply by\par
+	\begin{minipage}[t]{0.69\linewidth}\vspace{-6pt}
+		\[
+			e^{\frac{3\pi i}4}=\cos\frac{3\pi}4+i\sin\frac{3\pi}4=\frac 1{\sqrt 2}(-1+i)
+		\]
+		That is,
+		\[
+			e^{\frac{3\pi i}4}z =\frac 1{\sqrt 2}(-1+i)(1+2i)=-\frac 1{\sqrt 2}(3+i)
+		\]
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.3\linewidth}\vspace{-15pt}
-		\hfill\includegraphics{complex-rotate}
-	\end{minipage}\medbreak
-	You could try to keep things in polar form, though it doesn't result in a nice answer:
+	\begin{minipage}[t]{0.3\linewidth}\vspace{-8pt}
+		\hfill\includegraphics[alt={rotation counter-clockwise by 135 degrees}]{complex-rotate}
+	\end{minipage}
+	\medbreak
+	It is acceptable to convert to (or keep everything) in polar form. In this case, however, the result isn't pretty:
 	\[
 		z=\sqrt 5e^{i\tan^{-1}2}\implies e^{\frac{3\pi i}4}z=\sqrt 5e^{\frac{3\pi i}4+i\tan^{-1}2}
 	\]
 \end{example}
 
 
+\pagebreak[3]
 
 
-\begin{minipage}[t]{0.73\linewidth}\vspace{0pt}
-	Reflections may be described by combining rotations with complex conjugation. To reflect across the line making angle $\theta$ with the positive real axis, we rotate the plane so that the reflection appears to be vertical:
+\subsubsection*{General Rotations and Reflections}
+
+Recall (Definition \ref{defn:complexnumbers}) how complex conjugation reflects across the horizontal axis.\par
+\begin{minipage}[t]{0.79\linewidth}\vspace{-6pt}
+	General reflections may be described by combining complex conjugation and rotations. For instance, to reflect across the line making angle $\theta$ with the positive real axis, we rotate the plane so that the reflection appears vertical:\footnotemark{}
 	\begin{enumerate}
-	  \item \textcolor{Green}{Rotate} the plane \emph{clockwise} by $\theta$, that is $z\mapsto e^{-i\theta}z$.
-	  \item \textcolor{orange}{Reflect} across the real axis by complex conjugation.
-	  \item \textcolor{blue}{Rotate} counter-clockwise by $\theta$.
+	  \item \textcolor{mGreen}{Rotate} the plane \emph{clockwise} by $\theta$, that is $z\mapsto e^{-i\theta}z$.
+	  \item \textcolor{mMagenta}{Reflect} across the real axis via complex conjugation.
+	  \item \textcolor{Blue}{Rotate} counter-clockwise by $\theta$.
 	\end{enumerate}
-	Combining these steps gives the formula.
+	Combining these steps proves the main result.
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.26\linewidth}\vspace{-5pt}
-		\hfill\includegraphics{complex-reflect}
+\begin{minipage}[t]{0.2\linewidth}\vspace{-5pt}
+		\hfill\includegraphics[alt={reflection is a reverse rotation then complex conjugation then a final rotation}]{complex-reflect}
 \end{minipage}
 
-\begin{thm}{}{}
+
+\footnotetext{%
+	This approach (and both upcoming results) is a version of \emph{algebraic conjugation} (not to be confused with complex conjugation!). If $f$ is a function, then its conjugate by an invertible function $g$ is the composition $g\circ f\circ g^{-1}$. For instance rotation by $\theta$ around $w$ is the conjugation of rotation about the origin $(f(z)=e^{i\theta})$ by a translation $(g(z)=z+w)$. Very loosely, any conjugate of $f$ does the same thing as $f$ relative to a new frame of reference.%
+}
+
+
+
+\begin{thm}{}{complexreflect}
 	To reflect $z$ across the line making angle $\theta$ with the positive real axis, we compute
 	\[
 		z\mapsto e^{i\theta}(\cl{e^{-i\theta}z})=e^{2i\theta}\cl z
@@ -1049,12 +1084,14 @@ which has the same modulus ($r$) as $z$ but a new argument.
 \end{thm}
 
 
-
 \begin{example}{}{}
-	Reflect $z=-2+3i$ across the line through the origin and $w=\sqrt 3+i$.\smallbreak
-	First compute $\theta=\arg(w)=\tan^{-1}\frac 1{\sqrt 3}=\frac\pi 6$. The desired point is therefore
+	We reflect $z=-2+3i$ across the line through the origin and $w=\sqrt 3+i$.\par
+	First compute $\theta=\arg w=\tan^{-1}\frac 1{\sqrt 3}=\frac\pi 6$. The desired point is therefore
 	\[
-		e^{\frac{i\pi}3}(-2-3i)=\left(\frac 12+\frac{\sqrt 3}2i\right)(-2-3i) =\left(\frac{3\sqrt 3}2-1\right)-\left(\sqrt 3+\frac 32\right)i
+		e^{2i\theta}z
+		=e^{\frac{i\pi}3}(-2-3i)
+		=\left(\frac 12+\frac{\sqrt 3}2i\right)(-2-3i) 
+		=\left(\frac{3\sqrt 3}2-1\right)-\left(\sqrt 3+\frac 32\right)i
 	\]
 \end{example}
 
@@ -1062,9 +1099,10 @@ To describe general rotations and reflections about arbitrary points/lines, we c
 
 
 \begin{cor}{}{fullrotref}
-	\exstart To rotate $z$ by $\theta$ about a point $w$, compute $z\mapsto e^{i\theta}(z-w)+w$.
-	\begin{enumerate}\setcounter{enumi}{1}
-	  \item To reflect $z$ across the line with slope $\theta$ through a point $w$, compute $z\mapsto e^{2i\theta}(\cl z-\cl w)+w$.
+	Let $\theta\in\R$ and $w\in\C$ be given.
+	\begin{enumerate}
+	  \item To rotate by $\theta$ about $w$, compute $z\mapsto e^{i\theta}(z-w)+w$.
+	  \item To reflect across the line making angle $\theta$ through $w$, compute $z\mapsto e^{2i\theta}(\cl z-\cl w)+w$.
 	\end{enumerate}
 \end{cor}
 
@@ -1073,14 +1111,21 @@ To describe general rotations and reflections about arbitrary points/lines, we c
 	\[
 		z\mapsto e^{\frac\pi 3}\bigl(z-i\bigr)+1=\textcolor{blue}{i+e^{\frac\pi 3}\bigl(z-i\bigr)}+\textcolor{red}{1-i}
 	\]
-	Alternatively, this is \textcolor{blue}{rotation} by $\frac\pi 3$ around $i$ followed by \textcolor{red}{translation} by $1-i$.
+	Alternatively, this is \textcolor{blue}{rotation} by $\frac\pi 3$ around $i$ followed by \textcolor{mRed}{translation} by $1-i$.
 \end{example}
 
-\bigskip
+
+\pagebreak[3]
 
 
-We have now described all the Euclidean isometries of the previous section in the language of complex numbers. Here is the full dictionary.\footnote{Scaling isn't an isometry, but it is worth including nonetheless!}
+\subsubsection*{A Dictionary of Basic Geometric Transformations}
+
+
+We have now described all Euclidean isometries (Section \ref{sec:klein}) using complex numbers. Here is the full dictionary for comparing the two appraoches.\footnote{%
+	Scaling isn't an isometry, but it is worth including in the dictionary nonetheless.%
+}
 \begin{center}
+	\def\arraystretch{1.2}
 	\begin{tabular}{c|c|c}
 		Isometry/Transformation
 		&
@@ -1105,10 +1150,12 @@ We have now described all the Euclidean isometries of the previous section in th
 		$z\mapsto iz$
 		&
 		$\vz\mapsto
-		\begin{pmatrix}
-			0&-1\\
-			1&0
-		\end{pmatrix}
+		\genfrac{(}{}{0pt}{0}{0}{1}\ \
+		\genfrac{}{)}{0pt}{0}{-1}{0}
+% 		\begin{pmatrix}
+% 			0&-1\\
+% 			1&0
+% 		\end{pmatrix}
 		\vz$
 		\\
 		Rotation CCW by $\theta$
@@ -1116,10 +1163,12 @@ We have now described all the Euclidean isometries of the previous section in th
 		$z\mapsto e^{i\theta}z$
 		&
 		$\vz\mapsto
-		\begin{pmatrix}
-			\cos\theta&-\sin\theta\\
-			\sin\theta&\cos\theta
-		\end{pmatrix}
+		\genfrac{(}{}{0pt}{0}{\cos\theta}{-\sin\theta}\ \
+		\genfrac{}{)}{0pt}{0}{\sin\theta}{\cos\theta}
+% 		\begin{pmatrix}
+% 			\cos\theta&-\sin\theta\\
+% 			\sin\theta&\cos\theta
+% 		\end{pmatrix}
 		\vz$
 		\\
 		Vertical reflection
@@ -1127,10 +1176,12 @@ We have now described all the Euclidean isometries of the previous section in th
 		$z\mapsto \cl z$
 		&
 		$\vz\mapsto
-		\begin{pmatrix}
-			1&0\\
-			0&-1
-		\end{pmatrix}
+		\genfrac{(}{}{0pt}{0}{1}{0}\ \
+		\genfrac{}{)}{0pt}{0}{0}{-1}
+% 		\begin{pmatrix}
+% 			1&0\\
+% 			0&-1
+% 		\end{pmatrix}
 		\vz$
 		\\
 		Reflection across line with slope $\frac\theta 2$
@@ -1138,19 +1189,27 @@ We have now described all the Euclidean isometries of the previous section in th
 		$z\mapsto e^{i\theta}\cl z$
 		&
 		$\vz\mapsto
-		\begin{pmatrix}
-			\cos\theta&\sin\theta\\
-			\sin\theta&-\cos\theta
-		\end{pmatrix}
+		\genfrac{(}{}{0pt}{0}{\cos\theta}{\sin\theta}\ \
+		\genfrac{}{)}{0pt}{0}{\sin\theta}{-\cos\theta}
+% 		\begin{pmatrix}
+% 			\cos\theta&\sin\theta\\
+% 			\sin\theta&-\cos\theta
+% 		\end{pmatrix}
 		\vz$
 	\end{tabular}
 \end{center}
 
-It is perhaps surprising to modern readers, but complex numbers came before vectors and matrix-geometry! During the 1800s mathematicians tried unsuccessfully to replicate the complex number approach in higher dimensions. This ultimately led (via Hamilton's quaternions) to the adoption of vectors and linear algebra/matrix calculations.\smallbreak
 
-One reason for the desire to keep the complex number description is that it may be used to describe further (non-isometric) transformations of the plane: for instance $z\mapsto\cl z^{-1}$ is \emph{reflection in a circle}! We'll discuss some of this at the end of Chapter \ref{chap:hyper}.
+
+It might be surprising to learn that the application of complex numbers to geometry came before vectors and matrices! During the 1800s, mathematicians tried unsuccessfully to replicate the complex number approach in higher dimensions. Their failure ultimately led, via Hamilton's \emph{quaternions}, to the widespread adoption of vectors and linear algebra/matrix calculations.\smallbreak
+
+\phantomsection\label{pg:refcircle}
+While matrices have a big advantage in being applicable in arbitrary dimensions, there are good reasons still to employ complex numbers for planar geometry. With a little practice they are quicker to use (less writing). Complex algebra also admits further (non-isometric) transformations: for instance $z\mapsto\cl z^{-1}$ is \emph{reflection in a circle}. We'll discuss some of this at the end of Chapter \ref{chap:hyper}.
+
+\vfil
 
 \begin{exercises}
+\hangindent\leftmargini\emph{Key concepts: Representing points as complex numbers, \ Polar form, \ Representing isometries using complex numbers}
 
 	\begin{enumerate}
 	% 	\item[]\begin{enumerate}
@@ -1158,13 +1217,12 @@ One reason for the desire to keep the complex number description is that it may 
 	    	%\[\frac 1{2i},\qquad \frac{1+i}{1-i},\qquad \frac 1{2+4i}\]
 	%     \item Prove that $\C$ is closed under multiplicative inverses: i.e., $\forall z\in\C\setminus\{0\}$, prove that $\frac 1z\in\C$.
 	%   \end{enumerate}
-		\item Use complex numbers to compute the result of the following transformations: you can answer in either standard or polar form.
+		\item Use complex numbers to compute the result of the following transformations. Answer in either standard or polar form.
 	  \begin{enumerate}
 	    \item Rotate $3-5i$ counter-clockwise around the origin by $\frac{3\pi}4$ radians.
 	    \item Reflect $2-i$ across the line joining $1+i\sqrt 3$ and the origin.
 	    \item Reflect $1+i$ across the line through the origin making angle $\frac\pi 5$ radians with the positive real axis.
 	  \end{enumerate}
-	  
 	  
 	  
 	  \item Find the reflection of the point $(2,3)$ across the line through the origin making angle $\frac{3\pi}8$ with the positive $x$-axis. Give your answer using both complex numbers and matrices/vectors.
@@ -1186,13 +1244,18 @@ One reason for the desire to keep the complex number description is that it may 
 	  \]
 	  Find a corresponding trigonometric identity for $\sin 3\theta$.
 	  	
-	  	
-	  \item Prove part 2 of Lemma \ref{lemm:euler}.\par
-	  (\emph{Hint: use the multiple-angle formulae (page \pageref{sec:multangle}) to expand $e^{i(\theta+\phi)}$})
-	  	
-	 	%\item Prove Corollary \ref{cor:fullrotref}.%\par
-	 	%(\emph{Hint: translate $w$ to the origin, rotate/reflect, then translate back})
-	 	
+ 	
+	 	\item We prove Lemma \ref{lemm:euler}.
+	 	\begin{enumerate}
+	 	  \item Prove part 1 using what you learned about Maclaurin series in calculus.\par
+	 	  (You can alternatively prove this using the existence \& uniqueness theorem from elementary differential equations.)
+	 	  \item Prove part 2 using the trigonometric multiple angle formulæ.
+		\end{enumerate}
+		
+		
+		\item (Hard)\lstsp Recall the comment on page \pageref{pg:refcircle} about how the function $f(z)=\cl z^{-1}$ describes \emph{reflection in the circle}.\par
+		Describe the output curve if all points on the circle $\nm{z-\frac 12}=\frac 14$ are fed to this function.\par
+		Moreover, for any input $z\neq 0,1$, show that the output $f(z)$ lies outside the unit circle on the ray $\ray{0z}$. 	
 	\end{enumerate}
  	
   
@@ -1239,4 +1302,3 @@ One reason for the desire to keep the complex number description is that it may 
 
 
 
-\fi

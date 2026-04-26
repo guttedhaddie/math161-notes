@@ -1,13 +1,20 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
-size(140);
+size(137);
 
 real th=40;
 
@@ -18,7 +25,7 @@ transform T;
 T=shift((-2,3.6));
 
 draw(ax,-4dir(th)--7dir(th),dashed);
-draw(ax,"$\phi$",arc((0,0),2E,2dir(th)),ArcArrow);
+draw(ax,"$\theta$",arc((0,0),2.5E,2.5dir(th)),ArcArrow);
 xaxis(ax,red);
 yaxis(ax,red);
 
@@ -38,8 +45,8 @@ add(rotate(th,(0,0))*reflect((0,0),(1,0))*rotate(-th,(0,0))*T*face);
 pair P=(-2,4.7);
 pair Q=reflect((0,0),(1,0))*rotate(-th,(0,0))*P;
 
-draw("1",arc((0,0),length(P),degrees(P),degrees(P)-th),dashed+heavygreen,Arrow(Relative(0.5)));
+draw("1",arc((0,0),length(P),degrees(P),degrees(P)-th),dashed+lGreen,Arrow(Relative(0.5)));
 
-draw(Label("2",Relative(0.3)),rotate(-th,(0,0))*P--Q,dashed+orange,Arrow(Relative(0.3)));
+draw(Label("2",Relative(0.3)),rotate(-th,(0,0))*P--Q,dashed+Magenta,Arrow(Relative(0.3)));
 
-draw("3",arc((0,0),length(Q),degrees(Q),degrees(Q)+th),dashed+blue,Arrow(Relative(0.5)));
+draw("3",arc((0,0),length(Q),degrees(Q),degrees(Q)+th),dashed+Blue,Arrow(Relative(0.5)));
