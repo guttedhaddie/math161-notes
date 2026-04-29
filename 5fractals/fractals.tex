@@ -6,7 +6,7 @@
 
 The objects of classical geometry (lines, curves, spheres, etc.) tend to seem flatter and less interesting as one zooms in: at small scales, every differentiable curve looks like a line segment! By contrast, real-world objects tend to exhibit greater detail at smaller scales. A seemingly spherical orange is dimpled on closer inspection: is its surface area that of a sphere, or is the area greater due to the dimples? What if we zoom in further? Under a microscope, the dimples in the orange are seen to have minute cracks and fissures. With modern technology, we can `see' almost to the molecular level; what does \emph{surface area} even mean at such a scale?
 
-\boldinline{The Length of a Coastline} In 1967 Benoit Mandelbrot asked a related question in a now-famous paper, \emph{How Long Is the Coast of Britain?\ Statistical Self-Similarity and Fractional Dimension.} His essential point was that this question has no simple answer:\footnote{%
+\paragraph{The Length of a Coastline} In 1967 Benoit Mandelbrot asked a related question in a now-famous paper, \emph{How Long Is the Coast of Britain?\ Statistical Self-Similarity and Fractional Dimension.} His essential point was that this question has no simple answer:\footnote{%
 	The official answer from the Ordnance Survey (the UK government mapping office) is, `It depends.' The all-knowing CIA states 7723 miles, though offers no evidence as to why.%
 } Should one measure by walking along the mean high tide line? But where is this? Do we `walk' round every pebble? Do we skirt every grain of sand? Every molecule? As the scale of consideration shrinks, the measured length becomes absurdly large. Here is a sketch of Mandelbrot's approach.\footnote{%
 	For more detail see the Fractal Foundation's \href{http://fractalfoundation.org/OFC/OFC-10-4.html}{website.} Mandelbrot coined the word \emph{fractal}, though he didn't invent the concept from nothing. Rather he applied earlier ideas of Hausdorff, Minkowski and others, and observed how the natural world contains many examples of fractal structures.%
@@ -36,13 +36,12 @@ This notion of fractal dimension is purely empirical, though it does seem to cap
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.29\linewidth}\vspace{-15pt}
-		\flushright\includegraphics{self-sim-circle}
+		\hfill\includegraphics{self-sim-circle}
 	\end{minipage}\medbreak
 	where the approximation improves as $N\to\infty$. The fractal dimension of a circle is therefore $D=1$. The same analysis applies to any smooth curve (Exercise \ref{exs:fractaldiffcurve}).
 \end{example}
 
 
-\goodbreak
 
 
 Our goal is to describe a related notion of fractional dimension for \emph{self-similar} objects. To help motivate the definition, recall some of the standard objects of pre-fractal geometry.\par
@@ -56,7 +55,7 @@ Our goal is to describe a related notion of fractional dimension for \emph{self-
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.24\linewidth}\vspace{-12pt}
-	\flushright\includegraphics[scale=0.95]{self-sim-line}
+	\hfill\includegraphics[scale=0.95]{self-sim-line}
 \end{minipage}
 
 
@@ -86,7 +85,7 @@ Our goal is to describe a related notion of fractional dimension for \emph{self-
 \end{example}
 
 
-\goodbreak
+
 
 
 \begin{example}{Cantor's Middle-third Set}{cantor}
@@ -103,7 +102,7 @@ Our goal is to describe a related notion of fractional dimension for \emph{self-
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.4\linewidth}\vspace{-7pt}
-		\flushright
+		\hfill
 	\href{http://www.math.uci.edu/~ndonalds/math161/cantor-similar.html}{\includegraphics{cantor-set}}
 	\end{minipage}
 	\medbreak
@@ -128,24 +127,22 @@ Our goal is to describe a related notion of fractional dimension for \emph{self-
 	\end{description}
 
 	The Cantor set has many generalizations:
-	\begin{itemize}\itemsep0pt
+	\begin{itemize}
 	  \item Removing different fractions of every interval at each stage produces sets with other fractal dimensions. For instance, removing the 2\nd{} and 4\th{} fifths results in $D=\frac{\log 3}{\log 5}\approx 0.683$.
 	  \item Higher-dimensional analogues include the \href{https://en.wikipedia.org/wiki/Sierpiński_triangle}{Sierpiński triangle} ($D=\smash{\frac{\log 3}{\log 2}}\approx 1.585$) and carpet (Example \ref*{ex:scarpet}.\ref{ex:scarpet2}, $D=\frac{\log 8}{\log 3}\approx 1.893$), and the Menger sponge ($D=\frac{\log 20}{\log 3}\approx 2.727$).
 	\end{itemize}
 \end{example}
-\vspace{-5pt}
+
 
 \footnotetext{%
 	Henry Smith discovered this set in 1874 while investigating integrability (the `length' of a set was later formalized using \emph{measure theory}). Cantor's 1883 description focused on topological properties, with self-similarity being less of a concern.%
 }
 
-\goodbreak
-
 
 \begin{example}{The Koch Curve and Snowflake}{koch}
 	Another generalization of the Cantor set is produced as the limit of a sequence of curves.\par
 	\begin{minipage}[t]{0.64\linewidth}\vspace{-4pt}
-		\begin{itemize}\itemsep0pt
+		\begin{itemize}
 		  \item Let $K_0$ be a segment of length 1.
 		  \item Replace the middle third of $K_0$ with the other two sides of an equilateral triangle to create $K_1$.
 		  \item Replace the middle third of each segment in $K_1$ as before to create $K_2$.
@@ -166,7 +163,7 @@ Our goal is to describe a related notion of fractional dimension for \emph{self-
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.35\linewidth}\vspace{-15pt}
-		\flushright
+		\hfill
 		\href{http://www.math.uci.edu/~ndonalds/math161/koch-anim.html}{
 		\begin{tabular}{@{}c@{}}\includegraphics{koch}\\
 			Koch Curve\\[8pt]
@@ -352,12 +349,12 @@ The upshot is this: repeatedly applying contraction mappings to \emph{any} non-e
 		\end{minipage}
 		\hfill
 		\begin{minipage}[t]{0.45\linewidth}\vspace{-3pt}
-			\flushright\includegraphics{cantor-set2}
+			\hfill\includegraphics{cantor-set2}
 		\end{minipage}\medbreak
 	
  		It follows (induction) that $K\subseteq\lim S^n(K)=\mathcal C$: both $\textcolor{red}{t=\frac 14}$ and $\textcolor{blue}{u=\frac 34}$ lie in the Cantor set! This seems paradoxical: $\frac 14$ does not lie at the end of any deleted interval (all such points have denominator $3^n$) but yet the Cantor set contains no intervals. How does $\frac 14$ end up in there?!
  	
- 		\goodbreak
+
 	
 		\item\label{ex:kochrevisit} (Example\,\ref{ex:koch})\lstsp The Koch curve arises from four contraction mappings $S_i:\R^2\to\R^2$, each with scale factor $c=\frac 13$.
 		\[
@@ -391,22 +388,22 @@ The upshot is this: repeatedly applying contraction mappings to \emph{any} non-e
 		\end{minipage}
 		\hfill
 		\begin{minipage}[t]{0.39\linewidth}\vspace{0pt}
-			\flushright \href{http://www.math.uci.edu/~ndonalds/math161/koch-anim2.html}{\includegraphics[scale=0.95]{koch3}}
+			\hfill \href{http://www.math.uci.edu/~ndonalds/math161/koch-anim2.html}{\includegraphics[scale=0.95]{koch3}}
 		\end{minipage}\par
 		Regardless of the initial input $K_0\in\mathcal H$, the limit $\lim S^n(K_0)$ is the Koch curve:	applied to the entire curve (drawn), the image of each $S_i$ is colored. The picture moreover links to a series of animated constructions starting with different initial sets $K_0$.\smallbreak
 		We can also play a similar game to the previous example to find interesting points on the curve. For instance, the unique fixed point $(\frac{51}{146},\frac{3\sqrt 3}{146})$ of $U=S_2\circ S_1$ lies on the curve!
 		
-		\begin{minipage}[t]{0.72\linewidth}\vspace{0pt}
+		%\begin{minipage}[t]{0.72\linewidth}\vspace{0pt}
 			\item\label{ex:scarpet2} The Sierpiński carpet may be constructed using eight contraction mappings, each of which scales the whole picture by a (length-scale) factor of $c=\frac 13$, for a dimension of $D=\frac{\log 8}{\log 3}\approx 1.893$.\smallbreak
 			As with the Koch curve, the image links to several alternative constructions using different initial sets $K_0$.
-		\end{minipage}
-		\hfill
-		\begin{minipage}[t]{0.27\linewidth}\vspace{0pt}
-			\flushright \href{http://www.math.uci.edu/~ndonalds/math161/sier-anim.html}{\includegraphics[scale=1]{sieranim2}}
-		\end{minipage}\smallbreak
+		%\end{minipage}
+		%\hfill
+		%\begin{minipage}[t]{0.27\linewidth}\vspace{0pt}
+			\hfill \href{http://www.math.uci.edu/~ndonalds/math161/sier-anim.html}{\includegraphics[scale=1]{sieranim2}}
+		%\end{minipage}\smallbreak
 		
 		
-		\begin{minipage}[t]{0.72\linewidth}\vspace{0pt}
+		%\begin{minipage}[t]{0.72\linewidth}\vspace{0pt}
 			\item This fractal fern is constructed using three contraction mappings:
 			\begin{itemize}
 				\item[$S_1$:] Scale by $\frac 34$, rotate \ang{5} clockwise, and translate by $(0,\frac 14)$
@@ -414,26 +411,26 @@ The upshot is this: repeatedly applying contraction mappings to \emph{any} non-e
 				\item[$S_3$:] Scale by $\frac 14$, rotate \ang{60} clockwise, and translate by $(0,\frac 14)$
 			\end{itemize}
 			The linked animation shows the first few steps of its contsruction starting from a single vertical line segment $K_0$.
-		\end{minipage}
-		\hfill
-		\begin{minipage}[t]{0.27\linewidth}\vspace{0pt}
-			\flushright \href{http://www.math.uci.edu/~ndonalds/math161/fern-anim.html}{\includegraphics[scale=1]{fern2}}
-		\end{minipage}
+		%\end{minipage}
+		%\hfill
+		%\begin{minipage}[t]{0.27\linewidth}\vspace{0pt}
+			\hfill \href{http://www.math.uci.edu/~ndonalds/math161/fern-anim.html}{\includegraphics[scale=1]{fern2}}
+		%\end{minipage}
 	\end{enumerate}
 \end{examples}
 
 
-\goodbreak
 
+
+	\subsubsection*{Fractal Dimension Revisited}
 
 \begin{minipage}[t]{0.8\linewidth}\vspace{0pt}
-	\boldsubsubsection{Fractal Dimension Revisited}
 	
 	Since Theorem \ref{thm:ifs} permits several different contraction factors, we need a new approach to fractal dimension. We ask how many disks of a given radius $\epsilon$ are required to cover a set. In the picture, the \textcolor{blue}{unit square} requires four disks of radius $\varepsilon=0.4$. For smaller $\varepsilon$, we plainly need more disks\ldots
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.19\linewidth}\vspace{0pt}
-	\flushright\includegraphics{epsiloncover}
+	\hfill\includegraphics{epsiloncover}
 \end{minipage}
 
 
@@ -501,7 +498,7 @@ Thankfully an easier-to-visualize modification is available using boxes.
 \end{thm}
 
 
-\goodbreak
+
 
 
 We finish with a formula satisfied by the dimension of an iterated function system (Theorem \ref{thm:ifs}).
@@ -540,9 +537,9 @@ We finish with a formula satisfied by the dimension of an iterated function syst
 \end{examples}
 
 
+\subsubsection*{Other methods of creating fractals}
+
 \begin{minipage}[t]{0.63\linewidth}\vspace{0pt}
-	\boldsubsubsection{Other methods of creating fractals}
-	
 	The contraction mapping approach is one of many ways to create fractals. Two other famous examples are the \href{https://en.wikipedia.org/wiki/Logistic_map}{\emph{logistic map}} (related to numerical approximations to non-linear differential equations) and the \href{https://en.wikipedia.org/wiki/Mandelbrot_set}{\emph{Mandelbrot set}} (pictured).\smallbreak
 	The Mandelbrot set arises from a construction in the complex plane. For a given $c\in\C$, we iterate the function
 	\[
@@ -553,9 +550,9 @@ We finish with a formula satisfied by the dimension of an iterated function syst
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.35\linewidth}\vspace{0pt}
-	\flushright\includegraphics[scale=0.9]{mandelbrot}
+	\hfill\includegraphics[scale=0.9]{mandelbrot}
 \end{minipage}
-\goodbreak
+
 
 
 
@@ -605,7 +602,7 @@ We finish with a formula satisfied by the dimension of an iterated function syst
 	  \end{minipage}
 	  \hfill
 	  \begin{minipage}{0.47\linewidth}
-	  	\flushright\includegraphics{fractal}
+	  	\hfill\includegraphics{fractal}
 	  \end{minipage}\par
 	  \begin{enumerate}
 	    \item Suppose your initial set $K_0$ is the straight line segment from $(0,0)$ to $(1,0)$. Draw the first two iterations of the fractal's construction.

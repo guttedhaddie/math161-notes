@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 import markers;
 
@@ -72,7 +79,7 @@ void hcirc(pair Q, real Ed, pen pen=black){
 
 pair A=(-1/2,0);
 pair B=(1/2,0);
-draw(A--B,StickIntervalMarker(2,2,heavygreen,dotframe(red)));
+draw(A--B,StickIntervalMarker(2,2,Brown,dotframe(red)));
 
 pair BC(real t){return (5/4+3/4*Cos(t),3/4*Sin(t));}
 pair AD(real t){return (-5/4+3/4*Cos(t),3/4*Sin(t));}
@@ -96,8 +103,8 @@ draw(B+(-0.04,0)--B+(-0.04,0.04)--B+(0.002,0.04));
 draw((0.04,0)--(0.04,0.04)--(0,0.04));
 draw((0,0.312)+(-0.04,0.002)--(0,0.312)+(-0.04,-0.04)--(0,0.312)+(0,-0.04));
 
-draw(D..(0,0.312){E}..C,StickIntervalMarker(2,3,orange,dotframe(red)));
+draw(D..(0,0.312){E}..C,StickIntervalMarker(2,3,Magenta,dotframe(red)));
 
 
-draw(arc(C,0.15,206,235),StickIntervalMarker(1,1,purple));
-draw(arc(D,0.15,305,334),StickIntervalMarker(1,1,purple));
+draw(arc(C,0.15,206,235),StickIntervalMarker(1,1,BlueViolet));
+draw(arc(D,0.15,305,334),StickIntervalMarker(1,1,BlueViolet));
