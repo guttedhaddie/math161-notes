@@ -15,7 +15,7 @@ pen lGreen=rgb("00a000");
 import graph;
 import markers;
 
-size(160);
+size(160,80,IgnoreAspect);
 
 path c=unitcircle;
 

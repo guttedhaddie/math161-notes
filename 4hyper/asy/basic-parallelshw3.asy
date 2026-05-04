@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 import markers;
 
@@ -24,8 +31,8 @@ path sq=scale(sc)*unitsquare;
 draw(shift(A-(0,sc))*sq);
 draw(shift(B)*rotate(180,(0,0))*sq);
 draw(shift(M)*sq);
-draw((0,1)--(0,-0.2),dashed);
-draw((2,-0.2)--(2,1),dashed);
+//draw((0,1)--(0,-0.2),dashed);
+//draw((2,-0.2)--(2,1),dashed);
 
 
 pair T=B+0.8N;
@@ -34,5 +41,5 @@ pair SS=A+N;
 dot(Label("$A$",black),A,SW,red);
 dot(Label("$B$",black),B,SE,red);
 dot(Label("$C$",black),C,NE,red);
-dot(Label("$M$?",black),M,S,red);
+dot(Label("$M$",black),M,S,red);
 //dot(Label("$S$",black),SS,NW,red);

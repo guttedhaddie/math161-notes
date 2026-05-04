@@ -9,7 +9,7 @@ For 2000 years after Euclid, many mathematicians believed that his parallel post
 
 \subsubsection*{Absolute and Non-Euclidean Geometry}
 
-Before considering the work of Saccheri and Lambert, we define some terms and recall our earlier discussion of parallels (pages \pageref{pg:parallelexist}--\pageref*{pg:pythagoras}).
+Before considering the work of Saccheri and Lambert, we define some terms and recall our earlier discussion of parallels (pages \pageref{pg:parallelexist}--\pageref{pg:pythagoras}).
 
 \begin{defn}{}{}
 	\emph{Absolute} or \emph{neutral} geometry is the axiomatic system comprising all of Hilbert's axioms except Playfair (page \pageref{pg:hilbertaxioms}). Euclidean geometry is a special case of absolute geometry.\smallbreak
@@ -56,17 +56,17 @@ Since the following were proved using Playfair's axiom or the parallel postulate
 
 \pagebreak[3]
 
-While our \emph{arguments} for the above are false in absolute geometry, we cannot instantly claim that the \emph{results} are also; there might be alternative proofs! To see that these results truly require unique parallels, we must exhibit a \emph{model} of absolute geometry in which they are false.\footnote{
+While our \emph{arguments} for the above are false in absolute geometry, we cannot immediately claim that the \emph{results} are also; there might be alternative proofs! To see that these results truly require unique parallels, we must exhibit a \emph{model} of absolute geometry in which they are false.\footnote{
 	The model must be of \emph{absolute} geometry. For instance, the angles in a spherical triangle sum to more than \ang{180}, but we can't guarantee that the reason for this is a \emph{only} the lack of parallels, since spherical geometry fails two of Hilbert's other axioms.  
 }
-Developing such a model is the primary purpose of this chapter. Its existence explains why Saccheri and Lambert failed in their endeavors: the parallel postulate (Playfair) is indeed independent of Euclid's (Hilbert's) other axioms.
+Developing such a model is the primary purpose of this chapter. Its existence explains why Saccheri and Lambert ultimate goal was unrealized: the parallel postulate (Playfair) is indeed independent of Euclid's (Hilbert's) other axioms.
 
 
 \subsubsection*{The Saccheri--Legendre Theorem}
 
 \begin{minipage}[t]{0.57\linewidth}\vspace{-8pt}
 	We turn now to Saccheri's consideration of triangles, suitably modernized. We work in absolute geometry, starting with an extension of Euclid's proof of the exterior angle theorem.\smallbreak
-	Suppose $\triangle ABC$ has angle sum $\Sigma_{\triangle}$ and construct $M$ and $E$ following Euclid. Observe:
+	Suppose $\triangle ABC$ has angle-sum $\Sigma_{\triangle}$, let $\alpha_0=m\angle ABC$ and construct $M$ and $E$ following Euclid. Observe:
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.41\linewidth}\vspace{-20pt}
@@ -75,32 +75,32 @@ Developing such a model is the primary purpose of this chapter. Its existence ex
 
 \begin{enumerate}
   \def\lgbullet#1{\raisebox{-2pt}{\textcolor{#1}{\LARGE\textbullet}}}
-  \item $\mathcolor{mMagenta}{\measuredangle ACB} +\mathcolor{Brown}{\measuredangle CAB} =\mathcolor{mMagenta}{\measuredangle ACB} +\mathcolor{Brown}{\measuredangle ACE}<\ang{180}$ is the exterior angle theorem. More generally, the exterior angle theorem guarantees that the \emph{sum of any two angles in a triangle is strictly less than \ang{180}}.
+  \item $\mathcolor{mMagenta}{\angle ACB} +\mathcolor{Brown}{\angle CAB} \cong\mathcolor{mMagenta}{\angle ACB} +\mathcolor{Brown}{\angle ACE}<\ang{180}$ is the exterior angle theorem. More generally, the exterior angle theorem guarantees that the \emph{sum of any two angles in a triangle is strictly less than \ang{180}}.
   
-  \item $\triangle ABC$ and $\triangle EBC$ have the \emph{same angle sum}---just look at the picture!
+  \item $\triangle ABC$ and $\triangle EBC$ have the \emph{same angle-sum}---just look at the picture!
   \[
-  	\Sigma_{\triangle}=\lgbullet{Brown} +\lgbullet{mGreen} +\lgbullet{BlueViolet} +\lgbullet{mMagenta}
+  	\Sigma_{\triangle}=\lgbullet{Brown} +\lgbullet{mGreen} +\lgbullet{Blue} +\lgbullet{mMagenta}
   \]
   Remember that we do not know whether $\Sigma_{\triangle}=\ang{180}$!
   
-  \item $\triangle EBC$ has at least one angle ($\mathcolor{BlueViolet}{\measuredangle EBC}$ or $\mathcolor{mGreen}{\measuredangle BEC}$) measuring $\le\frac 12\measuredangle ABC$.
+  \item $\triangle EBC$ has at least one angle ($\mathcolor{Blue}{\angle EBC}$ or $\mathcolor{mGreen}{\angle BEC}$) measuring at most $\frac 12\alpha_0=\frac 12m\angle ABC$.
 \end{enumerate}
 
-Iterate this construction: if $\mathcolor{BlueViolet}{\measuredangle EBC}\le\frac 12\measuredangle ABC$, start by bisecting $\cl{CE}$; otherwise bisect $\cl{BC}\ldots$.\par
+Iterate this construction: if $\mathcolor{Blue}{\angle EBC}$ is smaller, start by bisecting $\cl{CE}$; otherwise bisect $\cl{BC}\ldots$.\par
 The result is an infinite sequence of triangles $\triangle_1=\triangle EBC$, $\triangle_2$, $\triangle_3,\ldots$ with two properties:
 \begin{enumeratea}
-  \item All triangles in the sequence have \emph{same angle sum} $\Sigma_{\triangle}=\Sigma_{\triangle_1}=\Sigma_{\triangle_2}=\cdots$.
-  \item The $n\th$ triangle $\triangle_n$ has at least one angle measuring $\alpha_n\le\frac 1{2^n}\measuredangle ABC$.
+  \item All triangles in the sequence have \emph{same angle-sum} $\Sigma_{\triangle}=\Sigma_{\triangle_1}=\Sigma_{\triangle_2}=\cdots$.
+  \item The $n\th$ triangle $\triangle_n$ has at least one angle measuring $\alpha_n\le\frac 1{2^n}\alpha_0$.
 \end{enumeratea} 
 
 Now suppose, for contradiction, that $\Sigma_{\triangle}=\ang{180}+\epsilon$ is \emph{strictly greater} than \ang{180}. Since $\lim\frac 1{2^n}=0$, we may choose $n$ large enough to guarantee $\alpha_n<\epsilon$:
 \[
-	n>\log_2\frac{\measuredangle ABC}{\epsilon} \implies \alpha_n<\epsilon
+	n>\log_2\frac{\alpha_0}{\epsilon} \implies \alpha_n<\epsilon
 \]
-But then the sum of the \emph{other two} angles in $\triangle_n$ would be \emph{greater than} \ang{180}, contradicting the exterior angle theorem (observation 1)! We have now proved a famous result.
+But then the sum of the \emph{other two} angles in $\triangle_n$ would be \emph{greater than} \ang{180}, contradicting the exterior angle theorem (observation 1)! We have proved a famous result.
 
 \begin{thm}{Saccheri--Legendre}{saccleg}
-	Triangles in absolute geometry have angle sum $\Sigma_{\triangle}\le \ang{180}$.
+	Triangles in absolute geometry have angle-sum $\Sigma_{\triangle}\le \ang{180}$.
 \end{thm}
 
 Saccheri's failed hope was to prove \emph{equality} without invoking the parallel postulate. 
@@ -114,31 +114,29 @@ Saccheri's failed hope was to prove \emph{equality} without invoking the paralle
 Two families of quadrilaterals in absolute geometry are named in honor of these pioneers.
 
 \begin{defn}{}{}
-	A \emph{Lambert quadrilateral} $AMND$ has three right-angles.\par
-	\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}
+	In absolute geometry, a \emph{Lambert quadrilateral} $AMND$ has three right-angles.\par
+	\begin{minipage}[t]{0.6\linewidth}\vspace{-2pt}
 		A \emph{Saccheri quadrilateral} $ABCD$ satisfies
 		\[
 			\cl{AD}\cong\cl{BC}\quad\text{and}\quad \measuredangle DAB=\measuredangle CBA=\ang{90}
 		\]
-		$\cl{AB}$ is the \emph{base} and $\cl{CD}$ the \emph{summit.}\smallbreak
-		The interior angles at $C$ and $D$ are the \emph{summit angles.}
+		$\cl{AB}$ is the \emph{base} and $\cl{CD}$ the \emph{summit.} The interior angles at $C$ and $D$ are the \emph{summit angles.}
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.35\linewidth}\vspace{0pt}
+	\begin{minipage}[t]{0.35\linewidth}\vspace{-2pt}
 		\hfill\includegraphics[alt={two special types of quadrilateral}]{history-quad3}
 	\end{minipage}
 \end{defn}
 
-We draw these with curved sides to indicate that the summit angles need not be right-angles, though we haven't yet exhibited a model which shows they could be anything else. Regardless of how they are drawn, $\cl{AD}$, $\cl{BC}$ and $\cl{CD}$ are all \emph{segments}!%\smallbreak
-%The apparent symmetry of a Saccheri quadrilateral is not an illusion.
+We draw these with curved sides to indicate that the summit angles need not be right-angles, though we haven't yet exhibited a model which shows they could be anything else. Regardless of how they are drawn, $\cl{AD}$, $\cl{BC}$ and $\cl{CD}$ are all \emph{segments}!
 
 \begin{lemm}{}{saccheribasic}
-	Saccheri and Lambert quadrilaterals exhibit basic symmetry.\par
+	Saccheri and Lambert quadrilaterals exhibit basic symmetry as pictured.\par
 	\begin{minipage}[t]{0.64\linewidth}\vspace{0pt}
 		\begin{enumerate}
 	  	\item If the base and summit of a Saccheri quadrilateral are bisected, we obtain two congruent Lambert quadrilaterals.
 	  	\item The summit angles of a Saccheri quadrilateral are congruent.
-			\item In Euclidean geometry, Saccheri and Lambert quadrilaterals are rectangles (four right-angles, opposite sides congruent).
+			\item In \textbf{Euclidean geometry}, Saccheri and Lambert quadrilaterals are \textbf{rectangles}: the summit angles are also right-angles, and the summit and base are congruent.
 		\end{enumerate}
 	\end{minipage}
 	\hfill
@@ -147,118 +145,153 @@ We draw these with curved sides to indicate that the summit angles need not be r
 	\end{minipage}
 \end{lemm}
 
-Parts 1 and 2 are exercises. We could interpret part 3 as saying that Saccheri and Lambert quadrilaterals are as close as we can get to rectangles in absolute geometry.
+We could interpret part 3 as saying that Saccheri and Lambert quadrilaterals are as close as we can get to rectangles in absolute geometry.	The Lemma is mostly a recapitulation of Euclid's Book I construction of a square (Thm. I.\,46, Exercise \ref*{sec:euclid}.\ref{exs:pythagexs}). We leave parts 1 and 2 as exercises: remember that parts 1 and 2 must be proved without reference to Playfair's Axiom!.
 
-\begin{proof}[Proof of 3.]
-	By part 1 we need only prove this for a Saccheri quadrilateral.
-	Following the exterior angle theorem, $\overleftrightarrow{AB}$ is a crossing line making congruent right-angles, whence $\cl{AD}\parallel\cl{BC}$.\smallbreak
-	However $\overleftrightarrow{CD}$ also crosses the same parallel lines. By the parallel postulate, the summit angles sum to a straight edge. Since these are congruent, they are both right-angles. 
+\begin{proof}[Proof of part 3]
+	Given a Lambert quadrilateral, a second congruent copy forms a Saccheri quadrilateral: if this last is a rectangle, so is the former. It suffices therefore to prove the result for Saccheri quadrilaterals.\smallbreak
+	Suppose $ABCD$ is a Saccheri quadrilateral with base $\cl{AB}$. Following the exterior angle theorem, since $\lin{AB}$ is a crossing line making congruent right-angles we conclude that $\lin{AD}\parallel\lin{BC}$.\smallbreak
+	The extended summit $\lin{CD}$ also crosses the same parallels. By the parallel postulate, the summit angles sum to a straight-edge. Since these are congruent (part 2), both are right-angles.\par
+	\begin{minipage}[t]{0.64\linewidth}\vspace{-2pt}
+		Finally, join $\cl{AC}$. Again by the parallel postulate, $\lin{AD}\parallel\lin{BC}$ says the alternate angles are congruent ($\mathcolor{BlueViolet}{\angle DAC\cong\angle BCA}$). By SAS the triangles are congruent ($\triangle DAC\cong\triangle BCA$); in particular so also are the summit and base ($\cl{AB}\cong\cl{CD}$) of the original quadrilateral.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.35\linewidth}\vspace{-4pt}
+		\hfill\includegraphics[alt={the summit is congruent to the base in Euclidean geometry}]{history-quad5}
+	\end{minipage}
 \end{proof}
 
-We now show that drawing \emph{acute} summit angles is justified by the Saccheri--Legendre Theorem.
+\pagebreak[3]
+
+We now show that drawing a Saccheri quadrilateral with \emph{non-obtuse} summit angles is justified.
 
 \begin{thm}{}{summit90}
-	The summit angles of a Saccheri quadrilateral measure $\le \ang{90}$. 
+	In absolute geometry, the summit angles of a Saccheri quadrilateral measure $\le \ang{90}$. 
 \end{thm}
 
 \begin{proof}
 	Suppose $ABCD$ is a Saccheri quadrilateral with base $\cl{AB}$.\par
-	\begin{minipage}[t]{0.65\linewidth}\vspace{-4pt}
-		Extend $\cl{CB}$ to $E$ (opposite side of $\cl{AB}$ to $C$) such that $\cl{BE}\cong\cl{DA}$. Let $M$ be the midpoint of $\cl{AB}$.\smallbreak
-	SAS implies $\angle DAM\cong \triangle EBM$; the \textcolor{Magenta}{vertical angles} at $M$ are congruent, whence $M$ lies on $\cl{DE}$.
+	\begin{minipage}[t]{0.65\linewidth}\vspace{-6pt}
+		Extend $\cl{CB}$ to $E$, on the opposite side of $\lin{AB}$ to $C$, such that $\cl{BE}\cong\cl{DA}$.\smallbreak
+		Let $M$ be the midpoint of $\cl{AB}$ and join to $D$ and $E$.\smallbreak
+		SAS implies $\angle DAM\cong \triangle EBM$. In particular, the \textcolor{mMagenta}{vertical angles} at $M$ are congruent, whence $M$ lies on $\cl{DE}$.
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.34\linewidth}\vspace{-22pt}
-		\hfill\includegraphics[scale=0.9]{history-quad2}\vspace{-5pt}
+	\begin{minipage}[t]{0.34\linewidth}\vspace{-25pt}
+		\hfill\includegraphics[alt={Convert the quadrilateral into a triangle}]{history-quad2}
 	\end{minipage}\par
-	By Saccheri--Legendre, the (congruent) \textcolor{orange}{summit angles} at $C$ and $D$ sum to
-	\[
-		\measuredangle ADC +\textcolor{orange}{\measuredangle DCB} =\textcolor{cyan}{\measuredangle ADM} +\textcolor{blue}{\measuredangle EDC} +\textcolor{orange}{\measuredangle DCE} =\textcolor{cyan}{\measuredangle CED} +\textcolor{blue}{\measuredangle EDC} +\textcolor{orange}{\measuredangle DCE} \le \ang{180} \tag*{\qedhere}
-	\]
+	By the Saccheri--Legendre Theorem, the (congruent) \textcolor{Brown}{summit angles} at $C$ and $D$ sum to
+	\begin{align*}	
+		\angle ADC +\mathcolor{Brown}{\angle DCB} 
+		&=\mathcolor{mGreen}{\angle ADM} +\mathcolor{Blue}{\angle EDC} +\mathcolor{Brown}{\angle DCE}\\
+		&=\mathcolor{mGreen}{\angle CED} +\mathcolor{Blue}{\angle EDC} +\mathcolor{Brown}{\angle DCE}\\
+		&\le \ang{180} \tag*{\qedhere}
+	\end{align*}
+	\vspace{-20pt}
 \end{proof}
 
+The next step is to see if there exists a model of absolute geometry in which the summit angles are \emph{strictly less} than a right-angle\ldots
 
 \begin{exercises}
-	Work in absolute geometry; you cannot use Playfair's Axiom or the parallel postulate!\par
-		\begin{minipage}[t]{0.66\linewidth}\vspace{-2pt}
-		  \begin{enumerate}
-		  	\item Use the first picture to prove parts 1 and 2 of Lemma \ref{lemm:saccheribasic}.
+	\hangindent\leftmargini\emph{Key concepts: \ Absolute Geometry, \ $\Sigma_{\triangle}\le\ang{180}$, \ Saccheri \& Lambert quadrilaterals}\medbreak
+	\hangindent\leftmargini Work in absolute geometry; you cannot use Playfair's Axiom or the parallel postulate!
 
-		  	\item Use the first picture to give an alternative proof of Theorem \ref{thm:summit90}.
+	\begin{enumerate}
+		\item\label{exs:hyphist1} Use the first picture below to prove parts 1 and 2 of Lemma \ref{lemm:saccheribasic}.
+
+		\item\label{exs:hyphist2} Use the first picture to give an alternative proof of Theorem \ref{thm:summit90}.
 		
-				\item\label{exs:rectanglesplit} Suppose $\square ABCD$ has four right-angles (second picture). Apply the Saccheri--Legendre Theorem to prove that $\cl{AC}$ splits $\square ABCD$ into two congruent triangles, and conclude that the opposite sides are congruent.\par
-				Why is this question easier in Euclidean geometry?
-	
-				\item\label{exs:saccherisplit} A pair of Saccheri quadrilaterals have congruent bases (e.g., $\cl{AB}$) and perpendicular sides ($\cl{AD},\cl{BC}$). Prove that the quadrilaterals are congruent.
+		\begin{center}
+			\begin{tabular}{c@{\qquad\qquad}c}
+				\includegraphics[alt={subdividing a quadrtilateral}]{history-saccheri2}
+				&
+				\includegraphics[alt={four right angles guarantee opposite sides congruent}]{basic-rect}
+				\\
+				Exercises \ref*{exs:hyphist1} \& \ref*{exs:hyphist2}
+				&
+				Exercise \ref*{exs:rectanglesplit}
+			\end{tabular}
+		\end{center}
+		  	
+		
+		\item\label{exs:rectanglesplit} Suppose $ABCD$ has four right-angles. Use the Saccheri-Legendre Theorem to prove that $\cl{AC}$ splits $ABCD$ into two congruent triangles; conclude that $ABCD$ is a rectangle.\par
+		(\emph{This is easy in Euclidean geometry, but shows that we needn't have invoked the parallel postulate for a second time in Lemma \ref{lemm:saccheribasic}, part 3.})
 				
-				\item (Hard!)\lstsp Suppose Saccheri quadrilaterals have congruent summits and perpendicular sides. Prove that the quadrilaterals are congruent.
-			\end{enumerate}
-		\end{minipage}
-		\hfill
-		\begin{minipage}[t]{0.32\linewidth}\vspace{-8pt}
-			\hfill\includegraphics[scale=0.9]{history-saccheri2}\\
-			\includegraphics[scale=0.9]{basic-rect}
-		\end{minipage}	
-		    		
-
-
+	
+		\item\label{exs:saccherisplit} Suppose a pair of Saccheri quadrilaterals have congruent bases and perpendicular sides. Prove that the quadrilaterals are congruent.
+				
+		\item (Hard)\lstsp Suppose two Saccheri quadrilaterals have congruent summits and  congruent perpendicular sides. Prove that the quadrilaterals are congruent.
+	\end{enumerate}
 \end{exercises}
+
+
 
 \clearpage
 
-\iffalse
+
 
 \subsection{Models of Hyperbolic Geometry}\label{sec:hyp-models}
 
-In the 1820-30s, János Bolyai, Carl Friedrich Gauss and Nikolai Lobachevsky independently took the next step, each describing versions of non-Euclidean geometry.\footnote{Bolyai indeed is the source of the term `absolute geometry.'} Rather than attempting to establish the parallel postulate as a theorem within Euclidean geometry, a new geometry was defined based on an alternative to the parallel postulate.
+In the 1820-30s, János Bolyai, Carl Friedrich Gauss and Nikolai Lobachevsky independently took the next step.\footnote{%
+	Bolyai is the source of the term `absolute geometry.'%
+}
+Rather than attempting to establish the parallel postulate as a theorem within Euclidean geometry, they defined a new geometry based on an alternative axiom of parallels.
 
 \begin{axiom}{Bolyai--Lobachevsky/Hyperbolic Postulate}{}
 	Given a line $\ell$ and a point $P\not\in\ell$, there exist \emph{at least two} parallel lines to $\ell$ through $P$.
 \end{axiom}
 
-\emph{Hyperbolic Geometry} is the resulting axiomatic system: Hilbert with Playfair's axiom replaced by the hyperbolic postulate. Consistency was proved in the late 1800s by Beltrami, Klein and Poincaré, each of whom created models by defining point, line, etc., in novel ways. One of the simplest is named for Poincaré, though it was first proposed by Beltrami.\footnote{%
-	The key results of hyperbolic geometry---including almost everything in Sections \ref{sec:hypparallel}, \ref{sec:omegatri} \& \ref{sec:hyparea}---can be discussed synthetically without reference to a model. While efficient, such an approach would be both ahistorical and masochistic for a first exposure: an explicit model allows us to visualize theorems and to verify examples via calculation.
+\emph{Hyperbolic Geometry} is the resulting axiomatic system: Hilbert with Playfair's axiom replaced by the hyperbolic postulate. Consistency was proved in the late 1800s by Beltrami, Klein and Poincaré, each of whom created models by defining \emph{point}, \emph{line}, etc., in novel ways.
+
+\subsubsection*{The Poincaré Disk Model}
+
+One of the simplest models is named for Poincaré, though it was first proposed by Beltrami.\footnote{%
+	The key results of hyperbolic geometry can be discussed synthetically without reference to a model, though such an approach would be ahistorical, and masochistic for a first exposure!
 }
 
 \begin{defn}{}{poincaredisk}
-	The \emph{Poincaré disk} is the interior of the unit circle
-	\[
-		\bigl\{(x,y)\in\R^2:x^2+y^2<1\bigr\}
-		\quad\text{or}\quad
-		\bigl\{z\in\C:\nm z<1\bigr\}
-	\]
-	A \emph{hyperbolic line} is a diameter or a circular arc meeting the unit circle at right-angles.\smallbreak
-	In the picture we have a \textcolor{red}{hyperbolic line $\ell$} and a \textcolor{blue}{point $P$}: also drawn are several \textcolor{Green}{parallel hyperbolic lines} to $\ell$ passing through $P$.\smallbreak
+	The \emph{Poincaré disk} is the interior of the unit circle\par
+	\begin{minipage}[t]{0.7\linewidth}\vspace{-12pt}
+		\[
+			\big\{(x,y)\in\R^2:x^2+y^2<1\big\}
+			\quad\text{or}\quad
+			\big\{z\in\C:\nm z<1\big\}
+		\]
+		A \emph{hyperbolic line} is either a diameter or a circular arc meeting the unit circle at right-angles.\smallbreak
+		The picture shows a \textcolor{dRed}{hyperbolic line $\ell$} and a \textcolor{Blue}{point $P$}: also drawn are several \textcolor{dGreen}{parallel hyperbolic lines} to $\ell$ passing through $P$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.29\linewidth}\vspace{-22pt}
+		\hfill\includegraphics[alt={parallel lines in the model}]{models-parallels}
+	\end{minipage}\par
 	Points on the boundary circle are termed \emph{omega-points}: these are \emph{not} in the Poincaré disk and are essentially `points at infinity.' 
-
-	\hfill\includegraphics{models-parallels}
 \end{defn}
 
 By the incidence axioms, there exists a unique hyperbolic line joining any two points in the Poincaré disk. Such may straightforwardly be described using equations in analytic geometry.
 
 \begin{lemm}{}{hypline}
-	Every hyperbolic line in the Poincaré disk model is one of the following:
-	\begin{itemize}
-	  \item A diameter passing through $(c,d)\neq (0,0)$ with Euclidean equation $dx=cy$.
-	  \item The \textcolor{blue}{arc} of a (Euclidean) circle with equation
-		\[
-			x^2+y^2-2ax-2by+1=0\quad\text{where}\quad a^2+b^2>1
-		\]
-		and (Euclidean) center and radius
-		\[
-			C=(a,b)\quad\text{and}\quad r=\sqrt{a^2+b^2-1}
-		\]
-	\end{itemize}
-
-	\hfill\includegraphics[scale=0.95]{models-example}
+	A hyperbolic line in the Poincaré disk model is either:\par
+	\begin{minipage}[t]{0.64\linewidth}\vspace{0pt}
+		\begin{enumerate}
+		  \item A \textcolor{dMagenta}{diameter} with Euclidean equation $dx=cy$ (passes through a point $(c,d)\neq (0,0)$).
+		  \item An \textcolor{Blue}{arc} of a Euclidean circle with equation
+			\[
+				x^2+y^2-2ax-2by+1=0\ \text{ where }\ a^2+b^2>1
+			\]
+			Euclidean center $C=(a,b)$ and radius $r=\sqrt{a^2+b^2-1}$.
+		\end{enumerate}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.35\linewidth}\vspace{-20pt}
+		\hfill\includegraphics[alt={finding the Euclidean equation of a hyperbolic line}]{models-example}
+	\end{minipage}			
 \end{lemm}
 
 
 
 
 \begin{example}{}{}
-	We compute the hyperbolic line through $P=(\frac 13,\frac 12)$ and $Q=(\frac 12,0)$ in the Poincaré disk: this is the picture shown in Lemma \ref{lemm:hypline}.\smallbreak
-	Substitute into $x^2+y^2-2ax-2by+1=0$ to obtain a system of equations for $a,b$:
+	We compute the equation of the hyperbolic line through the points $P=(\frac 13,\frac 12)$ and $Q=(\frac 12,0)$ in the Poincaré disk: this is the picture shown in Lemma \ref{lemm:hypline}.\smallbreak
+	This requires only high-school algebra! Substitute the given points into the equation for a hyperbolic line ($x^2+y^2-2ax-2by+1=0$) to obtain equations for the coefficients $a,b$:
 	\[
 		\begin{cases}
 			\frac 19+\frac 14-\frac 23a-b+1=0\\
@@ -272,95 +305,104 @@ By the incidence axioms, there exists a unique hyperbolic line joining any two p
 		\quad\text{or}\quad
 		\left(x-\frac 54\right)^2+\left(y-\frac{19}{36}\right)^2 =\frac{545}{648}
 	\]
+	This is an arc of a Euclidean circle centered at $C=\left(\frac 54,\frac{19}{36}\right)$ with radius $r=\sqrt{\frac{545}{648}}$. 
 \end{example}
 
-The undefined terms \emph{point, line, on} and \emph{between} now make sense. To complete the model, we need to define \emph{congruence} of hyperbolic segments and angles.
 
-\begin{defn*}{\ref{defn:poincaredisk} continued}
-	The \emph{hyperbolic distance} between points $P,Q$ in the Poincaré disk is\footnotemark{}
+\paragraph{Distance and Angle in the Poincaré  Disk}
 
+The undefined terms \emph{point, line, on} and \emph{between} now make sense. To complete the model, we need to define \emph{congruence} of segments and angles.
+
+\begin{defn}{}{poincaredisk2}
+	The \emph{hyperbolic distance} between points $P,Q$ in the Poincaré disk is\footnotemark{}\par
 	\begin{minipage}[t]{0.7\linewidth}\vspace{-12pt}
 		\[
 			d(P,Q):=\cosh^{-1}\left(1+\frac{2\nm{PQ}^2}{(1-\nm{P}^2)(1-\nm{Q}^2)}\right)
 		\]
-		where $\nm{PQ}$ is the Euclidean distance and $\nm P,\nm Q$ are the Euclidean distances of $P,Q$ from the origin.\smallbreak
-		Hyperbolic segments are \emph{congruent} if they have the same length.\smallbreak
-		The \emph{angle} between hyperbolic rays is that between their tangent lines: angles are congruent if they have the same measure.
+		where $\nm{PQ}$, $\nm P=\nm{OP}$ and $\nm Q=\nm{OQ}$ are Euclidean distances.\par
+		Hyperbolic segments are \emph{congruent} if they have the same length
+		\[
+			\cl{AB}\cong\cl{PQ}\iff d(A,B)=d(P,Q)
+		\]
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.29\linewidth}\vspace{-5pt}
-		\hfill\includegraphics{models-angle}
-	\end{minipage}
-\end{defn*}
-
-\begin{lemm}{}{distformula}
-	The hyperbolic distance of $P$ from the origin is
-	\[
-		d(O,P)=\cosh^{-1}\frac{1+\nm P^2}{1-\nm P^2}=\ln\frac{1+\nm P}{1-\nm P}
-	\]
-\end{lemm}
+	\begin{minipage}[t]{0.29\linewidth}\vspace{-6pt}
+		\hfill\includegraphics[alt={angles are the same as in euclidean geometry}]{models-angle}
+	\end{minipage}\smallbreak
+	The \emph{angle} between hyperbolic rays is that between their Euclidean tangent rays. Angles are \emph{congruent} if they are so in a Euclidean sense.\smallbreak
+	The \emph{hyperbolic circle} with center $P$ and (hyperbolic) radius $\rho$ is now easily defined as the set of points $X$ for which $d(X,Q)=\rho$. 
+\end{defn}
 
 \footnotetext{%
-	It seems reasonable for hyperbolic functions to play some role in hyperbolic geometry! For reference:
+	It should seem reasonable that hyperbolic functions to play some role in hyperbolic geometry! For reference:
   \[
   	\cosh x=\frac{e^x+e^{-x}}2,\quad \sinh x=\frac{e^x-e^{-x}}2,\quad \cosh^2x-\sinh^2x=1,\quad\cosh^{-1}x=\ln(x+\sqrt{x^2-1})
   \]
-  \vspace{-15pt}
 }
+
+It is worth observing both the symmetry of the distance function ($d(P,Q)=d(Q,P)$) and how it simplifies when measuring from the origin: if $Q=O$, then
+\[
+	d(O,P)=\cosh^{-1}\frac{1+\nm P^2}{1-\nm P^2}=\ln\frac{1+\nm P}{1-\nm P}
+\]
+
 
 
 \begin{example}{}{hypisosceles}
-	We calculate the sides and angles in the isosceles right-triangle\par
-	\begin{minipage}[t]{0.69\linewidth}\vspace{-8pt}
-		with vertices $O=(0,0)$, $P=(\frac 12,0)$ and $Q=(0,\frac 12)$.
+	We calculate the side-lengths and angles in the hyperbolic isosceles right-triangle with vertices $O=(0,0)$, $P=(\frac 12,0)$ and $Q=(0,\frac 12)$.\smallbreak
+	To compute the hyperbolic distances, we first need the three \emph{Euclidean} versions:\par
+	\begin{minipage}[t]{0.69\linewidth}\vspace{-12pt} 
 		\begin{gather*}
-		\nm P=\tfrac 12=\nm Q,\qquad \nm{PQ}^2=\tfrac 14+\tfrac 14=\tfrac 12\\
-		d(O,P)=d(O,Q)=\ln\frac{1+\frac 12}{1-\frac 12}=\ln 3=\cosh^{-1}\frac 53\approx 1.099\\
-		d(P,Q)=\cosh^{-1}\left(1+\frac{2\cdot \frac 12}{(1-\frac 14)^2}\right) =\cosh^{-1}\frac{25}9 \approx 1.681
+		\nm P=\frac 12=\nm Q,\qquad \nm{PQ}^2=\frac 14+\frac 14=\frac 12\\
+			d(O,P) =d(O,Q) =\ln\frac{1+\frac 12}{1-\frac 12}
+			=\ln 3 =\cosh^{-1}\frac 53\approx 1.10\\
+			d(P,Q) =\cosh^{-1}\left(1+\frac{2\cdot \frac 12}{(1-\frac 14)^2}\right) 
+			=\cosh^{-1}\frac{25}9 \approx 1.68
 		\end{gather*}
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.3\linewidth}\vspace{-20pt}
-		\hfill\includegraphics[scale=0.9]{models-dist4}
-	\end{minipage}
-
-	
+	\begin{minipage}[t]{0.3\linewidth}\vspace{-8pt}
+		\hfill\includegraphics[alt={measuring the sides of a hyperbolic triangle}]{models-dist4}
+	\end{minipage}\par
 	To find the interior angle $\theta$, implicitly differentiate the equation for the hyperbolic line $\lin{PQ}$:
 	\[
-		x^2+y^2-\frac 52x-\frac 52y+1=0 \implies \diffat[y]{x}{P}=\frac{4x-5}{5-4y}\bigg|_P=-\frac 35 \implies \theta=\tan^{-1}\frac 35\approx \ang{30.96}
+		x^2+y^2-\frac 52x-\frac 52y+1=0 \implies \diffat[y]{x}{P}=\frac{4x-5}{5-4y}\bigg|_P=-\frac 35 \implies \theta=\tan^{-1}\frac 35\approx \ang{31}
 	\]
-	By symmetry, we have the same angle at $Q$. With a right-angle at $O$, we conclude that the angle sum is approximately $\Sigma_{\triangle}=\ang{151.93}$!\smallbreak
-	As a sanity check, we compare data for $\triangle OPQ$ and the \emph{Euclidean} triangle with the same vertices
+	By symmetry, we have the same angle at $Q$. With a right-angle at $O$, we conclude that the angle-sum is $\Sigma_{\triangle}\approx\ang{152}$! To satisfy curiosity, we compare data for $\triangle OPQ$ and the \emph{Euclidean} triangle with the same vertices
 	\begin{center}
 		\begin{tabular}{l||c|c}
 			Property&Hyperbolic Triangle&Euclidean Triangle\\\hline\hline
-			Edge lengths&$1.099:1.099:1.681$&$0.5:0.5:0.707$\\
-			Relative edge ratios&$1:1:1.530$&$1:1:1.414$\\
-			Angles&\ang{30.06}, \ang{30.96}, \ang{90}&\ang{45}, \ang{45}, \ang{90}%\\
+			Edge lengths&$1.10:1.10:1.68$&$0.5:0.5:0.71$\\
+			Relative edge ratios&$1:1:1.53$&$1:1:1.41$\\
+			Angles&\ang{31}, \ang{31}, \ang{90}&\ang{45}, \ang{45}, \ang{90}%\\
 			%Area&1.023&0.322
 		\end{tabular}
 	\end{center}
-	The hyperbolic triangle has longer sides and a \emph{relatively} longer hypotenuse. Moreover, its side lengths do \emph{not} satisfy the Pythagorean relation $a^2+b^2=c^2$ (though $\cosh a\cosh b=\cosh c\ldots$).
+	The hyperbolic triangle has longer sides and a \emph{relatively} longer hypotenuse. Moreover, its side lengths do \emph{not} satisfy the Pythagorean relation\footnotemark{} $a^2+b^2=c^2$.
 \end{example}
 
-\begin{minipage}[t]{0.65\linewidth}\vspace{-5pt}
-	The next result is an exercise; it says that distance increases smoothly as one moves along a hyperbolic line.
-	
-	\begin{lemm}{}{hypdistwd}
-		Fix $P$ and a hyperbolic line through $P$. Then the distance function $Q\mapsto d(P,Q)$ maps the set of points on one side of $P$ differentiably and bijectively onto the interval $(0,\infty)$.
-	\end{lemm}
-	
-	The Lemma means that hyperbolic circles are well-defined and look like one expects: the circle of hyperbolic radius $\delta$ centered at $P$ is the set of points $Q$ such that $d(P,Q)=\delta$.
+\footnotetext{Though the relationship $\cosh a\cosh b=\cosh c$ should be obvious. We'll return to this observation later\ldots}
+
+
+The Poincaré disk uses concepts from \emph{Euclidean} (analytic) geometry to define objects and compute in \emph{hyperbolic} geometry. It may seem laborious to keep stressing the distinction, but it is essential not to confuse the corresponding versions of distance, line, circle, etc. While the meaning of \emph{angle} is unchanged, everything else is at least slightly, if not significantly, different.\par
+\begin{minipage}[t]{0.73\linewidth}\vspace{-5pt} 
+	For instance, the picture shows several \textcolor{Blue}{hyperbolic circles} and their \textcolor{mRed}{centers}; one has several of its \textcolor{mGreen}{radii} drawn. Observe how the centers are closer (in a Euclidean sense) to the boundary circle (omega-points) than one might expect; this is since hyperbolic distance measure is greater the further one is from the origin.\smallbreak
+	In fact (Exercise \ref{exs:circhypcirc}) hyperbolic circles in the Poincaré disk model are also Euclidean circles! Their hyperbolic \textcolor{mGreen}{radii} moreover meet the circles at right-angles, as we'd expect.
 \end{minipage}
 \hfill
-	\begin{minipage}[t]{0.34\linewidth}\vspace{-5pt}
-\hfill\includegraphics[scale=0.95]{hyper-circle}
-\end{minipage}\medbreak
+\begin{minipage}[t]{0.25\linewidth}\vspace{-7pt}
+	\hfill\includegraphics[alt={hyperbolic circles and their centers}]{hyper-circle}
+\end{minipage}
 
-In the picture are several \textcolor{blue}{hyperbolic circles} and their \textcolor{red}{centers}; one has several of its \textcolor{Green}{radii} drawn. Observe how the centers are closer (in a Euclidean sense) to the boundary circle than one might expect: this is since hyperbolic distances measure greater the further one is from the origin.\smallbreak
 
-In fact (Exercise \ref*{sec:hyp-models}.\ref{exs:circhypcirc}) hyperbolic circles in the Poincaré disk model are also Euclidean circles! Their hyperbolic radii moreover intersect the circles at right-angles, as we'd expect.
+\paragraph{A Little Bookkeeping}
 
+The next result is an exercise; it says that the distance function behaves roughly as we expect, increasing smoothly as one moves along a hyperbolic line.
+	
+\begin{lemm}{}{hypdistwd}
+	Fix $P$ and a hyperbolic line $\ell$ through $P$. Then the distance function $Q\mapsto d(P,Q)$ maps the points of $\ell$ on one side of $P$ differentiably and bijectively onto the interval $(0,\infty)$.
+\end{lemm}
+	
+This should also convince us that hyperbolic circles look roughly as we expect. Of greater importance is the following.
 
 \begin{thm}{}{}
 	The Poincaré disk is a model of hyperbolic geometry.
@@ -370,8 +412,8 @@ In fact (Exercise \ref*{sec:hyp-models}.\ref{exs:circhypcirc}) hyperbolic circle
 	A rigorous proof would require us to check the hyperbolic postulate and all Hilbert's axioms except Playfair. Instead we verify Euclid's postulates 1--4 and the hyperbolic postulate 5.
 	\begin{enumerate}
 	  \item Lemma \ref{lemm:hypline} says we can join any given points in the Poincaré disk by a unique segment.
-	  \item A hyperbolic segment joins two points \emph{inside} the (open) Poincaré disk. The distance formula increases (Lemma \ref{lemm:hypdistwd}) unboundedly as $P$ moves towards the boundary circle, so we can always make a hyperbolic line longer.
-	  \item Hyperbolic circles are defined above.
+	  \item A hyperbolic segment joins two points \emph{inside} the (open) Poincaré disk. The distance formula increases (Lemma \ref{lemm:hypdistwd}) unboundedly as $P$ moves towards the boundary circle, so we can always make a hyperbolic segment longer.
+	  \item Hyperbolic circles are as in Definition \ref{defn:poincaredisk2}.
 	  \item All right-angles are equal since the notion of angle is unchanged from Euclidean geometry.
 	  \item The first picture on page \pageref{sec:hyp-models} shows multiple parallels!\hfill{\qedhere}
 	\end{enumerate}
@@ -381,107 +423,123 @@ In fact (Exercise \ref*{sec:hyp-models}.\ref{exs:circhypcirc}) hyperbolic circle
 
 
 
-\subsubsection*{Other Models of Hyperbolic Space: non-examinable}
+\subsubsection*{Other Models of Hyperbolic Space (non-examinable)}
 
 There are several other models of hyperbolic space. Here are three of the most common.
 
-\paragraph{Klein Disk Model} This is similar to the Poincaré disk, though lines are chords of the unit circle (`Euclidean' straight lines!) and the distance function is different:
-\[
-	d_K(P,Q) =\frac 12\nm{\ln\frac{\nm{P\Theta}\nm{Q\Omega}}{\nm{P\Omega}\nm{Q\Theta}}}
-\]
+\paragraph{Klein Disk Model}
 
-\begin{minipage}[t]{0.69\linewidth}\vspace{0pt}
-	where $\Omega,\Theta$ are where the chord $\smash[t]{\lin{PQ}}$ meets the boundary circle.\smallbreak
-	The cost is that the notion of \emph{angle} is different. The picture shows perpendicularity: Given a \textcolor{red}{hyperbolic line} find the \textcolor{Green}{tangents} to where it meets the boundary circle. Any \textcolor{blue}{chord} whose extension passes through the \textcolor{Green}{intersection} of these tangents is perpendicular to the \textcolor{red}{original line}. Measuring other angles is difficult!
+This is similar to the Poincaré disk. Instead of Euclidean arcs, hyperbolic lines are chords of the unit circle (`Euclidean' line-segments) without their end-points, and the distance function is different: if  $\Omega,\Theta$ are the omega-points of the chord $\smash[t]{\lin{PQ}}$, then\par
+\begin{minipage}[t]{0.67\linewidth}\vspace{-12pt}
+	\[
+		d_K(P,Q) =\frac 12\nm{\ln\frac{\nm{P\Theta}\nm{Q\Omega}}{\nm{P\Omega}\nm{Q\Theta}}}
+	\]
+	Lines might look ``straight", but the cost is that the notion of \emph{angle} is different.\footnotemark{} Given a \textcolor{mRed}{hyperbolic line} (as pictured), find the \textcolor{mGreen}{tangents} at its omega-points; any \textcolor{Blue}{chord} whose extension passes through the \textcolor{mGreen}{intersection} of these tangents is perpendicular to the \textcolor{mRed}{original line}. Measuring other angles is difficult!
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.3\linewidth}\vspace{-32pt}
-	\hfill\includegraphics[scale=0.9]{models-klein}
+\begin{minipage}[t]{0.32\linewidth}\vspace{-8pt}
+	\hfill\includegraphics[alt={hyperbolic lines in klein's model are chords of the unit circle}]{models-klein}
 \end{minipage}\medbreak
 
-Gauss' famous \emph{theorem egregium} says that this problem is unavoidable; there is no model in which lines and angles both have the same meaning as in Euclidean geometry. 
+\footnotetext{%
+	For differential geometers, Gauss' famous \emph{theorem egregium} says that this problem is unavoidable. The intrinsic (negative) curvature of hyperbolic geometry says that there is no model in which both lines and angles have the same meanings as in Euclidean geometry.%
+}
 
-%  If $H$ is a model of hyperbolic geometry, then its intrinsic curvature says that it is impossible to find an embedding $f:H\to\R^2$ which preserves \emph{both} the concepts of straight line and angle. Poincaré's model has nice angles but `bendy' lines; Klein's lines are `Euclidean straight' but his angle are ugly. The best we can do is to have one concept or the other: we cannot have both.\footnote{The same problem arises when trying to make a map of part of the Earth (another curved geometry). One can have maps which preserve distance or angle, but not both.}
 
-	\paragraph{Poincaré Half-plane Model}
+\paragraph{Poincaré Half-plane Model}
 	
-\begin{minipage}[t]{0.69\linewidth}\vspace{0pt}
-	Widely used in complex analysis, the points comprise the upper half-plane $(y>0)$ in $\R^2$, while hyperbolic lines are verticals or semicircles centered on the $x$-axis
+Widely used in complex analysis, the points comprise the upper half-plane $(y>0)$ in $\R^2$, while hyperbolic lines are verticals or semicircles centered on the $x$-axis\par	
+\begin{minipage}[t]{0.7\linewidth}\vspace{-12pt}
 	\[
-		x=\text{constant}\quad\text{or}\quad (x-a)^2+y^2=r^2
+		x=\text{constant}
+		\quad\text{or}\quad 
+		(x-a)^2+y^2=r^2
 	\]
 	and angles are the same as in Euclidean space. The expression for hyperbolic distance remains horrific! The picture shows several hyperbolic lines and a \textcolor{blue}{hyperbolic triangle.}
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.3\linewidth}\vspace{0pt}
-	\hfill\includegraphics{models-halfplane}
+\begin{minipage}[t]{0.29\linewidth}\vspace{-5pt}
+	\hfill\includegraphics[alt={the half plane model of hyperbolic geometry}]{models-halfplane}
 \end{minipage}
 
 
 
 \paragraph{Hyperboloid Model}
 
-Points comprise the upper sheet $(z\ge 1)$ of the hyperboloid $x^2+y^2=z^2-1$. A \textcolor{blue}{hyperbolic line} is the intersection of the hyperboloid with a plane through the origin. Isometries (congruence) can be described using matrix-multiplication and hyperbolic distance is relatively easy: given $P=(x,y,z)$ and $Q=(a,b,c)$, hyperbolic distance is
+Points comprise the upper sheet $(z\ge 1)$ of the hyperboloid $x^2+y^2=z^2-1$. A \textcolor{blue}{hyperbolic line} is the intersection of the hyperboloid with a plane through the origin. Isometries (congruence) can be described using matrix-multiplication and hyperbolic distance is relatively easy: given $P=(x,y,z)$ and $Q=(a,b,c)$,
 
-\begin{minipage}[t]{0.6\linewidth}\vspace{-10pt}
+\begin{minipage}[t]{0.64\linewidth}\vspace{-10pt}
 	\[
 		d(P,Q)=\cosh^{-1}(cz-ax-by)
 	\]
-	Difficulties include working in three dimensions and the fact that angles are awkward.\smallbreak
-	The relationship to the Poincaré disk is via projection. Place the disk in the $x,y$-plane centered at the origin and draw a \textcolor{Green}{line} through the disk and the point $(0,0,-1)$. The intersection of this line with the hyperboloid gives the correspondence.
+	An obvious drawback is the need to work in three-dimensions. Moreover, angles are awkward.\smallbreak
+	The relationship to the Poincaré disk is via projection. Place the disk in the $xy$-plane centered at the origin and draw a \textcolor{mGreen}{line} through the disk and the point $(0,0,-1)$. The intersection of this line with the hyperboloid gives the correspondence.
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.39\linewidth}\vspace{0pt}
-	\hfill\href{http://www.math.uci.edu/~ndonalds/math161/hyper-plane.html}{\includegraphics[scale=0.8]{hyper-plane}}
+\begin{minipage}[t]{0.35\linewidth}\vspace{-20pt}
+	\hfill\href{http://www.math.uci.edu/~ndonalds/math161/hyper-plane.html}{\includegraphics[alt={the hyperboloid model of hyperbolic space}]{hyper-plane}}
 \end{minipage}
 
 
 \begin{exercises}
-	Answer all questions within the Poincaré disk model.
+	\hangindent\leftmargini\emph{Key concepts: \ Hyperbolic Postulate, \ Poincaré disk, \ Hyperbolic lines and distance}
+	
 	\begin{enumerate}
+	  \item[] Answer all questions within the Poincaré disk model.
 	  \item\begin{enumerate}
-	    \item Find the equation of the hyperbolic line joining $P=(\frac 14,0)$ and $Q=(0,\frac 12)$.
+	    \item Find the equation of the hyperbolic line through $P=(\frac 14,0)$ and $Q=(0,\frac 12)$.
 	    \item Find the side lengths of the hyperbolic triangle $\triangle OPQ$ where $O=(0,0)$ is the origin.
-	    \item The triangle in part (b) is right-angled at $O$. If $o,p,q$ represent the hyperbolic lengths of the sides opposite $O,P,Q$ respectively, check that the Pythagorean theorem $p^2+q^2=o^2$ is \emph{false.} Now compute $\cosh p\cosh q$: what do you observe?
+	    \item $\triangle OPQ$ is right-angled at $O$. If $o,p,q$ represent the hyperbolic lengths of the sides opposite $O,P,Q$ respectively, check that $p^2+q^2\neq o^2$ is \emph{false.} Now compute $\cosh p\cosh q$: what do you observe?
 	  \end{enumerate}
 	  
-	  
-	  \item Find the omega points for the hyperbolic line with equation $x^2+y^2-4x+10y+1=0$
+	  \item Find the omega points for the hyperbolic line with equation $x^2+y^2-4x+10y+1=0$.
 	  	
-	  \item Let $P=\left(\frac 12,\sqrt{\frac 5{12}}\right)$ and $Q=\left(\frac 12,-\sqrt{\frac 5{12}}\right)$
+	  \item Let $P=\left(\frac 12,\sqrt{\frac 5{12}}\right)$ and $Q=\left(\frac 12,-\sqrt{\frac 5{12}}\right)$. Together with the origin $O$ these form a triangle.
 	  \begin{enumerate}
-	    \item Compute the hyperbolic distances $d(O,P)$, $d(O,Q)$ and $d(P,Q)$, where $O$ is the origin.
-	    \item Compute the angle $\measuredangle POQ$.
+	    \item Compute the hyperbolic distances $d(O,P)$, $d(O,Q)$ and $d(P,Q)$.
+	    \item Compute the interior angle at $O$ ($\measuredangle POQ$).
 		  \item Show that the hyperbolic line $\ell=\lin{PQ}$ has equation $x^2-\frac{10}3x+y^2+1=0$.
-	  	\item Calculate $\diff[y]{x}$ to show that a tangent vector to $\ell$ at $P$ is $\sqrt{15}\vi+7\vj$. Hence compute $\measuredangle OPQ$.
+	  	\item Calculate $\diff[y]{x}$ to show that a tangent vector to $\ell$ at $P$ is $\sqrt{15}\vi+7\vj$. Hence compute the interior angle at $P$ ($\measuredangle OPQ$). What is the angle-sum in this triangle?
 		\end{enumerate} 
 		
-	  \item\label{exs:isorighthypextended} We extend Example \ref{ex:hypisosceles}. Let $c\in(0,1)$ and label $O=(0,0)$, $P=(c,0)$ and $Q=(0,c)$.
+	  \item\label{exs:isorighthypextended} We generalize Example \ref{ex:hypisosceles}. Suppose $0<c<1$ and consider the isosceles right-triangle with vertices $O=(0,0)$, $P=(c,0)$ and $Q=(0,c)$ in the Poincaré disk.
 	  \begin{enumerate}
-	    \item Compute the hyperbolic side lengths of $\triangle OPQ$.
+	    \item Compute the hyperbolic side lengths of $\triangle OPQ$ as functions of $c$.
 	    \item Find the equation of the hyperbolic line joining $P=(c,0)$ and $Q=(0,c)$.
 	    \item Use implicit differentiation to prove that the interior angles at $P$ and $Q$ measure $\tan^{-1}\frac{1-c^2}{1+c^2}$. What happens as $c\to 0^+$ and as $c\to 1^-$?
 	  \end{enumerate}
 		
-		\item Let $0<r<1$ and find the hyperbolic side lengths and interior angles of the equilateral triangle with vertices $(r,0)$, $(-\frac r2,\frac{\sqrt 3r}2)$ and $(-\frac r2,-\frac{\sqrt 3r}2)$.What do you observe as $r\to 0^+$ and $r\to 1^-$?
+		\item Let $0<r<1$. Consider the hyperbolic triangle with vertices
+		\[
+			P=\left(r,0\right),\quad 
+			Q=\left(-\tfrac r2,\tfrac{\sqrt 3r}2\right),\quad 
+			R=\left(-\tfrac r2,-\tfrac{\sqrt 3r}2\right)
+		\]\vspace{-4pt}
+		\begin{enumerate}
+		  \item Find the side-lengths and thus confirm that $\triangle PQR$ is equilateral.
+		  \item Compute the interior angles of $\triangle PQR$ as functions of $r$.
+		  \item What happens to the triangle (side-lengths, angles) as $r\to 0^+$? As $r\to 1^-$?
+		\end{enumerate}
 		
 		\item\label{exs:circhypcirc}\begin{enumerate}
-	    \item Use the cosh distance formula to prove that the hyperbolic circle of hyperbolic radius $\rho=\ln 3$ and center $C=(\frac 12,0)$ in the Poincaré disk has \emph{Euclidean} equation
+	    \item Prove that the hyperbolic circle with hyperbolic radius $\rho=\ln 3$ and center $C=(\frac 12,0)$ has \emph{Euclidean} equation
 	    \[
 	    	\left(x-\frac 25\right)^2+y^2=\frac 4{25}
 	    \]
-	    \item Prove that every hyperbolic circle in the Poincaré disk is in fact a Euclidean circle.
+	    \item Prove that every hyperbolic circle in the Poincaré disk model is also a Euclidean circle.\par
+	    Conversely, what restrictions on the constants $p,q,r$ guarantee that a Euclidean circle with equation $(x-p)^2+(y-a)^2=r^2$ describes a hyperbolic circle?
 	  \end{enumerate}
 		
 		\item We sketch a proof of Lemma \ref{lemm:hypdistwd}. 
 		\begin{enumerate}
-		  \item Prove that $f(x)=\cosh^{-1}x=\ln(x+\sqrt{x^2-1})$ is strictly increasing on the interval $(1,\infty)$.
-		  \item By part (a), it is enough to show that $\frac{\nm{PQ}^2}{1-\nm Q^2}$ increases as $Q$ moves away from $P$ along a hyperbolic line. Appealing to symmetry, let $P=(0,c)$ lie on the hyperbolic line with equation $x^2+y^2-2by+1=0$. Prove that
+		  \item Prove that $\cosh^{-1}x=\ln(x+\sqrt{x^2-1})$ is strictly increasing on the interval $(1,\infty)$.
+		  \item By part (a), it is enough to show that $\frac{\nm{PQ}^2}{1-\nm Q^2}$ increases as $Q$ moves away from $P$ along a hyperbolic line. Appealing to symmetry, let $P=(0,c)$ lie on the hyperbolic line with equation $x^2+y^2-2by+1=0$. If $Q=(x,y)$ also lies on the same line, prove that
 		  \[
 		  	\frac{\nm{PQ}^2}{1-\nm Q^2}=\frac{(b-c)y+bc-1}{1-by}
 		  \]
-		  and hence show that this is an increasing function of $y$ when $c<y<\frac 1b$.
+		  and show that this is an increasing function of $y$ when $c<y<\frac 1b$.
 		\end{enumerate} 
+		
 	% For a difficult exercise, try to find the omega-points for the line $\overleftrightarrow{PQ}$ and see that you obtain the same expression for the distance.\footnote{Hint: $\Omega,\Theta$ have $x=\frac{4\pm\sqrt{34}}{10}$, $y=\frac{4\mp\sqrt{34}}{10}$\ldots}\goodbreak
 
 	\end{enumerate}
@@ -491,21 +549,25 @@ Points comprise the upper sheet $(z\ge 1)$ of the hyperboloid $x^2+y^2=z^2-1$. A
 
 
 
+
 \subsection{Parallels, Perpendiculars \& Angle-Sums}\label{sec:hypparallel}
 
-%\begin{minipage}[t]{0.68\linewidth}\vspace{-8pt}
-	From now on, all examples will be illustrated using the Poincaré disk, though the main results hold in any model. Recall (page \pageref{sec:hyp1}) that we may use anything from absolute geometry; as a sanity check, think through how the picture illustrates the following result.
-	
+\begin{minipage}[t]{0.72\linewidth}\vspace{-8pt}
+	From now on, all examples will be illustrated within the Poincaré disk, though the main results hold in any model. Recall (page \pageref{sec:hyp1}) that we may use anything from absolute geometry; as a sanity check, think through how the picture illustrates the following familiar result.
+
 	\begin{lemm}{}{hypperp}
 		Through a point $P$ not on a line $\ell$ there exists a unique perpendicular to $\ell$. 
-	\end{lemm}
+	\end{lemm}	
 	
 	We now consider a major departure from Euclidean geometry.
-% \end{minipage}
-% \hfill
-% \begin{minipage}[t]{0.3\linewidth}\vspace{-28pt}
-	\hfill\includegraphics[scale=0.75]{basic-perp}
-% \end{minipage}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.26\linewidth}\vspace{-8pt}
+	\hfill\includegraphics[alt={dropping a perpendicular in hyperbolic geometry}]{basic-perp}
+\end{minipage}
+
+
+
 
 % \begin{proof}
 % Choose a point $A\in\ell$ and join $\cl{AP}$. If $\cl{AP}$ is perpendicular to $\ell$, we only need uniqueness.\par
@@ -526,101 +588,106 @@ Points comprise the upper sheet $(z\ge 1)$ of the hyperboloid $x^2+y^2=z^2-1$. A
 % \end{proof}
 
 
-
-\begin{thm}{Fundamental Theorem of Parallels}{hyperfund}
-	Given $P\not\in\textcolor{red}{\ell}$, drop the perpendicular $\cl{PQ}$. Then there exist precisely two \textcolor{blue}{parallel lines $m,n$} to $\ell$ through $P$ with the following properties:
-	\begin{enumerate}\itemsep0pt
-	  \item A \textcolor{Green}{ray} based at $P$ intersects $\ell$ if and only if it lies between $m$ and $n$ in the same fashion as $\ray{PQ}$.
-	  \item $m$ and $n$ make congruent acute angles $\mu$ with $\ray{PQ}$.
-	\end{enumerate}
-
-	\hfill\includegraphics[scale=0.8]{basic-parallels}
+\begin{thm}{Fundamental Theorem of Parallels in Hyperbolic Geometry}{hyperfund}\phantom{bob}\par
+	\begin{minipage}[t]{0.73\linewidth}\vspace{-10pt}
+		Given $P\not\in\mathcolor{dRed}{\ell}$, drop the perpendicular $\cl{PQ}$ to $\ell$. Then there exist precisely two \textbf{limiting,} or \textbf{asymptotic, parallels} $\mathcolor{Blue}{m,n}$ to $\ell$ through $P$ with the following properties:
+		\begin{enumerate}
+	  	\item A \textcolor{dMagenta}{ray} based at $P$ intersects $\ell$ if and only if it lies between $m$ and $n$ in the same fashion as $\ray{PQ}$.
+	  	\item The limiting parallels make congruent acute angles $\mu$ with $\ray{PQ}$, the \textbf{angle of parallelism} at $P$ relative to $\ell$.
+		\end{enumerate}		
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.25\linewidth}\vspace{-10pt}
+		\hfill\includegraphics[alt={limiting parallels from a point not on a given line}]{basic-parallels}
+	\end{minipage}
 \end{thm}
 
-\begin{defn}{}{limparallel}
-	The lines $m,n$ are the \emph{limiting,} or \emph{asymptotic, parallels} to $\ell$ through $P$. Every other parallel is an \emph{ultraparallel.} The \emph{angle of parallelism} at $P$ relative to $\ell$ is the acute angle $\mu$.
-\end{defn}
-
-More generally, parallel lines $\ell,m$ are \emph{limiting} if they `meet' at an omega-point.\smallbreak
+Every other (non-asymptotic) parallel is called an \emph{ultraparallel.} More generally, parallel lines $\ell,m$ are \emph{asymptotic} if they `meet' at an omega-point.\smallbreak
 
 
 The proof depends crucially on ideas from analysis, particularly continuity \& suprema. As you read through, consider how everything \emph{except} the last line is valid in Euclidean geometry!
  
 \begin{proof}
-	Points $R\in\ell$ are in continuous bijective correspondence with the real numbers (Lemma \ref{lemm:hypdistwd}). It follows that we have a \emph{continuous increasing} function
+	Points $R\in\ell$ are in continuous bijective correspondence with the real numbers (Lemma \ref{lemm:hypdistwd}). We therefore have a \emph{continuous, increasing} function
 	\[
 		f:\R\to(-\ang{90},\ang{90})\quad\text{where}\quad f(r)=\measuredangle QPR
+		\tag{$\pm\ang{90}\not\in\operatorname{range} f$ by Saccheri--Legendre}
 	\]
-	By Saccheri--Legendre, $\pm\ang{90}\not\in\operatorname{range}f$. Since $\dom f=\R$ is an interval, the intermediate value theorem forces $\operatorname{range}f$ to be a \emph{subinterval} $I\subseteq(-\ang{90},\ang{90})$.\par
-	
-	\begin{minipage}[t]{0.71\linewidth}\vspace{-6pt}
-		Given $R\in\ell$, transfer $\cl{QR}$ to the other side of $Q$ to obtain $S\in\ell$. By SAS, $\textcolor{Green}{\measuredangle QPS}=\textcolor{Green}{-\measuredangle QPR}$ whence $I=\operatorname{range}f$ is \emph{symmetric}: $\theta\in I\iff -\theta\in I$.\smallbreak
-	Define $\mu:=\sup I\in(\ang{0},\ang{90}]$ to be the least upper bound; by symmetry, $\inf I=-\mu$. Let $m$ and $n$ be the lines making angles $\pm\mu$ respectively. Plainly every ray making angle $\theta\in(-\mu,\mu)$ intersects $\ell$.\smallbreak
-	Suppose $m$ intersected $\ell$ at $M$. Let $\tilde M\in\ell$ lie on the other side of $M$ from $Q$. Since $f$ is increasing, we see that $\measuredangle QP\tilde M>\mu$, which contradicts $\mu=\sup I$. It follows that $m$ is parallel to $\ell$. Similarly $n\parallel\ell$ and we have part 1.
+	\begin{minipage}[t]{0.73\linewidth}\vspace{-8pt}
+		Since $\dom f=\R$ is an interval, the intermediate value theorem says that $\operatorname{range}f$ is a \emph{subinterval} $I\subseteq(-\ang{90},\ang{90})$.\smallbreak
+		Given $R\in\ell$, transfer $\cl{QR}$ to the other side of $Q$ to obtain $S\in\ell$. By SAS, $\mathcolor{mMagenta}{\measuredangle QPS}=\mathcolor{mMagenta}{-\measuredangle QPR}$ whence $I$ is \emph{symmetric}: $\theta\in I\Longleftrightarrow -\theta\in I$.\smallbreak
+	Let $\mu:=\sup I\in(\ang{0},\ang{90}]$ be the least upper bound; by symmetry, $\inf I=-\mu$. Let $m$ and $n$ be the lines making angles $\pm\mu$ respectively. Certainly any ray between $m,n$ intersects $\ell$. To finish part 1, it remains only to see that $m,n$ are parallel to $\ell$ (that is, $I=(-\mu,\mu)$).
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.28\linewidth}\vspace{-8pt}
-		\hfill\includegraphics[scale=1]{basic-parallels5}
-	\end{minipage}
-	\smallbreak
+	\begin{minipage}[t]{0.25\linewidth}\vspace{-15pt}
+		\hfill\includegraphics[alt={any ray between the limits must intersect l}]{basic-parallels5}
+	\end{minipage}\smallbreak
+	For contradiction, suppose $m$ intersects $\ell$ at $M$. Transfer $\cl{QM}$ to the other side of $M$ to obtain $\tilde M$. Since $f$ is increasing, $\measuredangle QP\tilde M>\mu=\measuredangle QPM$ contradicts $\mu=\sup I$.\smallbreak
 	Finally $m=n\Longleftrightarrow \mu=\ang{90}$. In such a case there would exist only one parallel to $\ell$ through $P$, contradicting the hyperbolic postulate.
 \end{proof}
 
 
+\pagebreak[3]
 
-The picture suggests a bijective relationship between $\mu$ and the perpendicular distance. Here it is; we postpone a simplified argument to Exercise \ref*{sec:hypparallel}.\ref{exs:angparallelism}, and the full result to the next section.%follows from a discussion of omega-triangles in
+
+The picture suggests a bijective relationship between $\mu$ and the perpendicular distance. Here it is; a simplified argument is in Exercise \ref*{sec:hypparallel}.\ref{exs:angparallelism}, and the full result to the next section.
 
 \begin{cor}{}{parangleformula}
 	The perpendicular distance $\delta=d(P,Q)$ and the angle of parallelism are related via
 	\[
-		\cosh\delta=\csc\mu\quad\text{or equivalently}\quad \smash[t]{\tan\frac{\mu}2}=e^{-\delta}
+		\cosh\delta=\csc\mu
+		\quad\text{or equivalently}\quad 
+		\smash{\tan\frac{\mu}2}=e^{-\delta}
 	\]
 \end{cor}
 
 
 \begin{examples}{}{hypperp}
-	\exstart Let $\textcolor{red}{\ell}$ be the hyperbolic line $x^2+y^2-4x+1=0$.
-	\begin{enumerate}\setcounter{enumi}{1}
-		%\begin{minipage}[t]{0.7\linewidth}\vspace{-5pt}
-		  \item[]Intersect with $x^2+y^2=1$ to find $\Omega=\left(\tfrac 12,\tfrac{\sqrt 3}2\right)$ and $\Theta=\left(\tfrac 12,-\tfrac{\sqrt 3}2\right)$.\par
-			By symmetry, the perpendicular from $P=(0,0)$ to $\ell$ has equation $y=0$ and results in $Q=(2-\sqrt 3,0)$.\smallbreak
-			The limiting parallels through $P$ have equations $y=\pm\sqrt 3x$, from which the angle of parallelism is $\mu=\tan^{-1}\sqrt 3=\ang{60}$.\par
+	We compute the limiting parallels and angles of parallelism in two cases.
+	\begin{enumerate}
+		\item\label{ex:hyperperp1} Let $\textcolor{red}{\ell}$ be the hyperbolic line with equation $x^2+y^2-4x+1=0$. Intersect with $x^2+y^2=1$ to find the omega-points $\Omega=\left(\tfrac 12,\tfrac{\sqrt 3}2\right)$ and $\Theta=\left(\tfrac 12,-\tfrac{\sqrt 3}2\right)$.\par
+		\begin{minipage}[t]{0.73\linewidth}\vspace{-8pt}
+			By symmetry, the perpendicular $\cl{PQ}$ from the origin $P$ has equation $y=0$, resulting in $Q=(2-\smash[t]{\sqrt 3},0)$.\par
+			The limiting parallels through $P$ have equations $\smash[t]{y=\pm\sqrt 3x}$, from which the angle of parallelism is $\smash[t]{\mu=\tan^{-1}\sqrt 3=\ang{60}}$.\par
 		  In accordance with Corollary \ref{cor:parangleformula}, we easily verify that
-% 		\end{minipage}
-% 		\hfill
-% 		\begin{minipage}[t]{0.29\linewidth}\vspace{-25pt}
-		  \hfill\includegraphics[scale=0.95]{basic-parallels4}
-% 		\end{minipage}\par\vspace{-15pt}
-		\[
-			\delta=d(P,Q)=\ln\frac{1+(2-\sqrt 3)}{1-(2-\sqrt 3)}=\ln\sqrt 3 \leftrightsquigarrow e^{-\delta}=\frac 1{\sqrt 3}=\tan\frac{\mu}2
-		\]
-	  
-% 		\begin{minipage}[t]{0.68\linewidth}\vspace{0pt}
-		  \item We find the limiting parallels and the angle of parallelism when
 			\[
-				P=\left(-\frac 3{10},\frac 4{10}\right)\quad\text{and}\quad \textcolor{red}{x^2+y^2+2x+4y+1=0}
+				\delta=d(P,Q)=\ln\frac{1+(2-\sqrt 3)}{1-(2-\sqrt 3)}=\ln\sqrt 3
+				\leftrightsquigarrow e^{-\delta}=\frac 1{\sqrt 3}=\tan\frac{\mu}2
 			\]
+ 		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.25\linewidth}\vspace{-30pt}
+		 	\hfill\includegraphics[alt={limiting parallels through the origin relative to a given hyperbolic line}]{basic-parallels4}
+		\end{minipage}
+	  
+
+		\item Let $P=\left(-\frac 3{10},\frac 4{10}\right)$ relative to the \textcolor{mRed}{hyperbolic line} with equation $x^2+y^2+2x+4y+1=0$.\par
+		\begin{minipage}[t]{0.73\linewidth}\vspace{-8pt}
 			First find the omega-points by intersecting with $x^2+y^2=1$:
 			\[
 				\Omega=(-1,0),\quad \Theta=\left(\frac 35,-\frac 45\right)
 			\]
-			Plainly $\textcolor{Green}{\overleftrightarrow{P\Theta}}$ is the diameter $y=-\frac 43x$ with slope $-\frac 43$.
-% 		\end{minipage}
-% 		\hfill
-% 		\begin{minipage}[t]{0.31\linewidth}\vspace{0pt}
-			\hfill\includegraphics[scale=0.95]{basic-parallels3}
-% 		\end{minipage}\smallbreak
-		For $\textcolor{blue}{\overleftrightarrow{P\Omega}}$, substitute into the usual expression $x^2+y^2-2ax-2by+1=0$ and implicitly differentiate:
+			Plainly $\mathcolor{mGreen}{\overleftrightarrow{P\Theta}}$ is the diameter $y=-\frac 43x$ with slope $-\frac 43$.\par
+			For $\mathcolor{Blue}{\overleftrightarrow{P\Omega}}$, substitute these points into the usual expression for a hyperbolic line (Lemma \ref{lemm:hypline}); implicitly differentiate for the \textcolor{Blue}{slope}:
+ 		\end{minipage}
+ 		\hfill
+ 		\begin{minipage}[t]{0.26\linewidth}\vspace{-10pt}
+			\hfill\includegraphics[alt={arrangement where one limiting parallel is a diameter of the disk}]{basic-parallels3}
+ 		\end{minipage}
+
 		\[
-			x^2+y^2+2x-\frac{13}8y+1=0\implies \diffat[y]{x}{P}=\frac{16(1+x)}{13-16y}\bigg|_P=\frac{16\cdot\frac 7{10}}{13-\frac{64}{10}}=\frac{56}{33}
+			x^2+y^2+2x-\frac{13}8y+1=0
+			\implies \diffat[y]{x}{P}=\frac{16(1+x)}{13-16y}\bigg|_P
+			=\frac{16\cdot\frac 7{10}}{13-\frac{64}{10}}
+			=\frac{56}{33}
 		\]
 		The angle of parallelism is \emph{half} that between the tangent vectors $\stwovec{-33}{-56}$ and $\stwovec 3{-4}$:
 		\begin{align*}
 			\mu&=\frac 12\cos^{-1}\frac{\stwovec{-33}{-56}\cdot\stwovec{3}{-4}}{\nm{\stwovec{-33}{-56}}\nm{\stwovec{3}{-4}}}
-			=\frac 12\cos^{-1}\frac 5{13}\approx \ang{33.69}
+			=\frac 12\cos^{-1}\frac 5{13}\approx \ang{33.7}
 		\end{align*}
-		Corollary \ref{cor:parangleformula} can now be used to find the perpendicular distance $d(P,Q)=\ln\frac{3+\sqrt{13}}2$.\par
-		Without the development of later machinery, it is \emph{very tricky} to compute $Q$. If you want a serious challenge, see if you can convince yourself that $Q=\left(\frac{93(-29+2\sqrt{117})}{1865}, \frac{26(-29+2\sqrt{117})}{1865}\right)$.
+		Corollary \ref{cor:parangleformula} can now be used to find the perpendicular distance $\smash[b]{d(P,Q)=\ln\frac{3+\sqrt{13}}2}$.\par
+		If you want a major challenge, try to verify that $Q=\left(\frac{93(-29+2\sqrt{117})}{1865}, \frac{26(-29+2\sqrt{117})}{1865}\right)$.
 	\end{enumerate}
 \end{examples}
 
@@ -630,51 +697,50 @@ The picture suggests a bijective relationship between $\mu$ and the perpendicula
 
 \subsubsection*{Angles in Triangles, Rectangles and the AAA Congruence}
 
-We finish this section three important differences between hyperbolic and Euclidean geometry.
+We at last come to the triple punchline. Everything follows from one big picture.
 
-\begin{thm}{}{hyptriangle}
-	In hyperbolic geometry:
-	\begin{enumerate}\itemsep0pt
-	  \item There are \textbf{no rectangles} (quadrilaterals with four right-angles). In particular, the summit angles of a Saccheri quadrilateral are acute.
-	  \item The angles in a triangle sum to \textbf{strictly less} than \ang{180}.
-	  \item (AAA congruence)\lstsp If the angles of $\triangle ABC$ and $\triangle DEF$ are congruent in pairs, then the triangles are \textbf{congruent} ($\triangle ABC\cong\triangle DEF$).
-	\end{enumerate}
+\begin{thm}{}{absgeomnorect}
+	Suppose $\square ABCD$ is a rectangle in absolute geometry. Then the angle of parallelism of $B$ with respect to $\ell:=\lin{AD}$ is \ang{90}. Otherwise said, $\lin{BC}$ is the unique parallel to $\lin{AD}$ through $B$.
 \end{thm}
-
-Note that AAA is a \emph{congruence} theorem in hyperbolic geometry, not a \emph{similarity} theorem (compare with Theorem \ref{thm:aaasim}). Also revisit the observations on page \pageref{pg:absolute}; the Theorem largely shows that Euclid's arguments making use of the parallel postulate genuinely \emph{require} it! 
 
 
 \begin{proof}
-	Given a rectangle $\square ABCD$, reflect across $\cl{CD}$ (Exercise \ref*{sec:hyp1}.\ref{exs:saccherisplit}) and repeat to obtain an infinite family of congruent rectangles. Let $P\in\cl{CD}$ and drop perpendiculars to $R\in\cl{AB}$ and $C_1$ as shown.\smallbreak
-	$\square PRBC$ is a rectangle: if not, then one of $\square ARPD$ or $\square PRBC$ would have angle sum exceeding \ang{360}, contradicting Saccheri--Legendre (Theorem \ref{thm:saccleg}). Similarly $\square DPC_1D_1$ is a rectangle.\smallbreak
-	By Exercise \ref*{sec:hyp1}.\ref{exs:rectanglesplit}, $\textcolor{Magenta}{\ray{BP}}$ splits $\square PRBC$ into a pair of congruent triangles. In particular, $\textcolor{Magenta}{\ray{BP}}$ crosses $\cl{CD}$ at the \textcolor{orange}{same angle} as it leaves $B$. By vertical angles at $P$, the ray $\textcolor{Magenta}{\ray{BP}}$ emanates from the upper-right vertex of $\square DPC_1D_1$ at the \textcolor{orange}{same angle} as it does for $\square ABCD$.\smallbreak
-	Iterate the process to obtain the picture, each time dropping the perpendicular from $P_k$ to $\cl{CD}$ to produce the \emph{equidistant} sequence $Q_1,Q_2,Q_3,\ldots$ (the fact that all the small rectangles are congruent is essentially Exercise \ref*{sec:hyp1}.\ref{exs:saccherisplit} again). Since $\cl{CD}$ is \emph{finite,} the sequence $(Q_k)$ eventually\footnotemark{} passes $D$: some $Q_n$ lies on the opposite side of $\lin{AD}$. It follows that $P_n\in\textcolor{Magenta}{\ray{BP}}$ does also, whence $\textcolor{Magenta}{\ray{BP}}$ intersects $\lin{AD}$.
+	Reflect $\square ABCD$ across $\smash[t]{\cl{CD}}$ and repeat to obtain an infinite family of congruent rectangles (Exercise \ref*{sec:hyp1}.\ref{exs:saccherisplit}). Let $\smash[t]{P\in\cl{CD}}$ and drop perpendiculars to $\smash[t]{R\in\cl{AB}}$ and $C_1$ as shown.
 	\begin{center}
-		\includegraphics[scale=0.95]{basic-rect4}\vspace{-4pt}
+		\includegraphics[alt={a rectangle in absolute geometry}]{basic-rect4}\vspace{-4pt}
 	\end{center}
-	Since $P\in\cl{CD}$ was generic, it follows that \emph{any} ray based at $B$ on the same side as $\cl{AD}$ must intersect $\lin{AD}$. Otherwise said, $\lin{BC}$ is the \emph{only parallel} to $\lin{AD}$ through $B$, contradicting the hyperbolic postulate.\smallbreak
-	Parts 2 and 3 are addressed in Exercises \ref{exs:triless180} and \ref{exs:aaacongproof}.
+	We claim $\square PRBC$ is a rectangle: if not, then one of $\square ARPD$ or $\square PRBC$ would have angle-sum exceeding \ang{360} and contradicting Saccheri--Legendre. Similarly $\square DPC_1D_1$ is a rectangle.\smallbreak
+	By Exercise \ref*{sec:hyp1}.\ref{exs:rectanglesplit}, $\mathcolor{mMagenta}{\ray{BP}}$ splits $\square PRBC$ into a pair of congruent triangles. In particular, $\mathcolor{mMagenta}{\ray{BP}}$ crosses $\cl{CD}$ at the \textcolor{Brown}{same angle} it leaves $B$.\smallbreak
+	Iterate to obtain the picture: the small rectangles are congruent (essentially Exercise \ref*{sec:hyp1}.\ref{exs:saccherisplit} again), whence $P,Q_1,Q_2,\ldots$ is an \emph{equidistant} sequence along $\ray{CD}$.\smallbreak
+	Since $\cl{CD}$ is \emph{finite,} the Archimedean property (Exercise \ref*{sec:circ}.\ref{exs:archimedes}) says that this sequence eventually passes $D$: some $Q_n$ lies on the opposite side of $\ell$ to $B$, whence $P_n\in\mathcolor{Magenta}{\ray{BP}}$ does also. We conclude that $\textcolor{Magenta}{\ray{BP}}$ intersects $\ell$.\smallbreak
+	Since $P\in\cl{CD}$ was generic, the angle of parallelism of $B$ with respect to $\ell$ is \ang{90}.
 \end{proof}
 
-\vspace{-8pt}
 
-\footnotetext{%
-	This is the Archimedean property from analysis: $a>b\Longrightarrow \exists n\in\N$ such that $nb>a$.%
-}
+\begin{cor}{}{hyptriangle}
+	Within hyperbolic geometry:
+	\begin{enumerate}\itemsep0pt
+	  \item There are \textbf{no rectangles} (quadrilaterals with four right-angles). In particular, the summit angles of a Saccheri quadrilateral are \textbf{acute} (compare Theorem \ref{thm:summit90}).
+	  \item The angles in a triangle sum to \textbf{strictly less} than \ang{180}.
+	  \item (AAA congruence)\lstsp If the angles of $\triangle ABC$ and $\triangle DEF$ are congruent in pairs, then the triangles are \textbf{congruent} ($\triangle ABC\cong\triangle DEF$).
+	\end{enumerate}
+\end{cor}
 
-
+Part 1 is simply the Theorem: a unique parallel contradicts the hyperbolic postulate. We leave the rest to Exercises \ref{exs:triless180} and \ref{exs:aaacongproof}. Notice that AAA is a \emph{congruence} theorem in hyperbolic geometry, not a \emph{similarity} theorem (compare Theorem \ref{thm:aaasim}). Finally, revisit the observations on page \pageref{pg:absolute}; Euclid's arguments making use of the parallel postulate genuinely \emph{require} it! 
 
 
 \begin{exercises}
-	\exstart Use Theorem \ref{thm:hyptriangle} to prove the following within hyperbolic geometry.\par\vspace{-2pt}
-	\begin{enumerate}\setcounter{enumi}{1}
-	  \item[]\begin{enumerate}
+	\hangindent\leftmargini\emph{Key concepts: \ Limiting parallels, \ Angle of parallelism, \ $\cosh\delta=\csc\mu$, \ No rectangles, \ $\Sigma_{\triangle}<\ang{180}$, \ AAA congruence}
+
+	\begin{enumerate}
+	  \item Use Corollary \ref{cor:hyptriangle} to prove the following within hyperbolic geometry.
+	  \begin{enumerate}
 	    \item Two hyperbolic lines cannot have more than one common perpendicular.
 	    \item\label{exs:saccherisummitcong} Saccheri quadrilaterals with congruent summits and summit angles are congruent.
 	  \end{enumerate}
 	  
 	  
-	  \item A point $P$ lies a perpendicular distance $\delta=d(P,Q)=\ln\sqrt 3=\frac 12\ln 3$ from a hyperbolic line $\ell$. A ray $\ray{PR}$ makes angle $\ang{45}$ with the perpendicular $\ray{PQ}$. Determine whether $\lin{PQ}$ intersects $\ell$, is a limiting parallel, or an ultraparallel. 
+	  \item Suppose $P$ lies a perpendicular distance $\delta=d(P,Q)=\ln\sqrt 3=\frac 12\ln 3$ from a hyperbolic line $\ell$, and that the ray $\ray{PR}$ makes angle $\ang{45}$ with the perpendicular $\ray{PQ}$. Determine whether $\lin{PQ}$ intersects $\ell$, is a limiting parallel, or an ultraparallel. 
 	   
 	  
 	  \item Suppose $\ell$ intersects $m$ at a right-angle and that $m,n$ are parallel. 
@@ -684,14 +750,17 @@ Note that AAA is a \emph{congruence} theorem in hyperbolic geometry, not a \emph
 		\end{enumerate}
 	  
 
-	  \item\label{exs:coshcsc1} Verify $\cosh\textcolor{Magenta}{\delta}=\csc\textcolor{orange}{\mu}$ for the point $P=(0,0)$ and the hyperbolic line $\textcolor{red}{(x-1)^2+(y-1)^2=1}$.
-	  
-	  
+	  \item\label{exs:coshcsc1} Let $\ell$ be the hyperbolic line with equation $(x-1)^2+(y-1)^2=1$, let $P$ be the origin and drop the perpendicular $\cl{PQ}$ to $Q\in\ell$.  
+	  \begin{enumerate}
+	    \item Explain why the angle of parallelism of $P$ with respect to $\ell$ is \ang{45} and why $Q$ has co-ordinates $\big(1-\frac 1{\sqrt 2},1-\frac 1{\sqrt 2}\big)$.
+	    
+	    \item Use the hyperbolic distance formula (Definition \ref{defn:poincaredisk2}) to compute the perpendicular distance from $\ell$ to the origin. Hence verify the relation $\cosh\delta=\csc\mu$.
+		\end{enumerate} 
 	  \begin{center}
 	  	\begin{tabular}{c@{\qquad\qquad\qquad}c}
-	  		\includegraphics[scale=1]{basic-parallelshw1}
+	  		\includegraphics[alt={perpendicular distance and angle of parallelism relative to the origin}]{basic-parallelshw1}
 	  		&
-	  		\includegraphics[scale=1]{basic-parallelshw2}
+	  		\includegraphics[alt={perpendicular distance and angle of parallelism}]{basic-parallelshw2}
 	  		\\
 	  		Question \ref*{exs:coshcsc1}
 	  		&
@@ -700,62 +769,62 @@ Note that AAA is a \emph{congruence} theorem in hyperbolic geometry, not a \emph
 	  \end{center}
 	  
 	  
-	  \item\label{exs:coshcsc2} Let $\textcolor{red}{\ell}$ be the line $x^2+y^2-4x+2y+1=0$ and drop a perpendicular from $O$ to $Q\in\ell$.
-	  \begin{enumerate}
-	    \item Explain why $Q$ has co-ordinates $(\smash{\frac 2{\sqrt 5}t,-\frac 1{\sqrt 5}t})$ for some $t\in(0,1)$.\par
-	    (\emph{Hint: where is the `center' of $\ell$, viewed as a Euclidean circle?})
-	    \item Show that the hyperbolic distance $\textcolor{Magenta}{\delta=d(O,Q)}$ of $\ell$ from the origin is $\ln\frac{1+\sqrt 5}2$.
-	    \item Let $\Omega=(0,-1)$. Compute $\textcolor{orange}{\mu=\measuredangle QO\Omega}$ explicitly and verify that $\cosh\delta=\csc\mu$.
-		\end{enumerate}
+	  \item\label{exs:coshcsc2} Similarly to Question \ref*{exs:coshcsc1}, verify the relation $\cosh\delta=\csc\mu$ for the origin $P$ relative to the hyperbolic line $\ell$ with equation $x^2+y^2-2x-4y+1=0$.\par
+	  (\emph{Hints: Where is the `center' of $\ell$ viewed as a Euclidean circle? As in Question \ref*{exs:coshcsc1}, $\Omega=(1,0)$ is an omega-point for $\ell$.})
+	  
+% 	  \begin{enumerate}
+% 	    \item Explain why $Q$ has co-ordinates $(\frac 2{\sqrt 5}t,-\frac 1{\sqrt 5}t)$ for some $t\in(0,1)$.\par
+% 	    (\emph{Hint: where is the `center' of $\ell$, viewed as a Euclidean circle?})
+% 	    
+% 	    \item Use the hyperbolic distance formula (Definition \ref{defn:poincaredisk2}) to see that the perpendicular distance from $\ell$ to the origin is $\delta=d(O,Q)=\ln\frac{1+\sqrt 5}2$.
+% 	    
+% 	    \item Let $\Omega=(1,0)$. Compute $\mu=\measuredangle \Omega OQ$ explicitly and thus verify that $\cosh\delta=\csc\mu$.
+% 		\end{enumerate}
 		
 	    
 		\item\label{exs:angparallelism} 
-		We generalize Example \ref{ex:hypperp}.1. Suppose $P=(0,0)$ is the origin, and let $Q=(r,0)$ where $0<r<1$. Also let $\ell$ be the hyperbolic line passing through $Q$ at right-angles to $\cl{PQ}$.
+		We generalize Example \ref*{ex:hypperp}.\ref{ex:hyperperp1}. Suppose $P=(0,0)$ is the origin and let $Q=(r,0)$ where $0<r<1$. Let $\ell$ be the hyperbolic line passing through $Q$ at right-angles to $\cl{PQ}$.
 	  \begin{enumerate}
 	    \item Find the equation of $\ell$ and prove that its limiting parallels through $P$ have equations
 	    \[
 	    	\pm 2ry=(1-r^2)x
 	    \]
-	    (\emph{Hint: what does symmetry tell you about $\ell$?})
-	    \item Let $\mu$ be the angle of parallelism of $P$ relative to $\ell$ and $\delta=d(P,Q)$ the hyperbolic distance. Prove that $\cosh\delta=\csc\mu$.\par
+	    
+	    \item Let $\mu$ be the angle of parallelism of $P$ relative to $\ell$ and $\delta=d(P,Q)$ the hyperbolic distance. Prove the special case of Corollary \ref{cor:parangleformula}, that $\cosh\delta=\csc\mu$.\par
 	    (\emph{Hint: $\csc^2\!\mu=1+\cot^2\!\mu=1+\frac 1{\tan^2\!\mu}=\ldots$})
-	    \item By differentiating the expression $\cosh\delta=\csc\mu$, verify the claim that $\delta$ and $\mu$ are bijectively related.
+	    
+	    \item By differentiating $\cosh\delta=\csc\mu$, verify the claim that $\delta$ and $\mu$ are bijectively related.
 	  \end{enumerate}
 	  
-	  
 
+	  \item\label{exs:triless180} We work in absolute geometry. Suppose $\triangle ABC$ has longest side $\cl{AB}$ (the other sides are no larger) and drop the perpendicular from $C$ to $M\in\cl{AB}$.\par
+	  \begin{minipage}[t]{0.68\linewidth}\vspace{-6pt}
+	  	\begin{enumerate}
+	    	\item Prove that $M$ is interior to $\cl{AB}$ by showing that the other possibilities are contradictions.
+	    	
+	    	\item Suppose a triangle exists with angle-sum \ang{180}. Show that there exists such a \emph{right-triangle}, and therefore a rectangle. Hence conclude part 2 of Corollary \ref{cor:hyptriangle}.
+	  	\end{enumerate}
+ 	  \end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.31\linewidth}\vspace{-6pt}
+			\hfill\includegraphics[alt={if a triangle has angle sum 180 degrees then we can create two right triangles with the same angle sum}]{basic-parallelshw3}
+		\end{minipage}\vspace{-6pt}
 	  
-	  
-	  \item\label{exs:triless180} We work in neutral geometry. Suppose $\triangle ABC$ has longest side $\cl{AB}$ (the other sides are no larger---the triangle could be equilateral!).
-	  \begin{enumerate}
-% 	    \begin{minipage}[t]{0.65\linewidth}\vspace{-3pt}
-	     \item Use side-angle comparison (Exercise \ref*{sec:hilbert2}.\ref{ex:euclidi19}) to prove that $C$ lies strictly between the perpendiculars at $A,B$.
-	    \item Drop the perpendicular from $C$ to $M\in\cl{AB}$. Prove that $M$ is interior to $\cl{AB}$.\par
-	    (\emph{Hint: show that the other possibilities are contradictions})
-% 	    \end{minipage}
-% 	    \hfill
-% 	    \begin{minipage}[t]{0.34\linewidth}\vspace{-15pt}
-	    	\hfill\includegraphics{basic-parallelshw3}
-% 	    \end{minipage}
-	   
-	    \item Suppose there exists a triangle with angle sum \ang{180}. Show that there exists a \emph{right-triangle} with angle sum \ang{180} and therefore a rectangle.\par
-	  	(\emph{Since rectangles are impossible in hyperbolic geometry, this proves part 2 of Theorem \ref{thm:hyptriangle}})
-	  	
-	  	\item Explain why parts (a) and (b) are needed to prove (c): what \emph{might} happen if $\cl{AB}$ isn't the longest side? 
+	  \begin{enumerate}[resume]	
+	  	\item Explain why part (a) is needed to prove (b): what might happen if $\cl{AB}$ isn't the longest side? 
 	 	\end{enumerate}
 
 	  
-	  
-	  \item\label{exs:aaacongproof} We prove the AAA congruence theorem in hyperbolic geometry (Theorem \ref{thm:hyptriangle}, part 3).\par
+	  \item\label{exs:aaacongproof} We prove the AAA congruence theorem in hyperbolic geometry (Corollary \ref{cor:hyptriangle}, part 3).\par
 	  Suppose, for contradiction, that \emph{non-congruent} triangles $\triangle ABC$ and $\triangle DEF$ have angles congruent in pairs ($\angle A\cong\angle D$, etc.). Without loss of generality, assume $\cl{DE}<\cl{AB}$. By segment transfer, there exist unique points:\par
 		\begin{minipage}[t]{0.6\linewidth}\vspace{-4pt}
 		  \begin{itemize}
-		    \item $G\in\cl{AB}$ such that $\cl{DE}\cong\cl{AG}$.
+		    \item $G$ \emph{interior} to $\cl{AB}$ such that $\cl{DE}\cong\cl{AG}$.
 		    \item $H\in\ray{AC}$ such that $\cl{DF}\cong\cl{AH}$.
 		  \end{itemize}
 		  \begin{enumerate}
 		    \item Explain why $\triangle DEF\cong\triangle AGH$.
-		  	\item The picture shows the three generic locations for $H$.
+		  	\item There are three possible locations for $H$.
 		  	\begin{enumerate}\itemsep0pt
 		    	\item $H$ is interior to $\cl{AC}$.
 		    	\item $H=C$.
@@ -765,77 +834,12 @@ Note that AAA is a \emph{congruence} theorem in hyperbolic geometry, not a \emph
 	  \end{minipage}
 	  \hfill
 	  \begin{minipage}[t]{0.39\linewidth}\vspace{-5pt}
-	   \hfill\includegraphics[scale=0.95]{basic-aaa}
+	   \hfill\includegraphics[alt={proving the A A A congruence theorem}]{basic-aaa}
 	  \end{minipage}\medbreak
-	  By connecting $\cl{GH}$, in each case explain why we have a contradiction.
+	  \hspace*{\leftmarginii} By connecting $\cl{GH}$, in each case explain why we have a contradiction.
 	\end{enumerate}
+	
 \end{exercises}
-
-
-\iffalse
-\begin{exercises}
-	\exstart Prove the following in hyperbolic geometry (\emph{use Theorem \ref{thm:hyptriangle}}).\par\vspace{-2pt}
-	\begin{enumerate}\setcounter{enumi}{1}
-	  \item[]\begin{enumerate}
-	    \item Two hyperbolic lines cannot have more than one common perpendicular.
-	    \item\label{exs:saccherisummitcong} Saccheri quadrilaterals with congruent summits and summit angles are congruent.
-	  \end{enumerate}
-	   
-	  
-	  \item Suppose $\ell$ intersects $m$ at a right-angle and that $m,n$ are parallel. In \emph{Euclidean} geometry, prove that $\ell$ intersects $n$ at a right-angle. What are the possible arrangements in \emph{hyperbolic} geometry?
-	  
-	  
-	  \item Verify $\cosh\delta=\csc\mu$ for the point $P=(0,0)$ and the hyperbolic line $(x-1)^2+(y-1)^2=1$.
-	  
-	  
-	  \item Let $\ell$ be the line $x^2+y^2-4x+2y+1=0$ and drop a perpendicular from $O$ to $Q\in\ell$.
-	  \begin{enumerate}
-	    \item Explain why $Q$ has co-ordinates $(\smash{\frac 2{\sqrt 5}t,-\frac 1{\sqrt 5}t})$ for some $t\in(0,1)$.
-	    \item Show that the hyperbolic distance $\delta=d(O,Q)$ of $\ell$ from the origin is $\ln\frac{1+\sqrt 5}2$.
-	    \item Let $\Omega=(0,-1)$. Compute $\mu=\measuredangle QO\Omega$ explicitly and check that $\cosh\delta=\csc\mu$.
-		\end{enumerate}
-		
-	    
-		\item\label{exs:angparallelism} 
-		We generalize Example \ref{ex:hypperp}.1. Suppose $P=(0,0)$ is the origin, let $0<r<1$ and $Q=(r,0)$. Also let $\ell$ be the hyperbolic line passing through $Q$ at right-angles to $\cl{PQ}$.
-	  \begin{enumerate}
-	    \item Find the equation of $\ell$ and prove that its limiting parallels through $P$ have equations
-	    \[
-	    	\pm 2ry=(1-r^2)x
-	    \]
-	    (\emph{Hint: what does symmetry tell you about the location of the Euclidean center of $\ell$?})
-	    \item Let $\mu$ be the angle of parallelism of $P$ relative to $\ell$ and $\delta=d(P,Q)$ the hyperbolic distance. Prove that $\cosh\delta=\csc\mu$.\par
-	    (\emph{Hint: $\csc^2\!\mu=1+\cot^2\!\mu=1+\frac 1{\tan^2\!\mu}=\ldots$})
-	    \item By differentiating, verify the claim that $\delta$ and $\mu$ are bijectively related.
-	  \end{enumerate}
-	  
-	  \item\label{exs:triless180} We work in neutral geometry. Suppose $\triangle ABC$ has longest side $\cl{AB}$ and drop the perpendicular from $C$ to $M\in\cl{AB}$.
-	  \begin{enumerate}
-	    \item Prove that $M$ is interior to $\cl{AB}$.\par
-	    (\emph{Hint: Use Exercise \ref*{sec:hilbert2}.\ref{ex:euclidi19} to first show that $C$ lies strictly between the perpendiculars at $A,B$})
-	    \item Suppose there exists a triangle with angle sum \ang{180}. Show that there exists a \emph{right-triangle} with angle sum \ang{180} and therefore a rectangle.\par
-	  	(\emph{Since rectangles are impossible in hyperbolic geometry, this proves part 2 of Theorem \ref{thm:hyptriangle}})
-	 	\end{enumerate}
-
-	  
-	  
-	  \item\label{exs:aaacongproof} We prove the AAA congruence theorem (Theorem \ref{thm:hyptriangle}, part 3).\par
-	  Suppose $\triangle ABC$ and $\triangle DEF$ are \emph{non-congruent} but have angles congruent in pairs. WLOG assume $\cl{DE}<\cl{AB}$. By uniqueness of angle/segment transfer, there exist unique points $G\in\cl{AB}$ and $H\in\ray{AC}$ such that (SAS) $\triangle DEF\cong\triangle AGH$.\par
-	  \begin{minipage}[t]{0.6\linewidth}\vspace{-8pt}
-	  	The picture shows the three possible arrangements. In each case explain why we have a contradiction.
-	  	\begin{enumerate}\itemsep0pt
-	    	\item $H$ is interior to $\cl{AC}$.
-	    	\item $H=C$.
-	    	\item $C$ lies between $A$ and $H$.
-	  	\end{enumerate}
-	   \end{minipage}
-	   \hfill
-	   \begin{minipage}[t]{0.39\linewidth}\vspace{-25pt}
-	    \hfill\includegraphics[scale=0.95]{basic-aaa}
-	   \end{minipage}
-	\end{enumerate}
-\end{exercises}
-\fi
 
 \clearpage
 
@@ -843,92 +847,97 @@ Note that AAA is a \emph{congruence} theorem in hyperbolic geometry, not a \emph
 
 \subsection{Omega-triangles}\label{sec:omegatri}
 
-%\begin{minipage}[t]{0.7\linewidth}\vspace{-5pt}
-	Recall that limiting parallels (Definition \ref{defn:limparallel}) `meet' at an omega-point.
-	
+Recall that limiting parallels (Theorem \ref{thm:hyperfund}) `meet' at an omega-point.\par
+\begin{minipage}[t]{0.72\linewidth}\vspace{-2pt}
 	\begin{defn}{}{}
-		An \emph{omega-triangle} or \emph{ideal-triangle} is a `triangle' where at least two `sides' are limiting parallels. Alternatively (in the Poincaré disk model), one or more of the `vertices' is an omega-point.
+		An \emph{omega-triangle} or \emph{ideal-triangle} is a `triangle' where at least two sides are limiting parallels. Alternatively (in the Poincaré disk model), one or more of the vertices is an omega-point.
 	\end{defn}
 	
-	The three types of omega-triangle depend on how many omega-points they have. In the picture, $\triangle PQ\Omega$ has one omega-point, $\triangle P\Omega\Theta$ has two and $\triangle \Omega\Theta\Xi$ three!
-% \end{minipage}
-% \hfill
-% \begin{minipage}[t]{0.28\linewidth}\vspace{-5pt}
-	\hfill\includegraphics{omega-example}
-% \end{minipage}\smallbreak
+	The three types of omega-triangle depend on how many omega-points they have. In the picture, $\triangle PQ\Omega$ has one omega-point, $\triangle P\Omega\Theta$ has two, and $\triangle \Omega\Theta\Xi$ three!
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.25\linewidth}\vspace{-10pt}
+	\hfill\includegraphics[alt={examples of omega triangles}]{omega-example}
+\end{minipage}\smallbreak
 Amazingly, many of the standard results of absolute geometry also apply to omega-triangles! The first can be thought of as the AAA congruence theorem where one `angle' is zero.
 
 \begin{thm}{Angle-Angle Congruence for Omega-triangles}{}
-	Suppose $\triangle AB\Omega$ and $\triangle PQ\Theta$ are omega-triangles, each with a single omega-point. If the angles are congruent in pairs
+	Suppose $\triangle AB\Omega$ and $\triangle PQ\Theta$ are omega-triangles, each with a single omega-point. If the (finite) angles are congruent in pairs
 	\[
-		\textcolor{Magenta}{\angle AB\Omega} \cong \textcolor{Magenta}{\angle PQ\Theta} \qquad \angle BA\Omega \cong\angle QP\Theta
+		\mathcolor{dMagenta}{\angle AB\Omega} \cong \mathcolor{dMagenta}{\angle PQ\Theta} \qquad \angle BA\Omega \cong\angle QP\Theta
 	\]
-	then the finite sides of each triangle are also congruent: $\cl{AB}\cong\cl{PQ}$.
+	then the finite sides of the omega-triangles are also congruent: $\cl{AB}\cong\cl{PQ}$.
 \end{thm}
 
-Remember that omega-points are not really part of hyperbolic geometry---their appearance in our description is an artifact of the Poincaré disk model. It therefore doesn't make sense to speak of congruent `infinite' sides or of congruent `angles at omega-points.' However, if one defines congruence in terms of isometries (Section \ref{sec:hyperiso}), then this idea becomes more reasonable. 
+Remember that omega-points are not really part of hyperbolic geometry---their appearance in our description is a quirk of the Poincaré disk model. It therefore doesn't make much sense to speak of congruent infinite sides or of congruent angles at omega-points.
 
 \begin{proof}
-	Assume, WLOG and for contradiction, that $\cl{AB}>\cl{PQ}$. Transfer $\textcolor{red}{\angle QP\Theta}$ to $A$ to obtain $R\in\cl{AB}$ such that $\cl{AR}\cong\cl{PQ}$. Transferring \textcolor{Magenta}{$\angle PQ\Theta$} creates a ray \textcolor{Green}{$r$} based at $R$ on the same side as $\Omega$. Exercise \ref{exs:aacongproof} verifies that $\textcolor{Green}{r}=\textcolor{Green}{\ray{R\Omega}}$. Our hypothesis is therefore that the pictured \textcolor{Magenta}{angles} at $B$ and $R$ are congruent.\par
-	\begin{minipage}[t]{0.7\linewidth}\vspace{0pt}
+	WLOG and for contradiction, assume $\cl{AB}>\cl{PQ}$. Transfer $\mathcolor{dRed}{\angle QP\Theta}$ to $A$ to obtain $C\in\cl{AB}$ such that $\cl{AC}\cong\cl{PQ}$. Transferring $\mathcolor{mMagenta}{\angle PQ\Theta}$ creates a ray $\mathcolor{mGreen}{r}$ based at $C$ on the same side as $\Omega$. Exercise \ref{exs:aacongproof} verifies $\mathcolor{mGreen}{r=\ray{C\Omega}}$. Our hypothesis is that the pictured \textcolor{mMagenta}{angles} at $B$ and $C$ are congruent.\par
+	\begin{minipage}[t]{0.73\linewidth}\vspace{-6pt}
 % 	If $r$ intersected $\ray{A\Omega}$ we have a (finite) triangle which would force (ASA) $\triangle AB\Omega$ to be finite. If $r$ intersected $\ray{B\Omega}$ we'd have a triangle contradicting the Exterior Angle Theorem. 
-		Let $M$ be the midpoint of $\textcolor{blue}{\cl{BR}}$ and drop the perpendicular to $C\in\lin{B\Omega}$.\smallbreak
-		Let $S\in\lin{R\Omega}$ lie on the opposite side of $\overleftrightarrow{BR}$ to $C$ such that $\textcolor{cyan}{\cl{RS}}\cong \textcolor{cyan}{\cl{BC}}$.\smallbreak
-		By \textcolor{blue}{Side}-\textcolor{Magenta}{Angle}-\textcolor{cyan}{Side} we have $\triangle MBC\cong\triangle MRS$. In particular:
+		Let $M$ be the midpoint of $\mathcolor{Blue}{\smash{\cl{BC}}}$ and drop the perpendicular to $\smash{R\in\lin{B\Omega}}$.\smallbreak
+		Let $\smash{S\in\lin{C\Omega}}$ lie on the opposite side of $\smash{\overleftrightarrow{BC}}$ to $R$ such that $\mathcolor{Brown}{\smash{\cl{CS}}}\cong \mathcolor{Brown}{\smash{\cl{BR}}}$.\smallbreak
+		By \textcolor{Blue}{Side}-\textcolor{mMagenta}{Angle}-\textcolor{Brown}{Side} we have $\triangle MBR\cong\triangle MCS$. In particular:
 		\begin{itemize}
-		  \item $\triangle MRS$ is right-angled(!) at $S$.
-		  \item Congruent vertical angles at $M$ force $M$ to lie on the segment $\cl{CS}$.
+		  \item $\triangle MCS$ is right-angled(!) at $S$.
+		  \item Congruent vertical angles at $M$ force $M$ to lie on the segment $\cl{RS}$.
 		\end{itemize}
-		The angle of parallelism of $S$ relative to $\lin{B\Omega}$ is therefore $\angle CS\Omega=\ang{90}$, which contradicts the Fundamental Theorem (\ref{thm:hyperfund}).\medbreak
-		There are two other possible orientations:
+		The angle of parallelism of $S$ relative to $\lin{B\Omega}$ is therefore $\angle RS\Omega=\ang{90}$, contradicting the Fundamental Theorem (\ref{thm:hyperfund}).
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.29\linewidth}\vspace{0pt}
-		\hfill\includegraphics{basic-ext5}
-	\end{minipage}\par
+	\begin{minipage}[t]{0.25\linewidth}\vspace{-4pt}
+		\hfill\includegraphics[alt={proving the A A congruence theorem for omega triangles}]{basic-ext5}
+	\end{minipage}\smallbreak
+	There are two other possible orientations:
 	\begin{itemize}
-		\item $C$ could lie on the opposite side of $B$ from $\Omega$. In this case SAS is applied to the same triangles but with respect to congruent \textcolor{Magenta}{supplementary angles}.
-	  \item In the special case that $C=B$, the \textcolor{Magenta}{magenta angles} are right-angles and the same contradiction appears: the angle of parallelism of $R$ with respect to $\lin{B\Omega}$ is \ang{90}.\qedhere
+		\item $R$ could lie on the opposite side of $B$ from $\Omega$. In this case SAS is applied to the same triangles but with respect to congruent \textcolor{mMagenta}{supplementary angles}.
+	  \item In the special case $R=B$, the same contradiction appears: the angle of parallelism of $C$ with respect to $\smash{\lin{B\Omega}}$ is \ang{90}.\qedhere
 	\end{itemize}
 \end{proof}
 
 
 
 
+\pagebreak[3]
+
+
 \begin{thm}{Exterior Angle Theorem for Omega-Triangles}{exthyp}
-	Suppose $\triangle DE\Omega$ has a single omega-point and that $D*E*F$. Then $\textcolor{orange}{\angle FE\Omega}>\textcolor{Magenta}{\angle ED\Omega}$.
+	Suppose $\triangle BC\Omega$ has a single omega-point and that $C$ lies between $A$ and $B$. Then $\mathcolor{Brown}{\angle AC\Omega}>\mathcolor{dMagenta}{\angle CB\Omega}$.
 \end{thm}
 
 \begin{proof}
-	We show that the two other cases are impossible.
-	\begin{description}
-	  \item[\normalfont ($\textcolor{orange}{\angle FE\Omega}\cong\textcolor{Magenta}{\angle ED\Omega}$)] This is the contradictory arrangement described in the previous proof where $D=B$, $E=R$, $F=A$.
-		\item[\normalfont ($\textcolor{orange}{\angle FE\Omega}<\textcolor{Magenta}{\angle ED\Omega}$)] Transfer the \textcolor{Magenta}{latter} to $E$ to produce $\ray{EX}$ \emph{interior} to $\angle DE\Omega$ with $\textcolor{Green}{\angle FEX}\cong \textcolor{Magenta}{\angle ED\Omega}$.\par
-	Since $\lin{E\Omega}$ is a limiting parallel to $\lin{D\Omega}$, the Fundamental Theorem says that $\ray{EX}$ intersects $\lin{D\Omega}$ at some point $Y$.\par
-	But now $\triangle DEY$ contradicts the standard exterior angle theorem ($\textcolor{Green}{\angle FEY}\cong \textcolor{Magenta}{\angle EDY}$).
-	\end{description}
-
-	\hfill\includegraphics[scale=0.95]{basic-ext4}\\\hfil\qedsymbol
+	We show that the two other cases are impossible.\par
+	\begin{minipage}[t]{0.73\linewidth}\vspace{-3pt}
+		\begin{description}\itemsep1pt
+		  \item[\normalfont ($\mathcolor{Brown}{\angle AC\Omega}\cong\mathcolor{dMagenta}{\angle CB\Omega}$)] This is precisely the contradictory arrangement described in the previous proof!
+			\item[\normalfont ($\mathcolor{Brown}{\angle AC\Omega}<\mathcolor{mMagenta}{\angle CB\Omega}$)] Transfer the \textcolor{mMagenta}{latter} to $C$ to produce $\smash{\ray{CX}}$ \emph{interior} to $\angle BC\Omega$ with $\mathcolor{mGreen}{\angle ACX}\cong \mathcolor{mMagenta}{\angle CB\Omega}$.\par
+			Since $\smash{\lin{C\Omega}}$ is a limiting parallel to $\smash{\lin{C\Omega}}$, the Fundamental Theorem says that $\smash{\ray{CX}}$ intersects $\smash{\lin{B\Omega}}$ at some point $Y$.\par
+			But now $\triangle CBY$ contradicts the standard exterior angle theorem ($\mathcolor{mGreen}{\angle ACY}\cong \mathcolor{mMagenta}{\angle CBY}$).
+		\end{description}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.25\linewidth}\vspace{-23pt}
+		\hfill\includegraphics[alt={the exterior angle theorem for omega triangles}]{basic-ext4}
+	\end{minipage}\vspace{-5pt}
 \end{proof}
 
-The final congruence theorem is an exercise based on the previous picture.
-
 \begin{cor}{Side-Angle Congruence for Omega-triangles}{}
-	Suppose $\triangle DE\Omega$ and $\triangle PQ\Theta$ both have a single omega-point. If $\textcolor{Magenta}{\angle ED\Omega} \cong\angle QP\Theta$ and $\textcolor{blue}{\cl{DE}}\cong\cl{PQ}$ then $\angle DE\Omega \cong\angle PQ\Theta$.
+	Suppose $\triangle BC\Omega$ and $\triangle PQ\Theta$ both have a single omega-point. If $\mathcolor{Magenta}{\angle CB\Omega} \cong\angle QP\Theta$ and $\mathcolor{blue}{\cl{BC}}\cong\cl{PQ}$ then $\angle BC\Omega \cong\angle PQ\Theta$.
 \end{cor}
 
-A triangle with one omega-point only has three pieces of data: two finite angles and one finite edge. The AA and SA congruence theorems say that two of these determine the third.
+The final congruence theorem is an exercise based on the previous picture.
+In summary: A triangle with a single omega-point has three pieces of data (two finite angles and one edge). The AA and SA congruence theorems say that two of these determine the third.
 
 \subsubsection*{Other observations}
 
-\emph{Pasch's Axiom}:\quad Versions of this are \emph{theorems} for omega-triangles.
-\begin{itemize}
+\emph{Pasch's Axiom \& the Crossbar Theorem}\lstsp Versions of these are \emph{theorems} for omega-triangles.
+\begin{itemize}\itemsep2pt
   \item If a line crosses a side of an omega-triangle and does not pass through any vertex (including $\Omega$), then it must pass through exactly one of the other sides.
-  \item (\emph{Omega Crossbar Thm})\lstsp If a line passes through an interior point and exactly one vertex (including $\Omega$) of an omega-triangle, then it passes through the opposite side. This is partly embedded in the proof of Theorem \ref{thm:exthyp}.
+  \item If a line passes through an interior point and exactly one vertex (including $\Omega$) of an omega-triangle, then it passes through the opposite side. %This is partly embedded in the proof of Theorem \ref{thm:exthyp}.
 \end{itemize}
 
 
-\emph{Perpendicular Distance and the Angle of Parallelism}:\quad Applied to right-angled omega-triangles, the AA and SA theorems prove that the angle of parallelism is a bijective function of the perpendicular distance. Moreover, by transferring the right-angle to the positive $x$-axis and the other vertex to the origin, we obtain the arrangement in Exercise \ref*{sec:hypparallel}.\ref{exs:angparallelism}, thus completing the proof of Corollary \ref{cor:parangleformula}.
+\emph{Perpendicular Distance and the Angle of Parallelism}\lstsp Applied to right-angled omega-triangles, the AA and SA theorems prove that the angle of parallelism is a bijective function of the perpendicular distance. Moreover, transferring the right-angle to the positive $x$-axis and the other vertex to the origin produces the arrangement in Exercise \ref*{sec:hypparallel}.\ref{exs:angparallelism}. This completes the proof of Corollary \ref{cor:parangleformula}.
 
 
 % \begin{thm}[Crossbar for omega-triangles]
@@ -947,12 +956,13 @@ A triangle with one omega-point only has three pieces of data: two finite angles
 
 
 \begin{exercises}
-	\exstart Let $\triangle PQ\Omega$ be an omega-triangle. Prove that $\measuredangle PQ\Omega+\measuredangle QP\Omega< \ang{180}$.
-	
-	\begin{enumerate}\setcounter{enumi}{1}
+	\hangindent\leftmargini\emph{Key concepts: \ Omega-triangle, \ AA \& SA congruences}
+	\begin{enumerate}\itemsep3pt
+	  \item Let $\triangle PQ\Omega$ be an omega-triangle. Prove that $\angle PQ\Omega+\angle QP\Omega< \ang{180}$.
+	  
 	  \item Let $\ell$ and $m$ be limiting parallels. Explain why they cannot have a common perpendicular.
 	  
-	  \item\label{exs:aacongproof} In the proof of the AA congruence, explain why $r$ cannot intersect either $\ray{A\Omega}$ or $\ray{B\Omega}$.
+	  \item\label{exs:aacongproof} In the proof of the AA congruence, explain why $r$ cannot intersect either $\smash{\ray{A\Omega}}$ or $\smash{\ray{B\Omega}}$.
 	  
 	  \item Prove the Side-Angle congruence theorem for omega-triangles with one omega-point.
 	  
@@ -960,10 +970,11 @@ A triangle with one omega-point only has three pieces of data: two finite angles
 	\end{enumerate}
 \end{exercises}
 
+
 \clearpage
 
 
-
+\iffalse
 
 \subsection{Area and Angle-defect}\label{sec:hyparea}
 
@@ -1025,6 +1036,8 @@ Of course this trivial in Euclidean geometry where all triangles have the same a
 
 \subsubsection*{Angle-sum determines area in \emph{hyperbolic geometry}}
 
+RECALL THEOREM 4.5!!!!
+
 The converse in hyperbolic geometry relies on a beautiful and reversible construction relating triangles and Saccheri quadrilaterals. The construction itself is valid in absolute geometry, though the ultimate conclusion that angle-sum determines area is not. If the initial discussion seems difficult, pretend you are in Euclidean geometry and think about \emph{rectangles.}
 
 \begin{lemm}{}{quadtricorr}
@@ -1036,7 +1049,7 @@ The converse in hyperbolic geometry relies on a beautiful and reversible constru
 	Both constructions yield the same picture and the following conclusions:\vspace{-5pt}
 	  \begin{itemize}\itemsep0pt
 	    \item The triangle and quadrilateral have equal area.
-	    \item The sum of the summit angles of the quadrilateral equals the angle sum of the triangle.
+	    \item The sum of the summit angles of the quadrilateral equals the angle-sum of the triangle.
 	  \end{itemize}
 	  We chose $\cl{BC}$ to be the longest side of $\triangle ABC$---this isn't necessary, though it helpfully forces $E,F$ to lie between $H,I$.
 	\end{minipage}
@@ -1638,7 +1651,7 @@ In hyperbolic space, many different regular tilings are possible. Suppose such i
 	  
 	  \item\begin{enumerate}
 	    \item Use an isometry to find angle $\measuredangle ABC$ when $A=0$, $B=\frac i2$, and $C=\frac{1+i}2$.
-	    \item Now compute $\measuredangle ACB$, and thus find the angle sum and area of the triangle.
+	    \item Now compute $\measuredangle ACB$, and thus find the angle-sum and area of the triangle.
 	  \end{enumerate} 
 	  
  		

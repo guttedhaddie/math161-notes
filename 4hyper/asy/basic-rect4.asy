@@ -1,14 +1,21 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 import markers;
 
-size(440);
+size(430);
 
 real s=0.3;
 
@@ -66,8 +73,8 @@ draw(T*shift(PPP)*bx4);
 draw(T*shift(PPPP)*bx4);
 
 
-draw(C--(0,PPPPP.y),StickIntervalMarker(5,1,heavygreen));
-draw(B--R,StickIntervalMarker(1,1,heavygreen));
+draw(C--(0,PPPPP.y),StickIntervalMarker(5,1,lGreen));
+draw(B--R,StickIntervalMarker(1,1,lGreen));
 
 transform TT=shift((-1,-s));
 path l=P-(1,0)--P+(1,0);
@@ -76,8 +83,8 @@ draw(TT*l,StickIntervalMarker(2,1,blue,dotframe(red)));
 draw(TT*TT*l,StickIntervalMarker(2,1,blue,dotframe(red)));
 draw(TT*TT*TT*l,StickIntervalMarker(2,1,blue,dotframe(red)));
 
-draw(B--PPPPP,magenta,StickIntervalMarker(5,2,magenta,dotframe(red)));
-draw(PPPPP--TT*PPPPP,magenta,Arrow);
+draw(B--PPPPP,magenta,StickIntervalMarker(5,2,Magenta,dotframe(red)));
+draw(PPPPP--TT*PPPPP,Magenta,Arrow);
 draw(PPPP-(0,s)--PPPPP,StickIntervalMarker(1,1,blue,dotframe(red)));
 draw((0,PPP.y)--T*(0,PPP.y),dashed,StickIntervalMarker(1,1,blue,dotframe(red)));
 draw((0,PPPP.y)--T*T*(0,PPPP.y),dashed,StickIntervalMarker(2,1,blue,dotframe(red)));
@@ -100,16 +107,16 @@ draw(A--B);
 path aa=arc(B,B+0.15unit(P-B),B+0.15unit(A-B),CCW);
 path bb=arc(P,P+0.15unit(B-P),P+0.15unit(C-P),CCW);
 
-draw(aa,StickIntervalMarker(1,2,orange));
-draw(bb,StickIntervalMarker(1,2,orange));
-draw(TT*aa,StickIntervalMarker(1,2,orange));
-draw(TT*bb,StickIntervalMarker(1,2,orange));
-draw(TT*TT*aa,StickIntervalMarker(1,2,orange));
-draw(TT*TT*bb,StickIntervalMarker(1,2,orange));
-draw(TT*TT*TT*aa,StickIntervalMarker(1,2,orange));
-draw(TT*TT*TT*bb,StickIntervalMarker(1,2,orange));
-draw(TT*TT*TT*TT*aa,StickIntervalMarker(1,2,orange));
-draw(TT*TT*TT*TT*bb,StickIntervalMarker(1,2,orange));
+draw(aa,StickIntervalMarker(1,2,Brown));
+draw(bb,StickIntervalMarker(1,2,Brown));
+draw(TT*aa,StickIntervalMarker(1,2,Brown));
+draw(TT*bb,StickIntervalMarker(1,2,Brown));
+draw(TT*TT*aa,StickIntervalMarker(1,2,Brown));
+draw(TT*TT*bb,StickIntervalMarker(1,2,Brown));
+draw(TT*TT*TT*aa,StickIntervalMarker(1,2,Brown));
+draw(TT*TT*TT*bb,StickIntervalMarker(1,2,Brown));
+draw(TT*TT*TT*TT*aa,StickIntervalMarker(1,2,Brown));
+draw(TT*TT*TT*TT*bb,StickIntervalMarker(1,2,Brown));
 
 
 dot(Label("$A$",black),A,SE,red);

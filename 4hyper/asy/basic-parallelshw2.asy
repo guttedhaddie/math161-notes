@@ -1,13 +1,20 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
-size(0,130);
+size(0,120);
 
 path c=unitcircle;
 
@@ -72,21 +79,21 @@ filldraw(unitcircle,0.2grey+0.8white,white);
 
 pair O=(0,0);
 
-path ell=shift((2,-1))*scale(2)*unitcircle;
-path perpp=(0,0)--(2,-1);
+path ell=shift((1,2))*scale(2)*unitcircle;
+path perpp=(0,0)--(1,2);
 pair Q=intersectionpoint(perpp,ell);
 
-draw(shift(Q)*rotate(aTan(2),(0,0))*box((0,0),(0.07,0.07)));
+draw(shift(Q)*rotate(90+aTan(2),(0,0))*box((0,0),(0.07,0.07)));
 draw(Label("$\ell$",Relative(0.39),SE),ell,red);
-draw(Q--O,magenta); 
-draw((0,-1)--O,heavygreen);
-dot("$O$",(0,0),NW);
-dot("$Q$",Q,SE);
+draw(Q--O); 
+draw((1,0)--O,lGreen);
+dot("$P$",(0,0),SW);
+dot("$Q$",Q,NE);
 
-pair Th=(4/5,3/5);
+pair Th=(-3/5,4/5);
 draw(Th--O,blue); 
 
 clip(c);
-draw(arc(O,0.1dir(270),0.1dir(-aTan(1/2))),orange);
+draw(arc(O,0.1*dir(0),0.1*unit(Q)));
 
-dot("$\Omega$",(0,-1),NW,NoFill);
+dot("$\Omega$",(1,0),E,UnFill);

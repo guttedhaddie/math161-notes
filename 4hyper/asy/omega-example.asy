@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
 size(120);
@@ -77,14 +84,14 @@ pair TT=-SS;
 
 circ(R,SS,red);
 extcirc(R,P,blue);
-extcirc(P,SS,heavygreen);
+extcirc(P,SS,lGreen);
 extcirc(R,-SS,orange);
 
 clip(c);
 dot("$P$",P,E);
-dot("$\Omega$",R,W,NoFill);
-dot("$\Theta$",SS,SS,NoFill);
-dot("$\Xi$",-SS,-SS,NoFill);
+dot("$\Omega$",R,W,UnFill);
+dot("$\Theta$",SS,SS,UnFill);
+dot("$\Xi$",-SS,-SS,UnFill);
 
 real l=-29+2*sqrt(117);
 pair PPP=(93l/1865,26l/1865);

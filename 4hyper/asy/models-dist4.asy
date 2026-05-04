@@ -1,19 +1,20 @@
-if(!settings.multipleView) settings.batchView=false;
-settings.tex="pdflatex";
-if(settings.render < 0) settings.render=4;
-settings.outformat="";
-settings.inlineimage=true;
-settings.embed=true;
-settings.toolbar=false;
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
-size(140);
+size(120);
 
 path c=unitcircle;
 
@@ -50,6 +51,8 @@ void extcirc(pair p, pair q){
 
 filldraw(c,0.2grey+0.8white,white);
 
+draw(box((0,0),(0.07,0.07)));
+
 pair u=0.5*dir(0);
 pair v=0.5*dir(90);
 real a=5/4;
@@ -62,8 +65,8 @@ draw(hc--(0,0)--cycle,blue);
 
 draw(u--(0.9,0),dashed);
 draw(u+0.4dir(-30.96)--u-0.4dir(-30.96),dashed);
-draw("$\theta$",arc(u,0.25,-30.96,0),heavygreen);
-draw(arc(u,0.25,180-30.96,180),heavygreen);
+draw(arc(u,0.25,-30.96,0),lGreen);
+draw("$\theta$",arc(u,0.25,180-30.96,180),lGreen);
 
 dot(Label("$P$",black),u,S,red);
 dot(Label("$Q$",black),v,W,red);

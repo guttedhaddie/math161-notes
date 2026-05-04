@@ -1,13 +1,20 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
-size(140);
+size(120);
 
 pair cent(pair p, pair q){
 	real A[][]={{p.x,p.y},{q.x,q.y}};
@@ -90,11 +97,11 @@ pair hycirc(real t){return f(ci(r,t),P);}
 
 
 for(int i=-4; i<5; ++i){
-	circ(P,hycirc(0.01+pi*i/11),heavygreen);
-	circ(hycirc(pi+0.01+pi*i/11),P,heavygreen);
+	circ(P,hycirc(0.01+pi*i/11),lGreen);
+	circ(hycirc(pi+0.01+pi*i/11),P,lGreen);
 	}
-circ(P,hycirc(0.01+pi*5/11),heavygreen);
-circ(P,hycirc(0.01-pi*5/11),heavygreen);
+circ(P,hycirc(0.01+pi*5/11),lGreen);
+circ(P,hycirc(0.01-pi*5/11),lGreen);
 
 dot(P,red);
 

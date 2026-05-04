@@ -1,13 +1,20 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
-size(130);
+size(120);
 
 path c=unitcircle;
 
@@ -76,12 +83,12 @@ pair SS=dir(-60);
 
 circ(R,SS,red);
 extcirc(R,P,blue);
-extcirc(P,SS,heavygreen);
+extcirc(P,SS,lGreen);
 
 clip(c);
 dot("$P$",P,W);
-dot("$\Omega$",R,R,NoFill);
-dot("$\Theta$",SS,SS,NoFill);
+dot("$\Omega$",R,R,UnFill);
+dot("$\Theta$",SS,SS,UnFill);
 
 pair Q=(2-sqrt(3),0);
 draw(P--Q); 

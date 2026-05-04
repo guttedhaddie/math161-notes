@@ -1,4 +1,5 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 //OpenGL (default) - no opacity
 
@@ -10,20 +11,28 @@ settings.tex="pdflatex";
 settings.outformat="html";
 
 //PDF
-//if(!settings.multipleView) settings.batchView=false;
-//settings.render=4;settings.outformat="pdf";
+if(!settings.multipleView) settings.batchView=false;
+settings.render=4;settings.outformat="pdf";
+
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
+
 import graph;
 import graph3;
 
-size(220);
+size(160);
 
-currentprojection=orthographic(4,-4,1.5);
+currentprojection=orthographic(4,-5,1.3);
 
 draw(unitcircle3);
 
@@ -42,17 +51,17 @@ triple hyp(triple P){real t= 2/(1-P.x^2-P.y^2);
 	return (0,0,-1)+t*(P.x,P.y,1);
 	}
 	
-draw(graph(flat,0,60),blue,Arrow3(Relative(0.65)));
+draw(graph(flat,0,60),Blue,Arrow3(Relative(0.65)));
 
 triple hypfl(real t){return hyp(flat(t));}
 
-dot(flat(45),heavygreen);
-dot(hypfl(45),heavygreen);
-draw((0,0,-1)--hypfl(45),heavygreen+dashed);
+dot(flat(45),lGreen);
+dot(hypfl(45),lGreen);
+draw((0,0,-1)--hypfl(45),lGreen+dashed);
 
-dot(flat(23),orange);
-dot(hypfl(23),orange);
-draw((0,0,-1)--hypfl(23),orange+dashed);
+dot(flat(23),Magenta);
+dot(hypfl(23),Magenta);
+draw((0,0,-1)--hypfl(23),Magenta+dashed);
 
 real d=14;
 path3 geo=graph(hypfl,d,60-d);
@@ -64,9 +73,9 @@ surface s=surface(hyper,(0,0),(1.9,2pi),100);
 
 draw(s,gray+opacity(0.2));
 
-xaxis3("$x$",-2,2,red,OutTicks(new real[]{-2,-1,1,2}));
-yaxis3("$y$",-2,2,red,OutTicks(new real[]{-2,-1,1,2}));
-zaxis3("$z$",-1,1.1sqrt(5),red,OutTicks(new real[]{-1,1,2,3}));
+xaxis3("$x$",-2,2,red,OutTicks(new real[]{-2,2},new real[]{-1,1}));
+yaxis3("$y$",-2,2,red,OutTicks(new real[]{-2,2},new real[]{-1,1}));
+zaxis3("$z$",-1,1.1sqrt(5),red,OutTicks(new real[]{-1,1,2}));
 
 //triple pl(pair u){return u.x*hypfl(23)+u.y*hypfl(45);}
 

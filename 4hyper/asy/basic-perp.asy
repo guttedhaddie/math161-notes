@@ -1,13 +1,20 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
-size(180);
+size(120);
 
 path c=unitcircle;
 
@@ -59,7 +66,7 @@ real dis(pair p, pair q){
 	real x=2*(arclength(p--q))^2/((1-(arclength((0,0)--p))^2)*(1-(arclength((0,0)--q))^2));
 	return acosh(1+x);}
 
-filldraw(unitcircle,grey+opacity(0.2),white);
+filldraw(unitcircle,0.2grey+0.8white,white);
 
 pair P=0.85dir(100);
 
@@ -74,27 +81,27 @@ pair[] Q=intersectionpoints(hycirp(A,dis(A,B[0])),hycirp(B[0],dis(A,B[0])));
 pair M=intersectionpoint(circ(Q[0],Q[1]),circ(A,B[0]));
 
 
-extcirc(A,B[0],red);
-extcirc(P,Q[0],orange);
+extcirc(A,B[0],Red);
+extcirc(P,Q[0],Magenta);
 
-draw(hycirp(A,dis(A,B[0])),heavygreen+dashed);
-draw(hycirp(P,dis(A,P)),blue+dashed);
-draw(hycirp(B[0],dis(A,B[0])),heavygreen+dashed);
+draw(hycirp(A,dis(A,B[0])),lGreen+dashed);
+draw(hycirp(P,dis(A,P)),Blue+dashed);
+draw(hycirp(B[0],dis(A,B[0])),lGreen+dashed);
 
 
-draw(circ(A,P),blue);
-draw(circ(B[0],P),blue);
-draw(circ(A,Q[0]),heavygreen);
-draw(circ(B[0],Q[0]),heavygreen);
-draw(circ(A,Q[1]),heavygreen);
-draw(circ(B[0],Q[1]),heavygreen);
-dot(Label("$P$",black),P,W,blue);
-dot(Label("$B$",black),B[0],1.2E,heavygreen);
-dot(Label("$A$",black),A,S,heavygreen);
-dot(Label("$Q$",black),Q[1],2W,orange);
-dot(Label("$R$",black),Q[0],S,orange);
+draw(circ(A,P),Blue);
+draw(circ(B[0],P),Blue);
+draw(circ(A,Q[0]),lGreen);
+draw(circ(B[0],Q[0]),lGreen);
+draw(circ(A,Q[1]),lGreen);
+draw(circ(B[0],Q[1]),lGreen);
+dot(Label("$P$",black),P,W,Blue);
+dot(Label("$B$",black),B[0],1.2E,lGreen);
+dot(Label("$A$",black),A,S,lGreen);
+dot(Label("$Q$",black),Q[1],2W,Magenta);
+dot(Label("$R$",black),Q[0],S,Magenta);
 dot(Label("$M$",black),M,W);
 
-label("$\ell$",0.6dir(235),red);
-label("$m$",0.9dir(343),orange);
+label("$\ell$",0.6dir(235),Red);
+label("$m$",0.9dir(343),Magenta);
 

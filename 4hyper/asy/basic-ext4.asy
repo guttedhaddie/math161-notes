@@ -1,14 +1,21 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 import markers;
 
-size(115,0);
+size(120,0);
 
 path c=unitcircle;
 
@@ -79,7 +86,6 @@ circ(P,Q,blue+linewidth(1.2));
 circ(Q,om);
 circ(om,P);
 
-dot("$\Omega$",om,om,NoFill);
 
 pair cPom=(2,0);
 real anPPom=degrees(P-cPom);
@@ -102,19 +108,20 @@ dot("$Y$",Y,E);
 circ(Q,Y);
 
 
-draw(arc(P,0.06,-87+anPPom,-96+anPPQ,CCW),magenta+linewidth(1));
-draw(arc(Q,0.065,anQPQ-92,-37,CW),heavygreen+linewidth(1));
-draw(arc(Q,0.045,anQPQ-92,5,CW),orange+linewidth(1));
+draw(arc(P,0.06,-87+anPPom,-96+anPPQ,CCW),Magenta+linewidth(1));
+draw(arc(Q,0.065,anQPQ-92,-37,CW),lGreen+linewidth(1));
+draw(arc(Q,0.045,anQPQ-92,5,CW),Brown+linewidth(1));
 
 pair T=PQ(190);
-dot("$F$",T,W);
+dot("$A$",T,W);
 draw(graph(PQ,190,196.2));
 
 draw(arc((0,0),dir(50),dir(100)),dashed);
 
 pair N=Qom(277.5);
 
-dot("$D$",P,E);
-dot("$E$",Q,W);
+dot("$B$",P,E);
+dot("$C$",Q,W);
 
 dot("$X$",Q+0.2dir(-32.6),NE);
+dot("$\Omega$",om,om,UnFill);

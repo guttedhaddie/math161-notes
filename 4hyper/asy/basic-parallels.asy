@@ -1,13 +1,20 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
-size(130);
+size(120);
 
 path c=unitcircle;
 
@@ -72,14 +79,14 @@ filldraw(unitcircle,0.2grey+0.8*white,white);
 
 real a=2;
 path C=shift((a,-1))*scale(a)*unitcircle;
-draw(Label("$\ell$",Relative(0.55)),reverse(C),red+linewidth(1));
+draw(Label("$\ell$",Relative(0.55)),reverse(C),Red+linewidth(1));
 pair In=(2a/(1+a^2),(a^2-1)/(a^2+1));
 
 pair P=0.6dir(130);
 
-hcirc(P,degrees(In),blue);
-hcirc(P,270,blue);
-circ(P,dir(15),heavygreen);
+hcirc(P,degrees(In),Blue);
+hcirc(P,270,Blue);
+circ(P,dir(15),Magenta);
 
 pair R=0.45dir(27);
 //draw((0,0)--R);
@@ -88,8 +95,8 @@ dot("$R$",R,2.4*dir(25));
 clip(c);
 perpp(P,(a,-1));
 dot("$P$",P,NE);
-label("$n$",0.4dir(240),blue);
-label("$m$",0.55dir(60),blue);
+label("$n$",0.4dir(240),Blue);
+label("$m$",0.55dir(60),Blue);
 
 draw("$\mu$",arc(P,0.3,297,320));
 

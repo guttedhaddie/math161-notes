@@ -1,14 +1,21 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 import markers;
 
-size(135,0);
+size(120,0);
 
 path c=unitcircle;
 
@@ -78,10 +85,10 @@ pair M=(1,1)+dir(215);
 pair om=dir(60);
 
 circ(A,B);
-circ(R,B,blue+linewidth(1.2));
+circ(R,B,Blue+linewidth(1.2));
 circ(A,om);
 circ(om,B);
-circ(om,R,heavygreen);
+circ(om,R,lGreen);
 
 
 pair Bom=cent(B,om);
@@ -94,25 +101,26 @@ pair SS=Rom+rRom*dir(270);
 
 circ(M,C);
 circ(M,SS);
-circ(R,SS,cyan+linewidth(1));
-circ(B,C,cyan+linewidth(1));
+circ(R,SS,Brown+linewidth(1));
+circ(B,C,Brown+linewidth(1));
 
 draw(shift(C)*rotate(78,(0,0))*box((0,0),(0.03,0.03)));
 
-draw(arc(A,0.055,283,312,CCW),red+linewidth(1));
-draw(arc(B,0.045,82,130,CCW),magenta+linewidth(1));
-draw(arc(R,0.04,13,109,CCW),magenta+linewidth(1));
-draw(arc(R,0.04,13+180,109+180,CCW),magenta+linewidth(1));
+draw(arc(A,0.055,283,312,CCW),Red+linewidth(1));
+draw(arc(B,0.045,82,130,CCW),Magenta+linewidth(1));
+draw(arc(R,0.04,13,109,CCW),Magenta+linewidth(1));
+draw(arc(R,0.04,13+180,109+180,CCW),Magenta+linewidth(1));
 
 
-dot("$\Omega$",om,om,NoFill);
+draw(arc((0,0),dir(53),dir(93)),dashed);
+dot("$\Omega$",om,om,UnFill);
 dot("$A$",A,W);
 dot("$B$",B,S);
-dot("$R$",R,2*dir(150));
+dot("$C$",R,2*dir(150));
 dot("$M$",M,SW);
-dot("$C$",C,E);
+dot("$R$",C,E);
 dot("$S$",SS,SW);
-draw(arc((0,0),dir(45),dir(95)),dashed);
+label("$r$",(0.26,0.67),lGreen);
 
 /*
 

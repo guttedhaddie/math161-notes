@@ -1,19 +1,20 @@
-if(!settings.multipleView) settings.batchView=false;
-settings.tex="pdflatex";
-if(settings.render < 0) settings.render=4;
-settings.outformat="";
-settings.inlineimage=true;
-settings.embed=true;
-settings.toolbar=false;
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
-size(130);
+size(120);
 
 path c=unitcircle;
 
@@ -42,7 +43,7 @@ void extcirc(pair p, pair q){
 	if(paral==0){draw(unit(p)--(-unit(p))); draw(unit(q)--(-unit(q)));}
 	else{
 	picture pic;
-	draw(pic,shift(cent(p,q))*scale(rad(p,q))*unitcircle,blue);
+	draw(pic,shift(cent(p,q))*scale(rad(p,q))*unitcircle,Blue);
 	clip(pic,unitcircle);
 	add(pic);
 	}
