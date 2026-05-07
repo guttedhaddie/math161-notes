@@ -171,7 +171,7 @@ We now show that drawing a Saccheri quadrilateral with \emph{non-obtuse} summit 
 \begin{proof}
 	Suppose $ABCD$ is a Saccheri quadrilateral with base $\cl{AB}$.\par
 	\begin{minipage}[t]{0.65\linewidth}\vspace{-6pt}
-		Extend $\cl{CB}$ to $E$, on the opposite side of $\lin{AB}$ to $C$, such that $\cl{BE}\cong\cl{DA}$.\smallbreak
+		Extend $\cl{CB}$ to $E$ such that $\cl{BE}\cong\cl{DA}$.\smallbreak
 		Let $M$ be the midpoint of $\cl{AB}$ and join to $D$ and $E$.\smallbreak
 		SAS implies $\angle DAM\cong \triangle EBM$. In particular, the \textcolor{mMagenta}{vertical angles} at $M$ are congruent, whence $M$ lies on $\cl{DE}$.
 	\end{minipage}
@@ -192,13 +192,14 @@ We now show that drawing a Saccheri quadrilateral with \emph{non-obtuse} summit 
 The next step is to see if there exists a model of absolute geometry in which the summit angles are \emph{strictly less} than a right-angle\ldots
 
 \begin{exercises}
-	\hangindent\leftmargini\emph{Key concepts: \ Absolute Geometry, \ $\Sigma_{\triangle}\le\ang{180}$, \ Saccheri \& Lambert quadrilaterals}\medbreak
+	\hangindent\leftmargini\emph{Key concepts: \ Absolute Geometry, \ $\Sigma_{\triangle}\le\ang{180}$, \ Saccheri \& Lambert quadrilaterals}\smallbreak
 	\hangindent\leftmargini Work in absolute geometry; you cannot use Playfair's Axiom or the parallel postulate!
 
-	\begin{enumerate}
+	\begin{enumerate}\itemsep2pt
 		\item\label{exs:hyphist1} Use the first picture below to prove parts 1 and 2 of Lemma \ref{lemm:saccheribasic}.
 
 		\item\label{exs:hyphist2} Use the first picture to give an alternative proof of Theorem \ref{thm:summit90}.
+		\vspace{-4pt}
 		
 		\begin{center}
 			\begin{tabular}{c@{\qquad\qquad}c}
@@ -211,7 +212,7 @@ The next step is to see if there exists a model of absolute geometry in which th
 				Exercise \ref*{exs:rectanglesplit}
 			\end{tabular}
 		\end{center}
-		  	
+		\vspace{-6pt}
 		
 		\item\label{exs:rectanglesplit} Suppose $ABCD$ has four right-angles. Use the Saccheri-Legendre Theorem to prove that $\cl{AC}$ splits $ABCD$ into two congruent triangles; conclude that $ABCD$ is a rectangle.\par
 		(\emph{This is easy in Euclidean geometry, but shows that we needn't have invoked the parallel postulate for a second time in Lemma \ref{lemm:saccheribasic}, part 3.})
@@ -219,7 +220,8 @@ The next step is to see if there exists a model of absolute geometry in which th
 	
 		\item\label{exs:saccherisplit} Suppose a pair of Saccheri quadrilaterals have congruent bases and perpendicular sides. Prove that the quadrilaterals are congruent.
 				
-		\item (Hard)\lstsp Suppose two Saccheri quadrilaterals have congruent summits and  congruent perpendicular sides. Prove that the quadrilaterals are congruent.
+		\item (Hard)\lstsp Suppose two Saccheri quadrilaterals have congruent summits and  congruent perpendicular sides. Prove that the quadrilaterals are congruent.\par
+		(\emph{Hint: It is not necessary, but you might find it easier to think this out using Lambert quadrilaterals})
 	\end{enumerate}
 \end{exercises}
 
@@ -330,7 +332,7 @@ The undefined terms \emph{point, line, on} and \emph{between} now make sense. To
 		\hfill\includegraphics[alt={angles are the same as in euclidean geometry}]{models-angle}
 	\end{minipage}\smallbreak
 	The \emph{angle} between hyperbolic rays is that between their Euclidean tangent rays. Angles are \emph{congruent} if they are so in a Euclidean sense.\smallbreak
-	The \emph{hyperbolic circle} with center $P$ and (hyperbolic) radius $\rho$ is now easily defined as the set of points $X$ for which $d(X,Q)=\rho$. 
+	The \emph{hyperbolic circle} with center $P$ and (hyperbolic) radius $\rho$ is the set of points $X$ for which $d(X,P)=\rho$. 
 \end{defn}
 
 \footnotetext{%
