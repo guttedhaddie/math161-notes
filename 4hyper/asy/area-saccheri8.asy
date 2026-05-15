@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 import markers;
 
@@ -36,14 +43,14 @@ pair FF=intersectionpoint(circc(H,G,I),circc(A,FFF,C));
 
 
 draw(pic,circc(H,G,I));
-draw(pic,circc(B,EE,A),heavygreen+linewidth(1));
-draw(pic,circc(A,FF,C),heavygreen+linewidth(1));
+draw(pic,circc(B,EE,A),lGreen+linewidth(1));
+draw(pic,circc(A,FF,C),lGreen+linewidth(1));
 
 draw(pic,B..(0.12,0.62)..H);
 draw(pic,C..(3.83,1)..I);
 path s1=circc(H,G,I)--I..(3.83,1)..C--circc(C,D,B)--B..(0.12,0.62)..H--cycle;
-filldraw(pic,s1,heavygreen+opacity(0.2));
-draw(pic,circc(C,D,B),blue+linewidth(1));
+filldraw(pic,s1,lGreen+opacity(0.2));
+draw(pic,circc(C,D,B),Blue+linewidth(1));
 
 real d=190;
 draw(pic,I+0.1dir(d)--I+0.1dir(d)+0.1dir(d+90)--I+0.1dir(d+90)+0.01dir(d));
@@ -62,5 +69,5 @@ dot("$P$",rotate(35,(0,0))*A,NW);
 dot("$R$",rotate(35,(0,0))*B,SW);
 dot("$Q$",rotate(35,(0,0))*C,SE);
 
-label("$\mathcal S_2$",(1.33,1.7),heavygreen);
-label("$\triangle_2$",(0.05,2.3),heavygreen);
+label("$\square_2$",(1.33,1.7),lGreen);
+label("$\triangle_2$",(0.05,2.3),lGreen);

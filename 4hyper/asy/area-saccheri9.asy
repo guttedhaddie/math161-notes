@@ -1,16 +1,17 @@
-if(!settings.multipleView) settings.batchView=false;
-settings.tex="pdflatex";
-if(settings.render < 0) settings.render=4;
-settings.outformat="";
-settings.inlineimage=true;
-settings.embed=true;
-settings.toolbar=false;
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
 size(180);
@@ -52,19 +53,19 @@ pair LL=intersectionpoint(circc(H,G,I),circc(L,LLL,C));
 //real d=264.8;
 //draw(H+0.1dir(d)--H+0.1dir(d)+0.1dir(d+90)--H+0.1dir(d+90));
 //real d=3;
-//draw(arc(EE,0.2,d,d+40),orange);
-//draw(arc(EE,0.2,d+180,d+220),orange);
+//draw(arc(EE,0.2,d,d+40),Orange);
+//draw(arc(EE,0.2,d+180,d+220),Orange);
 //real d=110;
-//draw(arc(FF,0.12,d,d+77),red);
-//draw(arc(FF,0.12,d+180,d+77+180),red);
+//draw(arc(FF,0.12,d,d+77),Red);
+//draw(arc(FF,0.12,d+180,d+77+180),Red);
 
 
 draw(circc(C,D,B));
-draw(circc(B,EEE,A),blue);
-draw(circc(A,FFF,C),heavygreen);
+draw(circc(B,EEE,A),Blue);
+draw(circc(A,FFF,C),lGreen);
 draw(circc(H,G,I));
-draw(circc(B,KK,L),orange);
-draw(circc(L,LL,C),red);
+draw(circc(B,KK,L),Orange);
+draw(circc(L,LL,C),Red);
 
 dot("$A$",A,W);
 dot("$B$",B,SW);

@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 import markers;
 
@@ -43,13 +50,13 @@ pair M=intersectionpoint(circc(H,G,I),circc(K,MM,C));
 
 draw(circc(C,D,B));
 draw(circc(H,G,I));
-draw(circc(B,EE,A),red+linewidth(1));
-draw(circc(A,FF,C),red+linewidth(1));
+draw(circc(B,EE,A),Red+linewidth(1));
+draw(circc(A,FF,C),Red+linewidth(1));
 
 draw(B..(0.12,0.62)..H);
 draw(C..(3.83,1)..I);
 path s1=circc(H,G,I)--I..(3.83,1)..C--circc(C,D,B)--B..(0.12,0.62)..H--cycle;
-filldraw(s1,red+opacity(0.2));
+filldraw(s1,Red+opacity(0.2));
 
 pair NN=K+1.4dir(-53);
 pair O=B+1.27dir(-50);
@@ -58,7 +65,7 @@ dot(O);
 path s3=circc(B,L,K)--NN..M..D..O--cycle;
 filldraw(s3,blue+opacity(0.2));
 
-draw(circc(B,L,K),blue+linewidth(1));
+draw(circc(B,L,K),Blue+linewidth(1));
 draw(circc(K,M,C),linewidth(1));
 draw(circc(C,D,B),linewidth(1));
 
@@ -74,10 +81,10 @@ dot("$L$",K,NW);
 dot("$K$",L,NW);
 dot(M);
 
-label("$\mathcal S_1$",(3,0.4),red);
-label("$\mathcal S_3$",(0.9,-0.4),blue);
-label("$\triangle_1$",(0.8,1.9),red);
-label("$\triangle_3$",(2.6,2.4),blue);
+label("$\square_1$",(3,0.4),Red);
+label("$\square_3$",(0.9,-0.4),Blue);
+label("$\triangle_1$",(0.8,1.9),Red);
+label("$\triangle_3$",(2.6,2.4),Blue);
 
 real d=190;
 draw(I+0.1dir(d)--I+0.1dir(d)+0.1dir(d+90)--I+0.1dir(d+90)+0.01dir(d));

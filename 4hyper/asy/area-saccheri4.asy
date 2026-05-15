@@ -1,14 +1,21 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 import markers;
 
-size(185);
+size(180);
 
 pair A=(1.4,2.5);
 pair B=(0,0);
@@ -42,20 +49,20 @@ draw(I+0.1dir(d)--I+0.1dir(d)+0.1dir(d+90)--I+0.1dir(d+90)+0.01dir(d));
 real d=262;
 draw(H+0.1dir(d)+0.01dir(d+90)--H+0.1dir(d)+0.1dir(d+90)--H+0.1dir(d+90)+0.01dir(d));
 real d=-4;
-draw(arc(EE,0.15,d,d+66),orange);
-draw(arc(EE,0.15,d+180,d+246),orange);
+draw(arc(EE,0.15,d,d+66),Orange);
+draw(arc(EE,0.15,d+180,d+246),Orange);
 real d=136;
-draw(arc(FF,0.17,d,d+45),brown);
-draw(arc(FF,0.17,d+180,d+45+180),brown);
+draw(arc(FF,0.17,d,d+45),Brown);
+draw(arc(FF,0.17,d+180,d+45+180),Brown);
 
 
 draw(circc(C,D,B));
 draw(circc(H,G,I));
-draw(circc(B,EE,A),StickIntervalMarker(2,1,blue));
-draw(circc(A,FF,C),StickIntervalMarker(2,2,heavygreen));
+draw(circc(B,EE,A),StickIntervalMarker(2,1,Blue));
+draw(circc(A,FF,C),StickIntervalMarker(2,2,lGreen));
 
-draw(B..(0.12,0.62)..H,red);
-draw(C..(3.83,1)..I,red);
+draw(B..(0.12,0.62)..H,Red);
+draw(C..(3.83,1)..I,Red);
 draw(A..G,red);
 
 dot("$A$",A,W);

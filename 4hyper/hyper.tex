@@ -976,14 +976,15 @@ In summary: A triangle with a single omega-point has three pieces of data (two f
 \clearpage
 
 
-\iffalse
 
 \subsection{Area and Angle-defect}\label{sec:hyparea}
 
 In this section we consider one of the triumphs of Johann Lambert: the relationship between the sum of the angles in a triangle and its \emph{area.} We start with a loose axiomatization of area as a relative measure. Until explicitly stated otherwise, we work in \emph{absolute geometry.}
 
 \begin{description}
-	\item[Axiom I] Two geometric figures have the same area if and only if they may be sub-divided into finitely many pairs of mutually congruent triangles.\footnote{To allow infinitely many infinitesimal sub-triangles would require ideas from calculus and complicate our discussion.}
+	\item[Axiom I] Two geometric figures have the same area if and only if they may be sub-divided into finitely many pairs of mutually congruent triangles.\footnote{%
+	To allow infinitely many infinitesimal sub-triangles would require ideas from analysis\ldots%
+	}
 	\item[Axiom II] The area of a triangle is positive.
 	\item[Axiom III] The area of a union of disjoint figures is the sum of the areas of the figures.
 \end{description}
@@ -996,9 +997,9 @@ Since triangles in absolute geometry have $\Sigma_{\triangle}\le\pi$ (Theorem \r
 \[
 	0\le\pi-\Sigma_{\triangle}\le\pi
 \]
-In Euclidean geometry the defect is always zero, while in hyperbolic geometry the defect is strictly positive (Theorem \ref{thm:hyptriangle}). A `triangle' with three omega-points would have defect $\pi$.
+In Euclidean geometry the defect is always zero; in hyperbolic geometry it is strictly positive (Corollary \ref{cor:hyptriangle}). A `triangle' with three omega-points would have defect $\pi$.
 
-%\begin{minipage}[t]{0.74\linewidth}\vspace{0pt}
+\begin{minipage}[t]{0.74\linewidth}\vspace{0pt}
 	\begin{lemm}{}{}
 		Angle-defect is additive: If a triangle is split into two sub-triangles, then the defect of the whole is the sum of the defects of the parts.
 	\end{lemm}
@@ -1008,11 +1009,11 @@ In Euclidean geometry the defect is always zero, while in hyperbolic geometry th
 		\left[\pi-(\alpha+\gamma+\epsilon)\right]+\left[\pi-(\beta+\delta+\zeta)\right]=\pi-(\alpha+\beta+\gamma+\delta)
 	\]
 	since $\epsilon+\zeta=\pi$. Notice that angle-\emph{sum} is not additive!
-% \end{minipage}
-% \hfill
-% \begin{minipage}[t]{0.25\linewidth}\vspace{-15pt}
-	\hfill\includegraphics{area-defect}
-% \end{minipage}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.25\linewidth}\vspace{-8pt}
+	\hfill\includegraphics[alt={comparing the angle sums in sub triangles}]{area-defect}
+\end{minipage}
 
 
 
@@ -1027,63 +1028,60 @@ Of course this trivial in Euclidean geometry where all triangles have the same a
 	\[
 		\triangle_1=\bigcup_{k=1}^n\triangle_{1,k}\quad\text{and}\quad \triangle_2=\bigcup_{k=1}^n\triangle_{2,k}\quad\text{where}\quad \triangle_{1,k}\cong\triangle_{2,k}
 	\]
-	Each pair $\triangle_{1,k},\triangle_{2,k}$ has the same angle-defect, whence the angle-defects of $\triangle_1$ and $\triangle_2$ are equal:
+	Each sub-pair $\triangle_{1,k},\triangle_{2,k}$ has the same defect, whence the defects of $\triangle_1$ and $\triangle_2$ are equal:
 	\[
 		\operatorname{defect}(\triangle_1)=\sum_{k=1}^n\operatorname{defect}(\triangle_{1,k}) =\sum_{k=1}^n\operatorname{defect}(\triangle_{2,k}) =\operatorname{defect}(\triangle_2)\tag*{\qedhere}
 	\]
 \end{proof}
 
-
+\pagebreak[3]
 
 
 \subsubsection*{Angle-sum determines area in \emph{hyperbolic geometry}}
 
-RECALL THEOREM 4.5!!!!
-
-The converse in hyperbolic geometry relies on a beautiful and reversible construction relating triangles and Saccheri quadrilaterals. The construction itself is valid in absolute geometry, though the ultimate conclusion that angle-sum determines area is not. If the initial discussion seems difficult, pretend you are in Euclidean geometry and think about \emph{rectangles.}
+The converse in hyperbolic geometry relies on a beautiful construction generalizing that of Theorem \ref{thm:summit90}. The construction is valid in absolute geometry, though the ultimate conclusion that angle-sum determines area is not.% If the initial discussion seems difficult, pretend you are in Euclidean geometry and think about \emph{rectangles.}
 
 \begin{lemm}{}{quadtricorr}
-	\exstart Given $\triangle ABC$, choose a side $\cl{BC}$. Bisect the remaining sides at $E,F$ and drop perpendiculars from $A$, $B$, $C$ to $\lin{EF}$. Then $HICB$ is a Saccheri quadrilateral with base $\cl{HI}$.\vspace{-5pt}
-	\begin{enumerate}\setcounter{enumi}{1}
-	  \item Conversely, given a Saccheri quadrilateral $HICB$ with summit $\cl{BC}$, let $A$ be any point such that $\lin{HI}$ bisects $\cl{AB}$ at $E$. Then the intersection $F=\lin{HI}\cap\cl{AC}$ is the midpoint of $\cl{AC}$.
+	The picture below illustrates the result of two constructions (2 is the reverse of 1):
+	\begin{enumerate}\itemsep2pt
+	  \item Given $\triangle ABC$, bisect sides $\cl{AB}$ and $\cl{AC}$ at $E,F$ respectively and drop \textcolor{dRed}{perpendiculars} from the vertices to $\lin{EF}$. Then $\square HICB$ is a Saccheri quadrilateral with summit $\cl{BC}$.
+	  \item Given a Saccheri quadrilateral $\square HICB$ with summit $\cl{BC}$, let $A$ be any point such that $\lin{HI}$ bisects $\cl{AB}$ at $E$. Then the intersection $F=\lin{HI}\cap\cl{AC}$ is the midpoint of $\cl{AC}$.
 	\end{enumerate}
-	\begin{minipage}[t]{0.6\linewidth}\vspace{-5pt}
-	Both constructions yield the same picture and the following conclusions:\vspace{-5pt}
-	  \begin{itemize}\itemsep0pt
+	\begin{minipage}[t]{0.6\linewidth}\vspace{-8pt}
+	Regardless of direction, we have the following conclusions:
+	  \begin{itemize}\itemsep2pt
 	    \item The triangle and quadrilateral have equal area.
 	    \item The sum of the summit angles of the quadrilateral equals the angle-sum of the triangle.
 	  \end{itemize}
 	  We chose $\cl{BC}$ to be the longest side of $\triangle ABC$---this isn't necessary, though it helpfully forces $E,F$ to lie between $H,I$.
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.39\linewidth}\vspace{-15pt}
-		\hfill\includegraphics[scale=0.95]{area-saccheri4}
+	\begin{minipage}[t]{0.39\linewidth}\vspace{-18pt}
+		\hfill\includegraphics[alt={Comparing area and angle-sum for triangles and quadrilaterals}]{area-saccheri4}
 	\end{minipage}
 \end{lemm}
 
 
 \begin{proof}
-	\begin{enumerate}
-	  \item Two applications of the SAA congruence (follow the arrows!) tell us that\vspace{-3pt}
-	  \[
-	  	\triangle BEH\cong\triangle AEG\text{ \ and \ }\triangle CFI\cong\triangle AFG
-	  \]
-	  %\begin{minipage}[t]{0.6\linewidth}\vspace{-11pt}
-		  We conclude that $\textcolor{red}{\cl{BH}\cong\cl{AG}\cong\cl{CI}}$ whence $HICB$ is a Saccheri quadrilateral. The area and angle-sum correspondence is immediate from the picture.
-		  \item Suppose the midpoint of $\cl{AC}$ were at $J\neq F$. By part 1, we may create a new Saccheri quadrilateral with summit $\cl{BC}$ using the midpoints $E,J$.\smallbreak
-		  The perpendicular bisector of $\cl{BC}$ bisects the bases of both Saccheri quadrilaterals (Lemma \ref{lemm:saccheribasic}), creating $\triangle EUV$ with two right-angles: contradiction.
-% 		\end{minipage}
-% 		\hfill
-% 		\begin{minipage}[t]{0.39\linewidth}\vspace{-22pt}
-			\hfill\includegraphics[scale=0.95]{area-saccheri5}\qedhere
-% 		\end{minipage}		
-	\end{enumerate}
+	Part 1 is simply two applications of the SAA congruence theorem (follow the arrows!)
+	\[
+	  \triangle BEH\cong\triangle AEG\text{ \ and \ }\triangle CFI\cong\triangle AFG
+	\]
+	\begin{minipage}[t]{0.6\linewidth}\vspace{-12pt}
+		The area and angle-sum correspondence is immediate.\medbreak
+		For part 2, suppose the midpoint of $\cl{AC}$ were at $J\neq F$. By part 1, we may create a new Saccheri quadrilateral with summit $\cl{BC}$ using the midpoints $E,J$.\smallbreak
+		By Lemma \ref{lemm:saccheribasic}, the perpendicular bisector of $\cl{BC}$ bisects the bases of both Saccheri quadrilaterals, creating $\triangle EUV$ with two right-angles: contradiction.
+ 	\end{minipage}
+ 	\hfill
+ 	\begin{minipage}[t]{0.39\linewidth}\vspace{-25pt}
+		\hfill\includegraphics[alt={proving that the construction is reversible}]{area-saccheri5}
+ 	\end{minipage}	
 \end{proof}
 
 We now prove a special case of the main result.
 
 \begin{lemm}{}{anglesumarea}
-	Suppose \emph{hyperbolic} triangles $\triangle ABC$ and $\triangle PQR$ have congruent sides $\cl{BC}\cong\cl{QR}$ and the same angle-sum. Then the triangles have the same area.
+	Suppose \textbf{hyperbolic} triangles $\triangle ABC$ and $\triangle PQR$ have congruent sides $\cl{BC}\cong\cl{QR}$ and the same angle-sum. Then the triangles have the same area.
 \end{lemm}
 
 
@@ -1091,14 +1089,16 @@ We now prove a special case of the main result.
 	Construct the quadrilaterals corresponding to $\triangle ABC$ and $\triangle PQR$ with summits $\cl{BC}\cong\cl{QR}$. These have congruent summits \emph{and} summit angles: by Exercise \ref*{sec:hypparallel}.\ref{exs:saccherisummitcong} they are congruent.
 \end{proof}
 
-The final observation is what makes this special to \emph{hyperbolic} geometry. In the Euclidean case, Saccheri quadrilaterals are \emph{rectangles}, and congruent summits do not force congruence of the remaining sides.\goodbreak
+The final observation is what makes this special to \emph{hyperbolic} geometry. In the Euclidean case, Saccheri quadrilaterals are \emph{rectangles}, and congruent summits do not force congruence of the remaining sides.
+
+
 
 \begin{thm}{}{arealemm2}
-	In hyperbolic geometry, if $\triangle ABC$ and $\triangle PQR$ have the same angle-sum then they have the same area.
+	In \textbf{hyperbolic} geometry, if $\triangle ABC$ and $\triangle PQR$ have the same angle-sum then they have the same area.
 \end{thm}
 
 \begin{proof}
-	If the triangles have a pair of congruent edges, the previous result says we are done. Otherwise, we use Lemma \ref{lemm:quadtricorr} to create a new triangle $\triangle LBC$ which matching the same Saccheri quadrilateral as $\triangle ABC$.\smallbreak
+	If the triangles have a pair of congruent edges, the previous result says we are done. Otherwise, use Lemma \ref{lemm:quadtricorr} to create a new triangle $\triangle LBC$ which matches the same Saccheri quadrilateral as $\triangle ABC$.\medbreak
 	WLOG suppose $\nm{AB}<\nm{PQ}$ and construct the Saccheri quadrilateral with summit $\cl{BC}$. Select $K$ on $\lin{EF}$ such that $\nm{BK}=\frac 12\nm{PQ}$ and extend such that $K$ is the midpoint of $\cl{BL}$.\par
 	\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}
 		\begin{itemize}
@@ -1110,7 +1110,7 @@ The final observation is what makes this special to \emph{hyperbolic} geometry. 
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.39\linewidth}\vspace{-12pt}
-		\hfill\includegraphics{area-saccheri9}\qedhere
+		\hfill\includegraphics[alt={angle sums determine area in hyperbolic geometry}]{area-saccheri9}\qedhere
 	\end{minipage}
 \end{proof}
 
@@ -1124,7 +1124,7 @@ Since both area and angle-\emph{defect} are additive, we immediately conclude:
 \end{cor}
 
 \footnotetext{
-	We have really only proved that $\pi-\Sigma_{\triangle}$ is proportional to $\operatorname{Area}\triangle$. However, it can be seen that these quantities are equal if we use the area measure arising naturally from the hyperbolic distance function (see page \pageref{pg:hypareaext}).\smallbreak
+	We have really only proved that $\pi-\Sigma_{\triangle}$ is proportional to $\operatorname{Area}\triangle$. However, it can be seen that these quantities are equal if we use the area measure arising naturally from the hyperbolic distance function (Definition \ref{defn:poincaredisk2}).\smallbreak
  	Corollary \ref{cor:hypareaangle} is a special case of the famous Gauss--Bonnet theorem from differential geometry: for any triangle on a surface with Gauss curvature $K$, we have
 	\[
 		\Sigma_{\triangle}-\pi=\iint_{\triangle} K\,\dA
@@ -1133,11 +1133,11 @@ Since both area and angle-\emph{defect} are additive, we immediately conclude:
 	\begin{description}
 		\item[Euclidean space] is \emph{flat} ($K=0$) so the angle-defect is always zero.
 		\item[Hyperbolic space] has \emph{constant negative curvature} $K=-1$, whence $\iint_{\triangle}\dA=-(\Sigma_{\triangle}-\pi)$ is the angle-defect.
-		\item[Spherical geometry] A sphere of radius 1  has \emph{constant positive curvature} $K=1$ and $\iint_{\triangle}\dA$ is the angle-\emph{excess} $\Sigma_{\triangle}-\pi$. 
+		\item[Spherical geometry] A radius 1 sphere has \emph{constant positive curvature} $K=1$ and $\iint_{\triangle}\dA$ is the angle-\emph{excess} $\Sigma_{\triangle}-\pi$. 
 	\end{description}
 }
 
-Note finally how the AAA congruence (Theorem \ref{thm:hyptriangle}, part 3) is related to the corollary:
+Note finally how the AAA congruence (Corollary \ref{cor:hyptriangle}, part 3) is related to the corollary:
 \[
 	\begin{array}{ccc}
 		\triangle ABC\cong \triangle DEF & \overset{\text{AAA}}{\iff} & \text{angles congruent in pairs}\\[5pt]
@@ -1145,7 +1145,6 @@ Note finally how the AAA congruence (Theorem \ref{thm:hyptriangle}, part 3) is r
 		\text{equal area} & \overset{\text{Cor \ref{cor:hypareaangle}}}{\iff} & \text{same angle-defect}
 	\end{array}
 \]
-	
 
 
 \begin{example*}{\ref{ex:hypisosceles}, cont}{}
@@ -1153,9 +1152,8 @@ Note finally how the AAA congruence (Theorem \ref{thm:hyptriangle}, part 3) is r
 	\[
 		\frac\pi 2+2\tan^{-1}\frac 35\approx \ang{151.93}\implies \operatorname{area}=\pi-\left(\frac\pi 2+2\tan^{-1}\frac 35\right) =\frac\pi 2-2\tan^{-1}\frac 35\approx 0.490
 	\]
-	A Euclidean triangle with the same vertices has area $\frac 12\cdot\frac 12\cdot\frac 12=\frac 18=0.125$.\par
-	
-	\begin{minipage}[t]{0.7\linewidth}\vspace{0pt}
+	A Euclidean triangle with the same vertices has much smaller area: $\frac 12\cdot\frac 12\cdot\frac 12=\frac 18=0.125$.\par
+	\begin{minipage}[t]{0.73\linewidth}\vspace{-2pt}
 		Generalizing this (Exercise \ref*{sec:hyp-models}.\ref{exs:isorighthypextended}), the triangle with vertices $O,P=(c,0)$ and $Q=(0,c)$ has area
 		\[
 			\pi-\left(\frac\pi 2+2\tan^{-1}\frac{1-c^2}{1+c^2}\right)=\frac\pi 2-2\tan^{-1}\frac{1-c^2}{1+c^2}
@@ -1163,10 +1161,10 @@ Note finally how the AAA congruence (Theorem \ref{thm:hyptriangle}, part 3) is r
 		As expected, $\lim\limits_{c\to 0^+}\text{area}(c)=0$. In the other limit, the triangle becomes an omega-triangle with two omega-points and $\lim\limits_{c\to 1^-}\text{area}(c)=\frac\pi 2$: an infinite `triangle' with finite `area'!
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.29\linewidth}\vspace{0pt}
+	\begin{minipage}[t]{0.25\linewidth}\vspace{0pt}
 		\hfill
 		\begin{tabular}{c@{}}
-			\includegraphics{area-iso}\\
+			\includegraphics[alt={an omega triangle with area pi on two}]{area-iso}\\
 			The limit $c\to 1^-$
 		\end{tabular}
 	\end{minipage}
@@ -1175,39 +1173,49 @@ Note finally how the AAA congruence (Theorem \ref{thm:hyptriangle}, part 3) is r
 Our discussion in fact provides an explicit method for cutting a triangle into sub-triangles and rearranging its pieces to create a triangle with equal area.
 
 \begin{center}
-	\includegraphics{area-saccheri10}\qquad\qquad\includegraphics{area-saccheri8}
+	\includegraphics[alt={transforming a triangle into another with equal area}]{area-saccheri10}
+	\qquad\qquad
+	\includegraphics[alt={transforming a triangle into another with equal area}]{area-saccheri8}
 \end{center}
 
-Suppose $\textcolor{red}{\triangle_1}$ and $\textcolor{Green}{\triangle_2}$ have equal area and construct the quadrilaterals $\textcolor{red}{\cS_1}$ and $\textcolor{Green}{\cS_2}$. Let $L,K$ be chosen so that $\textcolor{blue}{\cl{BL}\cong\cl{QR}}$ and $K$ is the midpoint of $\textcolor{blue}{\cl{BL}}$. We now have:
+Suppose $\mathcolor{mRed}{\triangle_1}$ and $\mathcolor{mGreen}{\triangle_2}$ have equal areas and construct the quadrilaterals $\mathcolor{mRed}{\square_1}$ and $\mathcolor{mGreen}{\square_2}$. Let $L,K$ be chosen so that $\mathcolor{Blue}{\cl{BL}\cong\cl{QR}}$ and $K$ is the midpoint of $\mathcolor{Blue}{\cl{BL}}$. We now have:
 \begin{itemize}
-  \item $\textcolor{red}{\triangle_1}, \textcolor{Green}{\triangle_2}, \textcolor{blue}{\triangle_3}, \textcolor{red}{\cS_1}, \textcolor{Green}{\cS_2}, \textcolor{blue}{\cS_3}$ have the same area.
-  \item The summit angles of $\textcolor{red}{\cS_1}, \textcolor{Green}{\cS_2}, \textcolor{blue}{\cS_3}$ are congruent (half the angle-sum of each triangle).
-  \item $\textcolor{Green}{\cS_2}, \textcolor{blue}{\cS_3}$ are \emph{congruent} since they have congruent summits and summit angles.
+  \item $\mathcolor{mRed}{\triangle_1}, \mathcolor{mGreen}{\triangle_2}, \mathcolor{Blue}{\triangle_3}, \mathcolor{mRed}{\square_1}, \mathcolor{mGreen}{\square_2}, \mathcolor{Blue}{\square_3}$ have the same area.
+  \item The summit angles of $\mathcolor{mRed}{\square_1}, \mathcolor{mGreen}{\square_2}, \mathcolor{Blue}{\square_3}$ are congruent (half the angle-sum of each triangle).
+  \item $\mathcolor{mGreen}{\square_2}, \mathcolor{Blue}{\square_3}$ are \emph{congruent} since they have congruent summits and summit angles.
 \end{itemize}
 
-We can now follow the steps in Lemma \ref{lemm:quadtricorr} to transform $\textcolor{red}{\triangle_1}$ to $\textcolor{Green}{\triangle_2}$:
+We can now follow the steps in Lemma \ref{lemm:quadtricorr} to transform $\mathcolor{mRed}{\triangle_1}$ into $\mathcolor{mGreen}{\triangle_2}$:
 \[
-	\textcolor{red}{\triangle_1}\to \textcolor{red}{\cS_1}\to \textcolor{blue}{\triangle_3}\to \textcolor{blue}{\cS_3}\cong \textcolor{Green}{\cS_2}\to \textcolor{Green}{\triangle_2}
+	\mathcolor{mRed}{\triangle_1}\to \mathcolor{mRed}{\square_1}\to \mathcolor{Blue}{\triangle_3}\to \mathcolor{Blue}{\square_3}\cong \mathcolor{mGreen}{\square_2}\to \mathcolor{mGreen}{\triangle_2}
 \]
-where each arrow represents cutting off two triangles and moving them. Indeed this works even for triangles in Euclidean geometry!
+where each arrow represents cutting off two sub-triangles and moving them. Indeed this works even for triangles in Euclidean geometry!
 
 
 
 
 \begin{exercises}
-	\exstart Use Corollary \ref{cor:hypareaangle} to find the area of the hyperbolic triangle with given vertices. Your answers to exercises from Section \ref{sec:hyp-models} should supply the angles!
-	\begin{enumerate}\setcounter{enumi}{1}
-	  \item[]\begin{enumerate}
+	\hangindent\leftmargini\emph{Key concepts: \ Area equals angle sum in hyperbolic geometry}
+
+
+	\begin{enumerate}
+	  \item Use Corollary \ref{cor:hypareaangle} to find the area of the hyperbolic triangle with given vertices. Your answers to exercises from Section \ref{sec:hyp-models} should supply the angles!
+	  \begin{enumerate}
 	    \item $O=(0,0)$, $P=(\frac 12,\sqrt{\frac 5{12}})$ and $Q=(\frac 12,-\sqrt{\frac 5{12}})$.
 	    \item $O=(0,0)$, $P=(\frac 14,0)$, $Q=(0,\frac 12)$.
 	    \item $P=(r,0)$, $Q=\left(-\frac r2,\frac{\sqrt{3}r}2\right)$, $R=\left(-\frac r2,-\frac{\sqrt{3}r}2\right)$ where $0<r<1$.
 		\end{enumerate}
 		
+		
+		\item Use Lemma \ref{lemm:quadtricorr} to give a very cheap proof of part 2 of Corollary \ref{cor:hyptriangle}, that the angle-sum in a hyperbolic triangle is strictly less than \ang{180}.
+		
+		
 		\item In the proof of Theorem \ref{thm:arealemm2}, explain why we can find $K$ such that $\nm{BK}=\frac 12\nm{PQ}$. 
 		
    
-	  \item Show that there is no finite triangle in hyperbolic geometry that achieves the maximum area bound $\pi$.\par
-	  (Hard!) For a challenge, try to prove that omega-triangles also satisfy the angle-defect formula: Area $=\pi-\Sigma_{\triangle}$, so that only triangles with three omega-points have maximum area.
+	  \item Show that there is no \emph{finite} triangle in hyperbolic geometry that achieves the maximum area bound $\pi$.\par
+	  (Hard!) Prove that omega-triangles also satisfy the angle-defect formula: Area $=\pi-\Sigma_{\triangle}$, so that only triangles with three omega-points have maximum area.
+	
 	
 		\item Let $\Omega_1,\ldots,\Omega_n$ be $n$ distinct omega-points arranged counter-clockwise around the boundary circle of the Poincaré disk. A region is bounded by the $n$ hyperbolic lines
 		\[
@@ -1215,13 +1223,13 @@ where each arrow represents cutting off two triangles and moving them. Indeed th
 		\]
 		What is the area of the region? Hence argue that the `area' of hyperbolic space is infinite.
 	  
+	  
 	  \item An omega-triangle has vertices $O=(0,0)$, $\Omega=(1,0)$ and $P=(0,h)$ where $h>0$.
 	  \begin{enumerate}
 	    \item Prove that the hyperbolic segment $\cl{P\Omega}$ is an arc of a circle with equation
 	    \[
-	    	(x-1)^2+(y-k)^2=k^2
+	    	(x-1)^2+(y-k)^2=k^2 \tag{some $k>0$}
 	    \]
-	    for some $k>0$.
 	    \item Prove that the area of $\triangle OP\Omega$ is given by
 			\[
 				A(h)=\sin^{-1}\dfrac{2h}{1+h^2}
@@ -1237,6 +1245,7 @@ where each arrow represents cutting off two triangles and moving them. Indeed th
 \clearpage
 
 
+\iffalse
 
 
 \subsection{Isometries and Calculation}\label{sec:hyperiso}
