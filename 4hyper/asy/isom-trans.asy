@@ -14,7 +14,7 @@ pen lGreen=rgb("00a000");
 
 import graph;
 
-size(120);
+size(110);
 
 path c=unitcircle;
 
@@ -28,8 +28,6 @@ pair al=0.3*dir(30);
 pair f(pair z){return (al-z)/(conj(al)*z-1);}
 pair finv(pair z){return (al+z)/(conj(al)*z+1);}
 
-dot("$\alpha$",al,SE);
-dot("$O$",O,SE);
 
 void traj(pair b, pen pen){
 pair bb=finv(finv(finv(b)));
@@ -55,3 +53,6 @@ traj(-0.27*dir(120),blue);
 traj(-0.54*dir(120),purple);
 traj(-0.81*dir(120),grey);
 
+
+dot("$\alpha$",al,0.4SE,lGreen,UnFill);
+dot("$O$",O,0.4SE,lGreen,UnFill);

@@ -14,7 +14,7 @@ pen lGreen=rgb("00a000");
 
 import graph;
 
-size(120);
+size(110);
 
 path c=unitcircle;
 
@@ -72,6 +72,4 @@ traj(0.85*unit(al),lGreen);
 traj(0.8*unit(al),Blue);
 traj(0.75*unit(al),Purple);
 traj(0.7*unit(al),grey);
-
-
 

@@ -335,8 +335,8 @@ The undefined terms \emph{point, line, on} and \emph{between} now make sense. To
 	The \emph{hyperbolic circle} with center $P$ and (hyperbolic) radius $\rho$ is the set of points $X$ for which $d(X,P)=\rho$. 
 \end{defn}
 
-\footnotetext{%
-	It should seem reasonable that hyperbolic functions to play some role in hyperbolic geometry! For reference:
+\footnotetext{\label{fn:invcosh}%
+	It should seem reasonable for hyperbolic functions to play some role in hyperbolic geometry! For reference:
   \[
   	\cosh x=\frac{e^x+e^{-x}}2,\quad \sinh x=\frac{e^x-e^{-x}}2,\quad \cosh^2x-\sinh^2x=1,\quad\cosh^{-1}x=\ln(x+\sqrt{x^2-1})
   \]
@@ -1301,7 +1301,7 @@ For candidate isometries we need functions $f:D\to D$ for which $d\bigl(f(z),f(w
 	  \item(Cross-ratio preservation)\lstsp Given distinct $z_1,z_2,z_3,z_4$, we have
 		\[
 			\frac{\big(f(z_1)-f(z_2)\big)\big(f(z_3)-f(z_4)\big)}{\big(f(z_2)-f(z_3)\big)\big(f(z_4)-f(z_1)\big)} =\frac{(z_1-z_2)(z_3-z_4)}{(z_2-z_3)(z_4-z_1)}
-		\]
+		\]\vspace{-5pt}
 	\end{enumerate}
 \end{thm}
 
@@ -1338,143 +1338,162 @@ Referring to the properties in Theorem \ref{thm:mobius}:
   \]
 \end{enumerate}
 
-How does this help us compute? The isometry ($\ast$) moves $\alpha$ to the origin, where calculating distances and angles is easy! %; one can then choose $\theta$ to orient whichever direction you like along the positive $x$-axis\ldots
+
+\subsubsection*{Computation with Isometries}
+
+How does this help us compute? The isometry ($\ast$) moves $\alpha$ to the origin, where calculating distances and angles is easy! %If desired, one can then choose $\theta$ to orient whichever direction you like along the positive $x$-axis.
 
 
-\begin{example}{}{}
-	Let $P=\frac 12$ and $Q=\frac 23+\frac{\sqrt 2}3i$. Move $P$ to the origin using\par
-	\begin{minipage}[t]{0.74\linewidth}\vspace{-8pt}
-		an isometry\footnotemark{} with $\alpha=P$:
-% 		\begin{gather*}
-%  			f(z)=e^{i\theta}\frac{\alpha-z}{\cl\alpha z-1}=e^{i\theta}\frac{1-2z}{z-2} \implies f(P)=O\\
-%  			f(Q)=e^{i\theta}\frac{1-\frac 43-\frac{2\sqrt 2}3i}{\frac 23-2+\frac{\sqrt 2}3i} =-\frac{1+2\sqrt 2i}{-4+\sqrt 2i}e^{i\theta} =\frac{i}{\sqrt 2}e^{i\theta}
-% 		\end{gather*}
-% 		Choosing $e^{i\theta}=-i$ places $f(Q)=\frac 1{\sqrt 2}$ on the positive $x$-axis. 
-		\begin{gather*}
- 			f(z)=\frac{\alpha-z}{\cl\alpha z-1} =\frac{1-2z}{z-2} \implies f(P)=O\\
- 			f(Q)=\frac{1-\frac 43-\frac{2\sqrt 2}3i}{\frac 23-2+\frac{\sqrt 2}3i} =-\frac{1+2\sqrt 2i}{-4+\sqrt 2i} =\frac{i}{\sqrt 2}
-		\end{gather*}
-		Let us compare distances:
+\begin{example}{}{hypisomex1}
+	We compute the hyperbolic distance between the points $P=\frac 12$ and $Q=\frac 23+\frac{\sqrt 2}3i$.\par
+	\begin{minipage}[t]{0.69\linewidth}\vspace{-4pt}
+		Start by moving $P$ to the origin using an isometry with $\alpha=P=\frac 12$: the natural choice is
+		\[
+			f(z) =\frac{\alpha-z}{\cl\alpha z-1} 
+			=\frac{1-2z}{z-2}
+		\]
+		Plainly $f(P)=O$. Now compute what $f$ does to $Q$:
+		\[
+ 			f(Q) =\frac{1-\frac 43-\frac{2\sqrt 2}3i}{\frac 23-2+\frac{\sqrt 2}3i} 
+ 			=-\frac{1+2\sqrt 2i}{-4+\sqrt 2i} 
+ 			=\frac{i}{\sqrt 2}
+		\]
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.25\linewidth}\vspace{-20pt}
-		\hfill\includegraphics[]{calc-triangle3}
-	\end{minipage}\par\vspace{-4pt}
+	\begin{minipage}[t]{0.3\linewidth}\vspace{0pt}
+		\hfill\includegraphics[alt={moving a segment so that one endpoint is at the origin}]{calc-triangle3}
+	\end{minipage}
+	\smallbreak
+	We could have combined this with a rotation ($e^{i\theta}=e^{-\frac{i\pi}2}=-i$) to move $f(Q)$ to the positive $x$-axis, but there is no need to do so.\smallbreak
+	Now let us compute distances. By Definition \ref{defn:hypdist2},
+	\[
+		d\bigl(f(P),f(Q)\bigr) 
+		=\ln\frac{1+\nm{f(Q)}}{1-\nm{f(Q)}} 
+		=\ln\frac{1+\frac 1{\sqrt 2}}{1-\frac 1{\sqrt 2}}
+		=\ln\frac{\sqrt 2+1}{\sqrt 2-1}
+		=\ln(3+2\sqrt 2)
+	\]
+	Compare this with the original cosh-formula (Definition \ref{defn:poincaredisk2}):
 	\begin{gather*}
-		d\bigl(f(P),f(Q)\bigr) = \ln\frac{1+\nm{f(Q)}}{1-\nm{f(Q)}} =\ln\frac{1+\frac 1{\sqrt 2}}{1-\frac 1{\sqrt 2}}=\ln\frac{\sqrt 2+1}{\sqrt 2-1}=\ln(3+2\sqrt 2) \tag{Definition \ref{defn:hypdist2}}\\
+		\nm P^2=\frac 14,\qquad
+		\nm Q^2=\frac 49+\frac 29=\frac 23,\qquad
+		\nm{PQ}^2=\frac 1{36}+\frac 29=\frac 14\\
 		\begin{aligned}
-			d(P,Q)&=\cosh^{-1}\left(1+\frac{2\nm{PQ}^2}{(1-\nm P^2)(1-\nm Q^2)}\right) =\cosh^{-1}\left(1+\frac{\frac 24}{(1-\frac 14)(1-\frac 23)}\right)\\
-			&=\cosh^{-1}3=\ln(3+\sqrt{3^2-1})=\ln(3+2\sqrt 2) =d\bigl(f(P),f(Q)\bigr)
+			d(P,Q)&=\cosh^{-1}\left(1+\frac{2\nm{PQ}^2}{(1-\nm P^2)(1-\nm Q^2)}\right)
+			=\cosh^{-1}\left(1+\frac{\frac 24}{(1-\frac 14)(1-\frac 23)}\right)\\
+			&=\cosh^{-1}3=\ln(3+\sqrt{3^2-1})=\ln(3+2\sqrt 2)\\
+			&=d\big(f(P),f(Q)\big)
 		\end{aligned}
 	\end{gather*}
-	If we trust the original cosh-formula (Definition \ref{defn:poincaredisk2}), then the points really are the same distance apart! Indeed the hyperbolic segment $\mathcolor{mRed}{\cl{PQ}}$ %(with equation $x^2+y^2-\frac 52x+1=0$) 
-	has been transformed by $f$ to a segment $\mathcolor{mGreen}{\cl{f(P)f(Q)}}$ of the $y$-axis.
+	If we trust the original cosh-formula, then the transformed points really are the same distance apart as the originals!\smallbreak
+	It is worth doing some additional verifications (these are exercises):
+	\begin{itemize}
+	  \item The segment $\mathcolor{mRed}{\cl{PQ}}$ has equation $(x-\frac 54)^2+y^2=\frac 9{16}$. It can be checked directly that $f$ maps points on this curve to points on the $y$-axis: the segment $\mathcolor{mRed}{\cl{PQ}}$ really is transformed to $\mathcolor{mGreen}{\cl{f(P)f(Q)}}$, as claimed.
+	  \item We could directly compute the co-ordinates of the omega-points for $\mathcolor{mRed}{\cl{PQ}}$ and use Definition \ref{defn:hypdist2} to verify the hyperbolic distance without resorting to the (as yet unsubstantiated) cosh-formula.
+	\end{itemize}
 \end{example}
 
-\footnotetext{%
-	We could also include a rotation ($e^{i\theta}=-i$) to move $f(Q)$ to the positive $x$-axis, but there is no real benefit.%
-}
 
+\pagebreak[3]
 
-
-Recall (e.g.,{} Example \ref{ex:hypisosceles}) how we previously computed angles. Isometries make this \emph{much} easier. 
+Isometries make computing angles \emph{much} easier (recall the horror of Example \ref{ex:hypisosceles}\ldots). 
 
 \begin{example}{}{}
-	Given $A=-\frac i2$, $B=-\frac i5$ and $C=\frac 1{5}(3-i)$, we find $\mathcolor{mRed}{d(A,B)}$, $\mathcolor{Blue}{d(A,C)}$ and $\measuredangle BAC$.\smallbreak
+	Given $A=-\frac i2$, $B=-\frac i5$, $C=\frac 1{5}(3-i)$, we find $\mathcolor{mRed}{d(A,B)}$, $\mathcolor{Blue}{d(A,C)}$ and $\mathcolor{mGreen}{\measuredangle A=\measuredangle CBA}$.\smallbreak
 	Start by moving $A$ to the origin and consider $f(B)$, $f(C)$:
 	\begin{gather*}
 		f(z)=\frac{-\frac i2-z}{\frac i2z-1} =\frac{2z+i}{2-iz} \implies 
-		f(B)=\frac{-\frac{2i}5+i}{2-\frac 15} =\frac i3\\
+		f(B)=\frac{-\frac{2i}5+i}{2-\frac 15} =\frac i3\\[-1pt]
 		f(C)=\frac{\frac 25(3-i)+i}{2-\frac i5(3-i)} =\frac{2(3-i)+5i}{10-i(3-i)} =\frac{2+i}{3-i}= \frac{(2+i)(3+i)}{10} =\frac{1+i}2
 	\end{gather*}
-	\begin{minipage}[t]{0.67\linewidth}\vspace{0pt}
-		By mapping $A$ to the origin, \textcolor{mRed}{two} \textcolor{Blue}{sides} of the triangle are now \emph{Euclidean straight lines} and the computations are easy:
+	\begin{minipage}[t]{0.67\linewidth}\vspace{-1pt}
+		Since $f(A)$ is the origin, \textcolor{mRed}{two} \textcolor{Blue}{sides} of the triangle are now \emph{Euclidean straight lines} and the computations become easy:
 		\begin{gather*}
-	  	\mathcolor{mRed}{d(A,B)} =d\bigl(O,f(B)\bigr) =\ln\frac{1+\frac 13}{1-\frac 13} =\ln 2\\
+	  	\mathcolor{mRed}{d(A,B)} =d\bigl(O,f(B)\bigr) =\ln\frac{1+\frac 13}{1-\frac 13} =\ln 2\\[-1pt]
 	  	\mathcolor{Blue}{d(A,C)} =d\bigl(O,f(C)\bigr) =\ln\frac{1+\frac 1{\sqrt 2}}{1-\frac 1{\sqrt 2}} =2\ln (\sqrt 2+1)\\[-3pt]
-	  	\measuredangle BAC =\measuredangle f(B)f(A)f(C) =\arg\frac i3-\arg\frac{1+i}2 =\frac\pi 2-\frac\pi 4 =\frac\pi 4
+	  	\mathcolor{mGreen}{\measuredangle A} =\measuredangle f(C)f(A)f(B) =\arg\frac i3-\arg\frac{1+i}2 =\frac\pi 2-\frac\pi 4 =\frac\pi 4
 		\end{gather*}
-		To compute the final side and angles, isometries moving $B$ and then $C$ to the origin could be used.
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.32\linewidth}\vspace{-2pt}
-		\hfill\includegraphics[]{calc-triangle}
-	\end{minipage}
+		\hfill\includegraphics[alt={moving a point to the origin so as to easily compute angles}]{calc-triangle}
+	\end{minipage}\smallbreak
+	To compute the \textcolor{mGreen}{final side} and angles, we could instead move $B$ and then $C$ to the origin.
 \end{example}
 
 
+\paragraph{Interpretation of Isometries (non-examinable)}\label{pg:hypisomclass}
 
-\subsubsection*{Interpretation of Isometries (non-examinable)}\label{pg:hypisomclass}
-
-As in Euclidean geometry, isometries can be interpreted as rotations, reflections and translations. Here is the dictionary in hyperbolic space.\par
-
-\begin{minipage}[t]{0.75\linewidth}\vspace{-3pt}
-	\begin{description}
-		\item[\normalfont\emph{Translations}] Move $\alpha$ to the origin via $T_{-\alpha}(z)=\frac{\alpha-z}{\cl\alpha z-1}$\par
-		The picture shows repeated applications of $T_{-\alpha}$ to seven initial points.\par
-	Compose these to translate $\alpha$ to $\beta$:
+As in Euclidean geometry, isometries can be interpreted as rotations, reflections and translations. Here is the dictionary.\par
+\begin{minipage}[t]{0.72\linewidth}\vspace{-3pt}
+	\begin{description}\itemsep0pt
+		\item[\normalfont\emph{Translations}] $T_{-\alpha}(z)=\frac{\alpha-z}{\cl\alpha z-1}$ translates $\alpha$ to the origin. The first picture shows repeated applications of $T_{-\alpha}$ to seven initial points.	Compose such maps to translate $\alpha$ to $\beta$:
 		\[
 			T_{\beta}\circ T_{-\alpha}(z)=\frac{(\cl\alpha\beta-1)z+\alpha-\beta}{(\cl\alpha-\cl\beta)z+\alpha\cl\beta-1}
 		\]
-	
-		\item[\normalfont\emph{Rotations}] $R_\theta(z)=e^{i\theta}z$ rotates counter-clockwise around the origin. To rotate around $\alpha$, one computes the composition
+		\item[\normalfont\emph{Rotations}] $R_\theta(z)=e^{i\theta}z$ rotates counter-clockwise around the origin. To rotate around $\alpha$, use the composition
 		\[
 			T_{\alpha}\circ R_\theta\circ T_{-\alpha}
 		\]
-		The picture shows repeated rotation by $\ang{30}=\frac\pi 6$ around $\alpha$.
-	
-		\item[\normalfont\emph{Reflections}] $P_\theta(z)=e^{2i\theta}\cl z$ reflects across the line making angle $\theta$ with the real axis. Composition permits more general reflections, e.g.,
-		\[
-			T_{\alpha}\circ P_\theta\circ T_{-\alpha}
-		\]
+		\item[\normalfont\emph{Reflections}] $P_\theta(z)=e^{2i\theta}\cl z$ reflects across the line making angle $\theta$ with the positive real axis. Composition permits more general reflections, e.g., $T_{\alpha}\circ P_\theta\circ T_{-\alpha}$ reflects across the line through $\alpha$ making angle $\theta$ with the positive real direction.
 	\end{description}
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.24\linewidth}\vspace{-3pt}
-	\hfill\includegraphics[]{isom-trans}\\
-	\includegraphics[]{isom-rotate}
+\begin{minipage}[t]{0.26\linewidth}\vspace{-18pt}
+	\hfill
+	\begin{tabular}{@{}c@{}}
+	\includegraphics[alt={translating alpha to the origin}]{isom-trans}\\
+	Translation by $\alpha$\\
+	\includegraphics[alt={rotating around alpha}]{isom-rotate}\\
+	Rotation by $\frac\pi 6$ around $\alpha$
+	\end{tabular}
 \end{minipage}
 
 
-
+\pagebreak[3]
 
 
 \subsubsection*{Hyperbolic Trigonometry}
 
-By employing isometries in the abstract, we develop expressions that allow us to solve triangles directly in terms of the side-lengths and angle measures.
+By employing isometries in the abstract, we develop expressions that allow us to solve hyperbolic triangles directly using only its side-lengths and angle-measures.
+\medbreak
 
-
-
-Given a right-triangle, we may suppose an isometry has already moved the right-angle to the origin and the other sides to the positive axes as in the picture. The non-hypotenuse side-lengths are\par
-\begin{minipage}[t]{0.675\linewidth}\vspace{-8pt}
+Start with a right-triangle. We may suppose an isometry has already moved the right-angle to the origin and the other sides to the positive axes at $p,iq$ as pictured. The non-hypotenuse hyperbolic side-lengths are therefore\par
+\begin{minipage}[t]{0.65\linewidth}\vspace{-8pt}
 	\[
-		a=\ln\frac{1+p}{1-p}=\cosh^{-1}\frac{1+p^2}{1-p^2},\qquad b=\cosh^{-1}\frac{1+q^2}{1-q^2}
+		a=\ln\frac{1+p}{1-p}=\cosh^{-1}\frac{1+p^2}{1-p^2},\qquad 
+		b=\cosh^{-1}\frac{1+q^2}{1-q^2}
 	\]
-	To measure the hypotenuse, translate $p$ to the origin via an isometry
-	\[
-		f(z)=\frac{p-z}{pz-1} \implies f(iq)=\frac{p-iq}{ipq-1} \implies \nm{f(iq)}^2=\frac{p^2+q^2}{p^2q^2+1}
-	\]
+	This uses only Definition \ref{defn:hypdist2} and the definition of inverse-cosh (footnote \ref{fn:invcosh}). To measure the hypotenuse, translate $p$ to the origin via an isometry
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.3\linewidth}\vspace{0pt}
-	\hfill\includegraphics[]{isom-right}
-\end{minipage}\par
-%We therefore see that
+\begin{minipage}[t]{0.34\linewidth}\vspace{-10pt}
+	\hfill\includegraphics[alt={moving a vertex to the origin to compute length and angle}]{isom-right}
+\end{minipage}
+
 \[
-	\implies \cosh c=\frac{1+\nm{f(iq)}^2}{1-\nm{f(iq)}^2}  
+	f(z)=\frac{p-z}{pz-1} \implies f(iq)=\frac{p-iq}{i pq-1} \implies \nm{f(iq)}^2=\frac{p^2+q^2}{p^2q^2+1}
+\]
+We therefore see that
+\[
+	\cosh c=\frac{1+\nm{f(iq)}^2}{1-\nm{f(iq)}^2}  
 	=\frac{1+p^2q^2+p^2+q^2}{1+p^2q^2-p^2-q^2} 
 	=\frac{1+p^2}{1-p^2}\cdot\frac{1+q^2}{1-q^2} 
 	=\cosh a\cosh b
 \]
 Applying the hyperbolic identity $\sinh^2b=\cosh^2b-1$, we obtain
 \[
-	\sinh b=\frac{2q}{1-q^2}\implies \tanh b=\frac{\sinh b}{\cosh b} =\frac{2q}{1+q^2}
+	\sinh b=\frac{2q}{1-q^2}
+	\implies \tanh b=\frac{\sinh b}{\cosh b} =\frac{2q}{1+q^2}
 \]
 Writing $f(iq)$ in real and imaginary parts allows us to find the \textcolor{mRed}{slope} (that is, $\mathcolor{mGreen}{\tan B}$):
 \[
-	f(iq)=\frac{p-iq}{ipq-1} =\frac{-p(1+q^2)+iq(1-p^2)}{p^2q^2+1}\implies \mathcolor{mGreen}{\tan B}=\frac{q(1-p^2)}{p(1+q^2)} =\frac{\mathcolor{mGreen}{\tanh b}}{\mathcolor{Blue}{\sinh a}}
+	f(iq)=\frac{p-iq}{i pq-1} 
+	=\frac{-p(1+q^2)+iq(1-p^2)}{p^2q^2+1}
+	\implies \mathcolor{mGreen}{\tan B}=\frac{q(1-p^2)}{p(1+q^2)} 
+	=\frac{\mathcolor{mGreen}{\tanh b}}{\mathcolor{Blue}{\sinh a}}
 \]
-Trigonometric identities such as $\csc^2B=1+\cot^2B$ quickly yield the other functions:
+Trigonometric identities such as $\csc^2B=1+\cot^2B$ quickly yield the other functions.
 
 \begin{thm}{}{hyptrig}
 	In a hyperbolic right-triangle with adjacent $a$, opposite $b$, and hypotenuse $c$,
@@ -1484,71 +1503,100 @@ Trigonometric identities such as $\csc^2B=1+\cot^2B$ quickly yield the other fun
 	This last is Pythagoras' Theorem for hyperbolic right-triangles.
 \end{thm}
 
-Pythagoras is easy to remember, as are the $\frac{\text{opp}}{\text{hyp}},\frac{\text{adj}}{\text{hyp}},\frac{\text{opp}}{\text{adj}}$ patterns for the basic trig functions. Otherwise, these expressions (and the next Corollary) are open-book---they are not worth memorizing.
+Pythagoras is easy to remember, as are the $\frac{\text{opp}}{\text{hyp}},\frac{\text{adj}}{\text{hyp}},\frac{\text{opp}}{\text{adj}}$ patterns for the basic trig functions. Otherwise, these expressions (and the upcoming Corollary \ref{cor:hypcossinerule}) are open-book---they are not worth memorizing.
+
+
+\pagebreak[3]
+
 
 \begin{examples}{}{hypbasictrig}
-	\exstart A right-triangle (as above) has $\mathcolor{Blue}{a=\cosh^{-1}3\approx 1.76}$, \ $\mathcolor{mGreen}{b=\cosh^{-1}5\approx 2.29}$. Then,
-	\begin{gather*}
-		\cosh c=\cosh a\cosh b=15\implies \mathcolor{mRed}{c=\cosh^{-1}15\approx 3.40}\\
-		\sin A=\frac{\sinh a}{\sinh c} =\sqrt{\frac{\cosh^2a-1}{\cosh^2 c-1}} =\sqrt{\frac{3^2-1}{15^2-1}} =\frac 1{2\sqrt 7} \implies \mathcolor{Blue}{A\approx \ang{10.9}}\\
-		\sin B=\frac{\sinh b}{\sinh c} =\sqrt{\frac{\cosh^2b-1}{\cosh^2 c-1}} =\sqrt{\frac{5^2-1}{15^2-1}}=\sqrt{\frac 3{28}} \implies \mathcolor{mGreen}{B\approx \ang{19.1}}
-	\end{gather*}
-	We could use the other trig expressions: e.g., $\tan A=\smash{\frac{\tanh a}{\sinh b}=\frac{\sinh a}{\cosh a\sinh b}=\frac{\sqrt 8}{3\sqrt{24}} =\frac 1{3\sqrt 3} \ldots}$
+	The basic rules of hyperbolic trigonometry allow us to analyze right-triangles just as in Euclidean geometry.
 	
+	\begin{enumerate}
+	  \item A right-triangle has $\mathcolor{Blue}{a}=\smash[t]{\cosh^{-1}3\approx 1.76}$ and $\mathcolor{mGreen}{b}=\smash[t]{\cosh^{-1}5\approx 2.29}$ (these are the triangles pictured in the previous analysis). We compute the remaining sides and angles.\par
+	  First apply Pythagoras to compute the hypotenuse:
+		\[
+			\mathcolor{mRed}{\cosh c}
+			=\mathcolor{Blue}{\cosh a}\mathcolor{mGreen}{\cosh b}=15
+			\implies \mathcolor{mRed}{c}
+			=\smash[t]{\cosh^{-1}15}\approx 3.40
+		\]
+		Now use the formula for sine to find the two non-right angles:
+		\begin{gather*}
+			\mathcolor{Blue}{\sin A}=\frac{\mathcolor{Blue}{\sinh a}}{\mathcolor{mRed}{\sinh c}} 
+			=\sqrt{\frac{\cosh^2a-1}{\cosh^2 c-1}} 
+			=\sqrt{\frac{3^2-1}{15^2-1}} 
+			=\frac 1{2\sqrt 7} 
+			\implies \mathcolor{Blue}{A}\approx \ang{10.9}\\
+			\mathcolor{mGreen}{\sin B}=\frac{\mathcolor{mGreen}{\sinh b}}{\mathcolor{mRed}{\sinh c}} 
+			=\sqrt{\frac{\cosh^2b-1}{\cosh^2 c-1}} 
+			=\sqrt{\frac{5^2-1}{15^2-1}}
+			=\sqrt{\frac 3{28}} 
+			\implies \mathcolor{mGreen}{B}\approx \ang{19.1}
+		\end{gather*}
+		We could instead have used the other trigonometric expressions: for instance,
+		\[
+			\mathcolor{Blue}{\tan A}
+			=\frac{\mathcolor{Blue}{\tanh a}}{\mathcolor{mGreen}{\sinh b}}
+			=\frac{\sinh a}{\cosh a\sinh b}
+			=\frac{\sqrt 8}{3\sqrt{24}} 
+			=\frac 1{3\sqrt 3} \implies A=\tan^{-1}\frac 1{3\sqrt 3}\approx \mathcolor{Blue}{A}\approx \ang{10.9}
+		\]
 	
-
-	
-	
-	\begin{enumerate}\setcounter{enumi}{1}
-	  \item\label{ex:hyperrogueparallel} Consider the pictured Lambert quadrilateral with side-lengths $a,b,v,h$ and diagonal $d$. By the sine and tangent formulæ,\par
-	  \begin{minipage}[t]{0.6\linewidth}\vspace{-17pt}
-	  	\begin{align*}
-			&\sin\beta=\frac{\sinh b}{\sinh d},\qquad
-			\cos\beta=\sin(\tfrac\pi 2-\beta)=\frac{\sinh h}{\sinh d}\\
-			&\implies \frac{\tanh b}{\sinh a}=\tan\beta=\frac{\sin\beta}{\cos\beta} =\frac{\sinh b}{\sinh h}\\
-			&\implies \sinh h=\sinh a\cosh b
-		\end{align*}
+	  \item\label{ex:hyperrogueparallel} Consider the pictured Lambert quadrilateral with side-lengths $a,b,v,h$ and diagonal $d$. Applying the sine, cosine and tangent formulæ,\par
+	  \begin{minipage}[t]{0.61\linewidth}\vspace{-13pt}
+	  	\begin{gather*}
+				\sin\beta=\frac{\sinh b}{\sinh d}\qquad
+				\cos\beta=\sin\left(\frac\pi 2-\beta\right)=\frac{\sinh h}{\sinh d}\\
+				\implies \frac{\tanh b}{\sinh a}=\tan\beta=\frac{\sin\beta}{\cos\beta} =\frac{\sinh b}{\sinh h}\\
+				\implies \sinh h=\sinh a\cosh b
+			\end{gather*}
 	  \end{minipage}
 	  \hfill
-	  \begin{minipage}[t]{0.39\linewidth}\vspace{-12pt}
-	  	\hfill\includegraphics[]{isom-lambert}
+	  \begin{minipage}[t]{0.35\linewidth}\vspace{-12pt}
+	  	\hfill\includegraphics[alt={relating length data for a quadrilateral}]{isom-lambert}
 	  \end{minipage}\par
-		By doubling the quadrilateral, we obtain a Saccheri quadrilateral with base $2a$, congruent sides $b$, and summit $2h$.  Since $\cosh b>1$ and is strictly increasing, observe:
+		By doubling the quadrilateral, we obtain a Saccheri quadrilateral with base $2a$, congruent sides $b$, and summit $2h$. Since $\cosh b>1$ and is strictly increasing, observe:
 		\begin{itemize}
-		  \item The summit of a Saccheri quadrilateral is longer than its base.
+		  \item The summit of a Saccheri quadrilateral is \emph{longer} than its base.
 		  \item If the base $2a$ is fixed, the summit is a \emph{strictly increasing} function of the side-length $b$.
 		\end{itemize}
+		If such a line exists, a common perpendicular describes the shortest path between two parallel lines.
 	\end{enumerate}
 \end{examples}
 
 
-The goal of trigonometry is to `solve' triangles: given minimal numerical data, to compute the remaining sides and angles. As in Euclidean geometry, you can attack general problems by dropping perpendiculars and using the results of Theorem \ref{thm:hyptrig}, though it is helpful to generalize this by developing the sine and cosine rules.
+The goal of trigonometry is to `solve' triangles: given minimal numerical data, to compute the remaining sides and angles. As in Euclidean geometry, we can drop perpendiculars and using the results of Theorem \ref{thm:hyptrig}. Alternatively, we can generalize this procedure by developing the sine and cosine rules.
+
+
+\pagebreak[3]
+
 
 \begin{cor}{Sine/Cosine rules and the Cosh-distance formula}{hypcossinerule}
 	Label a general triangle with angle-measures $A,B,C$ opposite sides with (hyperbolic) lengths $a,b,c$.
 	\begin{description}
-		%\begin{minipage}[t]{0.74\linewidth}\vspace{-8pt}
-			\item[Sine Rule] Drop a perpendicular from $C$ and observe that $\sin A=\frac{\sinh h}{\sinh b}$ and $\sin B=\frac{\sinh h}{\sinh a}$. Eliminate $\sinh h$ to obtain the first equality in
+		\item[Sine Rule] This is proved exactly as the easy method in Euclidean geometry. \par
+		\begin{minipage}[t]{0.74\linewidth}\vspace{-8pt}
+		 	Drop a perpendicular from $C$ to obtain $\sin A=\frac{\sinh h}{\sinh b}$ and $\sin B=\frac{\sinh h}{\sinh a}$. Eliminate $\sinh h$ for the first equality in
 			\[
 				\frac{\sinh a}{\sin A}=\frac{\sinh b}{\sin B}=\frac{\sinh c}{\sin C}
 			\]
-			Drop a different altitude for the other equality.
-		%\end{minipage}
-		%\hfill
-		%\begin{minipage}[t]{0.25\linewidth}\vspace{-15pt}
-			\hfill\includegraphics[]{isom-sine}
-		%\end{minipage}\par
+			Drop a different altitude for the remaining equality.
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.25\linewidth}\vspace{-15pt}
+			\hfill\includegraphics[alt={proving the hyperbolic sine rule}]{isom-sine}
+		\end{minipage}
 			
 		\item[Cosine Rule I] Repeat the argument of Theorem \ref{thm:hyptrig} for a triangle with vertices $0,p$ and $qe^{iC}$ to obtain
 		\[
 			\cosh c=\cosh a\cosh b-\sinh a\sinh b\cos C
 		\]
 		Expressing the right side in terms of $p,q$ ($\cosh a=\frac{1+p^2}{1-p^2}$, \ etc.) yields the original cosh-formula for distance (Definition \ref{defn:poincaredisk2}).
-		\item[Cosine Rule II] Hyperbolic geometry admits a second version:
+		\item[Cosine Rule II] Hyperbolic geometry admits a second version (for a proof see Exercise \ref{exs:hcosruleII}),
 		\[
 			\cos C=\sin A\sin B\cosh c-\cos A\cos B
-		\]
-		A proof is in Exercise \ref{exs:hcosruleII}.
+		\]\vspace{-4pt}
 	\end{description}
 \end{cor}
 
@@ -1558,92 +1606,127 @@ In hyperbolic geometry, the triangle congruence theorems (SAS, ASA, SSS, SAA \em
 }
 
 
-
-
-
 \begin{examples}{}{hyptrig}
-	\exstart (SAS)\quad An isosceles triangle has $C=\frac{\pi}3$ and $a=b=\cosh^{-1}2\approx 1.32$. We have $\mathcolor{Blue}{\sinh a}=\mathcolor{mGreen}{\sinh b} = \mathcolor{Blue}{\sqrt{\cosh^2\!a-1}}=\sqrt 3$. By the sine and cosine rules,
-	\begin{enumerate}\setcounter{enumi}{1}
-	  %\begin{minipage}[t]{0.69\linewidth}\vspace{-12pt}
-	  	\item[] 
+	We give four examples of solving hyperbolic triangles.
+	
+	\begin{enumerate}
+	  \item (SAS)\lstsp An isosceles triangle has $C=\frac{\pi}3$ and $a=b=\cosh^{-1}2\approx 1.32$. We have\par
+	  \begin{minipage}[t]{0.69\linewidth}\vspace{-12pt}
+	  	\[
+	  		\mathcolor{Blue}{\sinh a}=\mathcolor{mGreen}{\sinh b} = \mathcolor{Blue}{\smash[t]{\sqrt{\cosh^2a-1}}}=\sqrt 3
+	  	\]
+	  	By the sine and cosine rules,
 			\begin{gather*}
-				\mathcolor{mRed}{\cosh c} = \mathcolor{Blue}{2} \, \cdot \mathcolor{mGreen}{2} -\mathcolor{Blue}{\sqrt 3} \, \mathcolor{mGreen}{\sqrt 3}\cdot \mathcolor{mGreen}{\frac 12} =\frac 52\implies \mathcolor{mRed}{c=\cosh^{-1}\frac 52\approx 1.57}\\
-				\mathcolor{mGreen}{\sin B}=\mathcolor{Blue}{\sin A}=\frac{\mathcolor{mRed}{\sin C} \, \mathcolor{Blue}{\sinh a}}{\mathcolor{mRed}{\sinh c}} = \mathcolor{mRed}{\frac{\sqrt 3}2}\cdot\frac{\mathcolor{Blue}{\sqrt 3}}{\mathcolor{mRed}{\sqrt{21/4}}} =\frac 3{\sqrt{21}}=\sqrt{\frac 37}\\
-				\implies \mathcolor{mGreen}{A}=\mathcolor{Blue}{B}\approx \ang{40.9}
+				\mathcolor{mRed}{\cosh c}
+					=\mathcolor{Blue}{2} \cdot \mathcolor{mGreen}{2} 
+					-\mathcolor{Blue}{\sqrt 3} \mathcolor{mGreen}{\sqrt 3}
+					\cdot \mathcolor{mGreen}{\frac 12} 
+					=\frac 52\implies \mathcolor{mRed}{c}=\cosh^{-1}\frac 52\approx 1.57\\
+				\mathcolor{mGreen}{\sin B}
+					=\mathcolor{Blue}{\sin A}
+					=\frac{\mathcolor{mRed}{\sin C}\mathcolor{Blue}{\sinh a}}{\mathcolor{mRed}{\sinh c}} 
+					=\mathcolor{mRed}{\frac{\sqrt 3}2}
+					\cdot\frac{\mathcolor{Blue}{\sqrt 3}}{\mathcolor{mRed}{\sqrt{21/4}}} 
+					=\frac 3{\sqrt{21}}=\sqrt{\frac 37}\\
+				\implies \mathcolor{mGreen}{A}=\mathcolor{Blue}{B}
+				\approx \ang{40.9}
 			\end{gather*}
-	  %\end{minipage}
-	  %\hfill
-	  %\begin{minipage}[t]{0.3\linewidth}\vspace{-27pt}
-	  	\hfill\includegraphics[]{isom-trigsas}
-	  %\end{minipage}
+	  \end{minipage}
+	  \hfill
+	  \begin{minipage}[t]{0.3\linewidth}\vspace{-10pt}
+	  	\hfill\includegraphics[alt={solving a hyperbolic triangle given S A S data}]{isom-trigsas}
+	  \end{minipage}
 
+		\pagebreak[3]
 	 		 	
-	 	\item (Equilateral AAA)\lstsp An equilateral triangle has interior angles $\ang{30}$. The second cosine rule says\par
-	 	%\begin{minipage}[t]{0.65\linewidth}\vspace{-15pt}
-	 	\begin{gather*}
-	 		\cosh c =\frac{\mathcolor{Blue}{\cos A}\,\mathcolor{mGreen}{\cos B}+\mathcolor{mRed}{\cos C}}{\mathcolor{Blue}{\sin A}\,\mathcolor{mGreen}{\sin B}} =\frac{\frac{\sqrt 3}2\cdot\frac{\sqrt 3}2+\frac{\sqrt 3}2}{\frac 12\cdot\frac 12} =3\sqrt 3\\
-	 		\implies a=b=c=\cosh^{-1}(3\sqrt 3) \approx 2.33
-	 	\end{gather*}
-	 % \end{minipage}
-	  %\hfill
-	  %\begin{minipage}[t]{0.34\linewidth}\vspace{-8pt}
-	  	\hfill\includegraphics[]{isom-trigequil}
-	  %\end{minipage}
+	 	\item (Equilateral AAA)\lstsp An equilateral triangle has interior angles $\ang{30}$. Applying the second cosine rule, we see that\par
+	 	\begin{minipage}[t]{0.65\linewidth}\vspace{-12pt}
+	 		\begin{gather*}
+	 			\cosh c 
+	 			=\frac{\mathcolor{Blue}{\cos A}\mathcolor{mGreen}{\cos B}
+	 				+\mathcolor{mRed}{\cos C}}{\mathcolor{Blue}{\sin A}\mathcolor{mGreen}{\sin B}} 
+	 			=\frac{\frac{\sqrt 3}2\cdot\frac{\sqrt 3}2
+	 				+\frac{\sqrt 3}2}{\frac 12\cdot\frac 12} 
+	 			=3\sqrt 3\\
+	 			\implies a=b=c=\cosh^{-1}(3\sqrt 3) \approx 2.33
+	 		\end{gather*}
+	 	\end{minipage}
+	  \hfill
+	  \begin{minipage}[t]{0.34\linewidth}\vspace{-12pt}
+	  	\hfill\includegraphics[alt={solving a triangle given equilateral A A A data}]{isom-trigequil}
+	  \end{minipage}
 	 	
 	 	\item\label{ex:rtangleaaa} (Right-angled AAA)\lstsp A triangle has angles $\frac\pi 6,\frac\pi 4$ and $\frac\pi 2$. Rather than using the second version of the cosine rule, we indicate part of its proof by employing the tan-formula twice,\par
 	  \begin{minipage}[t]{0.71\linewidth}\vspace{-12pt}
 		  \begin{gather*}
-		  	\frac 1{\sqrt 3} =\mathcolor{Blue}{\tan\frac\pi 6} =\frac{\mathcolor{Blue}{\tanh a}}{\mathcolor{mGreen}{\sinh b}}=\frac{\sinh a}{\cosh a\sinh b}\\
-		  	1=\mathcolor{mGreen}{\tan\frac\pi 4}=\frac{\mathcolor{mGreen}{\tanh b}}{\mathcolor{Blue}{\sinh a}}=\frac{\sinh b}{\sinh a\cosh b}
+		  	\frac 1{\sqrt 3} 
+		  	=\mathcolor{Blue}{\tan\frac\pi 6} 
+		  	=\frac{\mathcolor{Blue}{\tanh a}}{\mathcolor{mGreen}{\sinh b}}
+		  	=\frac{\sinh a}{\cosh a\sinh b}\\
+		  	1=\mathcolor{mGreen}{\tan\frac\pi 4}
+		  	=\frac{\mathcolor{mGreen}{\tanh b}}{\mathcolor{Blue}{\sinh a}}
+		  	=\frac{\sinh b}{\sinh a\cosh b}
 		  \end{gather*}
 		  Multiply these together and apply hyperbolic Pythagoras,
 	  \end{minipage}
 	  \hfill
-	  \begin{minipage}[t]{0.28\linewidth}\vspace{-20pt}
-	  	\hfill\includegraphics[]{isom-right2}
-	  \end{minipage}\par\vspace{-12pt}
+	  \begin{minipage}[t]{0.28\linewidth}\vspace{-16pt}
+	  	\hfill\includegraphics[alt={solving a triangle given right-angled A A A data}]{isom-right2}
+	  \end{minipage}
+	  \vspace{-5pt}
 	  \[
-	  	\frac 1{\sqrt 3}=\frac 1{\mathcolor{Blue}{\cosh a}\,\mathcolor{mGreen}{\cosh b}}=\frac 1{\mathcolor{mRed}{\cosh c}}\implies \mathcolor{mRed}{c=\cosh^{-1}\sqrt 3=\ln(\sqrt 3+\sqrt 2)\approx 1.15}
+	  	\frac 1{\sqrt 3}=\frac 1{\mathcolor{Blue}{\cosh a}\,\mathcolor{mGreen}{\cosh b}}=\frac 1{\mathcolor{mRed}{\cosh c}}\implies \mathcolor{mRed}{c}=\cosh^{-1}\sqrt 3=\ln(\sqrt 3+\sqrt 2)\approx 1.15
 	  \]
 	  Since $\sinh c=\sqrt{\cosh^2c-1}=\sqrt 2$, the remaining sides are easy to compute:
 	  \begin{gather*}
-		  \frac 1{\sqrt 2}=\mathcolor{mGreen}{\sin\frac\pi 4}=\frac{\mathcolor{mGreen}{\sinh b}}{\mathcolor{mRed}{\sinh c}} \implies \mathcolor{mGreen}{b=\sinh^{-1} 1 =\cosh^{-1}\sqrt 2\approx 0.88}\\
-		  \mathcolor{Blue}{\cosh a} =\frac{\mathcolor{mRed}{\cosh c}}{\mathcolor{mGreen}{\cosh b}}=\sqrt{\frac 32} \implies \mathcolor{Blue}{a=\cosh^{-1}\sqrt{\frac 32}=\sinh^{-1}\frac 1{\sqrt 2}\approx 0.66}
+		  \frac 1{\sqrt 2}=\mathcolor{mGreen}{\sin\frac\pi 4}=\frac{\mathcolor{mGreen}{\sinh b}}{\mathcolor{mRed}{\sinh c}} \implies \mathcolor{mGreen}{b}=\sinh^{-1} 1 =\cosh^{-1}\sqrt 2\approx 0.88\\
+		  \mathcolor{Blue}{\cosh a} =\frac{\mathcolor{mRed}{\cosh c}}{\mathcolor{mGreen}{\cosh b}}=\sqrt{\frac 32} \implies \mathcolor{Blue}{a}=\cosh^{-1}\sqrt{\frac 32}=\sinh^{-1}\frac 1{\sqrt 2}\approx 0.66
 	  \end{gather*}
 	  
 	  \item (ASA)\lstsp Solve a triangle with angles $\frac\pi 6$, $\frac\pi 3$ and a distance $\cosh^{-1}3$ between them.\par
 	  \begin{minipage}[t]{0.65\linewidth}\vspace{-5pt}
 	  	Apply the second version of the cosine rule:
 	  	\begin{align*}
-	  		\mathcolor{mRed}{\cos C}& =\mathcolor{Blue}{\sin A} \, \mathcolor{mGreen}{\sin B} \, \mathcolor{mRed}{\cosh c}-\mathcolor{Blue}{\cos A} \, \mathcolor{mGreen}{\cos B}\\
-	  		&=\mathcolor{Blue}{\frac 12} \cdot \mathcolor{mGreen}{\frac{\sqrt 3}2} \cdot \mathcolor{mRed}{3} - \mathcolor{Blue}{\frac{\sqrt 3}2} \cdot \mathcolor{mGreen}{\frac 12} =\frac{\sqrt 3}2 \implies\mathcolor{mRed}{C=\frac\pi 6}
+	  		\mathcolor{mRed}{\cos C}
+	  		&=\mathcolor{Blue}{\sin A} \mathcolor{mGreen}{\sin B} 
+	  		\mathcolor{mRed}{\cosh c}
+	  		-\mathcolor{Blue}{\cos A} \mathcolor{mGreen}{\cos B}\\
+	  		&=\mathcolor{Blue}{\frac 12} \cdot \mathcolor{mGreen}{\frac{\sqrt 3}2} 
+	  		\cdot \mathcolor{mRed}{3} -\mathcolor{Blue}{\frac{\sqrt 3}2} 
+	  		\cdot \mathcolor{mGreen}{\frac 12} 
+	  		=\frac{\sqrt 3}2 
+	  		\implies\mathcolor{mRed}{C}=\frac\pi 6
 	  	\end{align*}
 	  \end{minipage}
 	  \hfill
 	  \begin{minipage}[t]{0.34\linewidth}\vspace{-12pt}
-	  	\hfill\includegraphics[]{isom-trigasa}
+	  	\hfill\includegraphics[alt={solving a triangle given A S A data}]{isom-trigasa}
 	  \end{minipage}\par
-	  The triangle is isosceles, whence $\mathcolor{Blue}{a=\cosh^{-1}3\approx 1.76}$ also. By the cosine rule,
+	  The triangle is isosceles, whence $\mathcolor{Blue}{a}=\cosh^{-1}3\approx 1.76$ also. By the cosine rule,
 	  \begin{gather*}
-	  	\mathcolor{mGreen}{\cosh b}=\mathcolor{Blue}{\cosh a} \, \mathcolor{mRed}{\cosh c} - \mathcolor{Blue}{\sinh a} \, \mathcolor{mRed}{\sinh c} \, \mathcolor{mGreen}{\cos B} =9-\bigl(\sqrt{3^2-1}\bigr)^2\frac 12 =5\\
-	  	\implies \mathcolor{mGreen}{b=\cosh^{-1}5=\ln(5+\sqrt{24})\approx 2.29}
+	  	\mathcolor{mGreen}{\cosh b}
+	  	=\mathcolor{Blue}{\cosh a} \mathcolor{mRed}{\cosh c} 
+	  	-\mathcolor{Blue}{\sinh a} \mathcolor{mRed}{\sinh c} \mathcolor{mGreen}{\cos B}
+	  	=9-\bigl(\sqrt{3^2-1}\bigr)^2\frac 12 
+	  	=5\\
+	  	\implies \mathcolor{mGreen}{b}=\cosh^{-1}5=\ln(5+\sqrt{24})\approx 2.29
 	  \end{gather*}
 	\end{enumerate}
 \end{examples}
 
 
-
+\pagebreak[3]
 
 
 \subsubsection*{Hyperbolic Tilings (just for fun!)}\label{pg:hyptiling}
 
-Example \ref*{ex:hyptrig}.\ref{ex:rtangleaaa} can be used to make a regular tiling of hyperbolic space. Take eight congruent copies of the triangle and arrange them around the origin as in the first picture. Now reflect the quadrilateral over each of its edges and repeat the process in all directions ad infinitum. The result is a regular tiling of hyperbolic space comprising \emph{four-sided} figures with \emph{six} meeting at every vertex!
+Example \ref*{ex:hyptrig}.\ref{ex:rtangleaaa} can be used to construct regular tilings of hyperbolic space. Take eight congruent copies of the triangle and arrange them around the origin as in the first picture. Now reflect the quadrilateral over each of its edges and repeat the process in all directions ad infinitum. The result is a regular tiling of hyperbolic space comprising \emph{four-sided} figures with \emph{six} meeting at every vertex!
 
 \begin{center}
 	\begin{tabular}{@{}c@{\qquad}c@{\qquad}c@{}}
-		\includegraphics[height=140pt]{isom-tiling}
-		&\includegraphics[]{isom-right3}
-		&\includegraphics[height=140pt]{tiling}\\[5pt]
+		\includegraphics[height=140pt,alt={a hyperbolic tiling where six regular quadrilaterals meet at each vertex}]{isom-tiling}
+		&\includegraphics[alt={the fundamental triangle for a regular hyperbolic tiling}]{isom-right3}
+		&\includegraphics[height=140pt,alt={a hyperbolic tiling where four regular pentagons meet at each vertex}]{tiling}\\[5pt]
 		$(m,n)=(4,6)$
 		&The fundamental triangle
 		&$(m,n)=(5,4)$
@@ -1666,8 +1749,8 @@ In hyperbolic space, many different regular tilings are possible. Suppose such i
 	For related fun, look up M.C.\,Escher's \emph{Circle Limit} artworks, some of which are based on hyperbolic tilings.
 	If you want an excuse to play video games while pretending to study geometry, have a look at \href{http://www.roguetemple.com/z/hyper/}{Hyper Rogue}, which relies on (sometimes irregular) tilings of hyperbolic space.
 
-
-
+\clearpage
+\pagebreak[3]
 
 
 \begin{exercises}
@@ -1677,6 +1760,8 @@ In hyperbolic space, many different regular tilings are possible. Suppose such i
 
 	The questions marked $*$ require abstract calculations with complex algebra. Feel free to skip these if your previous experience with this is minimal.
 	\begin{enumerate}
+	  \item COmplete the additional verifications in Example \ref{ex:hypisomex1}
+	  
 	  \item Use Definition \ref{defn:hypdist2} to prove that $d(z,0)=\ln\frac{1+\nm z}{1-\nm z}$.\par
 	  (\emph{Hint: what are the omega-points for the line through $0$ and $z$?})
 	  
@@ -1770,6 +1855,7 @@ In hyperbolic space, many different regular tilings are possible. Suppose such i
 }
 
 
+\clearpage
 
 
 \subsubsection*{The Poincaré Disk for Differential Geometers (non-examinable)}\label{pg:hyp1stform}
@@ -1788,7 +1874,7 @@ Most of this last optional section should be accessible to anyone who's taken ba
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.3\linewidth}\vspace{0pt}
-	\hfill\includegraphics[]{isom-arclength}
+	\hfill\includegraphics[alt={using an isometry to move calculations to the origin}]{isom-arclength}
 \end{minipage}
 \medbreak
 where we deleted $\cl z\,\dz$ since it is infinitesimal compared to $1-\nm z^2$.\smallbreak
@@ -1894,3 +1980,5 @@ Using this language, two of the major theorems of introductory differential geom
 	\]
 	This establishes our earlier assertion that $\operatorname{Area}\triangle =\pi-\Sigma_{\triangle}$ (Corollary \ref{cor:hypareaangle}).
 \end{description}
+
+

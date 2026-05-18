@@ -1,13 +1,20 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
-size(120);
+size(140);
 
 pair cent(pair p, pair q){
 	real A[][]={{2p.x,2p.y},{2q.x,2q.y}};
@@ -37,8 +44,8 @@ pair f(pair z){return be*(al-z)/(conj(al)*z-1);}
 pair P=(1/2,0);
 pair Q=(2/3,sqrt(2)/3);
 
-circ(P,Q,red);
-circ(f(P),f(Q),heavygreen);
+circ(P,Q,Red);
+circ(f(P),f(Q),lGreen);
 
 draw(unitcircle,dashed);
 
