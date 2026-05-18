@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
 size(110);
@@ -60,11 +67,11 @@ circ(B,C,blue);
 circ(C,A,heavygreen);
 
 label("$\cosh^{-1}2$",0.5(B+C)+0.03S,blue);
-label("$\cosh^{-1}2$",0.5(A+C)+0.1*NW,heavygreen);
+label("$\cosh^{-1}2$",0.5(A+C)+0.1*NW,lGreen);
 label("$c$",0.5(A+B)+0.02dir(200),red);
 
 draw(Label("$A$",Relative(0.45)),arc(A,0.05,218,260),blue);
-draw("$B$",arc(B,0.06,130,174),heavygreen);
+draw("$B$",arc(B,0.06,130,174),lGreen);
 draw(Label("$\frac\pi 3$",Relative(0.5)),arc(C,0.05,0,58),red);
 
 dot(A);

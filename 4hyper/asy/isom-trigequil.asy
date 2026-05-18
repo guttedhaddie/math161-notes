@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
 size(115);
@@ -57,16 +64,16 @@ real p=sqrt((cod-1)/(cod+1));
 pair C=f(p*dir(-15));
 pair A=f(p*dir(15));
 
-circ(A,C,heavygreen);
+circ(A,C,lGreen);
 circ(B,C,blue);
 circ(A,B,red);
 
 label("$a$",0.5(B+C)+0.01NE,blue);
-label("$b$",0.5(A+C)+0.02NW,heavygreen);
+label("$b$",0.5(A+C)+0.02NW,lGreen);
 label("$c$",0.5(A+B)+0.12NE,red);
 
 
-draw("30\textdegree",arc(B,0.08,-18,11),heavygreen);
+draw("30\textdegree",arc(B,0.08,-18,11),lGreen);
 draw(Label("30\textdegree",Relative(0.35)),arc(C,0.05,72,115),red);
 draw(Label("30\textdegree",Relative(0.6)),arc(A,0.05,139,178),blue);
 

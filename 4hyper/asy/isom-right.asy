@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
 size(160);
@@ -53,21 +60,21 @@ fill(arc(O,dir(-12),dir(192))--cycle,0.2grey+0.8white);
 
 circ(Q,P,red);
 draw("$a$",(0,0)--P,blue);
-draw("$b$",Q--(0,0),heavygreen);
+draw("$b$",Q--(0,0),lGreen);
 draw((0.05,0)--(0.05,0.05)--(0,0.05),red);
 label("$c$",0.45(P+Q),red);
 
-draw("$B$",arc(P,0.15,150,180),heavygreen);
+draw("$B$",arc(P,0.15,150,180),lGreen);
 draw(Label("$A$",Relative(0.6)),arc(Q,0.27,270,284),blue);
 
 pair R=-P;
 pair SS=(1/(p^2*q^2+1))*(-p*(1+q^2),q*(1-p^2));
 
-draw("$b$",arc(cent(SS,R),SS,R,CW),heavygreen);
+draw("$b$",arc(cent(SS,R),SS,R,CW),lGreen);
 draw("$a$",R--O,blue);
 draw("$c$",O--SS,red);
 draw(R+(0.05,0)--R+(0.05,0.05)--R+(-0.001,0.05),red);
-draw("$B$",arc(O,0.17,153,180),heavygreen);
+draw("$B$",arc(O,0.17,153,180),lGreen);
 draw(Label("$A$",Relative(0.35)),arc(SS,0.21,313,332),blue);
 
 dot("$p$",P,SE);

@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
 size(190);
@@ -75,11 +82,11 @@ real q=sqrt(2-sqrt(3));
 pair P=p*dir(0);
 pair Q=q*dir(45);
 
-extcirc(Q,conj(Q),heavygreen);
-extcirc(Q,-conj(Q),heavygreen);
-extcirc(-Q,conj(Q),heavygreen);
-//draw(arc(cent(-P,-conj(Q)),-Q,-conj(Q)),heavygreen);
-extcirc(-P,-conj(Q),heavygreen);
+extcirc(Q,conj(Q),lGreen);
+extcirc(Q,-conj(Q),lGreen);
+extcirc(-Q,conj(Q),lGreen);
+//draw(arc(cent(-P,-conj(Q)),-Q,-conj(Q)),lGreen);
+extcirc(-P,-conj(Q),lGreen);
 
 
 pair f(pair z){return (-2*P-(1+P^2)*z)/(-2*P*z-1-P^2);}
@@ -124,31 +131,31 @@ pair R4=Ral(f(Q),R3);
 pair cR4=Ral(f(Q),cR3);
 
 
-bigcircs(Q,conj(Q),heavygreen);
-bigcircs(Q,Q1,heavygreen);
-bigcircs(cQ1,Q1,heavygreen);
-bigcircs(Q1,cQ2,heavygreen);
-bigcircs(cQ2,Q2,heavygreen);
-bigcircs(Q2,cQ3,heavygreen);
-bigcircs(cQ3,Q3,heavygreen);
-bigcircs(Q3,cQ4,heavygreen);
-bigcircs(cQ4,Q4,heavygreen);
-bigcircs(R1,cR1,heavygreen);
-bigcircs(cR1,R2,heavygreen);
-bigcircs(R2,cR2,heavygreen);
-bigcircs(cR2,R3,heavygreen);
-bigcircs(R3,cR3,heavygreen);
-bigcircs(cR3,R4,heavygreen);
-bigcircs(R4,cR4,heavygreen);
+bigcircs(Q,conj(Q),lGreen);
+bigcircs(Q,Q1,lGreen);
+bigcircs(cQ1,Q1,lGreen);
+bigcircs(Q1,cQ2,lGreen);
+bigcircs(cQ2,Q2,lGreen);
+bigcircs(Q2,cQ3,lGreen);
+bigcircs(cQ3,Q3,lGreen);
+bigcircs(Q3,cQ4,lGreen);
+bigcircs(cQ4,Q4,lGreen);
+bigcircs(R1,cR1,lGreen);
+bigcircs(cR1,R2,lGreen);
+bigcircs(R2,cR2,lGreen);
+bigcircs(cR2,R3,lGreen);
+bigcircs(R3,cR3,lGreen);
+bigcircs(cR3,R4,lGreen);
+bigcircs(R4,cR4,lGreen);
 
-bigcircs(R1,conj(R2),heavygreen);
-bigcircs(conj(R2),conj(cR2),heavygreen);
-bigcircs(conj(cR2),conj(R3),heavygreen);
-bigcircs(conj(R3),conj(cR3),heavygreen);
-bigcircs(conj(cR3),conj(R4),heavygreen);
-bigcircs(conj(R4),conj(cR4),heavygreen);
+bigcircs(R1,conj(R2),lGreen);
+bigcircs(conj(R2),conj(cR2),lGreen);
+bigcircs(conj(cR2),conj(R3),lGreen);
+bigcircs(conj(R3),conj(cR3),lGreen);
+bigcircs(conj(cR3),conj(R4),lGreen);
+bigcircs(conj(R4),conj(cR4),lGreen);
 
-fill(arc(O,0.07,0,45)--(0,0)--cycle,heavygreen);
+fill(arc(O,0.07,0,45)--(0,0)--cycle,lGreen);
 fill(arc(Q,0.07,225,256)--Q--cycle,blue);
 draw(P+0.04dir(180)--P+0.04dir(180)+0.04dir(90)--P+0.04dir(90));
 

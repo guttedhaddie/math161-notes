@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
 size(120);
@@ -59,11 +66,11 @@ draw(p);
 dot("$\alpha$",al,0.5SW);
 
 trajarr(0.99*unit(al),red);
-trajarr(0.95*unit(al),orange);
-trajarr(0.9*unit(al),yellow);
-traj(0.85*unit(al),heavygreen);
-traj(0.8*unit(al),blue);
-traj(0.75*unit(al),purple);
+trajarr(0.95*unit(al),Orange);
+trajarr(0.9*unit(al),Yellow);
+traj(0.85*unit(al),lGreen);
+traj(0.8*unit(al),Blue);
+traj(0.75*unit(al),Purple);
 traj(0.7*unit(al),grey);
 
 

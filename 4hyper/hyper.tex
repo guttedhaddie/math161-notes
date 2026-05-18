@@ -1201,8 +1201,8 @@ where each arrow represents cutting off two sub-triangles and moving them. Indee
 	\begin{enumerate}
 	  \item Use Corollary \ref{cor:hypareaangle} to find the area of the hyperbolic triangle with given vertices. Your answers to exercises from Section \ref{sec:hyp-models} should supply the angles!
 	  \begin{enumerate}
-	    \item $O=(0,0)$, $P=(\frac 12,\sqrt{\frac 5{12}})$ and $Q=(\frac 12,-\sqrt{\frac 5{12}})$.
-	    \item $O=(0,0)$, $P=(\frac 14,0)$, $Q=(0,\frac 12)$.
+	    \item $O=(0,0)$, $P=g\left(\frac 12,\sqrt{\frac 5{12}}\right)$ and $Q=\left(\frac 12,-\sqrt{\frac 5{12}}\right)$.
+	    \item $O=(0,0)$, $P=\big(\frac 14,0\big)$, $Q=\big(0,\frac 12\big)$.
 	    \item $P=(r,0)$, $Q=\left(-\frac r2,\frac{\sqrt{3}r}2\right)$, $R=\left(-\frac r2,-\frac{\sqrt{3}r}2\right)$ where $0<r<1$.
 		\end{enumerate}
 		
@@ -1237,7 +1237,7 @@ where each arrow represents cutting off two sub-triangles and moving them. Indee
 		\end{enumerate}
 		
 		
-		\item Suppose two Saccheri quadrilaterals in hyperbolic geometry have the same area and congruent summits. Prove that the quadrilaterals are congruent.
+		\item Suppose two Saccheri quadrilaterals in absolute geometry have the same area and congruent summits. Prove that the quadrilaterals are congruent.
 	
 	\end{enumerate}
 \end{exercises}
@@ -1245,7 +1245,6 @@ where each arrow represents cutting off two sub-triangles and moving them. Indee
 \clearpage
 
 
-\iffalse
 
 
 \subsection{Isometries and Calculation}\label{sec:hyperiso}
@@ -1253,32 +1252,44 @@ where each arrow represents cutting off two sub-triangles and moving them. Indee
 There are (at least!) two major issues in our approach to hyperbolic geometry.
 
 \begin{description}
-	\item[Calculations are difficult] In analytic (Euclidean) geometry we typically choose the origin and orient axes to ease calculation. We'd like to do the same in hyperbolic geometry.
-	\item[We assumed too much] We defined \emph{distance, angle} and \emph{line} separately, but these concepts are \emph{not independent}! In Euclidean geometry, the distance function, or \emph{metric,} defines angle measure via the dot product,%
-	\footnote{%
-		Writing $\nm{\vu}=\nm{PQ}$ for the length of a line segment, we see that for any $\vu,\vv$,
+	\item[Calculations are difficult] In (Euclidean) analytic geometry we typically choose the origin and orient axes to ease calculation. We'd like to do the same in hyperbolic geometry.
+	\item[Too many assumptions] \emph{Distance, angle} and \emph{line} were defined separately, but in (Euclidean) analytic geometry, these concepts are \emph{not independent}: the distance function defines the other two.\footnote{%
+		The Pythagorean distance function $\nm{\vu}=\nm{PQ}=\sqrt{(q_x-p_x)^2+(q_y-p_y)^2)}$ defines the dot product and therefore the angle measure,
 		\[
-			\vu\cdot\vv=\frac 12\left(\nm{\vu+\vv}^2-\nm\vu^2-\nm\vv^2\right)
+			\nm\vu\nm\vv\cos\theta=\vu\cdot\vv=\frac 12\left(\nm{\vu+\vv}^2-\nm\vu^2-\nm\vv^2\right)
 		\]
-		so that the metric defines the dot product. Now define angle measure via $\vu\cdot\vv=\nm\vu\nm\vv\cos\theta$.
+		With some calculus, the arc-length $\int_C\ds=\int_{t_0}^{t_1}\nm{\vr'(t)}\dt$ of any parametrized curve may be computed. One then shows that the paths of shortest length (\emph{geodesics}) are straight lines.
 	}%
-	and (with some calculus) the arc-length of any curve. One then proves that the paths of shortest length (\emph{geodesics}) are straight lines: the metric \emph{defines} the notion of line!
 \end{description}
 
-Isometries provide a related remedy for these issues. To describe these it is helpful to use an alternative definition of the Poincaré disk and its distance function.
+Isometries provide a related remedy for these issues. To describe these it is helpful to start with an alternative definition of the Poincaré disk and its distance function.
 
 \begin{defn}{}{hypdist2}
-	The \emph{Poincaré disk} is the set $D:=\{z\in\C:\nm z<1\}$ equipped with the distance function
-	\[
-		d(z,w):=\nm{\ln\frac{\nm{z-\Omega}\nm{w-\Theta}}{\nm{z-\Theta}\nm{w-\Omega}}}
-	\]
-	where $\Omega,\Theta$ are the omega-points for the hyperbolic line through $z,w$ (defined as circular arcs intersecting the boundary perpendicularly).
-
-	\hfill\includegraphics[scale=0.95]{isom-dist}
+	The \emph{Poincaré disk} is the set $D:=\{z\in\C:\nm z<1\}$ equipped with the distance function\par
+	\begin{minipage}[t]{0.7\linewidth}\vspace{-12pt}
+		\[
+			d(z,w):=\nm{\ln\frac{\nm{z-\Omega}\nm{w-\Theta}}{\nm{z-\Theta}\nm{w-\Omega}}}
+		\]
+		where $\Omega,\Theta$ are the omega-points for the hyperbolic line through $z,w$ (a diameter, or a circular arc intersecting the boundary circle perpendicularly).
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.29\linewidth}\vspace{-18pt}
+		\hfill\includegraphics[alt={omega points at the ends of a hyperbolic line}]{isom-dist}
+	\end{minipage}
 \end{defn}
 
-We'll see shortly (Corollary \ref{cor:hypcossinerule}) that this is the same as the original cosh formula (page \pageref{lemm:distformula}); it is already easy to check that $d(z,0)=\ln\frac{1+\nm z}{1-\nm z}$ as in Lemma \ref{lemm:distformula} (if $w=0$, then $\Omega,\Theta=\pm\frac z{\nm z}$).\par
-For candidate isometries we need functions $f:D\to D$ for which $d\bigl(f(z),f(w)\bigr)=d(z,w)$. These follow from some standard results of complex analysis that we state without proof.
+It is not worth memorizing this formula: Corollary \ref{cor:hypcossinerule} will show that this is exactly the same as the original cosh formula (Definition \ref{defn:poincaredisk2}). Indeed it is already easy to check that we get the same formula when $z\neq 0=w$: since the hyperbolic line $\lin{zw}$ is the diameter of $D$ through $z$, its omega-points are $\Omega,\Theta=\pm\frac z{\nm z}$, and we easily compute the distance
+\[
+	d(z,0)=\nm{\ln\frac{\nm{z-\frac z{\nm z}}\nm{0+\frac z{\nm z}}}{\nm{z+\frac z{\nm z}}\nm{0-\frac z{\nm z}}}}
+	=\ln\frac{1+\nm z}{1-\nm z}
+\]
+exactly as before. Showing that this distance function also determines the usual angle-measure and that paths of shortest distance are indeed hyperbolic lines requires some multivariable calculus.\footnote{%
+	A non-examinable discussion of this begins on page \pageref{pg:hyp1stform}.
+}
+
+\subsubsection*{A Little Complex Analysis}
+
+For candidate isometries we need functions $f:D\to D$ for which $d\bigl(f(z),f(w)\bigr)=d(z,w)$. These follow from some standard results of complex analysis, which we state without proof.
 
 
 \begin{thm}{Möbius/fractional-linear transformations}{mobius}
@@ -1286,7 +1297,7 @@ For candidate isometries we need functions $f:D\to D$ for which $d\bigl(f(z),f(w
 	\begin{enumerate}
 	  \item (Invertibility)\lstsp $f:\C\cup\{\infty\}\to \C\cup\{\infty\}$ is bijective, with inverse $f^{-1}(z)=\tfrac{dz-b}{-cz+a}$.
 	  \item (Conformality)\lstsp If curves intersect, then their images under $f$ intersect at the same angle.
-	  \item (Line/circle preservation)\lstsp Every line/circle\footnotemark{} is mapped by $f$ to another line/circle.
+	  \item (Line/circle preservation)\lstsp Every line/circle\footnotemark{} in $\C$ is mapped by $f$ to another line/circle.
 	  \item(Cross-ratio preservation)\lstsp Given distinct $z_1,z_2,z_3,z_4$, we have
 		\[
 			\frac{\big(f(z_1)-f(z_2)\big)\big(f(z_3)-f(z_4)\big)}{\big(f(z_2)-f(z_3)\big)\big(f(z_4)-f(z_1)\big)} =\frac{(z_1-z_2)(z_3-z_4)}{(z_2-z_3)(z_4-z_1)}
@@ -1294,29 +1305,33 @@ For candidate isometries we need functions $f:D\to D$ for which $d\bigl(f(z),f(w
 	\end{enumerate}
 \end{thm}
 
-\footnotetext{In $\C\cup\{\infty\}$ a line is just a circle containing $\infty$!}
-
-
+\footnotetext{%
+	In $\C\cup\{\infty\}$ a line is just a circle containing $\infty$!%
+}
 
 
 The isometries of the Poincaré disk are a subset of the Möbius transformations.
 
 \begin{thm}{}{hypisomclass}
-	The \emph{orientation-preserving\footnotemark{} isometries} of the Poincaré disk have the form
+	The \textbf{orientation-preserving\footnotemark{} isometries} of the Poincaré disk have the form
 	\[
-		f(z)=e^{i\theta}\frac{\alpha-z}{\cl\alpha z-1}\quad\text{where $\nm\alpha<1$ and $\theta\in[0,2\pi)$}\tag{$\ast$}
+		f(z)=e^{i\theta}\frac{\alpha-z}{\cl\alpha z-1}
+		\quad\text{where $\nm\alpha<1$ and $\theta\in[0,2\pi)$}
+		\tag{$\ast$}
 	\]
 	All isometries can be found by composing $f$ with complex conjugation (reflection in the real axis).
 \end{thm}
 
-\footnotetext{If $C$ is to the left of $\ray{AB}$, then $f(C)$ is to the left of $\ray{f(A)f(B)}$. This is the usual `right-hand rule.'} 
+\footnotetext{%
+	If $v$ lies to the left of $\ray{zw}$, then $f(v)$ is to the left of $\ray{f(z)f(w)}$. This is the usual `right-hand rule.'%
+} 
 
 
 Referring to the properties in Theorem \ref{thm:mobius}:
 \begin{enumerate}
-  \item The isometries are precisely the set of Möbius transformations which map $D$ bijectively to itself; omega-points are also mapped to omega-points.
+  \item The isometries are precisely the set of Möbius transformations which map omega-points to omega-points and $D$ onto itself (Exercise \ref{exs:mobiusex}).
   \item Isometries preserve angles.
-  \item The class of hyperbolic lines is preserved: any circle or line intersecting the unit circle at right-angles is mapped to another such (angle-preservation is used here). 
+  \item The class of hyperbolic lines is preserved: any (Euclidean) circle or line intersecting the unit circle at right-angles is mapped to another such (angle-preservation is used here). 
   \item If $\Omega,\Theta$ are the omega-points on $\lin{zw}$, then (by 2 and 3), $f(\Omega)$ and $f(\Theta)$ are the omega-points for the hyperbolic line through $f(z),f(w)$. Preservation of the cross-ratio says that $f$ is an isometry:
   \[
   	d(f(z),f(w))=\nm{\ln\frac{\nm{f(z)-f(\Omega)}\nm{f(w)-f(\Theta)}}{\nm{f(z)-f(\Theta)}\nm{f(w)-f(\Omega)}}}= \nm{\ln\frac{\nm{z-\Omega}\nm{w-\Theta}}{\nm{z-\Theta}\nm{w-\Omega}}}=d(z,w)
@@ -1343,7 +1358,7 @@ How does this help us compute? The isometry ($\ast$) moves $\alpha$ to the origi
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.25\linewidth}\vspace{-20pt}
-		\hfill\includegraphics{calc-triangle3}
+		\hfill\includegraphics[]{calc-triangle3}
 	\end{minipage}\par\vspace{-4pt}
 	\begin{gather*}
 		d\bigl(f(P),f(Q)\bigr) = \ln\frac{1+\nm{f(Q)}}{1-\nm{f(Q)}} =\ln\frac{1+\frac 1{\sqrt 2}}{1-\frac 1{\sqrt 2}}=\ln\frac{\sqrt 2+1}{\sqrt 2-1}=\ln(3+2\sqrt 2) \tag{Definition \ref{defn:hypdist2}}\\
@@ -1352,18 +1367,20 @@ How does this help us compute? The isometry ($\ast$) moves $\alpha$ to the origi
 			&=\cosh^{-1}3=\ln(3+\sqrt{3^2-1})=\ln(3+2\sqrt 2) =d\bigl(f(P),f(Q)\bigr)
 		\end{aligned}
 	\end{gather*}
-	If we trust the original cosh-formula (page \pageref{lemm:distformula}), then the points really are the same distance apart! Indeed the hyperbolic segment \textcolor{red}{$\cl{PQ}$} %(with equation $x^2+y^2-\frac 52x+1=0$) 
-	has been transformed by $f$ to a segment \textcolor{Green}{$\cl{f(P)f(Q)}$} of the $y$-axis.
+	If we trust the original cosh-formula (Definition \ref{defn:poincaredisk2}), then the points really are the same distance apart! Indeed the hyperbolic segment $\mathcolor{mRed}{\cl{PQ}}$ %(with equation $x^2+y^2-\frac 52x+1=0$) 
+	has been transformed by $f$ to a segment $\mathcolor{mGreen}{\cl{f(P)f(Q)}}$ of the $y$-axis.
 \end{example}
 
-\footnotetext{We could also include a rotation ($e^{i\theta}=-i$) to move $f(Q)$ to the positive $x$-axis, but there is no real benefit.}
+\footnotetext{%
+	We could also include a rotation ($e^{i\theta}=-i$) to move $f(Q)$ to the positive $x$-axis, but there is no real benefit.%
+}
 
 
 
 Recall (e.g.,{} Example \ref{ex:hypisosceles}) how we previously computed angles. Isometries make this \emph{much} easier. 
 
 \begin{example}{}{}
-	Given $A=-\frac i2$, $B=-\frac i5$ and $C=\frac 1{5}(3-i)$, we find $\textcolor{red}{d(A,B)}$, $\textcolor{blue}{d(A,C)}$ and $\measuredangle BAC$.\smallbreak
+	Given $A=-\frac i2$, $B=-\frac i5$ and $C=\frac 1{5}(3-i)$, we find $\mathcolor{mRed}{d(A,B)}$, $\mathcolor{Blue}{d(A,C)}$ and $\measuredangle BAC$.\smallbreak
 	Start by moving $A$ to the origin and consider $f(B)$, $f(C)$:
 	\begin{gather*}
 		f(z)=\frac{-\frac i2-z}{\frac i2z-1} =\frac{2z+i}{2-iz} \implies 
@@ -1371,17 +1388,17 @@ Recall (e.g.,{} Example \ref{ex:hypisosceles}) how we previously computed angles
 		f(C)=\frac{\frac 25(3-i)+i}{2-\frac i5(3-i)} =\frac{2(3-i)+5i}{10-i(3-i)} =\frac{2+i}{3-i}= \frac{(2+i)(3+i)}{10} =\frac{1+i}2
 	\end{gather*}
 	\begin{minipage}[t]{0.67\linewidth}\vspace{0pt}
-		By mapping $A$ to the origin, \textcolor{red}{two} \textcolor{blue}{sides} of the triangle are now \emph{Euclidean straight lines} and the computations are easy:
+		By mapping $A$ to the origin, \textcolor{mRed}{two} \textcolor{Blue}{sides} of the triangle are now \emph{Euclidean straight lines} and the computations are easy:
 		\begin{gather*}
-	  	\textcolor{red}{d(A,B)} =d\bigl(O,f(B)\bigr) =\ln\frac{1+\frac 13}{1-\frac 13} =\ln 2\\
-	  	\textcolor{blue}{d(A,C)} =d\bigl(O,f(C)\bigr) =\ln\frac{1+\frac 1{\sqrt 2}}{1-\frac 1{\sqrt 2}} =2\ln (\sqrt 2+1)\\[-3pt]
+	  	\mathcolor{mRed}{d(A,B)} =d\bigl(O,f(B)\bigr) =\ln\frac{1+\frac 13}{1-\frac 13} =\ln 2\\
+	  	\mathcolor{Blue}{d(A,C)} =d\bigl(O,f(C)\bigr) =\ln\frac{1+\frac 1{\sqrt 2}}{1-\frac 1{\sqrt 2}} =2\ln (\sqrt 2+1)\\[-3pt]
 	  	\measuredangle BAC =\measuredangle f(B)f(A)f(C) =\arg\frac i3-\arg\frac{1+i}2 =\frac\pi 2-\frac\pi 4 =\frac\pi 4
 		\end{gather*}
 		To compute the final side and angles, isometries moving $B$ and then $C$ to the origin could be used.
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.32\linewidth}\vspace{-2pt}
-		\hfill\includegraphics[scale=0.95]{calc-triangle}
+		\hfill\includegraphics[]{calc-triangle}
 	\end{minipage}
 \end{example}
 
@@ -1414,8 +1431,8 @@ As in Euclidean geometry, isometries can be interpreted as rotations, reflection
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.24\linewidth}\vspace{-3pt}
-	\hfill\includegraphics[scale=0.95]{isom-trans}\\
-	\includegraphics[scale=0.95]{isom-rotate}
+	\hfill\includegraphics[]{isom-trans}\\
+	\includegraphics[]{isom-rotate}
 \end{minipage}
 
 
@@ -1440,7 +1457,7 @@ Given a right-triangle, we may suppose an isometry has already moved the right-a
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.3\linewidth}\vspace{0pt}
-	\hfill\includegraphics[scale=0.9]{isom-right}
+	\hfill\includegraphics[]{isom-right}
 \end{minipage}\par
 %We therefore see that
 \[
@@ -1453,9 +1470,9 @@ Applying the hyperbolic identity $\sinh^2b=\cosh^2b-1$, we obtain
 \[
 	\sinh b=\frac{2q}{1-q^2}\implies \tanh b=\frac{\sinh b}{\cosh b} =\frac{2q}{1+q^2}
 \]
-Writing $f(iq)$ in real and imaginary parts allows us to find the \textcolor{red}{slope} (that is, $\textcolor{Green}{\tan B}$):
+Writing $f(iq)$ in real and imaginary parts allows us to find the \textcolor{mRed}{slope} (that is, $\mathcolor{mGreen}{\tan B}$):
 \[
-	f(iq)=\frac{p-iq}{ipq-1} =\frac{-p(1+q^2)+iq(1-p^2)}{p^2q^2+1}\implies \textcolor{Green}{\tan B}=\frac{q(1-p^2)}{p(1+q^2)} =\frac{\textcolor{Green}{\tanh b}}{\textcolor{blue}{\sinh a}}
+	f(iq)=\frac{p-iq}{ipq-1} =\frac{-p(1+q^2)+iq(1-p^2)}{p^2q^2+1}\implies \mathcolor{mGreen}{\tan B}=\frac{q(1-p^2)}{p(1+q^2)} =\frac{\mathcolor{mGreen}{\tanh b}}{\mathcolor{Blue}{\sinh a}}
 \]
 Trigonometric identities such as $\csc^2B=1+\cot^2B$ quickly yield the other functions:
 
@@ -1470,11 +1487,11 @@ Trigonometric identities such as $\csc^2B=1+\cot^2B$ quickly yield the other fun
 Pythagoras is easy to remember, as are the $\frac{\text{opp}}{\text{hyp}},\frac{\text{adj}}{\text{hyp}},\frac{\text{opp}}{\text{adj}}$ patterns for the basic trig functions. Otherwise, these expressions (and the next Corollary) are open-book---they are not worth memorizing.
 
 \begin{examples}{}{hypbasictrig}
-	\exstart A right-triangle (as above) has $\textcolor{blue}{a=\cosh^{-1}3\approx 1.76}$, \ $\textcolor{Green}{b=\cosh^{-1}5\approx 2.29}$. Then,
+	\exstart A right-triangle (as above) has $\mathcolor{Blue}{a=\cosh^{-1}3\approx 1.76}$, \ $\mathcolor{mGreen}{b=\cosh^{-1}5\approx 2.29}$. Then,
 	\begin{gather*}
-		\cosh c=\cosh a\cosh b=15\implies \textcolor{red}{c=\cosh^{-1}15\approx 3.40}\\
-		\sin A=\frac{\sinh a}{\sinh c} =\sqrt{\frac{\cosh^2a-1}{\cosh^2 c-1}} =\sqrt{\frac{3^2-1}{15^2-1}} =\frac 1{2\sqrt 7} \implies \textcolor{blue}{A\approx \ang{10.9}}\\
-		\sin B=\frac{\sinh b}{\sinh c} =\sqrt{\frac{\cosh^2b-1}{\cosh^2 c-1}} =\sqrt{\frac{5^2-1}{15^2-1}}=\sqrt{\frac 3{28}} \implies \textcolor{Green}{B\approx \ang{19.1}}
+		\cosh c=\cosh a\cosh b=15\implies \mathcolor{mRed}{c=\cosh^{-1}15\approx 3.40}\\
+		\sin A=\frac{\sinh a}{\sinh c} =\sqrt{\frac{\cosh^2a-1}{\cosh^2 c-1}} =\sqrt{\frac{3^2-1}{15^2-1}} =\frac 1{2\sqrt 7} \implies \mathcolor{Blue}{A\approx \ang{10.9}}\\
+		\sin B=\frac{\sinh b}{\sinh c} =\sqrt{\frac{\cosh^2b-1}{\cosh^2 c-1}} =\sqrt{\frac{5^2-1}{15^2-1}}=\sqrt{\frac 3{28}} \implies \mathcolor{mGreen}{B\approx \ang{19.1}}
 	\end{gather*}
 	We could use the other trig expressions: e.g., $\tan A=\smash{\frac{\tanh a}{\sinh b}=\frac{\sinh a}{\cosh a\sinh b}=\frac{\sqrt 8}{3\sqrt{24}} =\frac 1{3\sqrt 3} \ldots}$
 	
@@ -1494,7 +1511,7 @@ Pythagoras is easy to remember, as are the $\frac{\text{opp}}{\text{hyp}},\frac{
 	  \end{minipage}
 	  \hfill
 	  \begin{minipage}[t]{0.39\linewidth}\vspace{-12pt}
-	  	\hfill\includegraphics[scale=0.95]{isom-lambert}
+	  	\hfill\includegraphics[]{isom-lambert}
 	  \end{minipage}\par
 		By doubling the quadrilateral, we obtain a Saccheri quadrilateral with base $2a$, congruent sides $b$, and summit $2h$.  Since $\cosh b>1$ and is strictly increasing, observe:
 		\begin{itemize}
@@ -1519,14 +1536,14 @@ The goal of trigonometry is to `solve' triangles: given minimal numerical data, 
 		%\end{minipage}
 		%\hfill
 		%\begin{minipage}[t]{0.25\linewidth}\vspace{-15pt}
-			\hfill\includegraphics[scale=0.95]{isom-sine}
+			\hfill\includegraphics[]{isom-sine}
 		%\end{minipage}\par
 			
 		\item[Cosine Rule I] Repeat the argument of Theorem \ref{thm:hyptrig} for a triangle with vertices $0,p$ and $qe^{iC}$ to obtain
 		\[
 			\cosh c=\cosh a\cosh b-\sinh a\sinh b\cos C
 		\]
-		Expressing the right side in terms of $p,q$ ($\cosh a=\frac{1+p^2}{1-p^2}$, \ etc.) yields the original cosh-formula for distance (page \pageref{lemm:distformula}).
+		Expressing the right side in terms of $p,q$ ($\cosh a=\frac{1+p^2}{1-p^2}$, \ etc.) yields the original cosh-formula for distance (Definition \ref{defn:poincaredisk2}).
 		\item[Cosine Rule II] Hyperbolic geometry admits a second version:
 		\[
 			\cos C=\sin A\sin B\cosh c-\cos A\cos B
@@ -1545,71 +1562,71 @@ In hyperbolic geometry, the triangle congruence theorems (SAS, ASA, SSS, SAA \em
 
 
 \begin{examples}{}{hyptrig}
-	\exstart (SAS)\quad An isosceles triangle has $C=\frac{\pi}3$ and $a=b=\cosh^{-1}2\approx 1.32$. We have $\textcolor{blue}{\sinh a}=\textcolor{Green}{\sinh b} = \textcolor{blue}{\sqrt{\cosh^2\!a-1}}=\sqrt 3$. By the sine and cosine rules,
+	\exstart (SAS)\quad An isosceles triangle has $C=\frac{\pi}3$ and $a=b=\cosh^{-1}2\approx 1.32$. We have $\mathcolor{Blue}{\sinh a}=\mathcolor{mGreen}{\sinh b} = \mathcolor{Blue}{\sqrt{\cosh^2\!a-1}}=\sqrt 3$. By the sine and cosine rules,
 	\begin{enumerate}\setcounter{enumi}{1}
 	  %\begin{minipage}[t]{0.69\linewidth}\vspace{-12pt}
 	  	\item[] 
 			\begin{gather*}
-				\textcolor{red}{\cosh c} = \textcolor{blue}{2} \, \cdot \textcolor{Green}{2} -\textcolor{blue}{\sqrt 3} \, \textcolor{Green}{\sqrt 3}\cdot \textcolor{Green}{\frac 12} =\frac 52\implies \textcolor{red}{c=\cosh^{-1}\frac 52\approx 1.57}\\
-				\textcolor{Green}{\sin B}=\textcolor{blue}{\sin A}=\frac{\textcolor{red}{\sin C} \, \textcolor{blue}{\sinh a}}{\textcolor{red}{\sinh c}} = \textcolor{red}{\frac{\sqrt 3}2}\cdot\frac{\textcolor{blue}{\sqrt 3}}{\textcolor{red}{\sqrt{21/4}}} =\frac 3{\sqrt{21}}=\sqrt{\frac 37}\\
-				\implies \textcolor{Green}{A}=\textcolor{blue}{B}\approx \ang{40.9}
+				\mathcolor{mRed}{\cosh c} = \mathcolor{Blue}{2} \, \cdot \mathcolor{mGreen}{2} -\mathcolor{Blue}{\sqrt 3} \, \mathcolor{mGreen}{\sqrt 3}\cdot \mathcolor{mGreen}{\frac 12} =\frac 52\implies \mathcolor{mRed}{c=\cosh^{-1}\frac 52\approx 1.57}\\
+				\mathcolor{mGreen}{\sin B}=\mathcolor{Blue}{\sin A}=\frac{\mathcolor{mRed}{\sin C} \, \mathcolor{Blue}{\sinh a}}{\mathcolor{mRed}{\sinh c}} = \mathcolor{mRed}{\frac{\sqrt 3}2}\cdot\frac{\mathcolor{Blue}{\sqrt 3}}{\mathcolor{mRed}{\sqrt{21/4}}} =\frac 3{\sqrt{21}}=\sqrt{\frac 37}\\
+				\implies \mathcolor{mGreen}{A}=\mathcolor{Blue}{B}\approx \ang{40.9}
 			\end{gather*}
 	  %\end{minipage}
 	  %\hfill
 	  %\begin{minipage}[t]{0.3\linewidth}\vspace{-27pt}
-	  	\hfill\includegraphics[scale=0.95]{isom-trigsas}
+	  	\hfill\includegraphics[]{isom-trigsas}
 	  %\end{minipage}
 
 	 		 	
 	 	\item (Equilateral AAA)\lstsp An equilateral triangle has interior angles $\ang{30}$. The second cosine rule says\par
 	 	%\begin{minipage}[t]{0.65\linewidth}\vspace{-15pt}
 	 	\begin{gather*}
-	 		\cosh c =\frac{\textcolor{blue}{\cos A}\,\textcolor{Green}{\cos B}+\textcolor{red}{\cos C}}{\textcolor{blue}{\sin A}\,\textcolor{Green}{\sin B}} =\frac{\frac{\sqrt 3}2\cdot\frac{\sqrt 3}2+\frac{\sqrt 3}2}{\frac 12\cdot\frac 12} =3\sqrt 3\\
+	 		\cosh c =\frac{\mathcolor{Blue}{\cos A}\,\mathcolor{mGreen}{\cos B}+\mathcolor{mRed}{\cos C}}{\mathcolor{Blue}{\sin A}\,\mathcolor{mGreen}{\sin B}} =\frac{\frac{\sqrt 3}2\cdot\frac{\sqrt 3}2+\frac{\sqrt 3}2}{\frac 12\cdot\frac 12} =3\sqrt 3\\
 	 		\implies a=b=c=\cosh^{-1}(3\sqrt 3) \approx 2.33
 	 	\end{gather*}
 	 % \end{minipage}
 	  %\hfill
 	  %\begin{minipage}[t]{0.34\linewidth}\vspace{-8pt}
-	  	\hfill\includegraphics[scale=0.95]{isom-trigequil}
+	  	\hfill\includegraphics[]{isom-trigequil}
 	  %\end{minipage}
 	 	
 	 	\item\label{ex:rtangleaaa} (Right-angled AAA)\lstsp A triangle has angles $\frac\pi 6,\frac\pi 4$ and $\frac\pi 2$. Rather than using the second version of the cosine rule, we indicate part of its proof by employing the tan-formula twice,\par
 	  \begin{minipage}[t]{0.71\linewidth}\vspace{-12pt}
 		  \begin{gather*}
-		  	\frac 1{\sqrt 3} =\textcolor{blue}{\tan\frac\pi 6} =\frac{\textcolor{blue}{\tanh a}}{\textcolor{Green}{\sinh b}}=\frac{\sinh a}{\cosh a\sinh b}\\
-		  	1=\textcolor{Green}{\tan\frac\pi 4}=\frac{\textcolor{Green}{\tanh b}}{\textcolor{blue}{\sinh a}}=\frac{\sinh b}{\sinh a\cosh b}
+		  	\frac 1{\sqrt 3} =\mathcolor{Blue}{\tan\frac\pi 6} =\frac{\mathcolor{Blue}{\tanh a}}{\mathcolor{mGreen}{\sinh b}}=\frac{\sinh a}{\cosh a\sinh b}\\
+		  	1=\mathcolor{mGreen}{\tan\frac\pi 4}=\frac{\mathcolor{mGreen}{\tanh b}}{\mathcolor{Blue}{\sinh a}}=\frac{\sinh b}{\sinh a\cosh b}
 		  \end{gather*}
 		  Multiply these together and apply hyperbolic Pythagoras,
 	  \end{minipage}
 	  \hfill
 	  \begin{minipage}[t]{0.28\linewidth}\vspace{-20pt}
-	  	\hfill\includegraphics[scale=0.95]{isom-right2}
+	  	\hfill\includegraphics[]{isom-right2}
 	  \end{minipage}\par\vspace{-12pt}
 	  \[
-	  	\frac 1{\sqrt 3}=\frac 1{\textcolor{blue}{\cosh a}\,\textcolor{Green}{\cosh b}}=\frac 1{\textcolor{red}{\cosh c}}\implies \textcolor{red}{c=\cosh^{-1}\sqrt 3=\ln(\sqrt 3+\sqrt 2)\approx 1.15}
+	  	\frac 1{\sqrt 3}=\frac 1{\mathcolor{Blue}{\cosh a}\,\mathcolor{mGreen}{\cosh b}}=\frac 1{\mathcolor{mRed}{\cosh c}}\implies \mathcolor{mRed}{c=\cosh^{-1}\sqrt 3=\ln(\sqrt 3+\sqrt 2)\approx 1.15}
 	  \]
 	  Since $\sinh c=\sqrt{\cosh^2c-1}=\sqrt 2$, the remaining sides are easy to compute:
 	  \begin{gather*}
-		  \frac 1{\sqrt 2}=\textcolor{Green}{\sin\frac\pi 4}=\frac{\textcolor{Green}{\sinh b}}{\textcolor{red}{\sinh c}} \implies \textcolor{Green}{b=\sinh^{-1} 1 =\cosh^{-1}\sqrt 2\approx 0.88}\\
-		  \textcolor{blue}{\cosh a} =\frac{\textcolor{red}{\cosh c}}{\textcolor{Green}{\cosh b}}=\sqrt{\frac 32} \implies \textcolor{blue}{a=\cosh^{-1}\sqrt{\frac 32}=\sinh^{-1}\frac 1{\sqrt 2}\approx 0.66}
+		  \frac 1{\sqrt 2}=\mathcolor{mGreen}{\sin\frac\pi 4}=\frac{\mathcolor{mGreen}{\sinh b}}{\mathcolor{mRed}{\sinh c}} \implies \mathcolor{mGreen}{b=\sinh^{-1} 1 =\cosh^{-1}\sqrt 2\approx 0.88}\\
+		  \mathcolor{Blue}{\cosh a} =\frac{\mathcolor{mRed}{\cosh c}}{\mathcolor{mGreen}{\cosh b}}=\sqrt{\frac 32} \implies \mathcolor{Blue}{a=\cosh^{-1}\sqrt{\frac 32}=\sinh^{-1}\frac 1{\sqrt 2}\approx 0.66}
 	  \end{gather*}
 	  
 	  \item (ASA)\lstsp Solve a triangle with angles $\frac\pi 6$, $\frac\pi 3$ and a distance $\cosh^{-1}3$ between them.\par
 	  \begin{minipage}[t]{0.65\linewidth}\vspace{-5pt}
 	  	Apply the second version of the cosine rule:
 	  	\begin{align*}
-	  		\textcolor{red}{\cos C}& =\textcolor{blue}{\sin A} \, \textcolor{Green}{\sin B} \, \textcolor{red}{\cosh c}-\textcolor{blue}{\cos A} \, \textcolor{Green}{\cos B}\\
-	  		&=\textcolor{blue}{\frac 12} \cdot \textcolor{Green}{\frac{\sqrt 3}2} \cdot \textcolor{red}{3} - \textcolor{blue}{\frac{\sqrt 3}2} \cdot \textcolor{Green}{\frac 12} =\frac{\sqrt 3}2 \implies\textcolor{red}{C=\frac\pi 6}
+	  		\mathcolor{mRed}{\cos C}& =\mathcolor{Blue}{\sin A} \, \mathcolor{mGreen}{\sin B} \, \mathcolor{mRed}{\cosh c}-\mathcolor{Blue}{\cos A} \, \mathcolor{mGreen}{\cos B}\\
+	  		&=\mathcolor{Blue}{\frac 12} \cdot \mathcolor{mGreen}{\frac{\sqrt 3}2} \cdot \mathcolor{mRed}{3} - \mathcolor{Blue}{\frac{\sqrt 3}2} \cdot \mathcolor{mGreen}{\frac 12} =\frac{\sqrt 3}2 \implies\mathcolor{mRed}{C=\frac\pi 6}
 	  	\end{align*}
 	  \end{minipage}
 	  \hfill
 	  \begin{minipage}[t]{0.34\linewidth}\vspace{-12pt}
-	  	\hfill\includegraphics[scale=0.95]{isom-trigasa}
+	  	\hfill\includegraphics[]{isom-trigasa}
 	  \end{minipage}\par
-	  The triangle is isosceles, whence $\textcolor{blue}{a=\cosh^{-1}3\approx 1.76}$ also. By the cosine rule,
+	  The triangle is isosceles, whence $\mathcolor{Blue}{a=\cosh^{-1}3\approx 1.76}$ also. By the cosine rule,
 	  \begin{gather*}
-	  	\textcolor{Green}{\cosh b}=\textcolor{blue}{\cosh a} \, \textcolor{red}{\cosh c} - \textcolor{blue}{\sinh a} \, \textcolor{red}{\sinh c} \, \textcolor{Green}{\cos B} =9-\bigl(\sqrt{3^2-1}\bigr)^2\frac 12 =5\\
-	  	\implies \textcolor{Green}{b=\cosh^{-1}5=\ln(5+\sqrt{24})\approx 2.29}
+	  	\mathcolor{mGreen}{\cosh b}=\mathcolor{Blue}{\cosh a} \, \mathcolor{mRed}{\cosh c} - \mathcolor{Blue}{\sinh a} \, \mathcolor{mRed}{\sinh c} \, \mathcolor{mGreen}{\cos B} =9-\bigl(\sqrt{3^2-1}\bigr)^2\frac 12 =5\\
+	  	\implies \mathcolor{mGreen}{b=\cosh^{-1}5=\ln(5+\sqrt{24})\approx 2.29}
 	  \end{gather*}
 	\end{enumerate}
 \end{examples}
@@ -1618,14 +1635,14 @@ In hyperbolic geometry, the triangle congruence theorems (SAS, ASA, SSS, SAA \em
 
 
 
-\subsubsection*{Hyperbolic Tilings (just for fun!)}\phantomsection\label{pg:hyptiling}
+\subsubsection*{Hyperbolic Tilings (just for fun!)}\label{pg:hyptiling}
 
 Example \ref*{ex:hyptrig}.\ref{ex:rtangleaaa} can be used to make a regular tiling of hyperbolic space. Take eight congruent copies of the triangle and arrange them around the origin as in the first picture. Now reflect the quadrilateral over each of its edges and repeat the process in all directions ad infinitum. The result is a regular tiling of hyperbolic space comprising \emph{four-sided} figures with \emph{six} meeting at every vertex!
 
 \begin{center}
 	\begin{tabular}{@{}c@{\qquad}c@{\qquad}c@{}}
 		\includegraphics[height=140pt]{isom-tiling}
-		&\includegraphics[scale=0.95]{isom-right3}
+		&\includegraphics[]{isom-right3}
 		&\includegraphics[height=140pt]{tiling}\\[5pt]
 		$(m,n)=(4,6)$
 		&The fundamental triangle
@@ -1654,6 +1671,10 @@ In hyperbolic space, many different regular tilings are possible. Suppose such i
 
 
 \begin{exercises}
+	\hangindent\leftmargini
+	\emph{Key concepts: \ }
+
+
 	The questions marked $*$ require abstract calculations with complex algebra. Feel free to skip these if your previous experience with this is minimal.
 	\begin{enumerate}
 	  \item Use Definition \ref{defn:hypdist2} to prove that $d(z,0)=\ln\frac{1+\nm z}{1-\nm z}$.\par
@@ -1688,8 +1709,20 @@ In hyperbolic space, many different regular tilings are possible. Suppose such i
 	  \end{enumerate}
 	  
 	  
-	  \item* Suppose $f(z)=\frac{\alpha-z}{\cl\alpha z-1}$ for some constant $\alpha\in\C$ with $\nm{\alpha}\neq 1$. If $\nm z=1$, prove that $\nm{f(z)}=1$.\par
+	  \item\label{exs:mobiusex}* Suppose $f(z)=\frac{\alpha-z}{\cl\alpha z-1}$ for some constant $\alpha\in\C$ with $\nm{\alpha}\neq 1$. If $\nm z=1$, prove that $\nm{f(z)}=1$.\par
 	  Argue that the functions $f$ in Theorem \ref{thm:hypisomclass} really do map the interior of the unit disk to itself.
+	  
+	  Suppose $f(z)=\frac{az+b}{cz+d}$ maps $D$ bijectively onto itself and that it restricts to a map $f:S^1\to S^1$. Suppose that $\alpha\in D$ is the unique value such that $f(\alpha)=0$.
+	  \begin{enumerate}
+	    \item Show that, WLOG, we may write $f(z)=\frac{z-\alpha}{cz+d}$ where $c\alpha\neq d$.
+	    \item For $f(z)$ as in part (a), evaluate
+	    \[
+	    	1=\nm{f(e^{i\psi})}^2 =\frac{\nm{e^{i\psi}-\alpha}}{\nm{ce^{i\psi}+d}}
+	    \]
+	    Hence conclude that $\nm c=1$ or $\nm d=1$.
+	    \item By writing $c=e^{i\theta}$, show that $\nm c=1$ is a contradiction. Hence conclude that $d=e^{-i\theta}$, whence $f(z)=e^{i\theta}\frac{\alpha-z}{\cl\alpha-z}$ as claimed.
+	    \item Finally, evaluate $\nm{f(re^{i\psi})}$ whenever $0\le r<1$, and thus conclude that such $f$ really do map $f:D\to D$.
+	  \end{enumerate}
 	  
 	  
  		\item\begin{enumerate}
@@ -1731,7 +1764,6 @@ In hyperbolic space, many different regular tilings are possible. Suppose such i
 	\end{enumerate}
 \end{exercises}
 
-\vspace{-5pt}
 
 \footnotetext{%
 	Since multiplying $a,b,c,d$ by a non-zero scalar doesn't change $f$, the set of Möbius transformations is isomorphic to the \emph{projective special linear group} $\mathrm{PSL}_2(\R)$. The orientation-preserving isometries of hyperbolic space form a proper subgroup.%
@@ -1756,7 +1788,7 @@ Most of this last optional section should be accessible to anyone who's taken ba
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.3\linewidth}\vspace{0pt}
-	\hfill\includegraphics[scale=0.9]{isom-arclength}
+	\hfill\includegraphics[]{isom-arclength}
 \end{minipage}
 \medbreak
 where we deleted $\cl z\,\dz$ since it is infinitesimal compared to $1-\nm z^2$.\smallbreak
@@ -1840,7 +1872,7 @@ where the last expression is written in polar co-ordinates using the hyperbolic 
 
 \subsubsection*{Angle Measure and the First Fundamental Form}\label{pg:hypareaext}
 
-If we repeat the distance translation ($\ast$, page \pageref{pg:hyp1stform}) for a second infinitesimal \textcolor{Green}{segment} $z\to z+\dw$, it can be checked that the \textcolor{orange}{angle} between the original segments is precisely that between the infinitesimal vectors $\dz$ and $\dw$. This is precisely the conformality observation in Theorem \ref{thm:mobius} and moreover shows how the distance function determines the angle measure.\smallbreak
+If we repeat the distance translation ($\ast$, page \pageref{pg:hyp1stform}) for a second infinitesimal \textcolor{mGreen}{segment} $z\to z+\dw$, it can be checked that the \textcolor{Brown}{angle} between the original segments is precisely that between the infinitesimal vectors $\dz$ and $\dw$. This is precisely the conformality observation in Theorem \ref{thm:mobius} and moreover shows how the distance function determines the angle measure.\smallbreak
 
 If you've studied differential geometry, then a more formal way to think about this is to use the \emph{first fundamental form} or \emph{metric}: essentially the dot product of infinitesimal tangent vectors. For the Poincaré disk model, ($\ast$) says that this is
 \[
@@ -1862,5 +1894,3 @@ Using this language, two of the major theorems of introductory differential geom
 	\]
 	This establishes our earlier assertion that $\operatorname{Area}\triangle =\pi-\Sigma_{\triangle}$ (Corollary \ref{cor:hypareaangle}).
 \end{description}
-
-\fi

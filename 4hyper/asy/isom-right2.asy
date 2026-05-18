@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
 size(110);
@@ -50,17 +57,17 @@ real q=sqrt(2-sqrt(3));
 pair P=p*dir(0);
 pair Q=q*dir(45);
 
-circ(Q,P,heavygreen);
+circ(Q,P,lGreen);
 
 
 
 draw("$a$",(0,0)--P,blue);
 draw("$c$",Q--(0,0),red);
 draw(P-(0.02,0)--P+(-0.02,0.02)--P+(0,0.02),red);
-label("$b$",0.45(P+Q)+0.04E,heavygreen);
+label("$b$",0.45(P+Q)+0.04E,lGreen);
 
 
-draw(Label("$\frac\pi 4$"),arc(O,0.05,0,45),heavygreen);
+draw(Label("$\frac\pi 4$"),arc(O,0.05,0,45),lGreen);
 draw(Label("$\frac\pi 6$"),arc(Q,0.07,225,256),blue);
 
 

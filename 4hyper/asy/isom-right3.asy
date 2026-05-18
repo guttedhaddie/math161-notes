@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
 size(0,130);
@@ -52,13 +59,13 @@ pair Q=q*dir(45);
 
 
 
-fill(arc(O,0.07,0,45)--(0,0)--cycle,heavygreen);
+fill(arc(O,0.07,0,45)--(0,0)--cycle,lGreen);
 fill(arc(Q,0.07,225,256)--Q--cycle,blue);
 //draw(P+0.04dir(180)--P+0.04dir(180)+0.04dir(90)--P+0.04dir(90));
-draw(Label("$\frac\pi m$",black),arc(O,0.07,0,45),heavygreen);
+draw(Label("$\frac\pi m$",black),arc(O,0.07,0,45),lGreen);
 draw(Label("$\frac\pi n$",black),arc(Q,0.07,225,256),blue);
 
-circ(Q,P,heavygreen);
+circ(Q,P,lGreen);
 draw(P--(0,0)--Q);
 
 

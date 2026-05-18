@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
 size(120);
@@ -57,8 +64,8 @@ extcirc(p,q);
 //draw("$y$",I[1]--q,dashed);
 dot(Label("$z$",black),p,SE,red);
 dot(Label("$w$",black),q,SE,red);
-dot(Label("$\Omega$",black),I[0],SW,red,NoFill);
-dot(Label("$\Theta$",black),I[1],NE,red,NoFill);
+dot(Label("$\Omega$",black),I[0],SW,red,UnFill);
+dot(Label("$\Theta$",black),I[1],NE,red,UnFill);
 
 //label("$\ell$",0.25dir(305),red);
 

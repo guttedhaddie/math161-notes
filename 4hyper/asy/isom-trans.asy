@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
 size(120);
@@ -43,7 +50,7 @@ pair bb=finv(finv(finv(b)));
 traj(0.81*dir(120),red);
 traj(0.54*dir(120),orange);
 traj(0.27*dir(120),yellow);
-traj(O,heavygreen);
+traj(O,lGreen);
 traj(-0.27*dir(120),blue);
 traj(-0.54*dir(120),purple);
 traj(-0.81*dir(120),grey);

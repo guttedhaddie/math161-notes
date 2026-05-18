@@ -1,10 +1,17 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 import markers;
 
@@ -43,18 +50,18 @@ pair P=f(WW);
 pair Q=f(X);
 
 
-fill(arc(Z,0.07,-80,14)--Z--cycle,orange);
-fill(arc((0,0),0.07,-80,14)--(0,0)--cycle,orange);
+fill(arc(Z,0.07,-80,14)--Z--cycle,Brown);
+fill(arc((0,0),0.07,-80,14)--(0,0)--cycle,Brown);
 
 circ(Z,WW,blue);
-circ(Z,X,heavygreen);
+circ(Z,X,lGreen);
 dot(Label("$z+\mathrm{d}z$",black),WW,dir(-10),red);
 dot(Label("$z+\mathrm{d}w$",black),X,dir(230),red);
 dot(Label("$z$",black),Z,NW,red);
 
 
 draw((0,0)--P,blue);
-draw((0,0)--Q,heavygreen);
+draw((0,0)--Q,lGreen);
 dot(Label("$0$",black),(0,0),W,red);
 dot(Label("$P$",black),P,SE,red);
 dot(Label("$Q$",black),Q,SW,red);
