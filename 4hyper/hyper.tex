@@ -1137,7 +1137,7 @@ Since both area and angle-\emph{defect} are additive, we immediately conclude:
 	\end{description}
 }
 
-Note finally how the AAA congruence (Corollary \ref{cor:hyptriangle}, part 3) is related to the corollary:
+Note how the AAA congruence (Corollary \ref{cor:hyptriangle}, part 3) is related to the corollary:
 \[
 	\begin{array}{ccc}
 		\triangle ABC\cong \triangle DEF & \overset{\text{AAA}}{\iff} & \text{angles congruent in pairs}\\[5pt]
@@ -1150,13 +1150,16 @@ Note finally how the AAA congruence (Corollary \ref{cor:hyptriangle}, part 3) is
 \begin{example*}{\ref{ex:hypisosceles}, cont}{}
 	The isosceles right-triangle with vertices $O$, $P=(\frac 12,0)$ and $Q=(0,\frac 12)$ has angle-sum and area
 	\[
-		\frac\pi 2+2\tan^{-1}\frac 35\approx \ang{151.93}\implies \operatorname{area}=\pi-\left(\frac\pi 2+2\tan^{-1}\frac 35\right) =\frac\pi 2-2\tan^{-1}\frac 35\approx 0.490
+		\Sigma_{\triangle}=\frac\pi 2+2\tan^{-1}\frac 35\approx \ang{152}
+		\implies \operatorname{area}=\pi-\Sigma_{\triangle} =\frac\pi 2-2\tan^{-1}\frac 35\approx 0.490
 	\]
 	A Euclidean triangle with the same vertices has much smaller area: $\frac 12\cdot\frac 12\cdot\frac 12=\frac 18=0.125$.\par
-	\begin{minipage}[t]{0.73\linewidth}\vspace{-2pt}
-		Generalizing this (Exercise \ref*{sec:hyp-models}.\ref{exs:isorighthypextended}), the triangle with vertices $O,P=(c,0)$ and $Q=(0,c)$ has area
+	\begin{minipage}[t]{0.73\linewidth}\vspace{-\parsep}
+		Generalizing (Exercise \ref*{sec:hyp-models}.\ref{exs:isorighthypextended}), the triangle with vertices $O,P=(c,0)$ and $Q=(0,c)$ has area
 		\[
-			\pi-\left(\frac\pi 2+2\tan^{-1}\frac{1-c^2}{1+c^2}\right)=\frac\pi 2-2\tan^{-1}\frac{1-c^2}{1+c^2}
+			\pi-\Sigma_{\triangle}
+			=\pi-\left(\frac\pi 2+2\tan^{-1}\frac{1-c^2}{1+c^2}\right)
+			=\frac\pi 2-2\tan^{-1}\frac{1-c^2}{1+c^2}
 		\]
 		As expected, $\lim\limits_{c\to 0^+}\text{area}(c)=0$. In the other limit, the triangle becomes an omega-triangle with two omega-points and $\lim\limits_{c\to 1^-}\text{area}(c)=\frac\pi 2$: an infinite `triangle' with finite `area'!
 	\end{minipage}
@@ -1365,9 +1368,9 @@ How does this help us compute? The isometry ($\ast$) moves $\alpha$ to the origi
 	\end{minipage}
 	\smallbreak
 	We could have combined this with a rotation ($e^{i\theta}=e^{-\frac{i\pi}2}=-i$) to move $f(Q)$ to the positive $x$-axis, but there is no need to do so.\smallbreak
-	Now let us compute distances. By Definition \ref{defn:hypdist2},
+	Now let us compute distances. Since $f(P)=O$ is the origin, Definition \ref{defn:hypdist2} says,
 	\[
-		d\bigl(f(P),f(Q)\bigr) 
+		d\big(f(P),f(Q)\big) 
 		=\ln\frac{1+\nm{f(Q)}}{1-\nm{f(Q)}} 
 		=\ln\frac{1+\frac 1{\sqrt 2}}{1-\frac 1{\sqrt 2}}
 		=\ln\frac{\sqrt 2+1}{\sqrt 2-1}
@@ -1752,6 +1755,7 @@ In hyperbolic space, many different regular tilings are possible. Suppose such i
 \clearpage
 \pagebreak[3]
 
+\iffalse
 
 \begin{exercises}
 	\hangindent\leftmargini
@@ -1986,4 +1990,4 @@ Using this language, two of the major theorems of introductory differential geom
 	This establishes our earlier assertion that $\operatorname{Area}\triangle =\pi-\Sigma_{\triangle}$ (Corollary \ref{cor:hypareaangle}).
 \end{description}
 
-
+\fi
