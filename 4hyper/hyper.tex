@@ -1755,33 +1755,27 @@ In hyperbolic space, many different regular tilings are possible. Suppose such i
 
 \begin{exercises}
 	\hangindent\leftmargini
-	\emph{Key concepts: \ }
-
-
-	The questions marked $*$ require abstract calculations with complex algebra. Feel free to skip these if your previous experience with this is minimal.
+	\emph{Key concepts: \ Distance-measure determines angle-measure and meaning of ``line'', \ Move $\alpha$ to origin via $f(z)=\frac{\alpha-z}{\cl\alpha z-1}$ to make calculations easier, \ Hyperbolic trig (most formulæ open-book), \ Fundamental triangle for hyperbolic tilings}
+	\smallskip
+	Some of these questions marked $*$ require abstract calculations with complex algebra. Feel free to skip these if your previous experience with this is minimal.
+	
 	\begin{enumerate}
-	  \item COmplete the additional verifications in Example \ref{ex:hypisomex1}
-	  
-	  \item Use Definition \ref{defn:hypdist2} to prove that $d(z,0)=\ln\frac{1+\nm z}{1-\nm z}$.\par
-	  (\emph{Hint: what are the omega-points for the line through $0$ and $z$?})
-	  
-	  
 	  \item\begin{enumerate}
 	    \item Use an isometry to find angle $\measuredangle ABC$ when $A=0$, $B=\frac i2$, and $C=\frac{1+i}2$.
-	    \item Now compute $\measuredangle ACB$, and thus find the angle-sum and area of the triangle.
+	    \item Now compute $\measuredangle BCA$. Hence find the angle-sum and the area of the triangle.
 	  \end{enumerate} 
 	  
  		
  		\item Find the area of each triangle in Examples \ref{ex:hyptrig}.
-	
-		
-	
-	  \item* Identify a Möbius transformation $f(z)=\frac{az+b}{cz+d}$ with the matrix
-	  $\begin{smatrix}
-	  	a&b\\
-	  	c&d
-	  \end{smatrix}$.
-	  If $g$ is another Möbius transformation, prove that the composition $f\circ g$ corresponds to the product of the matrices related to $f,g$. Verify that $f^{-1}(z)=\frac{dz-b}{a-cz}$ corresponds to the inverse matrix.\footnotemark{}
+ 		
+ 	
+	  \item Complete the additional verifications in Example \ref{ex:hypisomex1}. That is:
+	  \begin{enumerate}
+	    \item Show that $\cl{PQ}$ has equation $\big(x-\frac 54\big)^2+y^2=\frac 9{16}$.
+	    \item Show that $\cl{PQ}$ is mapped by $f(z)=\frac{1-2z}{z-2}$ to the segment $\big\{iy:0\le y\le\smash[b]{\frac 1{\sqrt 2}}\big\}$.\par
+	    (\emph{Hint: it is easier to use the inverse $f^{-1}$ and work the other way})
+	    \item Find the omega-points for $\lin{PQ}$ and use Definition \ref{defn:hypdist2} to compute $d(P,Q)$.
+	  \end{enumerate}
 	  
 	  
 	  \item\begin{enumerate}
@@ -1792,6 +1786,17 @@ In hyperbolic space, many different regular tilings are possible. Suppose such i
 	    
 	    \item Use the \emph{inverse} of the isometry $f$ to compute the co-ordinates of $C$. As a sanity-check, use the cosh distance formula to recover your answer to part (a).    
 	  \end{enumerate}
+	  
+	  
+	  
+	  
+	
+	  \item* Identify a Möbius transformation $f(z)=\frac{az+b}{cz+d}$ with the matrix
+	  $\begin{smatrix}
+	  	a&b\\
+	  	c&d
+	  \end{smatrix}$.
+	  If $g$ is another Möbius transformation, prove that the composition $f\circ g$ corresponds to the product of the matrices related to $f,g$. Verify that $f^{-1}(z)=\frac{dz-b}{a-cz}$ corresponds to the inverse matrix.\footnotemark{}
 	  
 	  
 	  \item\label{exs:mobiusex}* Suppose $f(z)=\frac{\alpha-z}{\cl\alpha z-1}$ for some constant $\alpha\in\C$ with $\nm{\alpha}\neq 1$. If $\nm z=1$, prove that $\nm{f(z)}=1$.\par
