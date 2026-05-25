@@ -1,14 +1,21 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 import animation;
 
-size(90);
+size(120);
 
 transform SS=scale(1/3);
 transform T=shift((1/3,0))*SS;

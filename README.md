@@ -1,8 +1,8 @@
 Notes for Math 161: Modern Geometry at UC Irvine (https://www.math.uci.edu/~ndonalds/math161/math161.html)
 
-Some of the content was inspired by what used to be the course text and is now out of print: Modern Geometry by Michael Hvidsten, McGraw-Hill (2012). The approach to Euclidean Geometry via consideration of how Hilbert `fixed' it was inspired by a massive set of detailed notes: Several Topics from Geometry by Franz Rothe (2017).
+The course is loosely based on what used to be the course text and is now out of print: Modern Geometry by Michael Hvidsten, McGraw-Hill (2012). The approach to Euclidean Geometry via consideration of how Hilbert `fixed' it was supplemented from various places, including Robin Hartshorne's Euclid and Beyond, and a massive set of by Franz Rothe (Several Topics from Geometry).
 
-Spring 2026 - being slowly updated to compile via LuaLaTeX for tagging purposes...
+Compile with LuaLaTeX for properly tagged pdf
 
 Graphics editing requires Asymptote: asymptote.sourceforge.io/
 

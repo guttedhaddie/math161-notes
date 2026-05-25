@@ -1,13 +1,20 @@
-settings.tex="pdflatex";
+settings.tex="lualatex";
+defaultpen(fontsize(12pt));
 
 texpreamble("\usepackage{amsmath}
 \usepackage{amsthm,amssymb}
-\usepackage{mathpazo}
-\usepackage[svgnames]{xcolor}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+\usepackage[svgnames,x11names]{xcolor}
 ");
+
+import x11colors;
+pen lGreen=rgb("00a000");
+
 import graph;
 
-size(180);
+size(200);
 
 
 transform S=scale(1/3);
@@ -35,7 +42,7 @@ for(int i=1; i<=N; ++i){
 //draw(Q[0]);
 
 draw(S*P[5],red);
-draw(T*P[5],heavygreen);
+draw(T*P[5],lGreen);
 draw(U*P[5],blue);
 draw(V*P[5],purple);
 

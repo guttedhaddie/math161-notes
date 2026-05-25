@@ -4,93 +4,139 @@
 
 \subsection{Natural Geometry, Self-similarity and Fractal Dimension}\label{sec:fracdefn}
 
-The objects of classical geometry (lines, curves, spheres, etc.) tend to seem flatter and less interesting as one zooms in: at small scales, every differentiable curve looks like a line segment! By contrast, real-world objects tend to exhibit greater detail at smaller scales. A seemingly spherical orange is dimpled on closer inspection: is its surface area that of a sphere, or is the area greater due to the dimples? What if we zoom in further? Under a microscope, the dimples in the orange are seen to have minute cracks and fissures. With modern technology, we can `see' almost to the molecular level; what does \emph{surface area} even mean at such a scale?
+The objects of classical geometry (lines, curves, spheres, etc.) seem flatter and less interesting as one zooms in: at small scales, every differentiable curve looks like a line segment! By contrast, real-world objects tend to exhibit greater detail at smaller scales. A seemingly spherical orange is dimpled on closer inspection: is its surface area that of a sphere, or is the area greater due to the dimples? What if we zoom in further? Under a microscope, the dimples are seen to have minute cracks and fissures. With modern technology, we can `see' almost to the molecular level; what does \emph{surface area} even mean at such a scale?
 
-\paragraph{The Length of a Coastline} In 1967 Benoit Mandelbrot asked a related question in a now-famous paper, \emph{How Long Is the Coast of Britain?\ Statistical Self-Similarity and Fractional Dimension.} His essential point was that this question has no simple answer:\footnote{%
-	The official answer from the Ordnance Survey (the UK government mapping office) is, `It depends.' The all-knowing CIA states 7723 miles, though offers no evidence as to why.%
-} Should one measure by walking along the mean high tide line? But where is this? Do we `walk' round every pebble? Do we skirt every grain of sand? Every molecule? As the scale of consideration shrinks, the measured length becomes absurdly large. Here is a sketch of Mandelbrot's approach.\footnote{%
-	For more detail see the Fractal Foundation's \href{http://fractalfoundation.org/OFC/OFC-10-4.html}{website.} Mandelbrot coined the word \emph{fractal}, though he didn't invent the concept from nothing. Rather he applied earlier ideas of Hausdorff, Minkowski and others, and observed how the natural world contains many examples of fractal structures.%
+\subsubsection*{The Length of a Coastline} 
+
+In 1967 Benoit Mandelbrot asked a related question in a now-famous paper, \emph{How Long Is the Coast of Britain?\ Statistical Self-Similarity and Fractional Dimension.} His essential point was that this question has no simple answer:\footnote{%
+	The official answer from the Ordnance Survey (the UK government's mapping office) is, `It depends.' The all-knowing CIA states 7723 miles, though offers no evidence as to why.%
 }
-\begin{itemize}
-  \item Given a ruler of length $R$, let $N$ be the number required to trace round the coastline when laid end-to-end.
-  \item Plot $\log N$ against $\log (1/R)$ for several sizes of ruler. The data suggests a straight line!
+Should we measure by walking along the mean high tide line? Do we include the boundary of every small rock? Do we skirt every grain of sand? Every molecule? As the scale of consideration shrinks, the measured length becomes larger.
+\smallbreak
+
+\begin{example}{}{}
+	Mandelbrot's approach is little more than the standard method for measuring the arc-length of a curve in calculus. Here it is applied to a smooth circular `coastline.'\par
+	\begin{minipage}[t]{0.7\linewidth}\vspace{-\parsep}
+		Approximate the path using $N$ rulers of length $R$: clearly
+		\[
+			R=2\sin\frac\pi N
+		\]
+		The sum of the ruler-lengths approximates the circumference:
+		\[
+			NR=2N\sin\frac\pi N\approx 2N\cdot\frac{\pi}N =2\pi
+		\]
+		where we used the small angle approximation for sine\footnotemark{} as $N\to\infty$.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.29\linewidth}\vspace{-\parsep}
+		\hfill\includegraphics[alt={approximating arc-length for a circle using straight rulers}]{self-sim-circle}
+	\end{minipage}
+	\smallbreak
+	Otherwise said, as the length $R$ of the measuring ruler shrinks, the number required to measure the path grows according to
+	\[
+		N\approx 2\pi R^{-1}
+	\]
+\end{example}
+
+\footnotetext{%
+	This is the familiar fact that $\lim\limits_{\theta\to 0}\frac{\sin\theta}\theta=1$.%
+}
+
+There is nothing special about the circle. Measuring any smooth ``calculus'' curve with $N$ small rulers of length $R$, we see that the arc-length is approximately $L\approx NR$ (Exercise \ref{exs:fractaldiffcurve}).
+\smallbreak
+
+But what happens if we apply this approach to a non-smooth curve like a coastline\ldots
+
+\begin{defn}{Fractal Dimension of a Curve (empirical)}{mbrotfrac1}
+	Given a ruler of length $R$, let $N$ be the number of rulers needed to trace round a curve when laid end-to-end.
+	\smallbreak
+	Plot $\log N$ against $\log (1/R)$ for several sizes of ruler. The data suggests a straight line:
   \[
   	\log N\approx \log k+D\log(1/R)=\log (kR^{-D})\implies N\approx kR^{-D}
   \]
   The number $D$ is Mandelbrot's \emph{fractal dimension} of the coastline.
-\end{itemize}
+\end{defn}
 
-This notion of fractal dimension is purely empirical, though it does seem to capture something about the `roughness' of a coastline: the bumpier the coast, the greater its fractal dimension. For mainland Britain with its smooth east and rugged west coasts $D\approx 1.25$. Given its many fjords, Norway has a far rougher coastline and thus a higher fractal dimension $D\approx 1.52$.
+\begin{examples}{}{}
+	While this notion of fractal dimension is purely empirical, it does seem to capture something about the `roughness' of a curve.
+	\begin{enumerate}
+	  \item Since a smooth curve with arc-length $L$ satisfies $N\approx LR^{-1}$, any such reassuringly has fractal dimension $D=1$.
+	  \item Thanks to its relatively rugged north and west coasts, the island of Great Britain has fractal dimension significantly higher than that of a smooth curve $D\approx 1.25$.
+	  \begin{center}
+	  	\begin{tabular}{c@{\qquad\qquad}c}
+	  		\includegraphics[height=240pt,alt={the coastline of great britain}]{britain.png}
+	  		&
+	  		\includegraphics[height=240pt,alt={the coastline of norway}]{norway.png}
+	  		\\
+	  		British Mainland $D\approx 1.25$
+	  		&
+	  		Norwegian West Coast $D\approx 1.52$
+	  	\end{tabular}
+	  \end{center}
+	  \item With its myriad fjords, Norway has an even rougher coastline,\footnotemark{} and thus a higher fractal dimension $D\approx 1.52$.
+	\end{enumerate}
+\end{examples}
 
-\begin{example}{}{}
-	As a sanity check, consider a smooth circular `coastline.'\par
-	\begin{minipage}[t]{0.7\linewidth}\vspace{-8pt}
-		Approximate the circumference using $N$ rulers of length $R$: clearly
-		\[
-			R=2\sin\frac\pi N
-		\]
-		As $N\to\infty$, the small angle approximation for sine applies,
-		\[
-			R\approx \frac{2\pi}N\implies N\approx 2\pi R^{-1}
-		\]
-	\end{minipage}
-	\hfill
-	\begin{minipage}[t]{0.29\linewidth}\vspace{-15pt}
-		\hfill\includegraphics{self-sim-circle}
-	\end{minipage}\medbreak
-	where the approximation improves as $N\to\infty$. The fractal dimension of a circle is therefore $D=1$. The same analysis applies to any smooth curve (Exercise \ref{exs:fractaldiffcurve}).
-\end{example}
+\footnotetext{Ignore the small islands, and the (smooth) eastern border with Sweden and Finland.}
+
+For more detail regarding these coastline examples, see the Fractal Foundation's \href{http://fractalfoundation.org/OFC/OFC-10-4.html}{website.} Mandelbrot coined the word \emph{fractal}, though he didn't invent the concept from nothing. Rather he applied earlier ideas of Hausdorff, Minkowski and others, and observed how the natural world contains many examples of fractal structures.
 
 
+\pagebreak[3]
 
 
-Our goal is to describe a related notion of fractional dimension for \emph{self-similar} objects. To help motivate the definition, recall some of the standard objects of pre-fractal geometry.\par
-\begin{minipage}[t]{0.75\linewidth}\vspace{-3pt}
-	\begin{description}
-		\item[Segment] A \textcolor{Green}{segment} can be viewed as $N$ copies of itself each scaled by a factor $r=\frac 1N$.
-		\item[Square] A \textcolor{blue}{square} comprises $N$ copies of itself scaled by a factor $r=\frac 1{\sqrt N}$.
-		\item[Cube] A cube comprises $N$ copies of itself scaled by a factor $r=\frac 1{\sqrt[3]{N}}$.
-	\end{description}\vspace{-5pt}
-	In each case observe that $N=\left(\frac 1r\right)^D$ where $D$ is the usual dimension of the object (1, 2 or 3). Inspired by this, we make a loose definition.
+\subsubsection*{Self-Similar Figures}
+
+Our goal is to describe a related notion of fractional dimension. To help motivate this, recall some of the standard objects of pre-fractal geometry.\par
+\begin{minipage}[t]{0.8\linewidth}\vspace{0pt}
+	\begin{itemize}
+		\item A \textcolor{mGreen}{segment} comprises $N$ copies of itself each scaled by a factor $\smash{r=\frac 1N}$.
+		\item A \textcolor{Blue}{square} comprises $N$ copies of itself scaled by $\smash{r=\frac 1{\sqrt N}}$.
+		\item A cube comprises $N$ copies of itself scaled by $\smash{r=\frac 1{\sqrt[3]{N}}}$.
+	\end{itemize}
+	In each case $N=r^{-D}$, where $D$ is the usual dimension (1, 2 or 3). Inspired by this, we make a loose definition.
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.24\linewidth}\vspace{-12pt}
-	\hfill\includegraphics[scale=0.95]{self-sim-line}
+\begin{minipage}[t]{0.18\linewidth}\vspace{-2\parsep}
+	\hfill\includegraphics[alt={a segment is self-similar, as is a square}]{self-sim-line}
 \end{minipage}
 
 
 \begin{defn}{}{selfsim}
-	A geometric figure is \emph{self-similar} if it may be subdivided into $N$ similar copies of itself, each scaled by a magnification factor $r<1$. The \emph{fractal dimension} of such a figure is
+	A geometric figure is \emph{self-similar} if it may be subdivided\footnotemark{} into $N$ similar copies of itself, each scaled by a magnification factor $r<1$. The \emph{fractal dimension} of such a figure is
 	\[
 		D:=\log_{1/r}N=\frac{\log N}{\log (1/r)}=-\frac{\log N}{\log r}
-	\]
+	\]\vspace{-\parsep}
 \end{defn}
 
+\footnotetext{%
+	In this and what follows, boundary points (e.g., endpoints of sub-segments) can end up in multiple subsets.%
+}
 
 \begin{example}{}{}
-	The botanical pictures below offer some evidence for non-integer fractal dimension and for the idea that self-similarity is a natural phenomenon. The `tree' comprises $N=3$ copies of itself, each scaled by $r=0.4$. Its fractal dimension is therefore $D=-\frac{\log 3}{\log 0.4}\approx 1.199$.\par
-	The fern has $N=7$ and $r=0.3$ for a fractal dimension $D=-\frac{\log 7}{\log 0.3}\approx 1.616$.
+	The pictures offer some evidence for non-integer fractal dimension, and for the idea that self-similarity is a natural phenomenon. If one ignores the \textcolor{Brown}{stem}, the `tree' comprises $N=3$ copies of itself each scaled by $r=0.4$.
+	The fern has $N=7$ and $r=0.3$.
 	\begin{center}
 		\begin{tabular}{c@{\qquad\qquad}c}
-			\includegraphics{tree2}
+			\includegraphics[alt={a fractal mimicking a tree}]{tree2}
 			&
-			\href{http://www.math.uci.edu/~ndonalds/math161/fern-code.html}{\includegraphics{tree3}}
+			\includegraphics[alt={a fractal mimicking a fern}]{tree3}
 			\\
-			Tree fractal $D\approx 1.199$
+			Fractal Tree $D=-\frac{\log 3}{\log 0.4}\approx 1.20$
 			&
-			Fern fractal $D\approx 1.616$
+			\href{http://www.math.uci.edu/~ndonalds/math161/fern-code.html}{Fractal Fern} $D=-\frac{\log 7}{\log 0.3}\approx 1.62$
 		\end{tabular}
 	\end{center}
-	With dimensions between 1 and 2, both objects exhibit an intuitive idea of fractal dimension: both seem to occupy more space than mere \emph{lines}, but neither has positive \emph{area}. Moreover, the fern seems to occupy more space---has higher dimension---than the tree. (The `trunk' and `branches' in the first picture aren't really part of the fractal and are drawn only to give the picture a skeleton.)
+	With dimensions between 1 and 2, both objects exhibit an intuitive idea of fractal dimension: both seem to occupy more space than mere \emph{lines}, but neither has positive \emph{area}. Moreover, the fern seems to occupy more space---has higher dimension---than the tree.
 \end{example}
 
 
+\pagebreak[3]
 
 
-
-\begin{example}{Cantor's Middle-third Set}{cantor}
+\begin{example}{Cantor's Middle-Third Set}{cantor}
 	This famous example dates from the late 1800s.\footnotemark{}\par
-	\begin{minipage}[t]{0.58\linewidth}\vspace{-5pt}
+	\begin{minipage}[t]{0.6\linewidth}\vspace{-\parsep}
 		Starting with the unit interval $C_0=[0,1]$, define a sequence of sets $(C_n)$ where $C_{n+1}$ is obtained by deleting the open `middle-third' of each interval in $C_n$; for instance
 		\[
 			C_1=\left[0,\frac 13\right]\cup\left[\frac 23,1\right]
@@ -101,106 +147,122 @@ Our goal is to describe a related notion of fractional dimension for \emph{self-
 		\]
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.4\linewidth}\vspace{-7pt}
-		\hfill
-	\href{http://www.math.uci.edu/~ndonalds/math161/cantor-similar.html}{\includegraphics{cantor-set}}
+	\begin{minipage}[t]{0.38\linewidth}\vspace{-\parsep}
+		\hfill\includegraphics[alt={repeatedly delete the middle third of each segment}]{cantor-set}
 	\end{minipage}
-	\medbreak
+	\smallbreak
 
-	Cantor's set has several strange properties, none of which we establish rigorously.
+	Cantor's set has several strange properties, which we consider only non-rigorously.
 	\begin{description}
-	  \item[Zero length] The sum of the lengths of the disjoint sub-intervals comprising $C_n$ is $\operatorname{length}(C_n)=\left(\frac 23\right)^n$	since we delete $\frac 13$ of the remaining set at each step. It follows that
+	  \item[Zero length] Since we delete $\frac 13$ of the remaining set at each step, the sum of the lengths of the sub-intervals comprising $C_n$ is $\left(\frac 23\right)^n$. It follows that
 	  \[
 	  	\forall n\in\N_0,\ \operatorname{length}(\mathcal C)\le \left(\frac 23\right)^n \implies \operatorname{length}(\mathcal C)=0
 	  \]
 	  We conclude that $\mathcal C$ contains no subintervals!
-	  \item[Uncountability] There exists a bijection between $\mathcal C$ and the original interval $[0,1]$! (This issue is of limited interest to us, though you've likely encountered the notion elsewhere.)
-	  \item[Self-similarity] Since $C_{n+1}$ consists of two copies of $C_n$, each shrunk by a factor of $\frac 13$ and one shifted $\frac 23$ to the right, we abuse notation slightly to write
+	  \item[Uncountability] There exists a bijection between $\mathcal C$ and the original interval $[0,1]$. This is of limited interest to us, though you've likely encountered the notion elsewhere.
+	  \item[Self-similarity] $C_{n+1}$ comprises two copies of $C_n$, each shrunk by a factor of $\frac 13$. Abusing notation,
 		\[
-			C_{n+1}=\frac 13C_n\cup\left(\frac 13C_n+\frac 23\right)
-		\]
-		`Taking limits,' Cantor's set is seen to comprise two shrunken copies of itself:
-		\[
+			C_{n+1}=\frac 13C_n\cup\left(\frac 13C_n+\frac 23\right) 
+			\xrightarrow[\text{`Take Limits'}]{}
 			\mathcal C=\frac 13\mathcal C\cup\left(\frac 13\mathcal C+\frac 23\right)
 		\]
-		In particular, its fractal dimension is $D=\frac{\log 2}{\log 3}\approx 0.631$.
+		Cantor's set is seen to comprise 
+	\href{http://www.math.uci.edu/~ndonalds/math161/cantor-similar.html}{two shrunken copies of itself}, and thus has fractal dimension $D=\frac{\log 2}{\log 3}\approx 0.63$.
 	\end{description}
 
-	The Cantor set has many generalizations:
+	Cantor's set has many generalizations:
 	\begin{itemize}
-	  \item Removing different fractions of every interval at each stage produces sets with other fractal dimensions. For instance, removing the 2\nd{} and 4\th{} fifths results in $D=\frac{\log 3}{\log 5}\approx 0.683$.
-	  \item Higher-dimensional analogues include the \href{https://en.wikipedia.org/wiki/Sierpiński_triangle}{Sierpiński triangle} ($D=\smash{\frac{\log 3}{\log 2}}\approx 1.585$) and carpet (Example \ref*{ex:scarpet}.\ref{ex:scarpet2}, $D=\frac{\log 8}{\log 3}\approx 1.893$), and the Menger sponge ($D=\frac{\log 20}{\log 3}\approx 2.727$).
+	  \item Removing other fractions of each interval produces Cantor-type sets with other fractal dimensions. For instance, removing the 2\nd{} and 4\th{} fifths results in $D=\frac{\log 3}{\log 5}\approx 0.68$.
+	  \item Higher-dimensional analogues include the \href{https://en.wikipedia.org/wiki/Sierpiński_triangle}{Sierpiński triangle} ($D=\smash[t]{\frac{\log 3}{\log 2}}\approx 1.59$) and carpet (Example \ref*{ex:scarpet}.\ref{ex:scarpet2}, $D=\frac{\log 8}{\log 3}\approx 1.89$), and the Menger sponge ($D=\frac{\log 20}{\log 3}\approx 2.73$).
 	\end{itemize}
 \end{example}
 
 
 \footnotetext{%
-	Henry Smith discovered this set in 1874 while investigating integrability (the `length' of a set was later formalized using \emph{measure theory}). Cantor's 1883 description focused on topological properties, with self-similarity being less of a concern.%
+	While the set is named for Cantor, it was first described during Henry Smith's 1874 investigations of integrability: this relates to the `length' of a set, which was later formalized using \emph{measure theory}.%
 }
 
 
 \begin{example}{The Koch Curve and Snowflake}{koch}
 	Another generalization of the Cantor set is produced as the limit of a sequence of curves.\par
-	\begin{minipage}[t]{0.64\linewidth}\vspace{-4pt}
+
 		\begin{itemize}
 		  \item Let $K_0$ be a segment of length 1.
-		  \item Replace the middle third of $K_0$ with the other two sides of an equilateral triangle to create $K_1$.
+		  \item Create $K_1$ by replacing the middle third of $K_0$ with the remaining sides of an upward-pointing equilateral triangle.
 		  \item Replace the middle third of each segment in $K_1$ as before to create $K_2$.
 		  \item Repeat \emph{ad infinitum.}
 		\end{itemize}
-		The resulting curve is drawn along with the \emph{Koch snowflake} obtained by arranging three copies around an equilateral triangle.\smallbreak
+		The resulting \href{http://www.math.uci.edu/~ndonalds/math161/koch-anim.html}{curve} is drawn. The \emph{Koch snowflake} is obtained by arranging three copies around an equilateral triangle.
+
+	\begin{center}
+		\begin{minipage}[b]{0.45\linewidth}\vspace{-\parsep}
+			\centering
+			\includegraphics[alt={the fractal curve}]{koch}\\
+			Koch Curve\\[18.5pt]
+			\includegraphics[alt={self-similarity. The full curve comprises four shrunken copies of the whole}]{koch3}\\
+			Self-similarity
+		\end{minipage}
+		\qquad
+		\begin{minipage}[b]{0.4\linewidth}\vspace{-\parsep}
+			\centering
+			\includegraphics[alt={assemble three copies of the curve to produce a snowflake}]{koch2}\\
+			Koch Snowflake
+		\end{minipage}
+	\end{center}
 		
-		The relation to the Cantor set should be obvious in the construction. Indeed if $K_0=[0,1]$, then the intersection of this with the Koch curve is the Cantor set itself!\smallbreak
+		The relation to the Cantor set should be obvious in the construction. Indeed if we visualize $K_0$ as the interval $[0,1]$, then the intersection of $K_0$ with the Koch curve is the Cantor set itself!
+		\smallbreak
 		
-		The Koch curve is self-similar in that it comprises $N=4$ copies of itself shrunk by a factor of $r=\frac 13$. Its fractal dimension is therefore $\frac{\log 4}{\log 3}\approx 1.2619$, between that of a line and an area.\smallbreak
-		
-		We may also consider the curve's length. Let $s_n$ be the number of segments in $K_n$, each having length $t_n$, and let $\ell_n=t_ns_n$ be the length of the curve $K_n$. It follows that
+		The Koch curve is self-similar in that it comprises $N=4$ copies of itself, each shrunk by a factor of $r=\frac 13$. Its fractal dimension is therefore
 		\[
-		  s_n=4^n,\quad t_n=\frac 1{3^n}
+			D=\frac{\log 4}{\log 3}\approx 1.26
+		\]		
+		We may also consider the curve's length. Let $N_n$ be the number of segments in $K_n$, each having length $R_n$, then $\ell_n=N_nR_n$ is the length of the curve $K_n$. It follows that
+		\[
+		  N_n=4^n,\quad R_n=\frac 1{3^n}
 		  \implies \ell_n=\left(\frac 43\right)^n\to\infty
 		\]
-		The Koch curve is \emph{infinitely long}!
-	\end{minipage}
-	\hfill
-	\begin{minipage}[t]{0.35\linewidth}\vspace{-15pt}
-		\hfill
-		\href{http://www.math.uci.edu/~ndonalds/math161/koch-anim.html}{
-		\begin{tabular}{@{}c@{}}\includegraphics{koch}\\
-			Koch Curve\\[8pt]
-			\includegraphics{koch2}\\
-			Koch Snowflake\\[8pt]
-			\includegraphics{koch3}\\
-			Self-similarity
-		\end{tabular}
-		}
-	\end{minipage}
+		The Koch curve is \emph{infinitely long}! Consider also how this construction fits with Mandelbrot's discussion of the fractal dimension of a coastline (Definition \ref{defn:mbrotfrac1}): measuring the Koch curve using $N_n$ rulers of length $R_n$, we see that
+		\[
+			\log N_n=n\log 4=-\frac{\log 4}{\log 3}\log R_n \implies N_n=R_n^{-D}
+		\]
 \end{example}
 
 
+\pagebreak[3]
+
 
 \begin{exercises}
-	\exstart By removing a constant middle fraction of each interval, construct a fractal analogous to the Cantor set but with dimension $\frac 12$. More generally, if one removes a constant middle fraction $f$ from each interval, what is the resulting dimension?	
+	\hangindent\leftmargini\emph{Key concepts: \ `Real' objects exhibit more detail when magnified, \ Self-similarity, \ Fractal Dimension $D=-\frac{\log N}{\log r}$}
 	
-	\begin{enumerate}\setcounter{enumi}{1}\itemsep2pt
+	\begin{enumerate}
+		\item By removing a constant middle fraction of each interval, construct a fractal analogous to the Cantor set but with dimension $\frac 12$.\par
+		More generally, if one removes a constant middle fraction $f$ from each interval, what is the resulting dimension?	
+		
+		
 		\item Prove that the area inside the $n\th$ iteration of the construction of the Koch snowflake is
 		\[
 			A_n=\frac{\sqrt 3}{4}\left(1+\frac 35\left[1-\left(\frac 49\right)^n\right]\right)
-			\xrightarrow[n\to\infty]{} \frac{2\sqrt 3}5
-			=\frac 85\operatorname{Area}(\triangle)
 		\]
+		What is the area inside the snowflake, and how does it relate to that of the original equilateral triangle on which it is based?
+% 			\xrightarrow[n\to\infty]{} \frac{2\sqrt 3}5
+% 			=\frac 85\operatorname{Area}(\triangle)
+
 		
-		
-		\item\label{exs:fractaldiffcurve} Suppose $\vr(t)$, $t\in [0,1]$ describes a regular (smooth) curve in the plane.
+		\item\label{exs:fractaldiffcurve} We prove that any regular (smooth) curve has fractal dimension 1 in the sense of Mandelbrot's definition (\ref{defn:mbrotfrac1}).\par
+		Suppose $\vr(t)$, $t\in [0,1]$ parametrizes such a curve.
 		\begin{enumerate}
-	  	\item Use the arc-length formula $L=\int_0^1\nm{\vr'(t)}\,\dt$ together with Riemann sums and the linear approximation $\vr(t+\frac 1N)\approx\vr(t)+\frac 1N\vr'(t)$ to argue that
+	  	\item Use the arc-length formula $L=\int_0^1\nm{\vr'(t)}\,\dt$ and linear approximations to $\vr(t)$ to argue that,
 	  	\[
-	  		L\approx\sum_{k=0}^{N-1}\nm{\vr\left(\frac{k+1}N\right)-\vr\left(\frac{k}N\right)} \tag{$\ast$}
+	  		L=\lim_{N\to\infty}\sum_{k=0}^{N-1}\nm{\vr\left(\frac{k+1}N\right)-\vr\left(\frac{k}N\right)} \tag{$\ast$}
 	  	\]
 	  	
-	
-	  	\item Parametrizing $\vr$ such that each segment in $(\ast)$ has the same length $R$, prove that $L\approx NR$.\par
-	  	(\emph{Any regular curve thus has fractal dimension 1 in the sense stated by Mandelbrot (pg.\,\pageref{sec:fracdefn})})
-		\end{enumerate}
+	  	\item Suppose $\vr(t)$ is parametrized such that each segment in $(\ast)$ has the same length $R$. Prove that for large $N$,
+	  	\[
+	  		N\approx LR^{-\mathcolor{Blue}{1}}
+	  	\]
+	  	whence the curve has fractal dimension \textcolor{Blue}{1}.
+	  \end{enumerate}
 		
 	\end{enumerate}
 \end{exercises}
@@ -211,7 +273,7 @@ Our goal is to describe a related notion of fractional dimension for \emph{self-
 
 \subsection{Contraction Mappings \& Iterated Function Systems}
 
-Thus far we have dealt informally with fractals where the whole consists of multiple pieces scaled by the same factor. In general we can mix up scaling factors. To do this, and to be more rigorous, we need to borrow some ideas from topology and analysis.
+Thus far we have dealt informally with fractals in which the whole consists of multiple pieces scaled by the same factor. To add more variety, we'd like to consider multiple scale factors. To do this, and to be more rigorous, we need to borrow some ideas from topology and analysis.
 
 \begin{defn}{}{}
 	A \emph{contraction mapping} with scale factor $c\in[0,1)$ is a function $S:\R^m\to\R^m$ such that
@@ -220,10 +282,10 @@ Thus far we have dealt informally with fractals where the whole consists of mult
 	\]
 \end{defn}
 
-A contraction mapping moves inputs closer together. It should be clear that every such is continuous ($\lim x_n=y\Longrightarrow \lim S(x_n)=S(y)$).
+A contraction mapping moves inputs closer together. It should be clear that every contraction mapping is continuous ($\lim x_n=y\Longrightarrow \lim S(x_n)=S(y)$).
 
 \begin{example}{}{banacheasy}
-	The function $S(x)=\frac 13x+\frac 23$ is a contraction mapping (on $\R$) with scale factor $c=\frac 13$:
+	The function $S:\R\to\R:x\mapsto \frac 13x+\frac 23$ is a contraction mapping with scale factor $c=\frac 13$: indeed
 	\[
 		\nm{S(x)-S(y)}=\frac 13\nm{x-y}
 	\]
@@ -254,9 +316,11 @@ The example illustrates one of the most powerful and useful theorems in mathemat
 	\end{enumerate}
 \end{thm}
 
+If you're comfortable with analysis, the proof is straightforward (Exercise \ref{exs:banach}).\smallbreak
 In fact, as will be crucial momentarily, Banach's result holds whenever $S:\mathcal H\to\mathcal H$ is a contraction mapping on any \emph{complete metric space}.\footnote{%
-	Very loosely, a metric space is a set on which a sensible notion of \emph{distance} can be defined: on $\R$, for instance, the distance between two points is $d(x,y)=\nm{x-y}$. If you've done analysis you'll be familiar with \emph{completeness}: every Cauchy sequence converges (in $\mathcal H$).%
-} The main goal of this section is to use Banach's result to generate certain fractals via repeated application of contraction mappings to an initial shape. Our motivating example already illustrates this\ldots
+	Very loosely, a metric space is a set on which a sensible notion of \emph{distance} can be defined: on Euclidean $\R^2$, for instance, the distance between two points is $d(x,y)=\sqrt{(x_1-y_1)^2+(x_2-y_2)^2}$. If you've studied analysis you'll be familiar with \emph{completeness}: every Cauchy sequence converges (in $\mathcal H$).%
+}
+Our goal is to use Banach's result to generate certain types of fractal via repeated applications of contraction mappings to an initial shape. Our motivating example already illustrates this.
 
 
 \begin{example*}{\ref{ex:cantor}, Cantor Set mk.\,II}{}
@@ -268,36 +332,59 @@ In fact, as will be crucial momentarily, Banach's result holds whenever $S:\math
 	\[
 		C_{n+1}:=S_1(C_n)\cup S_2(C_n) \tag{$\ast$}
 	\]
-	Indeed, the self-similarity of the Cantor set can be expressed in the same manner: $\mathcal C=S_1(\mathcal C)\cup S_2(\mathcal C)$.\smallbreak
+	The self-similarity of the Cantor set can be expressed in the same manner: $\mathcal C=S_1(\mathcal C)\cup S_2(\mathcal C)$.
+	\medbreak
 	
-	Amazingly, it barely seems to matter what initial set $C_0$ is chosen. Originally we took $C_0=[0,1]$ to be the unit interval, but we could instead start with the singleton set $C_0=\{0\}$: iterating ($\ast$) produces
+	Amazingly, it barely seems to matter what initial set $C_0$ we choose. Originally, we took $C_0=[0,1]$ to be the unit interval, but we could instead start with the singleton set $C_0=\{0\}$: in this case, iterating ($\ast$) produces
 	\[
-		C_1=\bigl\{0,\tfrac 23\bigr\},\qquad 
-		C_2=\bigl\{0,\tfrac 29,\tfrac 23,\tfrac 89\bigr\},\qquad 
-		C_3=\bigl\{0,\tfrac 2{27},\tfrac 29,\tfrac 8{27},\tfrac 23,\tfrac{20}{27},\tfrac 89,\tfrac{26}{27}\bigr\},\ \ldots
+		C_1=\big\{0,\tfrac 23\big\},\quad 
+		C_2=\big\{0,\tfrac 29,\tfrac 23,\tfrac 89\big\},\quad 
+		C_3=\big\{0,\tfrac 2{27},\tfrac 29,\tfrac 8{27},\tfrac 23,\tfrac{20}{27},\tfrac 89,\tfrac{26}{27}\big\},\quad \ldots
 	\]
-	The first few iterations are drawn in the first picture below; it appears as if, in the limit, $C_n$ is becoming the Cantor set. The second picture starts with a very different initial set $C_0=[0.2,0.5]\cup[0.6,0.7]$; iterating this also appears to produce the Cantor set!
+	The first few iterations are drawn in the first picture below; it appears as if, in the limit, $C_n$ is `approaching' the Cantor set.
 	\begin{center}
-		\includegraphics{cantor-similar3}
-		\qquad\qquad
-		\includegraphics{cantor-similar2}
+		\begin{tabular}{c@{\qquad\qquad}c}
+			\includegraphics[alt={The cantor set generated from a single point}]{cantor-similar3}
+			&
+			\includegraphics[alt={The cantor set generated from two intervals}]{cantor-similar2}
+			\\[5pt]
+			Initial set $C_0=\{0\}$
+			&
+			Initial set $C_0=[\frac 2{10},\frac 5{10}]\cup[\frac 6{10},\frac 7{10}]$
+		\end{tabular}
 	\end{center}
+	The second picture starts with a very different initial set $C_0=[0.2,0.5]\cup[0.6,0.7]$; iterating this also appears to produce the Cantor set!
 \end{example*}
 
+
+\pagebreak[3]
+
+
+\subsubsection*{Iterated Function Systems}
 
 It certainly appears as if the Cantor set is generated by the contraction maps $S_1,S_2$ independently of the initial data $C_0$. Our main result shows in what sense this is true. Since this requires some heavy lifting from topology and analysis, we provide only a synopsis.
 
 \begin{itemize}
-  \item A subset $K\subset\R^m$ is \emph{compact} if it is \emph{closed} (contains its boundary points) and \emph{bounded} ($K$ lies within some ball centered at the origin). For instance, $K=[0,1]$ is a compact subset of $\R$.
+  \item A subset $K\subset\R^m$ is \emph{compact} if it is \emph{closed} (contains its boundary points) and \emph{bounded} ($K$ lies within some ball centered at the origin). For instance:
+  \begin{itemize}
+    \item The closed interval $K=[0,1]$ is a compact subset of $\R$.
+    \item The open disk $D=\big\{(x,y):x^2+y^2<1\big\}$ is a non-compact subset of $\R^2$, since it does not contain its boundary points (the unit circle).
+  \end{itemize}
   
-  \item The set of non-empty compact subsets of $\R^m$ is a \emph{metric space} $\mathcal H$. This means that the \emph{distance} $d(X,Y)$ between $X,Y\in\mathcal H$ may sensibly be defined, though it is a little tricky\ldots%
-  \footnote{%
-  	The distance function is the \emph{Hausdorff metric.} Given $Y\in\mathcal H$, and $x\in \R^n$, define $d_Y(x)=\inf_{y\in Y}\Nm{x-y}$ to be the distance from $x$ to the `nearest' point of $Y$. Define $d_X(y)$ similarly. The Hausdorff distance between $X$ and $Y$ is then
+  \item The set of non-empty compact subsets of $\R^m$ is a \emph{metric space} $\mathcal H$. This means that the \emph{distance} $d(X,Y)$ between $X,Y\in\mathcal H$ may sensibly be defined, though it is a little tricky\ldots\par
+  \begin{minipage}[t]{0.68\linewidth}\vspace{-\parsep}
+  	The distance function is the \emph{Hausdorff metric.} Given $Y\in\mathcal H$ and $x\in \R^m$, define $\mathcolor{mRed}{d_Y(x)}=\inf_{y\in Y}\Nm{x-y}$ to be the distance from $x$ to the `nearest' point of $Y$. Define $\mathcolor{Blue}{d_X(y)}$ similarly. The distance between $X$ and $Y$ is then
   	\[
   		d(X,Y):=\max\left\{\sup_{x\in X}d_Y(x),\sup_{y\in Y}d_X(y)\right\}
   	\]
-  	Roughly speaking, find $x\in X$ which is as far away ($d_Y(x)$) as possible from anything in $Y$, and find $y\in Y$ similarly; $d(X,Y)$ is the larger of these distances. Crucially, $d(X,Y)=0\Longleftrightarrow X=Y$.
-  }
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.31\linewidth}\vspace{-1.5\parsep}
+  	\hfill\includegraphics[alt={the distance between two compact sets}]{hausdorff}
+  \end{minipage}
+  \smallbreak
+  
+  Roughly speaking, find $x\in X$ which is as far away as possible from anything in $Y$, and find $y\in Y$ similarly; $d(X,Y)$ is the larger of these distances. Crucially, for compact sets, $d(X,Y)=0\Longleftrightarrow X=Y$.
   
   \item Since $\mathcal H$ is a metric space, we can discuss convergent sequences $(K_n)$ of compact sets
 	\[
@@ -305,157 +392,187 @@ It certainly appears as if the Cantor set is generated by the contraction maps $
 	\]
 	It also makes sense to speak of Cauchy sequences in $\mathcal H$. It may be proved that $\mathcal H$ is \emph{complete}: every Cauchy sequence $(K_n)\subseteq\mathcal H$ converges to some $K\in\mathcal H$.
 	
-  \item The main result is a corollary of Banach's result (Theorem \ref{thm:banach}).
+  \item The main result is a corollary of Banach's Theorem (\ref{thm:banach}).
 \end{itemize}
 
 
-\begin{thm}{Iterated Function Systems}{ifs}
+\begin{thm}{}{ifs}
 	Let $S_1,\ldots,S_n$ be contraction mappings on $\R^m$ with scale factors $c_1,\ldots,c_n$. Define
 	\[
-		S:\mathcal H\to\mathcal H\quad\text{by}\quad S(K)=\bigcup_{i=1}^nS_i(K)
+		S:\mathcal H\to\mathcal H
+		\quad\text{by}\quad 
+		S(K)=\bigcup_{i=1}^nS_i(K)
 	\]
+	\vspace{-\parsep}
 	\begin{enumerate}
-	  \item $S$ is a contraction mapping on $\mathcal H$ with contraction factor $c=\max(c_1,\ldots,c_n)$.
+	  \item $S$ is a contraction mapping on $\mathcal H$ with scale factor $c=\max(c_1,\ldots,c_n)$.
 	  \item $S$ has a unique fixed set $F\in\mathcal H$ given by $F=\lim\limits_{k\to\infty} S^k(K_0)$ for \textbf{any} non-empty $K_0\in\mathcal H$.
 	\end{enumerate}
 \end{thm}
 
-Part 1 is not super difficult to prove if you're willing to work with the definition of the Hausdorff metric (try it if you're comfortable with analysis!). Part 2 is Banach's theorem.\smallbreak
+Part 1 is not super difficult to prove if you are willing to grapple with the Hausdorff metric (try it if you're comfortable with analysis). Part 2 is Banach's theorem.\smallbreak
 
-The upshot is this: repeatedly applying contraction mappings to \emph{any} non-empty compact set $E$ produces a compact limit set which is \emph{independent of $E$!} We call the limit $F$ for \emph{fractal.} Such fractals are sometimes called \emph{attractors}: being limit-sets, they `attract' data towards themselves.
+The upshot is this: repeatedly applying contraction mappings to \emph{any} non-empty compact set $K_0$ produces a compact limit set which is \emph{independent of $K_0$!} We call this limit $F$ for \emph{fractal.} Such fractals are sometimes called \emph{attractors}: being limit-sets, they `attract' data towards themselves.
 
 
 \begin{examples}{}{scarpet}
-	\exstart (Example\,\ref{ex:cantor}, mk.III)\lstsp We revisit the Cantor set one last time.
-	\begin{enumerate}\setcounter{enumi}{1}
-	  \item[]The contractions $S_1(x)=\frac 13x$ and $S_2(x)=\frac 13x+\frac 23$ (on $\R$) produce a contraction $S:\mathcal H\to\mathcal H$:
+	We consider four iterated function systems.
+
+	\begin{enumerate}
+	  \item (Example\,\ref{ex:cantor}, mk.III)\lstsp The contractions $S_1(x)=\frac 13x$ and $S_2(x)=\frac 13x+\frac 23$ (on $\R$) produce a contraction map $S:\mathcal H\to\mathcal H$:
 		\[
 			S(K):=\bigl\{S_1(x),S_2(x):x\in K\bigr\}
 		\]
-		By Theorem \ref{thm:ifs}, if $C_0\subset\R$ is non-empty closed and bounded, then  $\mathcal C=\lim S^n(C_0)$. Certainly all three of our previous choices for $C_0$ are such sets: $[0,1]$, $\{0\}$ and $[0.2,0.5]\cup[0.6,0.7]$.\smallbreak
-		A nice application of the Theorem allows us to find all sorts of interesting points in the Cantor set. For instance, consider the functions $T,U$, where
+		By Theorem \ref{thm:ifs}, if $C_0\subset\R$ is non-empty, closed and bounded, then  $\mathcal C=\lim S^n(C_0)$. Certainly all three of our previous choices for $C_0$ are such sets, namely $[0,1]$, $\{0\}$ and $[0.2,0.5]\cup[0.6,0.7]$.
+		\medbreak
+		
+		A fun application of the Theorem allows us to find all sorts of interesting points in the Cantor set. For instance, consider the compositions $T$ and $U$, where
 		\[
 			T(x)=S_1\bigl(S_2(x)\bigr)=\frac x9+\frac 29
 			\quad\text{and}\quad
 			U(y)=S_2\bigl(S_1(y)\bigr)=\frac y9+\frac 23
 		\]
-		These are contractions on $\R$ ($c=\frac 19$) whose unique fixed points are $\textcolor{red}{t=\frac 14}$ and $\textcolor{blue}{u=\frac 34}$; moreover $S_1(u)=t$ and $S_2(t)=u$. Now consider the non-empty compact set $K=\{\textcolor{red}{t},\textcolor{blue}{u}\}\in\mathcal H$. Plainly\par
+		These are both contraction maps on $\R$ ($c=\frac 19$) whose unique fixed points are $\mathcolor{mRed}{t=\frac 14}$ and $\mathcolor{Blue}{u=\frac 34}$; moreover $S_1(u)=t$ and $S_2(t)=u$. Now consider the non-empty compact set $K=\{\mathcolor{mRed}{t},\mathcolor{Blue}{u}\}\in\mathcal H$. Plainly\par
 		\begin{minipage}[t]{0.5\linewidth}\vspace{-14pt}
 			\begin{align*}
-				S(K)&=\bigl\{S_1(t),S_1(u),S_2(t),S_2(u)\bigr\}\\
-				&=\left\{\frac 1{12},\textcolor{red}{\frac 14},\textcolor{blue}{\frac 34},\frac{11}{12}\right\}
+				S(K)&=\big\{S_1(t),S_1(u),S_2(t),S_2(u)\big\}\\
+				&=\left\{ \frac 1{12}, \mathcolor{mRed}{\frac 14}, 
+				\mathcolor{Blue}{\frac 34}, \frac{11}{12} \right\}
 				\supset K
 			\end{align*}
 		\end{minipage}
 		\hfill
 		\begin{minipage}[t]{0.45\linewidth}\vspace{-3pt}
-			\hfill\includegraphics{cantor-set2}
-		\end{minipage}\medbreak
+			\hfill\includegraphics[alt={a two-cycle within the limit set}]{cantor-set2}
+		\end{minipage}
+		\smallbreak
 	
- 		It follows (induction) that $K\subseteq\lim S^n(K)=\mathcal C$: both $\textcolor{red}{t=\frac 14}$ and $\textcolor{blue}{u=\frac 34}$ lie in the Cantor set! This seems paradoxical: $\frac 14$ does not lie at the end of any deleted interval (all such points have denominator $3^n$) but yet the Cantor set contains no intervals. How does $\frac 14$ end up in there?!
+ 		It follows (by induction and Theorem \ref{thm:ifs}) that $K\subseteq\lim S^n(K)=\mathcal C$: otherwise said, both $\mathcolor{mRed}{t=\frac 14}$ and $\mathcolor{Blue}{u=\frac 34}$ lie in the Cantor set!
+ 		\smallbreak
+ 		At first glance, this seems paradoxical. We know that $\mathcal C$ contains no intervals. Natural intuition from our initial construction therefore suggests that $\mathcal C$ contains only the endpoints of deleted open intervals. But such endpoints must have denominator $3^n$, so what is $\smash{\frac 14}$ doing there?!
+ 		\smallbreak
+ 		The problem isn't the Cantor set, our understanding and intuition with regard to the real numbers is simply weak. Indeed, $\mathcal C$ is \emph{uncountably} infinite, whereas there are only \emph{countably} many points in the interval $[0,1]$ with denominator $3^n$, so \emph{almost all} points in $\mathcal C$ are other than the endpoint of a deleted interval.
+ 		\smallbreak
+ 		We can repeat the above analysis with other combinations of $S_1$ and $S_2$ to uncover more points in Cantor's set. 
  	
-
+		\pagebreak[3]
 	
-		\item\label{ex:kochrevisit} (Example\,\ref{ex:koch})\lstsp The Koch curve arises from four contraction mappings $S_i:\R^2\to\R^2$, each with scale factor $c=\frac 13$.
+		\item\label{ex:kochrevisit} (Example\,\ref{ex:koch}, cont.)\lstsp The Koch curve arises from four contraction mappings $S_i:\R^2\to\R^2$, each with scale factor $\smash{c=\frac 13}$ (we use complex numbers for brevity):\vspace{-\parsep}
 		\[
 			\renewcommand\arraystretch{1.4}
-			\begin{array}{l|l}
+			\begin{array}{@{}l|l}
 				\text{Mapping}&\text{Effect}\\\hline
-				\displaystyle \textcolor{red}{S_1}(x,y)=\left(\tfrac x3,\tfrac y3\right)
+				\displaystyle \mathcolor{mRed}{S_1}(z)=\tfrac 13z
 				&
 				\text{Scale $\frac 13$}
 				\\
-				\displaystyle \textcolor{Green}{S_2}(x,y)=\left(\tfrac 16x-\tfrac{\sqrt 3}6y+\tfrac 13,\tfrac{\sqrt 3}6x+\tfrac 16y\right)
+				\displaystyle \mathcolor{mGreen}{S_2}(z)=%\left(\tfrac 16x-\tfrac{\sqrt 3}6y+\tfrac 13,\tfrac{\sqrt 3}6x+\tfrac 16y\right)
+				\tfrac 13e^{\frac{i\pi}3}z+\tfrac 13
 				&
 				\text{Scale $\frac 13$, rotate \ang{60}, translate}
 				\\
-				\displaystyle \textcolor{blue}{S_3}(x,y)=\left(\tfrac 16x+\tfrac{\sqrt 3}6y+\tfrac 12,\tfrac{\sqrt 3}6x-\tfrac 16y+\tfrac{\sqrt 3}6\right)
+				\displaystyle \mathcolor{Blue}{S_3}(z)=%\left(\tfrac 16x+\tfrac{\sqrt 3}6y+\tfrac 12,\tfrac{\sqrt 3}6x-\tfrac 16y+\tfrac{\sqrt 3}6\right)
+				\tfrac 13e^{\frac{-i\pi}3}z+\tfrac 12+\tfrac{\sqrt 3}6i
 				&
 				\text{Scale $\frac 13$, rotate $-\ang{60}$, translate}
 				\\
-				\displaystyle \textcolor{purple}{S_4}(x,y)=\left(\tfrac x3+\tfrac 23,\tfrac y3\right)
+				\displaystyle \mathcolor{BlueViolet}{S_4}(z)=%\left(\tfrac x3+\tfrac 23,\tfrac y3\right)
+				\tfrac 13z+\tfrac 23
 				&
 				\text{Scale $\frac 13$, translate}
 			\end{array}
 		\]
 		
-		\begin{minipage}[t]{0.6\linewidth}\vspace{0pt}
+		\begin{minipage}[t]{0.5\linewidth}\vspace{0pt}
 			The combined map
 			\[
 				S(K):=S_1(K)\cup S_2(K)\cup S_3(K)\cup S_4(K)
 			\]
-			is a contraction on $\mathcal H=\{\text{non-empty compact }K\subset\R^2\}$. 
+			%is a
 		\end{minipage}
 		\hfill
-		\begin{minipage}[t]{0.39\linewidth}\vspace{0pt}
-			\hfill \href{http://www.math.uci.edu/~ndonalds/math161/koch-anim2.html}{\includegraphics[scale=0.95]{koch3}}
+		\begin{minipage}[t]{0.45\linewidth}\vspace{-5\parsep}
+			\hfill \includegraphics[scale=1,alt={the koch curve as an iterated function system}]{koch4}
 		\end{minipage}\par
-		Regardless of the initial input $K_0\in\mathcal H$, the limit $\lim S^n(K_0)$ is the Koch curve:	applied to the entire curve (drawn), the image of each $S_i$ is colored. The picture moreover links to a series of animated constructions starting with different initial sets $K_0$.\smallbreak
-		We can also play a similar game to the previous example to find interesting points on the curve. For instance, the unique fixed point $(\frac{51}{146},\frac{3\sqrt 3}{146})$ of $U=S_2\circ S_1$ lies on the curve!
+		\vspace{-\parsep}
+		is a contraction on the space $\mathcal H$ of non-empty compact subsets $K\subset\R^2$. 
+		\href{http://www.math.uci.edu/~ndonalds/math161/koch-anim2.html}{Regardless of the initial input} $K_0\in\mathcal H$, the limit $\lim S^n(K_0)$ is the Koch curve:applied to the entire curve (drawn), the image of each $S_i$ is colored.
+		\smallbreak
+		We can also play a similar game to the previous example to find interesting points on the curve. For instance, the unique fixed point $\smash[b]{P=\left(\frac{51}{146},\frac{3\sqrt 3}{146}\right)}$ of $U=S_2\circ S_1$ lies on the curve!
+	
+	\end{enumerate}	
+	
 		
-		%\begin{minipage}[t]{0.72\linewidth}\vspace{0pt}
-			\item\label{ex:scarpet2} The Sierpiński carpet may be constructed using eight contraction mappings, each of which scales the whole picture by a (length-scale) factor of $c=\frac 13$, for a dimension of $D=\frac{\log 8}{\log 3}\approx 1.893$.\smallbreak
-			As with the Koch curve, the image links to several alternative constructions using different initial sets $K_0$.
-		%\end{minipage}
-		%\hfill
-		%\begin{minipage}[t]{0.27\linewidth}\vspace{0pt}
-			\hfill \href{http://www.math.uci.edu/~ndonalds/math161/sier-anim.html}{\includegraphics[scale=1]{sieranim2}}
-		%\end{minipage}\smallbreak
-		
-		
-		%\begin{minipage}[t]{0.72\linewidth}\vspace{0pt}
-			\item This fractal fern is constructed using three contraction mappings:
+	\begin{minipage}[t]{0.73\linewidth}\vspace{-\parsep}
+		\begin{enumerate}[resume]
+			\item\label{ex:scarpet2} The Sierpiński carpet is constructed using eight contraction mappings, each of which scales the entire picture by a (length-scale) factor of $c=\frac 13$, for a fractal dimension of 
+			\[
+				D=\frac{\log 8}{\log 3}\approx 1.89
+			\]
+			As with our other examples, the carpet may be realized as the limit of the contraction maps applied to \href{http://www.math.uci.edu/~ndonalds/math161/sier-anim.html}{different initial sets $K_0$.}
+		\end{enumerate}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.25\linewidth}\vspace{-\parsep}
+		\hfill\includegraphics[alt={the gasket as the limit fractal for eight contraction maps}]{sieranim2}
+	\end{minipage}
+	
+	\bigskip
+			
+	\begin{minipage}[t]{0.73\linewidth}\vspace{0pt}
+		\begin{enumerate}[resume]
+			\item\label{ex:fracfern} This fractal fern is constructed using three contraction mappings:
 			\begin{itemize}
 				\item[$S_1$:] Scale by $\frac 34$, rotate \ang{5} clockwise, and translate by $(0,\frac 14)$
 				\item[$S_2$:] Scale by $\frac 14$, rotate \ang{60} counter-clockwise, and translate by $(0,\frac 14)$
 				\item[$S_3$:] Scale by $\frac 14$, rotate \ang{60} clockwise, and translate by $(0,\frac 14)$
 			\end{itemize}
-			The linked animation shows the first few steps of its contsruction starting from a single vertical line segment $K_0$.
-		%\end{minipage}
-		%\hfill
-		%\begin{minipage}[t]{0.27\linewidth}\vspace{0pt}
-			\hfill \href{http://www.math.uci.edu/~ndonalds/math161/fern-anim.html}{\includegraphics[scale=1]{fern2}}
-		%\end{minipage}
+			A \href{http://www.math.uci.edu/~ndonalds/math161/fern-anim.html}{linked animation} shows the first few steps of the fern's construction starting from a single vertical line segment $K_0$.
 	\end{enumerate}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.25\linewidth}\vspace{0pt}
+		\hfill\includegraphics[alt={a fractal fern}]{fern2}
+	\end{minipage}
 \end{examples}
 
 
+\pagebreak[3]
 
 
-	\subsubsection*{Fractal Dimension Revisited}
+\subsubsection*{Fractal Dimension Revisited}
 
-\begin{minipage}[t]{0.8\linewidth}\vspace{0pt}
-	
-	Since Theorem \ref{thm:ifs} permits several different contraction factors, we need a new approach to fractal dimension. We ask how many disks of a given radius $\epsilon$ are required to cover a set. In the picture, the \textcolor{blue}{unit square} requires four disks of radius $\varepsilon=0.4$. For smaller $\varepsilon$, we plainly need more disks\ldots
+\begin{minipage}[t]{0.8\linewidth}\vspace{-2\parsep}
+	Since Theorem \ref{thm:ifs} permits several different contraction factors, we need a new approach to fractal dimension. We ask how many disks of a given radius $\epsilon$ are required to cover a set.
+	\smallbreak
+	In the picture, the \textcolor{Blue}{unit square} requires four disks of radius $\varepsilon=0.4$. For smaller $\varepsilon$, we plainly need more disks\ldots
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.19\linewidth}\vspace{0pt}
-	\hfill\includegraphics{epsiloncover}
+\begin{minipage}[t]{0.19\linewidth}\vspace{-2\parsep}
+	\hfill\includegraphics[alt={covering a square with four disks}]{epsiloncover}
 \end{minipage}
 
 
 \begin{defn}{}{}
 	Let $K$ be a compact subset of $\R^m$.
 	\begin{enumerate}
-	  \item If $\varepsilon>0$, the \emph{closed $\varepsilon$-ball centered at $x\in K$} consists of the points at most a distance $\varepsilon$ from $x$:
+	  \item If $\varepsilon>0$, the \emph{closed $\varepsilon$-ball centered at $x\in K$} consists of the points lying at most a distance $\varepsilon$ from $x$:
 		\[
-			B_\epsilon(x)=\{y\in\R^m:d(x,y)\le\varepsilon\}
+			B_\epsilon(x)=\big\{y\in\R^m:d(x,y)\le\varepsilon\big\}
 		\]
-	% 	\item A finite union $\smash{\bigcup\limits_{n=1}^MB(x_n,\varepsilon)}$ is an \emph{$\varepsilon$-covering} of $A$ if $A\subseteq \smash{\bigcup\limits_{n=1}^MB(x_n,\varepsilon)}$: that is,
-	% 	\[\forall x\in A,\ \exists n\ \text{ such that }\ x\in B(x_n,\varepsilon)\]
-		\item The \emph{minimal $\varepsilon$-covering number} for $K$ is the smallest number of radius-$\epsilon$ balls needed to cover $K$:
+		\item The \emph{minimal $\varepsilon$-covering number} for $K$ is the smallest number of radius-$\varepsilon$ balls needed to cover $K$:
 		\[
-			\mathcal N(K,\varepsilon)=\min\left\{M:\exists x_1,\ldots,x_M\in K\text{ with }K\subseteq \bigcup\limits_{n=1}^MB_\epsilon(x_n)\right\}
+			\mathcal N(K,\varepsilon)=\min\left\{M:\exists x_1,\ldots,x_M\in K\text{ with }K\subseteq \bigcup\limits_{n=1}^MB_\varepsilon(x_n)\right\}
 		\]
-		
 		\item The \emph{fractal dimension} of $K$ is the limit
 		\[
 			D=\lim_{\varepsilon\to 0}\frac{\log\mathcal N(K,\varepsilon)}{\log (1/\varepsilon)}
 		\]
+		\vspace{-\parsep}
 	\end{enumerate}
 \end{defn}
 
-Rigorously proving that $\cN$ and $D$ exist requires a more thorough study of topology, though a simple example should at least convince us that the definition is reasonable!
+Rigorously proving that $\cN$ and $D$ exist requires a more thorough study of topology, though a simple example should at least convince us that the definition is reasonable.
 
 \begin{example}{}{intervalcover}
 	Let $K=[0,1]$ be the interval of length 1. It is not hard to check that
@@ -463,7 +580,7 @@ Rigorously proving that $\cN$ and $D$ exist requires a more thorough study of to
 		\varepsilon\ge\frac 12\iff \cN(K,\varepsilon)=1\quad\text{and}\quad 
 		\frac 14\le \varepsilon<\frac 12\iff \cN(K,\varepsilon)=2
 	\]
-	etc. More generally, $\cN$ and $\epsilon$ are related via
+	etc. More generally, any positive integer $\cN$ is related to $\epsilon$ via
 	\[
 		\frac 1{2\cN}\le\epsilon<\frac 1{2(\cN-1)}
 	\]
@@ -480,142 +597,165 @@ Rigorously proving that $\cN$ and $D$ exist requires a more thorough study of to
 	% \text{range of }\varepsilon & [\frac 1{2m},\frac 1{2(m-1)}) & \cdots & [\frac 1{10},\frac 18) & [\frac 18,\frac 16) & [\frac 16,\frac 14) & [\frac 14,\frac 12) & [\frac 12,\infty)\\\hline
 	% \mathcal N([0,1],\epsilon) & m & \cdots & 5 & 4 & 3 & 2 & 1
 	% \end{array}\]
-	The dimension of $K$ ($=1$) may therefore be recovered via the squeeze theorem
+	The fractal dimension of $K$ ($=1$) may be recovered via the squeeze theorem
 	\[%\frac{\log\mathcal N}{\log (2\cN)} <\frac{\log\mathcal N}{\log (1/\varepsilon)}< \frac{\log\mathcal N}{\log (2(\cN-1))}  \implies 
-		D=\lim_{\epsilon\to 0}\frac{\log\mathcal N}{\log (1/\varepsilon)}=1
+		D=\lim_{\varepsilon\to 0}\frac{\log\mathcal N}{\log (1/\varepsilon)}=1
 	\]
+	The details are left to Exercise \ref{exs:intervalcover}.
 \end{example}
 
 
+\pagebreak[3]
 
-Thankfully an easier-to-visualize modification is available using boxes.
+
+Thankfully, an easier-to-visualize modification is available using boxes.
 
 \begin{thm}{Box-counting}{}
 	Let $K\subset\R^m$ be compact and cover $\R^m$ by boxes of side length $\frac 1{2^n}$. Let $\mathcal N_n(K)$ be the number of such boxes intersecting $K$. Then
 	\[
 		D=\lim_{n\to\infty}\frac{\log\mathcal N_n(K)}{\log 2^n}
 	\]
+	\vspace{-\parsep}
 \end{thm}
 
 
 
 
 
-We finish with a formula satisfied by the dimension of an iterated function system (Theorem \ref{thm:ifs}).
+Our last result is stated without proof: a formula satisfied by the dimension of an iterated function system (Theorem \ref{thm:ifs}).
 
 \begin{thm}{}{ifsdimension}
-	Let $\{S_n\}_{n=1}^M$ be an iterated function system with attractor (limiting fractal) $F$ and where each contraction $S_n$ has scale factor $c_n\in(0,1)$. Under reasonable conditions,\footnotemark{} the fractal dimension is the unique real number $D$ satisfying
+	Let $\big\{S_n\big\}_{n=1}^M$ be an iterated function system with attractor (limiting fractal) $F$ and where each contraction $S_n$ has scale factor $c_n\in(0,1)$. Under reasonable conditions,\footnotemark{} its fractal dimension is the unique real number $D$ satisfying
 	\[
 		\sum_{n=1}^Mc_n^D=1
 	\]
+	\vspace{-\parsep}
 \end{thm}
 
 \footnotetext{%
-	Roughly: the outputs of each $S_n$ meet only at boundary points; the `pieces' of the fractal cannot overlap too much.%
+	Roughly: the outputs of each $S_n$ applied to $F$ meet only at boundary points; the `pieces' of the fractal cannot overlap too much.%
 }
+
+The existence and uniqueness of $D$ is proved in Exercise \ref{exs:ifsdimproof}. When the scale-factors are identical ($c_n=r$), we easily recover Definition \ref{defn:selfsim}:
+\[
+	Mr^D=1\implies D=\frac{-\log M}{\log r}=\frac{\log M}{\log (1/r)}
+\]
 
 
 \begin{examples}{}{}
-	\exstart We easily recover Definition \ref{defn:selfsim} when the scale-factors are identical $c_n=r$:
-	\[
-		Mr^D=1\implies D=\frac{-\log M}{\log r}=\frac{\log M}{\log (1/r)}
-	\]
-	\begin{enumerate}\setcounter{enumi}{1}
-	  \item The fractal fern (Examples \ref{ex:scarpet}) is generated by three contraction maps with scale factors $\frac 34,\frac 14,\frac 14$. Its dimension is the solution to the equation
+	In more general cases, the Theorem is usually impossible to use \emph{algebraically}; a numerical approximation for $D$ is required.
+	\begin{enumerate}
+	  \item The fractal fern (Examples \ref*{ex:scarpet}.\ref{ex:fracfern}) is generated by three contraction maps with scale factors $\smash{\frac 34,\frac 14,\frac 14}$. Its dimension is the solution to the equation
 	  \[
-	  	\left(\frac 34\right)^D+\left(\frac 14\right)^D+\left(\frac 14\right)^D=1\implies D\approx 1.3267
+	  	\left(\frac 34\right)^D+\left(\frac 14\right)^D+\left(\frac 14\right)^D=1\implies D\approx 1.327
 	  \]
-	  \item Numerical approximation is usually required to find $D$, though sometimes an exact solution is possible. For instance, if $c_1=c_2=\frac 12$ and $c_3=c_4=c_5=\frac 14$, then
+	  \item In extreme cases, $D$ may be computed exactly. For instance, if an iterated function system comprises five contraction maps with scale factors $\smash{c_1=c_2=\frac 12}$ and $\smash{c_3=c_4=c_5=\frac 14}$, then the dimension of resulting fractal satisfies
 	  \[
 	  	2\left(\frac 12\right)^D+3\left(\frac 14\right)^D=1
 	  \]
 	  This is quadratic in $\alpha=\left(\frac 12\right)^D$, whence
 	  \[
-	  	2\alpha+3\alpha^2=1\implies \alpha=\frac 13\implies D=\log_23\approx 1.584
+	  	2\alpha+3\alpha^2=1\implies \alpha=\frac 13\implies D=\log_23\approx 1.58
 	  \]
 	\end{enumerate}
 \end{examples}
 
 
+\pagebreak[3]
+
+
 \subsubsection*{Other methods of creating fractals}
 
-\begin{minipage}[t]{0.63\linewidth}\vspace{0pt}
-	The contraction mapping approach is one of many ways to create fractals. Two other famous examples are the \href{https://en.wikipedia.org/wiki/Logistic_map}{\emph{logistic map}} (related to numerical approximations to non-linear differential equations) and the \href{https://en.wikipedia.org/wiki/Mandelbrot_set}{\emph{Mandelbrot set}} (pictured).\smallbreak
-	The Mandelbrot set arises from a construction in the complex plane. For a given $c\in\C$, we iterate the function
+It is hard to give a rigorous definition of \emph{fractal}, though (as with iterated function systems) they typically arise from the repeated application of some function or procedure. Two other famous examples where iterations produce a fractal are the \href{https://en.wikipedia.org/wiki/Logistic_map}{\emph{logistic map}} and the \href{https://en.wikipedia.org/wiki/Mandelbrot_set}{\emph{Mandelbrot set}}.
+\smallbreak
+
+\begin{minipage}[t]{0.62\linewidth}\vspace{-\parsep}
+	The Mandelbrot set (pictured) arises from a construction best described in the complex plane. Given $c\in\C$, iterate the function
 	\[
 		f_c(z)=z^2+c
 	\]
-	If $f(f(f(\cdots f(c)\cdots)))$ remains bounded, no matter how many times $f$ is applied, then $c$ lies in the Mandelbrot set.\smallbreak
-	Much better pictures and trippy videos can be found online\ldots
+	If $\smash{f\Big(f\big(f(\cdots f(c)\cdots)\big)\Big)}$ remains bounded, no matter how many times $f$ is applied, then $c$ lies in the Mandelbrot set.
+	\smallbreak
+	Far better pictures (and trippy videos) can be found online: sit back and let geometry scramble your conception of reality\ldots
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.35\linewidth}\vspace{0pt}
-	\hfill\includegraphics[scale=0.9]{mandelbrot}
+\begin{minipage}[t]{0.36\linewidth}\vspace{-\parsep}
+	\hfill\includegraphics[alt={the mandelbrot set}]{mandelbrot}
 \end{minipage}
-
-
 
 
 \begin{exercises}
-	\exstart Let $S_1(x)=\frac 13 x$ and $S_2(x)=\frac 13x+\frac 23$ be the contraction mappings defining the Cantor set and suppose $x,y,z\in\R$ satisfy
-	\[
-		y=S_1(x),\qquad z=S_2(y),\qquad x=S_2(z)
-	\]
-	Show that $x,y,z$ lie in the Cantor set, and find their values.
-	
+\hangindent\leftmargini\emph{Key concepts: \ Contraction mappings, \ Banach's theorem and its application to fractals, \ Finding points within fractals, \ Fractal dimension satisfies $\sum c_n^D=1$}
+
 	  
-	\begin{enumerate}\setcounter{enumi}{1}
-% 	  \item We illustrate Banach's theorem.
-% 	  \begin{enumerate}
-% 	    \item The contraction mapping $S(x)=\frac 13x+\frac 23$ (on $\R$) plainly has unique fixed point $x=1$ ($S(x)=x\Longleftrightarrow x=1$). If $x_0\in\R$ is given and $x_{n+1}:=S(x_n)$ for all $n\in\N_0$, prove that $x_n=1+(x_0-1)3^{-n}$ and thus conclude that $\lim x_n=1$.
-% 	    \item Repeat part (a) for any linear polynomial $S(x)=cx+d$ where $\nm c<1$. 
-% 	  \end{enumerate}
+	\begin{enumerate}
+	  \item Let $S_1(x)=\frac 13 x$ and $S_2(x)=\frac 13x+\frac 23$ be the contraction mappings defining the Cantor set, and suppose $x,y,z\in\R$ satisfy
+		\[
+			y=S_1(x),\qquad z=S_2(y),\qquad x=S_2(z)
+		\]
+		Show that $x,y,z$ lie in the Cantor set, and find their values.
 	  
 	  
 	 	\item\begin{enumerate}
-	    \item As in Example \ref{ex:banacheasy}, illustrate Banach's theorem for the contraction $S(x)=\frac 12x+5$.
+	    \item As in Example \ref{ex:banacheasy}, illustrate Banach's Theorem for the contraction mapping
+	    \[
+	    	S:\R\to\R,\quad S(x)=\frac 12x+5
+	    \]
 	    \item Repeat part (a) for any linear polynomial $S(x)=cx+d$ where $\nm c<1$. 
 	  \end{enumerate}
 	  
 	  
-	  \item Verify the claim in Example \ref*{ex:scarpet}.\ref{ex:kochrevisit} that the point $(\frac{51}{146},\frac{3\sqrt 3}{146})$ lies on the Koch curve.
+	  \item Verify the claim in Example \ref*{ex:scarpet}.\ref{ex:kochrevisit} that the point $\left(\frac{51}{146},\frac{3\sqrt 3}{146}\right)$ lies on the Koch curve.
 	  
 	  
 	  \item The construction of a Cantor-type set starts by removing the open intervals $(0.1,0.2)$ and $(0.6,0.8)$ from the unit interval.
 	  \begin{enumerate}
 	    \item Sketch the first three iterations of this fractal.
 	    \item This construction may be described using three contraction mappings; what are they?
-	    \item State an equation satisfied by the dimension $D$ of the set and use a computer algebra package to estimate its value.
+	    \item State an equation satisfied by the dimension $D$ of this fractal and use a computer or calculator to estimate its value.
 	  \end{enumerate}
 	  
+	  
+	  \pagebreak[3]
+	  
+	  
 		\item A variation on the Koch curve is constructed using five contraction mappings. Each scales the whole picture by a factor $c$, then rotates counter-clockwise, before finally translating.\par  
-	  \begin{minipage}{0.52\linewidth}
-		  \qquad$\displaystyle\def\arraystretch{1.2}
-		  \begin{array}{c|c|c|c}
-			  \text{map}&\text{scale}&\text{rotate}&\text{translate (add $(x,y)$)}\\\hline
-			  S_1&\frac 12&0&0\\
-			  S_2&\frac 14&\ang{90}&(\frac 12,0)\\
-			  S_3&\frac 14&0&(\frac 12,\frac 14)\\
-			  S_4&\frac 14&-\ang{90}&(\frac 34,\frac 14)\\
-			  S_5&\frac 14&0&(\frac 34,0)
-		  \end{array}$
+	  \begin{minipage}{0.52\linewidth}\vspace{-\parsep}
+		  \[
+		  	\def\arraystretch{1.25}
+			  \begin{array}{c|c|c|c}
+				  \text{map}&\text{scale}&\text{rotate}&\text{translate (add $(x,y)$)}\\\hline
+				  S_1&\frac 12&0&0\\
+				  S_2&\frac 14&\ang{90}&\big(\frac 12,0\big)\\
+				  S_3&\frac 14&0&\big(\frac 12,\frac 14\big)\\
+				  S_4&\frac 14&-\ang{90}&\big(\frac 34,\frac 14\big)\\
+				  S_5&\frac 14&0&\big(\frac 34,0\big)
+			  \end{array}
+			 \]
 	  \end{minipage}
 	  \hfill
-	  \begin{minipage}{0.47\linewidth}
-	  	\hfill\includegraphics{fractal}
-	  \end{minipage}\par
+	  \begin{minipage}{0.47\linewidth}\vspace{-\parsep}
+	  	\hfill\includegraphics[alt={a fractal curve constructed from five contraction maps}]{fractal}
+	  \end{minipage}
 	  \begin{enumerate}
-	    \item Suppose your initial set $K_0$ is the straight line segment from $(0,0)$ to $(1,0)$. Draw the first two iterations of the fractal's construction.
-	    \item The dimension of the fractal is the solution $D$ to $(\frac 12)^D+(\frac 14)^D+(\frac 14)^D+(\frac 14)^D+(\frac 14)^D=1$. By observing that $\frac 14=\left(\frac 12\right)^2$, convert to a quadratic equation in the variable $\alpha=(\frac 12)^D$. Hence compute the dimension of the fractal.
-	    \item The dimension of the fractal is \emph{larger} than that of the Koch curve $\bigl(\frac{\log 4}{\log 3}\bigr)$. Explain (informally) what this means.
+	    \item Suppose the initial set $K_0$ is the straight line segment from $(0,0)$ to $(1,0)$. Draw the first two iterations of the fractal's construction.
+	    \item The dimension of the fractal is the solution $D$ to
+	    \[
+	    	2^{-D}+4^{-D}+4^{-D}+4^{-D}=1
+	    \]
+	    By observing that $4^{-1}=\left(2^{-1}\right)^2$, convert this equation to a quadratic in the variable $\alpha=2^{-D}$. Hence compute the dimension of the fractal.
+	    \item The dimension of this fractal is \emph{larger} than that of the Koch curve $\smash{\left(\frac{\log 4}{\log 3}\right)}$. Explain (informally) what this means.
 	  \end{enumerate}
 	
 	
-		\item Verify the details of Example \ref{ex:intervalcover}, including the computation of the limit.
+		\item\label{exs:intervalcover} Verify the details of Example \ref{ex:intervalcover}, including the computation of the limit.
 	
-		\item Given constants $0\le c_1,\ldots,c_n<1$, use calculus to prove that the function $f(x)=\sum c_i^x$ is strictly decreasing. Hence conclude that the value $D$ in Theorem \ref{thm:ifsdimension} exists and is unique.
+	
+		\item\label{exs:ifsdimproof} Prove that the value $D$ in Theorem \ref{thm:ifsdimension} exists and is unique.\par
+		(\emph{Hint: prove that $f(x)=\sum c_i^x$ is strictly decreasing and satisfies the intermediate value theorem\ldots})
 		
-		\item (If you've done analysis)\lstsp Let $S:\R\to\R$ be a contraction mapping with scale factor $c$, suppose $x_0\in\R$ is given, and define $x_{n+1}:=S(x_n)$ inductively. Prove:
+		
+		\item\label{exs:banach} (If you've done analysis)\lstsp Let $S:\R\to\R$ be a contraction mapping with scale factor $c$, suppose $x_0\in\R$ is given, and define $x_{n+1}:=S(x_n)$ inductively. Prove:
 		\[
 			\forall k,n\ge 0,\ \nm{x_{n+k}-x_n}<\frac{c^n}{1-c}\nm{x_1-x_0}
 		\]

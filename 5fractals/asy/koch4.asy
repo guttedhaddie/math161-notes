@@ -38,10 +38,12 @@ for(int i=1; i<=N; ++i){
 //	Q.push(S*Q[i-1]--T*Q[i-1]--U*Q[i-1]--V*Q[i-1]);
 //}
 
-draw(P[6]);
+//draw(P[6]);
 //draw(Q[0]);
 
-//draw(S*P[5],red);
-//draw(T*P[5],heavygreen);
-//draw(U*P[5],blue);
-//draw(V*P[5],purple);
+draw(S*P[5],red);
+draw(T*P[5],lGreen);
+draw(U*P[5],blue);
+draw(V*P[5],purple);
+
+dot("$P$",(51/146,3*sqrt(3)/146),dir(-15));
